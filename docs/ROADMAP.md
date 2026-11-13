@@ -2,7 +2,11 @@
 
 ## M1 — Illustrated motion graphics engine
 
-Declarative scene plans, deterministic 2D animation primitives, reusable SVG components, five scene templates, rendering, contact sheets, and technical verification. This repository implements M1 only.
+Declarative scene plans, deterministic 2D animation primitives, reusable SVG components, five scene templates, rendering, contact sheets, and technical verification. Completed in baseline commit `fbbcc1c`.
+
+## M1.1 — Cinematic visual quality refinement
+
+Richer procedural illustrations, layered space depth, purposeful multi-stage camera choreography, reusable particle-to-object convergence, transition overlap, stronger vertical composition, and expanded visual verification. Human visual approval remains pending.
 
 ## M2 — Visual asset and scene-template library
 
