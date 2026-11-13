@@ -1,0 +1,22 @@
+import path from 'node:path';
+import {writeFile} from 'node:fs/promises';
+import {bundle} from '@remotion/bundler';
+import {getCompositions,renderMedia} from '@remotion/renderer';
+import {browserExecutable,makeJob,plan,run,probe} from './lib';
+
+await run('npm',['run','typecheck']);
+await run('npm',['test']);
+const job=await makeJob();
+const output=path.join(job,'output','animation.mp4');
+const started=Date.now();
+const serveUrl=await bundle({entryPoint:path.join(process.cwd(),'src/index.ts')});
+const composition=(await getCompositions(serveUrl,{inputProps:{plan},browserExecutable})).find(c=>c.id==='PlanetFormation');
+if(!composition)throw new Error('Composition missing');
+await renderMedia({composition,serveUrl,codec:'h264',pixelFormat:'yuv420p',outputLocation:output,inputProps:{plan},crf:18,browserExecutable});
+const elapsedSeconds=Number(((Date.now()-started)/1000).toFixed(2));
+await run('npx',['tsx','scripts/contact-sheet.ts',job]);
+await run('npx',['tsx','scripts/verify.ts',job]);
+const inspection=await probe(output);
+await writeFile(path.join(job,'render-report.json'),JSON.stringify({status:'complete',elapsedSeconds,output,inspection,humanVisualApproval:'pending'},null,2));
+await writeFile(path.join(job,'implementation-report.md'),`# Implementation report\n\n- Composition: How Planets Form\n- Frames: 450 at 30 FPS\n- Resolution: 1080 × 1920\n- Templates: space reveal, particle orbit, accretion, planet reveal, summary\n- Render time: ${elapsedSeconds} seconds\n- Automated verification: passed\n- Human visual approval: pending\n`);
+console.log(`REVIEW_JOB=${job}`);

@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0",
+  "video": {"title": "How Planets Form", "width": 1080, "height": 1920, "fps": 30, "durationFrames": 450},
+  "scenes": [
+    {"id":"young-star","template":"space-reveal","startFrame":0,"durationFrames":90,"title":"Planets begin around young stars","transition":"crossfade","visual":{"accent":"#ffd166","density":54,"seed":1107,"glow":1.2},"animation":{"cameraZoom":1.10,"orbitSpeed":0.022,"direction":"clockwise"}},
+    {"id":"orbiting-dust","template":"particle-orbit","startFrame":90,"durationFrames":90,"title":"Gas and dust form a disk","transition":"wipe-left","visual":{"accent":"#ffb35c","density":96,"seed":2209,"glow":1.0},"animation":{"cameraZoom":1.18,"orbitSpeed":0.034,"direction":"clockwise"}},
+    {"id":"accretion","template":"accretion","startFrame":180,"durationFrames":120,"title":"Small pieces gradually combine","transition":"zoom","visual":{"accent":"#ef8b62","density":76,"seed":3313,"glow":0.9},"animation":{"cameraZoom":1.28,"orbitSpeed":0.026,"direction":"counterclockwise"}},
+    {"id":"planet-reveal","template":"planet-reveal","startFrame":300,"durationFrames":90,"title":"A planet begins to take shape","transition":"crossfade","visual":{"accent":"#67d6e8","density":38,"seed":4421,"glow":1.1},"animation":{"cameraZoom":0.86,"orbitSpeed":0.016,"direction":"clockwise"}},
+    {"id":"summary","template":"summary","startFrame":390,"durationFrames":60,"title":"Planet formation takes millions of years","transition":"zoom","visual":{"accent":"#7de2d1","density":34,"seed":5527,"glow":1.0},"animation":{"cameraZoom":0.94,"orbitSpeed":0.019,"direction":"clockwise"}}
+  ]
+}
