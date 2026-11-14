@@ -14,6 +14,7 @@ const animationSchema = z.object({
   cameraZoom: z.number().min(0.5).max(2),
   orbitSpeed: z.number().min(0).max(0.2),
   direction: z.enum(['clockwise', 'counterclockwise']).default('clockwise'),
+  shotPreset: z.enum(['establishing-wide','medium-explanatory','close-up-detail','tracking','hero-reveal']).optional(),
 });
 
 export const sceneSchema = z.object({

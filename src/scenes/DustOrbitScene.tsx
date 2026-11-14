@@ -5,26 +5,32 @@ import {Camera2D} from '../components/Camera2D';
 import {ParticleField} from '../components/ParticleField';
 import {SpaceBackground} from '../components/SpaceBackground';
 import {Star} from '../components/Star';
+import {createShotComposition} from '../composition/shot-presets';
+import {ProtoplanetaryDisk} from '../illustrations/space/ProtoplanetaryDisk';
 import {cameraPoseAt} from '../motion/camera';
+import {easeOutCubic,progress,smoothstep} from '../motion/easing';
 import {orbitPosition} from '../motion/paths';
 import type {SceneProps} from './types';
 
 export const DustOrbitScene:React.FC<SceneProps>=({frame,duration,config})=>{
-  const center={x:515,y:1050};
-  const pose=cameraPoseAt(frame,[{frame:0,focus:{x:550,y:1040},zoom:1.12,rotation:.25},{frame:38,focus:{x:500,y:1060},zoom:.98,rotation:-.15},{frame:duration,focus:{x:575,y:1035},zoom:1.08,rotation:.25}]);
-  const rocks=Array.from({length:13},(_,i)=>{const depth=.68+(i%5)*.1;const p=orbitPosition(frame,{center,radiusX:210+i*26,radiusY:54+i*9,speed:config.animation.orbitSpeed*(.6+i*.028),phase:i*.69,direction:1});return <Asteroid key={i} x={p.x} y={p.y} size={11+(i%4)*6} rotation={frame*(.55+i*.07)+i*31} opacity={.62+i*.025} variant={i} depth={depth}/>});
+  const center={x:620,y:1080};
+  const globalFrame=config.startFrame+frame;
+  const diskSettle=easeOutCubic(progress(frame,0,26));
+  const diskReveal=.14+.86*easeOutCubic(progress(frame,0,14));
+  const shot=createShotComposition(config.animation.shotPreset??'establishing-wide',center,duration,{x:650,y:1060});
+  const pose=cameraPoseAt(frame,shot.keyframes);
+  const rocks=Array.from({length:13},(_,i)=>{const depth=.68+(i%5)*.1;const p=orbitPosition(globalFrame,{center,radiusX:210+i*26,radiusY:54+i*9,speed:config.animation.orbitSpeed*(.6+i*.028),phase:i*.69,direction:1});return <Asteroid key={i} x={p.x} y={p.y} size={11+(i%4)*6} rotation={globalFrame*(.55+i*.07)+i*31} opacity={.5+i*.024} variant={i} depth={depth}/>});
   return <SpaceBackground seed={config.visual.seed} accent="#71442c">
     <Camera2D focus={pose.focus} zoom={pose.zoom} rotation={pose.rotation}>
-      <svg width="1080" height="1920" style={{position:'absolute'}}>
-        <defs><radialGradient id="disk-light"><stop offset="0" stopColor="#ffd782" stopOpacity=".22"/><stop offset=".58" stopColor="#e58a50" stopOpacity=".08"/><stop offset="1" stopColor="#6ddfe7" stopOpacity="0"/></radialGradient></defs>
-        <ellipse cx={center.x} cy={center.y} rx="486" ry="168" fill="url(#disk-light)"/>
-        {[0,1,2,3].map(i=><ellipse key={i} cx={center.x} cy={center.y} rx={230+i*72} ry={63+i*24} fill="none" stroke={i%2?'#72d9e5':'#ffd07a'} strokeWidth={i===0?5:2.5} opacity={.09+i*.025} strokeDasharray={i>1?'18 22':undefined}/>) }
-      </svg>
-      <ParticleField frame={frame} count={config.visual.density} seed={config.visual.seed} center={center} speed={config.animation.orbitSpeed}/>
-      {rocks}
-      <Star x={center.x} y={center.y} radius={136} rotation={frame*.3}/>
-      <div style={{position:'absolute',left:40,top:930,width:1000,height:240,transform:'rotate(-8deg)',background:'linear-gradient(90deg,transparent,rgba(255,207,117,.13),transparent)',filter:'blur(18px)',opacity:.7}}/>
+      <ProtoplanetaryDisk center={center} frame={globalFrame} seed={config.visual.seed} layer="back" speed={.012} radiusX={505} radiusY={126} intensity={1.08} rotation={-9} opacity={diskReveal}/>
+      <ParticleField frame={globalFrame} count={Math.round(config.visual.density*.42)} seed={config.visual.seed+41} center={center} speed={config.animation.orbitSpeed}/>
+      {rocks.slice(0,8)}
+      <Star x={center.x} y={center.y} radius={225-75*diskSettle} intensity={1.05} rotation={globalFrame}/>
+      <ProtoplanetaryDisk center={center} frame={globalFrame} seed={config.visual.seed} layer="front" speed={.012} radiusX={505} radiusY={126} intensity={1.12} rotation={-9} opacity={diskReveal}/>
+      {rocks.slice(8)}
+      <Asteroid x={-18+frame*.25} y={1325+Math.sin(frame/15)*9} size={90} rotation={-26+frame*.17} color="#694348" opacity={.38} variant={1} depth={1.2}/>
     </Camera2D>
-    <AnimatedText text={config.title} frame={frame} duration={duration}/>
+    <div style={{position:'absolute',inset:-80,background:'linear-gradient(112deg,rgba(63,37,55,.55),rgba(188,101,74,.92) 43%,rgba(246,177,99,.78) 58%,rgba(18,18,43,.52))',filter:'blur(22px)',opacity:.76*smoothstep(progress(frame,duration-16,duration)),transform:`translateX(${-280+(frame-duration+16)*17}px)`,pointerEvents:'none'}}/>
+    <AnimatedText text={config.title} emphasis="Gas and dust" frame={frame} duration={duration} placement={shot.textPlacement} accent="#ffc878"/>
   </SpaceBackground>;
 };

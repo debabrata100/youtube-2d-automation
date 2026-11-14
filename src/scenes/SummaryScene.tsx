@@ -5,21 +5,26 @@ import {ParticleField} from '../components/ParticleField';
 import {Planet} from '../components/Planet';
 import {SpaceBackground} from '../components/SpaceBackground';
 import {Star} from '../components/Star';
-import {cameraPoseAt} from '../motion/camera';
-import {orbitPosition} from '../motion/paths';
+import {Asteroid} from '../components/Asteroid';
+import {closingShotAt} from '../composition/closing-shot';
+import {easeOutCubic,progress} from '../motion/easing';
 import type {SceneProps} from './types';
 
 export const SummaryScene:React.FC<SceneProps>=({frame,duration,config})=>{
-  const star={x:340,y:1080}; const orbit=orbitPosition(frame,{center:star,radiusX:355,radiusY:138,speed:config.animation.orbitSpeed,phase:.32});
-  const pose=cameraPoseAt(frame,[{frame:0,focus:{x:510,y:1070},zoom:1.08,rotation:-.12},{frame:24,focus:{x:500,y:1060},zoom:.96,rotation:0},{frame:duration,focus:{x:480,y:1045},zoom:.9,rotation:.08}]);
+  const {star,planet,planetRadius,focus,zoom}=closingShotAt(frame);
+  const globalFrame=config.startFrame+frame;
   return <SpaceBackground seed={config.visual.seed} accent="#244b73">
-    <Camera2D focus={pose.focus} zoom={pose.zoom} rotation={pose.rotation}>
-      <svg width="1080" height="1920" style={{position:'absolute'}}><ellipse cx={star.x} cy={star.y} rx="360" ry="140" fill="none" stroke="#8ce7e8" strokeWidth="3" opacity=".22" strokeDasharray="14 18"/></svg>
-      <ParticleField frame={frame} count={config.visual.density} seed={config.visual.seed} center={star} speed={config.animation.orbitSpeed}/>
-      <Star x={star.x} y={star.y} radius={158} rotation={frame*.25}/>
-      <Planet x={orbit.x} y={orbit.y} radius={112} rotation={frame*1.05+170}/>
+    <Camera2D focus={focus} zoom={zoom} rotation={0}>
+      <svg width="1080" height="1920" style={{position:'absolute'}}>
+        <path d="M-40 1130 Q120 738 559 812 Q912 865 1110 1220" fill="none" stroke="#d3ab7f" strokeWidth="2" opacity=".12" strokeDasharray="80 170 130 90" strokeDashoffset={-frame*.45}/>
+        <path d={`M-90 ${1330+Math.sin(frame/16)*8} Q430 ${1240-frame*.2} 1180 ${1395-frame*.15}`} fill="none" stroke="#e4a373" strokeWidth="68" opacity=".07" filter="blur(13px)"/>
+      </svg>
+      <ParticleField frame={globalFrame} count={config.visual.density} seed={config.visual.seed} center={star} speed={config.animation.orbitSpeed}/>
+      <Star x={star.x} y={star.y} radius={165} intensity={.9} rotation={globalFrame} opacity={easeOutCubic(progress(frame,0,12))}/>
+      <Planet x={planet.x} y={planet.y} radius={planetRadius} rotation={globalFrame*.42} formation={1} detail={1}/>
+      <Asteroid x={85+frame*.14} y={1470+Math.sin(frame/24)*5} size={78} rotation={frame*.14} opacity={.32*easeOutCubic(progress(frame,0,16))} variant={17} depth={1.35}/>
+      <Asteroid x={1040-frame*.1} y={1325+Math.sin(frame/31)*4} size={26} rotation={frame*.23} opacity={.22*easeOutCubic(progress(frame,0,16))} variant={11} depth={1.1}/>
     </Camera2D>
-    <div style={{position:'absolute',left:84,right:84,bottom:146,textAlign:'center',color:'#b4c3df',fontFamily:'Inter, sans-serif',fontSize:25,letterSpacing:1.2,textShadow:'0 3px 16px #02051a'}}>A simplified view — the real process unfolds across cosmic time.</div>
-    <AnimatedText text={config.title} frame={frame} duration={duration} kicker="THE BIG PICTURE"/>
+    <AnimatedText text={config.title} emphasis="Millions of years" frame={frame} duration={duration} kicker="FROM DUST TO PLANET" placement="top-left" variant="hero" accent="#ffd27a" hold/>
   </SpaceBackground>;
 };

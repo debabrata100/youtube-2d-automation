@@ -4,3 +4,21 @@ dist/
 jobs/*
 !jobs/.gitkeep
 *.log
+
+# Rendered media and local scratch outputs (approved PNG assets remain tracked).
+*.mp4
+*.mov
+*.webm
+*.tmp
+*.temp
+/out/
+/output/
+/previews/
+/tmp/
+/temp/
+/coverage/
+.cache/
+
+# Superseded image-generation draft, retained locally for provenance.
+/assets/illustrations/young-star-painted-v1.png
+/assets/illustrations/young-star-painted-v1.prompt.md

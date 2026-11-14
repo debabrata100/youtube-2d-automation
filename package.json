@@ -9,6 +9,9 @@
     "test": "vitest run",
     "render": "tsx scripts/render.ts",
     "review": "tsx scripts/review.ts",
+    "review:sun": "tsx scripts/review-sun.ts",
+    "review:planet": "tsx scripts/review-planet.ts",
+    "review:polish": "tsx scripts/review-polish.ts",
     "verify": "tsx scripts/verify.ts"
   },
   "dependencies": {

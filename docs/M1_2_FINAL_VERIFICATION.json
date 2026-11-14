@@ -1,0 +1,91 @@
+{
+  "milestone": "M1.2",
+  "status": "complete",
+  "approval": {
+    "status": "approved",
+    "date": "2026-11-14",
+    "authority": "Explicit user visual approval and milestone-closeout request",
+    "scope": "Project illustrated animation baseline, final M1.2.5 output"
+  },
+  "auditedBaseCommit": "0da7c925667b7209cc4464dbeaabc4fa34b4760d",
+  "verifiedAt": "2026-11-14T07:22:28.367Z",
+  "jobDirectory": "jobs/planet-formation-m1-2-5-2026-11-14T05-41-24-380Z",
+  "video": {
+    "path": "jobs/planet-formation-m1-2-5-2026-11-14T05-41-24-380Z/output/animation.mp4",
+    "sha256": "23738d08124498a8fe02cd792d0eb1450280bd68183a36fd92c0eb837b1d31df",
+    "bytes": 7353663,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 450,
+    "codec": "h264",
+    "durationSeconds": 15
+  },
+  "approvedAssets": [
+    {
+      "path": "assets/illustrations/star/sun-approved.png",
+      "sha256": "d7fbf21f09cf0e55283ffc25b9e2c737f6b7a05c406746da0b8bcd8f617c7511",
+      "width": 1254,
+      "height": 1254,
+      "format": "RGBA PNG"
+    },
+    {
+      "path": "assets/illustrations/sun-approved.png",
+      "sha256": "d7fbf21f09cf0e55283ffc25b9e2c737f6b7a05c406746da0b8bcd8f617c7511",
+      "width": 1254,
+      "height": 1254,
+      "format": "RGBA PNG"
+    },
+    {
+      "path": "assets/illustrations/planet/rocky-planet-approved.png",
+      "sha256": "9ca412dbfbf32c8dfbdd83552e9d64e7983fa47fece5ba899bd670890efa11b6",
+      "width": 1254,
+      "height": 1254,
+      "format": "RGBA PNG"
+    }
+  ],
+  "checks": {
+    "schema": true,
+    "uniqueSceneIds": true,
+    "timelineCoverage": true,
+    "noTimelineGaps": true,
+    "chronologicalPlanOrder": true,
+    "encodedSecondFramesExtracted": true,
+    "encodedTransitionFramesExtracted": true,
+    "width": true,
+    "height": true,
+    "fps": true,
+    "frames": true,
+    "duration": true,
+    "codec": true,
+    "noUnintendedBlackFrames": true,
+    "assetsPresent": true,
+    "renderComplete": true,
+    "typecheck": true,
+    "vitest": true,
+    "gitDiffCheck": true
+  },
+  "tests": {
+    "files": 4,
+    "passed": 61,
+    "failed": 0
+  },
+  "render": {
+    "elapsedSeconds": 38.44,
+    "effectiveFramesPerSecond": 11.71,
+    "coordinatorPeakRssMB": 132.6,
+    "memoryScope": "Node coordinator only, excludes Chrome/FFmpeg subprocesses",
+    "timingScope": "full MP4 rendering and encoding only"
+  },
+  "artifacts": {
+    "chronologicalSheet": "jobs/planet-formation-m1-2-5-2026-11-14T05-41-24-380Z/chronological-contact-sheet.png",
+    "transitionSheet": "jobs/planet-formation-m1-2-5-2026-11-14T05-41-24-380Z/transition-contact-sheet.png",
+    "comparison": "jobs/planet-formation-m1-2-5-2026-11-14T05-41-24-380Z/before-after-contact-sheet.png"
+  },
+  "notes": [
+    "Generated outputs are ignored and not committed.",
+    "User approval recorded here supersedes historical pending review fields.",
+    "Automated checks do not infer scene identity from pixels or guarantee pixel-identical rendering across environments.",
+    "Closeout changes documentation, ignore rules and review tooling labels; approved animation and artwork are preserved."
+  ]
+}
