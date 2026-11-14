@@ -1,6 +1,18 @@
-# YouTube 2D Automation — M1.2 complete
+# YouTube 2D Automation — M2.1 complete
 
 A deterministic 2D animation engine and a 15-second vertical science explainer, **How Planets Form**. M1.2 received human visual approval on 2026-11-14 as the project's illustrated animation baseline. The sequence simplifies a process that takes millions of years.
+
+## M2.1 storyboard architecture — complete
+
+An isolated, topic-independent engine now renders validated JSON through five reusable templates: hero reveal, orbital environment, transformation, comparison and summary. It resolves local PNG/SVG/WebP asset references, derives scene timing, and exposes operational camera, motion and caption presets. The approved M1.2 composition, entry point, artwork and choreography remain unchanged; a versioned adapter delegates to that renderer.
+
+```bash
+npm run dev:storyboard
+npm run render:storyboard -- storyboards/generic-demo.json
+npm run verify:storyboard -- jobs/<generic-job>
+```
+
+Start with [generic-demo.json](storyboards/generic-demo.json). See the [architecture audit](docs/M2_1_ARCHITECTURE_AUDIT.md), [schema/authoring reference](docs/M2_1_STORYBOARD_SCHEMA.md), [verification report](docs/M2_1_VERIFICATION.md) and [compatibility report](docs/M2_1_COMPATIBILITY.md). M2.1 received human approval as an architectural demonstration on 2026-11-14, with the final transition check completed. The brief backdrop-only dip at 8 seconds is intentional; regression tests bound it to frames 239–240, with the summary fully visible again at frame 246. Frame-based configuration is deterministic, but byte-identical MP4 output is not guaranteed: unresolved run-to-run encoded pixel differences are documented. M2.2 has not started.
 
 ## Setup
 
@@ -72,4 +84,4 @@ The approved artwork has flattened lighting and cannot provide real independent 
 
 The engine has main educational text, but no narration, audio, word-timed subtitles, publishing or automatic image generation. Automated checks validate technical structure; they do not infer scene identity from pixels or replace human visual review. Future exports could separate albedo, shading, corona, molten details and silhouettes into aligned layers.
 
-Historical checkpoint documents retain their review-time pending statuses; the approved closeout record supersedes them. M2 has not started. See [ROADMAP](docs/ROADMAP.md) and the [visual style guide](docs/VISUAL_STYLE_GUIDE.md).
+Historical M1 checkpoint documents retain their review-time pending statuses; the approved M1.2 closeout record supersedes them. M2.1 is complete as an approved architectural demonstration. See [ROADMAP](docs/ROADMAP.md) and the [visual style guide](docs/VISUAL_STYLE_GUIDE.md).

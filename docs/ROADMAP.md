@@ -20,7 +20,9 @@ Current limitations: flattened painted lighting limits surface rotation; procedu
 
 ## M2 — Visual asset and scene-template library
 
-Not started. Expand the original asset system, template catalog, art-direction tokens, and compositional variants. Requires a new explicit instruction before work begins; M1.2 closeout does not authorize M2.
+M2.1 complete — approved as an architectural demonstration on 2026-11-14: repository audit, generic versioned storyboard schema, five configurable templates, local asset registry, deterministic presets, generic demonstration, rendering/verification and a legacy compatibility adapter. See [architecture audit](M2_1_ARCHITECTURE_AUDIT.md), [schema](M2_1_STORYBOARD_SCHEMA.md), [verification](M2_1_VERIFICATION.md) and [compatibility](M2_1_COMPATIBILITY.md).
+
+Final closeout confirmed the intentional two-frame backdrop dip around 8 seconds and added transition regression coverage. The M1.2 approved production baseline remains preserved. Encoded-output reproducibility remains unresolved; byte-identical MP4 output is not guaranteed. M2.2 has not started and requires a new explicit instruction. No push or tag is part of M2.1 closeout.
 
 ## M3 — LangGraph AI storyboard director
 

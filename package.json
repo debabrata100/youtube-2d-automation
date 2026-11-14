@@ -4,6 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev:storyboard": "remotion studio src/storyboard-index.ts",
+    "render:storyboard": "node --import tsx scripts/render-storyboard.ts",
+    "verify:storyboard": "node --import tsx scripts/verify-storyboard.ts",
+    "check:compatibility": "node --import tsx scripts/check-compatibility.ts",
     "dev": "remotion studio src/index.ts",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",

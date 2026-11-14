@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "generic-template-demo",
+  "title": "Illustrated Template Architecture Demonstration",
+  "format": {"width": 1080, "height": 1920, "fps": 30},
+  "styleId": "cinematic-illustrated",
+  "assets": [
+    {"id": "luminous-subject", "path": "illustrations/star/sun-approved.png", "type": "png", "width": 1254, "height": 1254, "transparent": true, "styleId": "cinematic-illustrated"},
+    {"id": "rocky-subject", "path": "illustrations/planet/rocky-planet-approved.png", "type": "png", "width": 1254, "height": 1254, "transparent": true, "styleId": "cinematic-illustrated"}
+  ],
+  "scenes": [
+    {"id": "hero", "template": "hero-reveal", "durationFrames": 60, "caption": {"text": "One subject. A clear introduction.", "kicker": "TEMPLATE DEMONSTRATION"}, "camera": {"preset": "slow-push", "amount": 0.12}, "motion": {"preset": "hero-reveal"}, "config": {"primary": {"asset": "luminous-subject", "size": 0.88}}},
+    {"id": "environment", "template": "orbital-environment", "durationFrames": 60, "caption": {"text": "Place a subject in motion.", "preset": "body"}, "camera": {"preset": "pull-back", "amount": 0.08}, "motion": {"preset": "gentle-drift"}, "seed": 42, "config": {"primary": {"asset": "luminous-subject", "size": 0.58}, "secondary": {"asset": "rocky-subject", "size": 0.22}, "count": 28, "radiusX": 0.29, "radiusY": 0.08}},
+    {"id": "change", "template": "transformation", "durationFrames": 60, "caption": {"text": "Show a gradual transformation.", "preset": "body"}, "camera": {"preset": "tracking", "offsetX": 0.05}, "motion": {"preset": "particle-convergence"}, "seed": 84, "config": {"primary": {"asset": "rocky-subject", "size": 0.78}, "fromScale": 0.3, "toScale": 1}},
+    {"id": "compare", "template": "comparison", "durationFrames": 60, "caption": {"text": "Compare two subjects."}, "camera": {"preset": "static"}, "motion": {"preset": "still"}, "config": {"left": {"asset": "luminous-subject", "x": 0.27, "size": 0.46}, "right": {"asset": "rocky-subject", "x": 0.73, "size": 0.46}, "leftLabel": "LUMINOUS", "rightLabel": "ROCKY"}},
+    {"id": "closing", "template": "summary", "durationFrames": 60, "caption": {"text": "Reuse the structure. Change the story.", "preset": "closing"}, "camera": {"preset": "slow-push", "amount": 0.06}, "motion": {"preset": "orbit", "amplitude": 0.012}, "config": {"subjects": [{"asset": "luminous-subject", "x": 0.3, "y": 0.48, "size": 0.52}, {"asset": "rocky-subject", "x": 0.68, "y": 0.62, "size": 0.52}]}}
+  ]
+}
