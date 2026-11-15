@@ -222,3 +222,13 @@ Regenerate the B/C storyboards with `python3 scripts/authoring/build-style-spike
 - Licensed music: add `--music path/to/track.mp3` to `story:render-cached` (looped/trimmed, ducked, faded). Use only tracks licensed for monetized YouTube use.
 - Word-highlight captions come from the theme (`caption.highlight: "word"`).
 - Mix outputs: `<job>/audio/stems/`, `<job>/audio/mix-report.json`; mixed-mode checks in `reports/verification-report.json`. See `docs/M2_7_WATCHABILITY_REPORT.md`.
+
+## Making an episode (M3.0 workflow)
+
+1. Write `stories/<id>.json` (one beat per scene) and a storyboard (see `scripts/authoring/build-lightning-storyboard.py`).
+2. Preview with estimated timing (no cost): `npm run preview:stills -- --script stories/<id>.json --storyboard storyboards/<id>.json --estimate-timing --frames 10,200,400 --output jobs/<new>`.
+3. Animatic (no cost): `npm run narration:synthesize -- --script stories/<id>.json --planning --output jobs/<id>-planning`, then `story:render-cached` with that audio/metadata.
+4. Narration (paid, after approval): `npm run narration:synthesize -- --script stories/<id>.json --dry-run`, then `... --authorize-paid-tts --max-characters <n> --output jobs/<id>-narration`. Exactly one request; no retries.
+5. Final: `npm run story:render-cached -- --script ... --storyboard ... --audio jobs/<id>-narration/audio/narration.wav --metadata jobs/<id>-narration/audio/narration-metadata.json --output jobs/<new>`.
+
+See `docs/M3_0_LIGHTNING_EPISODE_REPORT.md`.

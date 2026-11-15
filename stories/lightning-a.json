@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0",
+  "id": "lightning-a",
+  "title": "How Lightning Forms",
+  "topic": "Thunderstorm charge separation, stepped leaders, return strokes and thunder",
+  "language": "en-US",
+  "targetAudience": "English-speaking science-curious viewers aged 16-35",
+  "durationSeconds": 38,
+  "storyboard": "storyboards/lightning.json",
+  "candidatesReport": "stories/lightning-candidates.md",
+  "beats": [
+    {"id": "hook", "sceneId": "strike-hook", "intent": "hook", "emphasis": ["five times hotter"],
+     "narration": "A lightning bolt can be five times hotter than the Sun's surface.",
+     "phrases": ["A lightning bolt can be five times hotter", "than the Sun's surface."]},
+    {"id": "setup", "sceneId": "storm-cloud", "intent": "setup", "emphasis": [],
+     "narration": "It begins inside a storm cloud, where strong winds toss ice upward.",
+     "phrases": ["It begins inside a storm cloud,", "where strong winds toss ice upward."]},
+    {"id": "collisions", "sceneId": "ice-collisions", "intent": "explanation", "emphasis": [],
+     "narration": "Ice crystals and soft hail collide and trade electric charge.",
+     "phrases": ["Ice crystals and soft hail collide", "and trade electric charge."]},
+    {"id": "separation", "sceneId": "charge-separation", "intent": "explanation", "emphasis": [],
+     "narration": "Positive charge rises to the top. Negative charge sinks to the bottom.",
+     "phrases": ["Positive charge rises to the top.", "Negative charge sinks to the bottom."]},
+    {"id": "leader", "sceneId": "stepped-leader", "intent": "explanation", "emphasis": [],
+     "narration": "Then a faint channel of charge zigzags down, step by step.",
+     "phrases": ["Then a faint channel of charge", "zigzags down, step by step."]},
+    {"id": "strike", "sceneId": "return-stroke", "intent": "payoff", "emphasis": ["white-hot"],
+     "narration": "When it meets a spark rising from the ground, the air flashes white-hot.",
+     "phrases": ["When it meets a spark rising from the ground,", "the air flashes white-hot."]},
+    {"id": "closing", "sceneId": "thunder", "intent": "closing", "emphasis": [],
+     "narration": "That blast of heat makes the air explode outward. We hear thunder.",
+     "phrases": ["That blast of heat makes the air explode outward.", "We hear thunder."]}
+  ],
+  "previews": [
+    {"id": "hook", "fromBeat": "hook", "toBeat": "setup"},
+    {"id": "strike", "fromBeat": "leader", "toBeat": "closing"}
+  ]
+}

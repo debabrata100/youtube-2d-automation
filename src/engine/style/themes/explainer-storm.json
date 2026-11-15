@@ -1,0 +1,25 @@
+{
+  "id": "explainer-storm",
+  "name": "Explainer flat - night storm",
+  "palette": {
+    "sky": {"top": "#0b1026", "mid": "#18224a", "horizon": "#3a4a7c", "glow": "#7486bd"},
+    "sun": {"core": "#e9f0ff", "glow": "#9db4ff"},
+    "ridges": ["#2c3a63", "#222e52", "#1a2442", "#131b33"],
+    "ground": {"top": "#1e2b3a", "bottom": "#0b1119", "detail": "#2b3d4f"},
+    "rock": {"light": "#6d7a94", "mid": "#4c5770", "dark": "#323b50", "outline": "#0c1020", "rim": "#b9c9ff", "crater": "#10131f"},
+    "strata": ["#4c5770", "#3f4960", "#58647e", "#363f55", "#4a5570"],
+    "underground": ["#1c2433", "#18202d", "#141a25"],
+    "hot": {"core": "#ffffff", "mid": "#e6f0ff", "edge": "#a9cbff", "glow": "#7fb0ff"},
+    "smoke": {"light": "#a8b1d6", "mid": "#646f9c", "shadow": "#2c3460"},
+    "cloud": {"light": "#9ba6d2", "shadow": "#2f3763"},
+    "water": {"light": "#a9c7ff", "mid": "#5f86c9", "deep": "#2b4377", "foam": "#dbe8ff"},
+    "snow": "#eef3ff",
+    "text": {"fill": "#ffffff", "outline": "#070a18", "accent": "#ffe066"},
+    "label": {"bg": "#0a0f24", "fg": "#ffffff", "line": "#ffe066"}
+  },
+  "line": {"width": 5, "color": "#070a18"},
+  "light": {"from": "left"},
+  "grain": {"opacity": 0.06, "density": 1500, "seed": 13},
+  "label": {"fontFamily": "Arial, sans-serif", "fontWeight": 800, "radius": 18},
+  "caption": {"variant": "outline", "fontSize": 66, "top": 0.12, "textColor": "#ffffff", "highlight": "word", "highlightColor": "#ffe066", "outlineColor": "#070a18"}
+}

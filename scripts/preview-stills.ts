@@ -15,10 +15,12 @@ import {captionStyleSchema, narrationOverlaySchema} from '../src/captions/schema
 import {measureAudio} from '../src/audio/metadata';
 import {getTheme} from '../src/engine/style/theme';
 import {browserExecutable} from './media-tools';
+import {estimateAlignment} from '../src/storytelling/timing/estimate';
+import {encodeWav} from '../src/audio/synth';
 
 const {values: o} = parseArgs({options: {
   script: {type: 'string'}, storyboard: {type: 'string'}, metadata: {type: 'string'}, audio: {type: 'string'},
-  'caption-style': {type: 'string'}, frames: {type: 'string'}, output: {type: 'string'}, scale: {type: 'string', default: '1'},
+  'caption-style': {type: 'string'}, 'estimate-timing': {type: 'boolean', default: false}, frames: {type: 'string'}, output: {type: 'string'}, scale: {type: 'string', default: '1'},
 }});
 if (!o.storyboard || !o.frames || !o.output) {
   throw Error('Usage: preview-stills --storyboard <json> --frames 0,120,280 --output <new-dir> [--script <json> --metadata <json> --audio <wav>] [--caption-style <json>] [--scale 0.5]');
@@ -26,11 +28,17 @@ if (!o.storyboard || !o.frames || !o.output) {
 const source = parseStoryboard(JSON.parse(await readFile(o.storyboard, 'utf8')));
 let storyboard = source, narration: unknown;
 if (o.script) {
-  if (!o.metadata || !o.audio) throw Error('--script requires --metadata and --audio');
+  if (!o['estimate-timing'] && (!o.metadata || !o.audio)) throw Error('--script requires --metadata and --audio, or --estimate-timing');
   const story = validateStory({...storyScriptSchema.parse(JSON.parse(await readFile(o.script, 'utf8'))), storyboard: o.storyboard}, source);
-  const metadata = JSON.parse(await readFile(o.metadata, 'utf8'));
-  const mapping = captionsFromProviderTiming(story, metadata.alignment, (await measureAudio(o.audio)).durationSeconds, source.format.fps);
-  storyboard = scheduleNarratedScenes(source, mapping.phraseTimings).storyboard;
+  // Estimated timing: planning-only alignment at the narrator's measured pace, with a silent placeholder track.
+  const estimated = o['estimate-timing'] ? estimateAlignment(story.beats.map(b => b.narration).join(' ')) : null;
+  const alignment = estimated ?? JSON.parse(await readFile(o.metadata!, 'utf8')).alignment;
+  const spoken = estimated ? estimated.character_end_times_seconds.at(-1)! + .05 : (await measureAudio(o.audio!)).durationSeconds;
+  if (estimated) console.error(JSON.stringify({estimatedNarrationSeconds: +spoken.toFixed(2), note: 'planning estimate only'}));
+  const mapping = captionsFromProviderTiming(story, alignment, spoken, source.format.fps);
+  const schedule = scheduleNarratedScenes(source, mapping.phraseTimings);
+  storyboard = schedule.storyboard;
+  console.error(JSON.stringify({scheduledFrames: storyboard.scenes.map(s => s.durationFrames), exceptions: schedule.exceptions}));
   const style = captionStyleSchema.parse(o['caption-style'] ? JSON.parse(await readFile(o['caption-style'], 'utf8')) : source.themeId ? getTheme(source.themeId).caption : {});
   narration = narrationOverlaySchema.parse({audioSrc: 'narration/narration.wav', captionsEnabled: true, syntheticTestAudio: false, showAiDisclosureBanner: false, cues: mapping.cues, style});
 }
@@ -45,7 +53,8 @@ for (const asset of storyboard.assets) {
 }
 if (narration) {
   await mkdir(path.join(publicDir, 'narration'));
-  await copyFile(o.audio!, path.join(publicDir, 'narration/narration.wav'));
+  if (o.audio && !o['estimate-timing']) await copyFile(o.audio, path.join(publicDir, 'narration/narration.wav'));
+  else await writeFile(path.join(publicDir, 'narration/narration.wav'), encodeWav(new Float32Array(24000), 24000));
 }
 const serveUrl = await bundle({entryPoint: path.resolve('src/storyboard-index.ts'), publicDir});
 const inputProps = {storyboard, ...(narration ? {narration} : {})};

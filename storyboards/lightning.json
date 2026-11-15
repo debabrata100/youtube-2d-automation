@@ -1,0 +1,3678 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "lightning",
+  "title": "How Lightning Forms",
+  "themeId": "explainer-storm",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "@sky.top",
+  "accent": "@text.accent",
+  "assets": [],
+  "backdrop": {
+    "group": "backdrop"
+  },
+  "crossfadeFrames": 8,
+  "narrationTiming": {
+    "minimumSceneFrames": 45,
+    "maximumDeviationSeconds": 0.2
+  },
+  "audio": {
+    "music": "generated-pad",
+    "musicGainDb": -22,
+    "duckRatio": 8,
+    "targetLufs": -14
+  },
+  "groups": [
+    {
+      "id": "backdrop",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "sky",
+          "kit": {
+            "type": "sky",
+            "horizon": 0.7,
+            "stars": 0,
+            "seed": 5
+          }
+        },
+        {
+          "id": "ridges",
+          "kit": {
+            "type": "ridges",
+            "top": 0.66,
+            "bottom": 0.76,
+            "layers": 3,
+            "peaks": 6,
+            "roughness": 0.5,
+            "drift": 6e-05,
+            "seed": 22
+          }
+        },
+        {
+          "id": "ground",
+          "kit": {
+            "type": "ground",
+            "top": 0.753,
+            "rocks": 6,
+            "seed": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "g-hook",
+      "width": 1000,
+      "height": 1300,
+      "layers": [
+        {
+          "id": "anvil",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.13,
+            "width": 1.05,
+            "lobes": 9,
+            "seed": 71
+          }
+        },
+        {
+          "id": "tower",
+          "kit": {
+            "type": "cloud",
+            "x": 0.52,
+            "y": 0.23,
+            "width": 0.56,
+            "lobes": 6,
+            "seed": 72
+          }
+        },
+        {
+          "id": "shoulder-l",
+          "kit": {
+            "type": "cloud",
+            "x": 0.34,
+            "y": 0.33,
+            "width": 0.56,
+            "lobes": 6,
+            "seed": 73
+          }
+        },
+        {
+          "id": "shoulder-r",
+          "kit": {
+            "type": "cloud",
+            "x": 0.67,
+            "y": 0.32,
+            "width": 0.52,
+            "lobes": 6,
+            "seed": 74
+          }
+        },
+        {
+          "id": "base",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.43,
+            "width": 1.02,
+            "lobes": 9,
+            "seed": 75
+          }
+        },
+        {
+          "id": "hill",
+          "kit": {
+            "type": "mountain",
+            "cx": 0.66,
+            "baseY": 0.9,
+            "baseWidth": 0.46,
+            "height": 0.11,
+            "crater": 0,
+            "concavity": 0.3,
+            "part": "full",
+            "gullies": 3,
+            "seed": 81
+          }
+        },
+        {
+          "id": "hook-flash",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.45,
+            "rx": 1.3,
+            "ry": 1.0,
+            "tone": "sun"
+          },
+          "opacity": [
+            {
+              "frame": 7,
+              "value": 0
+            },
+            {
+              "frame": 9,
+              "value": 0.8
+            },
+            {
+              "frame": 14,
+              "value": 0
+            },
+            {
+              "frame": 16,
+              "value": 0.45
+            },
+            {
+              "frame": 22,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "hook-bolt",
+          "opacity": [
+            {
+              "frame": 7,
+              "value": 0
+            },
+            {
+              "frame": 8,
+              "value": 1
+            },
+            {
+              "frame": 13,
+              "value": 1
+            },
+            {
+              "frame": 14,
+              "value": 0.25
+            },
+            {
+              "frame": 16,
+              "value": 1
+            },
+            {
+              "frame": 26,
+              "value": 1
+            },
+            {
+              "frame": 40,
+              "value": 0
+            }
+          ],
+          "effects": [
+            {
+              "id": "hook-main",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.45,
+                  "y": 0.44
+                },
+                "segments": [
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.4751,
+                      "y": 0.4725
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5043,
+                      "y": 0.5026
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.508,
+                      "y": 0.548
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5409,
+                      "y": 0.5759
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5394,
+                      "y": 0.6244
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.59,
+                      "y": 0.6416
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5842,
+                      "y": 0.6927
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5898,
+                      "y": 0.7369
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.6498,
+                      "y": 0.7485
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.66,
+                      "y": 0.79
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 6,
+                  "value": 0
+                },
+                {
+                  "frame": 9,
+                  "value": 1
+                }
+              ],
+              "width": 0.012,
+              "color": "@hot.core",
+              "glow": {
+                "color": "@hot.glow",
+                "widthScale": 4,
+                "opacity": 0.6
+              },
+              "headGlow": false
+            },
+            {
+              "id": "hook-branch-a",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.508,
+                  "y": 0.548
+                },
+                "segments": [
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.4554,
+                      "y": 0.5509
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.4165,
+                      "y": 0.5837
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.3762,
+                      "y": 0.6131
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.33,
+                      "y": 0.63
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 7,
+                  "value": 0
+                },
+                {
+                  "frame": 10,
+                  "value": 1
+                }
+              ],
+              "width": 0.006600000000000001,
+              "color": "@hot.mid",
+              "glow": {
+                "color": "@hot.glow",
+                "widthScale": 3.5,
+                "opacity": 0.45
+              },
+              "headGlow": false
+            },
+            {
+              "id": "hook-branch-b",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.59,
+                  "y": 0.6416
+                },
+                "segments": [
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.6627,
+                      "y": 0.6524
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.7213,
+                      "y": 0.699
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.79,
+                      "y": 0.72
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 7,
+                  "value": 0
+                },
+                {
+                  "frame": 10,
+                  "value": 1
+                }
+              ],
+              "width": 0.006,
+              "color": "@hot.mid",
+              "glow": {
+                "color": "@hot.glow",
+                "widthScale": 3.5,
+                "opacity": 0.45
+              },
+              "headGlow": false
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "bolt-temp",
+          "text": "Lightning ~30,000 °C",
+          "x": 500,
+          "y": 880,
+          "size": 44,
+          "anchor": "middle",
+          "variant": "pill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 34,
+              "value": 0
+            },
+            {
+              "frame": 48,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "sun-temp",
+          "text": "Sun's surface ~5,500 °C",
+          "x": 500,
+          "y": 965,
+          "size": 44,
+          "anchor": "middle",
+          "variant": "pill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 84,
+              "value": 0
+            },
+            {
+              "frame": 98,
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-cloud",
+      "width": 1000,
+      "height": 1300,
+      "layers": [
+        {
+          "id": "anvil",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.13,
+            "width": 1.05,
+            "lobes": 9,
+            "seed": 71
+          }
+        },
+        {
+          "id": "tower",
+          "kit": {
+            "type": "cloud",
+            "x": 0.52,
+            "y": 0.23,
+            "width": 0.56,
+            "lobes": 6,
+            "seed": 72
+          }
+        },
+        {
+          "id": "shoulder-l",
+          "kit": {
+            "type": "cloud",
+            "x": 0.34,
+            "y": 0.33,
+            "width": 0.56,
+            "lobes": 6,
+            "seed": 73
+          }
+        },
+        {
+          "id": "shoulder-r",
+          "kit": {
+            "type": "cloud",
+            "x": 0.67,
+            "y": 0.32,
+            "width": 0.52,
+            "lobes": 6,
+            "seed": 74
+          }
+        },
+        {
+          "id": "base",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.43,
+            "width": 1.02,
+            "lobes": 9,
+            "seed": 75
+          }
+        },
+        {
+          "id": "hill",
+          "kit": {
+            "type": "mountain",
+            "cx": 0.66,
+            "baseY": 0.9,
+            "baseWidth": 0.46,
+            "height": 0.11,
+            "crater": 0,
+            "concavity": 0.3,
+            "part": "full",
+            "gullies": 3,
+            "seed": 81
+          }
+        },
+        {
+          "id": "updraft",
+          "effects": [
+            {
+              "id": "updraft-0",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.34,
+                  "y": 0.74
+                },
+                "segments": [
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.36,
+                      "y": 0.28
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 82,
+                  "value": 0
+                },
+                {
+                  "frame": 127,
+                  "value": 1
+                }
+              ],
+              "width": 0.008,
+              "color": "@smoke.light",
+              "glow": {
+                "color": "@water.light",
+                "widthScale": 2.6,
+                "opacity": 0.35
+              },
+              "headGlow": false,
+              "arrowHead": 2.6
+            },
+            {
+              "id": "updraft-1",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.5,
+                  "y": 0.74
+                },
+                "segments": [
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.52,
+                      "y": 0.28
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 90,
+                  "value": 0
+                },
+                {
+                  "frame": 135,
+                  "value": 1
+                }
+              ],
+              "width": 0.008,
+              "color": "@smoke.light",
+              "glow": {
+                "color": "@water.light",
+                "widthScale": 2.6,
+                "opacity": 0.35
+              },
+              "headGlow": false,
+              "arrowHead": 2.6
+            },
+            {
+              "id": "updraft-2",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.66,
+                  "y": 0.74
+                },
+                "segments": [
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.68,
+                      "y": 0.28
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 98,
+                  "value": 0
+                },
+                {
+                  "frame": 143,
+                  "value": 1
+                }
+              ],
+              "width": 0.008,
+              "color": "@smoke.light",
+              "glow": {
+                "color": "@water.light",
+                "widthScale": 2.6,
+                "opacity": 0.35
+              },
+              "headGlow": false,
+              "arrowHead": 2.6
+            }
+          ]
+        },
+        {
+          "id": "ice",
+          "effects": [
+            {
+              "id": "ice-rising",
+              "type": "particles",
+              "count": 56,
+              "seed": 601,
+              "startFrame": 96,
+              "endFrame": 145,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.44,
+                "width": 0.55,
+                "height": 0.04
+              },
+              "lifetimeFrames": [
+                60,
+                110
+              ],
+              "velocity": {
+                "angleDegrees": -90,
+                "spreadDegrees": 18,
+                "speed": [
+                  0.0022,
+                  0.0038
+                ]
+              },
+              "acceleration": {
+                "x": 0,
+                "y": 0
+              },
+              "radius": [
+                0.007,
+                0.011
+              ],
+              "colors": [
+                "@hot.mid",
+                "@water.foam"
+              ],
+              "shape": "diamond",
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 0
+                },
+                {
+                  "at": 0.12,
+                  "value": 0.95
+                },
+                {
+                  "at": 0.8,
+                  "value": 0.85
+                },
+                {
+                  "at": 1,
+                  "value": 0
+                }
+              ],
+              "scale": [
+                {
+                  "at": 0,
+                  "value": 0.6
+                },
+                {
+                  "at": 0.2,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 0.8
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "updraft-label",
+          "text": "Updraft",
+          "x": 780,
+          "y": 640,
+          "size": 44,
+          "anchor": "middle",
+          "variant": "pill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 108,
+              "value": 0
+            },
+            {
+              "frame": 122,
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-collide",
+      "width": 1000,
+      "height": 1300,
+      "layers": [
+        {
+          "id": "anvil",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.13,
+            "width": 1.05,
+            "lobes": 9,
+            "seed": 71
+          }
+        },
+        {
+          "id": "tower",
+          "kit": {
+            "type": "cloud",
+            "x": 0.52,
+            "y": 0.23,
+            "width": 0.56,
+            "lobes": 6,
+            "seed": 72
+          }
+        },
+        {
+          "id": "shoulder-l",
+          "kit": {
+            "type": "cloud",
+            "x": 0.34,
+            "y": 0.33,
+            "width": 0.56,
+            "lobes": 6,
+            "seed": 73
+          }
+        },
+        {
+          "id": "shoulder-r",
+          "kit": {
+            "type": "cloud",
+            "x": 0.67,
+            "y": 0.32,
+            "width": 0.52,
+            "lobes": 6,
+            "seed": 74
+          }
+        },
+        {
+          "id": "base",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.43,
+            "width": 1.02,
+            "lobes": 9,
+            "seed": 75
+          }
+        },
+        {
+          "id": "hill",
+          "kit": {
+            "type": "mountain",
+            "cx": 0.66,
+            "baseY": 0.9,
+            "baseWidth": 0.46,
+            "height": 0.11,
+            "crater": 0,
+            "concavity": 0.3,
+            "part": "full",
+            "gullies": 3,
+            "seed": 81
+          }
+        },
+        {
+          "id": "ice",
+          "effects": [
+            {
+              "id": "ice-rising",
+              "type": "particles",
+              "count": 50,
+              "seed": 602,
+              "startFrame": 6,
+              "endFrame": 145,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.44,
+                "width": 0.55,
+                "height": 0.04
+              },
+              "lifetimeFrames": [
+                60,
+                110
+              ],
+              "velocity": {
+                "angleDegrees": -90,
+                "spreadDegrees": 18,
+                "speed": [
+                  0.0022,
+                  0.0038
+                ]
+              },
+              "acceleration": {
+                "x": 0,
+                "y": 0
+              },
+              "radius": [
+                0.007,
+                0.011
+              ],
+              "colors": [
+                "@hot.mid",
+                "@water.foam"
+              ],
+              "shape": "diamond",
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 0
+                },
+                {
+                  "at": 0.12,
+                  "value": 0.95
+                },
+                {
+                  "at": 0.8,
+                  "value": 0.85
+                },
+                {
+                  "at": 1,
+                  "value": 0
+                }
+              ],
+              "scale": [
+                {
+                  "at": 0,
+                  "value": 0.6
+                },
+                {
+                  "at": 0.2,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 0.8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hail",
+          "effects": [
+            {
+              "id": "hail-falling",
+              "type": "particles",
+              "count": 26,
+              "seed": 603,
+              "startFrame": 0,
+              "endFrame": 125,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.2,
+                "width": 0.5,
+                "height": 0.04
+              },
+              "lifetimeFrames": [
+                70,
+                110
+              ],
+              "velocity": {
+                "angleDegrees": 90,
+                "spreadDegrees": 14,
+                "speed": [
+                  0.0016,
+                  0.0026
+                ]
+              },
+              "acceleration": {
+                "x": 0,
+                "y": 0
+              },
+              "radius": [
+                0.014,
+                0.021
+              ],
+              "colors": [
+                "@rock.light",
+                "@smoke.light"
+              ],
+              "shape": "circle",
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 0
+                },
+                {
+                  "at": 0.12,
+                  "value": 0.95
+                },
+                {
+                  "at": 0.8,
+                  "value": 0.85
+                },
+                {
+                  "at": 1,
+                  "value": 0
+                }
+              ],
+              "scale": [
+                {
+                  "at": 0,
+                  "value": 0.6
+                },
+                {
+                  "at": 0.2,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 0.8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sparks",
+          "effects": [
+            {
+              "id": "charge-sparks",
+              "type": "particles",
+              "count": 46,
+              "seed": 604,
+              "startFrame": 50,
+              "endFrame": 130,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.31,
+                "width": 0.5,
+                "height": 0.1
+              },
+              "lifetimeFrames": [
+                6,
+                11
+              ],
+              "velocity": {
+                "angleDegrees": 0,
+                "spreadDegrees": 180,
+                "speed": [
+                  0.002,
+                  0.004
+                ]
+              },
+              "acceleration": {
+                "x": 0,
+                "y": 0
+              },
+              "radius": [
+                0.005,
+                0.008
+              ],
+              "colors": [
+                "@hot.core",
+                "@text.accent"
+              ],
+              "shape": "streak",
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 0
+                },
+                {
+                  "at": 0.12,
+                  "value": 0.95
+                },
+                {
+                  "at": 0.8,
+                  "value": 0.85
+                },
+                {
+                  "at": 1,
+                  "value": 0
+                }
+              ],
+              "scale": [
+                {
+                  "at": 0,
+                  "value": 0.6
+                },
+                {
+                  "at": 0.2,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 0.8
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ice-label",
+          "text": "Ice crystals",
+          "x": 250,
+          "y": 255,
+          "size": 42,
+          "anchor": "middle",
+          "variant": "pill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 10,
+              "value": 0
+            },
+            {
+              "frame": 24,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "hail-label",
+          "text": "Soft hail",
+          "x": 760,
+          "y": 420,
+          "size": 42,
+          "anchor": "middle",
+          "variant": "pill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 28,
+              "value": 0
+            },
+            {
+              "frame": 42,
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-separate",
+      "width": 1000,
+      "height": 1300,
+      "layers": [
+        {
+          "id": "anvil",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.13,
+            "width": 1.05,
+            "lobes": 9,
+            "seed": 71
+          }
+        },
+        {
+          "id": "tower",
+          "kit": {
+            "type": "cloud",
+            "x": 0.52,
+            "y": 0.23,
+            "width": 0.56,
+            "lobes": 6,
+            "seed": 72
+          }
+        },
+        {
+          "id": "shoulder-l",
+          "kit": {
+            "type": "cloud",
+            "x": 0.34,
+            "y": 0.33,
+            "width": 0.56,
+            "lobes": 6,
+            "seed": 73
+          }
+        },
+        {
+          "id": "shoulder-r",
+          "kit": {
+            "type": "cloud",
+            "x": 0.67,
+            "y": 0.32,
+            "width": 0.52,
+            "lobes": 6,
+            "seed": 74
+          }
+        },
+        {
+          "id": "base",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.43,
+            "width": 1.02,
+            "lobes": 9,
+            "seed": 75
+          }
+        },
+        {
+          "id": "hill",
+          "kit": {
+            "type": "mountain",
+            "cx": 0.66,
+            "baseY": 0.9,
+            "baseWidth": 0.46,
+            "height": 0.11,
+            "crater": 0,
+            "concavity": 0.3,
+            "part": "full",
+            "gullies": 3,
+            "seed": 81
+          }
+        },
+        {
+          "id": "positive",
+          "effects": [
+            {
+              "id": "positive",
+              "type": "particles",
+              "count": 54,
+              "seed": 701,
+              "startFrame": 0,
+              "endFrame": 110,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.33,
+                "width": 0.6,
+                "height": 0.06
+              },
+              "lifetimeFrames": [
+                150,
+                175
+              ],
+              "velocity": {
+                "angleDegrees": -90,
+                "spreadDegrees": 26,
+                "speed": [
+                  0.0018,
+                  0.0024
+                ]
+              },
+              "acceleration": {
+                "x": 0,
+                "y": 1.25e-05
+              },
+              "radius": [
+                0.008,
+                0.012
+              ],
+              "colors": [
+                "@text.accent"
+              ],
+              "shape": "circle",
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 0
+                },
+                {
+                  "at": 0.1,
+                  "value": 0.95
+                },
+                {
+                  "at": 1,
+                  "value": 0.9
+                }
+              ],
+              "scale": [
+                {
+                  "at": 0,
+                  "value": 0.6
+                },
+                {
+                  "at": 0.2,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 0.8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "negative",
+          "effects": [
+            {
+              "id": "negative",
+              "type": "particles",
+              "count": 54,
+              "seed": 702,
+              "startFrame": 64,
+              "endFrame": 120,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.3,
+                "width": 0.6,
+                "height": 0.06
+              },
+              "lifetimeFrames": [
+                150,
+                175
+              ],
+              "velocity": {
+                "angleDegrees": 90,
+                "spreadDegrees": 26,
+                "speed": [
+                  0.0016,
+                  0.0022
+                ]
+              },
+              "acceleration": {
+                "x": 0,
+                "y": -1.15e-05
+              },
+              "radius": [
+                0.008,
+                0.012
+              ],
+              "colors": [
+                "@water.light"
+              ],
+              "shape": "circle",
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 0
+                },
+                {
+                  "at": 0.1,
+                  "value": 0.95
+                },
+                {
+                  "at": 1,
+                  "value": 0.9
+                }
+              ],
+              "scale": [
+                {
+                  "at": 0,
+                  "value": 0.6
+                },
+                {
+                  "at": 0.2,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 0.8
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "positive-label",
+          "text": "+  Positive",
+          "x": 500,
+          "y": 130,
+          "size": 44,
+          "anchor": "middle",
+          "variant": "pill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 8,
+              "value": 0
+            },
+            {
+              "frame": 22,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "negative-label",
+          "text": "−  Negative",
+          "x": 500,
+          "y": 640,
+          "size": 44,
+          "anchor": "middle",
+          "variant": "pill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 74,
+              "value": 0
+            },
+            {
+              "frame": 88,
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-leader",
+      "width": 1000,
+      "height": 1300,
+      "layers": [
+        {
+          "id": "anvil",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.13,
+            "width": 1.05,
+            "lobes": 9,
+            "seed": 71
+          }
+        },
+        {
+          "id": "tower",
+          "kit": {
+            "type": "cloud",
+            "x": 0.52,
+            "y": 0.23,
+            "width": 0.56,
+            "lobes": 6,
+            "seed": 72
+          }
+        },
+        {
+          "id": "shoulder-l",
+          "kit": {
+            "type": "cloud",
+            "x": 0.34,
+            "y": 0.33,
+            "width": 0.56,
+            "lobes": 6,
+            "seed": 73
+          }
+        },
+        {
+          "id": "shoulder-r",
+          "kit": {
+            "type": "cloud",
+            "x": 0.67,
+            "y": 0.32,
+            "width": 0.52,
+            "lobes": 6,
+            "seed": 74
+          }
+        },
+        {
+          "id": "base",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.43,
+            "width": 1.02,
+            "lobes": 9,
+            "seed": 75
+          }
+        },
+        {
+          "id": "hill",
+          "kit": {
+            "type": "mountain",
+            "cx": 0.66,
+            "baseY": 0.9,
+            "baseWidth": 0.46,
+            "height": 0.11,
+            "crater": 0,
+            "concavity": 0.3,
+            "part": "full",
+            "gullies": 3,
+            "seed": 81
+          }
+        },
+        {
+          "id": "base-charge",
+          "kit": {
+            "type": "glow",
+            "x": 0.45,
+            "y": 0.44,
+            "rx": 0.32,
+            "ry": 0.06,
+            "tone": "sky"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.6
+            }
+          ]
+        },
+        {
+          "id": "ground-charge",
+          "effects": [
+            {
+              "id": "ground-positive",
+              "type": "particles",
+              "count": 26,
+              "seed": 801,
+              "startFrame": 20,
+              "endFrame": 140,
+              "emitter": {
+                "x": 0.66,
+                "y": 0.84,
+                "width": 0.4,
+                "height": 0.04
+              },
+              "lifetimeFrames": [
+                60,
+                90
+              ],
+              "velocity": {
+                "angleDegrees": -90,
+                "spreadDegrees": 30,
+                "speed": [
+                  0.0004,
+                  0.0008
+                ]
+              },
+              "acceleration": {
+                "x": 0,
+                "y": 0
+              },
+              "radius": [
+                0.005,
+                0.007
+              ],
+              "colors": [
+                "@text.accent"
+              ],
+              "shape": "circle",
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 0
+                },
+                {
+                  "at": 0.12,
+                  "value": 0.95
+                },
+                {
+                  "at": 0.8,
+                  "value": 0.85
+                },
+                {
+                  "at": 1,
+                  "value": 0
+                }
+              ],
+              "scale": [
+                {
+                  "at": 0,
+                  "value": 0.6
+                },
+                {
+                  "at": 0.2,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 0.8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "leader",
+          "effects": [
+            {
+              "id": "leader-main",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.45,
+                  "y": 0.44
+                },
+                "segments": [
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.4751,
+                      "y": 0.4725
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5043,
+                      "y": 0.5026
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.508,
+                      "y": 0.548
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5409,
+                      "y": 0.5759
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5394,
+                      "y": 0.6244
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.59,
+                      "y": 0.6416
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5842,
+                      "y": 0.6927
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5898,
+                      "y": 0.7369
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.6498,
+                      "y": 0.7485
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.66,
+                      "y": 0.79
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 24,
+                  "value": 0
+                },
+                {
+                  "frame": 32,
+                  "value": 0.16
+                },
+                {
+                  "frame": 46,
+                  "value": 0.16
+                },
+                {
+                  "frame": 54,
+                  "value": 0.32
+                },
+                {
+                  "frame": 68,
+                  "value": 0.32
+                },
+                {
+                  "frame": 76,
+                  "value": 0.48
+                },
+                {
+                  "frame": 98,
+                  "value": 0.48
+                },
+                {
+                  "frame": 104,
+                  "value": 0.64
+                },
+                {
+                  "frame": 124,
+                  "value": 0.64
+                },
+                {
+                  "frame": 130,
+                  "value": 0.82
+                }
+              ],
+              "width": 0.006,
+              "color": "@hot.edge",
+              "glow": {
+                "color": "@hot.glow",
+                "widthScale": 3,
+                "opacity": 0.35
+              },
+              "headGlow": true
+            },
+            {
+              "id": "leader-branch-a",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.508,
+                  "y": 0.548
+                },
+                "segments": [
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.4554,
+                      "y": 0.5509
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.4165,
+                      "y": 0.5837
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.3762,
+                      "y": 0.6131
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.33,
+                      "y": 0.63
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 60,
+                  "value": 0
+                },
+                {
+                  "frame": 68,
+                  "value": 0.4
+                },
+                {
+                  "frame": 80,
+                  "value": 0.4
+                },
+                {
+                  "frame": 88,
+                  "value": 0.7
+                }
+              ],
+              "width": 0.004,
+              "color": "@hot.edge",
+              "glow": {
+                "color": "@hot.glow",
+                "widthScale": 3,
+                "opacity": 0.3
+              },
+              "headGlow": true
+            },
+            {
+              "id": "leader-branch-b",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.59,
+                  "y": 0.6416
+                },
+                "segments": [
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.6627,
+                      "y": 0.6524
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.7213,
+                      "y": 0.699
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.79,
+                      "y": 0.72
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 104,
+                  "value": 0
+                },
+                {
+                  "frame": 112,
+                  "value": 0.5
+                }
+              ],
+              "width": 0.004,
+              "color": "@hot.edge",
+              "glow": {
+                "color": "@hot.glow",
+                "widthScale": 3,
+                "opacity": 0.3
+              },
+              "headGlow": true
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "leader-label",
+          "text": "Stepped leader",
+          "x": 225,
+          "y": 760,
+          "size": 44,
+          "anchor": "middle",
+          "variant": "pill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 62,
+              "value": 0
+            },
+            {
+              "frame": 76,
+              "value": 1
+            }
+          ],
+          "connector": {
+            "from": {
+              "x": 330,
+              "y": 745
+            },
+            "to": {
+              "x": 420,
+              "y": 700
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "g-strike",
+      "width": 1000,
+      "height": 1300,
+      "layers": [
+        {
+          "id": "anvil",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.13,
+            "width": 1.05,
+            "lobes": 9,
+            "seed": 71
+          }
+        },
+        {
+          "id": "tower",
+          "kit": {
+            "type": "cloud",
+            "x": 0.52,
+            "y": 0.23,
+            "width": 0.56,
+            "lobes": 6,
+            "seed": 72
+          }
+        },
+        {
+          "id": "shoulder-l",
+          "kit": {
+            "type": "cloud",
+            "x": 0.34,
+            "y": 0.33,
+            "width": 0.56,
+            "lobes": 6,
+            "seed": 73
+          }
+        },
+        {
+          "id": "shoulder-r",
+          "kit": {
+            "type": "cloud",
+            "x": 0.67,
+            "y": 0.32,
+            "width": 0.52,
+            "lobes": 6,
+            "seed": 74
+          }
+        },
+        {
+          "id": "base",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.43,
+            "width": 1.02,
+            "lobes": 9,
+            "seed": 75
+          }
+        },
+        {
+          "id": "hill",
+          "kit": {
+            "type": "mountain",
+            "cx": 0.66,
+            "baseY": 0.9,
+            "baseWidth": 0.46,
+            "height": 0.11,
+            "crater": 0,
+            "concavity": 0.3,
+            "part": "full",
+            "gullies": 3,
+            "seed": 81
+          }
+        },
+        {
+          "id": "waiting-leader",
+          "effects": [
+            {
+              "id": "leader-hold",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.45,
+                  "y": 0.44
+                },
+                "segments": [
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.4751,
+                      "y": 0.4725
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5043,
+                      "y": 0.5026
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.508,
+                      "y": 0.548
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5409,
+                      "y": 0.5759
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5394,
+                      "y": 0.6244
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.59,
+                      "y": 0.6416
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5842,
+                      "y": 0.6927
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5898,
+                      "y": 0.7369
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.6498,
+                      "y": 0.7485
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.66,
+                      "y": 0.79
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 0,
+                  "value": 0.82
+                }
+              ],
+              "width": 0.006,
+              "color": "@hot.edge",
+              "glow": {
+                "color": "@hot.glow",
+                "widthScale": 3,
+                "opacity": 0.35
+              },
+              "headGlow": true
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 113,
+              "value": 1
+            },
+            {
+              "frame": 115,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "streamer",
+          "effects": [
+            {
+              "id": "streamer",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.66,
+                  "y": 0.79
+                },
+                "segments": [
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.6574,
+                      "y": 0.7686
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.6498,
+                      "y": 0.7485
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 30,
+                  "value": 0
+                },
+                {
+                  "frame": 74,
+                  "value": 1
+                }
+              ],
+              "width": 0.006,
+              "color": "@hot.edge",
+              "glow": {
+                "color": "@hot.glow",
+                "widthScale": 3,
+                "opacity": 0.4
+              },
+              "headGlow": true
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 113,
+              "value": 1
+            },
+            {
+              "frame": 115,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "strike-flash",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.45,
+            "rx": 1.3,
+            "ry": 1.0,
+            "tone": "sun"
+          },
+          "opacity": [
+            {
+              "frame": 113,
+              "value": 0
+            },
+            {
+              "frame": 115,
+              "value": 0.8
+            },
+            {
+              "frame": 120,
+              "value": 0
+            },
+            {
+              "frame": 122,
+              "value": 0.45
+            },
+            {
+              "frame": 128,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "strike-bolt",
+          "opacity": [
+            {
+              "frame": 113,
+              "value": 0
+            },
+            {
+              "frame": 114,
+              "value": 1
+            },
+            {
+              "frame": 119,
+              "value": 1
+            },
+            {
+              "frame": 120,
+              "value": 0.25
+            },
+            {
+              "frame": 122,
+              "value": 1
+            },
+            {
+              "frame": 158,
+              "value": 1
+            },
+            {
+              "frame": 172,
+              "value": 0
+            }
+          ],
+          "effects": [
+            {
+              "id": "strike-main",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.45,
+                  "y": 0.44
+                },
+                "segments": [
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.4751,
+                      "y": 0.4725
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5043,
+                      "y": 0.5026
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.508,
+                      "y": 0.548
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5409,
+                      "y": 0.5759
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5394,
+                      "y": 0.6244
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.59,
+                      "y": 0.6416
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5842,
+                      "y": 0.6927
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5898,
+                      "y": 0.7369
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.6498,
+                      "y": 0.7485
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.66,
+                      "y": 0.79
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 112,
+                  "value": 0
+                },
+                {
+                  "frame": 115,
+                  "value": 1
+                }
+              ],
+              "width": 0.014,
+              "color": "@hot.core",
+              "glow": {
+                "color": "@hot.glow",
+                "widthScale": 4,
+                "opacity": 0.6
+              },
+              "headGlow": false
+            },
+            {
+              "id": "strike-branch-a",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.508,
+                  "y": 0.548
+                },
+                "segments": [
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.4554,
+                      "y": 0.5509
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.4165,
+                      "y": 0.5837
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.3762,
+                      "y": 0.6131
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.33,
+                      "y": 0.63
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 113,
+                  "value": 0
+                },
+                {
+                  "frame": 116,
+                  "value": 1
+                }
+              ],
+              "width": 0.007700000000000001,
+              "color": "@hot.mid",
+              "glow": {
+                "color": "@hot.glow",
+                "widthScale": 3.5,
+                "opacity": 0.45
+              },
+              "headGlow": false
+            },
+            {
+              "id": "strike-branch-b",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.59,
+                  "y": 0.6416
+                },
+                "segments": [
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.6627,
+                      "y": 0.6524
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.7213,
+                      "y": 0.699
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.79,
+                      "y": 0.72
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 113,
+                  "value": 0
+                },
+                {
+                  "frame": 116,
+                  "value": 1
+                }
+              ],
+              "width": 0.007,
+              "color": "@hot.mid",
+              "glow": {
+                "color": "@hot.glow",
+                "widthScale": 3.5,
+                "opacity": 0.45
+              },
+              "headGlow": false
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "streamer-label",
+          "text": "Streamer",
+          "x": 830,
+          "y": 980,
+          "size": 40,
+          "anchor": "middle",
+          "variant": "pill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 42,
+              "value": 0
+            },
+            {
+              "frame": 56,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "return-label",
+          "text": "Return stroke",
+          "x": 225,
+          "y": 840,
+          "size": 44,
+          "anchor": "middle",
+          "variant": "pill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 138,
+              "value": 0
+            },
+            {
+              "frame": 152,
+              "value": 1
+            }
+          ],
+          "connector": {
+            "from": {
+              "x": 340,
+              "y": 825
+            },
+            "to": {
+              "x": 560,
+              "y": 760
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "g-thunder",
+      "width": 1000,
+      "height": 1300,
+      "layers": [
+        {
+          "id": "anvil",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.13,
+            "width": 1.05,
+            "lobes": 9,
+            "seed": 71
+          }
+        },
+        {
+          "id": "tower",
+          "kit": {
+            "type": "cloud",
+            "x": 0.52,
+            "y": 0.23,
+            "width": 0.56,
+            "lobes": 6,
+            "seed": 72
+          }
+        },
+        {
+          "id": "shoulder-l",
+          "kit": {
+            "type": "cloud",
+            "x": 0.34,
+            "y": 0.33,
+            "width": 0.56,
+            "lobes": 6,
+            "seed": 73
+          }
+        },
+        {
+          "id": "shoulder-r",
+          "kit": {
+            "type": "cloud",
+            "x": 0.67,
+            "y": 0.32,
+            "width": 0.52,
+            "lobes": 6,
+            "seed": 74
+          }
+        },
+        {
+          "id": "base",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.43,
+            "width": 1.02,
+            "lobes": 9,
+            "seed": 75
+          }
+        },
+        {
+          "id": "hill",
+          "kit": {
+            "type": "mountain",
+            "cx": 0.66,
+            "baseY": 0.9,
+            "baseWidth": 0.46,
+            "height": 0.11,
+            "crater": 0,
+            "concavity": 0.3,
+            "part": "full",
+            "gullies": 3,
+            "seed": 81
+          }
+        },
+        {
+          "id": "afterglow",
+          "effects": [
+            {
+              "id": "afterglow",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.45,
+                  "y": 0.44
+                },
+                "segments": [
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.4751,
+                      "y": 0.4725
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5043,
+                      "y": 0.5026
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.508,
+                      "y": 0.548
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5409,
+                      "y": 0.5759
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5394,
+                      "y": 0.6244
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.59,
+                      "y": 0.6416
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5842,
+                      "y": 0.6927
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.5898,
+                      "y": 0.7369
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.6498,
+                      "y": 0.7485
+                    }
+                  },
+                  {
+                    "type": "line",
+                    "to": {
+                      "x": 0.66,
+                      "y": 0.79
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 0,
+                  "value": 1
+                }
+              ],
+              "width": 0.012,
+              "color": "@hot.mid",
+              "glow": {
+                "color": "@hot.glow",
+                "widthScale": 3,
+                "opacity": 0.4
+              },
+              "headGlow": false
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.9
+            },
+            {
+              "frame": 36,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "shock-0",
+          "anchor": {
+            "x": 560,
+            "y": 790
+          },
+          "effects": [
+            {
+              "id": "ring-0",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.61,
+                  "y": 0.6077
+                },
+                "segments": [
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.61,
+                      "y": 0.6353
+                    },
+                    "control2": {
+                      "x": 0.5876,
+                      "y": 0.6577
+                    },
+                    "to": {
+                      "x": 0.56,
+                      "y": 0.6577
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.5324,
+                      "y": 0.6577
+                    },
+                    "control2": {
+                      "x": 0.51,
+                      "y": 0.6353
+                    },
+                    "to": {
+                      "x": 0.51,
+                      "y": 0.6077
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.51,
+                      "y": 0.5801
+                    },
+                    "control2": {
+                      "x": 0.5324,
+                      "y": 0.5577
+                    },
+                    "to": {
+                      "x": 0.56,
+                      "y": 0.5577
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.5876,
+                      "y": 0.5577
+                    },
+                    "control2": {
+                      "x": 0.61,
+                      "y": 0.5801
+                    },
+                    "to": {
+                      "x": 0.61,
+                      "y": 0.6077
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 0,
+                  "value": 1
+                }
+              ],
+              "width": 0.006,
+              "color": "@smoke.light",
+              "glow": {
+                "color": "@water.light",
+                "widthScale": 2.6,
+                "opacity": 0.35
+              },
+              "headGlow": false
+            }
+          ],
+          "scale": [
+            {
+              "frame": 10,
+              "value": 0.3
+            },
+            {
+              "frame": 70,
+              "value": 2.9
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 10,
+              "value": 0
+            },
+            {
+              "frame": 14,
+              "value": 0.9
+            },
+            {
+              "frame": 70,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "shock-1",
+          "anchor": {
+            "x": 560,
+            "y": 790
+          },
+          "effects": [
+            {
+              "id": "ring-1",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.61,
+                  "y": 0.6077
+                },
+                "segments": [
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.61,
+                      "y": 0.6353
+                    },
+                    "control2": {
+                      "x": 0.5876,
+                      "y": 0.6577
+                    },
+                    "to": {
+                      "x": 0.56,
+                      "y": 0.6577
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.5324,
+                      "y": 0.6577
+                    },
+                    "control2": {
+                      "x": 0.51,
+                      "y": 0.6353
+                    },
+                    "to": {
+                      "x": 0.51,
+                      "y": 0.6077
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.51,
+                      "y": 0.5801
+                    },
+                    "control2": {
+                      "x": 0.5324,
+                      "y": 0.5577
+                    },
+                    "to": {
+                      "x": 0.56,
+                      "y": 0.5577
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.5876,
+                      "y": 0.5577
+                    },
+                    "control2": {
+                      "x": 0.61,
+                      "y": 0.5801
+                    },
+                    "to": {
+                      "x": 0.61,
+                      "y": 0.6077
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 0,
+                  "value": 1
+                }
+              ],
+              "width": 0.006,
+              "color": "@smoke.light",
+              "glow": {
+                "color": "@water.light",
+                "widthScale": 2.6,
+                "opacity": 0.35
+              },
+              "headGlow": false
+            }
+          ],
+          "scale": [
+            {
+              "frame": 24,
+              "value": 0.3
+            },
+            {
+              "frame": 84,
+              "value": 2.9
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 24,
+              "value": 0
+            },
+            {
+              "frame": 28,
+              "value": 0.9
+            },
+            {
+              "frame": 84,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "shock-2",
+          "anchor": {
+            "x": 560,
+            "y": 790
+          },
+          "effects": [
+            {
+              "id": "ring-2",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.61,
+                  "y": 0.6077
+                },
+                "segments": [
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.61,
+                      "y": 0.6353
+                    },
+                    "control2": {
+                      "x": 0.5876,
+                      "y": 0.6577
+                    },
+                    "to": {
+                      "x": 0.56,
+                      "y": 0.6577
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.5324,
+                      "y": 0.6577
+                    },
+                    "control2": {
+                      "x": 0.51,
+                      "y": 0.6353
+                    },
+                    "to": {
+                      "x": 0.51,
+                      "y": 0.6077
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.51,
+                      "y": 0.5801
+                    },
+                    "control2": {
+                      "x": 0.5324,
+                      "y": 0.5577
+                    },
+                    "to": {
+                      "x": 0.56,
+                      "y": 0.5577
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.5876,
+                      "y": 0.5577
+                    },
+                    "control2": {
+                      "x": 0.61,
+                      "y": 0.5801
+                    },
+                    "to": {
+                      "x": 0.61,
+                      "y": 0.6077
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 0,
+                  "value": 1
+                }
+              ],
+              "width": 0.006,
+              "color": "@smoke.light",
+              "glow": {
+                "color": "@water.light",
+                "widthScale": 2.6,
+                "opacity": 0.35
+              },
+              "headGlow": false
+            }
+          ],
+          "scale": [
+            {
+              "frame": 38,
+              "value": 0.3
+            },
+            {
+              "frame": 98,
+              "value": 2.9
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 38,
+              "value": 0
+            },
+            {
+              "frame": 42,
+              "value": 0.9
+            },
+            {
+              "frame": 98,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "rain",
+          "effects": [
+            {
+              "id": "rain",
+              "type": "particles",
+              "count": 90,
+              "seed": 951,
+              "startFrame": 10,
+              "endFrame": 240,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.46,
+                "width": 1.0,
+                "height": 0.02
+              },
+              "lifetimeFrames": [
+                22,
+                30
+              ],
+              "velocity": {
+                "angleDegrees": 100,
+                "spreadDegrees": 4,
+                "speed": [
+                  0.009,
+                  0.012
+                ]
+              },
+              "acceleration": {
+                "x": 0,
+                "y": 0
+              },
+              "radius": [
+                0.003,
+                0.0045
+              ],
+              "colors": [
+                "@water.light",
+                "@water.mid"
+              ],
+              "shape": "streak",
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 0
+                },
+                {
+                  "at": 0.15,
+                  "value": 0.8
+                },
+                {
+                  "at": 0.85,
+                  "value": 0.75
+                },
+                {
+                  "at": 1,
+                  "value": 0
+                }
+              ],
+              "scale": [
+                {
+                  "at": 0,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "thunder-label",
+          "text": "Thunder",
+          "x": 500,
+          "y": 1000,
+          "size": 52,
+          "anchor": "middle",
+          "variant": "pill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 128,
+              "value": 0
+            },
+            {
+              "frame": 140,
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "strike-hook",
+      "template": "hero-reveal",
+      "durationFrames": 119,
+      "animationDurationFrames": 119,
+      "caption": {
+        "text": "How lightning forms",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.12,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 7,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.12,
+            "easing": "smoothstep",
+            "rotation": 0.7
+          },
+          {
+            "frame": 10,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.12,
+            "easing": "smoothstep",
+            "rotation": -0.6
+          },
+          {
+            "frame": 13,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.12,
+            "easing": "smoothstep",
+            "rotation": 0.35
+          },
+          {
+            "frame": 17,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.12,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 44,
+            "focus": {
+              "x": 0.5,
+              "y": 0.48
+            },
+            "zoom": 1.0,
+            "easing": "ease-out-back"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 3011,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-hook",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "hook",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "rumble",
+          "frame": 0,
+          "gainDb": -18
+        },
+        {
+          "sound": "boom",
+          "frame": 7,
+          "gainDb": -9
+        },
+        {
+          "sound": "pop",
+          "frame": 36,
+          "gainDb": -17
+        },
+        {
+          "sound": "pop",
+          "frame": 86,
+          "gainDb": -17
+        }
+      ]
+    },
+    {
+      "id": "storm-cloud",
+      "template": "hero-reveal",
+      "durationFrames": 150,
+      "animationDurationFrames": 150,
+      "caption": {
+        "text": "Inside a storm cloud",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.48
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 70,
+            "focus": {
+              "x": 0.5,
+              "y": 0.42
+            },
+            "zoom": 1.08,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 3011,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-cloud",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "setup",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 86,
+          "gainDb": -14
+        },
+        {
+          "sound": "pop",
+          "frame": 110,
+          "gainDb": -17
+        }
+      ]
+    },
+    {
+      "id": "ice-collisions",
+      "template": "hero-reveal",
+      "durationFrames": 134,
+      "animationDurationFrames": 134,
+      "caption": {
+        "text": "Collisions trade charge",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.42
+            },
+            "zoom": 1.08,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 36,
+            "focus": {
+              "x": 0.5,
+              "y": 0.32
+            },
+            "zoom": 1.26,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 3014,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-collide",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "collisions",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "pop",
+          "frame": 12,
+          "gainDb": -17
+        },
+        {
+          "sound": "pop",
+          "frame": 30,
+          "gainDb": -17
+        },
+        {
+          "sound": "pop",
+          "frame": 56,
+          "gainDb": -19
+        },
+        {
+          "sound": "pop",
+          "frame": 74,
+          "gainDb": -19
+        },
+        {
+          "sound": "pop",
+          "frame": 106,
+          "gainDb": -19
+        }
+      ]
+    },
+    {
+      "id": "charge-separation",
+      "template": "hero-reveal",
+      "durationFrames": 150,
+      "animationDurationFrames": 150,
+      "caption": {
+        "text": "Charges separate",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.32
+            },
+            "zoom": 1.26,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 34,
+            "focus": {
+              "x": 0.5,
+              "y": 0.36
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 3017,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-separate",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "separation",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "pop",
+          "frame": 10,
+          "gainDb": -17
+        },
+        {
+          "sound": "pop",
+          "frame": 76,
+          "gainDb": -17
+        }
+      ]
+    },
+    {
+      "id": "stepped-leader",
+      "template": "hero-reveal",
+      "durationFrames": 157,
+      "animationDurationFrames": 157,
+      "caption": {
+        "text": "The stepped leader",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.36
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 40,
+            "focus": {
+              "x": 0.5,
+              "y": 0.52
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 3014,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-leader",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "leader",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "sizzle",
+          "frame": 24,
+          "gainDb": -26
+        },
+        {
+          "sound": "pop",
+          "frame": 64,
+          "gainDb": -17
+        },
+        {
+          "sound": "riser",
+          "frame": 128,
+          "gainDb": -20
+        }
+      ]
+    },
+    {
+      "id": "return-stroke",
+      "template": "hero-reveal",
+      "durationFrames": 174,
+      "animationDurationFrames": 174,
+      "caption": {
+        "text": "Return stroke",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.52
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 100,
+            "focus": {
+              "x": 0.5,
+              "y": 0.52
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 114,
+            "focus": {
+              "x": 0.5,
+              "y": 0.52
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep",
+            "rotation": 0.9799999999999999
+          },
+          {
+            "frame": 117,
+            "focus": {
+              "x": 0.5,
+              "y": 0.52
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep",
+            "rotation": -0.84
+          },
+          {
+            "frame": 120,
+            "focus": {
+              "x": 0.5,
+              "y": 0.52
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep",
+            "rotation": 0.48999999999999994
+          },
+          {
+            "frame": 124,
+            "focus": {
+              "x": 0.5,
+              "y": 0.52
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 140,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.02,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 3013,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-strike",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "strike",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "pop",
+          "frame": 44,
+          "gainDb": -19
+        },
+        {
+          "sound": "boom",
+          "frame": 114,
+          "gainDb": -7
+        },
+        {
+          "sound": "pop",
+          "frame": 140,
+          "gainDb": -17
+        }
+      ]
+    },
+    {
+      "id": "thunder",
+      "template": "hero-reveal",
+      "durationFrames": 256,
+      "animationDurationFrames": 256,
+      "caption": {
+        "text": "Thunder",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.02,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 90,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.06,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 3007,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-thunder",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "closing",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "rumble",
+          "frame": 10,
+          "gainDb": -14
+        },
+        {
+          "sound": "whoosh",
+          "frame": 10,
+          "gainDb": -18
+        },
+        {
+          "sound": "pop",
+          "frame": 132,
+          "gainDb": -17
+        },
+        {
+          "sound": "rumble",
+          "frame": 146,
+          "gainDb": -8
+        }
+      ]
+    }
+  ]
+}

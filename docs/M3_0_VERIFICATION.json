@@ -1,0 +1,24 @@
+{
+  "milestone": "M3.0 first complete episode: How Lightning Forms",
+  "base": "07f8f80478fcea5a12a58c93d7e936f677327d21",
+  "environment": {"os": "Ubuntu 22.04 arm64 VM", "node": "v22.23.4", "browser": "Sparticuz Chromium v153 arm64 (external)", "ffmpeg": "8.1 (external)", "fontSubstitution": "Arial -> Liberation Sans"},
+  "typescript": "pass",
+  "vitest": {"files": 22, "passed": 351, "failed": 0, "added": 8},
+  "productionBundles": {"src/index.ts": "pass", "src/storyboard-index.ts": "pass"},
+  "legacyRegression": {"method": "lossless PNG renders from M2.7 tree vs branch, same environment", "frames": 21, "identical": 21},
+  "paidNarration": {"provider": "elevenlabs", "voice": "Bill L. Oxley", "model": "eleven_multilingual_v2", "requests": 1, "characters": 465, "requestId": "7Kq7Rp7MYFHZ3LzjPjeP", "durationSeconds": 34.737, "sha256": "b45d196982756a4818dad003a2f72c0f05d24da3b54acc5e35ea7d36c6de6b96", "estimatedSecondsBeforeSynthesis": 37.36, "ranBy": "user on macOS after approval", "ledger": "jobs/m3-0-narration/paid-request-ledger.json"},
+  "episode": {
+    "script": "stories/lightning-a.json", "storyboard": "storyboards/lightning.json", "theme": "explainer-storm",
+    "format": {"width": 1080, "height": 1920, "fps": 30, "frames": 1140, "durationSeconds": 38},
+    "renderSeconds": 105.32, "bytes": 7175147, "sha256": "51dfc4a08981e67cfa8b53b24d59ea3d812515a6194c86400b625102c9415c5f",
+    "sceneFrames": [119, 150, 134, 150, 157, 174, 256], "sceneCueDeviationMs": {"max": 10.7, "mean": 7.6},
+    "captions": {"words": 82, "cues": 14, "highlight": "word"},
+    "mix": {"music": "generated", "soundCues": 23, "integratedLufs": -14.8, "truePeakDb": -2.2, "loudnessRange": 3.3, "duckingReductionDb": 16.38, "speechCorrelation": 0.9165, "minPhraseClarity": 0.9501, "endingRMSDBFS": -83.5},
+    "checks": "verify-storyboard pass; verify-cached-story (mixed mode) all checks pass"
+  },
+  "animatic": {"file": "jobs/m3-0-animatic/output/narrated-animation.mp4", "sha256": "4e3e513ed6e92c8d1f00be14e4f25b0bef1c9ff291cd225fa5bb750270af07af", "note": "estimated timing, silent narration; voice-dependent checks fail by design"},
+  "olderJobsReverified": {"m2-6-kit": "pass", "m2-7-watch": "pass"},
+  "authoring": {"agentMinutesApprox": 25, "userActions": ["approve narration", "dry run", "one paid synthesis command", "listen"], "newEngineCodeForTopic": false},
+  "protected": {"approvedVolcanoNarrationModified": false, "approvedPaintedAssetsModified": false},
+  "humanReview": "pending (viewing and listening)"
+}

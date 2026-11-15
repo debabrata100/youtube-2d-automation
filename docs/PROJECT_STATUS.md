@@ -1,6 +1,6 @@
 # Project status — YouTube 2D Automation
 
-_Last updated: 2026-11-15, after M2.7. Keep this concise; it is the entry point for any assistant picking up the project._
+_Last updated: 2026-11-15, after M3.0. Keep this concise; it is the entry point for any assistant picking up the project._
 
 ## Vision
 
@@ -10,8 +10,8 @@ A reusable, AI-assisted pipeline that turns a topic into a published, narrated 2
 
 | Stage | Implementation | State |
 | --- | --- | --- |
-| Script | `stories/*.json`, Zod `src/storytelling/schema.ts`, beats → scene ids | Manual authoring |
-| Narration | `src/audio/tts/{elevenlabs,openai,mock}.ts`, content-hash cache, budget guard, zero auto-retry | Working (ElevenLabs, Bill L. Oxley) |
+| Script | `stories/*.json`, Zod `src/storytelling/schema.ts`, beats → scene ids; planning timing estimate (`timing/estimate.ts`) | Authored by Claude with fact check; human approval |
+| Narration | `src/audio/tts/{elevenlabs,openai,mock}.ts`; `npm run narration:synthesize` (dry run, one ledgered paid request, planning placeholder) | Working (ElevenLabs, Bill L. Oxley); runs on your Mac |
 | Timing | `src/storytelling/timing/scene-scheduler.ts`: phrase cues set scene durations | Working |
 | Captions | Provider character timing → words → 2-line cues with per-word timings; `box`/`outline` styles; word-by-word highlight | Working |
 | Storyboard | Zod `src/engine/storyboard/schema.ts` v2.1; asset registry; 5 templates; layered groups | Working |
@@ -25,16 +25,16 @@ Two engines coexist: legacy planet code (`src/scenes`, `src/components`, `src/mo
 
 ## Completed milestones
 
-M1–M1.2 planet engine and art baseline · M2.1 generic storyboard/templates · M2.2/2.2.1 painted volcano integration · M2.3 narration pipeline (mock) · M2.3.1 OpenAI TTS (rejected) · M2.3.2 ElevenLabs (approved voice, 68 credits) · M2.3.3 narration + captions · M2.3.4 narration-driven scene timing · M2.4.1 motion primitives · M2.5 style and staging spike (vector direction chosen) · M2.6 vector style system and shape kit · **M2.7 watchability pass** (see `docs/M2_7_WATCHABILITY_REPORT.md`).
+M1–M1.2 planet engine and art baseline · M2.1 generic storyboard/templates · M2.2/2.2.1 painted volcano integration · M2.3 narration pipeline (mock) · M2.3.1 OpenAI TTS (rejected) · M2.3.2 ElevenLabs (approved voice, 68 credits) · M2.3.3 narration + captions · M2.3.4 narration-driven scene timing · M2.4.1 motion primitives · M2.5 style and staging spike (vector direction chosen) · M2.6 vector style system and shape kit · M2.7 watchability pass · **M3.0 first complete episode: "How Lightning Forms"** (see `docs/M3_0_LIGHTNING_EPISODE_REPORT.md`).
 
 ## Latest branch and commit
 
-- `claude/m2-7-watchability` — commit hash in the M2.7 delivery message (a report cannot contain its own hash).
-- Previous: `claude/m2-6-vector-style-kit` @ `4d81aca`; `claude/m2-5-style-staging-spike` @ `6937d67`; `codex/m2-4-1-motion-primitives` @ `d9c6f7a`. `main` is still at M2.1 (`a1e8494`); milestone branches are stacked and unmerged.
+- `claude/m3-0-lightning-episode` — commit hash in the M3.0 delivery message (a report cannot contain its own hash).
+- Previous: `claude/m2-7-watchability` @ `07f8f80`; `claude/m2-6-vector-style-kit` @ `4d81aca`; `claude/m2-5-style-staging-spike` @ `6937d67`; `codex/m2-4-1-motion-primitives` @ `d9c6f7a`. `main` is still at M2.1 (`a1e8494`); milestone branches are stacked and unmerged.
 
-## Test and build status (M2.7)
+## Test and build status (M3.0)
 
-TypeScript pass · Vitest 343/343 (21 files) · both bundles pass · 36/36 legacy lossless frames identical (incl. narrated legacy captions) · kit volcano mixed-mode verification pass: −14.6 LUFS, −2.3 dBTP, 18 dB ducking, speech-band clarity ≥ 0.967 per phrase. Verified in a Linux arm64 VM with external Chromium/FFmpeg; re-render on macOS for final visuals.
+TypeScript pass · Vitest 351/351 (22 files) · both bundles pass · 21/21 legacy lossless frames identical · lightning episode (38 s) all checks pass: −14.8 LUFS, −2.2 dBTP, 16.4 dB ducking, speech-band clarity ≥ 0.950 per phrase · older volcano jobs re-verify. Verified in a Linux arm64 VM with external Chromium/FFmpeg; re-render on macOS for final visuals.
 
 ## Known limitations
 
@@ -52,12 +52,13 @@ Template misuse; two engines; two clocks (camera = output frames, layer effects 
 
 ## Approved next milestone
 
-None yet. Awaiting the user's viewing/listening review of M2.7.
+None yet. Awaiting the user's viewing/listening review of the lightning episode.
 
 ## Proposed future milestones
 
-1. **M3.0 First complete episode** (recommended): a new 30–45 s topic end to end (script candidates, one approved paid narration, kit storyboard, sound, render), measuring authoring time; retire the legacy engine and unify clocks.
-2. **Art source upgrade**: illustrator-made or purchased vector kit mapped onto the existing kit slots; first recurring character.
+1. **M3.1 Word-anchored timing + authoring automation** (recommended): effects and sounds anchored to spoken words instead of frame numbers, so re-narration needs no manual retiming; then an LLM-assisted script-to-storyboard draft for kit topics.
+2. **Publishing readiness**: title/description/thumbnail frame, upload checklist, first uploads to measure real retention.
+3. **Art source upgrade**: illustrator-made or purchased vector kit mapped onto the existing kit slots; first recurring character.
 3. **M3.0 Second topic, 45–60 s**: prove reuse without engine edits; retire legacy engine; unify clocks; fix template semantics.
 4. **M3.1 LLM storyboard director**: script → validated storyboard JSON with human approval gate.
 5. **M3.2 Publish and analytics**: upload, metadata, retention read-back.

@@ -66,6 +66,10 @@ Implemented and technically verified; **human visual review pending**. Theme tok
 
 Implemented and technically verified; **human viewing/listening review pending**. Word-by-word caption highlight from provider word timings; back easings (anticipation/overshoot) with per-key track easing and label pops; seven code-synthesised sound effects and a generated music bed; scene-level sound cues; a mix stage with side-chain ducking, linear loudness to −14 LUFS and a latency-compensated limiter; `--music` for licensed tracks; mixed-mode verification (loudness, true peak, ducking, speech-band narration clarity). Kit volcano: −14.6 LUFS, −2.3 dBTP, 18 dB ducking, clarity ≥ 0.967 per phrase. 343 tests, 36/36 legacy lossless frames identical, zero paid requests. See [report](M2_7_WATCHABILITY_REPORT.md) and [verification](M2_7_VERIFICATION.json).
 
+## M3.0 — First complete episode: "How Lightning Forms"
+
+Rendered and technically verified; **viewing/listening approval pending**. A 38 s episode built end to end: fact-checked script candidates, kit storyboard in a new storm theme, 23 sound cues, an animatic before spending, one approved ElevenLabs request run by the user (465 characters, 34.7 s), retiming to provider word timings, final render and mixed-mode verification (−14.8 LUFS, −2.2 dBTP, 16.4 dB ducking, clarity ≥ 0.950). New reusable tools: `narration:synthesize` (dry run / single ledgered request / planning placeholder), a calibrated timing estimator and estimated-timing previews; the verifier now handles any episode length. About 25 agent minutes; no engine code for the topic. See [report](M3_0_LIGHTNING_EPISODE_REPORT.md) and [verification](M3_0_VERIFICATION.json).
+
 ## M3 — LangGraph AI storyboard director
 
 Research-to-plan orchestration, structured creative decisions, and plan evaluation. No M3 code is included.
