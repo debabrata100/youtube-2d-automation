@@ -21,8 +21,11 @@ const focus=[...new Set(Array.from({length:23},(_,i)=>Math.round(focusStart+(foc
 const frames=[...new Set([...seconds,...boundaries,...focus,duration-1])].sort((a,b)=>a-b);
 const preview=path.join(job,'timeline-audit');await mkdir(preview,{recursive:true});
 for(const name of await readdir(preview))if(/^frame-\d+\.png$/.test(name))await unlink(path.join(preview,name));
-const select=frames.map(f=>`eq(n\\,${f})`).join('+');
-await run('ffmpeg',['-v','error','-y','-i',video,'-vf',`select='${select}',scale=270:-1`,'-fps_mode','passthrough',path.join(preview,'frame-%03d.png')]);
+// Long episodes: ffmpeg's expression parser fails on very long select chains, so decode in batches.
+for(let start=0;start<frames.length;start+=40){
+ const select=frames.slice(start,start+40).map(f=>`eq(n\\,${f})`).join('+');
+ await run('ffmpeg',['-v','error','-y','-i',video,'-vf',`select='${select}',scale=270:-1`,'-fps_mode','passthrough','-start_number',String(start+1),path.join(preview,'frame-%03d.png')]);
+}
 if((await readdir(preview)).filter(n=>/^frame-\d+\.png$/.test(n)).length!==frames.length)throw new Error('Decoded sample count mismatch');
 const samples=frames.map((frame,i)=>({frame,second:frame/fps,sceneId:storyboardSceneAt(storyboard,frame).scene.id,image:`frame-${String(i+1).padStart(3,'0')}.png`}));
 for(const s of samples){const png=await readFile(path.join(preview,s.image));if(png.subarray(1,4).toString()!=='PNG')throw new Error(`Bad decoded frame ${s.frame}`);}

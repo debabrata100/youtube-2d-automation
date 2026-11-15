@@ -14,7 +14,7 @@ const PathEffect:React.FC<{config:PathMotionConfig;frame:number;width:number;hei
 const ParticleEffect:React.FC<{config:EmitterConfig;frame:number;width:number;height:number}>=({config,frame,width,height})=>{
  const records=useMemo(()=>compileEmitter(config),[config]);
  return <>{records.map(p=>{const state=emittedParticleAt(p,config,frame);if(!state.active||state.opacity<=0||state.scale<=0)return null;const r=p.radius*Math.min(width,height)*state.scale;
-  return <g key={p.id} opacity={state.opacity} transform={`translate(${state.x*width} ${state.y*height}) rotate(${state.angleDegrees})`}>{config.shape==='diamond'?<polygon points={`${-r},0 0,${-r*.7} ${r},0 0,${r*.7}`} fill={p.color}/>:config.shape==='streak'?<><ellipse rx={r*2.5} ry={r*.8} fill={p.color} opacity=".28"/><ellipse rx={r*1.4} ry={r*.4} fill={p.color}/></>:<circle r={r} fill={p.color}/>}</g>;
+  return <g key={p.id} opacity={state.opacity} transform={`translate(${state.x*width} ${state.y*height}) rotate(${state.angleDegrees})`}>{config.shape==='drop'?<path d={`M ${-r*2.4} 0 Q ${-r*.5} ${-r*.95} 0 ${-r} A ${r} ${r} 0 1 1 0 ${r} Q ${-r*.5} ${r*.95} ${-r*2.4} 0 Z`} fill={p.color} stroke={config.outline} strokeWidth={config.outline?Math.max(1.5,r*.18):undefined}/>:config.shape==='diamond'?<polygon points={`${-r},0 0,${-r*.7} ${r},0 0,${r*.7}`} fill={p.color}/>:config.shape==='streak'?<><ellipse rx={r*2.5} ry={r*.8} fill={p.color} opacity=".28"/><ellipse rx={r*1.4} ry={r*.4} fill={p.color}/></>:<circle r={r} fill={p.color}/>}</g>;
  })}</>;
 };
 /** Cel-style cloud: per lobe a shadow disc (offset down-right), body disc and highlight disc (offset up-left).

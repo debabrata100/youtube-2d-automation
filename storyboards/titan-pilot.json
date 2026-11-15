@@ -1,0 +1,3614 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "titan-pilot",
+  "title": "The Only Place You Could Go Outside Without a Spacesuit",
+  "themeId": "paint-notebook",
+  "format": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "@sky.top",
+  "accent": "@text.accent",
+  "assets": [],
+  "backdrop": {
+    "group": "backdrop"
+  },
+  "narrationTiming": {
+    "minimumSceneFrames": 45,
+    "maximumDeviationSeconds": 0.2
+  },
+  "audio": {
+    "music": "generated-pad",
+    "musicGainDb": -24,
+    "duckRatio": 8,
+    "targetLufs": -14
+  },
+  "groups": [
+    {
+      "id": "backdrop",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "page",
+          "kit": {
+            "type": "sky",
+            "horizon": 0.9,
+            "stars": 0,
+            "seed": 1
+          }
+        },
+        {
+          "id": "titan-ground",
+          "kit": {
+            "type": "terrain",
+            "top": 0.82,
+            "curve": 0,
+            "fill": "#e8a54b",
+            "detail": "#f3c98a",
+            "rocks": 3,
+            "bumps": 5,
+            "seed": 12
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "On",
+                "offset": -5,
+                "beat": "pressure"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "On",
+                "offset": -4,
+                "beat": "pressure"
+              },
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "title",
+          "text": "TITAN",
+          "x": 960.0,
+          "y": 105,
+          "size": 88,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill"
+        }
+      ]
+    },
+    {
+      "id": "g-hook",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.3,
+            "y": 0.82,
+            "height": 0.6,
+            "outfit": "stick",
+            "shiver": 0,
+            "seed": 3,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "outside"
+                },
+                "pose": "wave"
+              },
+              {
+                "frame": {
+                  "at": "Titan",
+                  "offset": -2
+                },
+                "pose": "point-right"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "without"
+                },
+                "face": "shocked"
+              },
+              {
+                "frame": {
+                  "at": "Titan"
+                },
+                "face": "grin"
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "step",
+                "offset": -3
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "step",
+                "offset": -2
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "step",
+                "offset": -3
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "step",
+                "offset": 7
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 576.0,
+            "y": 885.5999999999999
+          }
+        },
+        {
+          "id": "saturn",
+          "kit": {
+            "type": "planet",
+            "x": 0.86,
+            "y": 0.26,
+            "radius": 0.09,
+            "base": "#e3c58d",
+            "bands": [
+              "#c9a66b",
+              "#f0dcae",
+              "#d9b77c"
+            ],
+            "craters": 0,
+            "ring": true,
+            "shade": 0.2,
+            "seed": 7
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Saturn's",
+                "offset": -3
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Saturn's",
+                "offset": -2
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "Saturn's",
+                "offset": -3
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "Saturn's",
+                "offset": 7
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1651.2,
+            "y": 280.8
+          }
+        },
+        {
+          "id": "titan",
+          "kit": {
+            "type": "planet",
+            "x": 0.64,
+            "y": 0.6,
+            "radius": 0.15,
+            "base": "#e8a54b",
+            "bands": [
+              "#f0b960",
+              "#dc9840"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 8
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Titan",
+                "offset": -4
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Titan",
+                "offset": -3
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "Titan",
+                "offset": -4
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "Titan",
+                "offset": 6
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1228.8,
+            "y": 648.0
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "nosuit",
+          "text": "no spacesuit?!",
+          "x": 1000,
+          "y": 250,
+          "size": 80,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "without",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "without",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ],
+          "connector": {
+            "from": {
+              "x": 860,
+              "y": 270
+            },
+            "to": {
+              "x": 700,
+              "y": 360
+            }
+          }
+        },
+        {
+          "id": "titan-label",
+          "text": "Titan",
+          "x": 1230,
+          "y": 900,
+          "size": 70,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Titan",
+                "offset": 3
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Titan",
+                "offset": 9
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "saturn-label",
+          "text": "Saturn",
+          "x": 1650,
+          "y": 430,
+          "size": 50,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Saturn's",
+                "offset": 2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Saturn's",
+                "offset": 8
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-pressure",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "astro",
+          "kit": {
+            "type": "figure",
+            "x": 0.2,
+            "y": 0.86,
+            "height": 0.55,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 8,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "suit"
+                },
+                "pose": "point-right"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              }
+            ]
+          }
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.52,
+            "y": 0.86,
+            "height": 0.6,
+            "outfit": "stick",
+            "shiver": 0,
+            "seed": 3,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "presses"
+                },
+                "pose": "scared"
+              },
+              {
+                "frame": {
+                  "at": "safe",
+                  "offset": -3
+                },
+                "pose": "cheer"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "happy"
+              },
+              {
+                "frame": {
+                  "at": "presses"
+                },
+                "face": "pain"
+              },
+              {
+                "frame": {
+                  "at": "Heavy"
+                },
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "safe"
+                },
+                "face": "grin"
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "But",
+                "offset": 1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "But",
+                "offset": 2
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "But",
+                "offset": 1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "But",
+                "offset": 11
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 998.4000000000001,
+            "y": 928.8
+          }
+        },
+        {
+          "id": "squeeze",
+          "kit": {
+            "type": "prop",
+            "item": "pressure-arrows",
+            "x": 0.52,
+            "y": 0.58,
+            "size": 0.52,
+            "count": 8
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "presses",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "presses"
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "safe",
+                "offset": -2
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "safe",
+                "offset": 3
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "ok",
+          "kit": {
+            "type": "prop",
+            "item": "check",
+            "x": 0.82,
+            "y": 0.5,
+            "size": 0.16
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "safe"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "safe",
+                "offset": 1
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "safe"
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "safe",
+                "offset": 10
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1574.3999999999999,
+            "y": 540.0
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "moon-mars",
+          "text": "Moon / Mars",
+          "x": 384,
+          "y": 190,
+          "size": 62,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Moon",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Moon",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "suit-needed",
+          "text": "pressure suit",
+          "x": 384,
+          "y": 265,
+          "size": 54,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "suit",
+                "offset": -7
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "suit",
+                "offset": -1
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "times",
+          "text": "1.5x Earth",
+          "x": 1450,
+          "y": 330,
+          "size": 90,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "one",
+                "beat": "pressure",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "one",
+                "beat": "pressure",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-oxygen",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.3,
+            "y": 0.86,
+            "height": 0.6,
+            "outfit": "stick",
+            "shiver": 0,
+            "seed": 3,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "catch"
+                },
+                "pose": "shrug"
+              },
+              {
+                "frame": {
+                  "at": "oxygen"
+                },
+                "pose": "scared"
+              },
+              {
+                "frame": {
+                  "at": "mask"
+                },
+                "pose": "hands-on-hips"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "happy"
+              },
+              {
+                "frame": {
+                  "at": "catch"
+                },
+                "face": "shocked"
+              },
+              {
+                "frame": {
+                  "at": "oxygen"
+                },
+                "face": "scream"
+              },
+              {
+                "frame": {
+                  "at": "mask",
+                  "offset": 2
+                },
+                "face": "smug"
+              }
+            ],
+            "accessories": [
+              {
+                "item": "mask",
+                "from": {
+                  "at": "mask"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "bang",
+          "kit": {
+            "type": "prop",
+            "item": "exclaim",
+            "x": 0.3,
+            "y": 0.2,
+            "size": 0.16
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "catch",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "catch"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "catch",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "catch",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 576.0,
+            "y": 216.0
+          }
+        },
+        {
+          "id": "n2a-0",
+          "kit": {
+            "type": "planet",
+            "x": 0.576375,
+            "y": 0.42,
+            "radius": 0.035,
+            "base": "@water.mid",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.12,
+            "seed": 60
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "nitrogen"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ]
+        },
+        {
+          "id": "n2a-1",
+          "kit": {
+            "type": "planet",
+            "x": 0.623625,
+            "y": 0.42,
+            "radius": 0.035,
+            "base": "@water.mid",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.12,
+            "seed": 61
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "nitrogen"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 1
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "nitrogen"
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 10
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ]
+        },
+        {
+          "id": "n2b-0",
+          "kit": {
+            "type": "planet",
+            "x": 0.716375,
+            "y": 0.55,
+            "radius": 0.035,
+            "base": "@water.mid",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.12,
+            "seed": 60
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 3
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 4
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 3
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 13
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ]
+        },
+        {
+          "id": "n2b-1",
+          "kit": {
+            "type": "planet",
+            "x": 0.763625,
+            "y": 0.55,
+            "radius": 0.035,
+            "base": "@water.mid",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.12,
+            "seed": 61
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 4
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 4
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 14
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ]
+        },
+        {
+          "id": "n2c-0",
+          "kit": {
+            "type": "planet",
+            "x": 0.636375,
+            "y": 0.68,
+            "radius": 0.035,
+            "base": "@water.mid",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.12,
+            "seed": 60
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 7
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 8
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 7
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 17
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ]
+        },
+        {
+          "id": "n2c-1",
+          "kit": {
+            "type": "planet",
+            "x": 0.683625,
+            "y": 0.68,
+            "radius": 0.035,
+            "base": "@water.mid",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.12,
+            "seed": 61
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 8
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 9
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 8
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 18
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ]
+        },
+        {
+          "id": "no-o2",
+          "kit": {
+            "type": "prop",
+            "item": "cross",
+            "x": 0.84,
+            "y": 0.3,
+            "size": 0.12
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "oxygen",
+                "offset": 1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "oxygen",
+                "offset": 2
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "oxygen",
+                "offset": 1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "oxygen",
+                "offset": 11
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1612.8,
+            "y": 324.0
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n2",
+          "text": "nitrogen",
+          "x": 1300,
+          "y": 240,
+          "size": 70,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 3
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "nitrogen",
+                "offset": 9
+              },
+              "value": 1
+            }
+          ],
+          "connector": {
+            "from": {
+              "x": 1260,
+              "y": 265
+            },
+            "to": {
+              "x": 1180,
+              "y": 410
+            }
+          }
+        },
+        {
+          "id": "o2",
+          "text": "oxygen: 0%",
+          "x": 1560,
+          "y": 450,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "oxygen",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "oxygen",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "mask-label",
+          "text": "mask",
+          "x": 820,
+          "y": 470,
+          "size": 64,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "mask",
+                "offset": 1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "mask",
+                "offset": 7
+              },
+              "value": 1
+            }
+          ],
+          "connector": {
+            "from": {
+              "x": 760,
+              "y": 480
+            },
+            "to": {
+              "x": 640,
+              "y": 520
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "g-cold",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "you-cold",
+          "kit": {
+            "type": "figure",
+            "x": 0.32,
+            "y": 0.86,
+            "height": 0.6,
+            "outfit": "stick",
+            "shiver": 5,
+            "seed": 3,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "minus"
+                },
+                "pose": "cower"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "minus"
+                },
+                "face": "scared"
+              }
+            ],
+            "accessories": [
+              {
+                "item": "mask"
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "coat",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "coat"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "you-warm",
+          "kit": {
+            "type": "figure",
+            "x": 0.32,
+            "y": 0.86,
+            "height": 0.6,
+            "outfit": "stick",
+            "shiver": 0,
+            "seed": 3,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "cheer"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "grin"
+              }
+            ],
+            "accessories": [
+              {
+                "item": "mask"
+              },
+              {
+                "item": "coat"
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "coat",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "coat"
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "thermo",
+          "kit": {
+            "type": "prop",
+            "item": "thermometer",
+            "x": 0.72,
+            "y": 0.5,
+            "size": 0.5,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.6
+              },
+              {
+                "frame": {
+                  "at": "minus"
+                },
+                "value": 0.6
+              },
+              {
+                "frame": {
+                  "at": "Celsius"
+                },
+                "value": 0.04
+              }
+            ]
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c",
+          "text": "-179°C",
+          "x": 1150,
+          "y": 330,
+          "size": 100,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "seventy-nine",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "seventy-nine",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "f",
+          "text": "(-290°F)",
+          "x": 1150,
+          "y": 430,
+          "size": 60,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Celsius",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Celsius",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "coat-label",
+          "text": "warmest coat ever",
+          "x": 1000,
+          "y": 700,
+          "size": 58,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "warmest",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "warmest",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-fly",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.45,
+            "y": 0.86,
+            "height": 0.6,
+            "outfit": "stick",
+            "shiver": 0,
+            "seed": 3,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "fun"
+                },
+                "pose": "cheer"
+              },
+              {
+                "frame": {
+                  "at": "fourteen"
+                },
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "wings",
+                  "offset": 2
+                },
+                "pose": "hands-on-hips"
+              },
+              {
+                "frame": {
+                  "at": "flap",
+                  "offset": -2
+                },
+                "pose": "flap"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "happy"
+              },
+              {
+                "frame": {
+                  "at": "fun"
+                },
+                "face": "grin"
+              },
+              {
+                "frame": {
+                  "at": "fourteen"
+                },
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "wings"
+                },
+                "face": "smug"
+              },
+              {
+                "frame": {
+                  "at": "flap"
+                },
+                "face": "grin"
+              }
+            ],
+            "accessories": [
+              {
+                "item": "mask"
+              },
+              {
+                "item": "coat"
+              },
+              {
+                "item": "wings",
+                "from": {
+                  "at": "wings"
+                }
+              }
+            ]
+          },
+          "anchor": {
+            "x": 864.0,
+            "y": 928.8
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "flap",
+                "offset": -2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fly",
+                "offset": 20
+              },
+              "value": -170,
+              "ease": "ease-out-cubic"
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "flap",
+                "offset": -2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fly",
+                "offset": 20
+              },
+              "value": 200
+            }
+          ]
+        },
+        {
+          "id": "whoosh",
+          "kit": {
+            "type": "prop",
+            "item": "motion-lines",
+            "x": 0.38,
+            "y": 0.55,
+            "size": 0.18
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "flap"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "flap",
+                "offset": 4
+              },
+              "value": 1
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "flap",
+                "offset": -2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fly",
+                "offset": 20
+              },
+              "value": -170,
+              "ease": "ease-out-cubic"
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "flap",
+                "offset": -2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fly",
+                "offset": 20
+              },
+              "value": 200
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "g",
+          "text": "14% gravity",
+          "x": 1450,
+          "y": 330,
+          "size": 84,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fourteen",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fourteen",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "thick",
+          "text": "thick air",
+          "x": 1450,
+          "y": 430,
+          "size": 60,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "thick",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "thick",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "wheee",
+          "text": "WHEEE!",
+          "x": 1450,
+          "y": 620,
+          "size": 96,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fly",
+                "offset": 3
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fly",
+                "offset": 9
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-rain",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "titan-rain",
+          "effects": [
+            {
+              "id": "methane",
+              "type": "particles",
+              "count": 60,
+              "seed": 9,
+              "startFrame": 0,
+              "endFrame": 400,
+              "emitter": {
+                "x": 0.66,
+                "y": 0.02,
+                "width": 0.5,
+                "height": 0.02
+              },
+              "lifetimeFrames": [
+                321,
+                357
+              ],
+              "velocity": {
+                "angleDegrees": 90,
+                "spreadDegrees": 2,
+                "speed": [
+                  0.00252,
+                  0.0030800000000000003
+                ]
+              },
+              "acceleration": {
+                "x": 0,
+                "y": 0
+              },
+              "radius": [
+                0.009,
+                0.013
+              ],
+              "colors": [
+                "#d08a2e"
+              ],
+              "shape": "drop",
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 1
+                },
+                {
+                  "at": 0.9,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 0
+                }
+              ],
+              "scale": [
+                {
+                  "at": 0,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 1
+                }
+              ],
+              "outline": "#1d1d1f"
+            }
+          ]
+        },
+        {
+          "id": "earth-rain",
+          "effects": [
+            {
+              "id": "water",
+              "type": "particles",
+              "count": 90,
+              "seed": 10,
+              "startFrame": {
+                "at": "five"
+              },
+              "endFrame": {
+                "at": "five",
+                "offset": 200
+              },
+              "emitter": {
+                "x": 0.16,
+                "y": 0.02,
+                "width": 0.22,
+                "height": 0.02
+              },
+              "lifetimeFrames": [
+                45,
+                50
+              ],
+              "velocity": {
+                "angleDegrees": 90,
+                "spreadDegrees": 2,
+                "speed": [
+                  0.019799999999999998,
+                  0.0242
+                ]
+              },
+              "acceleration": {
+                "x": 0,
+                "y": 0
+              },
+              "radius": [
+                0.009,
+                0.013
+              ],
+              "colors": [
+                "@water.mid"
+              ],
+              "shape": "drop",
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 1
+                },
+                {
+                  "at": 0.9,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 0
+                }
+              ],
+              "scale": [
+                {
+                  "at": 0,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 1
+                }
+              ],
+              "outline": "#1d1d1f"
+            }
+          ]
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.66,
+            "y": 0.86,
+            "height": 0.6,
+            "outfit": "stick",
+            "shiver": 0,
+            "seed": 3,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "strange"
+                },
+                "pose": "shrug"
+              },
+              {
+                "frame": {
+                  "at": "methane"
+                },
+                "pose": "reach"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "strange"
+                },
+                "face": "shocked"
+              },
+              {
+                "frame": {
+                  "at": "slower"
+                },
+                "face": "happy"
+              }
+            ],
+            "accessories": [
+              {
+                "item": "mask"
+              },
+              {
+                "item": "coat"
+              }
+            ]
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "methane",
+          "text": "liquid methane",
+          "x": 1650,
+          "y": 260,
+          "size": 70,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "methane",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "methane",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ],
+          "connector": {
+            "from": {
+              "x": 1600,
+              "y": 285
+            },
+            "to": {
+              "x": 1520,
+              "y": 380
+            }
+          }
+        },
+        {
+          "id": "slow",
+          "text": "5x slower",
+          "x": 600,
+          "y": 560,
+          "size": 84,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "five",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "five",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "earth",
+          "text": "Earth rain",
+          "x": 310,
+          "y": 300,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Earth",
+                "beat": "rain",
+                "offset": -7
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Earth",
+                "beat": "rain",
+                "offset": -1
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-lakes",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.22,
+            "y": 0.86,
+            "height": 0.6,
+            "outfit": "stick",
+            "shiver": 0,
+            "seed": 3,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "swimming",
+                  "offset": -2
+                },
+                "pose": "cheer"
+              },
+              {
+                "frame": {
+                  "at": "sink",
+                  "offset": -2
+                },
+                "pose": "panic"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "happy"
+              },
+              {
+                "frame": {
+                  "at": "swimming"
+                },
+                "face": "grin"
+              },
+              {
+                "frame": {
+                  "at": "light"
+                },
+                "face": "shocked"
+              },
+              {
+                "frame": {
+                  "at": "sink"
+                },
+                "face": "scream"
+              }
+            ],
+            "accessories": [
+              {
+                "item": "mask"
+              },
+              {
+                "item": "coat"
+              }
+            ]
+          },
+          "anchor": {
+            "x": 422.4,
+            "y": 928.8
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "swimming",
+                "offset": 2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "swimming",
+                "offset": 18
+              },
+              "value": 820,
+              "ease": "ease-out-cubic"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "swimming",
+                "offset": 2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "swimming",
+                "offset": 10
+              },
+              "value": -140,
+              "ease": "ease-out-cubic"
+            },
+            {
+              "frame": {
+                "at": "swimming",
+                "offset": 18
+              },
+              "value": 30
+            },
+            {
+              "frame": {
+                "at": "sink"
+              },
+              "value": 60
+            },
+            {
+              "frame": {
+                "at": "bottom",
+                "offset": 6
+              },
+              "value": 820,
+              "ease": "ease-in-back"
+            }
+          ]
+        },
+        {
+          "id": "lake",
+          "kit": {
+            "type": "water",
+            "x": 0.48,
+            "y": 0.84,
+            "width": 0.62,
+            "height": 0.3,
+            "waves": 2,
+            "periodFrames": 150,
+            "seed": 3
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lakes",
+                "offset": -3
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lakes",
+                "offset": -2
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "lakes",
+                "offset": -3
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "lakes",
+                "offset": 7
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1516.8000000000002,
+            "y": 972.0
+          }
+        },
+        {
+          "id": "glug",
+          "effects": [
+            {
+              "id": "glug-bubbles",
+              "type": "particles",
+              "count": 24,
+              "seed": 41,
+              "startFrame": {
+                "at": "sink",
+                "offset": 4
+              },
+              "endFrame": {
+                "at": "sink",
+                "offset": 54
+              },
+              "emitter": {
+                "x": 0.64,
+                "y": 0.85,
+                "width": 0.04,
+                "height": 0.01
+              },
+              "lifetimeFrames": [
+                16,
+                26
+              ],
+              "velocity": {
+                "angleDegrees": -90,
+                "spreadDegrees": 40,
+                "speed": [
+                  0.002,
+                  0.004
+                ]
+              },
+              "acceleration": {
+                "x": 0,
+                "y": 0
+              },
+              "radius": [
+                0.005,
+                0.01
+              ],
+              "colors": [
+                "@water.light"
+              ],
+              "outline": "#1d1d1f",
+              "shape": "circle",
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 0
+                },
+                {
+                  "at": 0.15,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 0
+                }
+              ],
+              "scale": [
+                {
+                  "at": 0,
+                  "value": 0.5
+                },
+                {
+                  "at": 1,
+                  "value": 1.2
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "big",
+          "text": "bigger than any Great Lake",
+          "x": 1420,
+          "y": 250,
+          "size": 62,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "bigger",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "bigger",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "dont",
+          "text": "don't!",
+          "x": 660,
+          "y": 470,
+          "size": 84,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "swimming",
+                "offset": 3
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "swimming",
+                "offset": 9
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "sink",
+          "text": "you sink!",
+          "x": 1520,
+          "y": 560,
+          "size": 84,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sink",
+                "offset": 1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sink",
+                "offset": 7
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-closing",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "titan-small",
+          "kit": {
+            "type": "planet",
+            "x": 0.12,
+            "y": 0.25,
+            "radius": 0.08,
+            "base": "#e8a54b",
+            "bands": [
+              "#f0b960"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 8
+          }
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.4,
+            "y": 0.86,
+            "height": 0.62,
+            "outfit": "stick",
+            "shiver": 0,
+            "seed": 3,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "needed"
+                },
+                "pose": "hands-on-hips"
+              },
+              {
+                "frame": {
+                  "at": "wings"
+                },
+                "pose": "flap"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "happy"
+              },
+              {
+                "frame": {
+                  "at": "needed"
+                },
+                "face": "smug"
+              },
+              {
+                "frame": {
+                  "at": "wings"
+                },
+                "face": "grin"
+              }
+            ],
+            "accessories": [
+              {
+                "item": "mask",
+                "from": {
+                  "at": "mask"
+                }
+              },
+              {
+                "item": "coat",
+                "from": {
+                  "at": "coat"
+                }
+              },
+              {
+                "item": "wings",
+                "from": {
+                  "at": "wings"
+                }
+              }
+            ]
+          },
+          "anchor": {
+            "x": 768.0,
+            "y": 928.8
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wings",
+                "offset": 2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wings",
+                "offset": 40
+              },
+              "value": -120,
+              "ease": "ease-out-cubic"
+            }
+          ]
+        },
+        {
+          "id": "tick-0",
+          "kit": {
+            "type": "prop",
+            "item": "check",
+            "x": 0.66,
+            "y": 0.38,
+            "size": 0.07
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "mask"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "mask",
+                "offset": 1
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "mask"
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "mask",
+                "offset": 10
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1267.2,
+            "y": 410.4
+          }
+        },
+        {
+          "id": "tick-1",
+          "kit": {
+            "type": "prop",
+            "item": "check",
+            "x": 0.66,
+            "y": 0.52,
+            "size": 0.07
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "coat"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "coat",
+                "offset": 1
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "coat"
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "coat",
+                "offset": 10
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1267.2,
+            "y": 561.6
+          }
+        },
+        {
+          "id": "tick-2",
+          "kit": {
+            "type": "prop",
+            "item": "check",
+            "x": 0.66,
+            "y": 0.66,
+            "size": 0.07
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wings"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wings",
+                "offset": 1
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "wings"
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "wings",
+                "offset": 10
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1267.2,
+            "y": 712.8000000000001
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "nosuit2",
+          "text": "no spacesuit!",
+          "x": 1280,
+          "y": 230,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "No",
+                "beat": "closing",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "No",
+                "beat": "closing",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "item-0",
+          "text": "mask",
+          "x": 1420,
+          "y": 432,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "mask"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "mask",
+                "offset": 6
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "item-1",
+          "text": "coat",
+          "x": 1420,
+          "y": 583,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "coat"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "coat",
+                "offset": 6
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "item-2",
+          "text": "wings",
+          "x": 1420,
+          "y": 734,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wings"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wings",
+                "offset": 6
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "titan-hook",
+      "template": "hero-reveal",
+      "durationFrames": 294,
+      "animationDurationFrames": 294,
+      "caption": {
+        "text": "titan-hook",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.04,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "Titan",
+              "offset": -2
+            },
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7010,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-hook",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "hook",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "step",
+            "offset": -2
+          },
+          "gainDb": -16
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "without"
+          },
+          "gainDb": -14
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "Titan",
+            "offset": -4
+          },
+          "gainDb": -18
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "Titan"
+          },
+          "gainDb": -15
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "Saturn's"
+          },
+          "gainDb": -17
+        }
+      ]
+    },
+    {
+      "id": "titan-pressure",
+      "template": "hero-reveal",
+      "durationFrames": 471,
+      "animationDurationFrames": 471,
+      "caption": {
+        "text": "titan-pressure",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7014,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-pressure",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "pressure",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -18
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "Moon"
+          },
+          "gainDb": -17
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "But",
+            "offset": 2
+          },
+          "gainDb": -17
+        },
+        {
+          "sound": "boom",
+          "frame": {
+            "at": "presses"
+          },
+          "gainDb": -16
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "one",
+            "beat": "pressure"
+          },
+          "gainDb": -15
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "safe",
+            "offset": 1
+          },
+          "gainDb": -15
+        }
+      ]
+    },
+    {
+      "id": "titan-oxygen",
+      "template": "hero-reveal",
+      "durationFrames": 279,
+      "animationDurationFrames": 279,
+      "caption": {
+        "text": "titan-oxygen",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7012,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-oxygen",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "oxygen",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -18
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "catch"
+          },
+          "gainDb": -14
+        },
+        {
+          "sound": "bubble",
+          "frame": {
+            "at": "nitrogen"
+          },
+          "gainDb": -18
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "oxygen"
+          },
+          "gainDb": -15
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "mask"
+          },
+          "gainDb": -15
+        }
+      ]
+    },
+    {
+      "id": "titan-cold",
+      "template": "hero-reveal",
+      "durationFrames": 220,
+      "animationDurationFrames": 220,
+      "caption": {
+        "text": "titan-cold",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7010,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-cold",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "cold",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -18
+        },
+        {
+          "sound": "rumble",
+          "frame": {
+            "at": "minus"
+          },
+          "gainDb": -20
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "seventy-nine"
+          },
+          "gainDb": -14
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "Celsius"
+          },
+          "gainDb": -17
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "coat",
+            "offset": -2
+          },
+          "gainDb": -16
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "coat"
+          },
+          "gainDb": -15
+        }
+      ]
+    },
+    {
+      "id": "titan-fly",
+      "template": "hero-reveal",
+      "durationFrames": 397,
+      "animationDurationFrames": 397,
+      "caption": {
+        "text": "titan-fly",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7009,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-fly",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "fly",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -18
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "fourteen"
+          },
+          "gainDb": -15
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "wings"
+          },
+          "gainDb": -15
+        },
+        {
+          "sound": "riser",
+          "frame": {
+            "at": "flap",
+            "offset": -6
+          },
+          "gainDb": -18
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "flap"
+          },
+          "gainDb": -14
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "fly",
+            "offset": 4
+          },
+          "gainDb": -13
+        }
+      ]
+    },
+    {
+      "id": "titan-rain",
+      "template": "hero-reveal",
+      "durationFrames": 250,
+      "animationDurationFrames": 250,
+      "caption": {
+        "text": "titan-rain",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7010,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-rain",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "rain",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -18
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "methane"
+          },
+          "gainDb": -16
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "five"
+          },
+          "gainDb": -14
+        }
+      ]
+    },
+    {
+      "id": "titan-lakes",
+      "template": "hero-reveal",
+      "durationFrames": 353,
+      "animationDurationFrames": 353,
+      "caption": {
+        "text": "titan-lakes",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7011,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-lakes",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "lakes",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -18
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "bigger"
+          },
+          "gainDb": -15
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "swimming",
+            "offset": 2
+          },
+          "gainDb": -16
+        },
+        {
+          "sound": "bubble",
+          "frame": {
+            "at": "sink",
+            "offset": 2
+          },
+          "gainDb": -12
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "sink",
+            "offset": 2
+          },
+          "gainDb": -15
+        }
+      ]
+    },
+    {
+      "id": "titan-closing",
+      "template": "hero-reveal",
+      "durationFrames": 196,
+      "animationDurationFrames": 196,
+      "caption": {
+        "text": "titan-closing",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7013,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-closing",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "closing",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -18
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "No",
+            "beat": "closing"
+          },
+          "gainDb": -16
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "mask",
+            "offset": 1
+          },
+          "gainDb": -15
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "coat",
+            "offset": 1
+          },
+          "gainDb": -15
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "wings",
+            "offset": 1
+          },
+          "gainDb": -14
+        },
+        {
+          "sound": "riser",
+          "frame": {
+            "at": "wings",
+            "offset": 2
+          },
+          "gainDb": -20
+        }
+      ]
+    }
+  ]
+}

@@ -4,7 +4,7 @@ import type {Theme} from '../style/theme';
 import type {KitConfig} from './schema';
 import {blobPath, cloudLobes, gullyPaths, mountainSilhouette, ridgeLayer, wavePath} from './geometry';
 import {Figure, type FigureConfig} from './FigureElement';
-import {Planet, Terrain} from './Paint';
+import {Planet, Prop, Terrain} from './Paint';
 
 type Props = {config: KitConfig; theme: Theme; width: number; height: number; frame: number; id: string};
 const pick = (ramp: readonly string[], i: number, n: number) => ramp[Math.round((n <= 1 ? 1 : i / (n - 1)) * (ramp.length - 1))];
@@ -160,6 +160,7 @@ export const KitElement: React.FC<Props> = props => {
     case 'figure': return <Figure config={c as FigureConfig} theme={theme} width={width} height={height} frame={frame}/>;
     case 'planet': return <Planet config={c} theme={theme} width={width} height={height} frame={frame} id={id}/>;
     case 'terrain': return <Terrain config={c} theme={theme} width={width} height={height} id={id}/>;
+    case 'prop': return <Prop config={c} theme={theme} width={width} height={height} frame={frame}/>;
     case 'glow': {
       const [core, mid] = tones(theme, c.tone);
       return <>

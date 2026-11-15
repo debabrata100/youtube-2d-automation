@@ -63,3 +63,46 @@ export const Terrain: React.FC<{config: TerrainConfig; theme: Theme; width: numb
     <path d={edge} fill="none" stroke={ink} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round"/>
   </>;
 };
+
+export type PropConfig = {item: 'thermometer' | 'pressure-arrows' | 'motion-lines' | 'exclaim' | 'question' | 'check' | 'cross'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>};
+
+const levelAt = (keys: PropConfig['level'], frame: number) => {
+  if (frame <= keys[0].frame) return keys[0].value;
+  for (let i = 1; i < keys.length; i++) if (frame < keys[i].frame) {
+    const a = keys[i - 1], b = keys[i], t = (frame - a.frame) / Math.max(1, b.frame - a.frame);
+    return a.value + (b.value - a.value) * t * t * (3 - 2 * t);
+  }
+  return keys[keys.length - 1].value;
+};
+
+/** Hand-drawn props: thermometer (animated level), pressure arrows, motion lines, ! ? and tick/cross marks. */
+export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; height: number; frame: number}> = ({config: c, theme, width, height, frame}) => {
+  const s = c.size * Math.min(width, height), ink = theme.line.color, red = c.color ?? theme.palette.text.accent, w = Math.max(3, s * .045);
+  const at = `translate(${c.x * width} ${c.y * height}) rotate(${c.rotation})`;
+  const stroke = (color: string, sw = w) => ({fill: 'none', stroke: color, strokeWidth: sw, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const});
+  switch (c.item) {
+    case 'thermometer': {
+      const tw = s * .16, th = s * .78, bulb = s * .14, lv = levelAt(c.level, frame), top = -s / 2, bottom = top + th;
+      return <g transform={at}>
+        <rect x={-tw / 2} y={top} width={tw} height={th + bulb} rx={tw / 2} fill="#ffffff" stroke={ink} strokeWidth={w}/>
+        <rect x={-tw * .22} y={bottom - th * .92 * lv} width={tw * .44} height={th * .92 * lv + bulb * .6} rx={tw * .22} fill={red}/>
+        <circle cx={0} cy={bottom + bulb * .55} r={bulb} fill={red} stroke={ink} strokeWidth={w}/>
+        {Array.from({length: 7}, (_, i) => <path key={i} d={`M ${tw / 2} ${top + th * (.1 + i * .12)} l ${tw * (i % 2 ? .35 : .6)} 0`} {...stroke(ink, w * .7)}/>)}
+      </g>;
+    }
+    case 'pressure-arrows': return <g transform={at}>{Array.from({length: c.count}, (_, i) => {
+      const a = (i / c.count) * Math.PI * 2 - Math.PI / 2, r0 = s * .5, r1 = s * .26, k = s * .07;
+      const x0 = Math.cos(a) * r0, y0 = Math.sin(a) * r0, x1 = Math.cos(a) * r1, y1 = Math.sin(a) * r1;
+      return <g key={i}><path d={`M ${x0} ${y0} L ${x1} ${y1}`} {...stroke(red)}/>
+        <path d={`M ${x1 + k * Math.cos(a + 2.6)} ${y1 + k * Math.sin(a + 2.6)} L ${x1} ${y1} L ${x1 + k * Math.cos(a - 2.6)} ${y1 + k * Math.sin(a - 2.6)}`} {...stroke(red)}/></g>;
+    })}</g>;
+    case 'motion-lines': return <g transform={at}>{Array.from({length: Math.min(c.count, 5)}, (_, i) => {
+      const y = (i - (Math.min(c.count, 5) - 1) / 2) * s * .22, len = s * (.6 - Math.abs(i - 1) * .08);
+      return <path key={i} d={`M 0 ${y} q ${-len * .5} ${-s * .05} ${-len} 0`} {...stroke(ink, w * .8)}/>;
+    })}</g>;
+    case 'exclaim': return <g transform={at}><path d={`M 0 ${-s * .45} L 0 ${s * .18}`} {...stroke(red, w * 2.2)}/><circle cx={0} cy={s * .4} r={w * 1.3} fill={red}/></g>;
+    case 'question': return <g transform={at}><path d={`M ${-s * .2} ${-s * .25} Q ${-s * .2} ${-s * .5} 0 ${-s * .5} Q ${s * .22} ${-s * .5} ${s * .22} ${-s * .26} Q ${s * .22} ${-s * .08} 0 0 L 0 ${s * .16}`} {...stroke(red, w * 2)}/><circle cx={0} cy={s * .4} r={w * 1.2} fill={red}/></g>;
+    case 'check': return <g transform={at}><path d={`M ${-s * .4} 0 L ${-s * .1} ${s * .3} L ${s * .45} ${-s * .35}`} {...stroke(c.color ?? '#2e9e4f', w * 1.8)}/></g>;
+    case 'cross': return <g transform={at}><path d={`M ${-s * .35} ${-s * .35} L ${s * .35} ${s * .35} M ${s * .35} ${-s * .35} L ${-s * .35} ${s * .35}`} {...stroke(red, w * 1.8)}/></g>;
+  }
+};

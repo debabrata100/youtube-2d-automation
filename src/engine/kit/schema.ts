@@ -1,6 +1,6 @@
 import {z} from 'zod';
 import {easingNameSchema, pathSchema} from '../motion/primitives/schema';
-import {FACE_IDS, POSE_IDS} from './figure';
+import {ACCESSORY_IDS, FACE_IDS, POSE_IDS} from './figure';
 
 /** Kit coordinates are fractions of the host group: x of width, y of height. Small overshoot is allowed for bleed. */
 const n = z.number().min(-.5).max(1.5);
@@ -63,12 +63,21 @@ export const kitSchema = z.discriminatedUnion('type', [
       .min(1).max(24).refine(increasing, 'Pose frames must strictly increase'),
     faces: z.array(z.object({frame: keyFrame, face: z.enum(FACE_IDS)}).strict()).max(24).default([]).refine(increasing, 'Face frames must strictly increase'),
     blink: z.boolean().default(true), shiver: z.number().min(0).max(12).default(0), seed, suit: hex.optional(), visor: hex.optional(),
+    /** Worn items (mask, coat, wings); each appears at `from` and optionally disappears at `until` (frames may be word anchors). */
+    accessories: z.array(z.object({item: z.enum(ACCESSORY_IDS), from: keyFrame.default(0), until: keyFrame.optional()}).strict()).max(6).default([]),
+    coat: hex.optional(),
   }).strict(),
   /** Cartoon planet: base colour, wavy bands (gas giants), craters, optional ring and glow. radius is a fraction of the group's shorter side. */
   z.object({
     type: z.literal('planet'), x: n, y: n, radius: size(.02, .6), base: hex, bands: z.array(hex).max(8).default([]),
     craters: z.number().int().min(0).max(30).default(0), ring: z.boolean().default(false), shade: size(0, .5).default(.18),
     spin: z.number().min(-4).max(4).default(0), seed, glow: hex.optional(),
+  }).strict(),
+  /** Hand-drawn props. size is a fraction of the group's shorter side; thermometer level keys (0-1) interpolate linearly. */
+  z.object({
+    type: z.literal('prop'), item: z.enum(['thermometer', 'pressure-arrows', 'motion-lines', 'exclaim', 'question', 'check', 'cross']),
+    x: n, y: n, size: size(.01, 1), rotation: z.number().min(-360).max(360).default(0), color: hex.optional(), count: z.number().int().min(1).max(12).default(6),
+    level: z.array(z.object({frame: keyFrame, value: z.number().min(0).max(1)}).strict()).min(1).max(12).refine(increasing, 'Level frames must strictly increase').default([{frame: 0, value: .6}]),
   }).strict(),
   /** Hand-drawn ground: outlined horizon with bumps, optional planet curvature, speckles and horizon rocks. */
   z.object({

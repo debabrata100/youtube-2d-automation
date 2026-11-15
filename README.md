@@ -247,3 +247,11 @@ See `docs/M3_1_WORD_ANCHORS_REPORT.md`.
 - Stick figure: `{"kit": {"type": "figure", "x": .5, "y": .86, "height": .6, "outfit": "stick" | "astronaut", "poses": [{"frame": 0, "pose": "stand"}, {"frame": {"at": "boil"}, "pose": "scared"}], "faces": [{"frame": {"at": "boil"}, "face": "pain"}]}}`. Poses: stand, wave, point-right, point-left, shrug, cheer, panic, scared, hands-on-hips, think, float, tumble, reach, cower, lie, walk, run. Faces: neutral, happy, shocked, scared, sad, dizzy, angry, smug, pain.
 - `planet` and `terrain` kit elements; annotations with `"variant": "ink"` (+ `color`, `connector` for an arrow).
 - Example: `python3 scripts/authoring/build-mars-paint-storyboard.py`, then `preview:stills --estimate-timing`. See `docs/M3_2_PAINT_STYLE_REPORT.md`.
+
+## Pilot kit additions (M3.3)
+
+- Figure accessories: `"accessories": [{"item": "mask"}, {"item": "coat", "from": {"at": "coat"}}, {"item": "wings", "from": {"at": "wings"}}]`; pose `flap`; faces `scream`, `grin`.
+- Props: `{"kit": {"type": "prop", "item": "thermometer" | "pressure-arrows" | "motion-lines" | "exclaim" | "question" | "check" | "cross", "x": .7, "y": .5, "size": .4, "level": [{"frame": 0, "value": .6}, {"frame": {"at": "Celsius"}, "value": .05}]}}`.
+- Particles: `"shape": "drop"`, optional `"outline"`.
+- Captions for upload: `npm run captions:export -- jobs/<job>` → `output/captions.srt` and `.vtt`.
+- Pilot: `python3 scripts/authoring/build-titan-pilot-storyboard.py [seconds]` (refits to the narration length). See `docs/M3_3_TITAN_PILOT_REPORT.md`.

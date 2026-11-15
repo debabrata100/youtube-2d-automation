@@ -78,6 +78,10 @@ Complete; review pending. Frame fields can be word anchors (`{"at": "flashes", "
 
 Complete; review pending. After analysing four reference videos (Alan Becker, Kurzgesagt ×2, The Paint Explainer), the hand-drawn explainer style was chosen as the realistic target. Added a stick-figure/astronaut rig (17 poses incl. walk/run cycles, 9 faces, blinking, shiver), drawn planet and terrain kit elements, ink notes with arrows, the `paint-notebook` theme with seeded line boil and a bundled OFL hand font, and 16:9 caption sizing. A 29 s Mars test clip (planning narration, ~100 word anchors) reads as the same genre at a glance (~80–85% match); remaining gaps are props, more comic faces, real photo inserts and a real voice. No paid requests. See [report](M3_2_PAINT_STYLE_REPORT.md) and [verification](M3_2_VERIFICATION.json).
 
+## M3.3 — Hand-drawn pilot: Titan (in progress)
+
+Stage 1 complete: fact-checked 8-beat script (921 characters), figure accessories (mask, coat, wings) and a flap cycle, scream/grin faces, a prop kit (thermometer with animated level, pressure arrows, motion lines, !, ?, tick, cross), drop-shaped particles, SRT/VTT caption export, ~20% faster line boil via pre-baked noise tiles, a long-episode fix in the timeline audit, and an 82 s word-anchored animatic (235 anchors). Stage 2 (one paid narration request, refit, final render) awaits approval. See [report](M3_3_TITAN_PILOT_REPORT.md).
+
 ## M3 — LangGraph AI storyboard director
 
 Research-to-plan orchestration, structured creative decisions, and plan evaluation. No M3 code is included.

@@ -6,9 +6,14 @@
 import {easeMotion} from '../motion/primitives/schema';
 
 export const POSE_IDS = ['stand', 'wave', 'point-right', 'point-left', 'shrug', 'cheer', 'panic', 'scared', 'hands-on-hips', 'think',
-  'float', 'tumble', 'reach', 'cower', 'lie', 'walk', 'run'] as const;
+  'float', 'tumble', 'reach', 'cower', 'lie', 'walk', 'run', 'flap'] as const;
 export type PoseId = typeof POSE_IDS[number];
-export const FACE_IDS = ['neutral', 'happy', 'shocked', 'scared', 'sad', 'dizzy', 'angry', 'smug', 'pain'] as const;
+export const FACE_IDS = ['neutral', 'happy', 'shocked', 'scared', 'sad', 'dizzy', 'angry', 'smug', 'pain', 'scream', 'grin'] as const;
+export const ACCESSORY_IDS = ['mask', 'coat', 'wings'] as const;
+export type Accessory = {item: typeof ACCESSORY_IDS[number]; from: number; until?: number};
+/** Accessory worn at a frame: from `from` (inclusive) until `until` (exclusive, optional). */
+export const accessoryOn = (list: Accessory[] | undefined, item: Accessory['item'], frame: number) =>
+  (list ?? []).some(a => a.item === item && frame >= a.from && (a.until === undefined || frame < a.until));
 export type FaceId = typeof FACE_IDS[number];
 
 /** [upper, lower] absolute limb angles. */
@@ -18,7 +23,7 @@ export type Pose = {lean: number; head: number; armL: Limb; armR: Limb; legL: Li
 const P = (armL: Limb, armR: Limb, legL: Limb = [-10, -6], legR: Limb = [10, 6], extra: Partial<Pose> = {}): Pose =>
   ({lean: 0, head: 0, armL, armR, legL, legR, rotate: 0, lift: 0, squash: 0, ...extra});
 
-export const POSES: Record<Exclude<PoseId, 'walk' | 'run'>, Pose> = {
+export const POSES: Record<Exclude<PoseId, 'walk' | 'run' | 'flap'>, Pose> = {
   stand: P([-28, -16], [28, 16]),
   wave: P([-28, -16], [112, 148], undefined, undefined, {head: 6}),
   'point-right': P([-28, -16], [95, 92], undefined, undefined, {head: 8}),
@@ -46,7 +51,13 @@ export const cyclePose = (id: 'walk' | 'run', frame: number): Pose => {
     {lift: Math.abs(Math.cos(t)) * (id === 'run' ? .03 : .015), lean: id === 'run' ? 6 : 0});
 };
 
-export const poseOf = (id: PoseId, frame: number): Pose => (id === 'walk' || id === 'run' ? cyclePose(id, frame) : POSES[id]);
+/** Flapping flight: arms sweep between raised and level, legs trail, the body bobs with each beat. */
+export const flapPose = (frame: number): Pose => {
+  const t = (frame / 16) * Math.PI * 2, s = Math.sin(t), up = (s + 1) / 2;
+  return P([-150 + up * 75, -165 + up * 85], [150 - up * 75, 165 - up * 85], [-12, -18], [12, 18], {lift: .05 + up * .03, lean: 4});
+};
+
+export const poseOf = (id: PoseId, frame: number): Pose => (id === 'walk' || id === 'run' ? cyclePose(id, frame) : id === 'flap' ? flapPose(frame) : POSES[id]);
 
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 /** Angle blend along the shorter way round, so +170 to -170 turns 20 degrees, not 340. */

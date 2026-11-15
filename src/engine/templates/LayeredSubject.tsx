@@ -10,6 +10,7 @@ import {KitElement} from '../kit/KitElement';
 import {getTheme, type Theme} from '../style/theme';
 import {easeMotion} from '../motion/primitives/schema';
 import {ensureFont} from '../style/fonts';
+import {NOISE_TILES, boilTile} from '../style/ink';
 
 const Layer: React.FC<{layer: IllustrationLayerConfig; frame: number; group: IllustrationGroup; assets: AssetRegistry; prefix: string; theme?: Theme}> = ({layer, frame, group, assets, prefix, theme}) => {
   const id = `${prefix}-${layer.id}`, state = layerStateAt(layer, frame), source = layer.asset ? staticFile(assets.resolve(layer.asset).path) : null;
@@ -110,12 +111,13 @@ export const LayeredSubject: React.FC<{group: IllustrationGroup; subject: Subjec
   const references = [...new Set(group.layers.flatMap(layerAssetIds))];
   const theme = storyboard.themeId ? getTheme(storyboard.themeId) : undefined;
   ensureFont(theme?.label.fontFamily);
-  const ink = theme?.ink, inkSeed = ink ? ink.seed + Math.floor(Math.max(0, local) * ink.fps / storyboard.format.fps) : 0;
+  const ink = theme?.ink, boil = ink ? boilTile(ink.seed + Math.floor(Math.max(0, local) * ink.fps / storyboard.format.fps)) : null, tile = ink ? 4 / ink.frequency : 0;
   return <div style={{position: 'absolute', left: storyboard.format.width * subject.x - width / 2, top: storyboard.format.height * subject.y - height / 2, width, height, transform: `scale(${scale})`}}>
     <svg width={width} height={height} viewBox={`0 0 ${group.width} ${group.height}`} style={{overflow: 'visible'}}>
       <defs><filter id={`${prefix}-black`}><feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"/></filter></defs>
-      {ink && <defs><filter id={`${prefix}-ink`} x="-5%" y="-5%" width="110%" height="110%">
-        <feTurbulence type="fractalNoise" baseFrequency={ink.frequency} numOctaves={2} seed={inkSeed} result="noise"/>
+      {ink && boil && <defs><filter id={`${prefix}-ink`} filterUnits="userSpaceOnUse" x={-group.width * .05} y={-group.height * .05} width={group.width * 1.1} height={group.height * 1.1}>
+        <feImage href={NOISE_TILES[boil.index]} x={-boil.dx * tile} y={-boil.dy * tile} width={tile} height={tile} preserveAspectRatio="none" result="tile"/>
+        <feTile in="tile" result="noise"/>
         <feDisplacementMap in="SourceGraphic" in2="noise" scale={ink.amplitude * 2} xChannelSelector="R" yChannelSelector="G"/>
       </filter></defs>}
       <g filter={ink ? `url(#${prefix}-ink)` : undefined}>
@@ -124,6 +126,6 @@ export const LayeredSubject: React.FC<{group: IllustrationGroup; subject: Subjec
       </g>
     </svg>
     {/* Remotion loading gates also cover native SVG image/mask references. */}
-    <div style={{position: 'absolute', width: 1, height: 1, overflow: 'hidden', opacity: 0, pointerEvents: 'none'}}>{references.map(id => <Img key={id} src={staticFile(assets.resolve(id).path)} style={{width: 1, height: 1}}/>)}</div>
+    <div style={{position: 'absolute', width: 1, height: 1, overflow: 'hidden', opacity: 0, pointerEvents: 'none'}}>{references.map(id => <Img key={id} src={staticFile(assets.resolve(id).path)} style={{width: 1, height: 1}}/>)}{ink && NOISE_TILES.map(src => <Img key={src} src={src} style={{width: 1, height: 1}}/>)}</div>
   </div>;
 };

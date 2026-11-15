@@ -27,7 +27,8 @@
     "narration:synthesize": "node --env-file-if-exists=.env --import tsx scripts/synthesize-narration.ts",
     "preview:stills": "node --import tsx scripts/preview-stills.ts",
     "anchors:check": "node --import tsx scripts/check-anchor-sync.ts",
-    "storyboard:draft": "node --import tsx scripts/draft-storyboard.ts"
+    "storyboard:draft": "node --import tsx scripts/draft-storyboard.ts",
+    "captions:export": "node --import tsx scripts/export-captions.ts"
   },
   "dependencies": {
     "@remotion/cli": "4.0.543",

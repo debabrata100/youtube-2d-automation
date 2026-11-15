@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "1.0",
+  "id": "titan-pilot",
+  "title": "The Only Place You Could Go Outside Without a Spacesuit",
+  "topic": "Titan: thick nitrogen air at about 1.5x Earth pressure, no oxygen, -179 C, 14% gravity, human-powered flight, slow methane rain, methane lakes",
+  "language": "en-US",
+  "targetAudience": "English-speaking science-curious viewers aged 16-35",
+  "durationSeconds": 82,
+  "storyboard": "storyboards/titan-pilot.json",
+  "candidatesReport": "stories/titan-pilot-notes.md",
+  "beats": [
+    {
+      "id": "hook",
+      "sceneId": "titan-hook",
+      "intent": "hook",
+      "emphasis": [
+        "without a spacesuit"
+      ],
+      "narration": "There's one place in the solar system where you could step outside without a spacesuit. It's Titan, Saturn's biggest moon.",
+      "phrases": [
+        "There's one place in the solar system",
+        "where you could step outside",
+        "without a spacesuit.",
+        "It's Titan, Saturn's biggest moon."
+      ]
+    },
+    {
+      "id": "pressure",
+      "sceneId": "titan-pressure",
+      "intent": "setup",
+      "emphasis": [
+        "one and a half times"
+      ],
+      "narration": "On the Moon or Mars, you'd need a pressure suit. But Titan's air is so thick, it presses on you about one and a half times harder than Earth's. Heavy, but safe.",
+      "phrases": [
+        "On the Moon or Mars,",
+        "you'd need a pressure suit.",
+        "But Titan's air is so thick,",
+        "it presses on you about",
+        "one and a half times harder than Earth's.",
+        "Heavy, but safe."
+      ]
+    },
+    {
+      "id": "oxygen",
+      "sceneId": "titan-oxygen",
+      "intent": "explanation",
+      "emphasis": [
+        "no oxygen"
+      ],
+      "narration": "There's a catch. That air is mostly nitrogen, with no oxygen at all. So you'd still need a mask.",
+      "phrases": [
+        "There's a catch.",
+        "That air is mostly nitrogen,",
+        "with no oxygen at all.",
+        "So you'd still need a mask."
+      ]
+    },
+    {
+      "id": "cold",
+      "sceneId": "titan-cold",
+      "intent": "explanation",
+      "emphasis": [
+        "minus one hundred seventy-nine"
+      ],
+      "narration": "And it's minus one hundred seventy-nine degrees Celsius. So add the warmest coat ever made.",
+      "phrases": [
+        "And it's minus one hundred",
+        "seventy-nine degrees Celsius.",
+        "So add the warmest coat ever made."
+      ]
+    },
+    {
+      "id": "fly",
+      "sceneId": "titan-fly",
+      "intent": "payoff",
+      "emphasis": [
+        "fly"
+      ],
+      "narration": "Now the fun part. Gravity here is only fourteen percent of Earth's. With air this thick, you could strap wings to your arms, flap, and actually fly.",
+      "phrases": [
+        "Now the fun part.",
+        "Gravity here is only",
+        "fourteen percent of Earth's.",
+        "With air this thick,",
+        "you could strap wings to your arms,",
+        "flap, and actually fly."
+      ]
+    },
+    {
+      "id": "rain",
+      "sceneId": "titan-rain",
+      "intent": "explanation",
+      "emphasis": [
+        "five times slower"
+      ],
+      "narration": "Even the rain is strange. It's liquid methane, falling about five times slower than rain on Earth.",
+      "phrases": [
+        "Even the rain is strange.",
+        "It's liquid methane,",
+        "falling about five times slower",
+        "than rain on Earth."
+      ]
+    },
+    {
+      "id": "lakes",
+      "sceneId": "titan-lakes",
+      "intent": "explanation",
+      "emphasis": [
+        "sink"
+      ],
+      "narration": "It fills lakes bigger than any of the Great Lakes. Just don't go swimming. Methane is so light, you'd sink straight to the bottom.",
+      "phrases": [
+        "It fills lakes bigger",
+        "than any of the Great Lakes.",
+        "Just don't go swimming.",
+        "Methane is so light,",
+        "you'd sink straight to the bottom."
+      ]
+    },
+    {
+      "id": "closing",
+      "sceneId": "titan-closing",
+      "intent": "closing",
+      "emphasis": [
+        "wings"
+      ],
+      "narration": "So, Titan. No spacesuit needed. Just bring a mask, a coat, and wings.",
+      "phrases": [
+        "So, Titan.",
+        "No spacesuit needed.",
+        "Just bring a mask,",
+        "a coat, and wings."
+      ]
+    }
+  ]
+}
