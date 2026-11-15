@@ -31,9 +31,9 @@ Read `docs/PROJECT_STATUS.md` (current state) and `docs/YOUTUBE_2D_AUTOMATION_HA
 
 Inspect the actual repository to verify the current implementation.
 
-The latest completed milestone is M3.2 (hand-drawn "Paint Explainer" style prototype), merged to `main` (tag `v0.3.2`). M3.3 (Titan pilot) is in progress on `claude/m3-3-paint-pilot`: stage 1 done, stage 2 (paid narration and final render) awaits approval; see `docs/PROJECT_STATUS.md` and `docs/M3_3_TITAN_PILOT_REPORT.md`. The chosen visual direction is the hand-drawn explainer style. Prefer word anchors over frame numbers for story-critical timing. Paid narration runs on the user's Mac via `npm run narration:synthesize` after explicit approval.
+The latest completed milestone is M3.2 (hand-drawn "Paint Explainer" style prototype), merged to `main` (tag `v0.3.2`). M3.3 (Titan pilot, 64 s with real narration) is complete on `claude/m3-3-paint-pilot`, awaiting review; see `docs/PROJECT_STATUS.md` and `docs/M3_3_TITAN_PILOT_REPORT.md`. The channel is Gahanarka (@Gahanarka). The chosen visual direction is the hand-drawn explainer style. Prefer word anchors over frame numbers for story-critical timing. Paid narration runs on the user's Mac via `npm run narration:synthesize` after explicit approval.
 
-After M3.3 stage 2, the next milestone is chosen with the user.
+The next milestone is chosen after the M3.3 review.
 
 ## Your responsibilities
 

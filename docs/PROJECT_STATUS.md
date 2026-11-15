@@ -1,6 +1,6 @@
 # Project status — YouTube 2D Automation
 
-_Last updated: 2026-11-15, during M3.3 (stage 1 of 2 done). Keep this concise; it is the entry point for any assistant picking up the project._
+_Last updated: 2026-11-15, after M3.3. Keep this concise; it is the entry point for any assistant picking up the project._
 
 ## Vision
 
@@ -25,16 +25,16 @@ Two engines coexist: legacy planet code (`src/scenes`, `src/components`, `src/mo
 
 ## Completed milestones
 
-M1–M1.2 planet engine and art baseline · M2.1 generic storyboard/templates · M2.2/2.2.1 painted volcano integration · M2.3 narration pipeline (mock) · M2.3.1 OpenAI TTS (rejected) · M2.3.2 ElevenLabs (approved voice, 68 credits) · M2.3.3 narration + captions · M2.3.4 narration-driven scene timing · M2.4.1 motion primitives · M2.5 style and staging spike (vector direction chosen) · M2.6 vector style system and shape kit · M2.7 watchability pass · M3.0 first complete episode: "How Lightning Forms" · M3.1 word-anchored timing and storyboard drafter · M3.2 hand-drawn (Paint Explainer) style prototype (`main` @ `cae7e60`, tag `v0.3.2`) · **M3.3 Titan pilot — stage 1 (props, accessories, SRT export, boil speed-up, animatic)**; stage 2 (paid narration + final) awaiting approval (see `docs/M3_3_TITAN_PILOT_REPORT.md`).
+M1–M1.2 planet engine and art baseline · M2.1 generic storyboard/templates · M2.2/2.2.1 painted volcano integration · M2.3 narration pipeline (mock) · M2.3.1 OpenAI TTS (rejected) · M2.3.2 ElevenLabs (approved voice, 68 credits) · M2.3.3 narration + captions · M2.3.4 narration-driven scene timing · M2.4.1 motion primitives · M2.5 style and staging spike (vector direction chosen) · M2.6 vector style system and shape kit · M2.7 watchability pass · M3.0 first complete episode: "How Lightning Forms" · M3.1 word-anchored timing and storyboard drafter · M3.2 hand-drawn (Paint Explainer) style prototype (`main` @ `cae7e60`, tag `v0.3.2`) · **M3.3 Titan pilot (64 s, real narration, all 32 checks pass)** (see `docs/M3_3_TITAN_PILOT_REPORT.md`).
 
 ## Latest branch and commit
 
 - `claude/m3-3-paint-pilot` — in progress; commit hash in the delivery message.
 - `main` = M3.2 (`cae7e60`, tag `v0.3.2`), fast-forwarded by the user. Previous: `claude/m3-1-word-anchors` @ `61b819a`; `claude/m3-0-lightning-episode` @ `1061a0d`; `claude/m2-7-watchability` @ `07f8f80`; `claude/m2-6-vector-style-kit` @ `4d81aca`; `claude/m2-5-style-staging-spike` @ `6937d67`; `codex/m2-4-1-motion-primitives` @ `d9c6f7a`. `main` is still at M2.1 (`a1e8494`); milestone branches are stacked and unmerged.
 
-## Test and build status (M3.3 stage 1)
+## Test and build status (M3.3)
 
-TypeScript pass · Vitest 379/379 (26 files) · both bundles pass · 22/22 lossless frames identical to `main` · Titan animatic (82 s, 2,460 frames, planning narration) renders; visual/timeline checks pass, voice checks fail by design with silent audio · captions exported to SRT/VTT. Render cost in the VM is high (~27 min for 82 s with 4 parallel chunks); finals should render on the Mac.
+TypeScript pass · Vitest 379/379 (26 files) · both bundles pass · 22/22 lossless frames identical to `main` · Titan pilot final (64 s, 1920×1080, real ElevenLabs narration, 921 characters): verify-cached-story 32/32 — −14.9 LUFS, −2.3 dBTP, 17.4 dB ducking, phrase clarity ≥ 0.955, cue deviation ≤ 15.7 ms · captions exported (SRT/VTT). The timing estimator overestimated this take by 30% (recalibrate).
 
 ## Known limitations
 
@@ -52,14 +52,13 @@ Template misuse; two engines; two clocks (camera = output frames, layer effects 
 
 ## Approved next milestone
 
-M3.3 (approved): 60–90 s hand-drawn pilot with a real voice. Stage 1 done; stage 2 needs the user's script approval and one paid ElevenLabs request (921 characters). Direction: The Paint Explainer style (hand-drawn, 16:9, stick-figure astronaut).
+None yet. Awaiting the user's review of the Titan pilot. Channel: Gahanarka (@Gahanarka), banner made in M3.3's session. Direction: The Paint Explainer style (hand-drawn, 16:9, stick-figure astronaut).
 
 ## Proposed future milestones
 
-1. **M3.3 stage 2** (pending approval): paid narration, refit, final render, verification.
-2. **Publishing package**: title/thumbnail/description/tags, AI-disclosure, upload checklist; first uploads for retention data.
-3. **Visual variety pack**: close-up/cutaway compositions, public-domain NASA photo inserts, darker methane palette, scene-composition presets.
-4. **LLM visual director** for the hand-drawn kit (script → poses, props, notes) with a human approval gate.
+1. **Publishing package** (recommended): title/thumbnail/description/tags, AI-disclosure, upload checklist; first uploads for retention data.
+2. **Visual variety pack**: close-up/cutaway compositions, public-domain NASA photo inserts, darker methane palette, scene-composition presets.
+3. **LLM visual director** for the hand-drawn kit (script → poses, props, notes) with a human approval gate.
 
 ## Open decisions
 
@@ -70,6 +69,6 @@ M3.3 (approved): 60–90 s hand-drawn pilot with a real voice. Stage 1 done; sta
 
 ## Cost and security
 
-- No paid request without explicit fresh authorization; no automatic retries. Total paid usage to date: one ElevenLabs synthesis (68 credits) plus earlier OpenAI TTS test requests.
+- No paid request without explicit fresh authorization; no automatic retries. Paid usage to date: ElevenLabs syntheses for volcano (68 credits), lightning (465 characters) and Titan (921 characters), plus earlier OpenAI TTS test requests.
 - `.env`, audio, rendered media, `jobs/` and caches are git-ignored and must stay out of commits.
 - Approved narration and painted assets are protected; M2.5 did not modify them.

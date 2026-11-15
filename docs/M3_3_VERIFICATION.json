@@ -1,0 +1,79 @@
+{
+  "milestone": "M3.3 hand-drawn pilot: Titan",
+  "base": "cae7e60 (main, tag v0.3.2)",
+  "typescript": "pass",
+  "vitest": {
+    "files": 26,
+    "passed": 379,
+    "failed": 0,
+    "added": 8
+  },
+  "productionBundles": {
+    "src/index.ts": "pass",
+    "src/storyboard-index.ts": "pass"
+  },
+  "legacyRegression": {
+    "method": "lossless PNG renders from main tree vs branch",
+    "frames": 22,
+    "identical": 22
+  },
+  "paidNarration": {
+    "provider": "elevenlabs",
+    "voice": "iiidtqDt9FBdT1vfBluA",
+    "model": "eleven_multilingual_v2",
+    "requests": 1,
+    "characters": 921,
+    "requestId": "jHzMXb3BzHMlvlj6xaO7",
+    "durationSeconds": 61.719,
+    "sha256Prefix": "01bd1ca149e0e73e",
+    "estimatedSecondsBeforeSynthesis": 80.2,
+    "ranBy": "user on macOS after approval",
+    "ledger": "jobs/m3-3-narration/paid-request-ledger.json"
+  },
+  "final": {
+    "file": "jobs/m3-3-final/output/narrated-animation.mp4",
+    "format": {
+      "width": 1920,
+      "height": 1080,
+      "fps": 30,
+      "frames": 1920,
+      "durationSeconds": 64
+    },
+    "bytes": 14395205,
+    "sha256": "9883336000b9ef1cc15ea1d7667e1d6d9f737d432380df7f9dbc9d11adf7e648",
+    "anchors": 233,
+    "mix": {
+      "music": "generated",
+      "soundCues": 41,
+      "integratedLufs": -14.9,
+      "truePeakDb": -2.3,
+      "loudnessRange": 2.9,
+      "duckingReductionDb": 17.43,
+      "speechCorrelation": 0.9866,
+      "minPhraseClarity": 0.955
+    },
+    "sceneCueDeviationMs": {
+      "max": 15.7,
+      "mean": 9.5
+    },
+    "captions": {
+      "cues": 36,
+      "files": [
+        "captions.srt",
+        "captions.vtt"
+      ],
+      "burnedIn": false
+    },
+    "checks": "verify-cached-story mixed mode: 32/32 pass (first mix failed phrase clarity; SFX lowered and remixed without re-rendering frames)"
+  },
+  "animatic": {
+    "file": "jobs/m3-3-animatic/output/narrated-animation.mp4",
+    "note": "planning narration; voice checks fail by design"
+  },
+  "renderCost": "VM, 4 parallel chunks: ~22 min for 1920 frames",
+  "protected": {
+    "approvedNarrationModified": false,
+    "approvedPaintedAssetsModified": false
+  },
+  "humanReview": "pending"
+}

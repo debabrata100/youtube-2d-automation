@@ -82,7 +82,7 @@ def note(nid, text, x, y, at, size=72, color=RED, to=None, frm=None):
 
 def rain(eid, x, width, speed, start, end, color, count=26, seed=5, outline=True):
     e = {'id': eid, 'type': 'particles', 'count': count, 'seed': seed, 'startFrame': start, 'endFrame': end,
-         'emitter': {'x': x, 'y': .02, 'width': width, 'height': .02}, 'lifetimeFrames': [int(.9 / speed) if speed < .02 else 45, int(1.0 / speed) if speed < .02 else 50],
+         'emitter': {'x': x, 'y': .14, 'width': width, 'height': .02}, 'lifetimeFrames': [int(.9 / speed) if speed < .02 else 45, int(1.0 / speed) if speed < .02 else 50],
          'velocity': {'angleDegrees': 90, 'spreadDegrees': 2, 'speed': [speed * .9, speed * 1.1]}, 'acceleration': {'x': 0, 'y': 0},
          'radius': [.009, .013], 'colors': [color], 'shape': 'drop',
          'opacity': [{'at': 0, 'value': 1}, {'at': .9, 'value': 1}, {'at': 1, 'value': 0}], 'scale': [{'at': 0, 'value': 1}, {'at': 1, 'value': 1}]}
@@ -167,16 +167,16 @@ groups = [
 
     # 5 fly -------------------------------------------------------------------
     {'id': 'g-fly', 'width': W, 'height': H, 'layers': [
-        figure('you', .45, FEET, .6, [(0, 'stand'), (A('fun'), 'cheer'), (A('fourteen'), 'stand'), (A('wings', 2), 'hands-on-hips'), (A('flap', -2), 'flap')],
+        figure('you', .42, FEET, .56, [(0, 'stand'), (A('fun'), 'cheer'), (A('fourteen'), 'stand'), (A('wings', 2), 'hands-on-hips'), (A('flap', -2), 'flap')],
                [(0, 'happy'), (A('fun'), 'grin'), (A('fourteen'), 'neutral'), (A('wings'), 'smug'), (A('flap'), 'grin')],
-               accessories=[('mask', 0), ('coat', 0), ('wings', A('wings'))], anchor={'x': GX(.45), 'y': GY(FEET)},
-               y=track((0, 0), (A('flap', -2), 0), (A('fly', 20), -170, 'ease-out-cubic')), x=track((0, 0), (A('flap', -2), 0), (A('fly', 20), 200))),
-        prop('whoosh', 'motion-lines', .38, .55, .18, opacity=track((0, 0), (A('flap'), 0), (A('flap', 4), 1)),
-             y=track((0, 0), (A('flap', -2), 0), (A('fly', 20), -170, 'ease-out-cubic')), x=track((0, 0), (A('flap', -2), 0), (A('fly', 20), 200))),
+               accessories=[('mask', 0), ('coat', 0), ('wings', A('wings'))], anchor={'x': GX(.42), 'y': GY(FEET)},
+               y=track((0, 0), (A('flap', -2), 0), (A('fly', 20), -90, 'ease-out-cubic')), x=track((0, 0), (A('flap', -2), 0), (A('fly', 20), 150))),
+        prop('whoosh', 'motion-lines', .35, .56, .18, opacity=track((0, 0), (A('flap'), 0), (A('flap', 4), 1)),
+             y=track((0, 0), (A('flap', -2), 0), (A('fly', 20), -90, 'ease-out-cubic')), x=track((0, 0), (A('flap', -2), 0), (A('fly', 20), 150))),
     ], 'annotations': [
-        note('g', '14% gravity', 1450, 330, A('fourteen'), size=84),
-        note('thick', 'thick air', 1450, 430, A('thick'), size=60, color=INK),
-        note('wheee', 'WHEEE!', 1450, 620, A('fly', 4), size=96),
+        note('g', '14% gravity', 1580, 330, A('fourteen'), size=84),
+        note('thick', 'thick air', 1580, 430, A('thick'), size=60, color=INK),
+        note('wheee', 'WHEEE!', 1580, 620, A('fly', 4), size=96),
     ]},
 
     # 6 rain ------------------------------------------------------------------
@@ -241,14 +241,14 @@ def scene(sid, gid, cue, nominal, sounds, cam=None):
 kf = lambda f, z: {'frame': f, 'focus': {'x': .5, 'y': .5}, 'zoom': z, 'easing': 'smoothstep'}
 P, WH = 'pop', 'whoosh'
 sounds = {
-    'hook': [(P, A('step', -2), -16), (P, A('without'), -14), (WH, A('Titan', -4), -18), (P, A('Titan'), -15), (P, A("Saturn's"), -17)],
-    'pressure': [(WH, 0, -18), (P, A('Moon'), -17), (P, A('But', 2), -17), ('boom', A('presses'), -16), (P, A('one', 0, beat='pressure'), -15), (P, A('safe', 1), -15)],
-    'oxygen': [(WH, 0, -18), (P, A('catch'), -14), ('bubble', A('nitrogen'), -18), (P, A('oxygen'), -15), (P, A('mask'), -15)],
-    'cold': [(WH, 0, -18), ('rumble', A('minus'), -20), (P, A('seventy-nine'), -14), (P, A('Celsius'), -17), (WH, A('coat', -2), -16), (P, A('coat'), -15)],
-    'fly': [(WH, 0, -18), (P, A('fourteen'), -15), (P, A('wings'), -15), ('riser', A('flap', -6), -18), (WH, A('flap'), -14), (P, A('fly', 4), -13)],
-    'rain': [(WH, 0, -18), (P, A('methane'), -16), (P, A('five'), -14)],
-    'lakes': [(WH, 0, -18), (P, A('bigger'), -15), (WH, A('swimming', 2), -16), ('bubble', A('sink', 2), -12), (P, A('sink', 2), -15)],
-    'closing': [(WH, 0, -18), (P, A('No', 0, beat='closing'), -16), (P, A('mask', 1), -15), (P, A('coat', 1), -15), (P, A('wings', 1), -14), ('riser', A('wings', 2), -20)],
+    'hook': [(P, A('step', -2), -21), (P, A('without'), -21), (WH, A('Titan', -4), -24), (P, A('Titan'), -21), (P, A("Saturn's"), -21)],
+    'pressure': [(WH, 0, -24), (P, A('Moon'), -21), (P, A('But', 2), -21), ('boom', A('presses'), -20), (P, A('one', 0, beat='pressure'), -21), (P, A('safe', 1), -21)],
+    'oxygen': [(WH, 0, -24), (P, A('catch'), -21), ('bubble', A('nitrogen'), -24), (P, A('oxygen'), -21), (P, A('mask'), -21)],
+    'cold': [(WH, 0, -24), ('rumble', A('minus'), -24), (P, A('seventy-nine'), -21), (P, A('Celsius'), -21), (WH, A('coat', -2), -24), (P, A('coat'), -21)],
+    'fly': [(WH, 0, -24), (P, A('fourteen'), -21), (P, A('wings'), -21), ('riser', A('flap', -6), -26), (P, A('fly', 4), -21)],
+    'rain': [(WH, 0, -24), (P, A('methane'), -21), (P, A('five'), -21)],
+    'lakes': [(WH, 0, -24), (P, A('bigger'), -21), (WH, A('swimming', 2), -24), ('bubble', A('sink', 2), -20), (P, A('sink', 2), -21)],
+    'closing': [(WH, 0, -24), (P, A('No', 0, beat='closing'), -21), (P, A('mask', 1), -21), (P, A('coat', 1), -21), (P, A('wings', 1), -21), ('riser', A('wings', 2), -26)],
 }
 cams = {'hook': [kf(0, 1.04), kf(A('Titan', -2), 1.0)]}
 scenes = [scene(b['sceneId'], f"g-{b['id']}", b['id'], NOMINAL[i], sounds[b['id']], cams.get(b['id'])) for i, b in enumerate(story['beats'])]

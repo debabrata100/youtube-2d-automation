@@ -81,7 +81,8 @@ describe('Titan pilot storyboard', () => {
     const raw = JSON.parse(readFileSync('storyboards/titan-pilot.json', 'utf8'));
     const story = validateStory(storyScriptSchema.parse(JSON.parse(readFileSync('stories/titan-pilot.json', 'utf8'))), parseAnchoredStoryboard(raw));
     expect(story.beats).toHaveLength(8);
-    const est = estimateAlignment(story.beats.map(b => b.narration).join(' '));
+    // The timeline is fitted to the approved take (61.7 s), which spoke faster than the default 155 wpm estimate.
+    const est = estimateAlignment(story.beats.map(b => b.narration).join(' '), 210);
     const r = resolveWordAnchors(raw, captionsFromProviderTiming(story, est, est.character_end_times_seconds.at(-1)! + .05, 30));
     expect(r.resolutions.length).toBeGreaterThan(200);
     expect(r.source.format).toEqual({width: 1920, height: 1080, fps: 30});

@@ -1636,9 +1636,9 @@
           "id": "you",
           "kit": {
             "type": "figure",
-            "x": 0.45,
+            "x": 0.42,
             "y": 0.86,
-            "height": 0.6,
+            "height": 0.56,
             "outfit": "stick",
             "shiver": 0,
             "seed": 3,
@@ -1720,7 +1720,7 @@
             ]
           },
           "anchor": {
-            "x": 864.0,
+            "x": 806.4,
             "y": 928.8
           },
           "y": [
@@ -1740,7 +1740,7 @@
                 "at": "fly",
                 "offset": 20
               },
-              "value": -170,
+              "value": -90,
               "ease": "ease-out-cubic"
             }
           ],
@@ -1761,7 +1761,7 @@
                 "at": "fly",
                 "offset": 20
               },
-              "value": 200
+              "value": 150
             }
           ]
         },
@@ -1770,8 +1770,8 @@
           "kit": {
             "type": "prop",
             "item": "motion-lines",
-            "x": 0.38,
-            "y": 0.55,
+            "x": 0.35,
+            "y": 0.56,
             "size": 0.18
           },
           "opacity": [
@@ -1810,7 +1810,7 @@
                 "at": "fly",
                 "offset": 20
               },
-              "value": -170,
+              "value": -90,
               "ease": "ease-out-cubic"
             }
           ],
@@ -1831,7 +1831,7 @@
                 "at": "fly",
                 "offset": 20
               },
-              "value": 200
+              "value": 150
             }
           ]
         }
@@ -1840,7 +1840,7 @@
         {
           "id": "g",
           "text": "14% gravity",
-          "x": 1450,
+          "x": 1580,
           "y": 330,
           "size": 84,
           "anchor": "middle",
@@ -1871,7 +1871,7 @@
         {
           "id": "thick",
           "text": "thick air",
-          "x": 1450,
+          "x": 1580,
           "y": 430,
           "size": 60,
           "anchor": "middle",
@@ -1902,7 +1902,7 @@
         {
           "id": "wheee",
           "text": "WHEEE!",
-          "x": 1450,
+          "x": 1580,
           "y": 620,
           "size": 96,
           "anchor": "middle",
@@ -1949,7 +1949,7 @@
               "endFrame": 400,
               "emitter": {
                 "x": 0.66,
-                "y": 0.02,
+                "y": 0.14,
                 "width": 0.5,
                 "height": 0.02
               },
@@ -2022,7 +2022,7 @@
               },
               "emitter": {
                 "x": 0.16,
-                "y": 0.02,
+                "y": 0.14,
                 "width": 0.22,
                 "height": 0.02
               },
@@ -3014,8 +3014,8 @@
     {
       "id": "titan-hook",
       "template": "hero-reveal",
-      "durationFrames": 294,
-      "animationDurationFrames": 294,
+      "durationFrames": 229,
+      "animationDurationFrames": 229,
       "caption": {
         "text": "titan-hook",
         "preset": "body"
@@ -3073,14 +3073,14 @@
             "at": "step",
             "offset": -2
           },
-          "gainDb": -16
+          "gainDb": -21
         },
         {
           "sound": "pop",
           "frame": {
             "at": "without"
           },
-          "gainDb": -14
+          "gainDb": -21
         },
         {
           "sound": "whoosh",
@@ -3088,29 +3088,29 @@
             "at": "Titan",
             "offset": -4
           },
-          "gainDb": -18
+          "gainDb": -24
         },
         {
           "sound": "pop",
           "frame": {
             "at": "Titan"
           },
-          "gainDb": -15
+          "gainDb": -21
         },
         {
           "sound": "pop",
           "frame": {
             "at": "Saturn's"
           },
-          "gainDb": -17
+          "gainDb": -21
         }
       ]
     },
     {
       "id": "titan-pressure",
       "template": "hero-reveal",
-      "durationFrames": 471,
-      "animationDurationFrames": 471,
+      "durationFrames": 367,
+      "animationDurationFrames": 367,
       "caption": {
         "text": "titan-pressure",
         "preset": "body"
@@ -3142,14 +3142,14 @@
         {
           "sound": "whoosh",
           "frame": 0,
-          "gainDb": -18
+          "gainDb": -24
         },
         {
           "sound": "pop",
           "frame": {
             "at": "Moon"
           },
-          "gainDb": -17
+          "gainDb": -21
         },
         {
           "sound": "pop",
@@ -3157,14 +3157,14 @@
             "at": "But",
             "offset": 2
           },
-          "gainDb": -17
+          "gainDb": -21
         },
         {
           "sound": "boom",
           "frame": {
             "at": "presses"
           },
-          "gainDb": -16
+          "gainDb": -20
         },
         {
           "sound": "pop",
@@ -3172,7 +3172,7 @@
             "at": "one",
             "beat": "pressure"
           },
-          "gainDb": -15
+          "gainDb": -21
         },
         {
           "sound": "pop",
@@ -3180,15 +3180,15 @@
             "at": "safe",
             "offset": 1
           },
-          "gainDb": -15
+          "gainDb": -21
         }
       ]
     },
     {
       "id": "titan-oxygen",
       "template": "hero-reveal",
-      "durationFrames": 279,
-      "animationDurationFrames": 279,
+      "durationFrames": 218,
+      "animationDurationFrames": 218,
       "caption": {
         "text": "titan-oxygen",
         "preset": "body"
@@ -3220,43 +3220,43 @@
         {
           "sound": "whoosh",
           "frame": 0,
-          "gainDb": -18
+          "gainDb": -24
         },
         {
           "sound": "pop",
           "frame": {
             "at": "catch"
           },
-          "gainDb": -14
+          "gainDb": -21
         },
         {
           "sound": "bubble",
           "frame": {
             "at": "nitrogen"
           },
-          "gainDb": -18
+          "gainDb": -24
         },
         {
           "sound": "pop",
           "frame": {
             "at": "oxygen"
           },
-          "gainDb": -15
+          "gainDb": -21
         },
         {
           "sound": "pop",
           "frame": {
             "at": "mask"
           },
-          "gainDb": -15
+          "gainDb": -21
         }
       ]
     },
     {
       "id": "titan-cold",
       "template": "hero-reveal",
-      "durationFrames": 220,
-      "animationDurationFrames": 220,
+      "durationFrames": 172,
+      "animationDurationFrames": 172,
       "caption": {
         "text": "titan-cold",
         "preset": "body"
@@ -3288,28 +3288,28 @@
         {
           "sound": "whoosh",
           "frame": 0,
-          "gainDb": -18
+          "gainDb": -24
         },
         {
           "sound": "rumble",
           "frame": {
             "at": "minus"
           },
-          "gainDb": -20
+          "gainDb": -24
         },
         {
           "sound": "pop",
           "frame": {
             "at": "seventy-nine"
           },
-          "gainDb": -14
+          "gainDb": -21
         },
         {
           "sound": "pop",
           "frame": {
             "at": "Celsius"
           },
-          "gainDb": -17
+          "gainDb": -21
         },
         {
           "sound": "whoosh",
@@ -3317,22 +3317,22 @@
             "at": "coat",
             "offset": -2
           },
-          "gainDb": -16
+          "gainDb": -24
         },
         {
           "sound": "pop",
           "frame": {
             "at": "coat"
           },
-          "gainDb": -15
+          "gainDb": -21
         }
       ]
     },
     {
       "id": "titan-fly",
       "template": "hero-reveal",
-      "durationFrames": 397,
-      "animationDurationFrames": 397,
+      "durationFrames": 310,
+      "animationDurationFrames": 310,
       "caption": {
         "text": "titan-fly",
         "preset": "body"
@@ -3364,21 +3364,21 @@
         {
           "sound": "whoosh",
           "frame": 0,
-          "gainDb": -18
+          "gainDb": -24
         },
         {
           "sound": "pop",
           "frame": {
             "at": "fourteen"
           },
-          "gainDb": -15
+          "gainDb": -21
         },
         {
           "sound": "pop",
           "frame": {
             "at": "wings"
           },
-          "gainDb": -15
+          "gainDb": -21
         },
         {
           "sound": "riser",
@@ -3386,14 +3386,7 @@
             "at": "flap",
             "offset": -6
           },
-          "gainDb": -18
-        },
-        {
-          "sound": "whoosh",
-          "frame": {
-            "at": "flap"
-          },
-          "gainDb": -14
+          "gainDb": -26
         },
         {
           "sound": "pop",
@@ -3401,15 +3394,15 @@
             "at": "fly",
             "offset": 4
           },
-          "gainDb": -13
+          "gainDb": -21
         }
       ]
     },
     {
       "id": "titan-rain",
       "template": "hero-reveal",
-      "durationFrames": 250,
-      "animationDurationFrames": 250,
+      "durationFrames": 195,
+      "animationDurationFrames": 195,
       "caption": {
         "text": "titan-rain",
         "preset": "body"
@@ -3441,29 +3434,29 @@
         {
           "sound": "whoosh",
           "frame": 0,
-          "gainDb": -18
+          "gainDb": -24
         },
         {
           "sound": "pop",
           "frame": {
             "at": "methane"
           },
-          "gainDb": -16
+          "gainDb": -21
         },
         {
           "sound": "pop",
           "frame": {
             "at": "five"
           },
-          "gainDb": -14
+          "gainDb": -21
         }
       ]
     },
     {
       "id": "titan-lakes",
       "template": "hero-reveal",
-      "durationFrames": 353,
-      "animationDurationFrames": 353,
+      "durationFrames": 275,
+      "animationDurationFrames": 275,
       "caption": {
         "text": "titan-lakes",
         "preset": "body"
@@ -3495,14 +3488,14 @@
         {
           "sound": "whoosh",
           "frame": 0,
-          "gainDb": -18
+          "gainDb": -24
         },
         {
           "sound": "pop",
           "frame": {
             "at": "bigger"
           },
-          "gainDb": -15
+          "gainDb": -21
         },
         {
           "sound": "whoosh",
@@ -3510,7 +3503,7 @@
             "at": "swimming",
             "offset": 2
           },
-          "gainDb": -16
+          "gainDb": -24
         },
         {
           "sound": "bubble",
@@ -3518,7 +3511,7 @@
             "at": "sink",
             "offset": 2
           },
-          "gainDb": -12
+          "gainDb": -20
         },
         {
           "sound": "pop",
@@ -3526,15 +3519,15 @@
             "at": "sink",
             "offset": 2
           },
-          "gainDb": -15
+          "gainDb": -21
         }
       ]
     },
     {
       "id": "titan-closing",
       "template": "hero-reveal",
-      "durationFrames": 196,
-      "animationDurationFrames": 196,
+      "durationFrames": 154,
+      "animationDurationFrames": 154,
       "caption": {
         "text": "titan-closing",
         "preset": "body"
@@ -3566,7 +3559,7 @@
         {
           "sound": "whoosh",
           "frame": 0,
-          "gainDb": -18
+          "gainDb": -24
         },
         {
           "sound": "pop",
@@ -3574,7 +3567,7 @@
             "at": "No",
             "beat": "closing"
           },
-          "gainDb": -16
+          "gainDb": -21
         },
         {
           "sound": "pop",
@@ -3582,7 +3575,7 @@
             "at": "mask",
             "offset": 1
           },
-          "gainDb": -15
+          "gainDb": -21
         },
         {
           "sound": "pop",
@@ -3590,7 +3583,7 @@
             "at": "coat",
             "offset": 1
           },
-          "gainDb": -15
+          "gainDb": -21
         },
         {
           "sound": "pop",
@@ -3598,7 +3591,7 @@
             "at": "wings",
             "offset": 1
           },
-          "gainDb": -14
+          "gainDb": -21
         },
         {
           "sound": "riser",
@@ -3606,7 +3599,7 @@
             "at": "wings",
             "offset": 2
           },
-          "gainDb": -20
+          "gainDb": -26
         }
       ]
     }

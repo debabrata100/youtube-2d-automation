@@ -5,7 +5,7 @@
   "topic": "Titan: thick nitrogen air at about 1.5x Earth pressure, no oxygen, -179 C, 14% gravity, human-powered flight, slow methane rain, methane lakes",
   "language": "en-US",
   "targetAudience": "English-speaking science-curious viewers aged 16-35",
-  "durationSeconds": 82,
+  "durationSeconds": 64,
   "storyboard": "storyboards/titan-pilot.json",
   "candidatesReport": "stories/titan-pilot-notes.md",
   "beats": [

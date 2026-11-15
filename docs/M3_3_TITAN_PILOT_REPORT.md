@@ -1,6 +1,6 @@
 # M3.3: Hand-drawn pilot episode "The Only Place You Could Go Outside Without a Spacesuit" (Titan)
 
-_2026-11-15 · branch `claude/m3-3-paint-pilot` (from `main` @ `cae7e60`, tag `v0.3.2`) · **stage 1 of 2 complete**: the free work and animatic are done. Stage 2 is the narration and final render, which waits on approval._
+_2026-11-15 · branch `claude/m3-3-paint-pilot` (from `main` @ `cae7e60`, tag `v0.3.2`) · **complete**: stage 1 (free work and animatic) and stage 2 (one approved paid narration and the final render). Human viewing and listening review is pending._
 
 ## Stage 1: delivered (no paid requests)
 
@@ -32,16 +32,25 @@ _2026-11-15 · branch `claude/m3-3-paint-pilot` (from `main` @ `cae7e60`, tag `v
 
 The 2,460-frame animatic took about 27 minutes in 4 parallel chunks: 0.6–1.9 s per frame per process under contention. Frames with the lake and particles are the slowest. Expect several times faster on an Apple Silicon Mac. Rendering time is now the largest practical cost of longer episodes, and a native Mac render is recommended for finals.
 
-## Stage 2: pending approval
+## Stage 2: narration and final (done)
 
-1. You review the script and confirm or edit it. A dry run is already done: **1 request, 921 characters, no retries**.
-2. You run the paid ElevenLabs synthesis on the Mac. The command is in the delivery message.
-3. Refit the timeline to the measured take (`build-titan-pilot-storyboard.py <seconds>`), then do the final render, verification (loudness, ducking, clarity, cue accuracy), caption export, report update and commit.
+- **Narration:** one ElevenLabs request, run by the user after approval. 921 characters, request `jHzMXb3BzHMlvlj6xaO7`, 61.7 s, sha256 `01bd1ca1…`. The ledger records 1 attempt that succeeded, with no retries.
+- **Refit:** `build-titan-pilot-storyboard.py 64` gives a 64 s timeline (2.3 s of ending room). All 233 anchors re-resolved to the real word timings with no manual retiming. Two layout fixes were made after previewing with the real take: the flight is lower so it clears the title and notes, and the rain starts below the title.
+- **Mix fix:** the first mix failed the speech-clarity check. "There's a catch." scored 0.86 and "flap, and actually fly." scored 0.79, because pops, whooshes and a riser sat on top of the words. The sound effects were made quieter (pops −21 dB, cut whooshes −24 dB, risers −26 dB) and the duplicate whoosh on "flap" was removed. Only the audio was remixed; the video frames were reused.
+- **Final:** `jobs/m3-3-final/output/narrated-animation.mp4`, 1920×1080, 30 fps, 64.0 s, 14.4 MB, sha256 `9883336000b9…`. Captions are in `output/captions.srt` and `.vtt`. Contact sheet: `docs/m3-3/titan-final-sheet.jpg`.
+- **Checks:** all 32 checks in `verify-cached-story` (mixed mode) pass:
+  - Loudness: −14.9 LUFS, true peak −2.3 dBTP, loudness range 2.9.
+  - Ducking: 17.4 dB.
+  - Speech: correlation 0.987, lowest phrase clarity 0.955.
+  - Timing: largest cue deviation 15.7 ms.
+  - 41 sound cues.
+- **Finding: the timing estimator was badly off for this take.** It predicted 80.2 s; the real take was 61.7 s, so the estimate was 30% too long. For lightning it had been 8% too long. This voice reads short punchy lines much faster than the volcano take the estimator was calibrated on. Planning still worked because anchors absorb the difference, but scene lengths and the story duration had to be refitted. Next time, recalibrate the estimator from the three approved takes, or measure the voice's pace on a short sample.
 
-## Verification (stage 1)
+## Verification
 
 - TypeScript passes. Vitest: 379 tests passed, 379 total, across 26 files; 8 are new.
 - Both production bundles pass.
 - Lossless regression: 22 of 22 frames are byte-identical to `main` (19 legacy frames plus 3 captioned lightning frames).
 - The Mars test clip from M3.2 will render with slightly different boil noise because the tiles replace `feTurbulence`. This is intended and that clip is not protected.
-- Paid requests: 0.
+- Paid requests: stage 1 had 0; stage 2 had 1, the approved narration.
+- After the refit, the Titan board test resolves anchors at the take's measured pace (≈210 wpm estimate).
