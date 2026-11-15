@@ -1,6 +1,6 @@
 # Project status — YouTube 2D Automation
 
-_Last updated: 2026-11-15, after M3.0. Keep this concise; it is the entry point for any assistant picking up the project._
+_Last updated: 2026-11-15, after M3.1. Keep this concise; it is the entry point for any assistant picking up the project._
 
 ## Vision
 
@@ -12,9 +12,9 @@ A reusable, AI-assisted pipeline that turns a topic into a published, narrated 2
 | --- | --- | --- |
 | Script | `stories/*.json`, Zod `src/storytelling/schema.ts`, beats → scene ids; planning timing estimate (`timing/estimate.ts`) | Authored by Claude with fact check; human approval |
 | Narration | `src/audio/tts/{elevenlabs,openai,mock}.ts`; `npm run narration:synthesize` (dry run, one ledgered paid request, planning placeholder) | Working (ElevenLabs, Bill L. Oxley); runs on your Mac |
-| Timing | `src/storytelling/timing/scene-scheduler.ts`: phrase cues set scene durations | Working |
+| Timing | `src/storytelling/timing/scene-scheduler.ts`: phrase cues set scene durations; **word anchors** (`timing/anchors.ts`): `{"at": "word"}` in place of frame numbers, resolved per clock after scheduling; `anchors:check` sync QA | Working |
 | Captions | Provider character timing → words → 2-line cues with per-word timings; `box`/`outline` styles; word-by-word highlight | Working |
-| Storyboard | Zod `src/engine/storyboard/schema.ts` v2.1; asset registry; 5 templates; layered groups | Working |
+| Storyboard | Zod `src/engine/storyboard/schema.ts` v2.1; asset registry; 5 templates; layered groups; **drafter** `storyboard:draft` (script + theme → anchored skeleton with placeholder visuals) | Working |
 | Style | `src/engine/style/`: theme tokens (`explainer-dusk`, `explainer-day`), `@role.path` colour refs, WCAG contrast helper | Working |
 | Animation | `LayeredSubject` SVG renderer; tracks, wipes/mask sequences, flow; primitives: path motion, particles, camera keyframes, puffs, stroke-reveal (+arrowheads); effects-only layers; **vector kit** (`src/engine/kit/`: sky, sun, ridges, ground, mountain, strata, blob, cloud, water, glow); group backdrops; pill labels; grain | Working, deterministic |
 | Render/QA | Remotion 4.0.543 → H.264/AAC, FFmpeg mux; `verify-storyboard`, `verify-cached-story`; chunked rendering; still previews | Working |
@@ -25,16 +25,16 @@ Two engines coexist: legacy planet code (`src/scenes`, `src/components`, `src/mo
 
 ## Completed milestones
 
-M1–M1.2 planet engine and art baseline · M2.1 generic storyboard/templates · M2.2/2.2.1 painted volcano integration · M2.3 narration pipeline (mock) · M2.3.1 OpenAI TTS (rejected) · M2.3.2 ElevenLabs (approved voice, 68 credits) · M2.3.3 narration + captions · M2.3.4 narration-driven scene timing · M2.4.1 motion primitives · M2.5 style and staging spike (vector direction chosen) · M2.6 vector style system and shape kit · M2.7 watchability pass · **M3.0 first complete episode: "How Lightning Forms"** (see `docs/M3_0_LIGHTNING_EPISODE_REPORT.md`).
+M1–M1.2 planet engine and art baseline · M2.1 generic storyboard/templates · M2.2/2.2.1 painted volcano integration · M2.3 narration pipeline (mock) · M2.3.1 OpenAI TTS (rejected) · M2.3.2 ElevenLabs (approved voice, 68 credits) · M2.3.3 narration + captions · M2.3.4 narration-driven scene timing · M2.4.1 motion primitives · M2.5 style and staging spike (vector direction chosen) · M2.6 vector style system and shape kit · M2.7 watchability pass · M3.0 first complete episode: "How Lightning Forms" · **M3.1 word-anchored timing and storyboard drafter** (see `docs/M3_1_WORD_ANCHORS_REPORT.md`).
 
 ## Latest branch and commit
 
-- `claude/m3-0-lightning-episode` — commit hash in the M3.0 delivery message (a report cannot contain its own hash).
-- Previous: `claude/m2-7-watchability` @ `07f8f80`; `claude/m2-6-vector-style-kit` @ `4d81aca`; `claude/m2-5-style-staging-spike` @ `6937d67`; `codex/m2-4-1-motion-primitives` @ `d9c6f7a`. `main` is still at M2.1 (`a1e8494`); milestone branches are stacked and unmerged.
+- `claude/m3-1-word-anchors` — commit hash in the M3.1 delivery message (a report cannot contain its own hash).
+- Previous: `claude/m3-0-lightning-episode` @ `1061a0d`; `claude/m2-7-watchability` @ `07f8f80`; `claude/m2-6-vector-style-kit` @ `4d81aca`; `claude/m2-5-style-staging-spike` @ `6937d67`; `codex/m2-4-1-motion-primitives` @ `d9c6f7a`. `main` is still at M2.1 (`a1e8494`); milestone branches are stacked and unmerged.
 
-## Test and build status (M3.0)
+## Test and build status (M3.1)
 
-TypeScript pass · Vitest 351/351 (22 files) · both bundles pass · 21/21 legacy lossless frames identical · lightning episode (38 s) all checks pass: −14.8 LUFS, −2.2 dBTP, 16.4 dB ducking, speech-band clarity ≥ 0.950 per phrase · older volcano jobs re-verify. Verified in a Linux arm64 VM with external Chromium/FFmpeg; re-render on macOS for final visuals.
+TypeScript pass · Vitest 364/364 (24 files) · both bundles pass · 19/19 legacy lossless frames identical to M3.0 · anchored lightning re-render with the approved take passes all mixed-mode checks (−14.8 LUFS, −2.4 dBTP, 16.4 dB ducking) · re-narration proof at 155/170 wpm keeps anchored cues on their words (hand-timed drift up to 1.0 s). Verified in a Linux arm64 VM with external Chromium/FFmpeg; re-render on macOS for final visuals.
 
 ## Known limitations
 
@@ -43,25 +43,23 @@ TypeScript pass · Vitest 351/351 (22 files) · both bundles pass · 21/21 legac
 - Painted raster art needs per-topic fitting scripts and masks; it does not scale to many topics or recurring characters.
 - Captions are phrase-level, top-anchored, and not subject-aware; no word-by-word highlight.
 - No hook/retention design beyond the script.
-- Storyboards are large hand-written JSON; no authoring layer or LLM director.
+- The drafter writes timing, camera, labels and sound, but each scene's visual is still hand-authored (placeholders in drafts); no LLM director yet.
 - Scene templates are used as generic slots (e.g. eruption uses `orbital-environment`).
 
 ## Technical debt
 
-Template misuse; two engines; two clocks (camera = output frames, layer effects = normalized illustration frames); dense one-line source in older files; many topic-specific scripts in `scripts/`; hardcoded colours/fonts in renderers; ROADMAP "M3/M4/M5" section is stale; byte-identical MP4 output not guaranteed.
+Template misuse; two engines; two clocks (camera = output frames, layer effects = normalized illustration frames — word anchors now hide this from authors); dense one-line source in older files; many topic-specific scripts in `scripts/`; hardcoded colours/fonts in renderers; ROADMAP "M3/M4/M5" section is stale; byte-identical MP4 output not guaranteed.
 
 ## Approved next milestone
 
-None yet. Awaiting the user's viewing/listening review of the lightning episode.
+None yet. Awaiting the user's review of M3.1.
 
 ## Proposed future milestones
 
-1. **M3.1 Word-anchored timing + authoring automation** (recommended): effects and sounds anchored to spoken words instead of frame numbers, so re-narration needs no manual retiming; then an LLM-assisted script-to-storyboard draft for kit topics.
-2. **Publishing readiness**: title/description/thumbnail frame, upload checklist, first uploads to measure real retention.
-3. **Art source upgrade**: illustrator-made or purchased vector kit mapped onto the existing kit slots; first recurring character.
-3. **M3.0 Second topic, 45–60 s**: prove reuse without engine edits; retire legacy engine; unify clocks; fix template semantics.
-4. **M3.1 LLM storyboard director**: script → validated storyboard JSON with human approval gate.
-5. **M3.2 Publish and analytics**: upload, metadata, retention read-back.
+1. **M3.2 Second episode via the drafter + publishing package** (recommended): draft → author visuals → one paid take → final, timing the human/agent effort; add a thumbnail-frame picker, title/description/tags and AI-disclosure metadata, and an upload checklist so both episodes can go live and return real retention data.
+2. **Art source upgrade**: an illustrator-made or purchased vector set mapped onto the kit slots; first recurring character.
+3. **LLM visual director**: fill drafted placeholders from a vetted library of scene recipes (bolt, particles, flows, diagrams) with a human approval gate.
+4. **Publish and analytics automation**: YouTube API upload and retention read-back (needs OAuth setup and approval).
 
 ## Open decisions
 

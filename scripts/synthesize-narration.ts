@@ -14,7 +14,7 @@ import {createHash} from 'node:crypto';
 import {mkdir, readFile, writeFile} from 'node:fs/promises';
 import {storyScriptSchema, words} from '../src/storytelling/schema';
 import {validateStory} from '../src/storytelling/validate';
-import {parseStoryboard} from '../src/engine/storyboard/schema';
+import {parseAnchoredStoryboard} from '../src/storytelling/timing/anchors';
 import {ttsConfigSchema} from '../src/audio/tts/provider';
 import {ElevenLabsTTSProvider, elevenRequestHash} from '../src/audio/tts/elevenlabs';
 import {measureAudio} from '../src/audio/metadata';
@@ -28,7 +28,7 @@ const {values: o} = parseArgs({options: {
 }});
 if (!o.script) throw Error('Usage: narration:synthesize -- --script stories/<id>.json (--dry-run | --authorize-paid-tts --max-characters <n>) [--output jobs/<new-dir>]');
 const input = storyScriptSchema.parse(JSON.parse(await readFile(o.script, 'utf8')));
-const story = validateStory(input, parseStoryboard(JSON.parse(await readFile(input.storyboard, 'utf8'))));
+const story = validateStory(input, parseAnchoredStoryboard(JSON.parse(await readFile(input.storyboard, 'utf8'))));
 const configs = JSON.parse(await readFile(o.config!, 'utf8'));
 const config = ttsConfigSchema.parse({...configs.elevenlabs, voice: process.env.ELEVENLABS_VOICE_ID?.trim() || configs.elevenlabs.voice, model: process.env.ELEVENLABS_MODEL_ID?.trim() || configs.elevenlabs.model});
 const text = story.beats.map(b => b.narration).join(' '), request = {text, config};

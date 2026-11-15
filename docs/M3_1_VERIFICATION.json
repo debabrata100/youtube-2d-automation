@@ -1,0 +1,35 @@
+{
+  "milestone": "M3.1 word-anchored timing and storyboard drafting",
+  "base": "1061a0d (claude/m3-0-lightning-episode)",
+  "environment": {"os": "Ubuntu 22.04 arm64 VM", "node": "v22.23.4", "browser": "Sparticuz Chromium v153 arm64 (external)", "ffmpeg": "8.1 (external)", "fontSubstitution": "Arial -> Liberation Sans"},
+  "typescript": "pass",
+  "vitest": {"files": 24, "passed": 364, "failed": 0, "added": 13},
+  "productionBundles": {"src/index.ts": "pass", "src/storyboard-index.ts": "pass"},
+  "legacyRegression": {"method": "lossless PNG renders from M3.0 HEAD tree vs branch, same environment", "boards": ["generic-demo", "volcano-kit", "volcano-motion-prototype", "volcano-style-c", "water-cycle-demo"], "frames": 19, "identical": 19},
+  "paidRequests": 0,
+  "anchoredLightning": {
+    "storyboard": "storyboards/lightning.json", "anchors": 140, "warnings": 0,
+    "narration": "approved M3.0 take reused (sha256 b45d1969..., 34.737 s)",
+    "output": {"frames": 1140, "durationSeconds": 38, "bytes": 7144547, "sha256": "10c7897907013c5814d32d5fbdb695307fe9991e3e6f2662b50054aa3dd2932a"},
+    "mix": {"integratedLufs": -14.8, "truePeakDb": -2.4, "loudnessRange": 3.3, "duckingReductionDb": 16.38, "speechCorrelation": 0.9165, "soundCues": 23},
+    "sceneCueDeviationMs": {"max": 10.7, "mean": 7.6},
+    "valuesChangedVsHandTimed": {"count": 40, "maxFrames": 16, "note": "deliberate re-anchoring to better words; strike boom and thunder rumble resolve to the hand-tuned frames"},
+    "checks": "verify-cached-story (mixed mode) all checks pass"
+  },
+  "renarrationProof": {
+    "tool": "scripts/check-anchor-sync.ts",
+    "takes": {
+      "cached 34.74 s": {"maxHandDriftFrames": 16, "warnings": 0},
+      "estimate 155 wpm, 37.36 s": {"maxHandDriftFrames": 30, "strikeOnWord": true, "warnings": 4, "warningKinds": ["clamped at scene start", "fade tail past scene end", "one order nudge"]},
+      "estimate 170 wpm, 34.47 s": {"maxHandDriftFrames": 19, "strikeOnWord": true, "warnings": 2}
+    },
+    "image": "docs/m3-1/renarration-proof.jpg"
+  },
+  "drafter": {
+    "tool": "scripts/draft-storyboard.ts", "demoScript": "stories/rainbow-draft-demo.json", "theme": "explainer-day",
+    "result": {"scenes": 6, "frames": 990, "anchors": 23, "warnings": 0, "autoEmphasis": ["raindrop", "reflects", "rainbow"]},
+    "image": "docs/m3-1/draft-demo.jpg"
+  },
+  "protected": {"approvedNarrationModified": false, "approvedPaintedAssetsModified": false, "captionsModified": false},
+  "humanReview": "pending"
+}

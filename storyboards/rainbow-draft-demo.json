@@ -1,0 +1,973 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "rainbow-draft-demo",
+  "title": "Why Rainbows Form",
+  "themeId": "explainer-day",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "@sky.top",
+  "accent": "@text.accent",
+  "assets": [],
+  "backdrop": {
+    "group": "backdrop"
+  },
+  "crossfadeFrames": 8,
+  "narrationTiming": {
+    "minimumSceneFrames": 45,
+    "maximumDeviationSeconds": 0.2
+  },
+  "audio": {
+    "music": "generated-pad",
+    "musicGainDb": -22,
+    "duckRatio": 8,
+    "targetLufs": -14
+  },
+  "groups": [
+    {
+      "id": "backdrop",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "sky",
+          "kit": {
+            "type": "sky",
+            "horizon": 0.7,
+            "stars": 0,
+            "seed": 5
+          }
+        },
+        {
+          "id": "ridges",
+          "kit": {
+            "type": "ridges",
+            "top": 0.66,
+            "bottom": 0.76,
+            "layers": 3,
+            "peaks": 6,
+            "roughness": 0.5,
+            "drift": 0.00006,
+            "seed": 22
+          }
+        },
+        {
+          "id": "ground",
+          "kit": {
+            "type": "ground",
+            "top": 0.753,
+            "rocks": 6,
+            "seed": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "g-hook",
+      "width": 1000,
+      "height": 1300,
+      "layers": [
+        {
+          "id": "placeholder-cloud",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.3,
+            "width": 1.1,
+            "seed": 40,
+            "lobes": 6,
+            "drift": 0.0001
+          }
+        },
+        {
+          "id": "placeholder-subject",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.58,
+            "rx": 0.3,
+            "ry": 0.18,
+            "tone": "hot"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 18,
+              "value": 0.85
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "label-1",
+          "text": "Your Back",
+          "x": 500,
+          "y": 200,
+          "size": 46,
+          "anchor": "middle",
+          "variant": "pill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "your back",
+                "offset": -2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "your back",
+                "offset": 10
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "placeholder-note",
+          "text": "[placeholder visual: hook]",
+          "x": 500,
+          "y": 1240,
+          "size": 26,
+          "anchor": "middle",
+          "variant": "plain"
+        }
+      ]
+    },
+    {
+      "id": "g-setup",
+      "width": 1000,
+      "height": 1300,
+      "layers": [
+        {
+          "id": "placeholder-cloud",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.3,
+            "width": 1.1,
+            "seed": 41,
+            "lobes": 6,
+            "drift": 0.0001
+          }
+        },
+        {
+          "id": "placeholder-subject",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.58,
+            "rx": 0.3,
+            "ry": 0.18,
+            "tone": "sky"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 18,
+              "value": 0.85
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "label-1",
+          "text": "Raindrop",
+          "x": 500,
+          "y": 200,
+          "size": 46,
+          "anchor": "middle",
+          "variant": "pill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "raindrop",
+                "offset": -2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "raindrop",
+                "offset": 10
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "placeholder-note",
+          "text": "[placeholder visual: setup]",
+          "x": 500,
+          "y": 1240,
+          "size": 26,
+          "anchor": "middle",
+          "variant": "plain"
+        }
+      ]
+    },
+    {
+      "id": "g-split",
+      "width": 1000,
+      "height": 1300,
+      "layers": [
+        {
+          "id": "placeholder-cloud",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.3,
+            "width": 1.1,
+            "seed": 42,
+            "lobes": 6,
+            "drift": 0.0001
+          }
+        },
+        {
+          "id": "placeholder-subject",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.58,
+            "rx": 0.3,
+            "ry": 0.18,
+            "tone": "sky"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 18,
+              "value": 0.85
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "label-1",
+          "text": "Violet",
+          "x": 500,
+          "y": 200,
+          "size": 46,
+          "anchor": "middle",
+          "variant": "pill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "violet",
+                "offset": -2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "violet",
+                "offset": 10
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "placeholder-note",
+          "text": "[placeholder visual: split]",
+          "x": 500,
+          "y": 1240,
+          "size": 26,
+          "anchor": "middle",
+          "variant": "plain"
+        }
+      ]
+    },
+    {
+      "id": "g-bounce",
+      "width": 1000,
+      "height": 1300,
+      "layers": [
+        {
+          "id": "placeholder-cloud",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.3,
+            "width": 1.1,
+            "seed": 43,
+            "lobes": 6,
+            "drift": 0.0001
+          }
+        },
+        {
+          "id": "placeholder-subject",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.58,
+            "rx": 0.3,
+            "ry": 0.18,
+            "tone": "sky"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 18,
+              "value": 0.85
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "label-1",
+          "text": "Reflects",
+          "x": 500,
+          "y": 200,
+          "size": 46,
+          "anchor": "middle",
+          "variant": "pill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "reflects",
+                "offset": -2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "reflects",
+                "offset": 10
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "placeholder-note",
+          "text": "[placeholder visual: bounce]",
+          "x": 500,
+          "y": 1240,
+          "size": 26,
+          "anchor": "middle",
+          "variant": "plain"
+        }
+      ]
+    },
+    {
+      "id": "g-angle",
+      "width": 1000,
+      "height": 1300,
+      "layers": [
+        {
+          "id": "placeholder-cloud",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.3,
+            "width": 1.1,
+            "seed": 44,
+            "lobes": 6,
+            "drift": 0.0001
+          }
+        },
+        {
+          "id": "placeholder-subject",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.58,
+            "rx": 0.3,
+            "ry": 0.18,
+            "tone": "hot"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 18,
+              "value": 0.85
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "label-1",
+          "text": "Forty-two Degrees",
+          "x": 500,
+          "y": 200,
+          "size": 46,
+          "anchor": "middle",
+          "variant": "pill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "forty-two degrees",
+                "offset": -2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "forty-two degrees",
+                "offset": 10
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "placeholder-note",
+          "text": "[placeholder visual: angle]",
+          "x": 500,
+          "y": 1240,
+          "size": 26,
+          "anchor": "middle",
+          "variant": "plain"
+        }
+      ]
+    },
+    {
+      "id": "g-closing",
+      "width": 1000,
+      "height": 1300,
+      "layers": [
+        {
+          "id": "placeholder-cloud",
+          "kit": {
+            "type": "cloud",
+            "x": 0.5,
+            "y": 0.3,
+            "width": 1.1,
+            "seed": 45,
+            "lobes": 6,
+            "drift": 0.0001
+          }
+        },
+        {
+          "id": "placeholder-subject",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.58,
+            "rx": 0.3,
+            "ry": 0.18,
+            "tone": "sky"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 18,
+              "value": 0.85
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "label-1",
+          "text": "Rainbow",
+          "x": 500,
+          "y": 200,
+          "size": 46,
+          "anchor": "middle",
+          "variant": "pill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "rainbow",
+                "offset": -2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "rainbow",
+                "offset": 10
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "placeholder-note",
+          "text": "[placeholder visual: closing]",
+          "x": 500,
+          "y": 1240,
+          "size": 26,
+          "anchor": "middle",
+          "variant": "plain"
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "rainbow-hook",
+      "template": "hero-reveal",
+      "durationFrames": 137,
+      "animationDurationFrames": 137,
+      "caption": {
+        "text": "Your Back",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.12,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 44,
+            "focus": {
+              "x": 0.5,
+              "y": 0.48
+            },
+            "zoom": 1,
+            "easing": "ease-out-back"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 5000,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-hook",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "hook",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "boom",
+          "frame": {
+            "at": "your back"
+          },
+          "gainDb": -9
+        }
+      ]
+    },
+    {
+      "id": "into-drop",
+      "template": "hero-reveal",
+      "durationFrames": 152,
+      "animationDurationFrames": 152,
+      "caption": {
+        "text": "Raindrop",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.48
+            },
+            "zoom": 1,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "down",
+              "edge": "end"
+            },
+            "focus": {
+              "x": 0.5,
+              "y": 0.44
+            },
+            "zoom": 1.08,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 5001,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-setup",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "setup",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -16
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "raindrop",
+            "offset": 2
+          },
+          "gainDb": -17
+        }
+      ]
+    },
+    {
+      "id": "colours-split",
+      "template": "hero-reveal",
+      "durationFrames": 170,
+      "animationDurationFrames": 170,
+      "caption": {
+        "text": "Violet",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.44
+            },
+            "zoom": 1.08,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "apart",
+              "edge": "end"
+            },
+            "focus": {
+              "x": 0.5,
+              "y": 0.4
+            },
+            "zoom": 1.16,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 5002,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-split",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "split",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -16
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "violet",
+            "offset": 2
+          },
+          "gainDb": -17
+        }
+      ]
+    },
+    {
+      "id": "back-of-drop",
+      "template": "hero-reveal",
+      "durationFrames": 172,
+      "animationDurationFrames": 172,
+      "caption": {
+        "text": "Reflects",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.4
+            },
+            "zoom": 1.16,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "it",
+              "edge": "end"
+            },
+            "focus": {
+              "x": 0.5,
+              "y": 0.52
+            },
+            "zoom": 1.04,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 5003,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-bounce",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "bounce",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -16
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "reflects",
+            "offset": 2
+          },
+          "gainDb": -17
+        }
+      ]
+    },
+    {
+      "id": "the-angle",
+      "template": "hero-reveal",
+      "durationFrames": 180,
+      "animationDurationFrames": 180,
+      "caption": {
+        "text": "Forty-two Degrees",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.52
+            },
+            "zoom": 1.04,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "degrees",
+              "edge": "end"
+            },
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.12,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 5004,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-angle",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "angle",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -16
+        },
+        {
+          "sound": "boom",
+          "frame": {
+            "at": "forty-two degrees"
+          },
+          "gainDb": -9
+        }
+      ]
+    },
+    {
+      "id": "your-rainbow",
+      "template": "hero-reveal",
+      "durationFrames": 179,
+      "animationDurationFrames": 179,
+      "caption": {
+        "text": "Rainbow",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.12,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "rainbow",
+              "edge": "end"
+            },
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 5005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-closing",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "closing",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -16
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "rainbow",
+            "offset": 2
+          },
+          "gainDb": -17
+        }
+      ]
+    }
+  ]
+}

@@ -1,8 +1,8 @@
-"""Generate storyboards/lightning.json - M3.0 episode built only from the vector kit and existing effects.
+"""Generate storyboards/lightning.json - the lightning episode built only from the vector kit and existing effects.
 
-Colours are theme references (explainer-storm). Scene effect timings use each scene's nominal
-(animation) frames; narration scheduling rescales them. NOMINAL durations below come from the
-estimated-timing schedule so the scale factor stays close to 1 (camera keys use output frames).
+Colours are theme references (explainer-storm). Story-critical moments use word anchors (A("flashes")),
+resolved by the pipeline from the narration's word timings, so a new take needs no retiming.
+Plain numbers are nominal scene frames (rescaled by scheduling) for incidental motion.
 """
 import json, pathlib, random
 
@@ -22,6 +22,32 @@ def track(*pairs):
     return [{'frame': f, 'value': v} for f, v in pairs]
 
 
+def A(word, offset=0, n=1, edge=None, beat=None):
+    """Word anchor: resolves to the frame where `word` is spoken (+ offset frames)."""
+    a = {'at': word}
+    if n != 1:
+        a['n'] = n
+    if edge:
+        a['edge'] = edge
+    if offset:
+        a['offset'] = offset
+    if beat:
+        a['beat'] = beat
+    return a
+
+
+def plus(t, k):
+    """Shift a frame number or a word anchor by k frames."""
+    if isinstance(t, dict):
+        out = dict(t)
+        total = out.get('offset', 0) + k
+        out.pop('offset', None)
+        if total:
+            out['offset'] = total
+        return out
+    return t + k
+
+
 def kf(frame, x, y, zoom, rotation=0.0, easing='smoothstep'):
     k = {'frame': frame, 'focus': {'x': x, 'y': y}, 'zoom': zoom, 'easing': easing}
     if rotation:
@@ -30,7 +56,7 @@ def kf(frame, x, y, zoom, rotation=0.0, easing='smoothstep'):
 
 
 def shake(start, x, y, zoom, amount=1.0):
-    return [kf(start, x, y, zoom, .7 * amount), kf(start + 3, x, y, zoom, -.6 * amount), kf(start + 6, x, y, zoom, .35 * amount), kf(start + 10, x, y, zoom)]
+    return [kf(start, x, y, zoom, .7 * amount), kf(plus(start, 3), x, y, zoom, -.6 * amount), kf(plus(start, 6), x, y, zoom, .35 * amount), kf(plus(start, 10), x, y, zoom)]
 
 
 def jagged(start, end, segments, amp, seed):
@@ -78,7 +104,7 @@ def particles(eid, seed, count, start, end, emitter, angle, spread, speed, life,
 
 def label(lid, text, x, y, show, anchor='middle', size=44, frm=None, to=None):
     a = {'id': lid, 'text': text, 'x': x, 'y': y, 'size': size, 'anchor': anchor, 'variant': 'pill', 'pop': True,
-         'opacity': track((0, 0), (show[0], 0), (show[1], 1))}
+         'opacity': track((0, 0), (plus(show[0], 0), 0), (plus(show[1], 0), 1))}
     if to:
         a['connector'] = {'from': {'x': frm[0], 'y': frm[1]}, 'to': {'x': to[0], 'y': to[1]}}
     return a
@@ -100,16 +126,17 @@ BRANCH_B = jagged(point_on(BOLT, 6), (.79, .72), 3, .018, 903)
 STREAMER = jagged(HILL_TOP, point_on(BOLT, 9), 2, .006, 904)
 
 
-def bolt_layers(prefix, at, flicker_until, width=.012):
-    """Full bright strike: main channel, branches, flicker, and a screen-wide flash."""
-    flick = track((at - 1, 0), (at, 1), (at + 5, 1), (at + 6, .25), (at + 8, 1), (flicker_until, 1), (flicker_until + 14, 0))
+def bolt_layers(prefix, at, hold, width=.012):
+    """Full bright strike at `at` (frame or word anchor): main channel, branches, flicker held `hold` frames, flash."""
+    p = lambda k: plus(at, k)
+    flick = track((p(-1), 0), (at, 1), (p(5), 1), (p(6), .25), (p(8), 1), (p(hold), 1), (p(hold + 14), 0))
     return [
         {'id': f'{prefix}-flash', 'kit': {'type': 'glow', 'x': .5, 'y': .45, 'rx': 1.3, 'ry': 1.0, 'tone': 'sun'},
-         'opacity': track((at - 1, 0), (at + 1, .8), (at + 6, 0), (at + 8, .45), (at + 14, 0))},
+         'opacity': track((p(-1), 0), (p(1), .8), (p(6), 0), (p(8), .45), (p(14), 0))},
         {'id': f'{prefix}-bolt', 'opacity': flick, 'effects': [
-            stroke(f'{prefix}-main', BOLT, track((at - 2, 0), (at + 1, 1)), width, '@hot.core', '@hot.glow', 4, .6, head=False),
-            stroke(f'{prefix}-branch-a', BRANCH_A, track((at - 1, 0), (at + 2, 1)), width * .55, '@hot.mid', '@hot.glow', 3.5, .45, head=False),
-            stroke(f'{prefix}-branch-b', BRANCH_B, track((at - 1, 0), (at + 2, 1)), width * .5, '@hot.mid', '@hot.glow', 3.5, .45, head=False),
+            stroke(f'{prefix}-main', BOLT, track((p(-2), 0), (p(1), 1)), width, '@hot.core', '@hot.glow', 4, .6, head=False),
+            stroke(f'{prefix}-branch-a', BRANCH_A, track((p(-1), 0), (p(2), 1)), width * .55, '@hot.mid', '@hot.glow', 3.5, .45, head=False),
+            stroke(f'{prefix}-branch-b', BRANCH_B, track((p(-1), 0), (p(2), 1)), width * .5, '@hot.mid', '@hot.glow', 3.5, .45, head=False),
         ]},
     ]
 
@@ -121,55 +148,55 @@ def group(gid, *layers, annotations=None):
     return g
 
 
-ice_up = lambda seed, count=56, start=6: particles('ice-rising', seed, count, start, 145, {'x': .5, 'y': .44, 'width': .55, 'height': .04}, -90, 18, (.0022, .0038), (60, 110), (.007, .011), ['@hot.mid', '@water.foam'], 'diamond')
+ice_up = lambda seed, count=56, start=6, end=145: particles('ice-rising', seed, count, start, end, {'x': .5, 'y': .44, 'width': .55, 'height': .04}, -90, 18, (.0022, .0038), (60, 110), (.007, .011), ['@hot.mid', '@water.foam'], 'diamond')
 groups = [
     {'id': 'backdrop', 'width': 1080, 'height': 1920, 'layers': [
         {'id': 'sky', 'kit': {'type': 'sky', 'horizon': .7, 'stars': 0, 'seed': 5}},
         {'id': 'ridges', 'kit': {'type': 'ridges', 'top': .66, 'bottom': .76, 'layers': 3, 'peaks': 6, 'roughness': .5, 'drift': .00006, 'seed': 22}},
         {'id': 'ground', 'kit': {'type': 'ground', 'top': .753, 'rocks': 6, 'seed': 10}},
     ]},
-    group('g-hook', bolt_layers('hook', 8, 26), annotations=[
-        label('bolt-temp', 'Lightning ~30,000 °C', 500, 880, (34, 48)),
-        label('sun-temp', "Sun's surface ~5,500 °C", 500, 965, (84, 98)),
+    group('g-hook', bolt_layers('hook', A('lightning', 1), 18), annotations=[
+        label('bolt-temp', 'Lightning ~30,000 °C', 500, 880, (A('five'), A('five', 14))),
+        label('sun-temp', "Sun's surface ~5,500 °C", 500, 965, (A("Sun's"), A("Sun's", 14))),
     ]),
     group('g-cloud',
         {'id': 'updraft', 'effects': [
-            stroke(f'updraft-{i}', jagged((x, .74), (x + .02, .28), 1, 0, 0), track((s, 0), (s + 45, 1)), .008, '@smoke.light', '@water.light', head=False, arrow=2.6)
-            for i, (x, s) in enumerate([(.34, 82), (.5, 90), (.66, 98)])]},
-        {'id': 'ice', 'effects': [ice_up(601, start=96)]},
-        annotations=[label('updraft-label', 'Updraft', 780, 640, (108, 122))]),
+            stroke(f'updraft-{i}', jagged((x, .74), (x + .02, .28), 1, 0, 0), track((A('winds', s), 0), (A('winds', s + 45), 1)), .008, '@smoke.light', '@water.light', head=False, arrow=2.6)
+            for i, (x, s) in enumerate([(.34, -10), (.5, -2), (.66, 6)])]},
+        {'id': 'ice', 'effects': [ice_up(601, start=A('ice', -4))]},
+        annotations=[label('updraft-label', 'Updraft', 780, 640, (A('upward'), A('upward', 14)))]),
     group('g-collide', {'id': 'ice', 'effects': [ice_up(602, 50)]},
           {'id': 'hail', 'effects': [particles('hail-falling', 603, 26, 0, 125, {'x': .5, 'y': .2, 'width': .5, 'height': .04}, 90, 14, (.0016, .0026), (70, 110), (.014, .021), ['@rock.light', '@smoke.light'])]},
-          {'id': 'sparks', 'effects': [particles('charge-sparks', 604, 46, 50, 130, {'x': .5, 'y': .31, 'width': .5, 'height': .1}, 0, 180, (.002, .004), (6, 11), (.005, .008), ['@hot.core', '@text.accent'], 'streak')]},
-          annotations=[label('ice-label', 'Ice crystals', 250, 255, (10, 24), size=42), label('hail-label', 'Soft hail', 760, 420, (28, 42), size=42)]),
+          {'id': 'sparks', 'effects': [particles('charge-sparks', 604, 46, A('collide', -4), A('charge', 24), {'x': .5, 'y': .31, 'width': .5, 'height': .1}, 0, 180, (.002, .004), (6, 11), (.005, .008), ['@hot.core', '@text.accent'], 'streak')]},
+          annotations=[label('ice-label', 'Ice crystals', 250, 255, (A('Ice'), A('Ice', 14)), size=42), label('hail-label', 'Soft hail', 760, 420, (A('hail', -4), A('hail', 10)), size=42)]),
     group('g-separate',
-          {'id': 'positive', 'effects': [particles('positive', 701, 54, 0, 110, {'x': .5, 'y': .33, 'width': .6, 'height': .06}, -90, 26, (.0018, .0024), (150, 175), (.008, .012), ['@text.accent'], accel=(0, .0000125),
+          {'id': 'positive', 'effects': [particles('positive', 701, 54, A('Positive', -4), A('Positive', 102), {'x': .5, 'y': .33, 'width': .6, 'height': .06}, -90, 26, (.0018, .0024), (150, 175), (.008, .012), ['@text.accent'], accel=(0, .0000125),
                                                   opacity=[{'at': 0, 'value': 0}, {'at': .1, 'value': .95}, {'at': 1, 'value': .9}])]},
-          {'id': 'negative', 'effects': [particles('negative', 702, 54, 64, 120, {'x': .5, 'y': .3, 'width': .6, 'height': .06}, 90, 26, (.0016, .0022), (150, 175), (.008, .012), ['@water.light'], accel=(0, -.0000115),
+          {'id': 'negative', 'effects': [particles('negative', 702, 54, A('Negative', -8), A('Negative', 48), {'x': .5, 'y': .3, 'width': .6, 'height': .06}, 90, 26, (.0016, .0022), (150, 175), (.008, .012), ['@water.light'], accel=(0, -.0000115),
                                                   opacity=[{'at': 0, 'value': 0}, {'at': .1, 'value': .95}, {'at': 1, 'value': .9}])]},
-          annotations=[label('positive-label', '+  Positive', 500, 130, (8, 22)), label('negative-label', '−  Negative', 500, 640, (74, 88))]),
+          annotations=[label('positive-label', '+  Positive', 500, 130, (A('Positive', 4), A('Positive', 18))), label('negative-label', '−  Negative', 500, 640, (A('Negative', 2), A('Negative', 16)))]),
     group('g-leader',
           {'id': 'base-charge', 'kit': {'type': 'glow', 'x': .45, 'y': .44, 'rx': .32, 'ry': .06, 'tone': 'sky'}, 'opacity': track((0, .6))},
           {'id': 'ground-charge', 'effects': [particles('ground-positive', 801, 26, 20, 140, {'x': .66, 'y': .84, 'width': .4, 'height': .04}, -90, 30, (.0004, .0008), (60, 90), (.005, .007), ['@text.accent'])]},
           {'id': 'leader', 'effects': [
-              stroke('leader-main', BOLT, [{'frame': f, 'value': v} for f, v in [(24, 0), (32, .16), (46, .16), (54, .32), (68, .32), (76, .48), (98, .48), (104, .64), (124, .64), (130, .82)]],
+              stroke('leader-main', BOLT, [{'frame': f, 'value': v} for f, v in [(A('faint', 2), 0), (A('faint', 10), .16), (A('faint', 24), .16), (A('faint', 32), .32), (A('faint', 46), .32), (A('faint', 54), .48), (A('step', -6), .48), (A('step'), .64), (A('step', -6, n=2), .64), (A('step', n=2), .82)]],
                      .006, '@hot.edge', '@hot.glow', 3, .35),
-              stroke('leader-branch-a', BRANCH_A, track((60, 0), (68, .4), (80, .4), (88, .7)), .004, '@hot.edge', '@hot.glow', 3, .3),
-              stroke('leader-branch-b', BRANCH_B, track((104, 0), (112, .5)), .004, '@hot.edge', '@hot.glow', 3, .3),
+              stroke('leader-branch-a', BRANCH_A, track((A('zigzags'), 0), (A('zigzags', 8), .4), (A('zigzags', 20), .4), (A('zigzags', 28), .7)), .004, '@hot.edge', '@hot.glow', 3, .3),
+              stroke('leader-branch-b', BRANCH_B, track((A('step', 3), 0), (A('step', 11), .5)), .004, '@hot.edge', '@hot.glow', 3, .3),
           ]},
-          annotations=[label('leader-label', 'Stepped leader', 225, 760, (62, 76), frm=(330, 745), to=(420, 700))]),
+          annotations=[label('leader-label', 'Stepped leader', 225, 760, (A('zigzags', 2), A('zigzags', 16)), frm=(330, 745), to=(420, 700))]),
     group('g-strike',
-          {'id': 'waiting-leader', 'effects': [stroke('leader-hold', BOLT, track((0, .82)), .006, '@hot.edge', '@hot.glow', 3, .35)], 'opacity': track((0, 1), (113, 1), (115, 0))},
-          {'id': 'streamer', 'effects': [stroke('streamer', STREAMER, track((30, 0), (74, 1)), .006, '@hot.edge', '@hot.glow', 3, .4)], 'opacity': track((0, 1), (113, 1), (115, 0))},
-          bolt_layers('strike', 114, 158, width=.014),
-          annotations=[label('streamer-label', 'Streamer', 830, 980, (42, 56), size=40), label('return-label', 'Return stroke', 225, 840, (138, 152), frm=(340, 825), to=(560, 760))]),
+          {'id': 'waiting-leader', 'effects': [stroke('leader-hold', BOLT, track((0, .82)), .006, '@hot.edge', '@hot.glow', 3, .35)], 'opacity': track((0, 1), (A('flashes', -1), 1), (A('flashes', 1), 0))},
+          {'id': 'streamer', 'effects': [stroke('streamer', STREAMER, track((A('spark', -2), 0), (A('ground', 2), 1)), .006, '@hot.edge', '@hot.glow', 3, .4)], 'opacity': track((0, 1), (A('flashes', -1), 1), (A('flashes', 1), 0))},
+          bolt_layers('strike', A('flashes'), 44, width=.014),
+          annotations=[label('streamer-label', 'Streamer', 830, 980, (A('rising', -6), A('rising', 8)), size=40), label('return-label', 'Return stroke', 225, 840, (A('white-hot', -1), A('white-hot', 13)), frm=(340, 825), to=(560, 760))]),
     group('g-thunder',
           {'id': 'afterglow', 'effects': [stroke('afterglow', BOLT, track((0, 1)), .012, '@hot.mid', '@hot.glow', 3, .4, head=False)], 'opacity': track((0, .9), (36, 0))},
           *[{'id': f'shock-{i}', 'anchor': {'x': 560, 'y': 790}, 'effects': [stroke(f'ring-{i}', circle(.56, .6077, .05), track((0, 1)), .006, '@smoke.light', '@water.light', head=False)],
-             'scale': track((d, .3), (d + 60, 2.9)), 'opacity': track((d, 0), (d + 4, .9), (d + 60, 0))} for i, d in enumerate([10, 24, 38])],
+             'scale': track((A('blast', d), .3), (A('blast', d + 60), 2.9)), 'opacity': track((A('blast', d), 0), (A('blast', d + 4), .9), (A('blast', d + 60), 0))} for i, d in enumerate([-3, 11, 25])],
           {'id': 'rain', 'effects': [particles('rain', 951, 90, 10, 240, {'x': .5, 'y': .46, 'width': 1.0, 'height': .02}, 100, 4, (.009, .012), (22, 30), (.003, .0045), ['@water.light', '@water.mid'], 'streak',
                                                 opacity=[{'at': 0, 'value': 0}, {'at': .15, 'value': .8}, {'at': .85, 'value': .75}, {'at': 1, 'value': 0}], scale=[{'at': 0, 'value': 1}, {'at': 1, 'value': 1}])]},
-          annotations=[label('thunder-label', 'Thunder', 500, 1000, (128, 140), size=52)]),
+          annotations=[label('thunder-label', 'Thunder', 500, 1000, (A('thunder', -6), A('thunder', 6)), size=52)]),
 ]
 
 
@@ -183,17 +210,17 @@ def scene(sid, gid, cue, cam, sounds, nominal, caption):
 
 
 scenes = [
-    scene('strike-hook', 'g-hook', 'hook', [kf(0, .5, .5, 1.12)] + shake(7, .5, .5, 1.12) + [kf(44, .5, .48, 1.0, 0, 'ease-out-back')],
-          [('rumble', 0, -18), ('boom', 7, -9), ('pop', 36, -17), ('pop', 86, -17)], NOMINAL[0], 'How lightning forms'),
-    scene('storm-cloud', 'g-cloud', 'setup', [kf(0, .5, .48, 1.0), kf(70, .5, .42, 1.08)], [('whoosh', 86, -14), ('pop', 110, -17)], NOMINAL[1], 'Inside a storm cloud'),
+    scene('strike-hook', 'g-hook', 'hook', [kf(0, .5, .5, 1.12)] + shake(A('lightning', 1), .5, .5, 1.12) + [kf(44, .5, .48, 1.0, 0, 'ease-out-back')],
+          [('rumble', 0, -18), ('boom', A('lightning', 1), -9), ('pop', A('five', 2), -17), ('pop', A("Sun's", 2), -17)], NOMINAL[0], 'How lightning forms'),
+    scene('storm-cloud', 'g-cloud', 'setup', [kf(0, .5, .48, 1.0), kf(70, .5, .42, 1.08)], [('whoosh', A('winds', -6), -14), ('pop', A('upward', 2), -17)], NOMINAL[1], 'Inside a storm cloud'),
     scene('ice-collisions', 'g-collide', 'collisions', [kf(0, .5, .42, 1.08), kf(36, .5, .32, 1.26)],
-          [('pop', 12, -17), ('pop', 30, -17), ('pop', 56, -19), ('pop', 74, -19), ('pop', 106, -19)], NOMINAL[2], 'Collisions trade charge'),
-    scene('charge-separation', 'g-separate', 'separation', [kf(0, .5, .32, 1.26), kf(34, .5, .36, 1.05)], [('pop', 10, -17), ('pop', 76, -17)], NOMINAL[3], 'Charges separate'),
+          [('pop', A('Ice', 2), -17), ('pop', A('hail', -2), -17), ('pop', A('collide', 2), -19), ('pop', A('trade'), -19), ('pop', A('charge'), -19)], NOMINAL[2], 'Collisions trade charge'),
+    scene('charge-separation', 'g-separate', 'separation', [kf(0, .5, .32, 1.26), kf(34, .5, .36, 1.05)], [('pop', A('Positive', 6), -17), ('pop', A('Negative', 4), -17)], NOMINAL[3], 'Charges separate'),
     scene('stepped-leader', 'g-leader', 'leader', [kf(0, .5, .36, 1.05), kf(40, .5, .52, 1.0)],
-          [('sizzle', 24, -26), ('pop', 64, -17), ('riser', 128, -20)], NOMINAL[4], 'The stepped leader'),
-    scene('return-stroke', 'g-strike', 'strike', [kf(0, .5, .52, 1.0), kf(100, .5, .52, 1.0)] + shake(114, .5, .52, 1.0, 1.4) + [kf(140, .5, .5, 1.02)],
-          [('pop', 44, -19), ('boom', 114, -7), ('pop', 140, -17)], NOMINAL[5], 'Return stroke'),
-    scene('thunder', 'g-thunder', 'closing', [kf(0, .5, .5, 1.02), kf(90, .5, .5, 1.06)], [('rumble', 10, -14), ('whoosh', 10, -18), ('pop', 132, -17), ('rumble', 146, -8)], NOMINAL[6], 'Thunder'),
+          [('sizzle', A('faint', 2), -26), ('pop', A('zigzags', 4), -17), ('riser', A('step', 1, n=2), -20)], NOMINAL[4], 'The stepped leader'),
+    scene('return-stroke', 'g-strike', 'strike', [kf(0, .5, .52, 1.0), kf(A('flashes', -14), .5, .52, 1.0)] + shake(A('flashes'), .5, .52, 1.0, 1.4) + [kf(A('flashes', 26), .5, .5, 1.02)],
+          [('pop', A('rising', -4), -19), ('boom', A('flashes'), -7), ('pop', A('white-hot', 1), -17)], NOMINAL[5], 'Return stroke'),
+    scene('thunder', 'g-thunder', 'closing', [kf(0, .5, .5, 1.02), kf(90, .5, .5, 1.06)], [('rumble', A('blast', -3), -14), ('whoosh', A('blast', -3), -18), ('pop', A('thunder', -2), -17), ('rumble', A('thunder', -1, edge='end'), -8)], NOMINAL[6], 'Thunder'),
 ]
 
 board = {
@@ -202,6 +229,7 @@ board = {
     'assets': [], 'backdrop': {'group': 'backdrop'}, 'crossfadeFrames': 8,
     'narrationTiming': {'minimumSceneFrames': 45, 'maximumDeviationSeconds': .2},
     'audio': {'music': 'generated-pad', 'musicGainDb': -22, 'duckRatio': 8, 'targetLufs': -14},
+    # Word anchors resolve per scene; see src/storytelling/timing/anchors.ts.
     'groups': groups, 'scenes': scenes,
 }
 (ROOT / 'storyboards/lightning.json').write_text(json.dumps(board, indent=2, ensure_ascii=False) + '\n')

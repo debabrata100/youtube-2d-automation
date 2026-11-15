@@ -8,8 +8,7 @@ import {bundle} from '@remotion/bundler';
 import {getCompositions, openBrowser, renderStill} from '@remotion/renderer';
 import {storyScriptSchema} from '../src/storytelling/schema';
 import {validateStory} from '../src/storytelling/validate';
-import {parseStoryboard} from '../src/engine/storyboard/schema';
-import {scheduleNarratedScenes} from '../src/storytelling/timing/scene-scheduler';
+import {hasAnchors, parseAnchoredStoryboard, resolveWordAnchors} from '../src/storytelling/timing/anchors';
 import {captionsFromProviderTiming} from '../src/captions/provider-timing';
 import {captionStyleSchema, narrationOverlaySchema} from '../src/captions/schema';
 import {measureAudio} from '../src/audio/metadata';
@@ -25,7 +24,9 @@ const {values: o} = parseArgs({options: {
 if (!o.storyboard || !o.frames || !o.output) {
   throw Error('Usage: preview-stills --storyboard <json> --frames 0,120,280 --output <new-dir> [--script <json> --metadata <json> --audio <wav>] [--caption-style <json>] [--scale 0.5]');
 }
-const source = parseStoryboard(JSON.parse(await readFile(o.storyboard, 'utf8')));
+const raw = JSON.parse(await readFile(o.storyboard, 'utf8'));
+const source = parseAnchoredStoryboard(raw);
+if (!o.script && hasAnchors(raw)) throw Error('Storyboard has word anchors: pass --script with --estimate-timing or narration so they can be resolved');
 let storyboard = source, narration: unknown;
 if (o.script) {
   if (!o['estimate-timing'] && (!o.metadata || !o.audio)) throw Error('--script requires --metadata and --audio, or --estimate-timing');
@@ -36,8 +37,9 @@ if (o.script) {
   const spoken = estimated ? estimated.character_end_times_seconds.at(-1)! + .05 : (await measureAudio(o.audio!)).durationSeconds;
   if (estimated) console.error(JSON.stringify({estimatedNarrationSeconds: +spoken.toFixed(2), note: 'planning estimate only'}));
   const mapping = captionsFromProviderTiming(story, alignment, spoken, source.format.fps);
-  const schedule = scheduleNarratedScenes(source, mapping.phraseTimings);
+  const anchors = resolveWordAnchors(raw, mapping), schedule = anchors.schedule;
   storyboard = schedule.storyboard;
+  if (anchors.resolutions.length) console.error(JSON.stringify({anchors: anchors.resolutions.length, warnings: anchors.warnings}));
   console.error(JSON.stringify({scheduledFrames: storyboard.scenes.map(s => s.durationFrames), exceptions: schedule.exceptions}));
   const style = captionStyleSchema.parse(o['caption-style'] ? JSON.parse(await readFile(o['caption-style'], 'utf8')) : source.themeId ? getTheme(source.themeId).caption : {});
   narration = narrationOverlaySchema.parse({audioSrc: 'narration/narration.wav', captionsEnabled: true, syntheticTestAudio: false, showAiDisclosureBanner: false, cues: mapping.cues, style});

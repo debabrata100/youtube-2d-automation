@@ -25,7 +25,9 @@
     "story:render-cached": "node --import tsx scripts/render-cached-story.ts",
     "story:verify-cached": "node --import tsx scripts/verify-cached-story.ts",
     "narration:synthesize": "node --env-file-if-exists=.env --import tsx scripts/synthesize-narration.ts",
-    "preview:stills": "node --import tsx scripts/preview-stills.ts"
+    "preview:stills": "node --import tsx scripts/preview-stills.ts",
+    "anchors:check": "node --import tsx scripts/check-anchor-sync.ts",
+    "storyboard:draft": "node --import tsx scripts/draft-storyboard.ts"
   },
   "dependencies": {
     "@remotion/cli": "4.0.543",

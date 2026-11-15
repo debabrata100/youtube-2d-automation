@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0",
+  "id": "rainbow-draft-demo",
+  "title": "Why Rainbows Form",
+  "topic": "Refraction, internal reflection and dispersion of sunlight in raindrops (drafter demo, not narrated)",
+  "language": "en-US",
+  "targetAudience": "English-speaking science-curious viewers aged 16-35",
+  "durationSeconds": 33,
+  "storyboard": "storyboards/rainbow-draft-demo.json",
+  "beats": [
+    {"id": "hook", "sceneId": "rainbow-hook", "intent": "hook", "emphasis": ["your back"],
+     "narration": "Every rainbow you see appears with the Sun at your back.",
+     "phrases": ["Every rainbow you see appears", "with the Sun at your back."]},
+    {"id": "setup", "sceneId": "into-drop", "intent": "setup", "emphasis": [],
+     "narration": "Sunlight enters a falling raindrop and bends as it slows down.",
+     "phrases": ["Sunlight enters a falling raindrop", "and bends as it slows down."]},
+    {"id": "split", "sceneId": "colours-split", "intent": "explanation", "emphasis": ["violet"],
+     "narration": "Each colour bends a different amount, so red and violet drift apart.",
+     "phrases": ["Each colour bends a different amount,", "so red and violet drift apart."]},
+    {"id": "bounce", "sceneId": "back-of-drop", "intent": "explanation", "emphasis": [],
+     "narration": "The light reflects off the back of the drop and bends again leaving it.",
+     "phrases": ["The light reflects off the back of the drop", "and bends again leaving it."]},
+    {"id": "angle", "sceneId": "the-angle", "intent": "payoff", "emphasis": ["forty-two degrees"],
+     "narration": "Millions of drops send each colour to your eye at about forty-two degrees.",
+     "phrases": ["Millions of drops send each colour to your eye", "at about forty-two degrees."]},
+    {"id": "closing", "sceneId": "your-rainbow", "intent": "closing", "emphasis": [],
+     "narration": "So no two people ever see exactly the same rainbow.",
+     "phrases": ["So no two people ever see", "exactly the same rainbow."]}
+  ]
+}

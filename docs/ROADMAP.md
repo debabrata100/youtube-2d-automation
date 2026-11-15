@@ -70,6 +70,10 @@ Implemented and technically verified; **human viewing/listening review pending**
 
 Rendered and technically verified; **viewing/listening approval pending**. A 38 s episode built end to end: fact-checked script candidates, kit storyboard in a new storm theme, 23 sound cues, an animatic before spending, one approved ElevenLabs request run by the user (465 characters, 34.7 s), retiming to provider word timings, final render and mixed-mode verification (−14.8 LUFS, −2.2 dBTP, 16.4 dB ducking, clarity ≥ 0.950). New reusable tools: `narration:synthesize` (dry run / single ledgered request / planning placeholder), a calibrated timing estimator and estimated-timing previews; the verifier now handles any episode length. About 25 agent minutes; no engine code for the topic. See [report](M3_0_LIGHTNING_EPISODE_REPORT.md) and [verification](M3_0_VERIFICATION.json).
 
+## M3.1 — Word-anchored timing and storyboard drafter
+
+Complete; review pending. Frame fields can be word anchors (`{"at": "flashes", "offset": 2}`) that resolve after narration scheduling into the right clock, so a new take or script edit needs no retiming; a deterministic order guard handles compressed clocks. The lightning board now uses 140 anchors and re-renders from the approved take with every check passing; a re-narration proof at 155/170 wpm keeps the strike on "flashes" where hand timing drifts up to 1.0 s. New tools: `anchors:check` (sync QA) and `storyboard:draft` (script + theme → valid anchored skeleton with placeholder visuals, labels and sounds on emphasis words, matched camera handoffs). No paid requests. See [report](M3_1_WORD_ANCHORS_REPORT.md) and [verification](M3_1_VERIFICATION.json).
+
 ## M3 — LangGraph AI storyboard director
 
 Research-to-plan orchestration, structured creative decisions, and plan evaluation. No M3 code is included.

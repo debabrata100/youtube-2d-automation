@@ -5,16 +5,19 @@ import {storyScriptSchema, words} from '../storytelling/schema';
 import {validateStory} from '../storytelling/validate';
 import {captionsFromProviderTiming} from '../captions/provider-timing';
 import {scheduleNarratedScenes} from '../storytelling/timing/scene-scheduler';
-import {parseStoryboard} from '../engine/storyboard/schema';
+import {parseAnchoredStoryboard, resolveWordAnchors} from '../storytelling/timing/anchors';
 import {cameraPresetAt} from '../engine/camera/presets';
 import {contrastRatio, getTheme} from '../engine/style/theme';
 import {wrapPhrase} from '../captions/timing';
 import volcanoScript from '../../stories/volcano-elevenlabs-a.json';
 
 const raw = readFileSync('storyboards/lightning.json', 'utf8');
-const board = parseStoryboard(JSON.parse(raw));
-const story = validateStory(storyScriptSchema.parse(JSON.parse(readFileSync('stories/lightning-a.json', 'utf8'))), board);
+// The board is word-anchored (M3.1): validate the timing skeleton, then resolve against the planning estimate.
+const story = validateStory(storyScriptSchema.parse(JSON.parse(readFileSync('stories/lightning-a.json', 'utf8'))), parseAnchoredStoryboard(JSON.parse(raw)));
 const text = story.beats.map(b => b.narration).join(' ');
+const estimate = estimateAlignment(text), estimateMapping = captionsFromProviderTiming(story, estimate, estimate.character_end_times_seconds.at(-1)! + .05, 30);
+const anchored = resolveWordAnchors(JSON.parse(raw), estimateMapping);
+const board = anchored.source;
 
 describe('planning timing estimate', () => {
   it('reproduces the approved volcano take within 0.3 s', () => {
@@ -45,6 +48,15 @@ describe('lightning episode contracts', () => {
     for (let i = 1; i < d.length; i++) {
       expect(cameraPresetAt(board.scenes[i - 1].camera, d[i - 1] - 1, d[i - 1], 1080, 1920)).toEqual(cameraPresetAt(board.scenes[i].camera, 0, d[i], 1080, 1920));
     }
+  });
+  it('anchors the strike, its boom and the thunder rumble to their words', () => {
+    const start = (i: number) => anchored.schedule.storyboard.scenes.slice(0, i).reduce((n, s) => n + s.durationFrames, 0);
+    const word = (w: string) => estimateMapping.wordTimings.find(x => x.text.replace(/[^\p{L}-]/gu, '').toLowerCase() === w)!;
+    const boom = board.scenes[5].sounds!.find(s => s.sound === 'boom')!;
+    expect(start(5) + boom.frame).toBe(Math.round(word('flashes').startSeconds * 30));
+    const rumble = board.scenes[6].sounds!.at(-1)!;
+    expect(start(6) + rumble.frame).toBe(Math.round(word('thunder').endSeconds * 30) - 1);
+    expect(anchored.resolutions.length).toBeGreaterThan(100);
   });
   it('keeps every caption phrase within two safe lines', () => {
     for (const beat of story.beats) for (const phrase of beat.phrases) expect(wrapPhrase(phrase).length).toBeLessThanOrEqual(2);

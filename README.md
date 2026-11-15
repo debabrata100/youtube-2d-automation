@@ -232,3 +232,11 @@ Regenerate the B/C storyboards with `python3 scripts/authoring/build-style-spike
 5. Final: `npm run story:render-cached -- --script ... --storyboard ... --audio jobs/<id>-narration/audio/narration.wav --metadata jobs/<id>-narration/audio/narration-metadata.json --output jobs/<new>`.
 
 See `docs/M3_0_LIGHTNING_EPISODE_REPORT.md`.
+
+## Word anchors and drafting (M3.1)
+
+- Anywhere a scene camera, scene sound or group uses a frame number, you may write `{"at": "flashes", "offset": 2}` (also `n`, `edge: "end"`, `beat`). It resolves against the narration's word timings, so a new take needs no retiming. Plain numbers still work for incidental motion.
+- Check sync for free: `npm run anchors:check -- --storyboard storyboards/<id>.json --script stories/<id>.json --estimate-timing --wpm 145` (or `--metadata/--audio` for a cached take; `--compare <hand-timed board>` shows drift).
+- Draft a storyboard: `npm run storyboard:draft -- --script stories/<id>.json --theme explainer-day --output storyboards/<id>.json`, preview with `preview:stills --estimate-timing`, then replace each `g-<beat>` placeholder with the real visual.
+
+See `docs/M3_1_WORD_ANCHORS_REPORT.md`.
