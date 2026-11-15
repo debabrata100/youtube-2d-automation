@@ -240,3 +240,10 @@ See `docs/M3_0_LIGHTNING_EPISODE_REPORT.md`.
 - Draft a storyboard: `npm run storyboard:draft -- --script stories/<id>.json --theme explainer-day --output storyboards/<id>.json`, preview with `preview:stills --estimate-timing`, then replace each `g-<beat>` placeholder with the real visual.
 
 See `docs/M3_1_WORD_ANCHORS_REPORT.md`.
+
+## Hand-drawn style (M3.2)
+
+- Theme `paint-notebook` (white page, ink lines with boil, red notes, Patrick Hand font, no burned-in captions); use 16:9 (`format: 1920x1080`).
+- Stick figure: `{"kit": {"type": "figure", "x": .5, "y": .86, "height": .6, "outfit": "stick" | "astronaut", "poses": [{"frame": 0, "pose": "stand"}, {"frame": {"at": "boil"}, "pose": "scared"}], "faces": [{"frame": {"at": "boil"}, "face": "pain"}]}}`. Poses: stand, wave, point-right, point-left, shrug, cheer, panic, scared, hands-on-hips, think, float, tumble, reach, cower, lie, walk, run. Faces: neutral, happy, shocked, scared, sad, dizzy, angry, smug, pain.
+- `planet` and `terrain` kit elements; annotations with `"variant": "ink"` (+ `color`, `connector` for an arrow).
+- Example: `python3 scripts/authoring/build-mars-paint-storyboard.py`, then `preview:stills --estimate-timing`. See `docs/M3_2_PAINT_STYLE_REPORT.md`.

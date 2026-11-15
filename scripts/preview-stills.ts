@@ -42,7 +42,7 @@ if (o.script) {
   if (anchors.resolutions.length) console.error(JSON.stringify({anchors: anchors.resolutions.length, warnings: anchors.warnings}));
   console.error(JSON.stringify({scheduledFrames: storyboard.scenes.map(s => s.durationFrames), exceptions: schedule.exceptions}));
   const style = captionStyleSchema.parse(o['caption-style'] ? JSON.parse(await readFile(o['caption-style'], 'utf8')) : source.themeId ? getTheme(source.themeId).caption : {});
-  narration = narrationOverlaySchema.parse({audioSrc: 'narration/narration.wav', captionsEnabled: true, syntheticTestAudio: false, showAiDisclosureBanner: false, cues: mapping.cues, style});
+  narration = narrationOverlaySchema.parse({audioSrc: 'narration/narration.wav', captionsEnabled: style.enabled !== false, syntheticTestAudio: false, showAiDisclosureBanner: false, cues: mapping.cues, style});
 }
 const out = path.resolve(o.output);
 await mkdir(out);

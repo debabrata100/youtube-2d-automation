@@ -1,0 +1,2087 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "mars-paint-test",
+  "title": "What Would Happen on Mars Without a Suit",
+  "themeId": "paint-notebook",
+  "format": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "@sky.top",
+  "accent": "@text.accent",
+  "assets": [],
+  "backdrop": {
+    "group": "backdrop"
+  },
+  "narrationTiming": {
+    "minimumSceneFrames": 45,
+    "maximumDeviationSeconds": 0.2
+  },
+  "audio": {
+    "music": "generated-pad",
+    "musicGainDb": -24,
+    "duckRatio": 8,
+    "targetLufs": -14
+  },
+  "groups": [
+    {
+      "id": "backdrop",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "page",
+          "kit": {
+            "type": "sky",
+            "horizon": 0.9,
+            "stars": 0,
+            "seed": 1
+          }
+        },
+        {
+          "id": "mars-ground",
+          "kit": {
+            "type": "terrain",
+            "top": 0.82,
+            "curve": 0,
+            "fill": "@ground.top",
+            "detail": "@ground.detail",
+            "rocks": 4,
+            "bumps": 6,
+            "seed": 9
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "The",
+                "offset": -5,
+                "beat": "air"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "The",
+                "offset": -4,
+                "beat": "air"
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "With",
+                "offset": -5,
+                "beat": "boil"
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "With",
+                "offset": -4,
+                "beat": "boil"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "And",
+                "offset": -5,
+                "beat": "cold"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "And",
+                "offset": -4,
+                "beat": "cold"
+              },
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "title",
+          "text": "MARS",
+          "x": 960.0,
+          "y": 105,
+          "size": 88,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill"
+        }
+      ]
+    },
+    {
+      "id": "g-hook",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "mars",
+          "kit": {
+            "type": "planet",
+            "x": 0.5,
+            "y": 0.5,
+            "radius": 0.3,
+            "base": "@ground.top",
+            "craters": 8,
+            "shade": 0.22,
+            "seed": 4
+          },
+          "anchor": {
+            "x": 960,
+            "y": 540
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.5
+            },
+            {
+              "frame": 12,
+              "value": 1,
+              "ease": "ease-out-back"
+            },
+            {
+              "frame": {
+                "at": "spacesuit",
+                "offset": -2
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "spacesuit",
+                "offset": 10
+              },
+              "value": 0.62
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "spacesuit",
+                "offset": -2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "spacesuit",
+                "offset": 10
+              },
+              "value": -470
+            }
+          ]
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.7,
+            "y": 0.8,
+            "height": 0.6,
+            "facing": "right",
+            "outfit": "stick",
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "spacesuit"
+                },
+                "pose": "wave"
+              },
+              {
+                "frame": {
+                  "at": "awake"
+                },
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "fifteen"
+                },
+                "pose": "panic"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "happy"
+              },
+              {
+                "frame": {
+                  "at": "fifteen"
+                },
+                "face": "shocked"
+              }
+            ],
+            "shiver": 0,
+            "seed": 3
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "spacesuit",
+                "offset": -2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "spacesuit",
+                "offset": -1
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "spacesuit",
+                "offset": -2
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "spacesuit",
+                "offset": 8
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1344,
+            "y": 842
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "fifteen",
+          "text": "~15 seconds",
+          "x": 1580,
+          "y": 250,
+          "size": 84,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fifteen",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fifteen",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ],
+          "connector": {
+            "from": {
+              "x": 1520,
+              "y": 275
+            },
+            "to": {
+              "x": 1420,
+              "y": 340
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "g-air",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.24,
+            "y": 0.86,
+            "height": 0.6,
+            "facing": "right",
+            "outfit": "stick",
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "carbon"
+                },
+                "pose": "point-right"
+              },
+              {
+                "frame": {
+                  "at": "thinner",
+                  "offset": -4
+                },
+                "pose": "scared"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "carbon"
+                },
+                "face": "sad"
+              },
+              {
+                "frame": {
+                  "at": "thinner"
+                },
+                "face": "scared"
+              }
+            ],
+            "shiver": 0,
+            "seed": 3
+          }
+        },
+        {
+          "id": "co2-0",
+          "kit": {
+            "type": "planet",
+            "x": 0.56,
+            "y": 0.4,
+            "radius": 0.045,
+            "base": "@text.accent",
+            "craters": 0,
+            "shade": 0.12,
+            "seed": 20
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "carbon",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "carbon"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "carbon",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "carbon",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ]
+        },
+        {
+          "id": "co2-1",
+          "kit": {
+            "type": "planet",
+            "x": 0.645,
+            "y": 0.4,
+            "radius": 0.06,
+            "base": "@text.fill",
+            "craters": 0,
+            "shade": 0.12,
+            "seed": 21
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "carbon"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "carbon",
+                "offset": 1
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "carbon"
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "carbon",
+                "offset": 10
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ]
+        },
+        {
+          "id": "co2-2",
+          "kit": {
+            "type": "planet",
+            "x": 0.73,
+            "y": 0.4,
+            "radius": 0.045,
+            "base": "@text.accent",
+            "craters": 0,
+            "shade": 0.12,
+            "seed": 22
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "carbon",
+                "offset": 1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "carbon",
+                "offset": 2
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "carbon",
+                "offset": 1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "carbon",
+                "offset": 11
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ]
+        },
+        {
+          "id": "thin-air",
+          "effects": [
+            {
+              "id": "air-dots",
+              "type": "particles",
+              "count": 18,
+              "seed": 31,
+              "startFrame": 0,
+              "endFrame": 160,
+              "emitter": {
+                "x": 0.7,
+                "y": 0.55,
+                "width": 0.5,
+                "height": 0.4
+              },
+              "lifetimeFrames": [
+                60,
+                90
+              ],
+              "velocity": {
+                "angleDegrees": 10,
+                "spreadDegrees": 30,
+                "speed": [
+                  0.0006,
+                  0.0012
+                ]
+              },
+              "acceleration": {
+                "x": 0,
+                "y": 0
+              },
+              "radius": [
+                0.003,
+                0.005
+              ],
+              "colors": [
+                "@smoke.shadow"
+              ],
+              "shape": "circle",
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 0
+                },
+                {
+                  "at": 0.2,
+                  "value": 0.7
+                },
+                {
+                  "at": 0.8,
+                  "value": 0.7
+                },
+                {
+                  "at": 1,
+                  "value": 0
+                }
+              ],
+              "scale": [
+                {
+                  "at": 0,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c",
+          "text": "C",
+          "x": 1238,
+          "y": 457,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffffff",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "carbon"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "carbon",
+                "offset": 2
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "o1",
+          "text": "O",
+          "x": 1075,
+          "y": 452,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffffff",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "carbon",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "carbon",
+                "offset": 1
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "o2",
+          "text": "O",
+          "x": 1402,
+          "y": 452,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffffff",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "carbon",
+                "offset": 1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "carbon",
+                "offset": 3
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "co2",
+          "text": "carbon dioxide",
+          "x": 1500,
+          "y": 200,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "carbon",
+                "offset": 3
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "carbon",
+                "offset": 9
+              },
+              "value": 1
+            }
+          ],
+          "connector": {
+            "from": {
+              "x": 1430,
+              "y": 225
+            },
+            "to": {
+              "x": 1330,
+              "y": 350
+            }
+          }
+        },
+        {
+          "id": "thin",
+          "text": "100x thinner than Earth",
+          "x": 1240,
+          "y": 700,
+          "size": 70,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "thinner",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "thinner",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-boil",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.5,
+            "y": 1.48,
+            "height": 1.2,
+            "facing": "right",
+            "outfit": "stick",
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "boil",
+                  "offset": -2
+                },
+                "pose": "scared"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "pressure"
+                },
+                "face": "sad"
+              },
+              {
+                "frame": {
+                  "at": "boil",
+                  "offset": -2
+                },
+                "face": "pain"
+              }
+            ],
+            "shiver": 0,
+            "seed": 3
+          }
+        },
+        {
+          "id": "boiling",
+          "effects": [
+            {
+              "id": "saliva",
+              "type": "particles",
+              "count": 34,
+              "seed": 77,
+              "startFrame": {
+                "at": "boil",
+                "offset": -2
+              },
+              "endFrame": {
+                "at": "boil",
+                "offset": 45
+              },
+              "emitter": {
+                "x": 0.5,
+                "y": 0.52,
+                "width": 0.03,
+                "height": 0.01
+              },
+              "lifetimeFrames": [
+                18,
+                30
+              ],
+              "velocity": {
+                "angleDegrees": -90,
+                "spreadDegrees": 55,
+                "speed": [
+                  0.002,
+                  0.004
+                ]
+              },
+              "acceleration": {
+                "x": 0,
+                "y": -4e-05
+              },
+              "radius": [
+                0.004,
+                0.009
+              ],
+              "colors": [
+                "@water.light",
+                "@water.mid"
+              ],
+              "shape": "circle",
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 0
+                },
+                {
+                  "at": 0.15,
+                  "value": 1
+                },
+                {
+                  "at": 0.8,
+                  "value": 0.9
+                },
+                {
+                  "at": 1,
+                  "value": 0
+                }
+              ],
+              "scale": [
+                {
+                  "at": 0,
+                  "value": 0.5
+                },
+                {
+                  "at": 0.3,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 1.2
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "pressure",
+          "text": "pressure < 1% of Earth",
+          "x": 430,
+          "y": 230,
+          "size": 70,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pressure",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pressure",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "saliva",
+          "text": "saliva boils!",
+          "x": 1480,
+          "y": 400,
+          "size": 88,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "boil",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "boil",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ],
+          "connector": {
+            "from": {
+              "x": 1380,
+              "y": 450
+            },
+            "to": {
+              "x": 1060,
+              "y": 560
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "g-cold",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.38,
+            "y": 0.86,
+            "height": 0.6,
+            "facing": "right",
+            "outfit": "stick",
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "minus"
+                },
+                "pose": "cower"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "minus"
+                },
+                "face": "scared"
+              }
+            ],
+            "shiver": 0,
+            "seed": 3
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "minus",
+                "offset": 9
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "minus",
+                "offset": 10
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "you-shiver",
+          "kit": {
+            "type": "figure",
+            "x": 0.38,
+            "y": 0.86,
+            "height": 0.6,
+            "facing": "right",
+            "outfit": "stick",
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "cower"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "scared"
+              }
+            ],
+            "shiver": 5,
+            "seed": 3
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "minus",
+                "offset": 9
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "minus",
+                "offset": 10
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "cold-lines",
+          "effects": [
+            {
+              "id": "cold-0",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.22,
+                  "y": 0.5
+                },
+                "segments": [
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.2238,
+                      "y": 0.488
+                    },
+                    "control2": {
+                      "x": 0.2288,
+                      "y": 0.488
+                    },
+                    "to": {
+                      "x": 0.2325,
+                      "y": 0.5
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.2363,
+                      "y": 0.512
+                    },
+                    "control2": {
+                      "x": 0.2413,
+                      "y": 0.512
+                    },
+                    "to": {
+                      "x": 0.245,
+                      "y": 0.5
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.2487,
+                      "y": 0.488
+                    },
+                    "control2": {
+                      "x": 0.2537,
+                      "y": 0.488
+                    },
+                    "to": {
+                      "x": 0.2575,
+                      "y": 0.5
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.2612,
+                      "y": 0.512
+                    },
+                    "control2": {
+                      "x": 0.2662,
+                      "y": 0.512
+                    },
+                    "to": {
+                      "x": 0.27,
+                      "y": 0.5
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": {
+                    "at": "sixty"
+                  },
+                  "value": 0
+                },
+                {
+                  "frame": {
+                    "at": "sixty",
+                    "offset": 10
+                  },
+                  "value": 1
+                }
+              ],
+              "width": 0.004,
+              "color": "@water.mid",
+              "glow": {
+                "color": "@water.mid",
+                "widthScale": 1,
+                "opacity": 0
+              },
+              "headGlow": false
+            },
+            {
+              "id": "cold-1",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.49,
+                  "y": 0.46
+                },
+                "segments": [
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.4937,
+                      "y": 0.448
+                    },
+                    "control2": {
+                      "x": 0.4987,
+                      "y": 0.448
+                    },
+                    "to": {
+                      "x": 0.5025,
+                      "y": 0.46
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.5062,
+                      "y": 0.472
+                    },
+                    "control2": {
+                      "x": 0.5112,
+                      "y": 0.472
+                    },
+                    "to": {
+                      "x": 0.515,
+                      "y": 0.46
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.5188,
+                      "y": 0.448
+                    },
+                    "control2": {
+                      "x": 0.5238,
+                      "y": 0.448
+                    },
+                    "to": {
+                      "x": 0.5275,
+                      "y": 0.46
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.5312,
+                      "y": 0.472
+                    },
+                    "control2": {
+                      "x": 0.5363,
+                      "y": 0.472
+                    },
+                    "to": {
+                      "x": 0.54,
+                      "y": 0.46
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": {
+                    "at": "sixty",
+                    "offset": 3
+                  },
+                  "value": 0
+                },
+                {
+                  "frame": {
+                    "at": "sixty",
+                    "offset": 13
+                  },
+                  "value": 1
+                }
+              ],
+              "width": 0.004,
+              "color": "@water.mid",
+              "glow": {
+                "color": "@water.mid",
+                "widthScale": 1,
+                "opacity": 0
+              },
+              "headGlow": false
+            },
+            {
+              "id": "cold-2",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.24,
+                  "y": 0.66
+                },
+                "segments": [
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.2437,
+                      "y": 0.648
+                    },
+                    "control2": {
+                      "x": 0.2487,
+                      "y": 0.648
+                    },
+                    "to": {
+                      "x": 0.2525,
+                      "y": 0.66
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.2562,
+                      "y": 0.672
+                    },
+                    "control2": {
+                      "x": 0.2612,
+                      "y": 0.672
+                    },
+                    "to": {
+                      "x": 0.265,
+                      "y": 0.66
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.2687,
+                      "y": 0.648
+                    },
+                    "control2": {
+                      "x": 0.2737,
+                      "y": 0.648
+                    },
+                    "to": {
+                      "x": 0.2775,
+                      "y": 0.66
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.2812,
+                      "y": 0.672
+                    },
+                    "control2": {
+                      "x": 0.2862,
+                      "y": 0.672
+                    },
+                    "to": {
+                      "x": 0.29,
+                      "y": 0.66
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": {
+                    "at": "sixty",
+                    "offset": 6
+                  },
+                  "value": 0
+                },
+                {
+                  "frame": {
+                    "at": "sixty",
+                    "offset": 16
+                  },
+                  "value": 1
+                }
+              ],
+              "width": 0.004,
+              "color": "@water.mid",
+              "glow": {
+                "color": "@water.mid",
+                "widthScale": 1,
+                "opacity": 0
+              },
+              "headGlow": false
+            },
+            {
+              "id": "cold-3",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.5,
+                  "y": 0.62
+                },
+                "segments": [
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.5038,
+                      "y": 0.608
+                    },
+                    "control2": {
+                      "x": 0.5088,
+                      "y": 0.608
+                    },
+                    "to": {
+                      "x": 0.5125,
+                      "y": 0.62
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.5162,
+                      "y": 0.632
+                    },
+                    "control2": {
+                      "x": 0.5212,
+                      "y": 0.632
+                    },
+                    "to": {
+                      "x": 0.525,
+                      "y": 0.62
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.5288,
+                      "y": 0.608
+                    },
+                    "control2": {
+                      "x": 0.5338,
+                      "y": 0.608
+                    },
+                    "to": {
+                      "x": 0.5375,
+                      "y": 0.62
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.5413,
+                      "y": 0.632
+                    },
+                    "control2": {
+                      "x": 0.5463,
+                      "y": 0.632
+                    },
+                    "to": {
+                      "x": 0.55,
+                      "y": 0.62
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": {
+                    "at": "sixty",
+                    "offset": 9
+                  },
+                  "value": 0
+                },
+                {
+                  "frame": {
+                    "at": "sixty",
+                    "offset": 19
+                  },
+                  "value": 1
+                }
+              ],
+              "width": 0.004,
+              "color": "@water.mid",
+              "glow": {
+                "color": "@water.mid",
+                "widthScale": 1,
+                "opacity": 0
+              },
+              "headGlow": false
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "celsius",
+          "text": "-60°C",
+          "x": 1330,
+          "y": 420,
+          "size": 100,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sixty",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sixty",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "fahrenheit",
+          "text": "(-80°F)",
+          "x": 1330,
+          "y": 525,
+          "size": 64,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Celsius",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Celsius",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-closing",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.3,
+            "y": 0.86,
+            "height": 0.6,
+            "facing": "right",
+            "outfit": "stick",
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "pass",
+                  "offset": -2
+                },
+                "pose": "tumble"
+              },
+              {
+                "frame": {
+                  "at": "out",
+                  "offset": 2
+                },
+                "pose": "lie"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "scared"
+              },
+              {
+                "frame": {
+                  "at": "pass",
+                  "offset": -2
+                },
+                "face": "dizzy"
+              }
+            ],
+            "shiver": 0,
+            "seed": 3
+          },
+          "anchor": {
+            "x": 576,
+            "y": 900
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": -2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "out",
+                "offset": 8
+              },
+              "value": 290,
+              "ease": "ease-in-back"
+            }
+          ]
+        },
+        {
+          "id": "astronaut",
+          "kit": {
+            "type": "figure",
+            "x": 0.7,
+            "y": 0.86,
+            "height": 0.62,
+            "facing": "right",
+            "outfit": "astronaut",
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "suit"
+                },
+                "pose": "point-left"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "happy"
+              },
+              {
+                "frame": {
+                  "at": "suit"
+                },
+                "face": "smug"
+              }
+            ],
+            "shiver": 0,
+            "seed": 8
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Mars",
+                "beat": "closing",
+                "offset": -3
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Mars",
+                "offset": -2,
+                "beat": "closing"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "Mars",
+                "beat": "closing",
+                "offset": -3
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "Mars",
+                "beat": "closing",
+                "offset": 7
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1344,
+            "y": 900
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "suit",
+          "text": "keep it on!",
+          "x": 1600,
+          "y": 250,
+          "size": 84,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "suit",
+                "offset": 2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "suit",
+                "offset": 8
+              },
+              "value": 1
+            }
+          ],
+          "connector": {
+            "from": {
+              "x": 1560,
+              "y": 280
+            },
+            "to": {
+              "x": 1450,
+              "y": 380
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "mars-hook",
+      "template": "hero-reveal",
+      "durationFrames": 180,
+      "animationDurationFrames": 180,
+      "caption": {
+        "text": "mars-hook",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.06,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "spacesuit",
+              "offset": -2
+            },
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 6009,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-hook",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "hook",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "pop",
+          "frame": 2,
+          "gainDb": -16
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "spacesuit",
+            "offset": -4
+          },
+          "gainDb": -18
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "spacesuit"
+          },
+          "gainDb": -16
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "fifteen"
+          },
+          "gainDb": -14
+        }
+      ]
+    },
+    {
+      "id": "mars-air",
+      "template": "hero-reveal",
+      "durationFrames": 168,
+      "animationDurationFrames": 168,
+      "caption": {
+        "text": "mars-air",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 6008,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-air",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "air",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -18
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "carbon"
+          },
+          "gainDb": -17
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "carbon",
+            "offset": 4
+          },
+          "gainDb": -17
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "thinner"
+          },
+          "gainDb": -16
+        }
+      ]
+    },
+    {
+      "id": "mars-boil",
+      "template": "hero-reveal",
+      "durationFrames": 138,
+      "animationDurationFrames": 138,
+      "caption": {
+        "text": "mars-boil",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 6009,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-boil",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "boil",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -18
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "pressure"
+          },
+          "gainDb": -17
+        },
+        {
+          "sound": "bubble",
+          "frame": {
+            "at": "boil",
+            "offset": -2
+          },
+          "gainDb": -12
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "boil"
+          },
+          "gainDb": -16
+        }
+      ]
+    },
+    {
+      "id": "mars-cold",
+      "template": "hero-reveal",
+      "durationFrames": 113,
+      "animationDurationFrames": 113,
+      "caption": {
+        "text": "mars-cold",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 6009,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-cold",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "cold",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -18
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "sixty"
+          },
+          "gainDb": -15
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "Celsius"
+          },
+          "gainDb": -17
+        }
+      ]
+    },
+    {
+      "id": "mars-closing",
+      "template": "hero-reveal",
+      "durationFrames": 271,
+      "animationDurationFrames": 271,
+      "caption": {
+        "text": "mars-closing",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 6012,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-closing",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "closing",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -18
+        },
+        {
+          "sound": "boom",
+          "frame": {
+            "at": "out",
+            "offset": 6
+          },
+          "gainDb": -12
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "Mars",
+            "offset": -2,
+            "beat": "closing"
+          },
+          "gainDb": -16
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "suit",
+            "offset": 3
+          },
+          "gainDb": -15
+        }
+      ]
+    }
+  ]
+}

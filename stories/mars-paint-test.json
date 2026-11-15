@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0",
+  "id": "mars-paint-test",
+  "title": "What Would Happen on Mars Without a Suit",
+  "topic": "Hand-drawn style prototype: low pressure, CO2 air and cold on Mars (M3.2 test clip, planning narration only)",
+  "language": "en-US",
+  "targetAudience": "English-speaking science-curious viewers aged 16-35",
+  "durationSeconds": 29,
+  "storyboard": "storyboards/mars-paint-test.json",
+  "beats": [
+    {"id": "hook", "sceneId": "mars-hook", "intent": "hook", "emphasis": ["fifteen seconds"],
+     "narration": "Step onto Mars without a spacesuit, and you'd stay awake for about fifteen seconds.",
+     "phrases": ["Step onto Mars without a spacesuit,", "and you'd stay awake for about fifteen seconds."]},
+    {"id": "air", "sceneId": "mars-air", "intent": "setup", "emphasis": ["carbon dioxide"],
+     "narration": "The air is mostly carbon dioxide, and over a hundred times thinner than Earth's.",
+     "phrases": ["The air is mostly carbon dioxide,", "and over a hundred times thinner than Earth's."]},
+    {"id": "boil", "sceneId": "mars-boil", "intent": "explanation", "emphasis": ["boil"],
+     "narration": "With so little pressure, the saliva on your tongue starts to boil.",
+     "phrases": ["With so little pressure,", "the saliva on your tongue starts to boil."]},
+    {"id": "cold", "sceneId": "mars-cold", "intent": "explanation", "emphasis": ["minus sixty"],
+     "narration": "And an average day is minus sixty degrees Celsius.",
+     "phrases": ["And an average day", "is minus sixty degrees Celsius."]},
+    {"id": "closing", "sceneId": "mars-closing", "intent": "closing", "emphasis": ["suit stays on"],
+     "narration": "Then you pass out. So on Mars, the suit stays on.",
+     "phrases": ["Then you pass out.", "So on Mars, the suit stays on."]}
+  ]
+}

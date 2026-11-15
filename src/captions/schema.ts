@@ -1,5 +1,5 @@
 import {z} from 'zod';
-export const captionStyleSchema=z.object({fontSize:z.number().min(36).max(72).default(60),top:z.number().min(.08).max(.2).default(.105),left:z.number().min(.06).max(.12).default(.08),right:z.number().min(.14).max(.2).default(.16),maxCharactersPerLine:z.number().int().min(16).max(28).default(26),
+export const captionStyleSchema=z.object({enabled:z.boolean().optional(),fontFamily:z.string().min(1).optional(),fontSize:z.number().min(36).max(72).default(60),top:z.number().min(.08).max(.2).default(.105),left:z.number().min(.06).max(.12).default(.08),right:z.number().min(.14).max(.2).default(.16),maxCharactersPerLine:z.number().int().min(16).max(28).default(26),
  /** box: legacy dark rounded background. outline: no background, heavy stroke and shadow for legibility over imagery. */
  variant:z.enum(['box','outline']).default('box'),
  /** word: highlight each word as it is spoken (needs cue word timings). */

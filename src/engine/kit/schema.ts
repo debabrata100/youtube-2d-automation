@@ -1,10 +1,14 @@
 import {z} from 'zod';
-import {pathSchema} from '../motion/primitives/schema';
+import {easingNameSchema, pathSchema} from '../motion/primitives/schema';
+import {FACE_IDS, POSE_IDS} from './figure';
 
 /** Kit coordinates are fractions of the host group: x of width, y of height. Small overshoot is allowed for bleed. */
 const n = z.number().min(-.5).max(1.5);
 const seed = z.number().int().min(0).max(4294967295).default(1);
 const size = (min: number, max: number) => z.number().min(min).max(max);
+const hex = z.string().regex(/^#[0-9a-fA-F]{6}$/, 'Expected a six-digit hex colour (or a theme @ref)');
+const keyFrame = z.number().int().min(0).max(18000);
+const increasing = (keys: Array<{frame: number}>) => keys.every((k, i) => !i || k.frame > keys[i - 1].frame);
 
 export const mountainShapeSchema = z.object({
   cx: n, baseY: n,
@@ -51,6 +55,26 @@ export const kitSchema = z.discriminatedUnion('type', [
   z.object({type: z.literal('cloud'), x: n, y: n, width: size(.02, 1.6), seed, lobes: z.number().int().min(3).max(9).default(6), drift: z.number().min(-.004).max(.004).default(0)}).strict(),
   z.object({type: z.literal('water'), x: n, y: n, width: size(.01, 2), height: size(.01, 1.5), waves: z.number().int().min(0).max(8).default(3), periodFrames: z.number().min(30).max(600).default(120), seed}).strict(),
   z.object({type: z.literal('glow'), x: n, y: n, rx: size(.005, 2), ry: size(.005, 2), tone: z.enum(['hot', 'sun', 'sky']).default('hot')}).strict(),
+  /** Stick figure / astronaut. x, y = feet position; poses blend over `blend` frames from each key (frames may be word anchors). */
+  z.object({
+    type: z.literal('figure'), x: n, y: n, height: size(.05, 1.2), facing: z.enum(['left', 'right']).default('right'),
+    outfit: z.enum(['stick', 'astronaut']).default('stick'),
+    poses: z.array(z.object({frame: keyFrame, pose: z.enum(POSE_IDS), blend: z.number().int().min(1).max(60).default(8), ease: easingNameSchema.default('smoothstep')}).strict())
+      .min(1).max(24).refine(increasing, 'Pose frames must strictly increase'),
+    faces: z.array(z.object({frame: keyFrame, face: z.enum(FACE_IDS)}).strict()).max(24).default([]).refine(increasing, 'Face frames must strictly increase'),
+    blink: z.boolean().default(true), shiver: z.number().min(0).max(12).default(0), seed, suit: hex.optional(), visor: hex.optional(),
+  }).strict(),
+  /** Cartoon planet: base colour, wavy bands (gas giants), craters, optional ring and glow. radius is a fraction of the group's shorter side. */
+  z.object({
+    type: z.literal('planet'), x: n, y: n, radius: size(.02, .6), base: hex, bands: z.array(hex).max(8).default([]),
+    craters: z.number().int().min(0).max(30).default(0), ring: z.boolean().default(false), shade: size(0, .5).default(.18),
+    spin: z.number().min(-4).max(4).default(0), seed, glow: hex.optional(),
+  }).strict(),
+  /** Hand-drawn ground: outlined horizon with bumps, optional planet curvature, speckles and horizon rocks. */
+  z.object({
+    type: z.literal('terrain'), top: n, curve: size(0, .5).default(0), fill: hex, detail: hex,
+    rocks: z.number().int().min(0).max(12).default(3), bumps: z.number().int().min(1).max(16).default(5), seed,
+  }).strict(),
 ]);
 export type KitConfig = z.infer<typeof kitSchema>;
 export type MountainShape = z.infer<typeof mountainShapeSchema>;

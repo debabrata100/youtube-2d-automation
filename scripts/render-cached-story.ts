@@ -26,7 +26,7 @@ const main=async()=>{
  if(measured.codec!=='pcm_s16le'||measured.sampleRate!==24000||measured.channels!==1||measured.durationSeconds>seconds-.2)throw Error('Unsupported or overlong approved audio; never stretch or truncate');
  await validateAssetFiles(timedBoard.assets);
  const mapping=captionsFromProviderTiming(story,metadata.alignment,measured.durationSeconds,timedBoard.format.fps),anchors=resolveWordAnchors(rawBoard,mapping),sourceBoard=anchors.source,schedule=anchors.schedule,board=schedule.storyboard,style=captionStyleSchema.parse(o['caption-style']?JSON.parse(await readFile(o['caption-style'],'utf8')):sourceBoard.themeId?getTheme(sourceBoard.themeId).caption:{});
- const narration=narrationOverlaySchema.parse({audioSrc:'narration/narration.wav',captionsEnabled:true,syntheticTestAudio:false,showAiDisclosureBanner:o['show-ai-disclosure-banner'],cues:mapping.cues,style});
+ const narration=narrationOverlaySchema.parse({audioSrc:'narration/narration.wav',captionsEnabled:style.enabled!==false,syntheticTestAudio:false,showAiDisclosureBanner:o['show-ai-disclosure-banner'],cues:mapping.cues,style});
  const job=path.resolve(o.output??`jobs/${story.id}-cached-${new Date().toISOString().replace(/[:.]/g,'-')}`);await mkdir(path.dirname(job),{recursive:true});await mkdir(job);
  for(const dir of ['audio','story','captions','reports','output','previews','public'])await mkdir(path.join(job,dir));
  const json=(file:string,data:unknown)=>writeFile(path.join(job,file),JSON.stringify(data,null,2)+'\n');

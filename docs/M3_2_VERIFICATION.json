@@ -1,0 +1,22 @@
+{
+  "milestone": "M3.2 hand-drawn (Paint Explainer) style prototype",
+  "base": "61b819a (claude/m3-1-word-anchors)",
+  "environment": {"os": "Ubuntu 22.04 arm64 VM", "node": "v22.23.4", "browser": "Sparticuz Chromium v153 arm64 (external)", "ffmpeg": "8.1 (external)"},
+  "typescript": "pass",
+  "vitest": {"files": 25, "passed": 371, "failed": 0, "added": 7},
+  "productionBundles": {"src/index.ts": "pass", "src/storyboard-index.ts": "pass"},
+  "legacyRegression": {"method": "lossless PNG renders from M3.1 HEAD tree vs branch, same environment", "boards": ["generic-demo", "volcano-kit", "volcano-motion-prototype", "volcano-style-c", "water-cycle-demo", "lightning (captioned, estimated timing)"], "frames": 22, "identical": 22},
+  "paidRequests": 0,
+  "testClip": {
+    "script": "stories/mars-paint-test.json", "storyboard": "storyboards/mars-paint-test.json", "theme": "paint-notebook",
+    "format": {"width": 1920, "height": 1080, "fps": 30, "frames": 870, "durationSeconds": 29},
+    "narration": "planning placeholder (silent, estimated timing at 155 wpm)", "anchors": 100,
+    "output": {"bytes": 5254488, "sha256": "6b1b44daabe2db1e74a3609d77fcaab063e2022f54c2bf70b717277ce603723e"},
+    "checks": {"visualAndTimeline": "pass (28/32)", "expectedFailuresWithSilentNarration": ["encodedNarrationMatchesApprovedPerformance", "loudnessOnTarget", "musicDuckedUnderSpeech", "narrationClearInMix"]},
+    "renderSecondsPerFrameSingleProcess": 0.57,
+    "factCheck": ["NASA/ESA: ~95% CO2, surface pressure < 1% of Earth", "NASA via Space.com: average about -60 C (-80 F)", "ESA via Live Science: unconscious in about 10-15 s without a suit; exposed saliva boils"]
+  },
+  "newCapabilities": {"poses": 17, "faces": 9, "kitElements": ["figure", "planet", "terrain"], "annotationVariants": ["ink"], "themes": ["paint-notebook"], "fonts": ["Patrick Hand (OFL)"]},
+  "protected": {"approvedNarrationModified": false, "approvedPaintedAssetsModified": false, "captionsModified": false},
+  "humanReview": "pending"
+}

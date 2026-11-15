@@ -74,6 +74,10 @@ Rendered and technically verified; **viewing/listening approval pending**. A 38 
 
 Complete; review pending. Frame fields can be word anchors (`{"at": "flashes", "offset": 2}`) that resolve after narration scheduling into the right clock, so a new take or script edit needs no retiming; a deterministic order guard handles compressed clocks. The lightning board now uses 140 anchors and re-renders from the approved take with every check passing; a re-narration proof at 155/170 wpm keeps the strike on "flashes" where hand timing drifts up to 1.0 s. New tools: `anchors:check` (sync QA) and `storyboard:draft` (script + theme → valid anchored skeleton with placeholder visuals, labels and sounds on emphasis words, matched camera handoffs). No paid requests. See [report](M3_1_WORD_ANCHORS_REPORT.md) and [verification](M3_1_VERIFICATION.json).
 
+## M3.2 — Hand-drawn (Paint Explainer) style prototype
+
+Complete; review pending. After analysing four reference videos (Alan Becker, Kurzgesagt ×2, The Paint Explainer), the hand-drawn explainer style was chosen as the realistic target. Added a stick-figure/astronaut rig (17 poses incl. walk/run cycles, 9 faces, blinking, shiver), drawn planet and terrain kit elements, ink notes with arrows, the `paint-notebook` theme with seeded line boil and a bundled OFL hand font, and 16:9 caption sizing. A 29 s Mars test clip (planning narration, ~100 word anchors) reads as the same genre at a glance (~80–85% match); remaining gaps are props, more comic faces, real photo inserts and a real voice. No paid requests. See [report](M3_2_PAINT_STYLE_REPORT.md) and [verification](M3_2_VERIFICATION.json).
+
 ## M3 — LangGraph AI storyboard director
 
 Research-to-plan orchestration, structured creative decisions, and plan evaluation. No M3 code is included.

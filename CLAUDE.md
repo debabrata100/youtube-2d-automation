@@ -31,9 +31,9 @@ Read `docs/PROJECT_STATUS.md` (current state) and `docs/YOUTUBE_2D_AUTOMATION_HA
 
 Inspect the actual repository to verify the current implementation.
 
-The latest completed milestone is M3.1 (word-anchored timing and the script-to-storyboard drafter, after M3.0's first episode "How Lightning Forms"); see `docs/PROJECT_STATUS.md`. Prefer word anchors over frame numbers for story-critical timing. Paid narration runs on the user's Mac via `npm run narration:synthesize` after explicit approval.
+The latest completed milestone is M3.2 (hand-drawn "Paint Explainer" style prototype: stick-figure rig, paint-notebook theme, 16:9), after M3.1 word anchors and M3.0's first episode; see `docs/PROJECT_STATUS.md`. The chosen visual direction is the hand-drawn explainer style. Prefer word anchors over frame numbers for story-critical timing. Paid narration runs on the user's Mac via `npm run narration:synthesize` after explicit approval.
 
-The next milestone is chosen after the M3.1 review.
+The next milestone is chosen after the M3.2 review.
 
 ## Your responsibilities
 

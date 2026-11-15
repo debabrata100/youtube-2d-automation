@@ -9,6 +9,7 @@ import type {Storyboard, SubjectConfig} from '../storyboard/schema';
 import {KitElement} from '../kit/KitElement';
 import {getTheme, type Theme} from '../style/theme';
 import {easeMotion} from '../motion/primitives/schema';
+import {ensureFont} from '../style/fonts';
 
 const Layer: React.FC<{layer: IllustrationLayerConfig; frame: number; group: IllustrationGroup; assets: AssetRegistry; prefix: string; theme?: Theme}> = ({layer, frame, group, assets, prefix, theme}) => {
   const id = `${prefix}-${layer.id}`, state = layerStateAt(layer, frame), source = layer.asset ? staticFile(assets.resolve(layer.asset).path) : null;
@@ -63,8 +64,28 @@ const Layer: React.FC<{layer: IllustrationLayerConfig; frame: number; group: Ill
 };
 
 type Label = NonNullable<IllustrationGroup['annotations']>[number];
-/** Plain: outlined text (legacy look). Pill: themed rounded label with a dot-anchored leader line. */
+/** Plain: outlined text (legacy look). Pill: themed rounded label with a dot-anchored leader line. Ink: hand-written note with an arrow. */
+const InkNote: React.FC<{label: Label; opacity: number; theme?: Theme}> = ({label, opacity, theme}) => {
+  const color = label.color ?? theme?.palette.text.accent ?? '#e0262b', font = theme?.label.fontFamily ?? 'Arial, sans-serif', weight = theme?.label.fontWeight ?? 400;
+  const s = label.pop ? .55 + .45 * easeMotion(opacity, 'ease-out-back') : 1, cy = label.y - label.size * .33;
+  const c = label.connector, w = Math.max(2.5, label.size * .07);
+  const head = c ? (() => {
+    const a = Math.atan2(c.to.y - c.from.y, c.to.x - c.from.x), k = label.size * .45;
+    return `M ${c.to.x - k * Math.cos(a - .45)} ${c.to.y - k * Math.sin(a - .45)} L ${c.to.x} ${c.to.y} L ${c.to.x - k * Math.cos(a + .45)} ${c.to.y - k * Math.sin(a + .45)}`;
+  })() : null;
+  const mid = c ? {x: (c.from.x + c.to.x) / 2 + (c.to.y - c.from.y) * .12, y: (c.from.y + c.to.y) / 2 - (c.to.x - c.from.x) * .12} : null;
+  return <g opacity={Math.min(1, opacity * 1.5)}>
+    {c && mid && <g opacity={Math.max(0, Math.min(1, opacity * 2 - .6))}>
+      <path d={`M ${c.from.x} ${c.from.y} Q ${mid.x} ${mid.y} ${c.to.x} ${c.to.y}`} fill="none" stroke={color} strokeWidth={w} strokeLinecap="round"/>
+      <path d={head!} fill="none" stroke={color} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round"/>
+    </g>}
+    <text x={label.x} y={label.y} textAnchor={label.anchor} fill={color} fontFamily={font} fontWeight={weight} fontSize={label.size}
+      stroke={color} strokeWidth={label.size * .035} strokeLinejoin="round"
+      transform={s !== 1 ? `translate(${label.x} ${cy}) scale(${s}) translate(${-label.x} ${-cy})` : undefined}>{label.text}</text>
+  </g>;
+};
 const Annotation: React.FC<{label: Label; opacity: number; theme?: Theme}> = ({label, opacity, theme}) => {
+  if (label.variant === 'ink') return <InkNote label={label} opacity={opacity} theme={theme}/>;
   const pill = label.variant === 'pill';
   const fg = pill ? theme?.palette.label.fg ?? '#fff6e8' : '#fff1dc', bg = theme?.palette.label.bg ?? '#1a1226', line = pill ? theme?.palette.label.line ?? '#ffd6a0' : '#ffd6a0';
   const font = theme?.label.fontFamily ?? 'Arial, sans-serif', weight = pill ? theme?.label.fontWeight ?? 800 : 700;
@@ -88,11 +109,19 @@ export const LayeredSubject: React.FC<{group: IllustrationGroup; subject: Subjec
   const local = frame + (subject.timeOffset ?? 0);
   const references = [...new Set(group.layers.flatMap(layerAssetIds))];
   const theme = storyboard.themeId ? getTheme(storyboard.themeId) : undefined;
+  ensureFont(theme?.label.fontFamily);
+  const ink = theme?.ink, inkSeed = ink ? ink.seed + Math.floor(Math.max(0, local) * ink.fps / storyboard.format.fps) : 0;
   return <div style={{position: 'absolute', left: storyboard.format.width * subject.x - width / 2, top: storyboard.format.height * subject.y - height / 2, width, height, transform: `scale(${scale})`}}>
     <svg width={width} height={height} viewBox={`0 0 ${group.width} ${group.height}`} style={{overflow: 'visible'}}>
       <defs><filter id={`${prefix}-black`}><feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"/></filter></defs>
-      {group.layers.map(layer => <Layer key={layer.id} layer={layer} frame={local} group={group} assets={assets} prefix={prefix} theme={theme}/>)}
-      {group.annotations?.map(label => <Annotation key={label.id} label={label} opacity={trackAt(local, label.opacity, 1)} theme={theme}/>)}
+      {ink && <defs><filter id={`${prefix}-ink`} x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency={ink.frequency} numOctaves={2} seed={inkSeed} result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale={ink.amplitude * 2} xChannelSelector="R" yChannelSelector="G"/>
+      </filter></defs>}
+      <g filter={ink ? `url(#${prefix}-ink)` : undefined}>
+        {group.layers.map(layer => <Layer key={layer.id} layer={layer} frame={local} group={group} assets={assets} prefix={prefix} theme={theme}/>)}
+        {group.annotations?.map(label => <Annotation key={label.id} label={label} opacity={trackAt(local, label.opacity, 1)} theme={theme}/>)}
+      </g>
     </svg>
     {/* Remotion loading gates also cover native SVG image/mask references. */}
     <div style={{position: 'absolute', width: 1, height: 1, overflow: 'hidden', opacity: 0, pointerEvents: 'none'}}>{references.map(id => <Img key={id} src={staticFile(assets.resolve(id).path)} style={{width: 1, height: 1}}/>)}</div>
