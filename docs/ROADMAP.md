@@ -54,6 +54,10 @@ Final local job: `jobs/volcano-m2-4-1-prototype/`. H.264/AAC, 1080×1920, 30 FPS
 
 Publication is authorized on `codex/m2-4-1-motion-primitives`; no default-branch merge or tag. Remaining review covers restrained particles, flow direction, camera continuity and playback. Flattened artwork and illustrative trajectories remain limitations; encoded MP4 byte identity is not guaranteed. M2.4.2 has not started.
 
+## M2.5 — Style and staging spike (replaces proposed M2.4.2)
+
+Implemented and technically verified; **human visual decision pending**. The same narrated 15-second video rendered three ways: A (M2.4.1 baseline), B (painted art, re-staged eruption) and C (flat vector art, all scenes). New generic primitives: seeded `puffs` smoke columns, `stroke-reveal` paths, effects-only layers, `outline` caption style; plus still previews, chunked rendering and browser-free contact sheets. Plume height at peak: A ≈0.10 of frame, B 0.31, C 0.27. Render (Linux VM): A 82.7 s, B 100.6 s, C 70.6 s. 305 tests, 23/23 legacy lossless frames identical, zero paid requests. Recommendation: adopt the vector direction. See [report](M2_5_STYLE_SPIKE_REPORT.md), [verification](M2_5_VERIFICATION.json) and [project status](PROJECT_STATUS.md).
+
 ## M3 — LangGraph AI storyboard director
 
 Research-to-plan orchestration, structured creative decisions, and plan evaluation. No M3 code is included.

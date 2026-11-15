@@ -1,0 +1,1242 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "volcano-style-c",
+  "title": "How a Volcano Erupts - M2.5 variant C (flat vector)",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "#1d1b47",
+  "accent": "#ffb46a",
+  "assets": [
+    {
+      "id": "v-sky",
+      "path": "illustrations/vector-volcano-v1/sky.svg",
+      "type": "svg",
+      "width": 1080,
+      "height": 1920,
+      "transparent": false,
+      "styleId": "flat-vector"
+    },
+    {
+      "id": "v-cone",
+      "path": "illustrations/vector-volcano-v1/cone.svg",
+      "type": "svg",
+      "width": 1000,
+      "height": 1300,
+      "transparent": true,
+      "styleId": "flat-vector"
+    },
+    {
+      "id": "v-cutaway",
+      "path": "illustrations/vector-volcano-v1/cutaway.svg",
+      "type": "svg",
+      "width": 1000,
+      "height": 1300,
+      "transparent": true,
+      "styleId": "flat-vector"
+    },
+    {
+      "id": "v-chamber",
+      "path": "illustrations/vector-volcano-v1/chamber.svg",
+      "type": "svg",
+      "width": 1000,
+      "height": 1300,
+      "transparent": true,
+      "styleId": "flat-vector"
+    },
+    {
+      "id": "v-crater-glow",
+      "path": "illustrations/vector-volcano-v1/crater-glow.svg",
+      "type": "svg",
+      "width": 1000,
+      "height": 1300,
+      "transparent": true,
+      "styleId": "flat-vector"
+    },
+    {
+      "id": "v-rim-front",
+      "path": "illustrations/vector-volcano-v1/rim-front.svg",
+      "type": "svg",
+      "width": 1000,
+      "height": 1300,
+      "transparent": true,
+      "styleId": "flat-vector"
+    }
+  ],
+  "backdrop": {
+    "asset": "v-sky",
+    "decoration": false,
+    "dim": 0
+  },
+  "crossfadeFrames": 8,
+  "narrationTiming": {
+    "minimumSceneFrames": 45,
+    "maximumDeviationSeconds": 0.2
+  },
+  "groups": [
+    {
+      "id": "v-quiet",
+      "width": 1000,
+      "height": 1300,
+      "layers": [
+        {
+          "id": "cone",
+          "asset": "v-cone"
+        },
+        {
+          "id": "wisp",
+          "effects": [
+            {
+              "id": "idle-wisp",
+              "type": "puffs",
+              "count": 10,
+              "seed": 5201,
+              "startFrame": 0,
+              "endFrame": 170,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.2,
+                "width": 0.05
+              },
+              "direction": {
+                "angleDegrees": -90,
+                "spreadDegrees": 16
+              },
+              "travel": [
+                0.12,
+                0.2
+              ],
+              "lifetimeFrames": [
+                70,
+                100
+              ],
+              "radius": [
+                0.012,
+                0.018
+              ],
+              "growth": 2.2,
+              "wind": {
+                "x": 0.04,
+                "y": 0
+              },
+              "lobes": 5,
+              "colors": {
+                "light": "#fff4ea",
+                "mid": "#c9b3b4",
+                "shadow": "#7a6270"
+              },
+              "softness": 0.25,
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 0
+                },
+                {
+                  "at": 0.2,
+                  "value": 0.55
+                },
+                {
+                  "at": 1,
+                  "value": 0
+                }
+              ],
+              "easing": "ease-out-cubic"
+            }
+          ]
+        },
+        {
+          "id": "rim",
+          "asset": "v-rim-front"
+        }
+      ]
+    },
+    {
+      "id": "v-dissolve",
+      "width": 1000,
+      "height": 1300,
+      "layers": [
+        {
+          "id": "cone",
+          "asset": "v-cone",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 24,
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v-internal",
+      "width": 1000,
+      "height": 1300,
+      "layers": [
+        {
+          "id": "cutaway",
+          "asset": "v-cutaway",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 24,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "chamber",
+          "asset": "v-chamber",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 24,
+              "value": 1
+            }
+          ],
+          "pulse": {
+            "periodFrames": 90,
+            "brightness": 0.06
+          },
+          "reveal": {
+            "type": "wipe",
+            "direction": "up",
+            "bounds": {
+              "x": 0,
+              "y": 960,
+              "width": 1000,
+              "height": 200
+            },
+            "progress": [
+              {
+                "frame": 0,
+                "value": 0.35
+              },
+              {
+                "frame": 75,
+                "value": 1
+              }
+            ],
+            "feather": 18
+          }
+        },
+        {
+          "id": "magma",
+          "effects": [
+            {
+              "id": "conduit-magma",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.5,
+                  "y": 0.7692
+                },
+                "segments": [
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.47,
+                      "y": 0.6308
+                    },
+                    "control2": {
+                      "x": 0.53,
+                      "y": 0.4308
+                    },
+                    "to": {
+                      "x": 0.5,
+                      "y": 0.2062
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 92,
+                  "value": 0
+                },
+                {
+                  "frame": 172,
+                  "value": 1
+                }
+              ],
+              "width": 0.024,
+              "color": "#ff7a22",
+              "glow": {
+                "color": "#ffb04a",
+                "widthScale": 2.2,
+                "opacity": 0.3
+              },
+              "flow": {
+                "color": "#ffe9a0",
+                "periodFrames": 30,
+                "dash": 0.05,
+                "gap": 0.14,
+                "opacity": 0.75,
+                "widthScale": 0.4
+              }
+            },
+            {
+              "id": "gas-bubbles",
+              "type": "path-motion",
+              "path": {
+                "start": {
+                  "x": 0.5,
+                  "y": 0.7692
+                },
+                "segments": [
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.47,
+                      "y": 0.6308
+                    },
+                    "control2": {
+                      "x": 0.53,
+                      "y": 0.4308
+                    },
+                    "to": {
+                      "x": 0.5,
+                      "y": 0.2062
+                    }
+                  }
+                ]
+              },
+              "startFrame": 104,
+              "durationFrames": 44,
+              "endFrame": 180,
+              "repeat": true,
+              "copies": 6,
+              "easing": "linear",
+              "radius": 0.007,
+              "aspect": 1,
+              "scale": 1,
+              "opacity": 0.95,
+              "color": "#fff3c4"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "chamber-label",
+          "text": "Magma chamber",
+          "x": 500,
+          "y": 1225,
+          "size": 46,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 28,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "conduit-label",
+          "text": "Conduit",
+          "x": 650,
+          "y": 650,
+          "size": 46,
+          "anchor": "start",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 100,
+              "value": 0
+            },
+            {
+              "frame": 120,
+              "value": 1
+            }
+          ],
+          "connector": {
+            "from": {
+              "x": 640,
+              "y": 637
+            },
+            "to": {
+              "x": 522,
+              "y": 637
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "v-active",
+      "width": 1000,
+      "height": 1300,
+      "layers": [
+        {
+          "id": "cone",
+          "asset": "v-cone"
+        },
+        {
+          "id": "glow",
+          "asset": "v-crater-glow",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 6,
+              "value": 1
+            }
+          ],
+          "pulse": {
+            "periodFrames": 30,
+            "brightness": 0.1
+          }
+        },
+        {
+          "id": "column",
+          "effects": [
+            {
+              "id": "burst-base",
+              "type": "puffs",
+              "count": 14,
+              "seed": 5102,
+              "startFrame": 3,
+              "endFrame": 30,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.2,
+                "width": 0.04
+              },
+              "direction": {
+                "angleDegrees": -90,
+                "spreadDegrees": 55
+              },
+              "travel": [
+                0.16,
+                0.28
+              ],
+              "lifetimeFrames": [
+                34,
+                52
+              ],
+              "radius": [
+                0.024,
+                0.036
+              ],
+              "growth": 2.5,
+              "wind": {
+                "x": 0.02,
+                "y": 0
+              },
+              "lobes": 4,
+              "colors": {
+                "light": "#d4a48e",
+                "mid": "#8a6e78",
+                "shadow": "#4a3542"
+              },
+              "softness": 0.3,
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 0
+                },
+                {
+                  "at": 0.05,
+                  "value": 1
+                },
+                {
+                  "at": 0.6,
+                  "value": 0.8
+                },
+                {
+                  "at": 1,
+                  "value": 0
+                }
+              ],
+              "easing": "ease-out-cubic"
+            },
+            {
+              "id": "smoke-column",
+              "type": "puffs",
+              "count": 40,
+              "seed": 5101,
+              "startFrame": 6,
+              "endFrame": 172,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.199,
+                "width": 0.05
+              },
+              "direction": {
+                "angleDegrees": -90,
+                "spreadDegrees": 16
+              },
+              "travel": [
+                0.22,
+                0.37
+              ],
+              "lifetimeFrames": [
+                62,
+                92
+              ],
+              "radius": [
+                0.026,
+                0.04
+              ],
+              "growth": 2.9,
+              "wind": {
+                "x": 0.06,
+                "y": 0
+              },
+              "lobes": 5,
+              "colors": {
+                "light": "#fff4ea",
+                "mid": "#c9b3b4",
+                "shadow": "#7a6270"
+              },
+              "softness": 0.08,
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 0
+                },
+                {
+                  "at": 0.06,
+                  "value": 0.97
+                },
+                {
+                  "at": 0.7,
+                  "value": 0.85
+                },
+                {
+                  "at": 1,
+                  "value": 0
+                }
+              ],
+              "easing": "ease-out-cubic"
+            }
+          ]
+        },
+        {
+          "id": "rim",
+          "asset": "v-rim-front"
+        },
+        {
+          "id": "lava",
+          "effects": [
+            {
+              "id": "lava-a",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.482,
+                  "y": 0.2231
+                },
+                "segments": [
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.47,
+                      "y": 0.2769
+                    },
+                    "control2": {
+                      "x": 0.42,
+                      "y": 0.3308
+                    },
+                    "to": {
+                      "x": 0.395,
+                      "y": 0.4
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.37,
+                      "y": 0.4615
+                    },
+                    "control2": {
+                      "x": 0.33,
+                      "y": 0.5077
+                    },
+                    "to": {
+                      "x": 0.3,
+                      "y": 0.5846
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 6,
+                  "value": 0
+                },
+                {
+                  "frame": 62,
+                  "value": 1
+                }
+              ],
+              "width": 0.013,
+              "color": "#ff6a1a",
+              "glow": {
+                "color": "#ff9a3d",
+                "widthScale": 2.8,
+                "opacity": 0.38
+              },
+              "flow": {
+                "color": "#ffe9a0",
+                "periodFrames": 26,
+                "dash": 0.07,
+                "gap": 0.2,
+                "opacity": 0.8,
+                "widthScale": 0.45
+              }
+            },
+            {
+              "id": "lava-b",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.512,
+                  "y": 0.2246
+                },
+                "segments": [
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.522,
+                      "y": 0.2923
+                    },
+                    "control2": {
+                      "x": 0.502,
+                      "y": 0.3615
+                    },
+                    "to": {
+                      "x": 0.53,
+                      "y": 0.4308
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.56,
+                      "y": 0.5
+                    },
+                    "control2": {
+                      "x": 0.54,
+                      "y": 0.5538
+                    },
+                    "to": {
+                      "x": 0.575,
+                      "y": 0.6077
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 10,
+                  "value": 0
+                },
+                {
+                  "frame": 72,
+                  "value": 1
+                }
+              ],
+              "width": 0.014,
+              "color": "#ff6a1a",
+              "glow": {
+                "color": "#ff9a3d",
+                "widthScale": 2.8,
+                "opacity": 0.38
+              },
+              "flow": {
+                "color": "#ffe9a0",
+                "periodFrames": 26,
+                "dash": 0.07,
+                "gap": 0.2,
+                "opacity": 0.8,
+                "widthScale": 0.45
+              }
+            },
+            {
+              "id": "lava-c",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.542,
+                  "y": 0.2215
+                },
+                "segments": [
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.582,
+                      "y": 0.2615
+                    },
+                    "control2": {
+                      "x": 0.622,
+                      "y": 0.3077
+                    },
+                    "to": {
+                      "x": 0.66,
+                      "y": 0.3615
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.7,
+                      "y": 0.4154
+                    },
+                    "control2": {
+                      "x": 0.72,
+                      "y": 0.4615
+                    },
+                    "to": {
+                      "x": 0.76,
+                      "y": 0.5077
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 16,
+                  "value": 0
+                },
+                {
+                  "frame": 66,
+                  "value": 1
+                }
+              ],
+              "width": 0.012,
+              "color": "#ff6a1a",
+              "glow": {
+                "color": "#ff9a3d",
+                "widthScale": 2.8,
+                "opacity": 0.38
+              },
+              "flow": {
+                "color": "#ffe9a0",
+                "periodFrames": 26,
+                "dash": 0.07,
+                "gap": 0.2,
+                "opacity": 0.8,
+                "widthScale": 0.45
+              }
+            },
+            {
+              "id": "lava-d",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.428,
+                  "y": 0.3431
+                },
+                "segments": [
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.402,
+                      "y": 0.3631
+                    },
+                    "control2": {
+                      "x": 0.362,
+                      "y": 0.3862
+                    },
+                    "to": {
+                      "x": 0.322,
+                      "y": 0.4308
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 32,
+                  "value": 0
+                },
+                {
+                  "frame": 74,
+                  "value": 1
+                }
+              ],
+              "width": 0.009,
+              "color": "#ff6a1a",
+              "glow": {
+                "color": "#ff9a3d",
+                "widthScale": 2.8,
+                "opacity": 0.38
+              },
+              "flow": {
+                "color": "#ffe9a0",
+                "periodFrames": 26,
+                "dash": 0.07,
+                "gap": 0.2,
+                "opacity": 0.8,
+                "widthScale": 0.45
+              }
+            }
+          ]
+        },
+        {
+          "id": "ejecta",
+          "effects": [
+            {
+              "id": "lava-bombs",
+              "type": "particles",
+              "count": 22,
+              "seed": 5103,
+              "startFrame": 6,
+              "endFrame": 42,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.195,
+                "width": 0.03,
+                "height": 0.005
+              },
+              "lifetimeFrames": [
+                30,
+                48
+              ],
+              "velocity": {
+                "angleDegrees": -90,
+                "spreadDegrees": 75,
+                "speed": [
+                  0.008,
+                  0.014
+                ]
+              },
+              "acceleration": {
+                "x": 0,
+                "y": 0.00034
+              },
+              "radius": [
+                0.004,
+                0.0075
+              ],
+              "colors": [
+                "#ffd36b",
+                "#ff8a2a",
+                "#fff0b8"
+              ],
+              "shape": "streak",
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 0
+                },
+                {
+                  "at": 0.08,
+                  "value": 1
+                },
+                {
+                  "at": 0.75,
+                  "value": 0.9
+                },
+                {
+                  "at": 1,
+                  "value": 0
+                }
+              ],
+              "scale": [
+                {
+                  "at": 0,
+                  "value": 0.6
+                },
+                {
+                  "at": 0.15,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 0.5
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "lava-label",
+          "text": "Lava",
+          "x": 800,
+          "y": 735,
+          "size": 50,
+          "anchor": "start",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 100,
+              "value": 0
+            },
+            {
+              "frame": 116,
+              "value": 1
+            }
+          ],
+          "connector": {
+            "from": {
+              "x": 795,
+              "y": 718
+            },
+            "to": {
+              "x": 740,
+              "y": 650
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "volcano-exterior",
+      "template": "hero-reveal",
+      "durationFrames": 90,
+      "caption": {
+        "text": "What happens\ninside a volcano?",
+        "kicker": "HOW A VOLCANO ERUPTS",
+        "preset": "headline",
+        "hold": false
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.55
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 65,
+            "focus": {
+              "x": 0.5,
+              "y": 0.52
+            },
+            "zoom": 1.08,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 2201,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "v-quiet",
+          "x": 0.5,
+          "y": 0.56,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "hook",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "animationDurationFrames": 90
+    },
+    {
+      "id": "magma-accumulation",
+      "template": "comparison",
+      "durationFrames": 90,
+      "caption": {
+        "text": "Magma collects\nunderground",
+        "kicker": "BENEATH THE SURFACE",
+        "preset": "body",
+        "hold": false
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.52
+            },
+            "zoom": 1.08,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 83,
+            "focus": {
+              "x": 0.5,
+              "y": 0.68
+            },
+            "zoom": 1.12,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 2202,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "left": {
+          "asset": "v-dissolve",
+          "x": 0.5,
+          "y": 0.56,
+          "size": 0.9
+        },
+        "right": {
+          "asset": "v-internal",
+          "x": 0.5,
+          "y": 0.56,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "setup",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "animationDurationFrames": 90
+    },
+    {
+      "id": "magma-rise",
+      "template": "transformation",
+      "durationFrames": 90,
+      "caption": {
+        "text": "Magma rises.\nGas bubbles expand.",
+        "kicker": "THE PATH TO ERUPTION",
+        "preset": "body",
+        "hold": false
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.68
+            },
+            "zoom": 1.12,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 92,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.12,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 2203,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "v-internal",
+          "x": 0.5,
+          "y": 0.56,
+          "size": 0.9,
+          "timeOffset": 90
+        },
+        "fromScale": 1,
+        "toScale": 1
+      },
+      "narrationCue": {
+        "beatId": "explanation",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "animationDurationFrames": 90
+    },
+    {
+      "id": "eruption",
+      "template": "orbital-environment",
+      "durationFrames": 90,
+      "caption": {
+        "text": "The volcano erupts!",
+        "kicker": "ASH, GAS AND LAVA",
+        "preset": "body",
+        "hold": false
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.12,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 6,
+            "focus": {
+              "x": 0.5,
+              "y": 0.42
+            },
+            "zoom": 1.24,
+            "easing": "smoothstep",
+            "rotation": 0.55
+          },
+          {
+            "frame": 10,
+            "focus": {
+              "x": 0.5,
+              "y": 0.42
+            },
+            "zoom": 1.24,
+            "easing": "smoothstep",
+            "rotation": -0.45
+          },
+          {
+            "frame": 14,
+            "focus": {
+              "x": 0.5,
+              "y": 0.42
+            },
+            "zoom": 1.24,
+            "easing": "smoothstep",
+            "rotation": 0.25
+          },
+          {
+            "frame": 18,
+            "focus": {
+              "x": 0.5,
+              "y": 0.42
+            },
+            "zoom": 1.24,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 74,
+            "focus": {
+              "x": 0.5,
+              "y": 0.47
+            },
+            "zoom": 1.08,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 2204,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "v-active",
+          "x": 0.5,
+          "y": 0.56,
+          "size": 0.9
+        },
+        "count": 0,
+        "radiusX": 0.06,
+        "radiusY": 0.14
+      },
+      "narrationCue": {
+        "beatId": "payoff",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "animationDurationFrames": 90
+    },
+    {
+      "id": "final-summary",
+      "template": "summary",
+      "durationFrames": 90,
+      "caption": {
+        "text": "Lava reaches\nthe surface",
+        "kicker": "MAGMA BELOW \u00b7 LAVA ABOVE",
+        "preset": "closing",
+        "hold": true
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.47
+            },
+            "zoom": 1.08,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 131,
+            "focus": {
+              "x": 0.5,
+              "y": 0.48
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 2205,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "subjects": [
+          {
+            "asset": "v-active",
+            "x": 0.5,
+            "y": 0.56,
+            "size": 0.9,
+            "timeOffset": 90
+          }
+        ]
+      },
+      "narrationCue": {
+        "beatId": "closing",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "animationDurationFrames": 90
+    }
+  ]
+}

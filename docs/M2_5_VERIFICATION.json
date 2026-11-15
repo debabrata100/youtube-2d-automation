@@ -1,0 +1,20 @@
+{
+  "milestone": "M2.5 style and staging spike",
+  "base": "d9c6f7a9ddf9ec9829465f6d3ff8d978e79c1bc3",
+  "environment": {"os": "Ubuntu 22.04 arm64 VM", "node": "v22.23.4", "browser": "Sparticuz Chromium v153 arm64 (external)", "ffmpeg": "8.1 (BtbN, external)", "fontSubstitution": "Arial -> Liberation Sans"},
+  "typescript": "pass",
+  "vitest": {"files": 19, "passed": 305, "failed": 0, "added": 25},
+  "productionBundles": {"src/index.ts": "pass", "src/storyboard-index.ts": "pass"},
+  "legacyRegression": {"method": "lossless PNG renders from original tree vs branch, same environment", "frames": 23, "identical": 23},
+  "variants": {
+    "a": {"storyboard": "storyboards/volcano-motion-prototype.json", "captionStyle": "default box", "renderSeconds": 82.68, "bytes": 13913452, "sha256": "cb94c08824fbf0846ec0648ca708d6a9105fd77a23e10af36fa882e1dc91f58d", "plumeHeightPeakFraction": 0.10, "plumeMeasurement": "visual, frame 285"},
+    "b": {"storyboard": "storyboards/volcano-style-b.json", "captionStyle": "config/caption-styles/outline.json", "renderSeconds": 100.57, "bytes": 15255697, "sha256": "442143f479c49b570ce82b1b5b5d98ba2704db063afbbc0fc1d245a0ef2f2b34", "plumeHeightPeakFraction": 0.314, "plumeMeasurement": "analytic"},
+    "c": {"storyboard": "storyboards/volcano-style-c.json", "captionStyle": "config/caption-styles/outline.json", "renderSeconds": 70.59, "bytes": 4076742, "sha256": "057150f6bb2b663c4528c215e3c37f59fe1be97b24148b879e296208acbb4775", "plumeHeightPeakFraction": 0.269, "plumeMeasurement": "analytic"}
+  },
+  "encodedChecksAllVariants": {"codec": "h264/aac", "dimensions": "1080x1920", "fps": 30, "frames": 450, "durationSeconds": 15, "blackFrames": "none unintended", "sceneBoundaries": [0, 66, 150, 243, 318, 450], "pcmCorrelation": 0.99992, "signalToDifferenceDB": 37.77, "captionWords": 28, "captionCues": 5},
+  "comparison": {"eruption-abc-phone-size.mp4": "496b0b834cd969e41a2167b0bc63dee98e854c9e77a0af3127b24b92539de06a", "comparison-grid.png": "a18bb18c550bbb4d948f93bf8f33ce38a33b8b2dcd5b2c73ec4de9f6aa4500b5"},
+  "renderTimeScope": "Sum of three 150-frame segment renders including per-segment composition lookup; excludes bundling, concat, mux and verification",
+  "protected": {"approvedNarrationModified": false, "approvedPaintedAssetsModified": false, "scriptModified": false, "providerTimingModified": false},
+  "paidRequests": 0,
+  "humanVisualReview": "pending"
+}

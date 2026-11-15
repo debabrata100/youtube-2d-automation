@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1300" viewBox="0 0 1000 1300">
+  <defs><radialGradient id="g"><stop offset="0" stop-color="#fff0a0"/><stop offset=".45" stop-color="#ff8a2a"/><stop offset="1" stop-color="#ff5a1a" stop-opacity="0"/></radialGradient></defs>
+  <ellipse cx="500" cy="262" rx="150" ry="60" fill="url(#g)"/>
+  <ellipse cx="500" cy="264" rx="66" ry="12" fill="#ffd060"/>
+</svg>

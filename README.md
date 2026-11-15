@@ -184,3 +184,25 @@ npm run story:prepare -- --script stories/volcano-elevenlabs-a.json --tts eleven
 The command loads local `.env` securely and makes only three metadata GETs; omit `--validate-remote` for offline planning. It never synthesizes. `story:render --tts elevenlabs` remains blocked even with the old OpenAI authorization flag. Fix credential/account access locally and obtain separate bounded approval before Stage B. The original script, approved artwork and prior videos are preserved; M2.3 remains open.
 
 Authentication follow-up: the live voice GET reports **HTTP 401 / `missing_permissions`**, while local environment loading and the header are correct. Review Voices: Read on the existing key, then use `npm run story:auth -- --script stories/volcano-elevenlabs-a.json --voice iiidtqDt9FBdT1vfBluA` for exactly one read-only voice check. See the [diagnostic](docs/M2_3_2_AUTH_DIAGNOSTIC.md). No synthesis authorization is implied.
+
+## M2.5 style spike — quick reference
+
+```bash
+# Fast stills while authoring (offline, cached narration)
+node --import tsx scripts/preview-stills.ts --script stories/volcano-elevenlabs-a.json \
+  --storyboard storyboards/volcano-style-c.json --caption-style config/caption-styles/outline.json \
+  --audio jobs/volcano-m2-3-4-final/audio/narration.wav --metadata jobs/volcano-m2-3-4-final/audio/narration-metadata.json \
+  --frames 30,200,285,420 --output jobs/<new-preview>
+
+# Full render of a variant
+npm run story:render-cached -- --script stories/volcano-elevenlabs-a.json \
+  --storyboard storyboards/volcano-style-c.json --caption-style config/caption-styles/outline.json \
+  --audio jobs/volcano-m2-3-4-final/audio/narration.wav --metadata jobs/volcano-m2-3-4-final/audio/narration-metadata.json \
+  --output jobs/<new-job>
+
+# Chunked/resumable alternative: add --prepare-only above, then
+node --import tsx scripts/render-job-frames.ts jobs/<new-job> 0 149   # repeat per range
+node --import tsx scripts/assemble-job.ts jobs/<new-job>
+```
+
+Regenerate the B/C storyboards with `python3 scripts/authoring/build-style-spike-storyboards.py`. See `docs/M2_5_STYLE_SPIKE_REPORT.md`.

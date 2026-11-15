@@ -8,9 +8,9 @@ import {flowPositionAt, layerStateAt, maskSequenceAt, trackAt, wipeRectAt} from 
 import type {Storyboard, SubjectConfig} from '../storyboard/schema';
 
 const Layer: React.FC<{layer: IllustrationLayerConfig; frame: number; group: IllustrationGroup; assets: AssetRegistry; prefix: string}> = ({layer, frame, group, assets, prefix}) => {
-  const id = `${prefix}-${layer.id}`, state = layerStateAt(layer, frame), source = staticFile(assets.resolve(layer.asset).path);
+  const id = `${prefix}-${layer.id}`, state = layerStateAt(layer, frame), source = layer.asset ? staticFile(assets.resolve(layer.asset).path) : null;
   const anchor = layer.anchor ?? {x: group.width / 2, y: group.height / 2};
-  const image = <image href={source} width={group.width} height={group.height} preserveAspectRatio="xMidYMid meet"/>;
+  const image = source ? <image href={source} width={group.width} height={group.height} preserveAspectRatio="xMidYMid meet"/> : null;
   const texture = layer.textureDrift;
   const phase = texture ? frame * 2 * Math.PI / texture.periodFrames : 0;
   const flow=layer.flow, pad=layer.maskPadding??0;

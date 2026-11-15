@@ -16,15 +16,15 @@ import {measureAudio} from '../src/audio/metadata';
 import {validateAssetFiles} from './storyboard-assets';
 import {browserExecutable,run} from './media-tools';
 const main=async()=>{
- const {values:o}=parseArgs({options:{script:{type:'string'},storyboard:{type:'string'},'show-ai-disclosure-banner':{type:'boolean',default:false},audio:{type:'string'},metadata:{type:'string'},output:{type:'string'}}});
- if(!o.script||!o.audio||!o.metadata)throw Error('Usage: render-cached-story --script <json> --audio <wav> --metadata <cached-metadata-json> [--output <new-job>]');
+ const {values:o}=parseArgs({options:{script:{type:'string'},storyboard:{type:'string'},'show-ai-disclosure-banner':{type:'boolean',default:false},audio:{type:'string'},metadata:{type:'string'},output:{type:'string'},'caption-style':{type:'string'},'prepare-only':{type:'boolean',default:false}}});
+ if(!o.script||!o.audio||!o.metadata)throw Error('Usage: render-cached-story --script <json> --audio <wav> --metadata <cached-metadata-json> [--output <new-job>] [--caption-style <json>]');
  const storyInput=storyScriptSchema.parse(JSON.parse(await readFile(o.script,'utf8'))),sourceBoard=parseStoryboard(JSON.parse(await readFile(o.storyboard??storyInput.storyboard,'utf8'))),story=validateStory({...storyInput,storyboard:o.storyboard??storyInput.storyboard},sourceBoard);
  const metadata=JSON.parse(await readFile(o.metadata,'utf8')),bytes=await readFile(o.audio),sha256=createHash('sha256').update(bytes).digest('hex');
  if(sha256!==metadata.sha256||metadata.text!==story.beats.map(b=>b.narration).join(' '))throw Error('Cached approved audio hash/text does not match script');
  const measured=await measureAudio(o.audio),frames=storyboardDuration(sourceBoard),seconds=frames/sourceBoard.format.fps;
  if(measured.codec!=='pcm_s16le'||measured.sampleRate!==24000||measured.channels!==1||measured.durationSeconds>seconds-.2)throw Error('Unsupported or overlong approved audio; never stretch or truncate');
  await validateAssetFiles(sourceBoard.assets);
- const mapping=captionsFromProviderTiming(story,metadata.alignment,measured.durationSeconds,sourceBoard.format.fps),schedule=scheduleNarratedScenes(sourceBoard,mapping.phraseTimings),board=schedule.storyboard,style=captionStyleSchema.parse({});
+ const mapping=captionsFromProviderTiming(story,metadata.alignment,measured.durationSeconds,sourceBoard.format.fps),schedule=scheduleNarratedScenes(sourceBoard,mapping.phraseTimings),board=schedule.storyboard,style=captionStyleSchema.parse(o['caption-style']?JSON.parse(await readFile(o['caption-style'],'utf8')):{});
  const narration=narrationOverlaySchema.parse({audioSrc:'narration/narration.wav',captionsEnabled:true,syntheticTestAudio:false,showAiDisclosureBanner:o['show-ai-disclosure-banner'],cues:mapping.cues,style});
  const job=path.resolve(o.output??`jobs/${story.id}-cached-${new Date().toISOString().replace(/[:.]/g,'-')}`);await mkdir(path.dirname(job),{recursive:true});await mkdir(job);
  for(const dir of ['audio','story','captions','reports','output','previews','public'])await mkdir(path.join(job,dir));
@@ -36,6 +36,12 @@ const main=async()=>{
  await json('reports/timing-report.json',{...mapping.timingReport,beats,visualTimelinePreserved:!schedule.enabled,narrationDrivenScenes:schedule.enabled,captionBasis:'Provider character timestamps mapped to all spoken words; no forced alignment or estimated ASR timing used.',sceneAlignmentNote:schedule.enabled?'Scene crossfade midpoints follow exact provider phrase cues; illustration clocks normalized to preserve source keyframes. Audio unchanged.':'Original scene durations preserved; see narration lead frames.'});
  await copyFile(o.audio,path.join(job,'audio/narration.wav'));await json('audio/narration-metadata.json',{...metadata,audioPath:path.join(job,'audio/narration.wav'),sourceAudio:path.resolve(o.audio),approvedNarrationReused:true,paidRequestsThisRender:0});
  const publicDir=path.join(job,'public');for(const asset of board.assets){const dest=path.join(publicDir,asset.path);await mkdir(path.dirname(dest),{recursive:true});await copyFile(path.resolve('assets',asset.path),dest);}await mkdir(path.join(publicDir,'narration'));await copyFile(o.audio,path.join(publicDir,'narration/narration.wav'));
+ if(o['prepare-only']){
+  // Chunked/resumable path: bundle once into the job; render-job-frames.ts renders ranges; assemble-job.ts muxes and verifies.
+  await bundle({entryPoint:path.resolve('src/storyboard-index.ts'),publicDir,outDir:path.join(job,'bundle')});
+  await json('reports/prepare-report.json',{prepared:true,frames,seconds,sourceAudio:path.resolve(o.audio),paidRequests:0});
+  console.log(JSON.stringify({job,prepared:true,paidRequests:0}));return;
+ }
  const serveUrl=await bundle({entryPoint:path.resolve('src/storyboard-index.ts'),publicDir}),inputProps={storyboard:board,narration};
  const composition=(await getCompositions(serveUrl,{inputProps,browserExecutable})).find(c=>c.id==='GenericStoryboard');if(!composition)throw Error('Composition missing');
  const start=performance.now(),output=path.join(job,'output/narrated-animation.mp4');

@@ -32,6 +32,12 @@ for(const [name,title,selection] of [['chronological','Whole-second encoded chro
  const selected=selection.map(f=>samples.find(s=>s.frame===f)!);
  const html=`<!doctype html><meta charset="utf-8"><style>body{margin:0;padding:20px;background:#10152e;color:white;font:16px Arial}.grid{display:grid;grid-template-columns:repeat(5,270px);gap:12px}.item img{display:block;width:270px;height:${thumbHeight}px}.label{padding:8px;background:#20283e}</style><h2>${escape(storyboard.title)} — ${title}</h2><div class="grid">${selected.map((s,i)=>`<div class="item"><img src="${s.image}"><div class="label">${i+1}. frame ${s.frame} · ${s.second.toFixed(2)}s<br>${escape(s.sceneId)}</div></div>`).join('')}</div>`;
  const file=path.join(preview,`${name}.html`);await writeFile(file,html);
+ if(process.env.CONTACT_SHEET_MODE==='ffmpeg'){
+  // Browser-free fallback (e.g. headless Linux builds without --screenshot support): tile the decoded samples 5 per row.
+  const listFile=path.join(preview,`${name}-inputs.txt`);await writeFile(listFile,selected.map(s=>`file '${path.join(preview,s.image)}'`).join('\n')+'\n');
+  await run('ffmpeg',['-v','error','-y','-f','concat','-safe','0','-i',listFile,'-vf',`tile=5x${Math.ceil(selected.length/5)}:padding=12:margin=20:color=0x10152e`,'-frames:v','1',path.join(job,`${name}-contact-sheet.png`)]);
+  continue;
+ }
  if(!browserExecutable)throw new Error('Browser required for contact sheets');
  await run(browserExecutable,['--headless=new','--disable-gpu','--no-sandbox','--hide-scrollbars','--allow-file-access-from-files',`--window-size=1440,${Math.ceil(selected.length/5)*(thumbHeight+65)+120}`,`--screenshot=${path.join(job,`${name}-contact-sheet.png`)}`,pathToFileURL(file).href]);
 }

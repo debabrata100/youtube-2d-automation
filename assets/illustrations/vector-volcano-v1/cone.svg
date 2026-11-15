@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1300" viewBox="0 0 1000 1300">
+  <defs>
+    <clipPath id="cone"><path d="M60 800 C230 700 360 520 428 262 L572 262 C640 520 770 700 940 800 Q500 832 60 800 Z"/></clipPath>
+    <linearGradient id="lit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c78a6c"/><stop offset="1" stop-color="#8d5b52"/></linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d5050"/><stop offset="1" stop-color="#55363f"/></linearGradient>
+  </defs>
+  <ellipse cx="500" cy="812" rx="470" ry="30" fill="#1b1220" opacity=".45"/>
+  <g clip-path="url(#cone)">
+    <rect width="1000" height="1300" fill="url(#lit)"/>
+    <path d="M500 250 C520 450 545 620 580 840 L1000 840 L1000 250 Z" fill="url(#shade)"/>
+    <g fill="none" stroke="#5a3a40" stroke-width="5" stroke-linecap="round" opacity=".55">
+      <path d="M455 300 C430 420 380 540 300 690"/><path d="M470 330 C460 470 430 600 410 760"/>
+      <path d="M540 310 C580 440 640 560 720 700"/><path d="M525 340 C540 480 560 620 600 780"/>
+    </g>
+    <g fill="none" stroke="#e7a985" stroke-width="3" stroke-linecap="round" opacity=".45">
+      <path d="M440 300 C415 410 360 520 250 660"/><path d="M462 340 C450 460 420 560 380 700"/>
+    </g>
+    <g fill="#ffffff" opacity=".06"><rect y="420" width="1000" height="26"/><rect y="560" width="1000" height="22"/><rect y="690" width="1000" height="20"/></g>
+  </g>
+  <ellipse cx="500" cy="264" rx="72" ry="15" fill="#2a1c22"/>
+  <path d="M428 262 Q500 248 572 262" fill="none" stroke="#e8b08e" stroke-width="5" stroke-linecap="round"/>
+</svg>

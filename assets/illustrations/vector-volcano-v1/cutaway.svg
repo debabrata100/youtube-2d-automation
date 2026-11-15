@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1300" viewBox="0 0 1000 1300">
+  <defs>
+    <clipPath id="slab"><path d="M60 800 C230 700 360 520 428 262 L572 262 C640 520 770 700 940 800 L990 805 L990 1150 Q500 1330 10 1150 L10 805 Z"/></clipPath>
+  </defs>
+  <g clip-path="url(#slab)">
+    <rect width="1000" height="1300" fill="#7b4f50"/>
+    <path d="M0 330 Q250 350 500 330 T1000 340 V420 Q750 440 500 420 T0 410 Z" fill="#a46a5c"/>
+    <path d="M0 480 Q260 500 500 470 T1000 490 V560 Q740 590 500 560 T0 550 Z" fill="#94604f"/>
+    <path d="M0 620 Q250 640 500 610 T1000 630 V700 Q760 730 500 700 T0 690 Z" fill="#b5785f"/>
+    <path d="M0 760 Q240 790 500 760 T1000 770 V820 Q760 850 500 820 T0 810 Z" fill="#c8906b"/>
+    <path d="M0 820 H1000 V1300 H0 Z" fill="#5e3c48"/>
+    <path d="M0 880 Q260 900 500 875 T1000 890 V950 Q740 975 500 950 T0 940 Z" fill="#6c4752"/>
+    <path d="M0 1150 Q250 1170 500 1150 T1000 1160 V1300 H0 Z" fill="#4b303d"/>
+    <g fill="#3e2733" opacity=".55"><circle cx="160" cy="980" r="9"/><circle cx="820" cy="930" r="7"/><circle cx="300" cy="1180" r="8"/><circle cx="700" cy="1200" r="10"/><circle cx="880" cy="1100" r="6"/><circle cx="120" cy="1090" r="6"/></g>
+    <ellipse cx="500" cy="1060" rx="250" ry="105" fill="#2a1820"/>
+    <path d="M500 1000 C470 820 530 560 500 268" fill="none" stroke="#2a1820" stroke-width="40" stroke-linecap="round"/>
+  </g>
+  <path d="M60 800 C230 700 360 520 428 262 L572 262 C640 520 770 700 940 800 L990 805 L990 1150 Q500 1330 10 1150 L10 805 Z" fill="none" stroke="#2a1820" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M10 805 L60 800 M940 800 L990 805" stroke="#d99a74" stroke-width="6" stroke-linecap="round"/>
+</svg>

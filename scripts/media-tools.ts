@@ -1,6 +1,7 @@
 import {spawn} from 'node:child_process';
 
-export const browserExecutable = process.platform === 'darwin' ? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' : null;
+/** REMOTION_BROWSER_EXECUTABLE overrides the default (e.g. a local headless Chromium on Linux CI). */
+export const browserExecutable = process.env.REMOTION_BROWSER_EXECUTABLE || (process.platform === 'darwin' ? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' : null);
 export const run = (command: string, args: string[], cwd = process.cwd()) => new Promise<void>((resolve, reject) => {
   const child = spawn(command, args, {cwd, stdio: 'inherit'});
   child.on('error', reject);
