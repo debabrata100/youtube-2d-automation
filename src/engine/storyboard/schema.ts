@@ -7,6 +7,8 @@ import {groupSchema, layerAssetIds, trackSchema} from './layers';
 const color = z.string().regex(/^#[0-9a-fA-F]{6}$/, 'Expected a six-digit hex color');
 const subject = z.object({asset: z.string().min(1), x: z.number().min(.1).max(.9).default(.5), y: z.number().min(.25).max(.85).default(.56), size: z.number().min(.08).max(.9).default(.65), timeOffset: z.number().int().nonnegative().optional()}).strict();
 const base = {
+  narrationCue: z.object({beatId:z.string().min(1),phraseIndex:z.number().int().nonnegative().default(0),edge:z.enum(['start','end']).default('start')}).strict().optional(),
+  animationDurationFrames:z.number().int().min(12).max(18000).optional(),
   id: z.string().min(1), durationFrames: z.number().int().min(12).max(18000),
   caption: z.object({text: z.string().min(1).max(180), preset: z.enum(['headline', 'body', 'closing']).default('headline'), kicker: z.string().max(60).default(''), color: color.default('#fff4df'), hold: z.boolean().optional()}).strict(),
   camera: cameraSchema.default({preset: 'slow-push', amount: .1, offsetX: .07, offsetY: 0}),
@@ -41,6 +43,7 @@ export const storyboardSchema = z.object({
   assets: z.array(assetSchema).min(1).max(100), scenes: z.array(genericSceneSchema).min(1).max(100),
   groups: z.array(groupSchema).max(30).optional(),
   backdrop: z.object({asset: z.string().min(1), decoration: z.boolean().default(false), dim: z.number().min(0).max(.8).default(0), motion:z.object({scale:trackSchema(1,1.2),x:trackSchema(-100,100),y:trackSchema(-100,100)}).strict().optional()}).strict().optional(),
+  narrationTiming:z.object({minimumSceneFrames:z.number().int().min(12).max(900).default(45),maximumDeviationSeconds:z.number().min(0).max(2).default(.2)}).strict().optional(),
   crossfadeFrames: z.number().int().min(2).max(20).optional(),
 }).strict().superRefine((storyboard, ctx) => {
   const assets = new Set<string>(); const scenes = new Set<string>();

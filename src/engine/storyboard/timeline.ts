@@ -15,3 +15,9 @@ export const storyboardSceneAt = (storyboard: Storyboard, frame: number) => {
   if (!entry) throw new Error(`Frame outside storyboard: ${frame}`);
   return {...entry, localFrame: frame - entry.startFrame};
 };
+
+/** Normalize local illustration keys while real scene envelopes/cameras use output frames. */
+export const sceneAnimationFrame=(scene:{durationFrames:number;animationDurationFrames?:number},frame:number)=>{
+ const local=Math.min(Math.max(0,frame),scene.durationFrames-1);
+ return scene.animationDurationFrames?local*(scene.animationDurationFrames-1)/(scene.durationFrames-1):local;
+};

@@ -4,7 +4,7 @@ import {createAssetRegistry} from '../engine/assets/registry';
 import {cameraPresetAt} from '../engine/camera/presets';
 import {subjectEnvelope} from '../engine/motion/presets';
 import {parseStoryboard, type GenericScene, type Storyboard} from '../engine/storyboard/schema';
-import {storyboardTimeline} from '../engine/storyboard/timeline';
+import {storyboardTimeline,sceneAnimationFrame} from '../engine/storyboard/timeline';
 import {TemplateContent} from '../engine/templates/registry';
 import {Camera2D} from '../components/Camera2D';
 import {makeParticles} from '../motion/particles';
@@ -14,15 +14,17 @@ import type {NarrationOverlayConfig} from '../captions/schema';
 
 const StoryboardScene: React.FC<{storyboard: Storyboard; scene: GenericScene; first?: boolean; last?: boolean; hideCaptions?:boolean}> = ({storyboard, scene, first = true, last = true,hideCaptions=false}) => {
   const timelineFrame = useCurrentFrame();
-  const frame = Math.min(timelineFrame, scene.durationFrames - 1);
+  const sceneFrame = Math.min(timelineFrame, scene.durationFrames - 1);
+  const frame = sceneAnimationFrame(scene,sceneFrame);
+  const contentScene = scene.animationDurationFrames ? {...scene,durationFrames:scene.animationDurationFrames} : scene;
   const {width, height} = storyboard.format;
   const assets = React.useMemo(() => createAssetRegistry(storyboard.assets), [storyboard.assets]);
-  const camera = cameraPresetAt(scene.camera, frame, scene.durationFrames, width, height);
-  const opacity = storyboard.crossfadeFrames ? crossfadeAt(timelineFrame, scene.durationFrames, storyboard.crossfadeFrames, first, last) : scene.caption.hold ? 1 : subjectEnvelope(frame, scene.durationFrames, scene.transitionFrames);
+  const camera = cameraPresetAt(scene.camera, sceneFrame, scene.durationFrames, width, height);
+  const opacity = storyboard.crossfadeFrames ? crossfadeAt(timelineFrame, scene.durationFrames, storyboard.crossfadeFrames, first, last) : scene.caption.hold ? 1 : subjectEnvelope(sceneFrame, scene.durationFrames, scene.transitionFrames);
   const fontSize = width * (scene.caption.preset === 'headline' ? .068 : scene.caption.preset === 'closing' ? .06 : .05);
   return <AbsoluteFill style={{opacity}}>
     {scene.environmentDim !== undefined && <AbsoluteFill style={{background: '#10101f', opacity: scene.environmentDim}}/>}
-    <Camera2D focus={camera.focus} zoom={camera.zoom} rotation={camera.rotation} viewport={{x: width / 2, y: height / 2}}><TemplateContent storyboard={storyboard} scene={scene} frame={frame} assets={assets}/></Camera2D>
+    <Camera2D focus={camera.focus} zoom={camera.zoom} rotation={camera.rotation} viewport={{x: width / 2, y: height / 2}}><TemplateContent storyboard={storyboard} scene={contentScene} frame={frame} assets={assets}/></Camera2D>
     {!hideCaptions&&<div style={{position: 'absolute', left: width * .08, right: width * .08, top: height * .075, textAlign: 'center', fontFamily: 'Arial, sans-serif', color: scene.caption.color, fontWeight: 700, textShadow: '0 3px 16px #0008'}}>
       {scene.caption.kicker && <div style={{fontSize: width * .022, color: storyboard.accent, letterSpacing: width * .003, marginBottom: height * .012}}>{scene.caption.kicker}</div>}
       <div style={{fontSize, lineHeight: 1.12, whiteSpace: 'pre-line', overflowWrap: 'break-word'}}>{scene.caption.text}</div>

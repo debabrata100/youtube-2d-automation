@@ -8,6 +8,7 @@ import {wrapPhrase} from './timing';
  * Ceiling starts prevents a caption appearing before its provider timestamp.
  * Character timestamps remain provider estimates requiring listening review. */
 export const captionsFromProviderTiming=(story:StoryScript,input:CharacterAlignment,durationSeconds:number,fps=30)=>{
+ if(!Number.isInteger(fps)||fps<1||fps>60)throw Error('Invalid video frame rate');
  if(!Number.isFinite(durationSeconds)||durationSeconds<=0||durationSeconds>story.durationSeconds-.2)throw Error('Natural narration must fit with at least 0.2 seconds of ending room; shorten the script, never accelerate');
  const a=characterAlignmentSchema.parse(input),text=a.characters.join('');
  const matches=[...text.matchAll(/[\p{L}\p{N}]+(?:['’-][\p{L}\p{N}]+)*/gu)];
@@ -15,12 +16,14 @@ export const captionsFromProviderTiming=(story:StoryScript,input:CharacterAlignm
  if(matches.map(m=>m[0].toLowerCase()).join(' ')!==expected.map(w=>w.toLowerCase()).join(' '))throw Error('Provider alignment text differs from script; explicit forced/local alignment review required');
  if(a.character_end_times_seconds.at(-1)!>durationSeconds+.001)throw Error('Alignment exceeds audio duration');
  let cursor=0;const codeUnits:number[]=[];let offset=0;for(let i=0;i<a.characters.length;i++){for(let j=0;j<a.characters[i].length;j++)codeUnits[offset++]=i;}
- const wordTimings=matches.map(m=>({text:m[0],startSeconds:a.character_start_times_seconds[codeUnits[m.index!]],endSeconds:a.character_end_times_seconds[codeUnits[m.index!+m[0].length-1]]}));
+ const wordTimings=matches.map((m,i)=>({text:m[0],wordIndex:i,sourceText:text.slice(i===0?0:m.index!,matches[i+1]?.index??text.length).trimEnd(),characterStartIndex:codeUnits[m.index!],characterEndIndex:codeUnits[m.index!+m[0].length-1]+1,startSeconds:a.character_start_times_seconds[codeUnits[m.index!]],endSeconds:a.character_end_times_seconds[codeUnits[m.index!+m[0].length-1]]}));
+ const phraseTimings:Array<{beatId:string;phraseIndex:number;text:string;startSeconds:number;endSeconds:number;firstWordIndex:number;endWordIndex:number}>=[];
  const cues=story.beats.flatMap(beat=>beat.phrases.map((phrase,j)=>{
-  const first=matches[cursor];cursor+=words(phrase).length;const last=matches[cursor-1];
+  const firstWordIndex=cursor;const first=matches[cursor];cursor+=words(phrase).length;const last=matches[cursor-1];
   const start=a.character_start_times_seconds[codeUnits[first.index!]],end=a.character_end_times_seconds[codeUnits[last.index!+last[0].length-1]];
+  phraseTimings.push({beatId:beat.id,phraseIndex:j,text:phrase,startSeconds:start,endSeconds:end,firstWordIndex,endWordIndex:cursor});
   return captionCueSchema.parse({id:`${beat.id}-${j+1}`,beatId:beat.id,startFrame:Math.ceil(start*fps),endFrame:Math.ceil(end*fps),lines:wrapPhrase(phrase),timingBasis:'provider character timestamps; rounded to video frames'});
  }));
  if(cues.some((c,i)=>c.endFrame>story.durationSeconds*fps||(i>0&&c.startFrame<cues[i-1].endFrame)))throw Error('Provider caption intervals overlap or exceed timeline');
- return{cues,wordTimings,timingReport:{method:'provider character timestamps',audioDurationSeconds:durationSeconds,speechSpeedAdjustment:1,endRoomSeconds:story.durationSeconds-durationSeconds,maximumFrameRoundingSeconds:1/fps,humanSynchronizationReview:'pending'}};
+ return{cues,wordTimings,phraseTimings,alignedText:text,timingReport:{method:'provider character timestamps',audioDurationSeconds:durationSeconds,speechSpeedAdjustment:1,endRoomSeconds:story.durationSeconds-durationSeconds,maximumFrameRoundingSeconds:1/fps,humanSynchronizationReview:'pending'}};
 };

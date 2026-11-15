@@ -1,7 +1,20 @@
-# YouTube 2D Automation — narrated volcano integration
+# YouTube 2D Automation — narration-driven scenes
 
 A deterministic 2D animation engine and a 15-second vertical science explainer, **How Planets Form**. M1.2 received human visual approval on 2026-11-14 as the project's illustrated animation baseline. The sequence simplifies a process that takes millions of years.
 
+
+
+## M2.3.4 — narration-driven scenes and clean production overlays
+
+The latest [volcano MP4](jobs/volcano-m2-3-4-final/output/narrated-animation.mp4) removes the permanent AI disclosure banner and aligns scene crossfade midpoints to provider phrase timing. Nominal scene boundaries are **0 / 66 / 150 / 243 / 318 / 450**, with variable lengths and unchanged scene order. Transition-midpoint error: **8.67 ms maximum, 4.50 ms average**; transition-start error stays within 122 ms. No minimum-duration exception was needed.
+
+[volcano-narrated.json](storyboards/volcano-narrated.json) opts into generic `narrationTiming` and per-scene `narrationCue` metadata. `animationDurationFrames` preserves illustration keyframe clocks when scenes change length. Existing plans without metadata retain their timing and rendering. `showAiDisclosureBanner` defaults to false; explicit true is available for debug proof frames. Mock-test CLI output still opts into its development warning.
+
+```bash
+npm run story:render-cached -- --script stories/volcano-elevenlabs-a.json --storyboard storyboards/volcano-narrated.json --audio /absolute/path/to/approved/narration.wav --metadata /absolute/path/to/narration-metadata.json --output jobs/<new-m2-3-4-job>
+```
+
+The approved 13.1425-second voice, 28-word script, subtitles and artwork are unchanged. Final output: 1080×1920, 30 FPS, 450 frames, 15.000 seconds, H.264/AAC. Render/encode/mux: **37.01 seconds**. The silent ending retains molten/ash motion and adds a gentle camera pull-back. TypeScript, 256 tests, both production bundles, encoded-media checks and 20 lossless backward-compatibility samples pass. No paid calls, new audio, new artwork, music or effects. See the [report](docs/M2_3_4_REPORT.md), [chronological sheet](jobs/volcano-m2-3-4-final/chronological-contact-sheet.png) and [timing comparison](jobs/volcano-m2-3-4-final/scene-timing-comparison.png). Final human video review remains pending; M2.4 has not started.
 
 ## M2.3.3 — approved narration integration
 
