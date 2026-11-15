@@ -1,0 +1,11 @@
+# M2.3.1 pre-request review
+
+The user explicitly authorizes five speech requests and USD 0.05 maximum estimated spend. No other paid API call is authorized. The root .env remains ignored; Node 22 native --env-file-if-exists=.env loads it without shell sourcing or logging credentials. Existing exported environment values retain Node's documented precedence.
+
+The selected 35-word curiosity script is retained unchanged. It poses a direct question, defines underground magma, names buoyancy/gas pressure with “can,” qualifies the eruption example with “some,” and ends with the magma/lava distinction. The scientific cause/effect progression is concise; natural delivery and the technical word “buoyancy” need listening review. Uniform seven-word beats are a planning convenience, not evidence of real speech duration.
+
+Official model documentation was rechecked on 2026-11-14: https://developers.openai.com/api/docs/models/gpt-4o-mini-tts and https://developers.openai.com/api/reference/typescript/resources/audio/subresources/speech/methods/create . The requested snapshot is listed, with USD 0.60/M input-text and USD 12/M output-audio tokens. An authenticated, non-synthesis model lookup returned HTTP 200 for gpt-4o-mini-tts-2025-12-15. No substitute model will be used. The documented shutdown remains 2027-01-06.
+
+Use marin, existing natural American-English instructions and speed 1.0. Before every cache miss, reserve a conservative estimate: UTF-8 bytes as an input-token allowance plus 750 assumed output-audio tokens for this short beat. Five such reservations total under USD 0.05 for this script. The output allowance is deliberately much larger than expected for seven words, but is not a provider-enforced token or actual billing guarantee. Actual cost remains unavailable unless provider usage is supplied. Persist attempts before sending; failed/uncertain attempts are not refunded. A job lock prevents concurrent duplication. Cache hits spend no request slot.
+
+Generate once, inspect measurements, then use local timing/caption adjustments rather than extra paid requests where needed. No visual artwork/choreography changes. No music, effects, agents, publishing, commit, push, tag or M2.4. Human listening approval remains required.

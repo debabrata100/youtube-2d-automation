@@ -22,3 +22,15 @@ jobs/*
 # Superseded image-generation draft, retained locally for provenance.
 /assets/illustrations/young-star-painted-v1.png
 /assets/illustrations/young-star-painted-v1.prompt.md
+
+# Local API credentials; narration entry points use native Node environment loading.
+.env
+.env.*
+!.env.example
+
+# Generated narration and intermediate audio stay local.
+*.wav
+*.mp3
+*.aac
+*.m4a
+*.flac

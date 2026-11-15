@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0",
+  "id": "volcano-elevenlabs-a",
+  "title": "How a Volcano Erupts",
+  "topic": "Volcano eruption mechanisms and magma versus lava",
+  "language": "en-US",
+  "targetAudience": "English-speaking science-curious viewers aged 16\u201335",
+  "durationSeconds": 15,
+  "storyboard": "storyboards/volcano.json",
+  "beats": [
+    {
+      "id": "hook",
+      "sceneId": "volcano-exterior",
+      "narration": "What makes a volcano erupt?",
+      "intent": "hook",
+      "emphasis": [],
+      "phrases": [
+        "What makes a volcano erupt?"
+      ]
+    },
+    {
+      "id": "setup",
+      "sceneId": "magma-accumulation",
+      "narration": "Molten rock called magma gathers below.",
+      "intent": "setup",
+      "emphasis": [],
+      "phrases": [
+        "Molten rock called magma gathers below."
+      ]
+    },
+    {
+      "id": "explanation",
+      "sceneId": "magma-rise",
+      "narration": "Expanding gas helps push magma upward.",
+      "intent": "explanation",
+      "emphasis": [],
+      "phrases": [
+        "Expanding gas helps push magma upward."
+      ]
+    },
+    {
+      "id": "payoff",
+      "sceneId": "eruption",
+      "narration": "Gas and ash burst into daylight.",
+      "intent": "payoff",
+      "emphasis": [],
+      "phrases": [
+        "Gas and ash burst into daylight."
+      ]
+    },
+    {
+      "id": "closing",
+      "sceneId": "final-summary",
+      "narration": "Erupted magma is called lava.",
+      "intent": "closing",
+      "emphasis": [],
+      "phrases": [
+        "Erupted magma is called lava."
+      ]
+    }
+  ],
+  "candidatesReport": "stories/volcano-elevenlabs-candidates.md",
+  "previews": [
+    {
+      "id": "opening-hook",
+      "fromBeat": "hook",
+      "toBeat": "hook"
+    },
+    {
+      "id": "explanation",
+      "fromBeat": "setup",
+      "toBeat": "explanation"
+    },
+    {
+      "id": "eruption-payoff",
+      "fromBeat": "payoff",
+      "toBeat": "closing"
+    }
+  ]
+}

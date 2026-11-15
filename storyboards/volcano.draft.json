@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "how-a-volcano-erupts-draft",
+  "title": "How a Volcano Erupts",
+  "format": {"width": 1080, "height": 1920, "fps": 30},
+  "styleId": "cinematic-illustrated",
+  "background": "#161b25",
+  "accent": "#ffb274",
+  "assets": [
+    {"id": "volcano-landscape", "path": "illustrations/volcano/landscape.png", "type": "png", "width": 2048, "height": 2048, "transparent": true, "styleId": "cinematic-illustrated"},
+    {"id": "volcano-exterior", "path": "illustrations/volcano/exterior.png", "type": "png", "width": 2048, "height": 2048, "transparent": true, "styleId": "cinematic-illustrated"},
+    {"id": "volcano-cutaway", "path": "illustrations/volcano/cutaway-rock.png", "type": "png", "width": 2048, "height": 2048, "transparent": true, "styleId": "cinematic-illustrated"},
+    {"id": "volcano-chamber", "path": "illustrations/volcano/magma-chamber.png", "type": "png", "width": 2048, "height": 2048, "transparent": true, "styleId": "cinematic-illustrated"},
+    {"id": "volcano-conduit", "path": "illustrations/volcano/conduit-magma.png", "type": "png", "width": 2048, "height": 2048, "transparent": true, "styleId": "cinematic-illustrated"},
+    {"id": "volcano-plume", "path": "illustrations/volcano/eruption-plume.png", "type": "png", "width": 2048, "height": 2048, "transparent": true, "styleId": "cinematic-illustrated"},
+    {"id": "volcano-lava", "path": "illustrations/volcano/lava-flows.png", "type": "png", "width": 2048, "height": 2048, "transparent": true, "styleId": "cinematic-illustrated"},
+    {"id": "volcano-exterior-plate", "path": "illustrations/volcano/exterior-plate.png", "type": "png", "width": 2048, "height": 2048, "transparent": true, "styleId": "cinematic-illustrated"}
+  ],
+  "scenes": [
+    {
+      "id": "volcano-exterior", "template": "hero-reveal", "durationFrames": 75,
+      "caption": {"text": "How a volcano erupts", "kicker": "ONE EXPLOSIVE ERUPTION", "preset": "headline"},
+      "camera": {"preset": "slow-push", "amount": 0.06}, "motion": {"preset": "still"}, "seed": 2201,
+      "config": {"primary": {"asset": "volcano-exterior-plate", "x": 0.5, "y": 0.59, "size": 0.9}}
+    },
+    {
+      "id": "magma-accumulation", "template": "summary", "durationFrames": 90,
+      "caption": {"text": "Magma collects\nbeneath the volcano.", "kicker": "BENEATH THE SURFACE", "preset": "body"},
+      "camera": {"preset": "slow-push", "amount": 0.1}, "motion": {"preset": "still"}, "seed": 2202,
+      "config": {"subjects": [
+        {"asset": "volcano-landscape", "x": 0.5, "y": 0.59, "size": 0.9},
+        {"asset": "volcano-cutaway", "x": 0.5, "y": 0.59, "size": 0.9},
+        {"asset": "volcano-chamber", "x": 0.5, "y": 0.59, "size": 0.9}
+      ]}
+    },
+    {
+      "id": "magma-rise-and-gas", "template": "summary", "durationFrames": 105,
+      "caption": {"text": "As magma rises,\ngas bubbles expand.", "kicker": "TRAPPED GAS AND PRESSURE", "preset": "body"},
+      "camera": {"preset": "tracking", "offsetX": 0, "offsetY": -0.035}, "motion": {"preset": "still"}, "seed": 2203,
+      "config": {"subjects": [
+        {"asset": "volcano-landscape", "x": 0.5, "y": 0.59, "size": 0.9},
+        {"asset": "volcano-cutaway", "x": 0.5, "y": 0.59, "size": 0.9},
+        {"asset": "volcano-chamber", "x": 0.5, "y": 0.59, "size": 0.9},
+        {"asset": "volcano-conduit", "x": 0.5, "y": 0.59, "size": 0.9}
+      ]}
+    },
+    {
+      "id": "eruption", "template": "summary", "durationFrames": 105,
+      "caption": {"text": "Ash, gas and lava\nescape at the surface.", "kicker": "ERUPTION", "preset": "body"},
+      "camera": {"preset": "slow-push", "amount": 0.04}, "motion": {"preset": "still"}, "seed": 2204,
+      "config": {"subjects": [
+        {"asset": "volcano-landscape", "x": 0.5, "y": 0.59, "size": 0.9},
+        {"asset": "volcano-exterior", "x": 0.5, "y": 0.59, "size": 0.9},
+        {"asset": "volcano-lava", "x": 0.5, "y": 0.59, "size": 0.9},
+        {"asset": "volcano-plume", "x": 0.5, "y": 0.59, "size": 0.9}
+      ]}
+    },
+    {
+      "id": "final-summary", "template": "summary", "durationFrames": 75,
+      "caption": {"text": "Rising magma.\nExpanding gas.\nEruption.", "preset": "closing"},
+      "camera": {"preset": "pull-back", "amount": 0.08}, "motion": {"preset": "still"}, "seed": 2205,
+      "config": {"subjects": [
+        {"asset": "volcano-landscape", "x": 0.5, "y": 0.59, "size": 0.9},
+        {"asset": "volcano-exterior", "x": 0.5, "y": 0.59, "size": 0.9},
+        {"asset": "volcano-lava", "x": 0.5, "y": 0.59, "size": 0.9},
+        {"asset": "volcano-plume", "x": 0.5, "y": 0.59, "size": 0.9}
+      ]}
+    }
+  ]
+}

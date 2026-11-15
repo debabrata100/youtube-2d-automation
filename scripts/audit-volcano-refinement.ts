@@ -1,0 +1,24 @@
+import path from 'node:path';
+import {createHash} from 'node:crypto';
+import {mkdir,readFile,writeFile} from 'node:fs/promises';
+import {browserExecutable,run} from './media-tools';
+import {pathToFileURL} from 'node:url';
+const job=path.resolve(process.argv[2]),before=path.resolve('jobs/volcano-m2-2-2026-11-14T13-56-49-609Z/output/animation.mp4'),after=path.join(job,'output/animation.mp4');
+const fit=JSON.parse(await readFile('assets/illustrations/volcano/batch-c/fitted-v1/alignment-report.json','utf8'));
+const expected:Record<string,string>={...fit.protectedHashes,[before]:'d28a1afa2e950a2c99aa0d219267b838267abbf21548070fb0461e4bf859fd6a'};
+for(const [name,hash] of Object.entries(fit.outputHashes))if(name.endsWith('.png'))expected['assets/illustrations/volcano/batch-c/fitted-v1/'+name]=hash as string;
+const preserved=[];
+for(const [file,hash] of Object.entries(expected)){const actual=createHash('sha256').update(await readFile(file)).digest('hex');if(actual!==hash)throw Error(`Protected asset changed: ${file}`);preserved.push({file,sha256:actual});}
+await writeFile(path.join(job,'asset-preservation-report.json'),JSON.stringify({allUnchanged:true,files:preserved},null,2));
+const dir=path.join(job,'decoded-review');await mkdir(dir,{recursive:true});
+const frames=[0,89,100,115,138,179,220,269,300,330,390,449];
+await run('ffmpeg',['-v','error','-y','-i',after,'-vf',`select='${frames.map(f=>`eq(n\\,${f})`).join('+')}'`,'-fps_mode','passthrough',path.join(dir,'full-%02d.png')]);
+await writeFile(path.join(dir,'manifest.json'),JSON.stringify(frames.map((frame,i)=>({frame,second:frame/30,file:`full-${String(i+1).padStart(2,'0')}.png`})),null,2));
+for(const [name,crop] of [['crater','400:300:350:600'],['junction','420:320:320:1050'],['lava-edge','960:220:60:950']] as const)await run('ffmpeg',['-v','error','-y','-i',path.join(dir,'full-12.png'),'-vf',`crop=${crop},scale=iw*2:ih*2`,'-frames:v','1',path.join(dir,`${name}-polish.png`)]);
+const sel=[0,125,225,330,420].map(f=>`eq(n\\,${f})`).join('+');
+for(const [file,label] of [[before,'before'],[after,'after']] as const)await run('ffmpeg',['-v','error','-y','-i',file,'-vf',`select='${sel}',scale=216:384,tile=5x1`,'-frames:v','1',path.join(dir,`${label}-row.png`)]);
+const html=path.join(dir,'comparison.html');
+await writeFile(html,`<!doctype html><style>body{margin:0;padding:20px;background:#10152e;color:white;font:18px Arial}h3{margin:8px 0 12px}img{display:block;width:1080px;height:384px}</style><h3>Before — M2.2 · frames 0 / 125 / 225 / 330 / 420</h3><img src="before-row.png"><h3>After — M2.2.1 · same frames</h3><img src="after-row.png">`);
+if(!browserExecutable)throw Error('Browser required for labeled comparison');
+await run(browserExecutable,['--headless=new','--disable-gpu','--no-sandbox','--hide-scrollbars','--allow-file-access-from-files','--window-size=1120,900',`--screenshot=${path.join(job,'before-after-comparison.png')}`,pathToFileURL(html).href]);
+console.log(JSON.stringify({preserved:preserved.length,decodedFullResolutionFrames:frames.length,comparisonFrames:[0,125,225,330,420]}));

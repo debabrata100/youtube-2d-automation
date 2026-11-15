@@ -1,0 +1,494 @@
+{
+  "status": "Original artwork candidates; human visual approval pending; native registration requires fitting",
+  "generationMode": "built-in image_gen",
+  "assets": [
+    {
+      "file": "assets/illustrations/volcano/batch-c/eruption-plume-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "RGBA PNG",
+      "sha256": "f214715978ecc914601043647c8cb250b5ac60391ea38104cc942ab56990e16f",
+      "alphaZeroPixels": 1164238,
+      "partialAlphaPixels": 408226,
+      "alphaAbove128Pixels": 337044,
+      "visibleBounds": {
+        "left": 305,
+        "top": 55,
+        "right": 1044,
+        "bottom": 967
+      },
+      "topAnchor": [
+        {
+          "y": 55,
+          "x": 873.5,
+          "count": 2
+        },
+        {
+          "y": 56,
+          "x": 872.5,
+          "count": 4
+        },
+        {
+          "y": 57,
+          "x": 870.5,
+          "count": 6
+        },
+        {
+          "y": 58,
+          "x": 869.5,
+          "count": 6
+        },
+        {
+          "y": 59,
+          "x": 869.5,
+          "count": 6
+        },
+        {
+          "y": 60,
+          "x": 868.5,
+          "count": 6
+        },
+        {
+          "y": 61,
+          "x": 836.9,
+          "count": 10
+        },
+        {
+          "y": 62,
+          "x": 819.7,
+          "count": 20
+        }
+      ],
+      "baseAnchor": [
+        {
+          "y": 960,
+          "x": 563.5,
+          "count": 86
+        },
+        {
+          "y": 961,
+          "x": 564.5,
+          "count": 84
+        },
+        {
+          "y": 962,
+          "x": 565,
+          "count": 79
+        },
+        {
+          "y": 963,
+          "x": 565.5,
+          "count": 74
+        },
+        {
+          "y": 964,
+          "x": 565.5,
+          "count": 66
+        },
+        {
+          "y": 965,
+          "x": 566.5,
+          "count": 58
+        },
+        {
+          "y": 966,
+          "x": 567,
+          "count": 47
+        },
+        {
+          "y": 967,
+          "x": 567.5,
+          "count": 26
+        }
+      ]
+    },
+    {
+      "file": "assets/illustrations/volcano/batch-c/lava-flows-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "RGBA PNG",
+      "sha256": "a7c5050246841e4c58e3a849471285ddb6c0e90c65cc3ac4b64229da99c9338d",
+      "alphaZeroPixels": 1377536,
+      "partialAlphaPixels": 194919,
+      "alphaAbove128Pixels": 102901,
+      "visibleBounds": {
+        "left": 30,
+        "top": 338,
+        "right": 1109,
+        "bottom": 865
+      },
+      "topAnchor": [
+        {
+          "y": 338,
+          "x": 687,
+          "count": 3
+        },
+        {
+          "y": 339,
+          "x": 685,
+          "count": 7
+        },
+        {
+          "y": 340,
+          "x": 681.5,
+          "count": 12
+        },
+        {
+          "y": 341,
+          "x": 679.5,
+          "count": 16
+        },
+        {
+          "y": 342,
+          "x": 676,
+          "count": 21
+        },
+        {
+          "y": 343,
+          "x": 671,
+          "count": 31
+        },
+        {
+          "y": 344,
+          "x": 669,
+          "count": 35
+        },
+        {
+          "y": 345,
+          "x": 663,
+          "count": 45
+        }
+      ],
+      "baseAnchor": [
+        {
+          "y": 858,
+          "x": 512.8548387096774,
+          "count": 186
+        },
+        {
+          "y": 859,
+          "x": 512.75,
+          "count": 140
+        },
+        {
+          "y": 860,
+          "x": 537.0571428571428,
+          "count": 105
+        },
+        {
+          "y": 861,
+          "x": 542.5,
+          "count": 68
+        },
+        {
+          "y": 862,
+          "x": 544,
+          "count": 71
+        },
+        {
+          "y": 863,
+          "x": 546.5,
+          "count": 70
+        },
+        {
+          "y": 864,
+          "x": 549.5,
+          "count": 68
+        },
+        {
+          "y": 865,
+          "x": 552,
+          "count": 57
+        }
+      ]
+    },
+    {
+      "file": "assets/illustrations/volcano/batch-c/ash-wisp-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "RGBA PNG",
+      "sha256": "d563180290a97627838a6638962e8e6e2162eb88062c983030e91b5100fe3828",
+      "alphaZeroPixels": 1527977,
+      "partialAlphaPixels": 44534,
+      "alphaAbove128Pixels": 34028,
+      "visibleBounds": {
+        "left": 653,
+        "top": 141,
+        "right": 961,
+        "bottom": 360
+      },
+      "topAnchor": [
+        {
+          "y": 141,
+          "x": 903,
+          "count": 9
+        },
+        {
+          "y": 142,
+          "x": 904,
+          "count": 13
+        },
+        {
+          "y": 143,
+          "x": 902.75,
+          "count": 12
+        },
+        {
+          "y": 144,
+          "x": 901,
+          "count": 11
+        },
+        {
+          "y": 145,
+          "x": 898.5,
+          "count": 10
+        },
+        {
+          "y": 146,
+          "x": 897.5,
+          "count": 8
+        },
+        {
+          "y": 147,
+          "x": 896.5,
+          "count": 8
+        },
+        {
+          "y": 148,
+          "x": 896.5,
+          "count": 6
+        }
+      ],
+      "baseAnchor": [
+        {
+          "y": 353,
+          "x": 766,
+          "count": 63
+        },
+        {
+          "y": 354,
+          "x": 765.5,
+          "count": 60
+        },
+        {
+          "y": 355,
+          "x": 765.5,
+          "count": 56
+        },
+        {
+          "y": 356,
+          "x": 765.9574468085107,
+          "count": 47
+        },
+        {
+          "y": 357,
+          "x": 760.84,
+          "count": 25
+        },
+        {
+          "y": 358,
+          "x": 760.9,
+          "count": 20
+        },
+        {
+          "y": 359,
+          "x": 749.5,
+          "count": 14
+        },
+        {
+          "y": 360,
+          "x": 749,
+          "count": 5
+        }
+      ]
+    }
+  ],
+  "references": {
+    "exterior": {
+      "file": "assets/illustrations/volcano/batch-a/exterior-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "RGBA PNG",
+      "sha256": "f659ab75f123a7b13d3f1e32abaf087dc1f4966162e2c583d4fe0f944c750ce8",
+      "alphaZeroPixels": 1125298,
+      "partialAlphaPixels": 446536,
+      "alphaAbove128Pixels": 436863,
+      "visibleBounds": {
+        "left": 20,
+        "top": 219,
+        "right": 1234,
+        "bottom": 792
+      },
+      "topAnchor": [
+        {
+          "y": 219,
+          "x": 605.5,
+          "count": 2
+        },
+        {
+          "y": 220,
+          "x": 605,
+          "count": 5
+        },
+        {
+          "y": 221,
+          "x": 604.5,
+          "count": 6
+        },
+        {
+          "y": 222,
+          "x": 603,
+          "count": 11
+        },
+        {
+          "y": 223,
+          "x": 610.7894736842105,
+          "count": 19
+        },
+        {
+          "y": 224,
+          "x": 603.804347826087,
+          "count": 46
+        },
+        {
+          "y": 225,
+          "x": 603.8135593220339,
+          "count": 59
+        },
+        {
+          "y": 226,
+          "x": 608.625,
+          "count": 64
+        }
+      ],
+      "baseAnchor": [
+        {
+          "y": 785,
+          "x": 593.4660804020101,
+          "count": 796
+        },
+        {
+          "y": 786,
+          "x": 566.5750350631137,
+          "count": 713
+        },
+        {
+          "y": 787,
+          "x": 571,
+          "count": 641
+        },
+        {
+          "y": 788,
+          "x": 581.295025728988,
+          "count": 583
+        },
+        {
+          "y": 789,
+          "x": 596.435546875,
+          "count": 512
+        },
+        {
+          "y": 790,
+          "x": 602.6446078431372,
+          "count": 408
+        },
+        {
+          "y": 791,
+          "x": 600.7873134328358,
+          "count": 268
+        },
+        {
+          "y": 792,
+          "x": 659.453488372093,
+          "count": 86
+        }
+      ]
+    },
+    "landscape": {
+      "path": "assets/illustrations/volcano/batch-a/landscape-v1.png",
+      "width": 941,
+      "height": 1672,
+      "sha256": "c2a7e03b207aa71bafa8355b95bb95c08ffb0b2e18de8930356e10107b24781f"
+    }
+  },
+  "alphaDefinitions": {
+    "zero": "Fully transparent alpha=0",
+    "partial": "0<alpha<255; includes opaque-looking material with alpha254",
+    "visibleBounds": "Bounding box of alpha>128, not the extent of faint wisps"
+  },
+  "lavaSilhouetteSupport": {
+    "onRockPixels": 78736,
+    "offRockPixels": 24165,
+    "belowMountainBasePixels": 22384,
+    "onRockPercent": 76.51626320443921,
+    "note": "Two-dimensional silhouette support only; it does not certify terrain-gully or perspective accuracy."
+  },
+  "alignment": {
+    "same1254Canvas": true,
+    "pixelPerfectCompatibility": false,
+    "primaryPNGsWarpedOrResizedAfterGeneration": false,
+    "plume": {
+      "actualBaseApprox": [
+        567,
+        967
+      ],
+      "targetCraterApprox": [
+        640,
+        320
+      ],
+      "nativePlacementAligned": false,
+      "placementStudyOnly": {
+        "sourceCanvas": [
+          1254,
+          1254
+        ],
+        "previewCanvas": [
+          401,
+          401
+        ],
+        "scale": 0.3197767145135566,
+        "translation": [
+          459,
+          11
+        ],
+        "note": "Illustrative composite transform only, not applied to eruption-plume-v1.png and not integrated into animation."
+      }
+    },
+    "lava": {
+      "nativePlacementAligned": false,
+      "maximumVisibleY": 865,
+      "exteriorMaximumVisibleY": 792,
+      "notes": [
+        "Root is near the summit front lip, but precise vent contact and rim occlusion need fitting.",
+        "Lower flow tongues extend past the approved mountain and appear unsupported.",
+        "Silhouette support is only a diagnostic; a 2D mask cannot guarantee that every branch follows a terrain gully."
+      ]
+    },
+    "headroom": "Full-scale source plume cannot fit above the native crater within the 1254 square. The placement study scales it down; a taller plume in the final 9:16 scene needs explicit headroom/framing decisions.",
+    "fittingPerformed": false
+  },
+  "previews": [
+    {
+      "file": "alignment-preview-over-exterior.png",
+      "purpose": "Exact native-origin raw overlays: exterior, then lava, then plume. Deliberately shows mismatch without silently correcting it."
+    },
+    {
+      "file": "lava-alignment-preview.png",
+      "purpose": "Native-origin lava over original exterior, exposing unsupported lower tips."
+    },
+    {
+      "file": "plume-placement-study.png",
+      "purpose": "Volcano plus scaled/translated plume only. Proposed placement study, not an aligned production asset."
+    }
+  ],
+  "sourceSelection": {
+    "plume": "Initial clean detailed plume selected; a placement-refinement attempt lost top padding and was discarded.",
+    "lava": "Initial generation contained rock; selected built-in extraction edit retains only lava and attached cooling crust.",
+    "ashWisp": "Additional separate layer for independent drift/opacity/masking."
+  },
+  "limitations": [
+    "Main plume is flattened internally; optional ash-wisp-v1.png supplies one independent smaller cloud layer, not a complete multilayer fluid rig.",
+    "Lava branch topology is baked into the PNG; progressive reveal masks still require authoring.",
+    "No exact terrain-fitting pass, final animation integration, full video render, commit, push or tag is included."
+  ]
+}

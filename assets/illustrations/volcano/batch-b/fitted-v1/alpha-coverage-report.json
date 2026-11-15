@@ -1,0 +1,106 @@
+{
+  "status": "technical fitting checks passed; human visual approval pending",
+  "configuration": "assets/illustrations/volcano/batch-b/fitted-v1/fitting-config.json",
+  "sourceHashes": {
+    "assets/illustrations/volcano/batch-a/cutaway-rock-v1.png": "f0a1c5130e39b702bd461929c8ddb680bd9e9934367bece5daa31566ee7ed288",
+    "assets/illustrations/volcano/batch-b/magma-chamber-v1.png": "54f4fcc8f41a30b394cd9ef9d6965e918c5321e01ce452330b7556ba83eec5d9",
+    "assets/illustrations/volcano/batch-b/conduit-magma-v1.png": "c2e05a469c55bd74ae19cebd943b3debe6cdc0a46d51332fc73040e3c345c53a"
+  },
+  "sourceImagesUnchanged": true,
+  "canvas": {
+    "width": 1254,
+    "height": 1254
+  },
+  "segmentation": {
+    "method": "Four-connected interior aperture, seeded inside the reservoir and restricted to the scanline rock enclosure. Unrelated sky, outside transparency and other disconnected holes are excluded.",
+    "seed": {
+      "x": 630,
+      "y": 1000
+    },
+    "openingAlphaLessThan": 128,
+    "connectedPixels": 107032,
+    "chamberStartsAtY": 880,
+    "mask": "opening-mask.png",
+    "regions": "opening-regions.png"
+  },
+  "metricDefinitions": {
+    "coverage": "Fraction of intended-opening pixels with composite magma alpha >=250/255. Missing alpha equivalents also count partial transparency.",
+    "spill": "All magma alpha outside the same intended opening is counted, including deliberate one-pixel feather underneath rock. Visible spill is magmaAlpha*(1-rockAlpha), not hidden source spill.",
+    "visibleSpillThreshold": 0.05,
+    "missingRegions": "Largest four-connected uncovered component. No unrelated background contributes to coverage."
+  },
+  "before": {
+    "chamber": {
+      "pixels": 92776,
+      "missingPixels": 14794,
+      "missingAlphaEquivalentPixels": 13488.7922,
+      "largestMissingRegion": 6916,
+      "coveragePercent": 84.054066
+    },
+    "conduit": {
+      "pixels": 14256,
+      "missingPixels": 3287,
+      "missingAlphaEquivalentPixels": 2522.3176,
+      "largestMissingRegion": 1526,
+      "coveragePercent": 76.943042
+    },
+    "spill": {
+      "pixelsWithAnyAlphaOutsideOpening": 56871,
+      "alphaEquivalentPixelsOutsideOpening": 48410.7059,
+      "visiblePixelsOutsideOpeningAboveFivePercent": 1582,
+      "visibleAlphaEquivalentPixelsOutsideOpeningAfterRock": 918.1928,
+      "exteriorBackgroundPixelsWithSpill": 105
+    }
+  },
+  "after": {
+    "chamber": {
+      "pixels": 92776,
+      "missingPixels": 0,
+      "missingAlphaEquivalentPixels": 0,
+      "largestMissingRegion": 0,
+      "coveragePercent": 100
+    },
+    "conduit": {
+      "pixels": 14256,
+      "missingPixels": 0,
+      "missingAlphaEquivalentPixels": 0,
+      "largestMissingRegion": 0,
+      "coveragePercent": 100
+    },
+    "spill": {
+      "pixelsWithAnyAlphaOutsideOpening": 2468,
+      "alphaEquivalentPixelsOutsideOpening": 1310.8275,
+      "visiblePixelsOutsideOpeningAboveFivePercent": 1982,
+      "visibleAlphaEquivalentPixelsOutsideOpeningAfterRock": 300.9527,
+      "exteriorBackgroundPixelsWithSpill": 0
+    }
+  },
+  "continuity": {
+    "fittedOverlapPixels": 14750,
+    "maxColorDifferenceAtOverlap": 0,
+    "junctionMissingPixels": 0,
+    "junctionYRange": [
+      850,
+      950
+    ],
+    "method": "Identical smoothly blended RGB in both derived layers across their overlap; at least one layer remains fully opaque through every intended junction pixel."
+  },
+  "outputHashes": {
+    "magma-chamber-fitted.png": "695983788e61b626878fdf36c7f0b50689ce8ef2a85c9c22dba9befe2388f74e",
+    "conduit-magma-fitted.png": "4a7b3f67f0bb31b170b88eb2b43df15dc548c0b50534c6f5537305f93832f2d8",
+    "magma-only-composite.png": "cddbc39f7f0fa507f293b8e0ccdd6adfeba44c8a0347444c245696c6e877bd80",
+    "magma-behind-cutaway.png": "581ebf0d1a6f00063b2469977ad09660579d5f6c865f910fedb41aadebaa74f3",
+    "before-after-alignment.png": "559d86f815c99f7d087d0369ddfeb8861c578e4cf3bef041611e50bf096dcb76",
+    "before-after-magma-only.png": "a3f4f7149816f8398a2b0fdf7dcff5f9763c3ad9276cab26684667040b8d2f71",
+    "junction-before-after-3x.png": "0ba58ce31da87f65d9e330ffdcbb4d7c51efc1680217d11edffcfdfe1a561c5c",
+    "opening-mask.png": "ddb1edc9e3569baf79855af78946f543b9103f4d4ae38a04cf2d82bbadd3d12e",
+    "opening-regions.png": "9feb16c65e813ba0116f1735a5c43424a7114d3a99d56a33a0dfb4b065870e19"
+  },
+  "deterministic": "Fixed inputs and JSON options; deterministic raster math and local FFmpeg PNG encoding. Re-run and compare output hashes; this is not a guarantee about future encoded MP4s.",
+  "previews": {
+    "comparison": "Left: original unfitted artwork; right: fitted. Both have the unchanged rock in foreground.",
+    "junction": "Left before / right after, nearest-neighbor 3x enlargement to expose source pixels without smoothing away defects."
+  },
+  "humanVisualApproval": "pending",
+  "automatedChecksPassed": true
+}

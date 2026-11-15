@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0",
+  "id": "volcano-a",
+  "title": "How a Volcano Erupts",
+  "topic": "Volcano eruption mechanisms and magma versus lava",
+  "language": "en-US",
+  "targetAudience": "English-speaking science-curious viewers aged 16\u201335",
+  "durationSeconds": 15,
+  "storyboard": "storyboards/volcano.json",
+  "beats": [
+    {
+      "id": "hook",
+      "sceneId": "volcano-exterior",
+      "narration": "What really makes a quiet volcano erupt?",
+      "intent": "hook",
+      "emphasis": [],
+      "phrases": [
+        "What really makes",
+        "a quiet volcano erupt?"
+      ]
+    },
+    {
+      "id": "setup",
+      "sceneId": "magma-accumulation",
+      "narration": "Molten rock, called magma, collects deep underground.",
+      "intent": "setup",
+      "emphasis": [],
+      "phrases": [
+        "Molten rock, called magma,",
+        "collects deep underground."
+      ]
+    },
+    {
+      "id": "explanation",
+      "sceneId": "magma-rise",
+      "narration": "Buoyancy and gas pressure can lift magma.",
+      "intent": "explanation",
+      "emphasis": [],
+      "phrases": [
+        "Buoyancy and gas pressure",
+        "can lift magma."
+      ]
+    },
+    {
+      "id": "payoff",
+      "sceneId": "eruption",
+      "narration": "Some eruptions release gas, ash, and lava.",
+      "intent": "payoff",
+      "emphasis": [],
+      "phrases": [
+        "Some eruptions release",
+        "gas, ash, and lava."
+      ]
+    },
+    {
+      "id": "closing",
+      "sceneId": "final-summary",
+      "narration": "At the surface, that magma becomes lava.",
+      "intent": "closing",
+      "emphasis": [],
+      "phrases": [
+        "At the surface,",
+        "that magma becomes lava."
+      ]
+    }
+  ]
+}

@@ -6,10 +6,13 @@ import {motionPresetAt} from '../motion/presets';
 import {makeParticles, particleOrbit} from '../../motion/particles';
 import {convergenceState} from '../../motion/convergence';
 import {smoothstep} from '../../motion/easing';
+import {LayeredSubject} from './LayeredSubject';
 
 export type TemplateProps = {scene: GenericScene; frame: number; storyboard: Storyboard; assets: AssetRegistry};
 type Context = Omit<TemplateProps, 'scene'>;
-const Subject: React.FC<Context & {subject: SubjectConfig; scale?: number}> = ({subject, storyboard, assets, scale = 1}) => {
+const Subject: React.FC<Context & {subject: SubjectConfig; scale?: number}> = ({subject, storyboard, assets, frame, scale = 1}) => {
+  const group = storyboard.groups?.find(item => item.id === subject.asset);
+  if (group) return <LayeredSubject group={group} subject={subject} storyboard={storyboard} assets={assets} frame={frame} scale={scale}/>;
   const asset = assets.resolve(subject.asset);
   const width = storyboard.format.width * subject.size;
   const height = width * asset.height / asset.width;
@@ -28,6 +31,13 @@ const OrbitalEnvironment: React.FC<TemplateProps> = props => {
   const cx = primary.x * storyboard.format.width, cy = primary.y * storyboard.format.height;
   const particles = makeParticles(count, scene.seed);
   const dots = particles.map(p => {
+    if (scene.config.particleMotion === 'rise') {
+      const elapsed = frame - (scene.config.particleStartFrame ?? 0) - p.id * 2;
+      if (elapsed < 0) return null;
+      const t = Math.min(1, elapsed / Math.max(1, scene.durationFrames - 1));
+      const origin = scene.config.particleOrigin ?? {x: primary.x, y: primary.y};
+      return <circle key={p.id} cx={origin.x * storyboard.format.width + (Math.sin(p.phase) * .3 + t * .6) * radiusX * storyboard.format.width} cy={origin.y * storyboard.format.height - t * radiusY * storyboard.format.height} r={p.size * .25} fill={scene.config.particleColor ?? '#c4b8be'} opacity={Math.sin(Math.PI * t) * p.opacity * .45}/>;
+    }
     const position = particleOrbit(p, phase, {x: 0, y: 0}, 1);
     return <circle key={p.id} cx={cx + position.x / 500 * radiusX * storyboard.format.width} cy={cy + position.y / 140 * radiusY * storyboard.format.height} r={p.size * storyboard.format.width / 1080 * .55} fill={storyboard.accent} opacity={p.opacity * .65}/>;
   });

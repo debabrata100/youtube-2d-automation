@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "rock": "assets/illustrations/volcano/batch-a/cutaway-rock-v1.png",
+  "chamber": "assets/illustrations/volcano/batch-b/magma-chamber-v1.png",
+  "conduit": "assets/illustrations/volcano/batch-b/conduit-magma-v1.png",
+  "outputDirectory": "assets/illustrations/volcano/batch-b/fitted-v1",
+  "width": 1254,
+  "height": 1254,
+  "options": {
+    "seed": {"x": 630, "y": 1000},
+    "chamberKnots": [[850, 895], [880, 920], [930, 960], [980, 1010], [1030, 1070], [1080, 1120], [1111, 1159]],
+    "conduitKnots": [[338, 352], [500, 500], [700, 700], [850, 850], [880, 900], [950, 1055]],
+    "chamberFade": [850, 880],
+    "conduitFade": [900, 950],
+    "blend": [870, 940]
+  },
+  "splitY": 880,
+  "junction": {"x": 440, "y": 810, "width": 390, "height": 290, "scale": 3}
+}

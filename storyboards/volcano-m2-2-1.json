@@ -1,0 +1,2083 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "volcano-m2-2-1",
+  "title": "How a Volcano Erupts",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "#161b25",
+  "accent": "#ffbd86",
+  "assets": [
+    {
+      "id": "landscape",
+      "path": "illustrations/volcano/batch-a/landscape-v1.png",
+      "type": "png",
+      "width": 941,
+      "height": 1672,
+      "transparent": false,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "exterior",
+      "path": "illustrations/volcano/batch-a/exterior-v1.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "rock",
+      "path": "illustrations/volcano/batch-a/cutaway-rock-v1.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "chamber",
+      "path": "illustrations/volcano/batch-b/fitted-v1/magma-chamber-fitted.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "conduit",
+      "path": "illustrations/volcano/batch-b/fitted-v1/conduit-magma-fitted.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "cavity",
+      "path": "illustrations/volcano/animation-masks-v1/cavity-shadow.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava",
+      "path": "illustrations/volcano/batch-c/fitted-v1/lava-flows-fitted.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "plume",
+      "path": "illustrations/volcano/batch-c/fitted-v1/eruption-plume-placed-unoccluded.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "rim",
+      "path": "illustrations/volcano/batch-c/fitted-v1/crater-rim-mask.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "ash",
+      "path": "illustrations/volcano/batch-c/fitted-v1/ash-wisp-fitted.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "shadow",
+      "path": "illustrations/volcano/batch-c/fitted-v1/ground-contact-shadow.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-0",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-00.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-1",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-01.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-2",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-02.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-3",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-03.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-4",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-04.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-5",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-05.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-6",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-06.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-7",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-07.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-8",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-08.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-9",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-09.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-10",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-10.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-11",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-11.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-12",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-12.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-13",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-13.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-14",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-14.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-15",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-15.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-16",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-16.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-17",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-17.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-18",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-18.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-19",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-19.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "lava-mask-20",
+      "path": "illustrations/volcano/animation-masks-v1/lava-reveal-20.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "flow-band-0",
+      "path": "illustrations/volcano/flow-masks-v1/path-band-00.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "flow-band-1",
+      "path": "illustrations/volcano/flow-masks-v1/path-band-01.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "flow-band-2",
+      "path": "illustrations/volcano/flow-masks-v1/path-band-02.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "flow-band-3",
+      "path": "illustrations/volcano/flow-masks-v1/path-band-03.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "flow-band-4",
+      "path": "illustrations/volcano/flow-masks-v1/path-band-04.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "flow-band-5",
+      "path": "illustrations/volcano/flow-masks-v1/path-band-05.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "flow-band-6",
+      "path": "illustrations/volcano/flow-masks-v1/path-band-06.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "flow-band-7",
+      "path": "illustrations/volcano/flow-masks-v1/path-band-07.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "flow-band-8",
+      "path": "illustrations/volcano/flow-masks-v1/path-band-08.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "flow-band-9",
+      "path": "illustrations/volcano/flow-masks-v1/path-band-09.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "flow-band-10",
+      "path": "illustrations/volcano/flow-masks-v1/path-band-10.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "flow-band-11",
+      "path": "illustrations/volcano/flow-masks-v1/path-band-11.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "flow-band-12",
+      "path": "illustrations/volcano/flow-masks-v1/path-band-12.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "flow-band-13",
+      "path": "illustrations/volcano/flow-masks-v1/path-band-13.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "flow-band-14",
+      "path": "illustrations/volcano/flow-masks-v1/path-band-14.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "flow-band-15",
+      "path": "illustrations/volcano/flow-masks-v1/path-band-15.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    },
+    {
+      "id": "flow-band-16",
+      "path": "illustrations/volcano/flow-masks-v1/path-band-16.png",
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "styleId": "cinematic-illustrated"
+    }
+  ],
+  "groups": [
+    {
+      "id": "quiet",
+      "width": 1254,
+      "height": 1254,
+      "layers": [
+        {
+          "id": "shadow",
+          "asset": "shadow"
+        },
+        {
+          "id": "exterior",
+          "asset": "exterior"
+        }
+      ]
+    },
+    {
+      "id": "surface-dissolve",
+      "width": 1254,
+      "height": 1254,
+      "layers": [
+        {
+          "id": "shadow",
+          "asset": "shadow",
+          "reveal": {
+            "type": "wipe",
+            "direction": "down",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1254,
+              "height": 1254
+            },
+            "progress": [
+              {
+                "frame": 2,
+                "value": 0
+              },
+              {
+                "frame": 48,
+                "value": 1
+              }
+            ],
+            "feather": 12,
+            "invert": true
+          }
+        },
+        {
+          "id": "exterior",
+          "asset": "exterior",
+          "reveal": {
+            "type": "wipe",
+            "direction": "down",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1254,
+              "height": 1254
+            },
+            "progress": [
+              {
+                "frame": 2,
+                "value": 0
+              },
+              {
+                "frame": 48,
+                "value": 1
+              }
+            ],
+            "feather": 12,
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "internal",
+      "width": 1254,
+      "height": 1254,
+      "layers": [
+        {
+          "id": "cavity",
+          "asset": "cavity",
+          "reveal": {
+            "type": "wipe",
+            "direction": "down",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1254,
+              "height": 1278
+            },
+            "progress": [
+              {
+                "frame": 2,
+                "value": 0
+              },
+              {
+                "frame": 48,
+                "value": 1
+              }
+            ],
+            "feather": 0,
+            "invert": false
+          }
+        },
+        {
+          "id": "chamber",
+          "asset": "chamber",
+          "pulse": {
+            "periodFrames": 110,
+            "brightness": 0.045
+          },
+          "textureDrift": {
+            "x": 1.5,
+            "y": 0.8,
+            "periodFrames": 120,
+            "opacity": 0.12
+          },
+          "reveal": {
+            "type": "wipe",
+            "direction": "down",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1254,
+              "height": 1278
+            },
+            "progress": [
+              {
+                "frame": 2,
+                "value": 0
+              },
+              {
+                "frame": 48,
+                "value": 1
+              }
+            ],
+            "feather": 0,
+            "invert": false
+          },
+          "flow": {
+            "type": "directional",
+            "direction": "right",
+            "periodFrames": 173,
+            "phase": 0.2,
+            "opacity": 0.08,
+            "bandWidth": 160,
+            "bounds": {
+              "x": 0,
+              "y": 850,
+              "width": 1254,
+              "height": 360
+            }
+          }
+        },
+        {
+          "id": "conduit",
+          "asset": "conduit",
+          "pulse": {
+            "periodFrames": 110,
+            "brightness": 0.045
+          },
+          "reveal": {
+            "type": "wipe",
+            "direction": "up",
+            "bounds": {
+              "x": 0,
+              "y": 300,
+              "width": 1254,
+              "height": 650
+            },
+            "progress": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": 92,
+                "value": 0
+              },
+              {
+                "frame": 169,
+                "value": 1
+              }
+            ],
+            "feather": 12
+          },
+          "flow": {
+            "type": "directional",
+            "direction": "up",
+            "periodFrames": 103,
+            "phase": 0.1,
+            "opacity": 0.2,
+            "bandWidth": 95,
+            "bounds": {
+              "x": 0,
+              "y": 338,
+              "width": 1254,
+              "height": 600
+            }
+          }
+        },
+        {
+          "id": "rock",
+          "asset": "rock",
+          "reveal": {
+            "type": "wipe",
+            "direction": "down",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1254,
+              "height": 1278
+            },
+            "progress": [
+              {
+                "frame": 2,
+                "value": 0
+              },
+              {
+                "frame": 48,
+                "value": 1
+              }
+            ],
+            "feather": 0,
+            "invert": false
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "chamber-label",
+          "text": "Magma chamber",
+          "x": 645,
+          "y": 1170,
+          "size": 42,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 50,
+              "value": 0
+            },
+            {
+              "frame": 65,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "conduit-label",
+          "text": "Conduit",
+          "x": 835,
+          "y": 630,
+          "size": 42,
+          "anchor": "start",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 95,
+              "value": 0
+            },
+            {
+              "frame": 119,
+              "value": 1
+            }
+          ],
+          "connector": {
+            "from": {
+              "x": 812,
+              "y": 615
+            },
+            "to": {
+              "x": 650,
+              "y": 590
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "active",
+      "width": 1254,
+      "height": 1254,
+      "layers": [
+        {
+          "id": "shadow",
+          "asset": "shadow"
+        },
+        {
+          "id": "exterior",
+          "asset": "exterior"
+        },
+        {
+          "id": "lava",
+          "asset": "lava",
+          "pulse": {
+            "periodFrames": 150,
+            "brightness": 0.025
+          },
+          "reveal": {
+            "type": "mask-sequence",
+            "keys": [
+              {
+                "frame": 23,
+                "asset": "lava-mask-0"
+              },
+              {
+                "frame": 26,
+                "asset": "lava-mask-1"
+              },
+              {
+                "frame": 29,
+                "asset": "lava-mask-2"
+              },
+              {
+                "frame": 32,
+                "asset": "lava-mask-3"
+              },
+              {
+                "frame": 35,
+                "asset": "lava-mask-4"
+              },
+              {
+                "frame": 38,
+                "asset": "lava-mask-5"
+              },
+              {
+                "frame": 41,
+                "asset": "lava-mask-6"
+              },
+              {
+                "frame": 44,
+                "asset": "lava-mask-7"
+              },
+              {
+                "frame": 47,
+                "asset": "lava-mask-8"
+              },
+              {
+                "frame": 50,
+                "asset": "lava-mask-9"
+              },
+              {
+                "frame": 53,
+                "asset": "lava-mask-10"
+              },
+              {
+                "frame": 56,
+                "asset": "lava-mask-11"
+              },
+              {
+                "frame": 59,
+                "asset": "lava-mask-12"
+              },
+              {
+                "frame": 62,
+                "asset": "lava-mask-13"
+              },
+              {
+                "frame": 65,
+                "asset": "lava-mask-14"
+              },
+              {
+                "frame": 68,
+                "asset": "lava-mask-15"
+              },
+              {
+                "frame": 71,
+                "asset": "lava-mask-16"
+              },
+              {
+                "frame": 74,
+                "asset": "lava-mask-17"
+              },
+              {
+                "frame": 77,
+                "asset": "lava-mask-18"
+              },
+              {
+                "frame": 80,
+                "asset": "lava-mask-19"
+              },
+              {
+                "frame": 83,
+                "asset": "lava-mask-20"
+              }
+            ]
+          },
+          "flow": {
+            "type": "path",
+            "opacity": 0.14,
+            "maskKeys": [
+              {
+                "frame": 8,
+                "asset": "flow-band-0"
+              },
+              {
+                "frame": 13,
+                "asset": "flow-band-1"
+              },
+              {
+                "frame": 18,
+                "asset": "flow-band-2"
+              },
+              {
+                "frame": 23,
+                "asset": "flow-band-3"
+              },
+              {
+                "frame": 28,
+                "asset": "flow-band-4"
+              },
+              {
+                "frame": 33,
+                "asset": "flow-band-5"
+              },
+              {
+                "frame": 38,
+                "asset": "flow-band-6"
+              },
+              {
+                "frame": 43,
+                "asset": "flow-band-7"
+              },
+              {
+                "frame": 48,
+                "asset": "flow-band-8"
+              },
+              {
+                "frame": 53,
+                "asset": "flow-band-9"
+              },
+              {
+                "frame": 58,
+                "asset": "flow-band-10"
+              },
+              {
+                "frame": 63,
+                "asset": "flow-band-11"
+              },
+              {
+                "frame": 68,
+                "asset": "flow-band-12"
+              },
+              {
+                "frame": 73,
+                "asset": "flow-band-13"
+              },
+              {
+                "frame": 78,
+                "asset": "flow-band-14"
+              },
+              {
+                "frame": 83,
+                "asset": "flow-band-15"
+              },
+              {
+                "frame": 88,
+                "asset": "flow-band-16"
+              },
+              {
+                "frame": 94,
+                "asset": "flow-band-0"
+              },
+              {
+                "frame": 99,
+                "asset": "flow-band-1"
+              },
+              {
+                "frame": 104,
+                "asset": "flow-band-2"
+              },
+              {
+                "frame": 109,
+                "asset": "flow-band-3"
+              },
+              {
+                "frame": 114,
+                "asset": "flow-band-4"
+              },
+              {
+                "frame": 119,
+                "asset": "flow-band-5"
+              },
+              {
+                "frame": 124,
+                "asset": "flow-band-6"
+              },
+              {
+                "frame": 129,
+                "asset": "flow-band-7"
+              },
+              {
+                "frame": 134,
+                "asset": "flow-band-8"
+              },
+              {
+                "frame": 139,
+                "asset": "flow-band-9"
+              },
+              {
+                "frame": 144,
+                "asset": "flow-band-10"
+              },
+              {
+                "frame": 149,
+                "asset": "flow-band-11"
+              },
+              {
+                "frame": 154,
+                "asset": "flow-band-12"
+              },
+              {
+                "frame": 159,
+                "asset": "flow-band-13"
+              },
+              {
+                "frame": 164,
+                "asset": "flow-band-14"
+              },
+              {
+                "frame": 169,
+                "asset": "flow-band-15"
+              },
+              {
+                "frame": 174,
+                "asset": "flow-band-16"
+              }
+            ]
+          },
+          "brightness": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 14,
+              "value": 1.12
+            },
+            {
+              "frame": 29,
+              "value": 1
+            },
+            {
+              "frame": 179,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "plume",
+          "asset": "plume",
+          "anchor": {
+            "x": 640,
+            "y": 334
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.65
+            },
+            {
+              "frame": 10,
+              "value": 0.72
+            },
+            {
+              "frame": 30,
+              "value": 1.5
+            },
+            {
+              "frame": 85,
+              "value": 1.72
+            },
+            {
+              "frame": 179,
+              "value": 1.82
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 10,
+              "value": 0.18
+            },
+            {
+              "frame": 18,
+              "value": 1
+            }
+          ],
+          "reveal": {
+            "type": "wipe",
+            "direction": "up",
+            "bounds": {
+              "x": -320,
+              "y": -320,
+              "width": 1894,
+              "height": 800
+            },
+            "progress": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": 8,
+                "value": 0.2
+              },
+              {
+                "frame": 32,
+                "value": 1
+              }
+            ],
+            "feather": 24
+          },
+          "masks": [
+            {
+              "asset": "rim",
+              "mode": "inverse-alpha"
+            }
+          ],
+          "maskPadding": 320
+        },
+        {
+          "id": "ash",
+          "asset": "ash",
+          "x": [
+            {
+              "frame": 0,
+              "value": -10
+            },
+            {
+              "frame": 35,
+              "value": 0
+            },
+            {
+              "frame": 179,
+              "value": 85
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 30
+            },
+            {
+              "frame": 35,
+              "value": 0
+            },
+            {
+              "frame": 179,
+              "value": -110
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 20,
+              "value": 0
+            },
+            {
+              "frame": 40,
+              "value": 0.7
+            },
+            {
+              "frame": 179,
+              "value": 0.85
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.8
+            },
+            {
+              "frame": 45,
+              "value": 1.1
+            },
+            {
+              "frame": 179,
+              "value": 1.3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "complete-process",
+      "width": 1254,
+      "height": 1254,
+      "layers": [
+        {
+          "id": "cavity",
+          "asset": "cavity",
+          "reveal": {
+            "type": "wipe",
+            "direction": "down",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1254,
+              "height": 1278
+            },
+            "progress": [
+              {
+                "frame": 92,
+                "value": 0
+              },
+              {
+                "frame": 124,
+                "value": 1
+              }
+            ],
+            "feather": 0,
+            "invert": false
+          }
+        },
+        {
+          "id": "chamber",
+          "asset": "chamber",
+          "pulse": {
+            "periodFrames": 110,
+            "brightness": 0.045
+          },
+          "textureDrift": {
+            "x": 1.5,
+            "y": 0.8,
+            "periodFrames": 120,
+            "opacity": 0.12
+          },
+          "reveal": {
+            "type": "wipe",
+            "direction": "down",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1254,
+              "height": 1278
+            },
+            "progress": [
+              {
+                "frame": 92,
+                "value": 0
+              },
+              {
+                "frame": 124,
+                "value": 1
+              }
+            ],
+            "feather": 0,
+            "invert": false
+          },
+          "flow": {
+            "type": "directional",
+            "direction": "right",
+            "periodFrames": 173,
+            "phase": 0.2,
+            "opacity": 0.08,
+            "bandWidth": 160,
+            "bounds": {
+              "x": 0,
+              "y": 850,
+              "width": 1254,
+              "height": 360
+            }
+          }
+        },
+        {
+          "id": "conduit",
+          "asset": "conduit",
+          "pulse": {
+            "periodFrames": 110,
+            "brightness": 0.045
+          },
+          "reveal": {
+            "type": "wipe",
+            "direction": "down",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1254,
+              "height": 1278
+            },
+            "progress": [
+              {
+                "frame": 92,
+                "value": 0
+              },
+              {
+                "frame": 124,
+                "value": 1
+              }
+            ],
+            "feather": 0,
+            "invert": false
+          },
+          "flow": {
+            "type": "directional",
+            "direction": "up",
+            "periodFrames": 103,
+            "phase": 0.1,
+            "opacity": 0.2,
+            "bandWidth": 95,
+            "bounds": {
+              "x": 0,
+              "y": 338,
+              "width": 1254,
+              "height": 600
+            }
+          }
+        },
+        {
+          "id": "rock",
+          "asset": "rock",
+          "reveal": {
+            "type": "wipe",
+            "direction": "down",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1254,
+              "height": 1278
+            },
+            "progress": [
+              {
+                "frame": 92,
+                "value": 0
+              },
+              {
+                "frame": 124,
+                "value": 1
+              }
+            ],
+            "feather": 0,
+            "invert": false
+          }
+        },
+        {
+          "id": "surface-cover",
+          "asset": "exterior",
+          "reveal": {
+            "type": "wipe",
+            "direction": "down",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1254,
+              "height": 1254
+            },
+            "progress": [
+              {
+                "frame": 92,
+                "value": 0
+              },
+              {
+                "frame": 124,
+                "value": 1
+              }
+            ],
+            "feather": 12,
+            "invert": true
+          }
+        },
+        {
+          "id": "lava",
+          "asset": "lava",
+          "pulse": {
+            "periodFrames": 150,
+            "brightness": 0.025
+          },
+          "reveal": {
+            "type": "mask-sequence",
+            "keys": [
+              {
+                "frame": 23,
+                "asset": "lava-mask-0"
+              },
+              {
+                "frame": 26,
+                "asset": "lava-mask-1"
+              },
+              {
+                "frame": 29,
+                "asset": "lava-mask-2"
+              },
+              {
+                "frame": 32,
+                "asset": "lava-mask-3"
+              },
+              {
+                "frame": 35,
+                "asset": "lava-mask-4"
+              },
+              {
+                "frame": 38,
+                "asset": "lava-mask-5"
+              },
+              {
+                "frame": 41,
+                "asset": "lava-mask-6"
+              },
+              {
+                "frame": 44,
+                "asset": "lava-mask-7"
+              },
+              {
+                "frame": 47,
+                "asset": "lava-mask-8"
+              },
+              {
+                "frame": 50,
+                "asset": "lava-mask-9"
+              },
+              {
+                "frame": 53,
+                "asset": "lava-mask-10"
+              },
+              {
+                "frame": 56,
+                "asset": "lava-mask-11"
+              },
+              {
+                "frame": 59,
+                "asset": "lava-mask-12"
+              },
+              {
+                "frame": 62,
+                "asset": "lava-mask-13"
+              },
+              {
+                "frame": 65,
+                "asset": "lava-mask-14"
+              },
+              {
+                "frame": 68,
+                "asset": "lava-mask-15"
+              },
+              {
+                "frame": 71,
+                "asset": "lava-mask-16"
+              },
+              {
+                "frame": 74,
+                "asset": "lava-mask-17"
+              },
+              {
+                "frame": 77,
+                "asset": "lava-mask-18"
+              },
+              {
+                "frame": 80,
+                "asset": "lava-mask-19"
+              },
+              {
+                "frame": 83,
+                "asset": "lava-mask-20"
+              }
+            ]
+          },
+          "flow": {
+            "type": "path",
+            "opacity": 0.14,
+            "maskKeys": [
+              {
+                "frame": 8,
+                "asset": "flow-band-0"
+              },
+              {
+                "frame": 13,
+                "asset": "flow-band-1"
+              },
+              {
+                "frame": 18,
+                "asset": "flow-band-2"
+              },
+              {
+                "frame": 23,
+                "asset": "flow-band-3"
+              },
+              {
+                "frame": 28,
+                "asset": "flow-band-4"
+              },
+              {
+                "frame": 33,
+                "asset": "flow-band-5"
+              },
+              {
+                "frame": 38,
+                "asset": "flow-band-6"
+              },
+              {
+                "frame": 43,
+                "asset": "flow-band-7"
+              },
+              {
+                "frame": 48,
+                "asset": "flow-band-8"
+              },
+              {
+                "frame": 53,
+                "asset": "flow-band-9"
+              },
+              {
+                "frame": 58,
+                "asset": "flow-band-10"
+              },
+              {
+                "frame": 63,
+                "asset": "flow-band-11"
+              },
+              {
+                "frame": 68,
+                "asset": "flow-band-12"
+              },
+              {
+                "frame": 73,
+                "asset": "flow-band-13"
+              },
+              {
+                "frame": 78,
+                "asset": "flow-band-14"
+              },
+              {
+                "frame": 83,
+                "asset": "flow-band-15"
+              },
+              {
+                "frame": 88,
+                "asset": "flow-band-16"
+              },
+              {
+                "frame": 94,
+                "asset": "flow-band-0"
+              },
+              {
+                "frame": 99,
+                "asset": "flow-band-1"
+              },
+              {
+                "frame": 104,
+                "asset": "flow-band-2"
+              },
+              {
+                "frame": 109,
+                "asset": "flow-band-3"
+              },
+              {
+                "frame": 114,
+                "asset": "flow-band-4"
+              },
+              {
+                "frame": 119,
+                "asset": "flow-band-5"
+              },
+              {
+                "frame": 124,
+                "asset": "flow-band-6"
+              },
+              {
+                "frame": 129,
+                "asset": "flow-band-7"
+              },
+              {
+                "frame": 134,
+                "asset": "flow-band-8"
+              },
+              {
+                "frame": 139,
+                "asset": "flow-band-9"
+              },
+              {
+                "frame": 144,
+                "asset": "flow-band-10"
+              },
+              {
+                "frame": 149,
+                "asset": "flow-band-11"
+              },
+              {
+                "frame": 154,
+                "asset": "flow-band-12"
+              },
+              {
+                "frame": 159,
+                "asset": "flow-band-13"
+              },
+              {
+                "frame": 164,
+                "asset": "flow-band-14"
+              },
+              {
+                "frame": 169,
+                "asset": "flow-band-15"
+              },
+              {
+                "frame": 174,
+                "asset": "flow-band-16"
+              }
+            ]
+          },
+          "brightness": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 14,
+              "value": 1.12
+            },
+            {
+              "frame": 29,
+              "value": 1
+            },
+            {
+              "frame": 179,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "plume",
+          "asset": "plume",
+          "anchor": {
+            "x": 640,
+            "y": 334
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.65
+            },
+            {
+              "frame": 10,
+              "value": 0.72
+            },
+            {
+              "frame": 30,
+              "value": 1.5
+            },
+            {
+              "frame": 85,
+              "value": 1.72
+            },
+            {
+              "frame": 179,
+              "value": 1.82
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 10,
+              "value": 0.18
+            },
+            {
+              "frame": 18,
+              "value": 1
+            }
+          ],
+          "reveal": {
+            "type": "wipe",
+            "direction": "up",
+            "bounds": {
+              "x": -320,
+              "y": -320,
+              "width": 1894,
+              "height": 800
+            },
+            "progress": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": 8,
+                "value": 0.2
+              },
+              {
+                "frame": 32,
+                "value": 1
+              }
+            ],
+            "feather": 24
+          },
+          "masks": [
+            {
+              "asset": "rim",
+              "mode": "inverse-alpha"
+            }
+          ],
+          "maskPadding": 320
+        },
+        {
+          "id": "ash",
+          "asset": "ash",
+          "x": [
+            {
+              "frame": 0,
+              "value": -10
+            },
+            {
+              "frame": 35,
+              "value": 0
+            },
+            {
+              "frame": 179,
+              "value": 85
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 30
+            },
+            {
+              "frame": 35,
+              "value": 0
+            },
+            {
+              "frame": 179,
+              "value": -110
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 20,
+              "value": 0
+            },
+            {
+              "frame": 40,
+              "value": 0.7
+            },
+            {
+              "frame": 179,
+              "value": 0.85
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.8
+            },
+            {
+              "frame": 45,
+              "value": 1.1
+            },
+            {
+              "frame": 179,
+              "value": 1.3
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "chamber-label",
+          "text": "Magma chamber",
+          "x": 645,
+          "y": 1170,
+          "size": 42,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 124,
+              "value": 0
+            },
+            {
+              "frame": 138,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "conduit-label",
+          "text": "Conduit",
+          "x": 835,
+          "y": 630,
+          "size": 42,
+          "anchor": "start",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 124,
+              "value": 0
+            },
+            {
+              "frame": 138,
+              "value": 1
+            }
+          ],
+          "connector": {
+            "from": {
+              "x": 812,
+              "y": 615
+            },
+            "to": {
+              "x": 650,
+              "y": 590
+            }
+          }
+        },
+        {
+          "id": "lava-label",
+          "text": "Lava",
+          "x": 1060,
+          "y": 710,
+          "size": 40,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 128,
+              "value": 0
+            },
+            {
+              "frame": 142,
+              "value": 1
+            }
+          ],
+          "anchor": "middle",
+          "connector": {
+            "from": {
+              "x": 1020,
+              "y": 700
+            },
+            "to": {
+              "x": 990,
+              "y": 680
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "backdrop": {
+    "asset": "landscape",
+    "decoration": false,
+    "dim": 0.08,
+    "motion": {
+      "scale": [
+        {
+          "frame": 0,
+          "value": 1.02
+        },
+        {
+          "frame": 89,
+          "value": 1.04
+        },
+        {
+          "frame": 449,
+          "value": 1.05
+        }
+      ],
+      "x": [
+        {
+          "frame": 0,
+          "value": 0
+        },
+        {
+          "frame": 449,
+          "value": -4
+        }
+      ],
+      "y": [
+        {
+          "frame": 0,
+          "value": 0
+        },
+        {
+          "frame": 89,
+          "value": -5
+        },
+        {
+          "frame": 449,
+          "value": -9
+        }
+      ]
+    }
+  },
+  "crossfadeFrames": 8,
+  "scenes": [
+    {
+      "id": "volcano-exterior",
+      "template": "hero-reveal",
+      "durationFrames": 90,
+      "caption": {
+        "text": "What happens\ninside a volcano?",
+        "kicker": "HOW A VOLCANO ERUPTS",
+        "preset": "headline",
+        "hold": false
+      },
+      "camera": {
+        "preset": "slow-push",
+        "to": {
+          "x": 0.5,
+          "y": 0.55,
+          "zoom": 1.09
+        },
+        "holdFrames": 0,
+        "from": {
+          "x": 0.5,
+          "y": 0.515,
+          "zoom": 0.94
+        }
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 2201,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "quiet",
+          "x": 0.5,
+          "y": 0.585,
+          "size": 0.9
+        }
+      }
+    },
+    {
+      "id": "magma-accumulation",
+      "template": "comparison",
+      "durationFrames": 90,
+      "caption": {
+        "text": "Magma collects\nunderground",
+        "kicker": "BENEATH THE SURFACE",
+        "preset": "body",
+        "hold": false
+      },
+      "camera": {
+        "preset": "slow-push",
+        "to": {
+          "x": 0.5,
+          "y": 0.61,
+          "zoom": 1.06
+        },
+        "holdFrames": 0,
+        "from": {
+          "x": 0.5,
+          "y": 0.55,
+          "zoom": 1.09
+        }
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 2202,
+      "transitionFrames": 0,
+      "environmentDim": 0.32,
+      "config": {
+        "left": {
+          "asset": "internal",
+          "x": 0.5,
+          "y": 0.585,
+          "size": 0.9
+        },
+        "right": {
+          "asset": "surface-dissolve",
+          "x": 0.5,
+          "y": 0.585,
+          "size": 0.9
+        }
+      }
+    },
+    {
+      "id": "magma-rise",
+      "template": "transformation",
+      "durationFrames": 90,
+      "caption": {
+        "text": "Magma rises.\nGas bubbles expand.",
+        "kicker": "THE PATH TO ERUPTION",
+        "preset": "body",
+        "hold": false
+      },
+      "camera": {
+        "preset": "slow-push",
+        "to": {
+          "x": 0.5,
+          "y": 0.58,
+          "zoom": 1.06
+        },
+        "holdFrames": 0,
+        "from": {
+          "x": 0.5,
+          "y": 0.61,
+          "zoom": 1.06
+        }
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 2203,
+      "transitionFrames": 0,
+      "environmentDim": 0.32,
+      "config": {
+        "primary": {
+          "asset": "internal",
+          "x": 0.5,
+          "y": 0.585,
+          "size": 0.9,
+          "timeOffset": 90
+        },
+        "fromScale": 1,
+        "toScale": 1
+      }
+    },
+    {
+      "id": "eruption",
+      "template": "orbital-environment",
+      "durationFrames": 90,
+      "caption": {
+        "text": "The volcano erupts!",
+        "kicker": "ASH, GAS AND LAVA",
+        "preset": "body",
+        "hold": false
+      },
+      "camera": {
+        "preset": "slow-push",
+        "to": {
+          "x": 0.5,
+          "y": 0.54,
+          "zoom": 1
+        },
+        "holdFrames": 0,
+        "from": {
+          "x": 0.5,
+          "y": 0.58,
+          "zoom": 1.06
+        }
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 2204,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "active",
+          "x": 0.5,
+          "y": 0.585,
+          "size": 0.9
+        },
+        "count": 8,
+        "radiusX": 0.06,
+        "radiusY": 0.14,
+        "particleMotion": "rise",
+        "particleColor": "#b6a6b4",
+        "particleOrigin": {
+          "x": 0.51,
+          "y": 0.466
+        },
+        "particleStartFrame": 15
+      }
+    },
+    {
+      "id": "final-summary",
+      "template": "summary",
+      "durationFrames": 90,
+      "caption": {
+        "text": "Magma feeds\nthe eruption",
+        "kicker": "MAGMA BELOW \u00b7 LAVA ABOVE",
+        "preset": "closing",
+        "hold": true
+      },
+      "camera": {
+        "preset": "slow-push",
+        "to": {
+          "x": 0.5,
+          "y": 0.57,
+          "zoom": 1
+        },
+        "holdFrames": 40,
+        "from": {
+          "x": 0.5,
+          "y": 0.54,
+          "zoom": 1
+        }
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 2205,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "subjects": [
+          {
+            "asset": "complete-process",
+            "x": 0.5,
+            "y": 0.585,
+            "size": 0.9,
+            "timeOffset": 90
+          }
+        ]
+      }
+    }
+  ]
+}

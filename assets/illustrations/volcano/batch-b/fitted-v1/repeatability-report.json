@@ -1,0 +1,29 @@
+{
+  "identicalOutputPNGsOnRepeat": true,
+  "comparedPNGs": 9,
+  "decodedFittedPNGsMatchReportedCoverage": true,
+  "sourceImagesUnchanged": true,
+  "after": {
+    "chamber": {
+      "pixels": 92776,
+      "missingPixels": 0,
+      "missingAlphaEquivalentPixels": 0,
+      "largestMissingRegion": 0,
+      "coveragePercent": 100
+    },
+    "conduit": {
+      "pixels": 14256,
+      "missingPixels": 0,
+      "missingAlphaEquivalentPixels": 0,
+      "largestMissingRegion": 0,
+      "coveragePercent": 100
+    },
+    "spill": {
+      "pixelsWithAnyAlphaOutsideOpening": 2468,
+      "alphaEquivalentPixelsOutsideOpening": 1310.8275,
+      "visiblePixelsOutsideOpeningAboveFivePercent": 1982,
+      "visibleAlphaEquivalentPixelsOutsideOpeningAfterRock": 300.9527,
+      "exteriorBackgroundPixelsWithSpill": 0
+    }
+  }
+}

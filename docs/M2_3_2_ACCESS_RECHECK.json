@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-15",
+  "voice": {
+    "id": "iiidtqDt9FBdT1vfBluA",
+    "httpStatus": 200,
+    "verified": true
+  },
+  "environment": {
+    "nativeLoadedValueMatchesLocal": true
+  },
+  "model": {
+    "id": "eleven_multilingual_v2",
+    "httpStatus": 401,
+    "providerCode": "missing_permissions",
+    "message": "Model metadata lookup requires the missing Models permission. This does not establish whether Text to Speech is enabled."
+  },
+  "textToSpeechPermission": {
+    "verified": false,
+    "status": "not-verifiable-with-reviewed-personal-key-read-only-endpoints",
+    "requiredConfirmation": "Text to Speech: Access in the existing API key dashboard"
+  },
+  "requests": {
+    "voiceGET": 1,
+    "modelsGET": 1,
+    "paid": 0,
+    "synthesis": 0,
+    "effects": 0
+  },
+  "selectedScriptSha256": "5a44f5159e50d65833379839435c24e322cd77d08db8cb7787ef88bb8b33846d",
+  "stageBReady": false,
+  "checks": {
+    "typecheck": "passed",
+    "vitestTests": 217,
+    "vitestFiles": 13,
+    "whitespace": "passed",
+    "protectedPathsUnchanged": 46,
+    "selectedScriptUnchanged": true
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0",
+  "id": "volcano-c",
+  "title": "How a Volcano Erupts",
+  "topic": "Volcano eruption mechanisms and magma versus lava",
+  "language": "en-US",
+  "targetAudience": "English-speaking science-curious viewers aged 16\u201335",
+  "durationSeconds": 15,
+  "storyboard": "storyboards/volcano.json",
+  "beats": [
+    {
+      "id": "hook",
+      "sceneId": "volcano-exterior",
+      "narration": "Volcanoes connect underground magma with the surface.",
+      "intent": "hook",
+      "emphasis": [],
+      "phrases": [
+        "Volcanoes connect underground magma",
+        "with the surface."
+      ]
+    },
+    {
+      "id": "setup",
+      "sceneId": "magma-accumulation",
+      "narration": "Magma is molten rock stored beneath ground.",
+      "intent": "setup",
+      "emphasis": [],
+      "phrases": [
+        "Magma is molten rock",
+        "stored beneath ground."
+      ]
+    },
+    {
+      "id": "explanation",
+      "sceneId": "magma-rise",
+      "narration": "Buoyancy and gas pressure can raise magma.",
+      "intent": "explanation",
+      "emphasis": [],
+      "phrases": [
+        "Buoyancy and gas pressure",
+        "can raise magma."
+      ]
+    },
+    {
+      "id": "payoff",
+      "sceneId": "eruption",
+      "narration": "Eruptions can release gas, ash, and lava.",
+      "intent": "payoff",
+      "emphasis": [],
+      "phrases": [
+        "Eruptions can release",
+        "gas, ash, and lava."
+      ]
+    },
+    {
+      "id": "closing",
+      "sceneId": "final-summary",
+      "narration": "Magma reaching the surface is called lava.",
+      "intent": "closing",
+      "emphasis": [],
+      "phrases": [
+        "Magma reaching the surface",
+        "is called lava."
+      ]
+    }
+  ]
+}

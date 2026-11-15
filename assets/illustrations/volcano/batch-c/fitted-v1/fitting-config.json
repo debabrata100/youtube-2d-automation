@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "plume": {"scale": 0.3, "sourceAnchor": [567, 966], "vent": [640, 334]},
+  "rim": {"profile": [[480, 298], [540, 318], [580, 327], [620, 330], [660, 329], [700, 321], [740, 306], [775, 284]], "softness": 3},
+  "lava": {
+    "inverseYKnots": [[300, 318], [320, 338], [333, 350], [400, 420], [470, 500], [552, 600], [640, 700], [718, 800], [762, 865], [780, 890]],
+    "rootShiftX": -12,
+    "leftBranchShiftX": 36,
+    "terrainFeatherPixels": 3
+  },
+  "ash": {"scale": 0.18, "sourceAnchor": [807, 250], "targetAnchor": [815, 125], "opacity": 0.55},
+  "scene": {"width": 1080, "height": 1920, "groupScale": 0.78, "groundY": 1250},
+  "craterCrop": {"x": 470, "y": 210, "width": 360, "height": 210, "scale": 3},
+  "endpointsCrop": {"x": 20, "y": 650, "width": 1210, "height": 220, "scale": 2}
+}

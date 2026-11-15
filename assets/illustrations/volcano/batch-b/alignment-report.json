@@ -1,0 +1,77 @@
+{
+  "status": "standalone artwork delivered; exact aperture fitting incomplete",
+  "mode": "built-in image_gen",
+  "reference": {
+    "path": "../batch-a/cutaway-rock-v1.png",
+    "sha256": "f0a1c5130e39b702bd461929c8ddb680bd9e9934367bece5daa31566ee7ed288",
+    "unchanged": true
+  },
+  "assets": [
+    {
+      "file": "magma-chamber-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "RGBA PNG",
+      "alphaZeroPixels": 1447307,
+      "visibleBoundsAlphaGreaterThan128": {
+        "left": 249,
+        "top": 895,
+        "right": 977,
+        "bottom": 1160
+      }
+    },
+    {
+      "file": "conduit-magma-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "RGBA PNG",
+      "alphaZeroPixels": 1531546,
+      "visibleBoundsAlphaGreaterThan128": {
+        "left": 571,
+        "top": 351,
+        "right": 673,
+        "bottom": 1099
+      }
+    }
+  ],
+  "alignment": {
+    "sameCanvas": true,
+    "independentLayers": true,
+    "lowerOpeningCoveragePercent": 86.5,
+    "conduitOpeningCoveragePercent": 85.26,
+    "magmaOverlapPixels": 12120,
+    "method": {
+      "referenceAlphaLessThan": 16,
+      "magmaAlphaGreaterThan": 128,
+      "lowerOpeningROI": {
+        "x": [
+          250,
+          985
+        ],
+        "y": [
+          880,
+          1110
+        ]
+      },
+      "conduitOpeningROI": {
+        "x": [
+          550,
+          700
+        ],
+        "y": [
+          350,
+          879
+        ]
+      },
+      "coverageUses": "union of the two delivered magma alpha masks at identical origin and scale"
+    },
+    "pixelPerfectCompatibility": false,
+    "notes": [
+      "The layers overlap at their junction; overlap does not prove that all rock-aperture pixels are filled.",
+      "Residual uncovered aperture areas require local fitting or extending the molten material; clipping alone cannot fill missing areas.",
+      "Material extends behind rock margins; use rock foreground occlusion or aperture masks after fitting.",
+      "Canvas registration was requested through image generation; no exact geometric deformation or alignment correction has been applied.",
+      "No rock geometry, summit crater or reference image pixels were changed."
+    ]
+  }
+}

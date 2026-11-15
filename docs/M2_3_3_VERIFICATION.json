@@ -1,0 +1,97 @@
+{
+  "milestone": "M2.3.3",
+  "job": "jobs/volcano-m2-3-3-final",
+  "output": "jobs/volcano-m2-3-3-final/output/narrated-animation.mp4",
+  "videoSha256": "26999924d3cf8baefa13bd4e69d4a58112511eca1a094927ca18abbf28d5fdb4",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 450,
+    "durationSeconds": 15,
+    "videoCodec": "h264",
+    "audioCodec": "aac"
+  },
+  "narration": {
+    "voice": "Bill L. Oxley",
+    "voiceId": "iiidtqDt9FBdT1vfBluA",
+    "model": "eleven_multilingual_v2",
+    "words": 28,
+    "characters": 169,
+    "durationSeconds": 13.1425,
+    "speedAdjustment": 1,
+    "approvedAudioReused": true
+  },
+  "cost": {
+    "synthesisRequestsThisMilestone": 0,
+    "paidAlignmentRequests": 0,
+    "soundEffectsRequests": 0,
+    "imageGenerationRequests": 0
+  },
+  "render": {
+    "elapsedSeconds": 40.78,
+    "scope": "450-frame render, H.264/AAC encoding and final mux; excludes bundling and verification",
+    "paidRequests": 0,
+    "offline": true,
+    "sourceSha256": "bd2653de8af3eaac0abf20c0a63c91e53bc6486303fcd589b5cbf84430531249"
+  },
+  "checks": {
+    "schema": true,
+    "assetsPresent": true,
+    "dimensions": true,
+    "fps": true,
+    "frames": true,
+    "duration": true,
+    "codec": true,
+    "noUnintendedBlackFrames": true,
+    "chronologicalTimeline": true,
+    "encodedSamplesExtracted": true,
+    "exactContainerDuration": true,
+    "exactVideoFrames": true,
+    "embeddedAAC": true,
+    "audioDuration": true,
+    "approvedSourceHash": true,
+    "approvedOriginalStillUnchanged": true,
+    "encodedNarrationMatchesApprovedPerformance": true,
+    "quietIntentionalEnding": true,
+    "providerCaptionMapping": true,
+    "allWordsCovered": true,
+    "providerWordBounds": true,
+    "captionBounds": true,
+    "mobileSafeLayout": true
+  },
+  "audioVerification": {
+    "sourceDurationSeconds": 13.1425,
+    "encodedDurationSeconds": 15,
+    "sourceCodec": "pcm_s16le",
+    "encodedCodec": "aac",
+    "sampleRate": "48000",
+    "channels": 1,
+    "pcmCorrelation": 0.9999300951425336,
+    "signalToDifferenceDB": 38.48099738301698,
+    "tailRMSDBFS": -270.3089986991944,
+    "speedAdjustment": 1,
+    "intentionalEndingSeconds": 1.8575
+  },
+  "captionTiming": {
+    "method": "Provider character timings → 28 words → authored phrases; start/end rounded upward to 30 FPS",
+    "words": 28,
+    "cues": 5,
+    "maximumRoundingSeconds": 0.03333333333333333,
+    "humanSynchronizationReview": "pending"
+  },
+  "regression": {
+    "tests": 243,
+    "testFiles": 15,
+    "typecheck": "passed",
+    "whitespace": "passed",
+    "losslessSamplesIdentical": 15,
+    "protectedHashesUnchanged": 46
+  },
+  "review": {
+    "narration": "user-approved input",
+    "finalVideo": "technical validation passed; final visual/perceptual synchronization review remains human",
+    "sceneNarrationLeadMaximumSeconds": 1.2666666666666666
+  },
+  "gitScope": "Related prerequisite volcano/narration changes since M2.1 included; generated audio/videos/jobs/caches/credentials excluded."
+}

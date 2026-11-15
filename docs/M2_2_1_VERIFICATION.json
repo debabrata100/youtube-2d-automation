@@ -1,0 +1,108 @@
+{
+  "status": "ready for human visual review; approval pending",
+  "job": "/Users/deb/Documents/learn/ai-foundation/youtube-2d-automation/jobs/volcano-m2-2-1-2026-11-14T14-31-45-728Z",
+  "video": {
+    "path": "/Users/deb/Documents/learn/ai-foundation/youtube-2d-automation/jobs/volcano-m2-2-1-2026-11-14T14-31-45-728Z/output/animation.mp4",
+    "sha256": "1fc9a3f0b870b714b18822776a4112b2458a93e0243a21bd9f00d0ab05e39ce3",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 450,
+    "codec": "h264",
+    "durationSeconds": 15
+  },
+  "render": {
+    "elapsedSeconds": 56.46,
+    "timingScope": "450-frame render plus H.264 encoding; excludes bundle, previews, verification",
+    "previousSeconds": 40.86,
+    "ratioToPrevious": 1.381791483113069,
+    "nodeCoordinatorPeakRssMB": 146,
+    "memoryScope": "Node coordinator only; excludes Chrome and FFmpeg",
+    "frames": 450,
+    "humanVisualApproval": "pending"
+  },
+  "checks": {
+    "schema": true,
+    "assetsPresent": true,
+    "dimensions": true,
+    "fps": true,
+    "frames": true,
+    "duration": true,
+    "codec": true,
+    "noUnintendedBlackFrames": true,
+    "chronologicalTimeline": true,
+    "encodedSamplesExtracted": true
+  },
+  "tests": {
+    "typecheck": "passed",
+    "vitestTests": 146,
+    "vitestFiles": 10,
+    "diffCheck": "passed"
+  },
+  "compatibility": {
+    "allLosslessSamplesIdentical": true,
+    "samples": [
+      {
+        "composition": "GenericStoryboard",
+        "frame": 29,
+        "identical": true
+      },
+      {
+        "composition": "GenericStoryboard",
+        "frame": 89,
+        "identical": true
+      },
+      {
+        "composition": "GenericStoryboard",
+        "frame": 149,
+        "identical": true
+      },
+      {
+        "composition": "GenericStoryboard",
+        "frame": 209,
+        "identical": true
+      },
+      {
+        "composition": "GenericStoryboard",
+        "frame": 239,
+        "identical": true
+      },
+      {
+        "composition": "GenericStoryboard",
+        "frame": 240,
+        "identical": true
+      },
+      {
+        "composition": "GenericStoryboard",
+        "frame": 269,
+        "identical": true
+      },
+      {
+        "composition": "PlanetFormation",
+        "frame": 0,
+        "identical": true
+      },
+      {
+        "composition": "PlanetFormation",
+        "frame": 225,
+        "identical": true
+      },
+      {
+        "composition": "PlanetFormation",
+        "frame": 420,
+        "identical": true
+      }
+    ]
+  },
+  "protectedPaths": 41,
+  "allProtectedPathsUnchanged": true,
+  "flowMasksRepeatIdentically": true,
+  "reviewPasses": [
+    "story/composition",
+    "motion",
+    "polish"
+  ],
+  "normalSpeedPlayback": "not independently observed; human playback review pending",
+  "git": "uncommitted source and derived assets; no commit, push or tag",
+  "note": "Frame-driven calculations are deterministic; byte-identical MP4 output is not guaranteed."
+}

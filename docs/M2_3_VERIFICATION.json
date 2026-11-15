@@ -1,0 +1,85 @@
+{
+  "status": "mock technical review ready; real voice and human approval pending",
+  "visualQuality": "M2.2.1 not visually approved; refinement deliberately deferred",
+  "job": "/Users/deb/Documents/learn/ai-foundation/youtube-2d-automation/jobs/volcano-m2-3-2026-11-14T15-32-49-383Z",
+  "video": {
+    "path": "/Users/deb/Documents/learn/ai-foundation/youtube-2d-automation/jobs/volcano-m2-3-2026-11-14T15-32-49-383Z/output/narrated-animation.mp4",
+    "sha256": "9f8ff6573e4bdb041f198f7cc351aa8e848eda04d91b5ed8fa226c0a49ecd706",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 450,
+    "codec": "h264",
+    "audioCodec": "aac",
+    "durationSeconds": 15
+  },
+  "audio": {
+    "kind": "deterministic test tones, not spoken narration",
+    "sourceDurationSeconds": 14.48271,
+    "assembledDurationSeconds": 15,
+    "intentionalHoldSeconds": 0.5172899999999991,
+    "cacheHits": 5,
+    "synthesisCalls": 0,
+    "externalTTSRequests": 0,
+    "actualCostUSD": 0
+  },
+  "render": {
+    "elapsedSeconds": 43.8,
+    "timingScope": "450-frame render plus H.264/AAC encoding; excludes synthesis, bundle and verification",
+    "humanApproval": "pending"
+  },
+  "checks": {
+    "schema": true,
+    "assetsPresent": true,
+    "dimensions": true,
+    "fps": true,
+    "frames": true,
+    "duration": true,
+    "codec": true,
+    "noUnintendedBlackFrames": true,
+    "chronologicalTimeline": true,
+    "encodedSamplesExtracted": true,
+    "configuredFrameCount": true,
+    "configuredVideoTimeline": true,
+    "embeddedAAC": true,
+    "configuredContainerTimeline": true,
+    "audioTimelineFits": true,
+    "sourceAudioUntruncated": true,
+    "noSpeechOverlap": true,
+    "captionsInBounds": true,
+    "safeCaptionLayout": true,
+    "audioStartsAtIntendedPoint": true,
+    "noUnexpectedSilence": true,
+    "tailMatchesDeclaredHold": true
+  },
+  "allChecksPassed": true,
+  "tests": {
+    "typecheck": "passed",
+    "vitestTests": 180,
+    "vitestFiles": 11,
+    "diffCheck": "passed"
+  },
+  "compatibility": {
+    "losslessSamples": 15,
+    "allIdentical": true
+  },
+  "preservation": {
+    "paths": 42,
+    "allUnchanged": true
+  },
+  "realProvider": {
+    "status": "HTTP contract tested with injected transport only; live untested",
+    "model": "gpt-4o-mini-tts-2025-12-15",
+    "voice": "marin",
+    "requires": [
+      "OPENAI_API_KEY",
+      "explicit user authorization"
+    ],
+    "illustrativeEstimateUSD": 0.0039,
+    "planningAllowanceUSD": 0.02,
+    "estimateAssumptions": "500 input tokens and 300 audio output tokens at $0.60/M and $12/M; not measured usage or a billing cap",
+    "documentedShutdown": "2027-01-06"
+  },
+  "captionTiming": "estimated phrases inside measured per-beat files; not word-perfect",
+  "git": "uncommitted source; generated jobs/cache ignored"
+}

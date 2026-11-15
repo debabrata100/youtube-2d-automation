@@ -1,0 +1,63 @@
+{
+  "identicalOutputPNGsOnRepeat": true,
+  "comparedPNGs": 14,
+  "decodedOutputs": {
+    "unsupportedLavaPixelsWithAnyAlpha": 0,
+    "plumePixelsLeakingThroughForegroundRim": 0,
+    "smokePixelsBelowY365": 0,
+    "ashPixelsDuplicatingMainPlume": 0,
+    "portraitPixelsNotFullyOpaque": 0
+  },
+  "dimensions": {
+    "plume": [
+      1254,
+      1254
+    ],
+    "lava": [
+      1254,
+      1254
+    ],
+    "ash": [
+      1254,
+      1254
+    ],
+    "portrait": [
+      1080,
+      1920
+    ]
+  },
+  "sourceHashesPreserved": true,
+  "protectedFiles": 26,
+  "protectedVideos": [
+    {
+      "file": "jobs/planet-formation-m1-2-5-2026-11-14T05-41-24-380Z/output/animation.mp4",
+      "available": true,
+      "sha256": "23738d08124498a8fe02cd792d0eb1450280bd68183a36fd92c0eb837b1d31df",
+      "matchesApprovedHash": true
+    },
+    {
+      "file": "jobs/generic-template-demo-m2-1-2026-11-14T08-03-11-052Z/output/animation.mp4",
+      "available": true,
+      "sha256": "aceb0eb779e74114273a4815904386ec933fa0518f1da8b3930cf6d30544e7a7",
+      "matchesApprovedHash": true
+    }
+  ],
+  "outputHashes": {
+    "eruption-plume-fitted.png": "8e2e27f40972f3e3906e58103231d6756f447d4d93511925054fa527acf8bd04",
+    "eruption-plume-placed-unoccluded.png": "52024fe1df34fffd04ba47eec38255a73eb8474a27ec14b2aa0a7eaeb6c60b55",
+    "lava-flows-fitted.png": "dc70d7b963b854ed1e7c379fa97c36265c09a0edb39eb31651a9fc6744903568",
+    "ash-wisp-fitted.png": "eb10aa4994d39bffb477ac3470fbbde6c34a1962452ee9fc0c7483cb8f317ab6",
+    "crater-rim-mask.png": "1ba59220e7b8b3ece7df6bea7db7d58f25549b91fd01be9574a68245e14f6079",
+    "lava-terrain-mask.png": "03e17f9d66ddaa0c000e68c8e3197b63991cd4fb2d02f9d7257f6ae4c3d8054d",
+    "ground-contact-shadow.png": "eca96a563b061c2c6e37c0d22bcd535d37721d91b8b4e02c41a6f013592bbed9",
+    "plume-over-volcano.png": "6da9218b29eff1f83a30a57569eac2cbd07c04402fed66a977a0088df2ba7152",
+    "lava-over-volcano.png": "02f5183bc6f92b4824fa0d07ebd56954cbbc2484118f455852215e4cd2700188",
+    "combined-eruption.png": "d2e6655bec88e40ddfe6bbd9bb6b6c60634f8097ce238c3093f1fbf1ca56a6fa",
+    "original-vs-fitted.png": "6519bd8023dff456b1818f0ea8c639f085a92376e68e8c6b9685a044979f1d84",
+    "crater-junction-3x.png": "bdcb662120305bb7f7e49f8c973c705b1a8d8d1d15887c6e8bc1fee82060c165",
+    "lava-endpoints-2x.png": "2193b587381fb96f3bacb6da2e2c3881b26b671de926b7461aec73a645b183be",
+    "scene-9x16.png": "524d4e67a57552370b1798fb0682ffb83317350aeb1c4a5cd22431fe8a058b7b"
+  },
+  "automatedChecksPassed": true,
+  "note": "Two actual fitting runs followed by independent PNG decoding. Raster/PNG repeatability in this environment does not guarantee byte-identical future MP4 output."
+}

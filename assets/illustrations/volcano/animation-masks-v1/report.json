@@ -1,0 +1,98 @@
+{
+  "algorithm": "4-neighbor geodesic flood along fitted lava alpha>16, dilated 4 source pixels; nested 20-step reveal; final mask includes all original alpha",
+  "registration": [
+    1254,
+    1254
+  ],
+  "paintedPixels": 94325,
+  "reachedPixels": 94325,
+  "coverage": 1,
+  "maxDistance": 974,
+  "openingPixels": 107032,
+  "files": [
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-00.png",
+      "sha256": "441ec46f46e5d6717f533381512830545dd08a36f95fac1b58bc5e3ad3413743"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-01.png",
+      "sha256": "301a7dee1ed2f84f1ff36b4a33a52f78ae3b3d9c0eab4cb92f4c7bec9f8cd22f"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-02.png",
+      "sha256": "1864eec3ab44c2223b569064658aebd65da57e17a20f92becdbbadd65d0b70b3"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-03.png",
+      "sha256": "52f5210b058cd24f04fe2d5691f97332c781023c4a530b03e46f3cbeb382d5cb"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-04.png",
+      "sha256": "74b6035ea40b6eb518254d07fae83d7fce4f8dbf1563eb30bb5ae78dba6ed855"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-05.png",
+      "sha256": "894c058d6454f20442f19fe6f3c9c19f29f4219d4a0921c09cdd9b30ff96cd38"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-06.png",
+      "sha256": "4a487fcaa7d862a7cf79bb331843c444253ddb182ade65f68516cc8cc027d078"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-07.png",
+      "sha256": "3a109fdf3e8910c735b6e690368bb0ada84ea15ed5b1c51d294c47495e46360c"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-08.png",
+      "sha256": "d87dec48325e4d9c4df35a14e4d81677a6c439860c2d05487c76ca6a48e2c4fd"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-09.png",
+      "sha256": "673c2451dc29012a726e6703cccb5d31d66c47dacba203c334f0c956d0795a85"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-10.png",
+      "sha256": "de71aa68f15d617da05d05094467d210df5124b8b65a6a4256dfb3291ce9259b"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-11.png",
+      "sha256": "c6008ba32f5440bdae4ef4ee4cd30b2e568ad9e870be26bb1560ef2a1dedf6d0"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-12.png",
+      "sha256": "422245f276081b55d1664a3d4c3e0174be3d7b99d25d4f504c923ccec5914368"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-13.png",
+      "sha256": "fe463f79e926b74c084cc3eba77f244cf0e48ca27bf11d5f48fcbeb32d9a4762"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-14.png",
+      "sha256": "f9be4d8217dd934a7a8c19ef03e139dffb30cbec443bb85082e0a89f7dd5560c"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-15.png",
+      "sha256": "f363e00f691e59ddfda2a21cbc7d7f652d22f9c6ed42961602154b3883d818dc"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-16.png",
+      "sha256": "234a7bdf905e7c0875bebe94a9bdaca011d245b189fb921ca1853daeace3e9e9"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-17.png",
+      "sha256": "2e3e0d9f976d8b39f8c12568be67972d621b0d153b663221ac19430db4e8581f"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-18.png",
+      "sha256": "4e58887b6a4dd102c668b65668700de7b129d92b058ac410540baeec364df45e"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-19.png",
+      "sha256": "325b42c1cd2b9cf2592d9f6ae799fd91f332cb87818c75543c338746055ca5c7"
+    },
+    {
+      "file": "assets/illustrations/volcano/animation-masks-v1/lava-reveal-20.png",
+      "sha256": "2834b3c130cd87ef8ea43980bd470c79b2f77c151e860d93c8669451e1547d7c"
+    }
+  ]
+}

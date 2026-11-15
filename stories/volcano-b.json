@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0",
+  "id": "volcano-b",
+  "title": "How a Volcano Erupts",
+  "topic": "Volcano eruption mechanisms and magma versus lava",
+  "language": "en-US",
+  "targetAudience": "English-speaking science-curious viewers aged 16\u201335",
+  "durationSeconds": 15,
+  "storyboard": "storyboards/volcano.json",
+  "beats": [
+    {
+      "id": "hook",
+      "sceneId": "volcano-exterior",
+      "narration": "A quiet mountain can hide molten rock.",
+      "intent": "hook",
+      "emphasis": [],
+      "phrases": [
+        "A quiet mountain",
+        "can hide molten rock."
+      ]
+    },
+    {
+      "id": "setup",
+      "sceneId": "magma-accumulation",
+      "narration": "Magma gathers in a reservoir far below.",
+      "intent": "setup",
+      "emphasis": [],
+      "phrases": [
+        "Magma gathers in a reservoir",
+        "far below."
+      ]
+    },
+    {
+      "id": "explanation",
+      "sceneId": "magma-rise",
+      "narration": "Buoyancy and gas pressure can drive ascent.",
+      "intent": "explanation",
+      "emphasis": [],
+      "phrases": [
+        "Buoyancy and gas pressure",
+        "can drive ascent."
+      ]
+    },
+    {
+      "id": "payoff",
+      "sceneId": "eruption",
+      "narration": "Some eruptions blast out ash and lava.",
+      "intent": "payoff",
+      "emphasis": [],
+      "phrases": [
+        "Some eruptions blast out",
+        "ash and lava."
+      ]
+    },
+    {
+      "id": "closing",
+      "sceneId": "final-summary",
+      "narration": "Below, magma. Above, lava. Same molten rock.",
+      "intent": "closing",
+      "emphasis": [],
+      "phrases": [
+        "Below, magma. Above, lava.",
+        "Same molten rock."
+      ]
+    }
+  ]
+}

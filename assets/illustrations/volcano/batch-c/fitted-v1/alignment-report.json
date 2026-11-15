@@ -1,0 +1,359 @@
+{
+  "status": "technical checks passed; human visual approval pending",
+  "configuration": "assets/illustrations/volcano/batch-c/fitted-v1/fitting-config.json",
+  "dimensions": {
+    "eruption-plume-fitted.png": {
+      "width": 1254,
+      "height": 1254,
+      "transparentPixels": 1535985,
+      "partialAlphaPixels": 36531,
+      "alphaAbove128Pixels": 30206,
+      "alphaEquivalentPixels": 29933.6353,
+      "visibleBounds": {
+        "left": 562,
+        "top": 61,
+        "right": 783,
+        "bottom": 329
+      }
+    },
+    "eruption-plume-placed-unoccluded.png": {
+      "width": 1254,
+      "height": 1254,
+      "transparentPixels": 1535728,
+      "partialAlphaPixels": 36783,
+      "alphaAbove128Pixels": 30325,
+      "alphaEquivalentPixels": 30051.3529,
+      "visibleBounds": {
+        "left": 562,
+        "top": 61,
+        "right": 783,
+        "bottom": 334
+      }
+    },
+    "lava-flows-fitted.png": {
+      "width": 1254,
+      "height": 1254,
+      "transparentPixels": 1417871,
+      "partialAlphaPixels": 154642,
+      "alphaAbove128Pixels": 81445,
+      "alphaEquivalentPixels": 79502.2588,
+      "visibleBounds": {
+        "left": 64,
+        "top": 320,
+        "right": 1109,
+        "bottom": 762
+      }
+    },
+    "ash-wisp-fitted.png": {
+      "width": 1254,
+      "height": 1254,
+      "transparentPixels": 1571064,
+      "partialAlphaPixels": 1452,
+      "alphaAbove128Pixels": 997,
+      "alphaEquivalentPixels": 601.3059,
+      "visibleBounds": {
+        "left": 788,
+        "top": 108,
+        "right": 841,
+        "bottom": 144
+      }
+    },
+    "crater-rim-mask.png": {
+      "width": 1254,
+      "height": 1254,
+      "transparentPixels": 1432746,
+      "partialAlphaPixels": 8158,
+      "alphaAbove128Pixels": 135195,
+      "alphaEquivalentPixels": 135714.5412,
+      "visibleBounds": {
+        "left": 485,
+        "top": 288,
+        "right": 770,
+        "bottom": 792
+      }
+    },
+    "lava-terrain-mask.png": {
+      "width": 1254,
+      "height": 1254,
+      "transparentPixels": 1135644,
+      "partialAlphaPixels": 7303,
+      "alphaAbove128Pixels": 433211,
+      "alphaEquivalentPixels": 433830.098,
+      "visibleBounds": {
+        "left": 23,
+        "top": 221,
+        "right": 1233,
+        "bottom": 791
+      }
+    },
+    "ground-contact-shadow.png": {
+      "width": 1254,
+      "height": 1254,
+      "transparentPixels": 1505624,
+      "partialAlphaPixels": 66892,
+      "alphaAbove128Pixels": 0,
+      "alphaEquivalentPixels": 3900.1333,
+      "visibleBounds": null
+    },
+    "plume-over-volcano.png": {
+      "width": 1254,
+      "height": 1254,
+      "transparentPixels": 1101434,
+      "partialAlphaPixels": 460837,
+      "alphaAbove128Pixels": 457188,
+      "alphaEquivalentPixels": 453594.7451,
+      "visibleBounds": {
+        "left": 20,
+        "top": 61,
+        "right": 1234,
+        "bottom": 792
+      }
+    },
+    "lava-over-volcano.png": {
+      "width": 1254,
+      "height": 1254,
+      "transparentPixels": 1125298,
+      "partialAlphaPixels": 371146,
+      "alphaAbove128Pixels": 436863,
+      "alphaEquivalentPixels": 434012.2902,
+      "visibleBounds": {
+        "left": 20,
+        "top": 219,
+        "right": 1234,
+        "bottom": 792
+      }
+    },
+    "combined-eruption.png": {
+      "width": 1254,
+      "height": 1254,
+      "transparentPixels": 1099997,
+      "partialAlphaPixels": 386950,
+      "alphaAbove128Pixels": 458185,
+      "alphaEquivalentPixels": 454817.7961,
+      "visibleBounds": {
+        "left": 20,
+        "top": 61,
+        "right": 1234,
+        "bottom": 792
+      }
+    },
+    "original-vs-fitted.png": {
+      "width": 2508,
+      "height": 1254,
+      "transparentPixels": 0,
+      "partialAlphaPixels": 0,
+      "alphaAbove128Pixels": 3145032,
+      "alphaEquivalentPixels": 3145032,
+      "visibleBounds": {
+        "left": 0,
+        "top": 0,
+        "right": 2507,
+        "bottom": 1253
+      }
+    },
+    "crater-junction-3x.png": {
+      "width": 1080,
+      "height": 630,
+      "transparentPixels": 0,
+      "partialAlphaPixels": 0,
+      "alphaAbove128Pixels": 680400,
+      "alphaEquivalentPixels": 680400,
+      "visibleBounds": {
+        "left": 0,
+        "top": 0,
+        "right": 1079,
+        "bottom": 629
+      }
+    },
+    "lava-endpoints-2x.png": {
+      "width": 2420,
+      "height": 440,
+      "transparentPixels": 0,
+      "partialAlphaPixels": 0,
+      "alphaAbove128Pixels": 1064800,
+      "alphaEquivalentPixels": 1064800,
+      "visibleBounds": {
+        "left": 0,
+        "top": 0,
+        "right": 2419,
+        "bottom": 439
+      }
+    },
+    "scene-9x16.png": {
+      "width": 1080,
+      "height": 1920,
+      "transparentPixels": 0,
+      "partialAlphaPixels": 0,
+      "alphaAbove128Pixels": 2073600,
+      "alphaEquivalentPixels": 2073600,
+      "visibleBounds": {
+        "left": 0,
+        "top": 0,
+        "right": 1079,
+        "bottom": 1919
+      }
+    }
+  },
+  "sourcesUnchanged": true,
+  "protectedHashes": {
+    "assets/illustrations/planet/rocky-planet-approved.png": "9ca412dbfbf32c8dfbdd83552e9d64e7983fa47fece5ba899bd670890efa11b6",
+    "assets/illustrations/star/sun-approved.png": "d7fbf21f09cf0e55283ffc25b9e2c737f6b7a05c406746da0b8bcd8f617c7511",
+    "assets/illustrations/sun-approved.png": "d7fbf21f09cf0e55283ffc25b9e2c737f6b7a05c406746da0b8bcd8f617c7511",
+    "assets/illustrations/volcano/batch-a/cutaway-rock-v1.png": "f0a1c5130e39b702bd461929c8ddb680bd9e9934367bece5daa31566ee7ed288",
+    "assets/illustrations/volcano/batch-a/exterior-v1.png": "f659ab75f123a7b13d3f1e32abaf087dc1f4966162e2c583d4fe0f944c750ce8",
+    "assets/illustrations/volcano/batch-a/landscape-v1.png": "c2a7e03b207aa71bafa8355b95bb95c08ffb0b2e18de8930356e10107b24781f",
+    "assets/illustrations/volcano/batch-b/conduit-magma-v1.png": "c2e05a469c55bd74ae19cebd943b3debe6cdc0a46d51332fc73040e3c345c53a",
+    "assets/illustrations/volcano/batch-b/fitted-v1/before-after-alignment.png": "559d86f815c99f7d087d0369ddfeb8861c578e4cf3bef041611e50bf096dcb76",
+    "assets/illustrations/volcano/batch-b/fitted-v1/before-after-magma-only.png": "a3f4f7149816f8398a2b0fdf7dcff5f9763c3ad9276cab26684667040b8d2f71",
+    "assets/illustrations/volcano/batch-b/fitted-v1/conduit-magma-fitted.png": "4a7b3f67f0bb31b170b88eb2b43df15dc548c0b50534c6f5537305f93832f2d8",
+    "assets/illustrations/volcano/batch-b/fitted-v1/junction-before-after-3x.png": "0ba58ce31da87f65d9e330ffdcbb4d7c51efc1680217d11edffcfdfe1a561c5c",
+    "assets/illustrations/volcano/batch-b/fitted-v1/magma-behind-cutaway.png": "581ebf0d1a6f00063b2469977ad09660579d5f6c865f910fedb41aadebaa74f3",
+    "assets/illustrations/volcano/batch-b/fitted-v1/magma-chamber-fitted.png": "695983788e61b626878fdf36c7f0b50689ce8ef2a85c9c22dba9befe2388f74e",
+    "assets/illustrations/volcano/batch-b/fitted-v1/magma-only-composite.png": "cddbc39f7f0fa507f293b8e0ccdd6adfeba44c8a0347444c245696c6e877bd80",
+    "assets/illustrations/volcano/batch-b/fitted-v1/opening-mask.png": "ddb1edc9e3569baf79855af78946f543b9103f4d4ae38a04cf2d82bbadd3d12e",
+    "assets/illustrations/volcano/batch-b/fitted-v1/opening-regions.png": "9feb16c65e813ba0116f1735a5c43424a7114d3a99d56a33a0dfb4b065870e19",
+    "assets/illustrations/volcano/batch-b/magma-chamber-v1.png": "54f4fcc8f41a30b394cd9ef9d6965e918c5321e01ce452330b7556ba83eec5d9",
+    "assets/illustrations/volcano/batch-c/alignment-preview-over-exterior.png": "e852b6af983e3a1002ab331598a1bd6ffec201fbc4a3ef9f77b775f84e9b6e78",
+    "assets/illustrations/volcano/batch-c/ash-wisp-v1.png": "d563180290a97627838a6638962e8e6e2162eb88062c983030e91b5100fe3828",
+    "assets/illustrations/volcano/batch-c/eruption-plume-v1.png": "f214715978ecc914601043647c8cb250b5ac60391ea38104cc942ab56990e16f",
+    "assets/illustrations/volcano/batch-c/lava-alignment-preview.png": "c52e72547f8bb140b722a278fa27953c86347a4a0ac8e392cd2a5aee7c3e41ee",
+    "assets/illustrations/volcano/batch-c/lava-flows-v1.png": "a7c5050246841e4c58e3a849471285ddb6c0e90c65cc3ac4b64229da99c9338d",
+    "assets/illustrations/volcano/batch-c/plume-placement-study.png": "ea3f22c4b4c504281e5c1bea31c5d24543f8d2543519c06789ae6a918ca40b44",
+    "assets/illustrations/young-star-painted-v1.png": "cd6199e5eec91a480f3efebc67c3b4ceec8606f2d766e6b2ba7459031bdf39ff",
+    "jobs/generic-template-demo-m2-1-2026-11-14T08-03-11-052Z/output/animation.mp4": "aceb0eb779e74114273a4815904386ec933fa0518f1da8b3930cf6d30544e7a7",
+    "jobs/planet-formation-m1-2-5-2026-11-14T05-41-24-380Z/output/animation.mp4": "23738d08124498a8fe02cd792d0eb1450280bd68183a36fd92c0eb837b1d31df"
+  },
+  "protectedVideos": [
+    {
+      "file": "jobs/planet-formation-m1-2-5-2026-11-14T05-41-24-380Z/output/animation.mp4",
+      "available": true,
+      "sha256": "23738d08124498a8fe02cd792d0eb1450280bd68183a36fd92c0eb837b1d31df",
+      "matchesApprovedHash": true
+    },
+    {
+      "file": "jobs/generic-template-demo-m2-1-2026-11-14T08-03-11-052Z/output/animation.mp4",
+      "available": true,
+      "sha256": "aceb0eb779e74114273a4815904386ec933fa0518f1da8b3930cf6d30544e7a7",
+      "matchesApprovedHash": true
+    }
+  ],
+  "plume": {
+    "method": "Uniform scale and translation only; no shape deformation. Front-rim alpha occlusion is applied in a separate deterministic mask.",
+    "transform": {
+      "scale": 0.3,
+      "x": 469.9,
+      "y": 44.19999999999999
+    },
+    "ventAnchor": [
+      640,
+      334
+    ],
+    "foregroundOccludedPixels": 128,
+    "visiblePixelsAtRimConnection": 161,
+    "visiblePixelsLeakingThroughFullRimMask": 0,
+    "smokePixelsBelowY365": 0,
+    "nativeTopHeadroomPixels": 61,
+    "unoccludedSourceForLaterDrift": "eruption-plume-placed-unoccluded.png"
+  },
+  "lava": {
+    "method": "Smooth monotonic local vertical remap, tapered root correction, localized lower-left branch displacement, then soft interior terrain mask. No outside pools are retained because no registered supporting foreground is provided.",
+    "before": {
+      "visiblePixels": 102901,
+      "unsupportedVisiblePixels": 24163,
+      "unsupportedPixelsWithAnyAlpha": 41816,
+      "silhouetteSupportPercent": 76.518207,
+      "alphaEquivalentPixels": 100411.0039,
+      "unsupportedAlphaEquivalentPixels": 23497.4667
+    },
+    "afterGeometricWarpBeforeMask": {
+      "visiblePixels": 81445,
+      "unsupportedVisiblePixels": 0,
+      "unsupportedPixelsWithAnyAlpha": 676,
+      "silhouetteSupportPercent": 100,
+      "alphaEquivalentPixels": 79505.0941,
+      "unsupportedAlphaEquivalentPixels": 2.651
+    },
+    "afterMask": {
+      "visiblePixels": 81445,
+      "unsupportedVisiblePixels": 0,
+      "unsupportedPixelsWithAnyAlpha": 0,
+      "silhouetteSupportPercent": 100,
+      "alphaEquivalentPixels": 79502.2588,
+      "unsupportedAlphaEquivalentPixels": 0
+    },
+    "warpedMaterialOpacityRetainedByMaskPercent": 99.996434,
+    "geometricWarpEndBounds": {
+      "left": 64,
+      "top": 320,
+      "right": 1109,
+      "bottom": 762
+    },
+    "finalVisibleBounds": {
+      "left": 64,
+      "top": 320,
+      "right": 1109,
+      "bottom": 762
+    },
+    "finalEndpointClearanceAboveMaxBasePixels": 30,
+    "maskFeatherPixels": 3
+  },
+  "ash": {
+    "transform": {
+      "scale": 0.18,
+      "x": 669.74,
+      "y": 80
+    },
+    "opacity": 0.55,
+    "visiblePixels": 1169,
+    "overlappingMainPlumePixels": 0,
+    "overlapPercent": 0,
+    "optional": true,
+    "anchorInstructions": "Keep canvas registration, animate modest drift/opacity/scale independently; recheck overlap and crater mask after later animation."
+  },
+  "scene": {
+    "width": 1080,
+    "height": 1920,
+    "landscapeScale": 1.1483253588516746,
+    "groupTransform": {
+      "scale": 0.78,
+      "x": 50.94,
+      "y": 632.24
+    },
+    "baseGroundY": 1250,
+    "opaqueBackgroundToAllFrameEdges": true,
+    "volcanoFrame": "Shared 1254-unit local coordinates. Entire group placed on the approved terrain; preview only, no animation integrated."
+  },
+  "outputHashes": {
+    "eruption-plume-fitted.png": "8e2e27f40972f3e3906e58103231d6756f447d4d93511925054fa527acf8bd04",
+    "eruption-plume-placed-unoccluded.png": "52024fe1df34fffd04ba47eec38255a73eb8474a27ec14b2aa0a7eaeb6c60b55",
+    "lava-flows-fitted.png": "dc70d7b963b854ed1e7c379fa97c36265c09a0edb39eb31651a9fc6744903568",
+    "ash-wisp-fitted.png": "eb10aa4994d39bffb477ac3470fbbde6c34a1962452ee9fc0c7483cb8f317ab6",
+    "crater-rim-mask.png": "1ba59220e7b8b3ece7df6bea7db7d58f25549b91fd01be9574a68245e14f6079",
+    "lava-terrain-mask.png": "03e17f9d66ddaa0c000e68c8e3197b63991cd4fb2d02f9d7257f6ae4c3d8054d",
+    "ground-contact-shadow.png": "eca96a563b061c2c6e37c0d22bcd535d37721d91b8b4e02c41a6f013592bbed9",
+    "plume-over-volcano.png": "6da9218b29eff1f83a30a57569eac2cbd07c04402fed66a977a0088df2ba7152",
+    "lava-over-volcano.png": "02f5183bc6f92b4824fa0d07ebd56954cbbc2484118f455852215e4cd2700188",
+    "combined-eruption.png": "d2e6655bec88e40ddfe6bbd9bb6b6c60634f8097ce238c3093f1fbf1ca56a6fa",
+    "original-vs-fitted.png": "6519bd8023dff456b1818f0ea8c639f085a92376e68e8c6b9685a044979f1d84",
+    "crater-junction-3x.png": "bdcb662120305bb7f7e49f8c973c705b1a8d8d1d15887c6e8bc1fee82060c165",
+    "lava-endpoints-2x.png": "2193b587381fb96f3bacb6da2e2c3881b26b671de926b7461aec73a645b183be",
+    "scene-9x16.png": "524d4e67a57552370b1798fb0682ffb83317350aeb1c4a5cd22431fe8a058b7b"
+  },
+  "layering": [
+    "Approved landscape",
+    "Optional derived contact shadow",
+    "Approved volcano exterior",
+    "Terrain-fitted lava",
+    "Plume with crater-rim alpha occlusion",
+    "Optional independently drifting ash/particles"
+  ],
+  "limits": [
+    "Terrain is a hand-reviewed 2D painting, not a height field; slope/gully accuracy requires visual approval.",
+    "Lava texture is locally resampled/compressed and small edge remnants are feathered; source paintings are unchanged.",
+    "The plume is uniformly reduced to fit registered headroom; a larger eruption requires a new framing decision.",
+    "The supplied still previews do not validate future animated reveals or drift.",
+    "No physical rock relighting or eruption simulation was added."
+  ],
+  "humanVisualApproval": "pending",
+  "automatedChecksPassed": true
+}

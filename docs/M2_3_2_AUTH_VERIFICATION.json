@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-15",
+  "milestone": "M2.3.2 Stage A authentication follow-up",
+  "endpoint": "GET https://api.elevenlabs.io/v1/voices/iiidtqDt9FBdT1vfBluA",
+  "result": {
+    "httpStatus": 401,
+    "category": "permission",
+    "providerCode": "missing_permissions",
+    "voiceAccessVerified": false,
+    "stageBReady": false,
+    "sanitizedMessage": "Access denied; key permissions require manual correction."
+  },
+  "environment": {
+    "localKeyConfigured": true,
+    "nativeLoadedValueMatchesLocal": true,
+    "inheritedOverride": false,
+    "whitespaceProblem": false,
+    "duplicateDefinitions": false,
+    "correctXiApiKeyHeader": true,
+    "envModified": false
+  },
+  "requests": {
+    "readOnlyVoiceGET": 1,
+    "paidTTS": 0,
+    "synthesis": 0,
+    "effects": 0,
+    "automaticRetries": 0
+  },
+  "checks": {
+    "typecheck": "passed",
+    "vitest": {
+      "passed": 217,
+      "files": 13
+    },
+    "whitespace": "passed",
+    "protectedPathsUnchanged": 46,
+    "selectedScriptWords": 28,
+    "credentialOccurrences": 0,
+    "textFilesScanned": 188
+  },
+  "manualCorrection": "Review existing key in intended workspace; grant Voices: Read for this metadata check, then repeat story:auth. Do not paste credentials.",
+  "git": {
+    "committed": false,
+    "pushed": false,
+    "tagged": false
+  },
+  "rendered": false
+}

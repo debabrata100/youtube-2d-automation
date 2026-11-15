@@ -1,0 +1,94 @@
+{
+  "status": "real narrated video ready for human listening review; M2.3 remains open",
+  "job": "/Users/deb/Documents/learn/ai-foundation/youtube-2d-automation/jobs/volcano-m2-3-1-2026-11-14T16-27-39-560Z",
+  "video": {
+    "path": "/Users/deb/Documents/learn/ai-foundation/youtube-2d-automation/jobs/volcano-m2-3-1-2026-11-14T16-27-39-560Z/output/narrated-animation.mp4",
+    "sha256": "1e36b69e8c84150df8118f9a7d23b04503b4a2d088301d1a364cf15cbc011b30",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 450,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "durationSeconds": 15
+  },
+  "provider": {
+    "model": "gpt-4o-mini-tts-2025-12-15",
+    "voice": "marin",
+    "generationSpeed": 1,
+    "paidRequests": 5,
+    "initialCacheHits": 0,
+    "initialCacheMisses": 5,
+    "cachedResponsesReusedForRender": 5,
+    "paidRequestsDuringRender": 0,
+    "maximumAuthorizedRequests": 5,
+    "maximumEstimatedUSD": 0.05,
+    "conservativeEstimatedReservedUSD": 0.04586159999999999,
+    "actualCostUSD": null,
+    "actualBilling": "unavailable; estimate is not an enforced billing limit"
+  },
+  "audio": {
+    "rawGeneratedSeconds": 26.3,
+    "cleanUnspedSeconds": 16.177834,
+    "selectedNarrationSeconds": 14.875624,
+    "assembledSeconds": 15,
+    "pitchPreservingTempo": 1.09,
+    "scriptUnchanged": true,
+    "maximumSceneBoundaryOffsetFrames": 8,
+    "captionTiming": "local ASR phrase estimates, not word-perfect"
+  },
+  "render": {
+    "elapsedSeconds": 43.58,
+    "timingScope": "render plus H.264/AAC encoding and mux; excludes paid synthesis and local ASR",
+    "offline": true,
+    "paidRequestsThisRender": 0,
+    "humanApproval": "pending"
+  },
+  "checks": {
+    "schema": true,
+    "assetsPresent": true,
+    "dimensions": true,
+    "fps": true,
+    "frames": true,
+    "duration": true,
+    "codec": true,
+    "noUnintendedBlackFrames": true,
+    "chronologicalTimeline": true,
+    "encodedSamplesExtracted": true,
+    "configuredFrameCount": true,
+    "configuredVideoTimeline": true,
+    "embeddedAAC": true,
+    "configuredContainerTimeline": true,
+    "audioTimelineFits": true,
+    "sourceAudioUntruncated": true,
+    "noSpeechOverlap": true,
+    "captionsInBounds": true,
+    "safeCaptionLayout": true,
+    "audioStartsAtIntendedPoint": true,
+    "noUnexpectedSilence": true,
+    "tailMatchesDeclaredHold": true
+  },
+  "allChecksPassed": true,
+  "tests": {
+    "typecheck": "passed",
+    "vitestTests": 190,
+    "vitestFiles": 12,
+    "diffCheck": "passed",
+    "freshMockVideoPassed": true
+  },
+  "compatibility": {
+    "losslessSamples": 15,
+    "allIdentical": true
+  },
+  "preservation": {
+    "paths": 43,
+    "allUnchanged": true
+  },
+  "credentialHandling": "Node native env-file loading; root .env ignored; key not printed or serialized",
+  "qualityLimitations": [
+    "Independent human listening not performed; naturalness, joins and scientific-term pronunciation need approval",
+    "9% pitch-preserving timing correction explicitly documented; unsped comparison included",
+    "Local ASR estimates are not word-perfect timing or pronunciation ground truth"
+  ],
+  "git": "uncommitted; no push/tag/closure/M2.4"
+}

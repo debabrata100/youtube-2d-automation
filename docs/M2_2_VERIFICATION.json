@@ -1,0 +1,100 @@
+{
+  "status": "technical verification passed; human visual approval pending",
+  "baselineCommit": "a1e84941967e5bd7ef875d91e2cb68fa540afe6c",
+  "job": "/Users/deb/Documents/learn/ai-foundation/youtube-2d-automation/jobs/volcano-m2-2-2026-11-14T13-56-49-609Z",
+  "video": {
+    "path": "/Users/deb/Documents/learn/ai-foundation/youtube-2d-automation/jobs/volcano-m2-2-2026-11-14T13-56-49-609Z/output/animation.mp4",
+    "sha256": "d28a1afa2e950a2c99aa0d219267b838267abbf21548070fb0461e4bf859fd6a"
+  },
+  "checks": {
+    "schema": true,
+    "assetsPresent": true,
+    "dimensions": true,
+    "fps": true,
+    "frames": true,
+    "duration": true,
+    "codec": true,
+    "noUnintendedBlackFrames": true,
+    "chronologicalTimeline": true,
+    "encodedSamplesExtracted": true
+  },
+  "render": {
+    "elapsedSeconds": 40.86,
+    "timingScope": "450-frame render and H.264 encoding, excluding bundle/verification",
+    "frames": 450,
+    "concurrency": 1,
+    "humanVisualApproval": "pending"
+  },
+  "tests": {
+    "typecheck": "passed",
+    "vitestTests": 127,
+    "vitestFiles": 9,
+    "diffCheck": "passed"
+  },
+  "compatibility": {
+    "allLosslessSamplesIdentical": true,
+    "samples": [
+      {
+        "composition": "GenericStoryboard",
+        "frame": 29,
+        "identical": true
+      },
+      {
+        "composition": "GenericStoryboard",
+        "frame": 89,
+        "identical": true
+      },
+      {
+        "composition": "GenericStoryboard",
+        "frame": 149,
+        "identical": true
+      },
+      {
+        "composition": "GenericStoryboard",
+        "frame": 209,
+        "identical": true
+      },
+      {
+        "composition": "GenericStoryboard",
+        "frame": 239,
+        "identical": true
+      },
+      {
+        "composition": "GenericStoryboard",
+        "frame": 240,
+        "identical": true
+      },
+      {
+        "composition": "GenericStoryboard",
+        "frame": 269,
+        "identical": true
+      },
+      {
+        "composition": "PlanetFormation",
+        "frame": 0,
+        "identical": true
+      },
+      {
+        "composition": "PlanetFormation",
+        "frame": 225,
+        "identical": true
+      },
+      {
+        "composition": "PlanetFormation",
+        "frame": 420,
+        "identical": true
+      }
+    ],
+    "protectedFiles": 26
+  },
+  "templateReuse": {
+    "scenes": 5,
+    "totalScenes": 5,
+    "percentage": 100,
+    "existingTemplateTypes": 5,
+    "newTopicSpecificReactComponents": 0,
+    "newReusableTopLevelComponents": 1
+  },
+  "normalSpeedPlayback": "human review required; not independently observed in this run",
+  "encodedByteIdentity": "not guaranteed"
+}

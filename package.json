@@ -16,7 +16,14 @@
     "review:sun": "tsx scripts/review-sun.ts",
     "review:planet": "tsx scripts/review-planet.ts",
     "review:polish": "tsx scripts/review-polish.ts",
-    "verify": "tsx scripts/verify.ts"
+    "verify": "tsx scripts/verify.ts",
+    "story:validate": "node --env-file-if-exists=.env --import tsx scripts/story.ts validate",
+    "story:preview": "node --env-file-if-exists=.env --import tsx scripts/story.ts preview",
+    "story:render": "node --env-file-if-exists=.env --import tsx scripts/story.ts render",
+    "story:prepare": "node --env-file-if-exists=.env --import tsx scripts/story.ts prepare",
+    "story:auth": "node --env-file-if-exists=.env --import tsx scripts/story.ts auth --tts elevenlabs",
+    "story:render-cached": "node --import tsx scripts/render-cached-story.ts",
+    "story:verify-cached": "node --import tsx scripts/verify-cached-story.ts"
   },
   "dependencies": {
     "@remotion/cli": "4.0.543",
