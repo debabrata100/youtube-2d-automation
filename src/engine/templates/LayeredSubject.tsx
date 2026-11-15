@@ -1,5 +1,6 @@
 import React, {useId} from 'react';
 import {Img, staticFile} from 'remotion';
+import {MotionEffect} from '../motion/primitives/renderer';
 import type {AssetRegistry} from '../assets/registry';
 import type {IllustrationGroup, IllustrationLayerConfig} from '../storyboard/layers';
 import {layerAssetIds} from '../storyboard/layers';
@@ -20,6 +21,7 @@ const Layer: React.FC<{layer: IllustrationLayerConfig; frame: number; group: Ill
     {image}
     {texture && <g mask={`url(#${id}-self)`} opacity={texture.opacity}><g transform={`translate(${Math.sin(phase) * texture.x} ${Math.cos(phase) * texture.y})`}>{image}</g></g>}
     {flow && <g mask={`url(#${id}-self)`} opacity={flow.opacity}>{flowSequence?<rect width={group.width} height={group.height} fill="#fff0b4" mask={`url(#${id}-flow-path)`}/>:<rect {...(flow.type==='directional'?flow.bounds:{})} fill={`url(#${id}-flow-gradient)`}/>}</g>}
+    {layer.effects?.map(effect=><MotionEffect key={effect.id} config={effect} frame={frame} width={group.width} height={group.height} prefix={id}/>)}
   </g>;
   let content = art;
   if (layer.reveal) content = <g mask={`url(#${id}-reveal)`}>{content}</g>;
@@ -38,7 +40,7 @@ const Layer: React.FC<{layer: IllustrationLayerConfig; frame: number; group: Ill
   }
   return <g data-illustration-layer={layer.id} opacity={state.opacity}>
     <defs>
-      {(texture||flow) && <mask id={`${id}-self`} maskUnits="userSpaceOnUse" x="0" y="0" width={group.width} height={group.height} style={{maskType: 'alpha'}}>{image}</mask>}
+      {(texture||flow||layer.effects?.some(e=>e.clipToSource)) && <mask id={`${id}-self`} maskUnits="userSpaceOnUse" x="0" y="0" width={group.width} height={group.height} style={{maskType: 'alpha'}}>{image}</mask>}
       {flow?.type==='directional'&&<linearGradient id={`${id}-flow-gradient`} gradientUnits="userSpaceOnUse" x1={flow.direction==='up'||flow.direction==='down'?0:flowPosition-flow.bandWidth} x2={flow.direction==='up'||flow.direction==='down'?0:flowPosition+flow.bandWidth} y1={flow.direction==='up'||flow.direction==='down'?flowPosition-flow.bandWidth:0} y2={flow.direction==='up'||flow.direction==='down'?flowPosition+flow.bandWidth:0}><stop offset="0" stopColor="#fff0b4" stopOpacity="0"/><stop offset=".5" stopColor="#fff0b4" stopOpacity="1"/><stop offset="1" stopColor="#fff0b4" stopOpacity="0"/></linearGradient>}
       {flowSequence&&<mask id={`${id}-flow-path`} maskUnits="userSpaceOnUse" x="0" y="0" width={group.width} height={group.height} style={{maskType:'alpha'}}><image href={staticFile(assets.resolve(flowSequence.previous).path)} width={group.width} height={group.height} opacity={1-flowSequence.mix}/>{flowSequence.next!==flowSequence.previous&&<image href={staticFile(assets.resolve(flowSequence.next).path)} width={group.width} height={group.height} opacity={flowSequence.mix}/>}</mask>}
       {layer.masks?.map((mask, i) => <mask key={i} id={`${id}-mask-${i}`} maskUnits="userSpaceOnUse" {...maskBounds} style={{maskType: mask.mode === 'inverse-alpha' ? 'luminance' : 'alpha'}}>

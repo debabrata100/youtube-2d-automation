@@ -1,0 +1,345 @@
+{
+  "milestone": "M2.4.1",
+  "baselineCommit": "f7f1bed7c34ea1454826318df1610558ba57ce68",
+  "branch": "codex/m2-4-1-motion-primitives",
+  "humanReview": "pending",
+  "media": {
+    "baseline": {
+      "path": "jobs/volcano-m2-3-4-final/output/narrated-animation.mp4",
+      "sha256": "ea68d02682d5fe5b42e0db8749db197239ea6c6eb3512fe98299f81667a41ccf"
+    },
+    "prototype": {
+      "path": "jobs/volcano-m2-4-1-prototype/output/narrated-animation.mp4",
+      "sha256": "de0404b8d0fd78ec37c2f9e0b704019f4793855050dcff3d9bfbb3f6bee90966"
+    }
+  },
+  "checks": {
+    "typecheck": true,
+    "vitest": {
+      "passed": 280,
+      "files": 17
+    },
+    "builds": [
+      {
+        "entry": "src/index.ts",
+        "passed": true
+      },
+      {
+        "entry": "src/storyboard-index.ts",
+        "passed": true
+      }
+    ],
+    "legacyCompatibility": {
+      "baseline": "f7f1bed7c34ea1454826318df1610558ba57ce68",
+      "samples": [
+        {
+          "label": "generic-demo",
+          "frame": 29,
+          "identical": true
+        },
+        {
+          "label": "generic-demo",
+          "frame": 89,
+          "identical": true
+        },
+        {
+          "label": "generic-demo",
+          "frame": 149,
+          "identical": true
+        },
+        {
+          "label": "generic-demo",
+          "frame": 209,
+          "identical": true
+        },
+        {
+          "label": "generic-demo",
+          "frame": 239,
+          "identical": true
+        },
+        {
+          "label": "generic-demo",
+          "frame": 240,
+          "identical": true
+        },
+        {
+          "label": "generic-demo",
+          "frame": 269,
+          "identical": true
+        },
+        {
+          "label": "planet",
+          "frame": 0,
+          "identical": true
+        },
+        {
+          "label": "planet",
+          "frame": 225,
+          "identical": true
+        },
+        {
+          "label": "planet",
+          "frame": 420,
+          "identical": true
+        },
+        {
+          "label": "volcano",
+          "frame": 0,
+          "identical": true
+        },
+        {
+          "label": "volcano",
+          "frame": 125,
+          "identical": true
+        },
+        {
+          "label": "volcano",
+          "frame": 220,
+          "identical": true
+        },
+        {
+          "label": "volcano",
+          "frame": 315,
+          "identical": true
+        },
+        {
+          "label": "volcano",
+          "frame": 449,
+          "identical": true
+        },
+        {
+          "label": "volcano-m2-2-1",
+          "frame": 0,
+          "identical": true
+        },
+        {
+          "label": "volcano-m2-2-1",
+          "frame": 125,
+          "identical": true
+        },
+        {
+          "label": "volcano-m2-2-1",
+          "frame": 220,
+          "identical": true
+        },
+        {
+          "label": "volcano-m2-2-1",
+          "frame": 315,
+          "identical": true
+        },
+        {
+          "label": "volcano-m2-2-1",
+          "frame": 449,
+          "identical": true
+        }
+      ],
+      "allLosslessSamplesIdentical": true,
+      "note": "Opt-in timing plans and banner change do not alter existing narration-free compositions. No encoded MP4 byte-identity guarantee."
+    },
+    "video": {
+      "video": "/Users/deb/Documents/learn/ai-foundation/youtube-2d-automation/jobs/volcano-m2-4-1-prototype/output/narrated-animation.mp4",
+      "checks": {
+        "schema": true,
+        "assetsPresent": true,
+        "dimensions": true,
+        "fps": true,
+        "frames": true,
+        "duration": true,
+        "codec": true,
+        "noUnintendedBlackFrames": true,
+        "chronologicalTimeline": true,
+        "encodedSamplesExtracted": true,
+        "decodedPresentationTimeline": true,
+        "productionBannerDisabled": true,
+        "sceneScheduleMatchesProvider": true,
+        "sceneTransitionsWithinTarget": true,
+        "exactContainerDuration": true,
+        "exactVideoFrames": true,
+        "embeddedAAC": true,
+        "audioDuration": true,
+        "approvedSourceHash": true,
+        "approvedOriginalStillUnchanged": true,
+        "encodedNarrationMatchesApprovedPerformance": true,
+        "quietIntentionalEnding": true,
+        "providerCaptionMapping": true,
+        "allWordsCovered": true,
+        "providerWordBounds": true,
+        "captionBounds": true,
+        "mobileSafeLayout": true
+      },
+      "sceneScheduling": {
+        "enabled": true,
+        "maximumDeviationSeconds": 0.0086666666666666,
+        "averageDeviationSeconds": 0.0045000000000002816,
+        "exceptions": []
+      },
+      "allChecksPassed": true,
+      "audio": {
+        "sourceDurationSeconds": 13.1425,
+        "encodedDurationSeconds": 15,
+        "sourceCodec": "pcm_s16le",
+        "encodedCodec": "aac",
+        "sampleRate": "48000",
+        "channels": 1,
+        "pcmCorrelation": 0.9999300951425336,
+        "signalToDifferenceDB": 38.48099738301698,
+        "tailRMSDBFS": -270.3089986991944,
+        "speedAdjustment": 1,
+        "intentionalEndingSeconds": 1.8575
+      },
+      "captionTiming": {
+        "method": "Provider character timings → 28 words → authored phrases; start/end rounded upward to 30 FPS",
+        "words": 28,
+        "cues": 5,
+        "maximumRoundingSeconds": 0.03333333333333333,
+        "humanSynchronizationReview": "pending"
+      },
+      "paidRequests": 0,
+      "paidAlignmentRequests": 0,
+      "soundEffectsRequests": 0,
+      "artworkRegenerated": false,
+      "humanVisualReview": "pending",
+      "note": "AAC is lossy; numerical PCM similarity tests preservation of the approved performance, not byte identity. Scene labels on contact sheets are expected metadata, not image recognition."
+    },
+    "integration": {
+      "checks": {
+        "approvedWavIdentical": true,
+        "encodedAACPayloadIdentical": true,
+        "captionsIdentical": true,
+        "sceneBoundariesIdentical": true,
+        "assetRegistryIdentical": true,
+        "bannerDisabled": true
+      },
+      "allChecksPassed": true,
+      "sceneDurations": [
+        66,
+        84,
+        93,
+        75,
+        132
+      ],
+      "protectedPathsUnchanged": 106,
+      "emitterPhases": [
+        {
+          "illustrationFrame": 8,
+          "visibleByEmitter": {
+            "buildup-sparks": 11,
+            "burst-sparks": 0,
+            "drifting-ash": 3,
+            "ejected-debris": 0
+          }
+        },
+        {
+          "illustrationFrame": 20,
+          "visibleByEmitter": {
+            "buildup-sparks": 8,
+            "burst-sparks": 6,
+            "drifting-ash": 11,
+            "ejected-debris": 5
+          }
+        },
+        {
+          "illustrationFrame": 35,
+          "visibleByEmitter": {
+            "buildup-sparks": 0,
+            "burst-sparks": 20,
+            "drifting-ash": 20,
+            "ejected-debris": 8
+          }
+        },
+        {
+          "illustrationFrame": 60,
+          "visibleByEmitter": {
+            "buildup-sparks": 0,
+            "burst-sparks": 5,
+            "drifting-ash": 24,
+            "ejected-debris": 0
+          }
+        },
+        {
+          "illustrationFrame": 90,
+          "visibleByEmitter": {
+            "buildup-sparks": 0,
+            "burst-sparks": 0,
+            "drifting-ash": 20,
+            "ejected-debris": 0
+          }
+        },
+        {
+          "illustrationFrame": 130,
+          "visibleByEmitter": {
+            "buildup-sparks": 0,
+            "burst-sparks": 0,
+            "drifting-ash": 0,
+            "ejected-debris": 0
+          }
+        },
+        {
+          "illustrationFrame": 179,
+          "visibleByEmitter": {
+            "buildup-sparks": 0,
+            "burst-sparks": 0,
+            "drifting-ash": 0,
+            "ejected-debris": 0
+          }
+        }
+      ],
+      "cost": {
+        "paidAPIRequests": 0,
+        "synthesisRequests": 0,
+        "alignmentRequests": 0,
+        "soundEffectsRequests": 0,
+        "newImageGeneration": 0
+      },
+      "baselineReused": true
+    },
+    "overlay": {
+      "checks": {
+        "productionFlagDisabled": true,
+        "encodedBannerBandMatchesOff": true,
+        "debugToggleChangesOnlyBannerRegion": true,
+        "endingRemainsVisuallyActive": true
+      },
+      "encodedBandMSEtoProduction": 1.2210251322751322,
+      "encodedBandMSEtoDebug": 1354.8720105820105,
+      "endingFrameDifferenceMSE": 2.8738374485596707,
+      "note": "Production/debug reference stills differ only in the banner flag. Encoded frame 30 is compared against both; source gating applies to all frames. Final samples 420/449 verify the ending is not frozen. Visual readability/label spacing also needs contact-sheet review."
+    },
+    "motion": {
+      "baselineJob": "/Users/deb/Documents/learn/ai-foundation/youtube-2d-automation/jobs/volcano-m2-3-4-final",
+      "prototypeJob": "/Users/deb/Documents/learn/ai-foundation/youtube-2d-automation/jobs/volcano-m2-4-1-prototype",
+      "checks": {
+        "captionsIdentical": true,
+        "sceneDurationsIdentical": true,
+        "flowVisiblyChangesPixels": true,
+        "flowConfinedToConduit": true,
+        "sameFrameRendersIdentical": true
+      },
+      "determinism": [
+        {
+          "frame": 210,
+          "identical": true
+        },
+        {
+          "frame": 280,
+          "identical": true
+        }
+      ],
+      "flowMask": {
+        "changedPixels": 13995,
+        "significantPixelsOutsideSourceAlpha": 0,
+        "differenceThreshold": 8,
+        "antialiasTolerancePixels": 2
+      },
+      "performance": {
+        "baselineSeconds": 37.01,
+        "prototypeSeconds": 44.15,
+        "increaseSeconds": 7.140000000000001,
+        "increasePercent": 19.292083220751156,
+        "note": "One retained baseline and one prototype render; some free regression/build checks ran concurrently. Additional SVG masks, highlights and particle nodes are the added rendering work. No quality reduction or particle-count reduction was used."
+      },
+      "clocks": "Effects use the existing normalized illustration clock plus subject timeOffset. Camera keys use output scene-local frames. Existing group offsets explicitly continue emitters across handoffs."
+    }
+  },
+  "note": "Generated artifacts remain ignored; sampled lossless determinism does not guarantee byte-identical encoded MP4 output."
+}

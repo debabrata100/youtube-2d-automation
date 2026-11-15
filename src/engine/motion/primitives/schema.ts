@@ -1,0 +1,22 @@
+import {z} from 'zod';
+export const easingSchema=z.enum(['linear','smoothstep','ease-out-cubic']).default('smoothstep');
+export const normalizedPoint=z.object({x:z.number().finite().min(0).max(1),y:z.number().finite().min(0).max(1)}).strict();
+const vector=z.object({x:z.number().finite().min(-.002).max(.002),y:z.number().finite().min(-.002).max(.002)}).strict();
+export const pathSchema=z.object({start:normalizedPoint,segments:z.array(z.discriminatedUnion('type',[
+ z.object({type:z.literal('line'),to:normalizedPoint}).strict(),
+ z.object({type:z.literal('cubic-bezier'),control1:normalizedPoint,control2:normalizedPoint,to:normalizedPoint}).strict(),
+])).min(1).max(12)}).strict().refine(path=>path.segments.some(s=>[s.to,...(s.type==='cubic-bezier'?[s.control1,s.control2]:[])].some(p=>p.x!==path.start.x||p.y!==path.start.y)),'Path must have nonzero length');
+const lifeTrack=(max:number)=>z.array(z.object({at:z.number().min(0).max(1),value:z.number().min(0).max(max)}).strict()).min(2).max(8).refine(keys=>keys[0].at===0&&keys.at(-1)!.at===1&&keys.every((k,i)=>!i||k.at>keys[i-1].at),'Lifetime keys must increase from 0 to 1');
+const range=(min:number,max:number)=>z.tuple([z.number().min(min).max(max),z.number().min(min).max(max)]).refine(([a,b])=>a<=b,'Range minimum must not exceed maximum');
+const base={id:z.string().regex(/^[a-zA-Z][a-zA-Z0-9-]*$/),clipToSource:z.boolean().default(false)};
+export const pathMotionSchema=z.object({...base,type:z.literal('path-motion'),path:pathSchema,startFrame:z.number().int().min(0).max(18000),durationFrames:z.number().int().min(2).max(18000),endFrame:z.number().int().min(1).max(18000).optional(),repeat:z.boolean().default(false),copies:z.number().int().min(1).max(8).default(1),easing:easingSchema,radius:z.number().min(.001).max(.06).default(.008),aspect:z.number().min(.2).max(8).default(1),scale:z.number().min(.1).max(4).default(1),opacity:z.number().min(0).max(1).default(.8),color:z.string().regex(/^#[a-fA-F0-9]{6}$/),orientAlongPath:z.boolean().default(false)}).strict().refine(e=>e.endFrame===undefined||e.endFrame>e.startFrame,'Path end must follow its start');
+export const emitterSchema=z.object({...base,type:z.literal('particles'),count:z.number().int().min(1).max(96),seed:z.number().int().min(0).max(4294967295),startFrame:z.number().int().min(0).max(18000),endFrame:z.number().int().min(1).max(18000),emitter:normalizedPoint.extend({width:z.number().min(0).max(1).default(0),height:z.number().min(0).max(1).default(0)}),lifetimeFrames:range(2,600),velocity:z.object({angleDegrees:z.number().min(-360).max(360),spreadDegrees:z.number().min(0).max(180).default(0),speed:range(0,.03)}).strict(),acceleration:vector.default({x:0,y:0}),radius:range(.0005,.03),opacity:lifeTrack(1).default([{at:0,value:0},{at:.1,value:.85},{at:.75,value:.6},{at:1,value:0}]),scale:lifeTrack(4).default([{at:0,value:.4},{at:.2,value:1},{at:1,value:0}]),colors:z.array(z.string().regex(/^#[a-fA-F0-9]{6}$/)).min(1).max(8),shape:z.enum(['circle','streak','diamond']).default('circle')}).strict().refine(e=>e.endFrame>e.startFrame,'Emission end must follow start');
+export const motionEffectSchema=z.discriminatedUnion('type',[pathMotionSchema,emitterSchema]);
+export type PathConfig=z.infer<typeof pathSchema>;
+export type PathMotionConfig=z.infer<typeof pathMotionSchema>;
+export type EmitterConfig=z.infer<typeof emitterSchema>;
+export type MotionEffectConfig=z.infer<typeof motionEffectSchema>;
+export const cameraKeyframeSchema=z.object({frame:z.number().int().min(0).max(18000),focus:normalizedPoint.default({x:.5,y:.5}),x:z.number().min(-.2).max(.2).default(0),y:z.number().min(-.2).max(.2).default(0),zoom:z.number().min(.9).max(1.4).default(1),rotation:z.number().min(-3).max(3).default(0),easing:easingSchema}).strict();
+export const cameraKeyframesSchema=z.array(cameraKeyframeSchema).min(1).max(12).refine(keys=>keys.every((k,i)=>!i||k.frame>keys[i-1].frame),'Camera keyframes must strictly increase');
+export type PrimitiveCameraKeyframe=z.infer<typeof cameraKeyframeSchema>;
+export const easeMotion=(t:number,easing:z.infer<typeof easingSchema>)=>{const v=Math.max(0,Math.min(1,t));return easing==='linear'?v:easing==='ease-out-cubic'?1-(1-v)**3:v*v*(3-2*v);};

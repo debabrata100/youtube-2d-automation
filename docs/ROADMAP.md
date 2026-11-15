@@ -46,6 +46,14 @@ M2.3.3 — **approved narration integrated; final encoded video technically veri
 
 M2.3.4 — **rendered and technically validated; final human review pending**. Configurable production disclosure defaults off. Opt-in generic phrase cues schedule variable 66/84/93/75/132-frame scenes and preserve illustration clocks; original plans remain compatible. Transition-midpoint deviation max 8.67 ms / mean 4.50 ms, no minimum-duration exceptions. Approved narration/artwork reused unchanged; final 1080×1920 / 30 FPS / 450-frame / 15-second H.264/AAC render took 37.01 seconds. TypeScript, 256 tests, both production bundles, encoded frame/audio/banner checks and 20 lossless regression samples pass. Zero paid services, generated audio/art, music or effects. See [report](M2_3_4_REPORT.md) and [pre-change audit](M2_3_4_TIMING_AUDIT.md). Commit/push follows the explicit milestone workflow; no default-branch merge, tag or M2.4 work.
 
+## M2.4.1 — Reusable motion primitives: controlled prototype
+
+Implemented and technically verified; **human prototype review pending**. Generic validated path motion, seeded bounded analytic particles and keyframed camera controls integrate with existing layers and Camera2D. The separate volcano prototype preserves approved narration, captions, assets and boundaries 0/66/150/243/318/450. Non-volcano examples demonstrate circulation, snowfall and camera tracking. No topic-specific engine component, dependency upgrade or paid request was added.
+
+Final local job: `jobs/volcano-m2-4-1-prototype/`. H.264/AAC, 1080×1920, 30 FPS, 450 frames, 15.000 seconds; render/encode/mux 44.15 seconds versus retained baseline 37.01 seconds (+19.3%). TypeScript, 280 tests, both production bundles, 20 legacy lossless comparisons, two repeated prototype frames, mask containment, audio/caption preservation and encoded-output checks pass. All 106 protected paths remain unchanged. See [report](M2_4_1_MOTION_PRIMITIVES_REPORT.md) and [verification receipt](M2_4_1_VERIFICATION.json).
+
+Publication is authorized on `codex/m2-4-1-motion-primitives`; no default-branch merge or tag. Remaining review covers restrained particles, flow direction, camera continuity and playback. Flattened artwork and illustrative trajectories remain limitations; encoded MP4 byte identity is not guaranteed. M2.4.2 has not started.
+
 ## M3 — LangGraph AI storyboard director
 
 Research-to-plan orchestration, structured creative decisions, and plan evaluation. No M3 code is included.

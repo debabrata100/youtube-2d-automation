@@ -1,0 +1,103 @@
+{
+  "circulation": {
+    "id": "blood-flow",
+    "type": "path-motion",
+    "clipToSource": false,
+    "path": {
+      "start": {
+        "x": 0.51,
+        "y": 0.748
+      },
+      "segments": [
+        {
+          "type": "cubic-bezier",
+          "control1": {
+            "x": 0.497,
+            "y": 0.585
+          },
+          "control2": {
+            "x": 0.522,
+            "y": 0.425
+          },
+          "to": {
+            "x": 0.51,
+            "y": 0.265
+          }
+        }
+      ]
+    },
+    "startFrame": 0,
+    "durationFrames": 42,
+    "endFrame": 180,
+    "repeat": true,
+    "copies": 4,
+    "easing": "linear",
+    "radius": 0.012,
+    "aspect": 2.8,
+    "opacity": 0.95,
+    "scale": 1,
+    "color": "#d44354",
+    "orientAlongPath": true
+  },
+  "snowfall": {
+    "id": "snow",
+    "type": "particles",
+    "count": 24,
+    "seed": 42,
+    "startFrame": 0,
+    "endFrame": 90,
+    "emitter": {
+      "x": 0.5,
+      "y": 0.02,
+      "width": 0.9,
+      "height": 0.02
+    },
+    "lifetimeFrames": [
+      45,
+      100
+    ],
+    "velocity": {
+      "angleDegrees": 90,
+      "spreadDegrees": 15,
+      "speed": [
+        0.001,
+        0.004
+      ]
+    },
+    "acceleration": {
+      "x": 0,
+      "y": 2e-05
+    },
+    "radius": [
+      0.001,
+      0.003
+    ],
+    "colors": [
+      "#eef4ff"
+    ],
+    "shape": "circle"
+  },
+  "camera-follow": {
+    "boundaryMode": "cover",
+    "keyframes": [
+      {
+        "frame": 0,
+        "focus": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "zoom": 1
+      },
+      {
+        "frame": 90,
+        "focus": {
+          "x": 0.53,
+          "y": 0.48
+        },
+        "zoom": 1.2,
+        "rotation": 1,
+        "easing": "smoothstep"
+      }
+    ]
+  }
+}

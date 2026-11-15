@@ -1,4 +1,5 @@
 import {z} from 'zod';
+import {motionEffectSchema} from '../motion/primitives/schema';
 
 export const trackSchema = (min: number, max: number) => z.array(z.object({frame: z.number().int().min(0).max(18000), value: z.number().min(min).max(max)}).strict()).min(1).max(40).refine(keys => keys.every((key, i) => !i || key.frame > keys[i - 1].frame), 'Track frames must strictly increase');
 const point = z.object({x: z.number().finite(), y: z.number().finite()}).strict();
@@ -7,6 +8,7 @@ const maskKeys = z.array(z.object({frame: z.number().int().nonnegative(), asset:
 export const flowSchema = z.discriminatedUnion('type', [z.object({type:z.literal('directional'),direction: z.enum(['up', 'down', 'left', 'right']), periodFrames: z.number().min(45).max(900), phase: z.number().min(0).max(1).default(0), opacity: z.number().min(0).max(.22), bandWidth: z.number().min(20).max(400), bounds: z.object({x: z.number(), y: z.number(), width: z.number().positive(), height: z.number().positive()}).strict(), }).strict(),z.object({type:z.literal('path'),opacity:z.number().min(0).max(.22),maskKeys}).strict()]);
 export const layerSchema = z.object({
   id: z.string().min(1), asset: z.string().min(1),
+  effects:z.array(motionEffectSchema).max(6).optional(),
   anchor: point.optional(),
   opacity: trackSchema(0, 1).optional(), x: trackSchema(-4000, 4000).optional(), y: trackSchema(-4000, 4000).optional(), scale: trackSchema(.1, 3).optional(), brightness: trackSchema(.5, 1.5).optional(),
   masks: z.array(mask).max(4).optional(),
@@ -22,7 +24,11 @@ export const layerSchema = z.object({
 export const groupSchema = z.object({
   id: z.string().min(1), width: z.number().positive(), height: z.number().positive(), layers: z.array(layerSchema).min(1).max(40),
   annotations: z.array(z.object({id: z.string().min(1), text: z.string().min(1).max(60), x: z.number(), y: z.number(), size: z.number().min(12).max(100).default(40), anchor: z.enum(['start', 'middle', 'end']).default('middle'), opacity: trackSchema(0, 1).optional(), connector: z.object({from: point, to: point}).strict().optional()}).strict()).max(8).optional(),
-}).strict().refine(group => new Set(group.layers.map(layer => layer.id)).size === group.layers.length, 'Duplicate illustration layer ID');
+}).strict().refine(group => new Set(group.layers.map(layer => layer.id)).size === group.layers.length, 'Duplicate illustration layer ID').superRefine((group,ctx)=>{
+ const effects=group.layers.flatMap(l=>l.effects??[]);
+ if(new Set(effects.map(e=>e.id)).size!==effects.length)ctx.addIssue({code:'custom',message:'Motion effect IDs must be unique within a group'});
+ if(effects.reduce((sum,e)=>sum+(e.type==='particles'?e.count:0),0)>240)ctx.addIssue({code:'custom',message:'Group particle budget exceeds 240 records'});
+});
 export type IllustrationGroup = z.infer<typeof groupSchema>;
 export type IllustrationLayerConfig = z.infer<typeof layerSchema>;
 export type Track = Array<{frame: number; value: number}>;

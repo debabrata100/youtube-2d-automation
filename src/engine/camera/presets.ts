@@ -1,6 +1,8 @@
 import {z} from 'zod';
 import {cameraPoseAt} from '../../motion/camera';
 import {smoothstep} from '../../motion/easing';
+import {cameraKeyframesSchema} from '../motion/primitives/schema';
+import {keyframeCameraAt} from '../motion/primitives/camera';
 const endpoint = z.object({x: z.number().min(.1).max(.9), y: z.number().min(.1).max(.9), zoom: z.number().min(.75).max(1.5)}).strict();
 
 export const cameraSchema = z.object({
@@ -8,12 +10,14 @@ export const cameraSchema = z.object({
   amount: z.number().min(0).max(.3).default(.1),
   offsetX: z.number().min(-.2).max(.2).default(.07),
   offsetY: z.number().min(-.2).max(.2).default(0),
+  keyframes:cameraKeyframesSchema.optional(),boundaryMode:z.enum(['cover','backdrop']).optional(),
   from: endpoint.optional(), to: endpoint.optional(), holdFrames: z.number().int().min(0).max(900).optional(),
-}).strict().refine(config => Boolean(config.from) === Boolean(config.to), 'Provide both camera endpoints');
+}).strict().refine(config => Boolean(config.from) === Boolean(config.to), 'Provide both camera endpoints').refine(config=>!config.keyframes||!config.from,'Choose keyframes or legacy endpoints, not both');
 export type CameraConfig = z.infer<typeof cameraSchema>;
 
 /** Same neutral pose and zero velocity at either edge, independent of scene duration. */
 export const cameraPresetAt = (config: CameraConfig, frame: number, duration: number, width: number, height: number) => {
+  if(config.keyframes)return keyframeCameraAt(config.keyframes,frame,width,height,config.boundaryMode??'cover');
   if (config.from && config.to) {
     const end = Math.max(1, duration - 1 - (config.holdFrames ?? 0)), t = smoothstep(frame / end);
     const keys = [config.from, config.to].map((pose, i) => ({frame: i, focus: {x: pose.x * width, y: pose.y * height}, zoom: pose.zoom, rotation: 0}));

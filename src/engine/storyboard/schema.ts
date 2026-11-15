@@ -59,6 +59,7 @@ export const storyboardSchema = z.object({
   });
   if (storyboard.backdrop && !assets.has(storyboard.backdrop.asset)) ctx.addIssue({code: 'custom', path: ['backdrop', 'asset'], message: 'Missing backdrop asset'});
   storyboard.scenes.forEach((scene, i) => {
+    if(scene.camera.keyframes&&scene.camera.boundaryMode==='backdrop'&&(!storyboard.backdrop||storyboard.assets.find(a=>a.id===storyboard.backdrop!.asset)?.transparent!==false))ctx.addIssue({code:'custom',path:['scenes',i,'camera'],message:'Backdrop camera mode requires a fixed explicitly opaque backdrop asset'});
     if (scenes.has(scene.id)) ctx.addIssue({code: 'custom', path: ['scenes', i, 'id'], message: `Duplicate scene ID: ${scene.id}`});
     scenes.add(scene.id);
     for (const id of sceneAssetIds(scene)) if (!references.has(id)) ctx.addIssue({code: 'custom', path: ['scenes', i, 'config'], message: `Missing asset: ${id}`});
