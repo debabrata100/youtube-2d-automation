@@ -11,6 +11,9 @@ import {makeParticles} from '../motion/particles';
 import {crossfadeAt, trackAt} from '../engine/motion/layers';
 import {NarrationOverlay} from '../captions/renderer';
 import type {NarrationOverlayConfig} from '../captions/schema';
+import {LayeredSubject} from '../engine/templates/LayeredSubject';
+import {GrainOverlay} from '../engine/kit/KitElement';
+import {getTheme} from '../engine/style/theme';
 
 const StoryboardScene: React.FC<{storyboard: Storyboard; scene: GenericScene; first?: boolean; last?: boolean; hideCaptions?:boolean}> = ({storyboard, scene, first = true, last = true,hideCaptions=false}) => {
   const timelineFrame = useCurrentFrame();
@@ -32,6 +35,13 @@ const StoryboardScene: React.FC<{storyboard: Storyboard; scene: GenericScene; fi
   </AbsoluteFill>;
 };
 
+/** A full-frame layered group used as an animated backdrop (sky, parallax ridges, drifting clouds). Uses the global frame. */
+const BackdropGroup: React.FC<{storyboard: Storyboard; frame: number}> = ({storyboard, frame}) => {
+  const group = storyboard.groups!.find(g => g.id === storyboard.backdrop!.group)!;
+  const assets = React.useMemo(() => createAssetRegistry(storyboard.assets), [storyboard.assets]);
+  return <LayeredSubject group={group} subject={{asset: group.id, x: .5, y: .5, size: 1}} frame={frame} storyboard={storyboard} assets={assets}/>;
+};
+
 export const StoryboardComposition: React.FC<{storyboard: Storyboard;narration?:NarrationOverlayConfig}> = ({storyboard: input,narration}) => {
   const storyboard = React.useMemo(() => parseStoryboard(input), [input]);
   const globalFrame=useCurrentFrame();
@@ -39,12 +49,14 @@ export const StoryboardComposition: React.FC<{storyboard: Storyboard;narration?:
   const {width, height} = storyboard.format;
   const particles = React.useMemo(() => makeParticles(36, 2021), []);
   return <AbsoluteFill style={{background: storyboard.background, overflow: 'hidden'}}>
-    {storyboard.backdrop && <><Img src={staticFile(storyboard.assets.find(asset => asset.id === storyboard.backdrop!.asset)!.path)} style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover',transform:backdropMotion?`translate(${trackAt(globalFrame,backdropMotion.x,0)}px,${trackAt(globalFrame,backdropMotion.y,0)}px) scale(${trackAt(globalFrame,backdropMotion.scale,1)})`:undefined}}/><AbsoluteFill style={{background: '#10101f', opacity: storyboard.backdrop.dim}}/></>}
+    {storyboard.backdrop?.group && <BackdropGroup storyboard={storyboard} frame={globalFrame}/>}
+    {storyboard.backdrop?.asset && <><Img src={staticFile(storyboard.assets.find(asset => asset.id === storyboard.backdrop!.asset)!.path)} style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover',transform:backdropMotion?`translate(${trackAt(globalFrame,backdropMotion.x,0)}px,${trackAt(globalFrame,backdropMotion.y,0)}px) scale(${trackAt(globalFrame,backdropMotion.scale,1)})`:undefined}}/><AbsoluteFill style={{background: '#10101f', opacity: storyboard.backdrop.dim}}/></>}
     {(!storyboard.backdrop || storyboard.backdrop.decoration) && <>
     <AbsoluteFill style={{background: `radial-gradient(ellipse at 35% 45%, ${storyboard.accent}13, transparent 70%)`}}/>
     <svg width={width} height={height} style={{position: 'absolute'}}>{particles.map(p => <circle key={p.id} cx={p.phase / (Math.PI * 2) * width} cy={p.radiusX / 500 * height} r={width / 1080 * (p.size * .14)} fill="#ffffff" opacity={p.opacity * .3}/>)}</svg>
     </>}
     {storyboardTimeline(storyboard).map(({scene, startFrame}, i) => <Sequence key={scene.id} from={startFrame} durationInFrames={scene.durationFrames + (i < storyboard.scenes.length - 1 ? storyboard.crossfadeFrames ?? 0 : 0)}><StoryboardScene storyboard={storyboard} scene={scene} first={i === 0} last={i === storyboard.scenes.length - 1} hideCaptions={Boolean(narration)}/></Sequence>)}
+    {storyboard.themeId && <GrainOverlay theme={getTheme(storyboard.themeId)} width={width} height={height}/>}
     {narration&&<NarrationOverlay config={narration}/>}
   </AbsoluteFill>;
 };

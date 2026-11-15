@@ -58,6 +58,8 @@ export const strokeRevealSchema = z.object({
   glow: z.object({color: hex, widthScale: z.number().min(1).max(6).default(2.6), opacity: z.number().min(0).max(1).default(.35)}).strict().optional(),
   flow: z.object({color: hex, periodFrames: z.number().min(8).max(600), dash: z.number().min(.01).max(.5).default(.08), gap: z.number().min(.01).max(1).default(.22), opacity: z.number().min(0).max(1).default(.7), widthScale: z.number().min(.1).max(1).default(.45)}).strict().optional(),
   headGlow: z.boolean().default(true),
+  /** Filled arrowhead at the reveal front, sized as a multiple of the stroke width. */
+  arrowHead: z.number().min(1).max(6).optional(),
 });
 
 export const motionEffectSchema=z.discriminatedUnion('type',[pathMotionSchema,emitterSchema,puffsSchema,strokeRevealSchema]);

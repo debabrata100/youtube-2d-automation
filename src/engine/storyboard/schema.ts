@@ -3,6 +3,7 @@ import {assetSchema} from '../assets/registry';
 import {cameraSchema} from '../camera/presets';
 import {motionSchema} from '../motion/presets';
 import {groupSchema, layerAssetIds, trackSchema} from './layers';
+import {getTheme, resolveThemeRefs, themeIds} from '../style/theme';
 
 const color = z.string().regex(/^#[0-9a-fA-F]{6}$/, 'Expected a six-digit hex color');
 const subject = z.object({asset: z.string().min(1), x: z.number().min(.1).max(.9).default(.5), y: z.number().min(.25).max(.85).default(.56), size: z.number().min(.08).max(.9).default(.65), timeOffset: z.number().int().nonnegative().optional()}).strict();
@@ -40,9 +41,11 @@ export const storyboardSchema = z.object({
   format: z.object({width: z.number().int().min(320).max(3840), height: z.number().int().min(320).max(3840), fps: z.number().int().min(1).max(60)}).strict().refine(f => f.width % 2 === 0 && f.height % 2 === 0, 'H.264 dimensions must be even'),
   styleId: z.literal('cinematic-illustrated'),
   background: color.default('#10152e'), accent: color.default('#ffd166'),
-  assets: z.array(assetSchema).min(1).max(100), scenes: z.array(genericSceneSchema).min(1).max(100),
+  assets: z.array(assetSchema).max(100), scenes: z.array(genericSceneSchema).min(1).max(100),
   groups: z.array(groupSchema).max(30).optional(),
-  backdrop: z.object({asset: z.string().min(1), decoration: z.boolean().default(false), dim: z.number().min(0).max(.8).default(0), motion:z.object({scale:trackSchema(1,1.2),x:trackSchema(-100,100),y:trackSchema(-100,100)}).strict().optional()}).strict().optional(),
+  /** Theme from src/engine/style/themes; enables kit layers and "@role.path" colour references. */
+  themeId: z.string().optional(),
+  backdrop: z.object({asset: z.string().min(1).optional(), group: z.string().min(1).optional(), decoration: z.boolean().default(false), dim: z.number().min(0).max(.8).default(0), motion:z.object({scale:trackSchema(1,1.2),x:trackSchema(-100,100),y:trackSchema(-100,100)}).strict().optional()}).strict().optional(),
   narrationTiming:z.object({minimumSceneFrames:z.number().int().min(12).max(900).default(45),maximumDeviationSeconds:z.number().min(0).max(2).default(.2)}).strict().optional(),
   crossfadeFrames: z.number().int().min(2).max(20).optional(),
 }).strict().superRefine((storyboard, ctx) => {
@@ -57,9 +60,13 @@ export const storyboardSchema = z.object({
     references.add(group.id);
     for (const layer of group.layers) for (const id of layerAssetIds(layer)) if (!assets.has(id)) ctx.addIssue({code: 'custom', path: ['groups', i, 'layers', layer.id], message: `Missing layer asset: ${id}`});
   });
-  if (storyboard.backdrop && !assets.has(storyboard.backdrop.asset)) ctx.addIssue({code: 'custom', path: ['backdrop', 'asset'], message: 'Missing backdrop asset'});
+  if (storyboard.themeId && !themeIds().includes(storyboard.themeId)) ctx.addIssue({code: 'custom', path: ['themeId'], message: `Unknown theme: ${storyboard.themeId}`});
+  if (!storyboard.themeId && storyboard.groups?.some(g => g.layers.some(l => l.kit))) ctx.addIssue({code: 'custom', path: ['themeId'], message: 'Kit layers require a themeId'});
+  if (storyboard.backdrop && Boolean(storyboard.backdrop.asset) === Boolean(storyboard.backdrop.group)) ctx.addIssue({code: 'custom', path: ['backdrop'], message: 'Backdrop needs exactly one of asset or group'});
+  if (storyboard.backdrop?.asset && !assets.has(storyboard.backdrop.asset)) ctx.addIssue({code: 'custom', path: ['backdrop', 'asset'], message: 'Missing backdrop asset'});
+  if (storyboard.backdrop?.group && !storyboard.groups?.some(g => g.id === storyboard.backdrop!.group)) ctx.addIssue({code: 'custom', path: ['backdrop', 'group'], message: 'Missing backdrop group'});
   storyboard.scenes.forEach((scene, i) => {
-    if(scene.camera.keyframes&&scene.camera.boundaryMode==='backdrop'&&(!storyboard.backdrop||storyboard.assets.find(a=>a.id===storyboard.backdrop!.asset)?.transparent!==false))ctx.addIssue({code:'custom',path:['scenes',i,'camera'],message:'Backdrop camera mode requires a fixed explicitly opaque backdrop asset'});
+    if(scene.camera.keyframes&&scene.camera.boundaryMode==='backdrop'&&(!storyboard.backdrop||(!storyboard.backdrop.group&&storyboard.assets.find(a=>a.id===storyboard.backdrop!.asset)?.transparent!==false)))ctx.addIssue({code:'custom',path:['scenes',i,'camera'],message:'Backdrop camera mode requires a fixed explicitly opaque backdrop asset'});
     if (scenes.has(scene.id)) ctx.addIssue({code: 'custom', path: ['scenes', i, 'id'], message: `Duplicate scene ID: ${scene.id}`});
     scenes.add(scene.id);
     for (const id of sceneAssetIds(scene)) if (!references.has(id)) ctx.addIssue({code: 'custom', path: ['scenes', i, 'config'], message: `Missing asset: ${id}`});
@@ -69,4 +76,8 @@ export const storyboardSchema = z.object({
   });
 });
 export type Storyboard = z.infer<typeof storyboardSchema>;
-export const parseStoryboard = (value: unknown): Storyboard => storyboardSchema.parse(value);
+/** Resolves "@role.path" theme colours before validation, so every downstream consumer sees plain hex. */
+export const parseStoryboard = (value: unknown): Storyboard => {
+  const themeId = (value as {themeId?: unknown} | null)?.themeId;
+  return storyboardSchema.parse(typeof themeId === 'string' && themeIds().includes(themeId) ? resolveThemeRefs(value, getTheme(themeId)) : value);
+};

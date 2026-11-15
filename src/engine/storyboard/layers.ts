@@ -1,5 +1,6 @@
 import {z} from 'zod';
 import {motionEffectSchema} from '../motion/primitives/schema';
+import {kitSchema} from '../kit/schema';
 
 export const trackSchema = (min: number, max: number) => z.array(z.object({frame: z.number().int().min(0).max(18000), value: z.number().min(min).max(max)}).strict()).min(1).max(40).refine(keys => keys.every((key, i) => !i || key.frame > keys[i - 1].frame), 'Track frames must strictly increase');
 const point = z.object({x: z.number().finite(), y: z.number().finite()}).strict();
@@ -10,6 +11,8 @@ export const layerSchema = z.object({
   id: z.string().min(1),
   /** Omit for an effects-only layer (procedural smoke, strokes, particles) with no source image. */
   asset: z.string().min(1).optional(),
+  /** Procedural themed vector element drawn in place of (or above) a source image. */
+  kit: kitSchema.optional(),
   effects:z.array(motionEffectSchema).max(6).optional(),
   anchor: point.optional(),
   opacity: trackSchema(0, 1).optional(), x: trackSchema(-4000, 4000).optional(), y: trackSchema(-4000, 4000).optional(), scale: trackSchema(.1, 3).optional(), brightness: trackSchema(.5, 1.5).optional(),
@@ -23,14 +26,15 @@ export const layerSchema = z.object({
     z.object({type: z.literal('mask-sequence'), keys: z.array(z.object({frame: z.number().int().nonnegative(), asset: z.string().min(1)}).strict()).min(2).max(40).refine(keys => keys.every((key, i) => !i || key.frame > keys[i - 1].frame), 'Mask frames must strictly increase')}).strict(),
   ]).optional(),
 }).strict().superRefine((layer, ctx) => {
+  if (layer.asset && layer.kit) ctx.addIssue({code: 'custom', message: 'A layer uses either an asset or a kit element, not both'});
   if (layer.asset) return;
   const needsSource = [layer.textureDrift && 'textureDrift', layer.flow && 'flow', layer.effects?.some(e => e.clipToSource) && 'clipToSource'].filter(Boolean);
   if (needsSource.length) ctx.addIssue({code: 'custom', message: `Effects-only layer cannot use source-image features: ${needsSource.join(', ')}`});
-  if (!layer.effects?.length) ctx.addIssue({code: 'custom', message: 'A layer without an asset must declare at least one effect'});
+  if (!layer.effects?.length && !layer.kit) ctx.addIssue({code: 'custom', message: 'A layer without an asset must declare a kit element or at least one effect'});
 });
 export const groupSchema = z.object({
   id: z.string().min(1), width: z.number().positive(), height: z.number().positive(), layers: z.array(layerSchema).min(1).max(40),
-  annotations: z.array(z.object({id: z.string().min(1), text: z.string().min(1).max(60), x: z.number(), y: z.number(), size: z.number().min(12).max(100).default(40), anchor: z.enum(['start', 'middle', 'end']).default('middle'), opacity: trackSchema(0, 1).optional(), connector: z.object({from: point, to: point}).strict().optional()}).strict()).max(8).optional(),
+  annotations: z.array(z.object({id: z.string().min(1), text: z.string().min(1).max(60), x: z.number(), y: z.number(), size: z.number().min(12).max(100).default(40), anchor: z.enum(['start', 'middle', 'end']).default('middle'), variant: z.enum(['plain', 'pill']).default('plain'), opacity: trackSchema(0, 1).optional(), connector: z.object({from: point, to: point}).strict().optional()}).strict()).max(8).optional(),
 }).strict().refine(group => new Set(group.layers.map(layer => layer.id)).size === group.layers.length, 'Duplicate illustration layer ID').superRefine((group,ctx)=>{
  const effects=group.layers.flatMap(l=>l.effects??[]);
  if(new Set(effects.map(e=>e.id)).size!==effects.length)ctx.addIssue({code:'custom',message:'Motion effect IDs must be unique within a group'});

@@ -1,0 +1,25 @@
+{
+  "id": "explainer-day",
+  "name": "Explainer flat - bright day",
+  "palette": {
+    "sky": {"top": "#3f8fd8", "mid": "#7cc0ee", "horizon": "#d8f1ff", "glow": "#fff6d6"},
+    "sun": {"core": "#fff7c2", "glow": "#ffe27a"},
+    "ridges": ["#9fc3d9", "#7aa6c4", "#5d8fa8", "#46788f"],
+    "ground": {"top": "#7fbf6a", "bottom": "#3f7a4a", "detail": "#a3d68a"},
+    "rock": {"light": "#c9b8a2", "mid": "#9c8a78", "dark": "#6a5d55", "outline": "#2a2a33", "rim": "#fff4dc", "crater": "#2e2a2e"},
+    "strata": ["#c9a27e", "#b08a6a", "#d8b48e", "#9a7558", "#c19672"],
+    "underground": ["#7a5f4c", "#6a5142", "#584336"],
+    "hot": {"core": "#fff2a8", "mid": "#ffa03a", "edge": "#ff5a1f", "glow": "#ff8a3d"},
+    "smoke": {"light": "#ffffff", "mid": "#d5dde6", "shadow": "#93a3b5"},
+    "cloud": {"light": "#ffffff", "shadow": "#b9d3ea"},
+    "water": {"light": "#8fe0f2", "mid": "#2f9bd1", "deep": "#1b5d9c", "foam": "#f2feff"},
+    "snow": "#ffffff",
+    "text": {"fill": "#ffffff", "outline": "#14213d", "accent": "#ffcf5a"},
+    "label": {"bg": "#14213d", "fg": "#ffffff", "line": "#14213d"}
+  },
+  "line": {"width": 5, "color": "#24303f"},
+  "light": {"from": "left"},
+  "grain": {"opacity": 0.05, "density": 1400, "seed": 11},
+  "label": {"fontFamily": "Arial, sans-serif", "fontWeight": 800, "radius": 18},
+  "caption": {"variant": "outline", "fontSize": 66, "top": 0.12, "textColor": "#ffffff", "outlineColor": "#14213d"}
+}

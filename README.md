@@ -206,3 +206,11 @@ node --import tsx scripts/assemble-job.ts jobs/<new-job>
 ```
 
 Regenerate the B/C storyboards with `python3 scripts/authoring/build-style-spike-storyboards.py`. See `docs/M2_5_STYLE_SPIKE_REPORT.md`.
+
+## M2.6 vector kit — quick reference
+
+- Themes live in `src/engine/style/themes/*.json`; a storyboard picks one with `"themeId"` and uses colours as `"@role.path"` (e.g. `"@hot.core"`).
+- A layer can be `{"id": "cone", "kit": {"type": "mountain", ...}}`; see `src/engine/kit/schema.ts` for all element types.
+- `"backdrop": {"group": "backdrop"}` renders a full-frame animated group behind every scene.
+- Kit storyboards: `storyboards/volcano-kit.json` (narrated) and `storyboards/water-cycle-demo.json` (no narration: `node --import tsx scripts/render-storyboard.ts storyboards/water-cycle-demo.json`).
+- Regenerate both with `python3 scripts/authoring/build-kit-storyboards.py`. Captions default to the theme's caption style. See `docs/M2_6_VECTOR_STYLE_KIT_REPORT.md`.

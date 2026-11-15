@@ -12,6 +12,7 @@ import {storyboardDuration,storyboardTimeline} from '../src/engine/storyboard/ti
 import {scheduleNarratedScenes} from '../src/storytelling/timing/scene-scheduler';
 import {captionsFromProviderTiming} from '../src/captions/provider-timing';
 import {captionStyleSchema,narrationOverlaySchema} from '../src/captions/schema';
+import {getTheme} from '../src/engine/style/theme';
 import {measureAudio} from '../src/audio/metadata';
 import {validateAssetFiles} from './storyboard-assets';
 import {browserExecutable,run} from './media-tools';
@@ -24,7 +25,7 @@ const main=async()=>{
  const measured=await measureAudio(o.audio),frames=storyboardDuration(sourceBoard),seconds=frames/sourceBoard.format.fps;
  if(measured.codec!=='pcm_s16le'||measured.sampleRate!==24000||measured.channels!==1||measured.durationSeconds>seconds-.2)throw Error('Unsupported or overlong approved audio; never stretch or truncate');
  await validateAssetFiles(sourceBoard.assets);
- const mapping=captionsFromProviderTiming(story,metadata.alignment,measured.durationSeconds,sourceBoard.format.fps),schedule=scheduleNarratedScenes(sourceBoard,mapping.phraseTimings),board=schedule.storyboard,style=captionStyleSchema.parse(o['caption-style']?JSON.parse(await readFile(o['caption-style'],'utf8')):{});
+ const mapping=captionsFromProviderTiming(story,metadata.alignment,measured.durationSeconds,sourceBoard.format.fps),schedule=scheduleNarratedScenes(sourceBoard,mapping.phraseTimings),board=schedule.storyboard,style=captionStyleSchema.parse(o['caption-style']?JSON.parse(await readFile(o['caption-style'],'utf8')):sourceBoard.themeId?getTheme(sourceBoard.themeId).caption:{});
  const narration=narrationOverlaySchema.parse({audioSrc:'narration/narration.wav',captionsEnabled:true,syntheticTestAudio:false,showAiDisclosureBanner:o['show-ai-disclosure-banner'],cues:mapping.cues,style});
  const job=path.resolve(o.output??`jobs/${story.id}-cached-${new Date().toISOString().replace(/[:.]/g,'-')}`);await mkdir(path.dirname(job),{recursive:true});await mkdir(job);
  for(const dir of ['audio','story','captions','reports','output','previews','public'])await mkdir(path.join(job,dir));

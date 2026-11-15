@@ -1,0 +1,530 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "water-cycle-demo",
+  "title": "The Water Cycle - M2.6 kit reuse demo",
+  "themeId": "explainer-day",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "@sky.top",
+  "accent": "@text.accent",
+  "assets": [],
+  "backdrop": {
+    "group": "backdrop"
+  },
+  "groups": [
+    {
+      "id": "backdrop",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "sky",
+          "kit": {
+            "type": "sky",
+            "horizon": 0.64,
+            "stars": 0,
+            "seed": 4
+          }
+        },
+        {
+          "id": "sun",
+          "kit": {
+            "type": "sun",
+            "x": 0.2,
+            "y": 0.16,
+            "radius": 0.06,
+            "glow": 2.8
+          }
+        },
+        {
+          "id": "cloud-0",
+          "kit": {
+            "type": "cloud",
+            "x": 0.85,
+            "y": 0.1,
+            "width": 0.2,
+            "drift": 0.0003,
+            "seed": 41
+          }
+        },
+        {
+          "id": "cloud-1",
+          "kit": {
+            "type": "cloud",
+            "x": 0.1,
+            "y": 0.32,
+            "width": 0.16,
+            "drift": 0.0005,
+            "seed": 42
+          }
+        },
+        {
+          "id": "ridges",
+          "kit": {
+            "type": "ridges",
+            "top": 0.5,
+            "bottom": 0.62,
+            "layers": 3,
+            "peaks": 6,
+            "roughness": 0.55,
+            "drift": 0.00012,
+            "seed": 21
+          }
+        },
+        {
+          "id": "ground",
+          "kit": {
+            "type": "ground",
+            "top": 0.64,
+            "rocks": 7,
+            "seed": 9
+          }
+        }
+      ]
+    },
+    {
+      "id": "cycle",
+      "width": 1000,
+      "height": 1300,
+      "layers": [
+        {
+          "id": "mountain",
+          "kit": {
+            "type": "mountain",
+            "cx": 0.72,
+            "baseY": 0.66,
+            "baseWidth": 0.64,
+            "height": 0.44,
+            "crater": 0,
+            "concavity": 0.2,
+            "part": "full",
+            "gullies": 4,
+            "snow": 0.26,
+            "seed": 6
+          }
+        },
+        {
+          "id": "sea",
+          "kit": {
+            "type": "water",
+            "x": -0.12,
+            "y": 0.62,
+            "width": 0.66,
+            "height": 0.3,
+            "waves": 3,
+            "periodFrames": 90,
+            "seed": 2
+          }
+        },
+        {
+          "id": "river",
+          "effects": [
+            {
+              "id": "runoff",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.64,
+                  "y": 0.4308
+                },
+                "segments": [
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.56,
+                      "y": 0.4923
+                    },
+                    "control2": {
+                      "x": 0.47,
+                      "y": 0.5385
+                    },
+                    "to": {
+                      "x": 0.38,
+                      "y": 0.5846
+                    }
+                  },
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.3,
+                      "y": 0.6154
+                    },
+                    "control2": {
+                      "x": 0.24,
+                      "y": 0.6308
+                    },
+                    "to": {
+                      "x": 0.18,
+                      "y": 0.6385
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 30,
+                  "value": 0
+                },
+                {
+                  "frame": 110,
+                  "value": 1
+                }
+              ],
+              "width": 0.016,
+              "color": "@water.mid",
+              "glow": {
+                "color": "@water.light",
+                "widthScale": 2.6,
+                "opacity": 0.35
+              },
+              "headGlow": true,
+              "flow": {
+                "color": "@water.foam",
+                "periodFrames": 26,
+                "dash": 0.07,
+                "gap": 0.2,
+                "opacity": 0.8,
+                "widthScale": 0.45
+              }
+            }
+          ]
+        },
+        {
+          "id": "evaporation",
+          "effects": [
+            {
+              "id": "evap-0",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.11,
+                  "y": 0.6385
+                },
+                "segments": [
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.06,
+                      "y": 0.4923
+                    },
+                    "control2": {
+                      "x": 0.18,
+                      "y": 0.3692
+                    },
+                    "to": {
+                      "x": 0.3,
+                      "y": 0.2538
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 8,
+                  "value": 0
+                },
+                {
+                  "frame": 60,
+                  "value": 1
+                }
+              ],
+              "width": 0.01,
+              "color": "@water.foam",
+              "glow": {
+                "color": "@water.light",
+                "widthScale": 2.6,
+                "opacity": 0.35
+              },
+              "headGlow": false,
+              "arrowHead": 2.6
+            },
+            {
+              "id": "evap-1",
+              "type": "stroke-reveal",
+              "path": {
+                "start": {
+                  "x": 0.26,
+                  "y": 0.6462
+                },
+                "segments": [
+                  {
+                    "type": "cubic-bezier",
+                    "control1": {
+                      "x": 0.23,
+                      "y": 0.5
+                    },
+                    "control2": {
+                      "x": 0.33,
+                      "y": 0.3846
+                    },
+                    "to": {
+                      "x": 0.42,
+                      "y": 0.2769
+                    }
+                  }
+                ]
+              },
+              "progress": [
+                {
+                  "frame": 20,
+                  "value": 0
+                },
+                {
+                  "frame": 72,
+                  "value": 1
+                }
+              ],
+              "width": 0.01,
+              "color": "@water.foam",
+              "glow": {
+                "color": "@water.light",
+                "widthScale": 2.6,
+                "opacity": 0.35
+              },
+              "headGlow": false,
+              "arrowHead": 2.6
+            }
+          ]
+        },
+        {
+          "id": "cloud-a",
+          "kit": {
+            "type": "cloud",
+            "x": 0.46,
+            "y": 0.22,
+            "width": 0.34,
+            "seed": 51
+          }
+        },
+        {
+          "id": "cloud-b",
+          "kit": {
+            "type": "cloud",
+            "x": 0.76,
+            "y": 0.17,
+            "width": 0.26,
+            "seed": 52
+          }
+        },
+        {
+          "id": "rain",
+          "effects": [
+            {
+              "id": "rain",
+              "type": "particles",
+              "count": 80,
+              "seed": 61,
+              "startFrame": 40,
+              "endFrame": 150,
+              "emitter": {
+                "x": 0.76,
+                "y": 0.2,
+                "width": 0.18,
+                "height": 0.01
+              },
+              "lifetimeFrames": [
+                18,
+                26
+              ],
+              "velocity": {
+                "angleDegrees": 100,
+                "spreadDegrees": 4,
+                "speed": [
+                  0.009,
+                  0.012
+                ]
+              },
+              "acceleration": {
+                "x": 0,
+                "y": 0
+              },
+              "radius": [
+                0.005,
+                0.007
+              ],
+              "colors": [
+                "@water.mid",
+                "@water.deep"
+              ],
+              "shape": "streak",
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 0
+                },
+                {
+                  "at": 0.15,
+                  "value": 0.95
+                },
+                {
+                  "at": 0.85,
+                  "value": 0.9
+                },
+                {
+                  "at": 1,
+                  "value": 0
+                }
+              ],
+              "scale": [
+                {
+                  "at": 0,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "evaporation",
+          "text": "Evaporation",
+          "x": 210,
+          "y": 560,
+          "size": 44,
+          "anchor": "middle",
+          "variant": "pill",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 30,
+              "value": 0
+            },
+            {
+              "frame": 46,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "condensation",
+          "text": "Condensation",
+          "x": 470,
+          "y": 168,
+          "size": 44,
+          "anchor": "middle",
+          "variant": "pill",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 55,
+              "value": 0
+            },
+            {
+              "frame": 70,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "precipitation",
+          "text": "Precipitation",
+          "x": 790,
+          "y": 520,
+          "size": 44,
+          "anchor": "middle",
+          "variant": "pill",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 70,
+              "value": 0
+            },
+            {
+              "frame": 85,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "collection",
+          "text": "Collection",
+          "x": 190,
+          "y": 1010,
+          "size": 44,
+          "anchor": "middle",
+          "variant": "pill",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 95,
+              "value": 0
+            },
+            {
+              "frame": 110,
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "water-cycle",
+      "template": "hero-reveal",
+      "durationFrames": 150,
+      "caption": {
+        "text": "The water cycle",
+        "kicker": "KIT REUSE DEMO",
+        "preset": "headline"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.56
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 149,
+            "focus": {
+              "x": 0.5,
+              "y": 0.54
+            },
+            "zoom": 1.06,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "transitionFrames": 0,
+      "config": {
+        "primary": {
+          "asset": "cycle",
+          "x": 0.5,
+          "y": 0.56,
+          "size": 0.9
+        }
+      }
+    }
+  ]
+}

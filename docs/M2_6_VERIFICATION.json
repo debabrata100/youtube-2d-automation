@@ -1,0 +1,20 @@
+{
+  "milestone": "M2.6 vector style system and shape kit",
+  "base": "6937d6701317fb1de3107f964c86a42b11ac1dab",
+  "environment": {"os": "Ubuntu 22.04 arm64 VM", "node": "v22.23.4", "browser": "Sparticuz Chromium v153 arm64 (external)", "ffmpeg": "8.1 (external)", "fontSubstitution": "Arial -> Liberation Sans"},
+  "typescript": "pass",
+  "vitest": {"files": 20, "passed": 323, "failed": 0, "added": 18},
+  "productionBundles": {"src/index.ts": "pass", "src/storyboard-index.ts": "pass"},
+  "legacyRegression": {"method": "lossless PNG renders from M2.5 tree vs branch, same environment", "frames": 33, "identical": 33},
+  "styleChecks": {"wcagAA": "pass (both themes)", "paletteLint": "pass (no raw hex in kit storyboards)", "rasterAssets": 0, "minLabelPxOn360Phone": ">= 12"},
+  "outputs": {
+    "volcanoKit": {"storyboard": "storyboards/volcano-kit.json", "theme": "explainer-dusk", "renderSeconds": 85.28, "bytes": 5475773, "sha256": "d072b7bc717930ba5a3cb2845a9018448d1809b906f07ffbbeb06a94c17e27a9", "verifiers": "verify-storyboard pass, verify-cached-story pass"},
+    "waterCycle": {"storyboard": "storyboards/water-cycle-demo.json", "theme": "explainer-day", "frames": 150, "renderSeconds": 26.44, "bytes": 1494422, "sha256": "130084e96bac5669e52f06c4ba25917ce23ec7880a2a1bc602befe12ea9abdd4", "verifiers": "verify-storyboard pass"},
+    "comparisonClip": {"file": "jobs/m2-6-comparison/c-vs-kit-phone-size.mp4", "sha256": "cd9a884e70d43b5d6c347ef889ca365b13f4b245596014358f2872dbdeb67e8f"},
+    "comparisonGrid": {"file": "jobs/m2-6-comparison/c-vs-kit-grid.png", "sha256": "2c7fa57ada57bfbc15e362355baf362ef10dfb2f33c4e274499f34d234c4128f"}
+  },
+  "encodedChecksVolcanoKit": {"codec": "h264/aac", "dimensions": "1080x1920", "fps": 30, "frames": 450, "durationSeconds": 15, "sceneBoundaries": [0, 66, 150, 243, 318, 450], "pcmCorrelation": 0.99992, "captionWords": 28, "captionCues": 5},
+  "protected": {"approvedNarrationModified": false, "approvedPaintedAssetsModified": false, "scriptModified": false},
+  "paidRequests": 0,
+  "humanVisualReview": "pending"
+}

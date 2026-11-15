@@ -61,6 +61,7 @@ const StrokeEffect: React.FC<{config: StrokeRevealConfig; frame: number; width: 
     {config.glow && <path d={d} pathLength={1} fill="none" stroke={config.glow.color} strokeOpacity={config.glow.opacity} strokeWidth={w * config.glow.widthScale} strokeLinecap="round" strokeLinejoin="round" style={reveal}/>}
     <path d={d} pathLength={1} fill="none" stroke={config.color} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round" style={reveal}/>
     {config.flow && <g mask={`url(#${id}-revealed)`}><path d={d} pathLength={1} fill="none" stroke={config.flow.color} strokeOpacity={config.flow.opacity} strokeWidth={w * config.flow.widthScale} strokeLinecap="round" style={{strokeDasharray: `${config.flow.dash} ${config.flow.gap}`, strokeDashoffset: state.flowOffset}}/></g>}
+    {config.arrowHead && (() => { const s = sampleMotionPath(table, Math.max(.001, state.progress)), a = config.arrowHead * w; return <polygon points={`0,0 ${-a * 1.3},${-a * .75} ${-a * 1.3},${a * .75}`} fill={config.color} transform={`translate(${s.position.x * width} ${s.position.y * height}) rotate(${s.angleDegrees})`}/>; })()}
     {config.headGlow && state.progress < 1 && <circle cx={head.x * width} cy={head.y * height} r={w * 1.1} fill={config.flow?.color ?? config.color} opacity=".85"/>}
   </>;
 };
