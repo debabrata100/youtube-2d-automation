@@ -22,7 +22,7 @@ export const captionsFromProviderTiming=(story:StoryScript,input:CharacterAlignm
   const firstWordIndex=cursor;const first=matches[cursor];cursor+=words(phrase).length;const last=matches[cursor-1];
   const start=a.character_start_times_seconds[codeUnits[first.index!]],end=a.character_end_times_seconds[codeUnits[last.index!+last[0].length-1]];
   phraseTimings.push({beatId:beat.id,phraseIndex:j,text:phrase,startSeconds:start,endSeconds:end,firstWordIndex,endWordIndex:cursor});
-  return captionCueSchema.parse({id:`${beat.id}-${j+1}`,beatId:beat.id,startFrame:Math.ceil(start*fps),endFrame:Math.ceil(end*fps),lines:wrapPhrase(phrase),timingBasis:'provider character timestamps; rounded to video frames'});
+  return captionCueSchema.parse({id:`${beat.id}-${j+1}`,beatId:beat.id,startFrame:Math.ceil(start*fps),endFrame:Math.ceil(end*fps),lines:wrapPhrase(phrase),words:wordTimings.slice(firstWordIndex,cursor).map(w=>({text:w.text,startFrame:Math.ceil(w.startSeconds*fps),endFrame:Math.max(Math.ceil(w.startSeconds*fps)+1,Math.ceil(w.endSeconds*fps))})),timingBasis:'provider character timestamps; rounded to video frames'});
  }));
  if(cues.some((c,i)=>c.endFrame>story.durationSeconds*fps||(i>0&&c.startFrame<cues[i-1].endFrame)))throw Error('Provider caption intervals overlap or exceed timeline');
  return{cues,wordTimings,phraseTimings,alignedText:text,timingReport:{method:'provider character timestamps',audioDurationSeconds:durationSeconds,speechSpeedAdjustment:1,endRoomSeconds:story.durationSeconds-durationSeconds,maximumFrameRoundingSeconds:1/fps,humanSynchronizationReview:'pending'}};

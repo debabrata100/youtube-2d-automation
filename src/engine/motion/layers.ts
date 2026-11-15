@@ -1,4 +1,5 @@
 import {smoothstep} from '../../motion/easing';
+import {easeMotion} from './primitives/schema';
 import type {IllustrationLayerConfig, Track} from '../storyboard/layers';
 export const flowPositionAt = (flow: NonNullable<IllustrationLayerConfig['flow']>, frame: number) => {
   if(flow.type!=='directional')throw new Error('Directional flow configuration required');
@@ -15,7 +16,9 @@ export const trackAt = (frame: number, keys: Track | undefined, fallback: number
   if (frame <= keys[0].frame) return keys[0].value;
   if (frame >= keys.at(-1)!.frame) return keys.at(-1)!.value;
   const i = keys.findIndex(key => key.frame >= frame), a = keys[i - 1], b = keys[i];
-  return a.value + (b.value - a.value) * smoothstep((frame - a.frame) / (b.frame - a.frame));
+  const t = (frame - a.frame) / (b.frame - a.frame);
+  // Per-key easing applies to the segment arriving at that key; the default stays smoothstep.
+  return a.value + (b.value - a.value) * (b.ease ? easeMotion(t, b.ease) : smoothstep(t));
 };
 export const layerStateAt = (layer: IllustrationLayerConfig, frame: number) => {
   const phase = layer.pulse ? Math.sin(frame * 2 * Math.PI / layer.pulse.periodFrames + layer.pulse.phase) : 0;

@@ -8,6 +8,7 @@ import {flowPositionAt, layerStateAt, maskSequenceAt, trackAt, wipeRectAt} from 
 import type {Storyboard, SubjectConfig} from '../storyboard/schema';
 import {KitElement} from '../kit/KitElement';
 import {getTheme, type Theme} from '../style/theme';
+import {easeMotion} from '../motion/primitives/schema';
 
 const Layer: React.FC<{layer: IllustrationLayerConfig; frame: number; group: IllustrationGroup; assets: AssetRegistry; prefix: string; theme?: Theme}> = ({layer, frame, group, assets, prefix, theme}) => {
   const id = `${prefix}-${layer.id}`, state = layerStateAt(layer, frame), source = layer.asset ? staticFile(assets.resolve(layer.asset).path) : null;
@@ -69,7 +70,9 @@ const Annotation: React.FC<{label: Label; opacity: number; theme?: Theme}> = ({l
   const font = theme?.label.fontFamily ?? 'Arial, sans-serif', weight = pill ? theme?.label.fontWeight ?? 800 : 700;
   const w = label.text.length * label.size * .58 + label.size * 1.1, h = label.size * 1.5;
   const x0 = label.anchor === 'start' ? label.x - label.size * .55 : label.anchor === 'end' ? label.x - w + label.size * .55 : label.x - w / 2;
-  return <g opacity={opacity}>
+  // Pop: scale in with overshoot as the label fades in (label anchored at its pill centre).
+  const s = label.pop ? .55 + .45 * easeMotion(opacity, 'ease-out-back') : 1, cx = x0 + w / 2, cy = label.y - label.size * .33;
+  return <g opacity={opacity} transform={s !== 1 ? `translate(${cx} ${cy}) scale(${s}) translate(${-cx} ${-cy})` : undefined}>
     {label.connector && <>
       <line x1={label.connector.from.x} y1={label.connector.from.y} x2={label.connector.to.x} y2={label.connector.to.y} stroke={line} strokeWidth={pill ? 4 : 2} opacity={pill ? 1 : .75} strokeLinecap={pill ? 'round' : undefined}/>
       {pill && <circle cx={label.connector.to.x} cy={label.connector.to.y} r={7} fill={line} stroke={bg} strokeWidth={3}/>}

@@ -4,6 +4,7 @@ import {cameraSchema} from '../camera/presets';
 import {motionSchema} from '../motion/presets';
 import {groupSchema, layerAssetIds, trackSchema} from './layers';
 import {getTheme, resolveThemeRefs, themeIds} from '../style/theme';
+import {SFX_IDS} from '../../audio/sfx-ids';
 
 const color = z.string().regex(/^#[0-9a-fA-F]{6}$/, 'Expected a six-digit hex color');
 const subject = z.object({asset: z.string().min(1), x: z.number().min(.1).max(.9).default(.5), y: z.number().min(.25).max(.85).default(.56), size: z.number().min(.08).max(.9).default(.65), timeOffset: z.number().int().nonnegative().optional()}).strict();
@@ -17,6 +18,8 @@ const base = {
   seed: z.number().int().min(0).max(4294967295).default(1),
   transitionFrames: z.number().int().min(0).max(30).default(6),
   environmentDim: z.number().min(0).max(.65).optional(),
+  /** Procedural sound effects at scene-local output frames (resolved after narration scheduling). */
+  sounds: z.array(z.object({sound: z.enum(SFX_IDS), frame: z.number().int().min(0).max(18000), gainDb: z.number().min(-30).max(6).default(0)}).strict()).max(12).optional(),
 };
 const orbitalConfig = z.object({primary: subject, secondary: subject.optional(), count: z.number().int().min(0).max(100).default(24), radiusX: z.number().min(.05).max(.4).default(.3), radiusY: z.number().min(.02).max(.2).default(.08), cycles: z.number().int().min(1).max(4).default(1), particleMotion: z.enum(['orbit', 'rise']).optional(), particleColor: color.optional(), particleOrigin: z.object({x: z.number().min(0).max(1), y: z.number().min(0).max(1)}).strict().optional(), particleStartFrame: z.number().int().nonnegative().optional()}).strict();
 export const genericSceneSchema = z.discriminatedUnion('template', [
@@ -45,6 +48,8 @@ export const storyboardSchema = z.object({
   groups: z.array(groupSchema).max(30).optional(),
   /** Theme from src/engine/style/themes; enables kit layers and "@role.path" colour references. */
   themeId: z.string().optional(),
+  /** Mix settings: optional generated music bed (a licensed file can replace it with --music), ducking and loudness target. */
+  audio: z.object({music: z.enum(['none', 'generated-pad']).default('none'), musicGainDb: z.number().min(-40).max(0).default(-16), duckRatio: z.number().min(1).max(20).default(8), targetLufs: z.number().min(-24).max(-9).default(-14)}).strict().optional(),
   backdrop: z.object({asset: z.string().min(1).optional(), group: z.string().min(1).optional(), decoration: z.boolean().default(false), dim: z.number().min(0).max(.8).default(0), motion:z.object({scale:trackSchema(1,1.2),x:trackSchema(-100,100),y:trackSchema(-100,100)}).strict().optional()}).strict().optional(),
   narrationTiming:z.object({minimumSceneFrames:z.number().int().min(12).max(900).default(45),maximumDeviationSeconds:z.number().min(0).max(2).default(.2)}).strict().optional(),
   crossfadeFrames: z.number().int().min(2).max(20).optional(),

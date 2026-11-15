@@ -1,5 +1,8 @@
 import {z} from 'zod';
-export const easingSchema=z.enum(['linear','smoothstep','ease-out-cubic']).default('smoothstep');
+/** Back easings add anticipation (in) and overshoot (out) for livelier motion. */
+export const easingNameSchema=z.enum(['linear','smoothstep','ease-out-cubic','ease-out-back','ease-in-back','ease-in-out-back']);
+export type EasingName=z.infer<typeof easingNameSchema>;
+export const easingSchema=easingNameSchema.default('smoothstep');
 export const normalizedPoint=z.object({x:z.number().finite().min(0).max(1),y:z.number().finite().min(0).max(1)}).strict();
 const vector=z.object({x:z.number().finite().min(-.002).max(.002),y:z.number().finite().min(-.002).max(.002)}).strict();
 export const pathSchema=z.object({start:normalizedPoint,segments:z.array(z.discriminatedUnion('type',[
@@ -72,4 +75,5 @@ export type StrokeRevealConfig = z.infer<typeof strokeRevealSchema>;
 export const cameraKeyframeSchema=z.object({frame:z.number().int().min(0).max(18000),focus:normalizedPoint.default({x:.5,y:.5}),x:z.number().min(-.2).max(.2).default(0),y:z.number().min(-.2).max(.2).default(0),zoom:z.number().min(.9).max(1.4).default(1),rotation:z.number().min(-3).max(3).default(0),easing:easingSchema}).strict();
 export const cameraKeyframesSchema=z.array(cameraKeyframeSchema).min(1).max(12).refine(keys=>keys.every((k,i)=>!i||k.frame>keys[i-1].frame),'Camera keyframes must strictly increase');
 export type PrimitiveCameraKeyframe=z.infer<typeof cameraKeyframeSchema>;
-export const easeMotion=(t:number,easing:z.infer<typeof easingSchema>)=>{const v=Math.max(0,Math.min(1,t));return easing==='linear'?v:easing==='ease-out-cubic'?1-(1-v)**3:v*v*(3-2*v);};
+const BACK=1.70158,BACK_IO=BACK*1.525;
+export const easeMotion=(t:number,easing:z.infer<typeof easingSchema>)=>{const v=Math.max(0,Math.min(1,t));if(easing==='ease-out-back')return 1+(BACK+1)*(v-1)**3+BACK*(v-1)**2;if(easing==='ease-in-back')return (BACK+1)*v**3-BACK*v**2;if(easing==='ease-in-out-back')return v<.5?((2*v)**2*((BACK_IO+1)*2*v-BACK_IO))/2:((2*v-2)**2*((BACK_IO+1)*(v*2-2)+BACK_IO)+2)/2;return easing==='linear'?v:easing==='ease-out-cubic'?1-(1-v)**3:v*v*(3-2*v);};

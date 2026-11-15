@@ -20,8 +20,8 @@ def cubic(points):
                                              for i in range(0, len(rest), 3)]}
 
 
-def kf(frame, x, y, zoom, rotation=0.0):
-    k = {'frame': frame, 'focus': {'x': x, 'y': y}, 'zoom': zoom, 'easing': 'smoothstep'}
+def kf(frame, x, y, zoom, rotation=0.0, easing='smoothstep'):
+    k = {'frame': frame, 'focus': {'x': x, 'y': y}, 'zoom': zoom, 'easing': easing}
     if rotation:
         k['rotation'] = rotation
     return k
@@ -59,7 +59,7 @@ def stroke(eid, path, start, end, width, color, glow, flow, arrow=None, head=Tru
 
 
 def label(lid, text, x, y, *, anchor='middle', show=(0, 20), to=None, frm=None, size=44):
-    a = {'id': lid, 'text': text, 'x': x, 'y': y, 'size': size, 'anchor': anchor, 'variant': 'pill',
+    a = {'id': lid, 'text': text, 'x': x, 'y': y, 'size': size, 'anchor': anchor, 'variant': 'pill', 'pop': True,
          'opacity': track((0, 0), (show[0], 0), (show[1], 1)) if show[0] else track((0, 0), (show[1], 1))}
     if to:
         a['connector'] = {'from': {'x': frm[0], 'y': frm[1]}, 'to': {'x': to[0], 'y': to[1]}}
@@ -90,19 +90,26 @@ lava_paths = {
 wisp = puffs('idle-wisp', CRATER[0], CRATER[1], SMOKE, count=10, start=0, end=170, travel=(.12, .2), radius=(.012, .018), growth=2.2,
              softness=.1, seed=5201, wind=.04, life=(70, 100), opacity=[{'at': 0, 'value': 0}, {'at': .2, 'value': .6}, {'at': 1, 'value': 0}])
 fade_in = track((0, 0), (18, 1))
+# Anticipation squash then overshoot, anchored at the cone base so the mountain stays planted.
+SQUASH = {'anchor': {'x': 500, 'y': 800}, 'scale': [{'frame': 0, 'value': 1}, {'frame': 5, 'value': .972}, {'frame': 11, 'value': 1.03, 'ease': 'ease-out-back'}, {'frame': 17, 'value': 1}]}
 volcano = {
     'schemaVersion': '2.1', 'projectId': 'volcano-kit', 'title': 'How a Volcano Erupts - M2.6 vector kit',
     'themeId': 'explainer-dusk', 'format': proto['format'], 'styleId': proto['styleId'], 'background': '@sky.top', 'accent': '@text.accent',
     'assets': [], 'crossfadeFrames': proto['crossfadeFrames'], 'narrationTiming': proto['narrationTiming'],
     'backdrop': {'group': 'backdrop'},
+    'audio': {'music': 'generated-pad', 'musicGainDb': -21, 'duckRatio': 8, 'targetLufs': -14},
     'groups': [
         backdrop(46, {'x': .26, 'y': .6, 'radius': .045, 'glow': 3.2},
                  [{'x': .12, 'y': .24, 'width': .3, 'drift': .0004, 'seed': 31}, {'x': .72, 'y': .33, 'width': .22, 'drift': .0006, 'seed': 32},
                   {'x': .5, 'y': .14, 'width': .17, 'drift': .0003, 'seed': 33}]),
-        {'id': 'quiet', 'width': W, 'height': H, 'layers': [{'id': 'cone', 'kit': mountain()}, {'id': 'wisp', 'effects': [wisp]}, {'id': 'rim', 'kit': mountain('rim-front')}]},
+        {'id': 'quiet', 'width': W, 'height': H, 'layers': [
+            {'id': 'cone', 'kit': mountain()},
+            {'id': 'glow', 'kit': {'type': 'glow', 'x': CRATER[0], 'y': CRATER[1], 'rx': .1, 'ry': .03, 'tone': 'hot'},
+             'opacity': track((0, .3), (8, .85), (16, .35), (26, .9), (40, .45), (60, .7), (89, .5))},
+            {'id': 'wisp', 'effects': [wisp]}, {'id': 'rim', 'kit': mountain('rim-front')}]},
         {'id': 'split', 'width': W, 'height': H, 'layers': [
-            {'id': 'left-half', 'kit': mountain('left'), 'x': track((4, 0), (30, -430)), 'opacity': track((12, 1), (26, 0))},
-            {'id': 'right-half', 'kit': mountain('right'), 'x': track((4, 0), (30, 430)), 'opacity': track((12, 1), (26, 0))},
+            {'id': 'left-half', 'kit': mountain('left'), 'x': [{'frame': 4, 'value': 0}, {'frame': 30, 'value': -430, 'ease': 'ease-in-back'}], 'opacity': track((14, 1), (28, 0))},
+            {'id': 'right-half', 'kit': mountain('right'), 'x': [{'frame': 4, 'value': 0}, {'frame': 30, 'value': 430, 'ease': 'ease-in-back'}], 'opacity': track((14, 1), (28, 0))},
         ]},
         {'id': 'internal', 'width': W, 'height': H, 'layers': [
             {'id': 'cutaway', 'opacity': fade_in, 'kit': {'type': 'strata', 'mountain': CONE, 'groundY': .6154, 'left': .02, 'right': .98, 'bottom': .9, 'bowl': .06,
@@ -121,17 +128,17 @@ volcano = {
             label('conduit-label', 'Conduit', 668, 652, anchor='start', show=(100, 120), frm=(650, 640), to=(522, 640)),
         ]},
         {'id': 'active', 'width': W, 'height': H, 'layers': [
-            {'id': 'cone', 'kit': mountain()},
+            {'id': 'cone', 'kit': mountain(), **SQUASH},
             {'id': 'glow', 'kit': {'type': 'glow', 'x': CRATER[0], 'y': CRATER[1], 'rx': .16, 'ry': .05, 'tone': 'hot'}, 'opacity': track((0, 0), (6, 1)),
-             'pulse': {'periodFrames': 30, 'brightness': .1}},
+             'pulse': {'periodFrames': 30, 'brightness': .1}, **SQUASH},
             {'id': 'column', 'effects': [
                 puffs('burst-base', CRATER[0], CRATER[1], {'light': '@rock.light', 'mid': '@smoke.shadow', 'shadow': '@rock.outline'}, count=14, start=3, end=30,
                       travel=(.16, .28), radius=(.024, .036), growth=2.5, softness=.12, seed=5102, wind=.02, spread=55, life=(34, 52), lobes=4),
                 puffs('smoke-column', CRATER[0], CRATER[1] - .002, SMOKE, count=40, start=6, end=172, travel=(.22, .37), radius=(.026, .04), growth=2.9,
                       softness=.08, seed=5101, wind=.06),
             ]},
-            {'id': 'rim', 'kit': mountain('rim-front')},
-            {'id': 'lava', 'effects': [stroke(k, p, s, e, w, '@hot.edge', '@hot.glow', '@hot.core') for k, (p, s, e, w) in lava_paths.items()]},
+            {'id': 'rim', 'kit': mountain('rim-front'), **SQUASH},
+            {'id': 'lava', **SQUASH, 'effects': [stroke(k, p, s, e, w, '@hot.edge', '@hot.glow', '@hot.core') for k, (p, s, e, w) in lava_paths.items()]},
             {'id': 'ejecta', 'effects': [{
                 'id': 'lava-bombs', 'type': 'particles', 'count': 22, 'seed': 5103, 'startFrame': 6, 'endFrame': 42,
                 'emitter': {'x': .5, 'y': .195, 'width': .03, 'height': .005}, 'lifetimeFrames': [30, 48],
@@ -150,7 +157,7 @@ def subj(a, off=None):
 
 
 cams = [
-    [kf(0, .5, .55, 1.0), kf(65, .5, .52, 1.08)],
+    [kf(0, .5, .38, 1.36, .5), kf(5, .5, .38, 1.36, -.4), kf(10, .5, .38, 1.36, .3), kf(16, .5, .38, 1.36), kf(42, .5, .55, 1.0, 0, 'ease-out-back'), kf(65, .5, .52, 1.08)],
     [kf(0, .5, .52, 1.08), kf(83, .5, .68, 1.12)],
     [kf(0, .5, .68, 1.12), kf(92, .5, .5, 1.12)],
     [kf(0, .5, .5, 1.12)] + shake(6, .5, .42, 1.24) + [kf(74, .5, .47, 1.08)],
@@ -165,8 +172,19 @@ configs = [
     {'subjects': [subj('active', 90)]},
 ]
 volcano['scenes'] = []
-for s, cam, cfg in zip(copy.deepcopy(proto['scenes']), cams, configs):
-    s.update({'camera': {'preset': 'static', 'boundaryMode': 'backdrop', 'keyframes': cam}, 'config': cfg, 'environmentDim': 0})
+def sfx(*cues):
+    return [{'sound': s, 'frame': f, 'gainDb': g} for s, f, g in cues]
+
+
+sounds = [  # gains staged so effects sit roughly 10 dB under the voice
+    sfx(('rumble', 0, -16)),
+    sfx(('whoosh', 4, -13), ('pop', 12, -17)),
+    sfx(('pop', 14, -17), ('bubble', 18, -25), ('bubble', 36, -25), ('bubble', 54, -25), ('riser', 52, -22)),
+    sfx(('boom', 3, -14), ('sizzle', 14, -28)),
+    sfx(('pop', 18, -17)),
+]
+for s, cam, cfg, snd in zip(copy.deepcopy(proto['scenes']), cams, configs, sounds):
+    s.update({'camera': {'preset': 'static', 'boundaryMode': 'backdrop', 'keyframes': cam}, 'config': cfg, 'environmentDim': 0, 'sounds': snd})
     volcano['scenes'].append(s)
 
 # ------------------------------------------------------------------ water cycle: reuse proof, no engine changes

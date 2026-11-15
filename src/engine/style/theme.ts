@@ -29,7 +29,7 @@ export const themeSchema = z.object({
   light: z.object({from: z.enum(['left', 'right'])}).strict(),
   grain: z.object({opacity: z.number().min(0).max(.2), density: z.number().int().min(0).max(4000), seed: z.number().int().min(0)}).strict(),
   label: z.object({fontFamily: z.string().min(1), fontWeight: z.number().int().min(400).max(900), radius: z.number().min(0).max(40)}).strict(),
-  caption: z.object({variant: z.enum(['box', 'outline']), fontSize: z.number().min(36).max(72), top: z.number().min(.08).max(.2), textColor: hex, outlineColor: hex}).strict(),
+  caption: z.object({variant: z.enum(['box', 'outline']), fontSize: z.number().min(36).max(72), top: z.number().min(.08).max(.2), textColor: hex, outlineColor: hex, highlight: z.enum(['none', 'word']).optional(), highlightColor: hex.optional()}).strict(),
 }).strict();
 export type Theme = z.infer<typeof themeSchema>;
 

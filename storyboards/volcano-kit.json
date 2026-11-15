@@ -20,6 +20,12 @@
   "backdrop": {
     "group": "backdrop"
   },
+  "audio": {
+    "music": "generated-pad",
+    "musicGainDb": -21,
+    "duckRatio": 8,
+    "targetLufs": -14
+  },
   "groups": [
     {
       "id": "backdrop",
@@ -121,6 +127,47 @@
             "gullies": 6,
             "seed": 3
           }
+        },
+        {
+          "id": "glow",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.2015,
+            "rx": 0.1,
+            "ry": 0.03,
+            "tone": "hot"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.3
+            },
+            {
+              "frame": 8,
+              "value": 0.85
+            },
+            {
+              "frame": 16,
+              "value": 0.35
+            },
+            {
+              "frame": 26,
+              "value": 0.9
+            },
+            {
+              "frame": 40,
+              "value": 0.45
+            },
+            {
+              "frame": 60,
+              "value": 0.7
+            },
+            {
+              "frame": 89,
+              "value": 0.5
+            }
+          ]
         },
         {
           "id": "wisp",
@@ -226,16 +273,17 @@
             },
             {
               "frame": 30,
-              "value": -430
+              "value": -430,
+              "ease": "ease-in-back"
             }
           ],
           "opacity": [
             {
-              "frame": 12,
+              "frame": 14,
               "value": 1
             },
             {
-              "frame": 26,
+              "frame": 28,
               "value": 0
             }
           ]
@@ -261,16 +309,17 @@
             },
             {
               "frame": 30,
-              "value": 430
+              "value": 430,
+              "ease": "ease-in-back"
             }
           ],
           "opacity": [
             {
-              "frame": 12,
+              "frame": 14,
               "value": 1
             },
             {
-              "frame": 26,
+              "frame": 28,
               "value": 0
             }
           ]
@@ -504,6 +553,7 @@
           "size": 44,
           "anchor": "middle",
           "variant": "pill",
+          "pop": true,
           "opacity": [
             {
               "frame": 0,
@@ -523,6 +573,7 @@
           "size": 44,
           "anchor": "start",
           "variant": "pill",
+          "pop": true,
           "opacity": [
             {
               "frame": 0,
@@ -568,7 +619,30 @@
             "part": "full",
             "gullies": 6,
             "seed": 3
-          }
+          },
+          "anchor": {
+            "x": 500,
+            "y": 800
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 5,
+              "value": 0.972
+            },
+            {
+              "frame": 11,
+              "value": 1.03,
+              "ease": "ease-out-back"
+            },
+            {
+              "frame": 17,
+              "value": 1
+            }
+          ]
         },
         {
           "id": "glow",
@@ -593,7 +667,30 @@
           "pulse": {
             "periodFrames": 30,
             "brightness": 0.1
-          }
+          },
+          "anchor": {
+            "x": 500,
+            "y": 800
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 5,
+              "value": 0.972
+            },
+            {
+              "frame": 11,
+              "value": 1.03,
+              "ease": "ease-out-back"
+            },
+            {
+              "frame": 17,
+              "value": 1
+            }
+          ]
         },
         {
           "id": "column",
@@ -733,10 +830,56 @@
             "part": "rim-front",
             "gullies": 6,
             "seed": 3
-          }
+          },
+          "anchor": {
+            "x": 500,
+            "y": 800
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 5,
+              "value": 0.972
+            },
+            {
+              "frame": 11,
+              "value": 1.03,
+              "ease": "ease-out-back"
+            },
+            {
+              "frame": 17,
+              "value": 1
+            }
+          ]
         },
         {
           "id": "lava",
+          "anchor": {
+            "x": 500,
+            "y": 800
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 5,
+              "value": 0.972
+            },
+            {
+              "frame": 11,
+              "value": 1.03,
+              "ease": "ease-out-back"
+            },
+            {
+              "frame": 17,
+              "value": 1
+            }
+          ],
           "effects": [
             {
               "id": "lava-a",
@@ -1084,6 +1227,7 @@
           "size": 44,
           "anchor": "start",
           "variant": "pill",
+          "pop": true,
           "opacity": [
             {
               "frame": 0,
@@ -1131,10 +1275,49 @@
             "frame": 0,
             "focus": {
               "x": 0.5,
+              "y": 0.38
+            },
+            "zoom": 1.36,
+            "easing": "smoothstep",
+            "rotation": 0.5
+          },
+          {
+            "frame": 5,
+            "focus": {
+              "x": 0.5,
+              "y": 0.38
+            },
+            "zoom": 1.36,
+            "easing": "smoothstep",
+            "rotation": -0.4
+          },
+          {
+            "frame": 10,
+            "focus": {
+              "x": 0.5,
+              "y": 0.38
+            },
+            "zoom": 1.36,
+            "easing": "smoothstep",
+            "rotation": 0.3
+          },
+          {
+            "frame": 16,
+            "focus": {
+              "x": 0.5,
+              "y": 0.38
+            },
+            "zoom": 1.36,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 42,
+            "focus": {
+              "x": 0.5,
               "y": 0.55
             },
             "zoom": 1.0,
-            "easing": "smoothstep"
+            "easing": "ease-out-back"
           },
           {
             "frame": 65,
@@ -1166,7 +1349,14 @@
         "phraseIndex": 0,
         "edge": "start"
       },
-      "animationDurationFrames": 90
+      "animationDurationFrames": 90,
+      "sounds": [
+        {
+          "sound": "rumble",
+          "frame": 0,
+          "gainDb": -16
+        }
+      ]
     },
     {
       "id": "magma-accumulation",
@@ -1227,7 +1417,19 @@
         "phraseIndex": 0,
         "edge": "start"
       },
-      "animationDurationFrames": 90
+      "animationDurationFrames": 90,
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 4,
+          "gainDb": -13
+        },
+        {
+          "sound": "pop",
+          "frame": 12,
+          "gainDb": -17
+        }
+      ]
     },
     {
       "id": "magma-rise",
@@ -1285,7 +1487,34 @@
         "phraseIndex": 0,
         "edge": "start"
       },
-      "animationDurationFrames": 90
+      "animationDurationFrames": 90,
+      "sounds": [
+        {
+          "sound": "pop",
+          "frame": 14,
+          "gainDb": -17
+        },
+        {
+          "sound": "bubble",
+          "frame": 18,
+          "gainDb": -25
+        },
+        {
+          "sound": "bubble",
+          "frame": 36,
+          "gainDb": -25
+        },
+        {
+          "sound": "bubble",
+          "frame": 54,
+          "gainDb": -25
+        },
+        {
+          "sound": "riser",
+          "frame": 52,
+          "gainDb": -22
+        }
+      ]
     },
     {
       "id": "eruption",
@@ -1382,7 +1611,19 @@
         "phraseIndex": 0,
         "edge": "start"
       },
-      "animationDurationFrames": 90
+      "animationDurationFrames": 90,
+      "sounds": [
+        {
+          "sound": "boom",
+          "frame": 3,
+          "gainDb": -14
+        },
+        {
+          "sound": "sizzle",
+          "frame": 14,
+          "gainDb": -28
+        }
+      ]
     },
     {
       "id": "final-summary",
@@ -1440,7 +1681,14 @@
         "phraseIndex": 0,
         "edge": "start"
       },
-      "animationDurationFrames": 90
+      "animationDurationFrames": 90,
+      "sounds": [
+        {
+          "sound": "pop",
+          "frame": 18,
+          "gainDb": -17
+        }
+      ]
     }
   ]
 }

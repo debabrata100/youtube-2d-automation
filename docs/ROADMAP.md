@@ -62,6 +62,10 @@ Implemented and technically verified; **human visual decision pending**. The sam
 
 Implemented and technically verified; **human visual review pending**. Theme tokens with `@role.path` colour references (dusk and day themes), a seeded procedural vector kit (sky, sun, ridges, ground, mountain with split/rim parts, strata cross-section, blob, cloud, water, glow), animated group backdrops, pill labels, arrowheads and grain. The volcano was rebuilt from the kit with zero image assets and a split-open cutaway; a water-cycle demo was built from the same kit with no engine changes. 323 tests, 33/33 legacy lossless frames identical, WCAG AA and phone label-size checks, zero paid requests. Visual gain over M2.5 C is moderate; pipeline reuse gain is large. See [report](M2_6_VECTOR_STYLE_KIT_REPORT.md) and [verification](M2_6_VERIFICATION.json).
 
+## M2.7 — Watchability pass
+
+Implemented and technically verified; **human viewing/listening review pending**. Word-by-word caption highlight from provider word timings; back easings (anticipation/overshoot) with per-key track easing and label pops; seven code-synthesised sound effects and a generated music bed; scene-level sound cues; a mix stage with side-chain ducking, linear loudness to −14 LUFS and a latency-compensated limiter; `--music` for licensed tracks; mixed-mode verification (loudness, true peak, ducking, speech-band narration clarity). Kit volcano: −14.6 LUFS, −2.3 dBTP, 18 dB ducking, clarity ≥ 0.967 per phrase. 343 tests, 36/36 legacy lossless frames identical, zero paid requests. See [report](M2_7_WATCHABILITY_REPORT.md) and [verification](M2_7_VERIFICATION.json).
+
 ## M3 — LangGraph AI storyboard director
 
 Research-to-plan orchestration, structured creative decisions, and plan evaluation. No M3 code is included.

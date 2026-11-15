@@ -1,8 +1,8 @@
 import {z} from 'zod';
-import {motionEffectSchema} from '../motion/primitives/schema';
+import {easingNameSchema, motionEffectSchema, type EasingName} from '../motion/primitives/schema';
 import {kitSchema} from '../kit/schema';
 
-export const trackSchema = (min: number, max: number) => z.array(z.object({frame: z.number().int().min(0).max(18000), value: z.number().min(min).max(max)}).strict()).min(1).max(40).refine(keys => keys.every((key, i) => !i || key.frame > keys[i - 1].frame), 'Track frames must strictly increase');
+export const trackSchema = (min: number, max: number) => z.array(z.object({frame: z.number().int().min(0).max(18000), value: z.number().min(min).max(max), ease: easingNameSchema.optional()}).strict()).min(1).max(40).refine(keys => keys.every((key, i) => !i || key.frame > keys[i - 1].frame), 'Track frames must strictly increase');
 const point = z.object({x: z.number().finite(), y: z.number().finite()}).strict();
 const mask = z.object({asset: z.string().min(1), mode: z.enum(['alpha', 'inverse-alpha']).default('alpha')}).strict();
 const maskKeys = z.array(z.object({frame: z.number().int().nonnegative(), asset: z.string().min(1)}).strict()).min(2).max(40).refine(keys => keys.every((key, i) => !i || key.frame > keys[i - 1].frame), 'Mask frames must strictly increase');
@@ -34,7 +34,7 @@ export const layerSchema = z.object({
 });
 export const groupSchema = z.object({
   id: z.string().min(1), width: z.number().positive(), height: z.number().positive(), layers: z.array(layerSchema).min(1).max(40),
-  annotations: z.array(z.object({id: z.string().min(1), text: z.string().min(1).max(60), x: z.number(), y: z.number(), size: z.number().min(12).max(100).default(40), anchor: z.enum(['start', 'middle', 'end']).default('middle'), variant: z.enum(['plain', 'pill']).default('plain'), opacity: trackSchema(0, 1).optional(), connector: z.object({from: point, to: point}).strict().optional()}).strict()).max(8).optional(),
+  annotations: z.array(z.object({id: z.string().min(1), text: z.string().min(1).max(60), x: z.number(), y: z.number(), size: z.number().min(12).max(100).default(40), anchor: z.enum(['start', 'middle', 'end']).default('middle'), variant: z.enum(['plain', 'pill']).default('plain'), pop: z.boolean().default(false), opacity: trackSchema(0, 1).optional(), connector: z.object({from: point, to: point}).strict().optional()}).strict()).max(8).optional(),
 }).strict().refine(group => new Set(group.layers.map(layer => layer.id)).size === group.layers.length, 'Duplicate illustration layer ID').superRefine((group,ctx)=>{
  const effects=group.layers.flatMap(l=>l.effects??[]);
  if(new Set(effects.map(e=>e.id)).size!==effects.length)ctx.addIssue({code:'custom',message:'Motion effect IDs must be unique within a group'});
@@ -43,5 +43,5 @@ export const groupSchema = z.object({
 });
 export type IllustrationGroup = z.infer<typeof groupSchema>;
 export type IllustrationLayerConfig = z.infer<typeof layerSchema>;
-export type Track = Array<{frame: number; value: number}>;
+export type Track = Array<{frame: number; value: number; ease?: EasingName}>;
 export const layerAssetIds = (layer: IllustrationLayerConfig): string[] => [...(layer.asset ? [layer.asset] : []), ...(layer.masks?.map(item => item.asset) ?? []), ...(layer.reveal?.type === 'mask-sequence' ? layer.reveal.keys.map(key => key.asset) : []), ...(layer.flow?.type==='path'?layer.flow.maskKeys.map(key=>key.asset):[])];

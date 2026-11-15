@@ -2,9 +2,12 @@ import {z} from 'zod';
 export const captionStyleSchema=z.object({fontSize:z.number().min(36).max(72).default(60),top:z.number().min(.08).max(.2).default(.105),left:z.number().min(.06).max(.12).default(.08),right:z.number().min(.14).max(.2).default(.16),maxCharactersPerLine:z.number().int().min(16).max(28).default(26),
  /** box: legacy dark rounded background. outline: no background, heavy stroke and shadow for legibility over imagery. */
  variant:z.enum(['box','outline']).default('box'),
+ /** word: highlight each word as it is spoken (needs cue word timings). */
+ highlight:z.enum(['none','word']).default('none'),
+ highlightColor:z.string().regex(/^#[0-9a-fA-F]{6}$/).default('#ffd34d'),
  textColor:z.string().regex(/^#[0-9a-fA-F]{6}$/).default('#fff9e8'),
  outlineColor:z.string().regex(/^#[0-9a-fA-F]{6}$/).default('#120d1a')}).strict();
-export const captionCueSchema=z.object({id:z.string().min(1),beatId:z.string().min(1),startFrame:z.number().int().nonnegative(),endFrame:z.number().int().positive(),lines:z.array(z.string().min(1)).min(1).max(2),timingBasis:z.enum(['estimated phrase allocation inside measured beat audio','local ASR phrase estimates; not word-perfect','provider character timestamps; rounded to video frames'])}).strict().refine(c=>c.endFrame>c.startFrame,'Caption interval must be positive');
+export const captionCueSchema=z.object({id:z.string().min(1),beatId:z.string().min(1),startFrame:z.number().int().nonnegative(),endFrame:z.number().int().positive(),lines:z.array(z.string().min(1)).min(1).max(2),words:z.array(z.object({text:z.string().min(1),startFrame:z.number().int().nonnegative(),endFrame:z.number().int().positive()}).strict()).max(40).optional(),timingBasis:z.enum(['estimated phrase allocation inside measured beat audio','local ASR phrase estimates; not word-perfect','provider character timestamps; rounded to video frames'])}).strict().refine(c=>c.endFrame>c.startFrame,'Caption interval must be positive');
 export type CaptionCue=z.infer<typeof captionCueSchema>;
 export const narrationOverlaySchema=z.object({audioSrc:z.string().regex(/^narration\/[a-zA-Z0-9._-]+\.wav$/),captionsEnabled:z.boolean(),syntheticTestAudio:z.boolean(),showAiDisclosureBanner:z.boolean().default(false),cues:z.array(captionCueSchema),style:captionStyleSchema}).strict().superRefine((v,ctx)=>{
  if(v.cues.some((c,i)=>i>0&&c.startFrame<v.cues[i-1].endFrame))ctx.addIssue({code:'custom',path:['cues'],message:'Caption cues must be ordered and non-overlapping'});

@@ -16,8 +16,9 @@ import {getTheme} from '../src/engine/style/theme';
 import {measureAudio} from '../src/audio/metadata';
 import {validateAssetFiles} from './storyboard-assets';
 import {browserExecutable,run} from './media-tools';
+import {muxAudio,prepareMix} from './lib/mix-audio';
 const main=async()=>{
- const {values:o}=parseArgs({options:{script:{type:'string'},storyboard:{type:'string'},'show-ai-disclosure-banner':{type:'boolean',default:false},audio:{type:'string'},metadata:{type:'string'},output:{type:'string'},'caption-style':{type:'string'},'prepare-only':{type:'boolean',default:false}}});
+ const {values:o}=parseArgs({options:{script:{type:'string'},storyboard:{type:'string'},'show-ai-disclosure-banner':{type:'boolean',default:false},audio:{type:'string'},metadata:{type:'string'},output:{type:'string'},'caption-style':{type:'string'},'prepare-only':{type:'boolean',default:false},music:{type:'string'}}});
  if(!o.script||!o.audio||!o.metadata)throw Error('Usage: render-cached-story --script <json> --audio <wav> --metadata <cached-metadata-json> [--output <new-job>] [--caption-style <json>]');
  const storyInput=storyScriptSchema.parse(JSON.parse(await readFile(o.script,'utf8'))),sourceBoard=parseStoryboard(JSON.parse(await readFile(o.storyboard??storyInput.storyboard,'utf8'))),story=validateStory({...storyInput,storyboard:o.storyboard??storyInput.storyboard},sourceBoard);
  const metadata=JSON.parse(await readFile(o.metadata,'utf8')),bytes=await readFile(o.audio),sha256=createHash('sha256').update(bytes).digest('hex');
@@ -37,6 +38,10 @@ const main=async()=>{
  await json('reports/timing-report.json',{...mapping.timingReport,beats,visualTimelinePreserved:!schedule.enabled,narrationDrivenScenes:schedule.enabled,captionBasis:'Provider character timestamps mapped to all spoken words; no forced alignment or estimated ASR timing used.',sceneAlignmentNote:schedule.enabled?'Scene crossfade midpoints follow exact provider phrase cues; illustration clocks normalized to preserve source keyframes. Audio unchanged.':'Original scene durations preserved; see narration lead frames.'});
  await copyFile(o.audio,path.join(job,'audio/narration.wav'));await json('audio/narration-metadata.json',{...metadata,audioPath:path.join(job,'audio/narration.wav'),sourceAudio:path.resolve(o.audio),approvedNarrationReused:true,paidRequestsThisRender:0});
  const publicDir=path.join(job,'public');for(const asset of board.assets){const dest=path.join(publicDir,asset.path);await mkdir(path.dirname(dest),{recursive:true});await copyFile(path.resolve('assets',asset.path),dest);}await mkdir(path.join(publicDir,'narration'));await copyFile(o.audio,path.join(publicDir,'narration/narration.wav'));
+ // Sound design: scene sound cues resolve to absolute times on the scheduled timeline; music is generated or a supplied licensed file.
+ const scheduled=storyboardTimeline(board),sfx=board.scenes.flatMap((scene,i)=>(scene.sounds??[]).map(s=>({sound:s.sound,startSeconds:(scheduled[i].startFrame+Math.min(s.frame,scene.durationFrames-1))/board.format.fps,gainDb:s.gainDb})));
+ const music=o.music?{kind:'file' as const,source:path.resolve(o.music)}:board.audio?.music==='generated-pad'?{kind:'generated' as const,seed:1}:{kind:'none' as const};
+ if(sfx.length||music.kind!=='none')await prepareMix(job,{durationSeconds:seconds,narration:path.join(job,'audio/narration.wav'),music,musicGainDb:board.audio?.musicGainDb??-16,duckRatio:board.audio?.duckRatio??8,sfx,speech:mapping.phraseTimings.map(p=>[p.startSeconds,p.endSeconds] as [number,number]),targetLufs:board.audio?.targetLufs??-14,truePeakDb:-1.5});
  if(o['prepare-only']){
   // Chunked/resumable path: bundle once into the job; render-job-frames.ts renders ranges; assemble-job.ts muxes and verifies.
   await bundle({entryPoint:path.resolve('src/storyboard-index.ts'),publicDir,outDir:path.join(job,'bundle')});
@@ -48,7 +53,7 @@ const main=async()=>{
  const start=performance.now(),output=path.join(job,'output/narrated-animation.mp4');
  await renderMedia({serveUrl,composition,inputProps,browserExecutable,outputLocation:output,codec:'h264',audioCodec:'aac',audioBitrate:'128k',pixelFormat:'yuv420p',crf:18,concurrency:1,disallowParallelEncoding:true});
  // Copy H.264 video and mux the unchanged approved performance plus an intentional silent ending.
- const final=path.join(job,'output/final.mp4');await run('ffmpeg',['-v','error','-y','-i',output,'-i',o.audio,'-map','0:v:0','-map','1:a:0','-c:v','copy','-c:a','aac','-b:a','128k','-ar','48000','-af','apad','-t',String(seconds),'-movflags','+faststart',final]);await rename(final,output);
+ const final=path.join(job,'output/final.mp4');await muxAudio(job,output,final,seconds,o.audio);await rename(final,output);
  await json('reports/render-report.json',{elapsedSeconds:Number(((performance.now()-start)/1000).toFixed(2)),scope:'450-frame render, H.264/AAC encoding and final mux; excludes bundling and verification',paidRequests:0,offline:true,sourceSha256:sha256});
  await run(process.execPath,['--import','tsx','scripts/verify-storyboard.ts',job,'narrated-animation.mp4']);
  await run(process.execPath,['--import','tsx','scripts/verify-cached-story.ts',job]);

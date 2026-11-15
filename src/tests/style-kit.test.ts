@@ -35,7 +35,7 @@ describe('theme tokens', () => {
     expect(resolveThemeRefs({a: ['@hot.core', {b: '@ridges.1'}], c: 'plain', d: 3}, t)).toEqual({a: [t.palette.hot.core, {b: t.palette.ridges[1]}], c: 'plain', d: 3});
     expect(() => themeColor(t, '@hot.lukewarm')).toThrow('Unknown theme colour');
     const bad = JSON.parse(volcanoRaw);
-    bad.groups[1].layers[1].effects[0].colors.mid = '@smoke.purple';
+    bad.groups[1].layers.find((l: {id: string}) => l.id === 'wisp').effects[0].colors.mid = '@smoke.purple';
     expect(() => parseStoryboard(bad)).toThrow('Unknown theme colour');
   });
 });

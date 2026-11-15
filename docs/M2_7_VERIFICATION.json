@@ -1,0 +1,23 @@
+{
+  "milestone": "M2.7 watchability pass",
+  "base": "4d81aca1050523423b8f75dc4ac9b53b3536789d",
+  "environment": {"os": "Ubuntu 22.04 arm64 VM", "node": "v22.23.4", "browser": "Sparticuz Chromium v153 arm64 (external)", "ffmpeg": "8.1 (external)", "fontSubstitution": "Arial -> Liberation Sans"},
+  "typescript": "pass",
+  "vitest": {"files": 21, "passed": 343, "failed": 0, "added": 20},
+  "productionBundles": {"src/index.ts": "pass", "src/storyboard-index.ts": "pass"},
+  "legacyRegression": {"method": "lossless PNG renders from M2.6 tree vs branch, same environment, incl. narrated box-caption frames", "frames": 36, "identical": 36},
+  "volcano": {
+    "storyboard": "storyboards/volcano-kit.json",
+    "renderSeconds": 99.32,
+    "bytes": 5849561,
+    "sha256": "229400488d047844d38d1a80806ea7bcb0d174771a51b58a44ae127e2a582b01",
+    "mix": {"music": "generated", "soundCues": 11, "integratedLufs": -14.6, "truePeakDb": -2.3, "loudnessRange": 1.8, "duckingReductionDb": 18.07, "endingRMSDBFS": -83.2,
+            "phraseClaritySpeechBand": {"hook": 0.9849, "setup": 0.9667, "explanation": 0.977, "payoff": 0.9882, "closing": 0.987}},
+    "checks": "verify-storyboard pass; verify-cached-story (mixed mode) all checks pass"
+  },
+  "licensedMusicPath": {"tested": true, "input": "6 s MP3 looped to 15 s", "allChecksPassed": true, "duckingReductionDb": 18.18},
+  "comparison": {"kit-vs-watch-phone-size.mp4": "6539e8771e276e8e70cf5697db40d11b8e815a9a123d93a852807cb892891ed6", "review-sheet.png": "7d70992eb37dd72f62e9d4b7cdcfca965d6fb1a7c7e0668269866d94b305cf46"},
+  "protected": {"approvedNarrationModified": false, "approvedPaintedAssetsModified": false, "scriptModified": false},
+  "paidRequests": 0,
+  "humanReview": "pending (viewing and listening)"
+}

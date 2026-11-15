@@ -214,3 +214,11 @@ Regenerate the B/C storyboards with `python3 scripts/authoring/build-style-spike
 - `"backdrop": {"group": "backdrop"}` renders a full-frame animated group behind every scene.
 - Kit storyboards: `storyboards/volcano-kit.json` (narrated) and `storyboards/water-cycle-demo.json` (no narration: `node --import tsx scripts/render-storyboard.ts storyboards/water-cycle-demo.json`).
 - Regenerate both with `python3 scripts/authoring/build-kit-storyboards.py`. Captions default to the theme's caption style. See `docs/M2_6_VECTOR_STYLE_KIT_REPORT.md`.
+
+## M2.7 sound and captions — quick reference
+
+- Scene sound cues: `"sounds": [{"sound": "boom", "frame": 3, "gainDb": -14}]` (ids: rumble, whoosh, boom, pop, bubble, sizzle, riser; all synthesised in `src/audio/synth.ts`).
+- Storyboard mix: `"audio": {"music": "generated-pad", "musicGainDb": -21, "duckRatio": 8, "targetLufs": -14}`.
+- Licensed music: add `--music path/to/track.mp3` to `story:render-cached` (looped/trimmed, ducked, faded). Use only tracks licensed for monetized YouTube use.
+- Word-highlight captions come from the theme (`caption.highlight: "word"`).
+- Mix outputs: `<job>/audio/stems/`, `<job>/audio/mix-report.json`; mixed-mode checks in `reports/verification-report.json`. See `docs/M2_7_WATCHABILITY_REPORT.md`.

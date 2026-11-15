@@ -10,6 +10,8 @@ export const buildCaptions=(story:StoryScript,plan:TimingPlan,max=26):CaptionCue
  const slot=plan.beats[i],total=beat.phrases.reduce((a,p)=>a+words(p).length,0);let prior=slot.startFrame,cumulative=0;
  return beat.phrases.map((phrase,j)=>{cumulative+=words(phrase).length;const endFrame=slot.startFrame+Math.round(slot.audioFrames*cumulative/total);const cue=captionCueSchema.parse({id:`${beat.id}-${j+1}`,beatId:beat.id,startFrame:prior,endFrame,lines:wrapPhrase(phrase,max),timingBasis:'estimated phrase allocation inside measured beat audio'});prior=endFrame;return cue;});
 });
+/** Index of the most recently started word (-1 before the first). */
+export const activeWordIndex=(words:Array<{startFrame:number}>,frame:number)=>{let active=-1;words.forEach((w,i)=>{if(frame>=w.startFrame)active=i;});return active;};
 export const captionAt=(cues:CaptionCue[],frame:number)=>cues.find(c=>frame>=c.startFrame&&frame<c.endFrame);
 
 /** Local recognition supplies estimates, not provider word-level ground truth. */

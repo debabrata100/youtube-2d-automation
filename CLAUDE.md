@@ -31,9 +31,9 @@ Read `docs/PROJECT_STATUS.md` (current state) and `docs/YOUTUBE_2D_AUTOMATION_HA
 
 Inspect the actual repository to verify the current implementation.
 
-The latest completed milestone is M2.6 (vector style system and shape kit); see `docs/PROJECT_STATUS.md`.
+The latest completed milestone is M2.7 (watchability pass: sound, word captions, motion polish); see `docs/PROJECT_STATUS.md`.
 
-The next milestone is chosen after the M2.6 review.
+The next milestone is chosen after the M2.7 review.
 
 ## Your responsibilities
 

@@ -21,5 +21,5 @@
   "light": {"from": "left"},
   "grain": {"opacity": 0.05, "density": 1400, "seed": 11},
   "label": {"fontFamily": "Arial, sans-serif", "fontWeight": 800, "radius": 18},
-  "caption": {"variant": "outline", "fontSize": 66, "top": 0.12, "textColor": "#ffffff", "outlineColor": "#14213d"}
+  "caption": {"variant": "outline", "fontSize": 66, "top": 0.12, "textColor": "#ffffff", "highlight": "word", "highlightColor": "#ffd23f", "outlineColor": "#14213d"}
 }
