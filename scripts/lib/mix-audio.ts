@@ -15,6 +15,12 @@ export const mixPlanSchema = z.object({
     z.object({kind: z.literal('none')}).strict(),
     z.object({kind: z.literal('generated'), seed: z.number().int().default(1)}).strict(),
     z.object({kind: z.literal('file'), source: z.string().min(1)}).strict(),
+    // Licensed tracks per section: each cue plays from startSeconds until endSeconds (cross-fading into the next),
+    // levelled to a common loudness (levelDb, measured at prepare time) before the shared ducking stage.
+    z.object({kind: z.literal('cues'), crossfadeSeconds: z.number().min(0).max(6).default(1.5),
+      cues: z.array(z.object({source: z.string().min(1), startSeconds: z.number().min(0), endSeconds: z.number().positive(), offsetSeconds: z.number().min(0).default(0),
+        loop: z.boolean().default(true), gainDb: z.number().min(-12).max(12).default(0), levelDb: z.number().min(-30).max(30).default(0)}).strict()).min(1).max(20),
+      dropouts: z.array(z.tuple([z.number().min(0), z.number().min(0)])).max(100).default([]), dropoutFloorDb: z.number().min(-60).max(-3).default(-24)}).strict(),
   ]),
   musicGainDb: z.number().min(-40).max(0),
   duckRatio: z.number().min(1).max(20),
@@ -32,7 +38,40 @@ export const prepareMix = async (job: string, plan: MixPlan) => {
   for (const id of new Set(plan.sfx.map(s => s.sound))) await writeFile(path.join(dir, 'sfx', `${id}.wav`), encodeWav(synthSfx(id)));
   if (plan.music.kind === 'generated') await writeFile(path.join(dir, 'music.wav'), encodeWav(synthMusicBed(plan.durationSeconds, plan.music.seed)));
   if (plan.music.kind === 'file') await copyFile(plan.music.source, path.join(dir, 'music-source' + path.extname(plan.music.source)));
+  if (plan.music.kind === 'cues') {
+    // Copy each licensed track into the job and level it: integrated loudness → MUSIC_REFERENCE_LUFS.
+    for (const [i, cue] of plan.music.cues.entries()) {
+      const local = path.join(dir, `music-cue-${i}${path.extname(cue.source)}`);
+      await copyFile(cue.source, local);
+      cue.levelDb = +(MUSIC_REFERENCE_LUFS - (await measureLoudness(local)).integratedLufs).toFixed(2);
+    }
+  }
   await writeFile(path.join(dir, 'mix-plan.json'), JSON.stringify(mixPlanSchema.parse(plan), null, 2) + '\n');
+};
+
+/** Every cue track is levelled to this integrated loudness before musicGainDb and ducking apply. */
+export const MUSIC_REFERENCE_LUFS = -18;
+
+/** Time-varying gain (ffmpeg expression) that dips the music to floorDb over each dropout, with short ramps. */
+export const dropoutExpression = (dropouts: [number, number][], floorDb: number, rampSeconds = .15) => {
+  if (!dropouts.length) return '1';
+  const floor = 10 ** (floorDb / 20), r = rampSeconds;
+  return dropouts.map(([a, b]) => `(1-${(1 - floor).toFixed(4)}*clip(min((t-${(a - r).toFixed(3)})/${r},(${(b + r).toFixed(3)}-t)/${r}),0,1))`).join('*');
+};
+
+/** ffmpeg inputs and filter chains that lay the cue tracks on one timeline (label [cues]). */
+export const cueGraph = (music: Extract<MixPlan['music'], {kind: 'cues'}>, dir: string, seconds: number, firstIndex: number) => {
+  const inputs: string[] = [], graph: string[] = [], labels: string[] = [], xf = music.crossfadeSeconds;
+  music.cues.forEach((cue, i) => {
+    const start = cue.startSeconds, end = Math.min(seconds, i < music.cues.length - 1 ? Math.max(cue.endSeconds, music.cues[i + 1].startSeconds + xf) : seconds);
+    const length = Math.max(.1, end - start), fadeIn = i === 0 ? Math.min(.5, length / 4) : Math.min(xf, length / 2), fadeOut = i === music.cues.length - 1 ? 0 : Math.min(xf, length / 2);
+    inputs.push(...(cue.loop ? ['-stream_loop', '-1'] : []), '-ss', String(cue.offsetSeconds), '-i', path.join(dir, `music-cue-${i}${path.extname(cue.source)}`));
+    graph.push(`[${firstIndex + i}:a]aresample=48000,aformat=channel_layouts=mono,atrim=0:${length.toFixed(3)},asetpts=N/SR/TB,afade=t=in:d=${fadeIn.toFixed(3)}` +
+      (fadeOut ? `,afade=t=out:st=${(length - fadeOut).toFixed(3)}:d=${fadeOut.toFixed(3)}` : '') + `,volume=${(cue.levelDb + cue.gainDb).toFixed(2)}dB,adelay=${Math.round(start * 1000)}:all=1,apad[cue${i}]`);
+    labels.push(`[cue${i}]`);
+  });
+  graph.push(`${labels.join('')}amix=inputs=${labels.length}:normalize=0:duration=longest,atrim=0:${seconds},asetnsamples=n=480,volume='${dropoutExpression(music.dropouts, music.dropoutFloorDb)}':eval=frame[cues]`);
+  return {inputs, graph, count: music.cues.length};
 };
 
 const rmsDb = (pcm: Buffer, from: number, to: number, rate: number) => {
@@ -54,7 +93,14 @@ export const muxAudio = async (job: string, video: string, output: string, secon
   const inputs = ['-i', narration], graph: string[] = ['[0:a]aresample=48000,aformat=channel_layouts=mono,apad,asplit=2[nar][sc]'];
   const mixLabels = ['[nar]'];
   let index = 1;
-  if (plan.music.kind !== 'none') {
+  if (plan.music.kind === 'cues') {
+    const cues = cueGraph(plan.music, dir, seconds, index);
+    inputs.push(...cues.inputs); graph.push(...cues.graph);
+    graph.push(`[cues]afade=t=out:st=${Math.max(0, seconds - 1.6)}:d=1.6,volume=${plan.musicGainDb}dB,asplit=2[mus][musref]`,
+      `[mus][sc]sidechaincompress=threshold=0.012:ratio=${plan.duckRatio}:attack=25:release=450:knee=4[duck]`, '[duck]asplit=2[duckmix][duckstem]');
+    mixLabels.push('[duckmix]');
+    index += cues.count;
+  } else if (plan.music.kind !== 'none') {
     const file = plan.music.kind === 'generated' ? path.join(dir, 'music.wav') : path.join(dir, 'music-source' + path.extname(plan.music.source));
     inputs.push(...(plan.music.kind === 'file' ? ['-stream_loop', '-1'] : []), '-i', file);
     graph.push(`[${index}:a]aresample=48000,aformat=channel_layouts=mono,atrim=0:${seconds},afade=t=out:st=${Math.max(0, seconds - 1.6)}:d=1.6,volume=${plan.musicGainDb}dB,asplit=2[mus][musref]`,
@@ -89,7 +135,7 @@ export const muxAudio = async (job: string, video: string, output: string, secon
     const duckedDb = mean(plan.speech.map(([a, b]) => rmsDb(ducked, a + .2, b, 8000))), referenceDb = mean(plan.speech.map(([a, b]) => rmsDb(reference, a + .2, b, 8000)));
     ducking = {referenceDb: +referenceDb.toFixed(2), duckedDb: +duckedDb.toFixed(2), reductionDb: +(referenceDb - duckedDb).toFixed(2)};
   }
-  const report = {planned: plan, loudnessPass1: m, linearGainDb: +gainDb.toFixed(2), limiterCeilingDb: plan.truePeakDb - 1, ducking, output, generatedAudio: plan.music.kind === 'generated' ? 'procedural music bed (code-synthesised, no licence required)' : plan.music.kind, paidRequests: 0};
+  const report = {planned: plan, loudnessPass1: m, linearGainDb: +gainDb.toFixed(2), limiterCeilingDb: plan.truePeakDb - 1, ducking, output, generatedAudio: plan.music.kind === 'generated' ? 'procedural music bed (code-synthesised, no licence required)' : plan.music.kind === 'cues' ? `${plan.music.cues.length} licensed cue tracks (YouTube Audio Library, no attribution required), levelled to ${MUSIC_REFERENCE_LUFS} LUFS` : plan.music.kind, paidRequests: 0};
   await writeFile(path.join(dir, 'mix-report.json'), JSON.stringify(report, null, 2) + '\n');
   return report;
 };

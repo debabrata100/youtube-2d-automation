@@ -75,8 +75,9 @@ describe('procedural audio', () => {
 const ALIGNMENT = 'jobs/volcano-m2-3-4-final/audio/narration-metadata.json';
 describe.skipIf(!existsSync(ALIGNMENT))('word-level captions', () => {
   const story = storyScriptSchema.parse(script);
-  const metadata = JSON.parse(readFileSync(ALIGNMENT, 'utf8'));
-  const mapping = captionsFromProviderTiming(story, metadata.alignment, 13.1425, 30);
+  // describe bodies still run at collection time when skipped, so read the local file only if it exists.
+  const metadata = existsSync(ALIGNMENT) ? JSON.parse(readFileSync(ALIGNMENT, 'utf8')) : {alignment: {characters: [], character_start_times_seconds: [], character_end_times_seconds: []}};
+  const mapping = existsSync(ALIGNMENT) ? captionsFromProviderTiming(story, metadata.alignment, 13.1425, 30) : ({} as ReturnType<typeof captionsFromProviderTiming>);
   it('attaches provider word timings to every cue, matching the displayed tokens', () => {
     expect(mapping.cues.flatMap(c => c.words ?? [])).toHaveLength(28);
     for (const cue of mapping.cues) {

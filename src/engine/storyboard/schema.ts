@@ -45,11 +45,16 @@ export const storyboardSchema = z.object({
   styleId: z.literal('cinematic-illustrated'),
   background: color.default('#10152e'), accent: color.default('#ffd166'),
   assets: z.array(assetSchema).max(100), scenes: z.array(genericSceneSchema).min(1).max(100),
-  groups: z.array(groupSchema).max(30).optional(),
+  groups: z.array(groupSchema).max(120).optional(),
   /** Theme from src/engine/style/themes; enables kit layers and "@role.path" colour references. */
   themeId: z.string().optional(),
   /** Mix settings: optional generated music bed (a licensed file can replace it with --music), ducking and loudness target. */
-  audio: z.object({music: z.enum(['none', 'generated-pad']).default('none'), musicGainDb: z.number().min(-40).max(0).default(-16), duckRatio: z.number().min(1).max(20).default(8), targetLufs: z.number().min(-24).max(-9).default(-14)}).strict().optional(),
+  audio: z.object({music: z.enum(['none', 'generated-pad', 'cues']).default('none'), musicGainDb: z.number().min(-40).max(0).default(-16), duckRatio: z.number().min(1).max(20).default(8), targetLufs: z.number().min(-24).max(-9).default(-14),
+    /** music 'cues': one licensed track per section, starting with a scene and cross-fading into the next cue (paths relative to the project root). */
+    musicCues: z.array(z.object({source: z.string().min(1), scene: z.string().min(1), offsetSeconds: z.number().min(0).default(0), gainDb: z.number().min(-12).max(12).default(0), loop: z.boolean().default(true)}).strict()).max(20).optional(),
+    /** Short music drop-outs (before punchlines and reveals), anchored to a scene frame. */
+    musicDropouts: z.array(z.object({scene: z.string().min(1), frame: z.number().int().min(0), seconds: z.number().min(.2).max(4)}).strict()).max(100).optional(),
+    crossfadeSeconds: z.number().min(0).max(6).default(1.5)}).strict().optional(),
   backdrop: z.object({asset: z.string().min(1).optional(), group: z.string().min(1).optional(), decoration: z.boolean().default(false), dim: z.number().min(0).max(.8).default(0), motion:z.object({scale:trackSchema(1,1.2),x:trackSchema(-100,100),y:trackSchema(-100,100)}).strict().optional()}).strict().optional(),
   narrationTiming:z.object({minimumSceneFrames:z.number().int().min(12).max(900).default(45),maximumDeviationSeconds:z.number().min(0).max(2).default(.2)}).strict().optional(),
   crossfadeFrames: z.number().int().min(2).max(20).optional(),
@@ -79,6 +84,14 @@ export const storyboardSchema = z.object({
     if (scene.transitionFrames * 2 >= scene.durationFrames) ctx.addIssue({code: 'custom', path: ['scenes', i, 'transitionFrames'], message: 'Transition envelopes must leave a visible scene hold'});
     if (scene.motion.preset === 'particle-convergence' && scene.template !== 'transformation') ctx.addIssue({code: 'custom', path: ['scenes', i, 'motion'], message: 'particle-convergence requires the transformation template'});
   });
+  const audio = storyboard.audio;
+  if (audio?.music === 'cues' && !audio.musicCues?.length) ctx.addIssue({code: 'custom', path: ['audio', 'musicCues'], message: "music 'cues' needs at least one musicCues entry"});
+  const order = storyboard.scenes.map(s => s.id), cueIndex = (audio?.musicCues ?? []).map(c => order.indexOf(c.scene));
+  audio?.musicCues?.forEach((cue, i) => {
+    if (cueIndex[i] < 0) ctx.addIssue({code: 'custom', path: ['audio', 'musicCues', i, 'scene'], message: `Unknown scene: ${cue.scene}`});
+    else if (i > 0 && cueIndex[i] <= cueIndex[i - 1]) ctx.addIssue({code: 'custom', path: ['audio', 'musicCues', i, 'scene'], message: 'Music cues must follow scene order'});
+  });
+  audio?.musicDropouts?.forEach((d, i) => { if (!scenes.has(d.scene)) ctx.addIssue({code: 'custom', path: ['audio', 'musicDropouts', i, 'scene'], message: `Unknown scene: ${d.scene}`}); });
 });
 export type Storyboard = z.infer<typeof storyboardSchema>;
 /** Resolves "@role.path" theme colours before validation, so every downstream consumer sees plain hex. */

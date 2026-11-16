@@ -27,7 +27,7 @@ FORMATS = {
 }
 # Scene groups render a little smaller than the frame (primary size); this maps a backdrop spot into a scene group.
 SCENE_SCALE = .95
-NOTE_SIZE = {'title': 92, 'note': 66, 'label': 50, 'small': 56}
+NOTE_SIZE = {'title': 92, 'note': 66, 'label': 50, 'small': 56, 'header': 60}
 _ADV = json.loads((pathlib.Path(__file__).resolve().parent / 'patrick-hand-widths.json').read_text())['advance']
 
 
@@ -108,11 +108,12 @@ class Char:
 
 
 class Note:
-    """A hand-written note placed by the layout solver. kind: title | note | label | small. arrow: char id to point at."""
+    """A hand-written note placed by the layout solver. kind: title | note | label | small | header (fixed place-name
+    at the top of the frame, visible for the whole shot). arrow: char id to point at."""
 
     def __init__(self, text, at, kind='note', color=None, near=None, arrow=None, until=None, size=None, pos=None):
         self.text, self.at, self.kind, self.near, self.arrow, self.until, self.pos = text, at, kind, near, arrow, until, pos
-        self.color = color or (INK if kind in ('label', 'small') else RED)
+        self.color = color or (INK if kind in ('label', 'small', 'header') else RED)
         self.size = size or NOTE_SIZE[kind]
 
 
@@ -217,6 +218,75 @@ def scene_counter(F, values, label='seconds left'):
     return Prop(prop('counter', 'counter', .5 + (cx - .5) / SCENE_SCALE, .5 + (cy - .5) / SCENE_SCALE, cs / SCENE_SCALE, text=label, values=values))
 
 
+# --------------------------------------------------------------------------------------------- worlds (M3.7)
+JUPITER = dict(base='#d9b38c', bands=['#b5733f', '#ecd9b6', '#a35f35', '#ecd9b6', '#c48a55'])
+SATURN = dict(base='#e3c98f', bands=['#c9a86a', '#f0dfb2', '#d4b67c'], ring=True)
+SKY_BODIES = {
+    'earth': dict(base=EARTH, bands=[EARTH_LAND, EARTH, EARTH_LAND]), 'mars': dict(base='#c4501f', bands=['#d9703f', '#b2441a']),
+    'jupiter': JUPITER, 'saturn': SATURN, 'uranus': dict(base='#9fe0e6', bands=['#b7ebef'], ring=True), 'neptune': dict(base='#3d63d6', bands=['#5a7fe3', '#3354be']),
+    'pluto': dict(base='#d8b48a', bands=['#e9d3b4']),
+}
+# Each moon: ground fill/detail, the parent body hanging in its sky (x, y, radius as fractions), crater count.
+WORLDS = {
+    'THE MOON': dict(ground='#c4c4c0', detail='#8c8c88', sky=('earth', .84, .24, .07), rocks=4),
+    'CALLISTO': dict(ground='#6e5d4c', detail='#3f342b', sky=('jupiter', .84, .24, .07), rocks=6),
+    'PHOBOS': dict(ground='#857a6f', detail='#5a5048', sky=('mars', .78, .3, .26), rocks=3),
+    'DEIMOS': dict(ground='#9a8d80', detail='#6a5f55', sky=('mars', .84, .24, .1), rocks=2),
+    'MIRANDA': dict(ground='#cfcfca', detail='#8f8f8a', sky=('uranus', .84, .22, .08), rocks=3),
+    'ENCELADUS': dict(ground='#f4f8fb', detail='#a9c6db', sky=('saturn', .8, .22, .08), rocks=1),
+    'TRITON': dict(ground='#ecdcd8', detail='#b48f88', sky=('neptune', .84, .22, .08), rocks=2),
+    'CHARON': dict(ground='#a19c97', detail='#6e6a66', sky=('pluto', .84, .23, .11), rocks=3),
+    'GANYMEDE': dict(ground='#8e8376', detail='#5d554c', sky=('jupiter', .82, .24, .12), rocks=3),
+    'EUROPA': dict(ground='#f1e8d8', detail='#a3713f', sky=('jupiter', .8, .26, .18), rocks=1),
+    'IO': dict(ground='#e9c94b', detail='#b0781c', sky=('jupiter', .78, .3, .26), rocks=2),
+    'TITAN': dict(ground='#c9843b', detail='#8a5422', sky=('saturn', .84, .2, .05), rocks=2, haze='#f2a54a'),
+}
+
+
+def world(F, name, sky=True, ground=True, top=None):
+    """Moon set: place-name header, the moon's ground colour and its parent planet in the sky. Returns (props, header).
+    The header sits at the top centre for the whole shot (the Paint Explainer convention: viewers always know where they are)."""
+    w = WORLDS[name]; W, H = F['W'], F['H']; props = []
+    if w.get('haze'):
+        props.append(Prop({'id': 'haze', 'kit': {'type': 'glow', 'x': .5, 'y': .55, 'rx': .9, 'ry': .75, 'tone': 'sun'}, 'opacity': track((0, .55))}))
+    if sky and w.get('sky'):
+        body, x, y, r = w['sky']; spec = dict(SKY_BODIES[body]); ring = spec.pop('ring', False)
+        props.append(Prop(planet('sky-body', x, y, r, spec['base'], spec.get('bands', ()), ring=ring, shade=.25, seed=5),
+                          Box((x - r * (1.9 if ring else 1.1) * H / W) * W, (y - r * 1.1) * H, (x + r * (1.9 if ring else 1.1) * H / W) * W, (y + r * 1.1) * H, 'sky-body')))
+    if ground:
+        t = top if top is not None else F['feet'] - .01
+        props.append(Prop({'id': 'ground', 'kit': {'type': 'terrain', 'top': t, 'curve': .04, 'fill': w['ground'], 'detail': w['detail'], 'rocks': w['rocks'], 'bumps': 6, 'seed': len(name)}},
+                          Box(0, t * H, W, H, 'ground')))
+    header = Note(name, 0, 'header', pos=(W / 2, round(.085 * H)))
+    return props, header
+
+
+def photo(ep, F, aid, rel_path, at, until=None, x=.5, y=.48, scale=.72, size=(1920, 1080), box=(.27, .16, .73, .82)):
+    """A prepared, framed NASA photo (full-frame transparent PNG from prepare-photo-inserts) popping in at `at`."""
+    ep.asset(aid, rel_path, *size); W, H = F['W'], F['H']
+    op = track((0, 0), (plus(at, -1), 0), (plus(at, 4), 1)) if until is None else track((0, 0), (plus(at, -1), 0), (plus(at, 4), 1), (plus(until, -1), 1), (until, 0))
+    layer = {'id': aid, 'asset': aid, 'opacity': op, 'anchor': {'x': W / 2, 'y': H / 2},
+             'scale': track((0, scale * .9), (plus(at, -1), scale * .9), (plus(at, 6), scale, 'ease-out-back')),
+             'x': track((0, (x - .5) * W)), 'y': track((0, (y - .5) * H))}
+    bx0, by0, bx1, by1 = box
+    return Prop(layer, Box(bx0 * W + (x - .5) * W, by0 * H + (y - .5) * H, bx1 * W + (x - .5) * W, by1 * H + (y - .5) * H, aid))
+
+
+def cliff(F, x, y, size, text=None, pid='cliff'):
+    """Cliff whose top edge is at (x, y): flat top to the left, face dropping `size`; points['edge'] is where to stand."""
+    W, H = F['W'], F['H']; sp = size * min(W, H)
+    extra = {'text': text} if text else {}
+    return Prop(prop(pid, 'cliff', x, y, size, **extra), Box(x * W - sp * 1.6, y * H, x * W + sp * (.75 if text else .1), y * H + sp, pid), {'edge': (x - .02, y)})
+
+
+def jet(F, item, x, base_y, size, level, pid=None, color=None, spread=.55):
+    """Geyser or plume rising from a vent at (x, base_y); footprint from the vent up to its full height."""
+    W, H = F['W'], F['H']; sp = size * min(W, H); top = max(v for _, v in level) if isinstance(level, (list, tuple)) else level
+    keys = [{'frame': f, 'value': v} for f, v in level] if isinstance(level, (list, tuple)) else [{'frame': 0, 'value': level}]
+    extra = {'color': color} if color else {}
+    return Prop(prop(pid or item, item, x, base_y, size, level=keys, **extra), Box(x * W - sp * spread, base_y * H - sp * top * 1.1, x * W + sp * spread, base_y * H, pid or item))
+
+
 # --------------------------------------------------------------------------------------------- recipes
 def explain(chars=(), props=(), notes=(), camera_preset='settle', focus=None, sounds=(), stamps=()):
     """The workhorse: characters + props + auto-placed notes. stamps: [(note index, anchor)] MYTH stamps."""
@@ -254,7 +324,13 @@ class Episode:
         self.story_path = pathlib.Path(story_path)
         self.story = json.loads(self.story_path.read_text())
         self.F = FORMATS[fmt]; self.fmt = fmt; self.project = project_id or self.story['id']
-        self.groups, self.plans, self.placements, self._backdrop = [], {}, [], None
+        self.groups, self.plans, self.placements, self._backdrop, self.assets = [], {}, [], None, []
+
+    def asset(self, aid, rel_path, width, height):
+        """Register a PNG under assets/ (e.g. a prepared NASA photo insert) once; returns its id."""
+        if not any(a['id'] == aid for a in self.assets):
+            self.assets.append({'id': aid, 'path': rel_path, 'type': 'png', 'width': width, 'height': height, 'transparent': True})
+        return aid
 
     # backdrop -----------------------------------------------------------------------------------
     def backdrop(self, stars=26, earth=None, counter=None, extra=()):
@@ -343,10 +419,12 @@ class Episode:
                     c = next(c for c in chars if c.cid == n.arrow); hx, hy = c.head(); tx, ty = hx * W + (c.fh * H * .12) * (1 if x > hx * W else -1), hy * H
                     frm = (b.x0 + 20 if x > tx else b.x1 - 20, b.y1 - 10 if y < ty else b.y0); to = (tx, ty)
                 a = note(f'n{j}', n.text, round(x), round(y), n.at, size=round(n.size * F['scale']), color=n.color, to=to, frm=frm)
+                if n.kind == 'header':
+                    a.pop('opacity', None); a['pop'] = False
                 if n.until is not None:
                     a['opacity'] = track((0, 0), (plus(n.at, -1), 0), (plus(n.at, 5), 1), (plus(n.until, -1), 1), (n.until, 0))
                 annotations.append(a)
-                if n.kind != 'label': sounds.append(('pop', n.at, -22))  # name labels appear silently (they often land on dialogue)
+                if n.kind not in ('label', 'header'): sounds.append(('pop', n.at, -22))  # name labels appear silently (they often land on dialogue)
             for k_, (sx, sy, s, at) in enumerate(self._stamps):
                 layers.append(prop(f'stamp{k_}', 'stamp', sx / W, sy / H, s, text='myth', **pop_in(at, (sx, sy))))
                 sounds.append(('boom', at, -27))
@@ -366,7 +444,7 @@ class Episode:
             self.placements.append({'beat': beat['id'], 'notes': [(n.text, round(b.x0), round(b.y0), round(b.x1), round(b.y1)) for n, _, _, b in placed]})
         return {'schemaVersion': '2.1', 'projectId': self.project, 'title': self.story['title'], 'themeId': 'paint-notebook',
                 'format': {'width': W, 'height': H, 'fps': FPS}, 'styleId': 'cinematic-illustrated', 'background': '@sky.top', 'accent': '@text.accent',
-                'assets': [], 'backdrop': {'group': 'backdrop'}, 'narrationTiming': {'minimumSceneFrames': 30 if self.fmt == 'tall' else 45, 'maximumDeviationSeconds': .2},
+                'assets': self.assets, 'backdrop': {'group': 'backdrop'}, 'narrationTiming': {'minimumSceneFrames': 30 if self.fmt == 'tall' else 45, 'maximumDeviationSeconds': .2},
                 'audio': {'music': 'generated-pad', 'musicGainDb': -24, 'duckRatio': 8, 'targetLufs': -14}, 'groups': groups, 'scenes': scenes}
 
     def write(self, out=None):

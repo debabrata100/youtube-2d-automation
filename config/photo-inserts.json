@@ -1,0 +1,12 @@
+{
+  "_note": "Public-domain NASA photos used as 'proof' inserts. Sources live in assets/nasa/ (downloaded, not committed); scripts/prepare-photo-inserts.py frames them into full-frame transparent PNGs under assets/nasa/inserts/.",
+  "inserts": [
+    {"id": "photo-apollo17-schmitt", "source": "nasa/nasa-moon-apollo17-schmitt-as17-140-21496.jpg", "credit": "NASA - Apollo 17", "nasaId": "as17-140-21496"},
+    {"id": "photo-apollo17-cernan", "source": "nasa/nasa-moon-apollo17-cernan-dusty-AS17-145-22224.jpg", "credit": "NASA - Apollo 17", "nasaId": "AS17-145-22224"},
+    {"id": "photo-miranda", "source": "nasa/nasa-miranda-verona-rupes-PIA18185.jpg", "credit": "NASA/JPL - Voyager 2", "nasaId": "PIA18185"},
+    {"id": "photo-enceladus", "source": "nasa/nasa-enceladus-plumes-PIA07758.jpg", "credit": "NASA/JPL/SSI - Cassini", "nasaId": "PIA07758"},
+    {"id": "photo-triton", "source": "nasa/nasa-triton-PIA00317.jpg", "credit": "NASA/JPL - Voyager 2", "nasaId": "PIA00317"},
+    {"id": "photo-io", "source": "nasa/nasa-io-tvashtar-plume-PIA09248.jpg", "credit": "NASA/JHUAPL/SwRI - New Horizons", "nasaId": "PIA09248"},
+    {"id": "photo-titan", "source": "nasa/nasa-titan-lakes-PIA21434.jpg", "credit": "NASA/JPL-Caltech/ASI - Cassini", "nasaId": "PIA21434"}
+  ]
+}

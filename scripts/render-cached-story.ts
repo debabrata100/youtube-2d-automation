@@ -39,7 +39,11 @@ const main=async()=>{
  const publicDir=path.join(job,'public');for(const asset of board.assets){const dest=path.join(publicDir,asset.path);await mkdir(path.dirname(dest),{recursive:true});await copyFile(path.resolve('assets',asset.path),dest);}await mkdir(path.join(publicDir,'narration'));await copyFile(o.audio,path.join(publicDir,'narration/narration.wav'));
  // Sound design: scene sound cues resolve to absolute times on the scheduled timeline; music is generated or a supplied licensed file.
  const scheduled=storyboardTimeline(board),sfx=board.scenes.flatMap((scene,i)=>(scene.sounds??[]).map(s=>({sound:s.sound,startSeconds:(scheduled[i].startFrame+Math.min(s.frame,scene.durationFrames-1))/board.format.fps,gainDb:s.gainDb})));
- const music=o.music?{kind:'file' as const,source:path.resolve(o.music)}:board.audio?.music==='generated-pad'?{kind:'generated' as const,seed:1}:{kind:'none' as const};
+ const sceneStart=(id:string)=>{const i=board.scenes.findIndex(s=>s.id===id);return scheduled[i].startFrame/board.format.fps;};
+ const cueMusic=board.audio?.music==='cues'?{kind:'cues' as const,crossfadeSeconds:board.audio.crossfadeSeconds,dropoutFloorDb:-24,
+  cues:(board.audio.musicCues??[]).map((c,i,all)=>({source:path.resolve(c.source),startSeconds:sceneStart(c.scene),endSeconds:i<all.length-1?sceneStart(all[i+1].scene):seconds,offsetSeconds:c.offsetSeconds,loop:c.loop,gainDb:c.gainDb,levelDb:0})),
+  dropouts:(board.audio.musicDropouts??[]).map(d=>{const i=board.scenes.findIndex(s=>s.id===d.scene),a=(scheduled[i].startFrame+Math.min(d.frame,board.scenes[i].durationFrames-1))/board.format.fps;return [a,a+d.seconds] as [number,number];})}:null;
+ const music=o.music?{kind:'file' as const,source:path.resolve(o.music)}:cueMusic??(board.audio?.music==='generated-pad'?{kind:'generated' as const,seed:1}:{kind:'none' as const});
  if(sfx.length||music.kind!=='none')await prepareMix(job,{durationSeconds:seconds,narration:path.join(job,'audio/narration.wav'),music,musicGainDb:board.audio?.musicGainDb??-16,duckRatio:board.audio?.duckRatio??8,sfx,speech:mapping.phraseTimings.map(p=>[p.startSeconds,p.endSeconds] as [number,number]),targetLufs:board.audio?.targetLufs??-14,truePeakDb:-1.5});
  if(o['prepare-only']){
   // Chunked/resumable path: bundle once into the job; render-job-frames.ts renders ranges; assemble-job.ts muxes and verifies.

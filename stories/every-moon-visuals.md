@@ -214,3 +214,14 @@ Music cuts out for about 1 s before "I brought one!", "Not this one either" and 
 
 ## Chapters (upload description)
 0:00 Intro · then one chapter per moon and act, with the exact times taken from the narration timings after recording.
+
+## Chosen music (2026-11-16)
+Picked by measurement (overlap with the voice band 1-4 kHz, loudness steadiness) plus mood tags; approved by ear by the channel owner.
+| Section | Track (assets/music/, not committed) | Artist |
+|---|---|---|
+| Cold open, safe moons | `1-curious-a-science-montage.mp3` | Jeremy Blake |
+| Act 1, weird moons | `2-playful-b-sweet-math.mp3` (loop its best section) | Mini Vandals |
+| Act 2, cold moons | `3-eerie-b-surface-of-the-moon.mp3` | John Patitucci |
+| Act 3, radiation countdown | `4-tense-b-standoff.mp3` (tension built with tick/heartbeat cues) | Density & Time |
+| Titan and closing | `5-uplifting-a-taking-flight.mp3` | Blue Deer Studio |
+All from the YouTube Audio Library, filtered "Attribution not required".

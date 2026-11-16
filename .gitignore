@@ -35,3 +35,8 @@ jobs/*
 *.m4a
 *.flac
 __pycache__/
+
+# Downloaded media for episodes (NASA photos, Audio Library music): kept local, never committed.
+/assets/nasa/
+/assets/music/
+/storyboards/scratch/
