@@ -256,7 +256,7 @@
             {
               "frame": {
                 "at": "step",
-                "offset": 114
+                "offset": 74
               },
               "value": 594.0,
               "ease": "smoothstep"
@@ -451,9 +451,9 @@
             {
               "frame": {
                 "at": "fast",
-                "offset": 70
+                "offset": 45
               },
-              "value": -237.6,
+              "value": -129.6,
               "ease": "ease-out-cubic"
             }
           ]
@@ -7431,7 +7431,7 @@
             },
             {
               "frame": 160,
-              "value": -172.8,
+              "value": -86.4,
               "ease": "smoothstep"
             }
           ]
@@ -7576,7 +7576,7 @@
                 "at": "strong",
                 "offset": 50
               },
-              "value": -270.0,
+              "value": -129.6,
               "ease": "ease-out-cubic"
             }
           ]
@@ -8389,7 +8389,7 @@
             {
               "frame": {
                 "at": "edge",
-                "offset": 202
+                "offset": 112
               },
               "value": 270.0,
               "ease": "smoothstep"
@@ -10435,7 +10435,7 @@
                 "at": "throw",
                 "offset": 40
               },
-              "value": -345.6,
+              "value": -216.0,
               "ease": "ease-out-cubic"
             }
           ]
@@ -16598,7 +16598,7 @@
           "id": "n1",
           "text": "most volcanic place",
           "x": 1500,
-          "y": 600,
+          "y": 880,
           "size": 56,
           "anchor": "middle",
           "variant": "ink",
@@ -21300,8 +21300,8 @@
     {
       "id": "em-h1",
       "template": "hero-reveal",
-      "durationFrames": 269,
-      "animationDurationFrames": 269,
+      "durationFrames": 217,
+      "animationDurationFrames": 217,
       "caption": {
         "text": "em-h1",
         "preset": "body"
@@ -21373,8 +21373,8 @@
     {
       "id": "em-h2",
       "template": "hero-reveal",
-      "durationFrames": 142,
-      "animationDurationFrames": 142,
+      "durationFrames": 114,
+      "animationDurationFrames": 114,
       "caption": {
         "text": "em-h2",
         "preset": "body"
@@ -21440,8 +21440,8 @@
     {
       "id": "em-h3",
       "template": "hero-reveal",
-      "durationFrames": 227,
-      "animationDurationFrames": 227,
+      "durationFrames": 183,
+      "animationDurationFrames": 183,
       "caption": {
         "text": "em-h3",
         "preset": "body"
@@ -21511,8 +21511,8 @@
     {
       "id": "em-h4",
       "template": "hero-reveal",
-      "durationFrames": 184,
-      "animationDurationFrames": 184,
+      "durationFrames": 148,
+      "animationDurationFrames": 148,
       "caption": {
         "text": "em-h4",
         "preset": "body"
@@ -21585,8 +21585,8 @@
     {
       "id": "em-h5",
       "template": "hero-reveal",
-      "durationFrames": 198,
-      "animationDurationFrames": 198,
+      "durationFrames": 160,
+      "animationDurationFrames": 160,
       "caption": {
         "text": "em-h5",
         "preset": "body"
@@ -21652,8 +21652,8 @@
     {
       "id": "em-h6",
       "template": "hero-reveal",
-      "durationFrames": 113,
-      "animationDurationFrames": 113,
+      "durationFrames": 91,
+      "animationDurationFrames": 91,
       "caption": {
         "text": "em-h6",
         "preset": "body"
@@ -21724,8 +21724,8 @@
     {
       "id": "em-h7",
       "template": "hero-reveal",
-      "durationFrames": 241,
-      "animationDurationFrames": 241,
+      "durationFrames": 194,
+      "animationDurationFrames": 194,
       "caption": {
         "text": "em-h7",
         "preset": "body"
@@ -21798,8 +21798,8 @@
     {
       "id": "em-h8",
       "template": "hero-reveal",
-      "durationFrames": 156,
-      "animationDurationFrames": 156,
+      "durationFrames": 125,
+      "animationDurationFrames": 125,
       "caption": {
         "text": "em-h8",
         "preset": "body"
@@ -21865,8 +21865,8 @@
     {
       "id": "em-m1",
       "template": "hero-reveal",
-      "durationFrames": 298,
-      "animationDurationFrames": 298,
+      "durationFrames": 240,
+      "animationDurationFrames": 240,
       "caption": {
         "text": "em-m1",
         "preset": "body"
@@ -21933,8 +21933,8 @@
     {
       "id": "em-m2",
       "template": "hero-reveal",
-      "durationFrames": 269,
-      "animationDurationFrames": 269,
+      "durationFrames": 217,
+      "animationDurationFrames": 217,
       "caption": {
         "text": "em-m2",
         "preset": "body"
@@ -22007,8 +22007,8 @@
     {
       "id": "em-m3",
       "template": "hero-reveal",
-      "durationFrames": 56,
-      "animationDurationFrames": 56,
+      "durationFrames": 45,
+      "animationDurationFrames": 45,
       "caption": {
         "text": "em-m3",
         "preset": "body"
@@ -22074,8 +22074,8 @@
     {
       "id": "em-m4",
       "template": "hero-reveal",
-      "durationFrames": 241,
-      "animationDurationFrames": 241,
+      "durationFrames": 194,
+      "animationDurationFrames": 194,
       "caption": {
         "text": "em-m4",
         "preset": "body"
@@ -22148,8 +22148,8 @@
     {
       "id": "em-m5",
       "template": "hero-reveal",
-      "durationFrames": 142,
-      "animationDurationFrames": 142,
+      "durationFrames": 114,
+      "animationDurationFrames": 114,
       "caption": {
         "text": "em-m5",
         "preset": "body"
@@ -22222,8 +22222,8 @@
     {
       "id": "em-m6",
       "template": "hero-reveal",
-      "durationFrames": 99,
-      "animationDurationFrames": 99,
+      "durationFrames": 80,
+      "animationDurationFrames": 80,
       "caption": {
         "text": "em-m6",
         "preset": "body"
@@ -22289,8 +22289,8 @@
     {
       "id": "em-m7",
       "template": "hero-reveal",
-      "durationFrames": 170,
-      "animationDurationFrames": 170,
+      "durationFrames": 137,
+      "animationDurationFrames": 137,
       "caption": {
         "text": "em-m7",
         "preset": "body"
@@ -22356,8 +22356,8 @@
     {
       "id": "em-m8",
       "template": "hero-reveal",
-      "durationFrames": 241,
-      "animationDurationFrames": 241,
+      "durationFrames": 194,
+      "animationDurationFrames": 194,
       "caption": {
         "text": "em-m8",
         "preset": "body"
@@ -22423,8 +22423,8 @@
     {
       "id": "em-c1",
       "template": "hero-reveal",
-      "durationFrames": 198,
-      "animationDurationFrames": 198,
+      "durationFrames": 160,
+      "animationDurationFrames": 160,
       "caption": {
         "text": "em-c1",
         "preset": "body"
@@ -22490,8 +22490,8 @@
     {
       "id": "em-c2",
       "template": "hero-reveal",
-      "durationFrames": 170,
-      "animationDurationFrames": 170,
+      "durationFrames": 137,
+      "animationDurationFrames": 137,
       "caption": {
         "text": "em-c2",
         "preset": "body"
@@ -22557,8 +22557,8 @@
     {
       "id": "em-c3",
       "template": "hero-reveal",
-      "durationFrames": 71,
-      "animationDurationFrames": 71,
+      "durationFrames": 57,
+      "animationDurationFrames": 57,
       "caption": {
         "text": "em-c3",
         "preset": "body"
@@ -22617,8 +22617,8 @@
     {
       "id": "em-c4",
       "template": "hero-reveal",
-      "durationFrames": 241,
-      "animationDurationFrames": 241,
+      "durationFrames": 194,
+      "animationDurationFrames": 194,
       "caption": {
         "text": "em-c4",
         "preset": "body"
@@ -22691,8 +22691,8 @@
     {
       "id": "em-c5",
       "template": "hero-reveal",
-      "durationFrames": 56,
-      "animationDurationFrames": 56,
+      "durationFrames": 45,
+      "animationDurationFrames": 45,
       "caption": {
         "text": "em-c5",
         "preset": "body"
@@ -22818,8 +22818,8 @@
     {
       "id": "em-p1",
       "template": "hero-reveal",
-      "durationFrames": 85,
-      "animationDurationFrames": 85,
+      "durationFrames": 68,
+      "animationDurationFrames": 68,
       "caption": {
         "text": "em-p1",
         "preset": "body"
@@ -22883,8 +22883,8 @@
     {
       "id": "em-p2",
       "template": "hero-reveal",
-      "durationFrames": 142,
-      "animationDurationFrames": 142,
+      "durationFrames": 114,
+      "animationDurationFrames": 114,
       "caption": {
         "text": "em-p2",
         "preset": "body"
@@ -22950,8 +22950,8 @@
     {
       "id": "em-p3",
       "template": "hero-reveal",
-      "durationFrames": 71,
-      "animationDurationFrames": 71,
+      "durationFrames": 57,
+      "animationDurationFrames": 57,
       "caption": {
         "text": "em-p3",
         "preset": "body"
@@ -23017,8 +23017,8 @@
     {
       "id": "em-p4",
       "template": "hero-reveal",
-      "durationFrames": 156,
-      "animationDurationFrames": 156,
+      "durationFrames": 125,
+      "animationDurationFrames": 125,
       "caption": {
         "text": "em-p4",
         "preset": "body"
@@ -23084,8 +23084,8 @@
     {
       "id": "em-p5",
       "template": "hero-reveal",
-      "durationFrames": 298,
-      "animationDurationFrames": 298,
+      "durationFrames": 240,
+      "animationDurationFrames": 240,
       "caption": {
         "text": "em-p5",
         "preset": "body"
@@ -23144,8 +23144,8 @@
     {
       "id": "em-p6",
       "template": "hero-reveal",
-      "durationFrames": 227,
-      "animationDurationFrames": 227,
+      "durationFrames": 183,
+      "animationDurationFrames": 183,
       "caption": {
         "text": "em-p6",
         "preset": "body"
@@ -23214,8 +23214,8 @@
     {
       "id": "em-p7",
       "template": "hero-reveal",
-      "durationFrames": 113,
-      "animationDurationFrames": 113,
+      "durationFrames": 91,
+      "animationDurationFrames": 91,
       "caption": {
         "text": "em-p7",
         "preset": "body"
@@ -23281,8 +23281,8 @@
     {
       "id": "em-p8",
       "template": "hero-reveal",
-      "durationFrames": 170,
-      "animationDurationFrames": 170,
+      "durationFrames": 137,
+      "animationDurationFrames": 137,
       "caption": {
         "text": "em-p8",
         "preset": "body"
@@ -23351,8 +23351,8 @@
     {
       "id": "em-p9",
       "template": "hero-reveal",
-      "durationFrames": 56,
-      "animationDurationFrames": 56,
+      "durationFrames": 45,
+      "animationDurationFrames": 45,
       "caption": {
         "text": "em-p9",
         "preset": "body"
@@ -23411,8 +23411,8 @@
     {
       "id": "em-r1",
       "template": "hero-reveal",
-      "durationFrames": 284,
-      "animationDurationFrames": 284,
+      "durationFrames": 228,
+      "animationDurationFrames": 228,
       "caption": {
         "text": "em-r1",
         "preset": "body"
@@ -23478,8 +23478,8 @@
     {
       "id": "em-r2",
       "template": "hero-reveal",
-      "durationFrames": 113,
-      "animationDurationFrames": 113,
+      "durationFrames": 91,
+      "animationDurationFrames": 91,
       "caption": {
         "text": "em-r2",
         "preset": "body"
@@ -23545,8 +23545,8 @@
     {
       "id": "em-r3",
       "template": "hero-reveal",
-      "durationFrames": 241,
-      "animationDurationFrames": 241,
+      "durationFrames": 194,
+      "animationDurationFrames": 194,
       "caption": {
         "text": "em-r3",
         "preset": "body"
@@ -23612,8 +23612,8 @@
     {
       "id": "em-r4",
       "template": "hero-reveal",
-      "durationFrames": 113,
-      "animationDurationFrames": 113,
+      "durationFrames": 91,
+      "animationDurationFrames": 91,
       "caption": {
         "text": "em-r4",
         "preset": "body"
@@ -23686,8 +23686,8 @@
     {
       "id": "em-r5",
       "template": "hero-reveal",
-      "durationFrames": 227,
-      "animationDurationFrames": 227,
+      "durationFrames": 183,
+      "animationDurationFrames": 183,
       "caption": {
         "text": "em-r5",
         "preset": "body"
@@ -23746,8 +23746,8 @@
     {
       "id": "em-r6",
       "template": "hero-reveal",
-      "durationFrames": 170,
-      "animationDurationFrames": 170,
+      "durationFrames": 137,
+      "animationDurationFrames": 137,
       "caption": {
         "text": "em-r6",
         "preset": "body"
@@ -23880,8 +23880,8 @@
     {
       "id": "em-e1",
       "template": "hero-reveal",
-      "durationFrames": 227,
-      "animationDurationFrames": 227,
+      "durationFrames": 183,
+      "animationDurationFrames": 183,
       "caption": {
         "text": "em-e1",
         "preset": "body"
@@ -23947,8 +23947,8 @@
     {
       "id": "em-e2",
       "template": "hero-reveal",
-      "durationFrames": 85,
-      "animationDurationFrames": 85,
+      "durationFrames": 68,
+      "animationDurationFrames": 68,
       "caption": {
         "text": "em-e2",
         "preset": "body"
@@ -24007,8 +24007,8 @@
     {
       "id": "em-e3",
       "template": "hero-reveal",
-      "durationFrames": 71,
-      "animationDurationFrames": 71,
+      "durationFrames": 57,
+      "animationDurationFrames": 57,
       "caption": {
         "text": "em-e3",
         "preset": "body"
@@ -24074,8 +24074,8 @@
     {
       "id": "em-e4",
       "template": "hero-reveal",
-      "durationFrames": 312,
-      "animationDurationFrames": 312,
+      "durationFrames": 251,
+      "animationDurationFrames": 251,
       "caption": {
         "text": "em-e4",
         "preset": "body"
@@ -24148,8 +24148,8 @@
     {
       "id": "em-e5",
       "template": "hero-reveal",
-      "durationFrames": 198,
-      "animationDurationFrames": 198,
+      "durationFrames": 160,
+      "animationDurationFrames": 160,
       "caption": {
         "text": "em-e5",
         "preset": "body"
@@ -24215,8 +24215,8 @@
     {
       "id": "em-e6",
       "template": "hero-reveal",
-      "durationFrames": 156,
-      "animationDurationFrames": 156,
+      "durationFrames": 125,
+      "animationDurationFrames": 125,
       "caption": {
         "text": "em-e6",
         "preset": "body"
@@ -24282,8 +24282,8 @@
     {
       "id": "em-e7",
       "template": "hero-reveal",
-      "durationFrames": 227,
-      "animationDurationFrames": 227,
+      "durationFrames": 183,
+      "animationDurationFrames": 183,
       "caption": {
         "text": "em-e7",
         "preset": "body"
@@ -24349,8 +24349,8 @@
     {
       "id": "em-e8",
       "template": "hero-reveal",
-      "durationFrames": 56,
-      "animationDurationFrames": 56,
+      "durationFrames": 45,
+      "animationDurationFrames": 45,
       "caption": {
         "text": "em-e8",
         "preset": "body"
@@ -24409,8 +24409,8 @@
     {
       "id": "em-t1",
       "template": "hero-reveal",
-      "durationFrames": 99,
-      "animationDurationFrames": 99,
+      "durationFrames": 80,
+      "animationDurationFrames": 80,
       "caption": {
         "text": "em-t1",
         "preset": "body"
@@ -24479,8 +24479,8 @@
     {
       "id": "em-t2",
       "template": "hero-reveal",
-      "durationFrames": 241,
-      "animationDurationFrames": 241,
+      "durationFrames": 194,
+      "animationDurationFrames": 194,
       "caption": {
         "text": "em-t2",
         "preset": "body"
@@ -24553,8 +24553,8 @@
     {
       "id": "em-t3",
       "template": "hero-reveal",
-      "durationFrames": 241,
-      "animationDurationFrames": 241,
+      "durationFrames": 194,
+      "animationDurationFrames": 194,
       "caption": {
         "text": "em-t3",
         "preset": "body"
@@ -24627,8 +24627,8 @@
     {
       "id": "em-t4",
       "template": "hero-reveal",
-      "durationFrames": 127,
-      "animationDurationFrames": 127,
+      "durationFrames": 103,
+      "animationDurationFrames": 103,
       "caption": {
         "text": "em-t4",
         "preset": "body"
@@ -24694,8 +24694,8 @@
     {
       "id": "em-t5",
       "template": "hero-reveal",
-      "durationFrames": 269,
-      "animationDurationFrames": 269,
+      "durationFrames": 217,
+      "animationDurationFrames": 217,
       "caption": {
         "text": "em-t5",
         "preset": "body"
@@ -24773,8 +24773,8 @@
     {
       "id": "em-t6",
       "template": "hero-reveal",
-      "durationFrames": 184,
-      "animationDurationFrames": 184,
+      "durationFrames": 148,
+      "animationDurationFrames": 148,
       "caption": {
         "text": "em-t6",
         "preset": "body"
@@ -24847,8 +24847,8 @@
     {
       "id": "em-t7",
       "template": "hero-reveal",
-      "durationFrames": 298,
-      "animationDurationFrames": 298,
+      "durationFrames": 240,
+      "animationDurationFrames": 240,
       "caption": {
         "text": "em-t7",
         "preset": "body"
@@ -24914,8 +24914,8 @@
     {
       "id": "em-t8",
       "template": "hero-reveal",
-      "durationFrames": 198,
-      "animationDurationFrames": 198,
+      "durationFrames": 160,
+      "animationDurationFrames": 160,
       "caption": {
         "text": "em-t8",
         "preset": "body"
@@ -24981,8 +24981,8 @@
     {
       "id": "em-t9",
       "template": "hero-reveal",
-      "durationFrames": 85,
-      "animationDurationFrames": 85,
+      "durationFrames": 68,
+      "animationDurationFrames": 68,
       "caption": {
         "text": "em-t9",
         "preset": "body"
@@ -25041,8 +25041,8 @@
     {
       "id": "em-x1",
       "template": "hero-reveal",
-      "durationFrames": 156,
-      "animationDurationFrames": 156,
+      "durationFrames": 125,
+      "animationDurationFrames": 125,
       "caption": {
         "text": "em-x1",
         "preset": "body"
@@ -25111,8 +25111,8 @@
     {
       "id": "em-x2",
       "template": "hero-reveal",
-      "durationFrames": 198,
-      "animationDurationFrames": 198,
+      "durationFrames": 160,
+      "animationDurationFrames": 160,
       "caption": {
         "text": "em-x2",
         "preset": "body"
@@ -25185,8 +25185,8 @@
     {
       "id": "em-x3",
       "template": "hero-reveal",
-      "durationFrames": 156,
-      "animationDurationFrames": 156,
+      "durationFrames": 125,
+      "animationDurationFrames": 125,
       "caption": {
         "text": "em-x3",
         "preset": "body"
@@ -25283,8 +25283,8 @@
     {
       "id": "em-g1",
       "template": "hero-reveal",
-      "durationFrames": 198,
-      "animationDurationFrames": 198,
+      "durationFrames": 160,
+      "animationDurationFrames": 160,
       "caption": {
         "text": "em-g1",
         "preset": "body"
@@ -25357,8 +25357,8 @@
     {
       "id": "em-g2",
       "template": "hero-reveal",
-      "durationFrames": 227,
-      "animationDurationFrames": 227,
+      "durationFrames": 183,
+      "animationDurationFrames": 183,
       "caption": {
         "text": "em-g2",
         "preset": "body"
@@ -25424,8 +25424,8 @@
     {
       "id": "em-g3",
       "template": "hero-reveal",
-      "durationFrames": 241,
-      "animationDurationFrames": 241,
+      "durationFrames": 194,
+      "animationDurationFrames": 194,
       "caption": {
         "text": "em-g3",
         "preset": "body"
@@ -25491,8 +25491,8 @@
     {
       "id": "em-g4",
       "template": "hero-reveal",
-      "durationFrames": 156,
-      "animationDurationFrames": 156,
+      "durationFrames": 125,
+      "animationDurationFrames": 125,
       "caption": {
         "text": "em-g4",
         "preset": "body"
@@ -25551,8 +25551,8 @@
     {
       "id": "em-u1",
       "template": "hero-reveal",
-      "durationFrames": 298,
-      "animationDurationFrames": 298,
+      "durationFrames": 240,
+      "animationDurationFrames": 240,
       "caption": {
         "text": "em-u1",
         "preset": "body"
@@ -25618,8 +25618,8 @@
     {
       "id": "em-u2",
       "template": "hero-reveal",
-      "durationFrames": 85,
-      "animationDurationFrames": 85,
+      "durationFrames": 68,
+      "animationDurationFrames": 68,
       "caption": {
         "text": "em-u2",
         "preset": "body"
@@ -25685,8 +25685,8 @@
     {
       "id": "em-u3",
       "template": "hero-reveal",
-      "durationFrames": 255,
-      "animationDurationFrames": 255,
+      "durationFrames": 206,
+      "animationDurationFrames": 206,
       "caption": {
         "text": "em-u3",
         "preset": "body"
@@ -25752,8 +25752,8 @@
     {
       "id": "em-u4",
       "template": "hero-reveal",
-      "durationFrames": 213,
-      "animationDurationFrames": 213,
+      "durationFrames": 171,
+      "animationDurationFrames": 171,
       "caption": {
         "text": "em-u4",
         "preset": "body"
@@ -25826,8 +25826,8 @@
     {
       "id": "em-u5",
       "template": "hero-reveal",
-      "durationFrames": 156,
-      "animationDurationFrames": 156,
+      "durationFrames": 125,
+      "animationDurationFrames": 125,
       "caption": {
         "text": "em-u5",
         "preset": "body"
@@ -25886,8 +25886,8 @@
     {
       "id": "em-u6",
       "template": "hero-reveal",
-      "durationFrames": 56,
-      "animationDurationFrames": 56,
+      "durationFrames": 45,
+      "animationDurationFrames": 45,
       "caption": {
         "text": "em-u6",
         "preset": "body"
@@ -25946,8 +25946,8 @@
     {
       "id": "em-i1",
       "template": "hero-reveal",
-      "durationFrames": 213,
-      "animationDurationFrames": 213,
+      "durationFrames": 171,
+      "animationDurationFrames": 171,
       "caption": {
         "text": "em-i1",
         "preset": "body"
@@ -26013,8 +26013,8 @@
     {
       "id": "em-i2",
       "template": "hero-reveal",
-      "durationFrames": 213,
-      "animationDurationFrames": 213,
+      "durationFrames": 171,
+      "animationDurationFrames": 171,
       "caption": {
         "text": "em-i2",
         "preset": "body"
@@ -26087,8 +26087,8 @@
     {
       "id": "em-i3",
       "template": "hero-reveal",
-      "durationFrames": 198,
-      "animationDurationFrames": 198,
+      "durationFrames": 160,
+      "animationDurationFrames": 160,
       "caption": {
         "text": "em-i3",
         "preset": "body"
@@ -26157,8 +26157,8 @@
     {
       "id": "em-i4",
       "template": "hero-reveal",
-      "durationFrames": 142,
-      "animationDurationFrames": 142,
+      "durationFrames": 114,
+      "animationDurationFrames": 114,
       "caption": {
         "text": "em-i4",
         "preset": "body"
@@ -26264,8 +26264,8 @@
     {
       "id": "em-i5",
       "template": "hero-reveal",
-      "durationFrames": 213,
-      "animationDurationFrames": 213,
+      "durationFrames": 171,
+      "animationDurationFrames": 171,
       "caption": {
         "text": "em-i5",
         "preset": "body"
@@ -26331,8 +26331,8 @@
     {
       "id": "em-i6",
       "template": "hero-reveal",
-      "durationFrames": 213,
-      "animationDurationFrames": 213,
+      "durationFrames": 171,
+      "animationDurationFrames": 171,
       "caption": {
         "text": "em-i6",
         "preset": "body"
@@ -26401,8 +26401,8 @@
     {
       "id": "em-i7",
       "template": "hero-reveal",
-      "durationFrames": 71,
-      "animationDurationFrames": 71,
+      "durationFrames": 57,
+      "animationDurationFrames": 57,
       "caption": {
         "text": "em-i7",
         "preset": "body"
@@ -26461,8 +26461,8 @@
     {
       "id": "em-z1",
       "template": "hero-reveal",
-      "durationFrames": 127,
-      "animationDurationFrames": 127,
+      "durationFrames": 103,
+      "animationDurationFrames": 103,
       "caption": {
         "text": "em-z1",
         "preset": "body"
@@ -26528,8 +26528,8 @@
     {
       "id": "em-z2",
       "template": "hero-reveal",
-      "durationFrames": 213,
-      "animationDurationFrames": 213,
+      "durationFrames": 171,
+      "animationDurationFrames": 171,
       "caption": {
         "text": "em-z2",
         "preset": "body"
@@ -26595,8 +26595,8 @@
     {
       "id": "em-z3",
       "template": "hero-reveal",
-      "durationFrames": 127,
-      "animationDurationFrames": 127,
+      "durationFrames": 103,
+      "animationDurationFrames": 103,
       "caption": {
         "text": "em-z3",
         "preset": "body"
@@ -26662,8 +26662,8 @@
     {
       "id": "em-z4",
       "template": "hero-reveal",
-      "durationFrames": 284,
-      "animationDurationFrames": 284,
+      "durationFrames": 228,
+      "animationDurationFrames": 228,
       "caption": {
         "text": "em-z4",
         "preset": "body"
@@ -26729,8 +26729,8 @@
     {
       "id": "em-z5",
       "template": "hero-reveal",
-      "durationFrames": 269,
-      "animationDurationFrames": 269,
+      "durationFrames": 217,
+      "animationDurationFrames": 217,
       "caption": {
         "text": "em-z5",
         "preset": "body"
@@ -26803,8 +26803,8 @@
     {
       "id": "em-z6",
       "template": "hero-reveal",
-      "durationFrames": 269,
-      "animationDurationFrames": 269,
+      "durationFrames": 217,
+      "animationDurationFrames": 217,
       "caption": {
         "text": "em-z6",
         "preset": "body"
@@ -26873,8 +26873,8 @@
     {
       "id": "em-z7",
       "template": "hero-reveal",
-      "durationFrames": 255,
-      "animationDurationFrames": 255,
+      "durationFrames": 206,
+      "animationDurationFrames": 206,
       "caption": {
         "text": "em-z7",
         "preset": "body"
@@ -26940,8 +26940,8 @@
     {
       "id": "em-k1",
       "template": "hero-reveal",
-      "durationFrames": 198,
-      "animationDurationFrames": 198,
+      "durationFrames": 160,
+      "animationDurationFrames": 160,
       "caption": {
         "text": "em-k1",
         "preset": "body"
@@ -27007,8 +27007,8 @@
     {
       "id": "em-k2",
       "template": "hero-reveal",
-      "durationFrames": 284,
-      "animationDurationFrames": 284,
+      "durationFrames": 228,
+      "animationDurationFrames": 228,
       "caption": {
         "text": "em-k2",
         "preset": "body"
@@ -27088,8 +27088,8 @@
     {
       "id": "em-k3",
       "template": "hero-reveal",
-      "durationFrames": 85,
-      "animationDurationFrames": 85,
+      "durationFrames": 68,
+      "animationDurationFrames": 68,
       "caption": {
         "text": "em-k3",
         "preset": "body"
@@ -27155,8 +27155,8 @@
     {
       "id": "em-k4",
       "template": "hero-reveal",
-      "durationFrames": 211,
-      "animationDurationFrames": 211,
+      "durationFrames": 183,
+      "animationDurationFrames": 183,
       "caption": {
         "text": "em-k4",
         "preset": "body"

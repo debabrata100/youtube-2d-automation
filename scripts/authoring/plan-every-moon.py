@@ -194,10 +194,10 @@ def rise(at, dy=-.35, frames=80, ease='ease-out-cubic'):
 # ------------------------------------------------------------------ cold open
 c = cliff(F, .34, .34, .56, text='20 km')
 shot('h1', 'MIRANDA', [you(x=.31, fy=.34, h=.3, idle=None, poses=[(0, 'stand'), (A('step'), 'tumble')], faces=[(0, 'happy'), (A('step'), 'scream')],
-                         layer={'y': fall(A('step', 4), .55, 110), 'x': track((0, 0), (A('step'), 0), (A('step', 20), 70, 'ease-out-cubic'))})],
+                         layer={'y': fall(A('step', 4), .55, 70), 'x': track((0, 0), (A('step'), 0), (A('step', 20), 70, 'ease-out-cubic'))})],
      [c], [Note('12:00', A('twelve'), 'title', pos=(1450, 640))], ground=False, cam='push', sounds=[('whoosh', A('step', 4), -22)])
 shot('h2', 'PHOBOS', [you(slot='center', poses=[(0, 'walk'), (A('launch'), 'float')], faces=[(0, 'happy'), (A('launch'), 'shocked')], idle=None,
-                        layer={'y': rise(A('fast'), -.22, 70)})],
+                        layer={'y': rise(A('fast'), -.12, 45)})],
      [kit(F, 'ml', 'motion-lines', .42, .9, .14, rotation=90, opacity=show_from(A('fast')))], [Note('too fast!', A('fast'))])
 shot('h3', 'TITAN', [you(slot='center', idle=None, helmet=[(0, True), (A('off'), False)], poses=[(0, 'stand'), (A('wings'), 'cheer'), (A('wings', 8), 'flap')],
                        faces=[(0, 'neutral'), (A('off'), 'grin')], accessories=[('mask', A('off')), ('wings', A('wings'))], layer={'y': rise(A('wings', 8), -.22, 50, 'smoothstep')})],
@@ -258,9 +258,9 @@ shot('p4', 'PHOBOS', [you(slot='center', poses=[(0, 'stand')], faces=[(0, 'shock
      [kit(F, 'grav', 'pressure-arrows', .42, .7, .25, count=3, opacity=show_from(A('gravity')))], [Note('gravity: almost zero', A('gravity'))])
 shot('p5', 'PHOBOS', [you(slot='center-left', idle=None, poses=[(0, 'walk'), (A('lift'), 'float')], faces=[(0, 'happy'), (A('lift'), 'scared')], layer={'y': rise(A('lift'), -.18, 60)})],
      [kit(F, 'speed', 'speedometer', .78, .45, .26, level=[{'frame': 0, 'value': .1}, {'frame': A('five'), 'value': .55}], text='5 km/h')], [])
-shot('p6', 'PHOBOS', [you(slot='center', idle=None, poses=[(0, 'float')], faces=[(0, 'scared')], layer={'y': rise(0, -.16, 160, 'smoothstep')})],
+shot('p6', 'PHOBOS', [you(slot='center', idle=None, poses=[(0, 'float')], faces=[(0, 'scared')], layer={'y': rise(0, -.08, 160, 'smoothstep')})],
      [kit(F, 'ml', 'motion-lines', .42, .88, .14, rotation=90)], [Note('...bye, ground', A('away'), 'small')], cam='push')
-shot('p7', 'DEIMOS', [you(slot='center', idle=None, poses=[(0, 'run'), (A('strong'), 'cheer')], faces=[(0, 'happy'), (A('strong'), 'grin')], layer={'y': rise(A('strong'), -.25, 50)})],
+shot('p7', 'DEIMOS', [you(slot='center', idle=None, poses=[(0, 'run'), (A('strong'), 'cheer')], faces=[(0, 'happy'), (A('strong'), 'grin')], layer={'y': rise(A('strong'), -.12, 50)})],
      [], [Note('one jump', A('jump'))])
 shot('p8', 'DEIMOS', [you(x=.4, fy=.55, h=.22, idle=None, poses=[(0, 'float')], faces=[(0, 'sad')], layer={'rotate': track((0, 0), (240, 40))})],
      [gauge(.78, .4, .2, [(0, .7), (A('ran'), .05)])], [Note('drifting...', A('drift'), 'small')], ground=False, cam='push')
@@ -273,7 +273,7 @@ shot('r2', 'MIRANDA', [], [cliff(F, .36, .2, .66, text='20 km'), Prop({'id': 'ev
      [Note('2x Everest', A('twice'), 'title')], ground=False)
 c = cliff(F, .34, .3, .6)
 shot('r3', 'MIRANDA', [you(x=.31, fy=.3, h=.3, idle=None, poses=[(0, 'stand'), (A('edge'), 'tumble')], faces=[(0, 'neutral'), (A('edge'), 'shocked'), (A('weak'), 'scared')],
-                         layer={'y': fall(A('edge', 2), .25, 200), 'x': track((0, 0), (A('edge'), 0), (A('edge', 24), 90, 'ease-out-cubic'))})],
+                         layer={'y': fall(A('edge', 2), .25, 110), 'x': track((0, 0), (A('edge'), 0), (A('edge', 24), 90, 'ease-out-cubic'))})],
      [c], [Note('12:00', A('twelve'), 'title', pos=(1500, 600))], ground=False)
 shot('r4', 'MIRANDA', [you(x=.5, fy=.55, h=.3, idle=None, poses=[(0, 'lie')], faces=[(0, 'asleep')], layer={'y': track((0, -30), (300, 30))})],
      [kit(F, 'ml', 'motion-lines', .5, .25, .18, rotation=-90)], [Note('...still falling', A('silent'), 'small'), Note('7:41', A('closer'), 'title', pos=(1500, 300))], ground=False)
@@ -295,7 +295,7 @@ shot('e3', 'ENCELADUS', [arka(x=.22, h=.42, poses=[(0, 'reach')], faces=[(0, 'sh
      [jet(F, 'geyser', .58, .86, .72, [(0, 0), (A('geysers', -2), 0), (A('geysers', 14), .95)])], [Note('geysers!', A('geysers'), near='geyser')])
 shot('e4', 'ENCELADUS', [], [photo(ep, F, 'photo-enceladus', 'nasa/inserts/photo-enceladus.png', A('pole'), x=.4, y=.47, scale=.66, box=(.3, .16, .7, .82))],
      [Note('tiger stripes', A('stripes'), 'small', pos=(1500, 420)), Note('1,000+ km/h', A('thousand'), 'title', pos=(1500, 600))], ground=False)
-shot('e5', 'ENCELADUS', [you(x=.5, h=.34, idle=None, poses=[(0, 'stand'), (A('throw'), 'tumble')], faces=[(0, 'happy'), (A('throw'), 'scream')], layer={'y': rise(A('throw'), -.32, 40)})],
+shot('e5', 'ENCELADUS', [you(x=.5, h=.34, idle=None, poses=[(0, 'stand'), (A('throw'), 'tumble')], faces=[(0, 'happy'), (A('throw'), 'scream')], layer={'y': rise(A('throw'), -.2, 40)})],
      [jet(F, 'geyser', .5, .86, .75, [(0, 0), (A('throw', -3), 0), (A('throw', 6), 1)])], [], sounds=[('whoosh', A('throw'), -20)])
 shot('e6', 'ENCELADUS', [you(x=.45, fy=.4, h=.24, idle=None, poses=[(0, 'float')], faces=[(0, 'asleep')], layer={'rotate': track((0, -10), (240, 30))})],
      [kit(F, 'cal', 'calendar', .8, .5, .2, values=[{'frame': 0, 'value': 1}, {'frame': A('long'), 'value': 5}])], [Note('still up here...', A('long'), 'small')], ground=False)
@@ -359,7 +359,7 @@ shot('u6', 'EUROPA', [arka(slot='center-left', h=.5, poses=[(0, 'shrug')], faces
 
 # ------------------------------------------------------------------ Io
 shot('i1', 'IO', [], [photo(ep, F, 'photo-io', 'nasa/inserts/photo-io.png', A('Io'), x=.42, y=.47, scale=1.1, box=(.33, .2, .67, .8))],
-     [Note('most volcanic place', A('volcanic'), 'small', pos=(1500, 600))], ground=False)
+     [Note('most volcanic place', A('volcanic'), 'small', pos=(1500, 880))], ground=False)
 shot('i2', 'IO', [], [jet(F, 'plume', .3, .86, .6, [(0, .2), (A('four'), .6)], pid='p1'), jet(F, 'plume', .62, .86, .7, [(0, 0), (A('blasting'), 0), (A('blasting', 20), .95)], pid='p2')],
      [Note('~400 volcanoes', A('volcanoes'), 'small'), Note('400 km high', A('kilometers'), 'title')], sky=False)
 shot('i3', None, [], [body('jupiter', 'jupiter', .45, .5, .22), belt(.45, .5, .42), body('io', '#e9c94b', .62, .55, .03)],

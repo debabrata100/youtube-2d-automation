@@ -5,7 +5,7 @@
  "topic": "Even in a good spacesuit: what kills you first on twelve moons (dust, drifting off, a 12-minute fall, geysers, cold, Jupiter radiation) and Titan, where you could fly",
  "language": "en-US",
  "targetAudience": "English-speaking science-curious viewers aged 16-35",
- "durationSeconds": 513,
+ "durationSeconds": 414,
  "storyboard": "storyboards/every-moon.json",
  "candidatesReport": "stories/every-moon-script.md",
  "beats": [
