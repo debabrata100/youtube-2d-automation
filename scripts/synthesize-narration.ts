@@ -96,8 +96,9 @@ console.log(JSON.stringify({job, durationSeconds: measured.durationSeconds, fits
 async function multiVoice() {
   const job = path.resolve(o.output ?? `jobs/${story.id}-narration-${new Date().toISOString().replace(/[:.]/g, '-')}`);
   const takesDir = path.join(job, 'audio/takes');
-  if (existsSync(job) && !o.resume) throw Error('Output exists; pass --resume to reuse its takes. No request was made.');
-  await mkdir(takesDir, {recursive: true});
+  // Only recorded takes make an output directory "in use"; an empty one (e.g. from a refused run) is fine to reuse.
+  const hasTakes = voicePlan!.some(v => existsSync(path.join(takesDir, `${v.speaker}.json`)));
+  if (hasTakes && !o.resume) throw Error('Output already has recorded takes; pass --resume to reuse them. No request was made.');
   const pending = voicePlan!.filter(v => !existsSync(path.join(takesDir, `${v.speaker}.json`)));
   for (const v of pending) if (!v.voiceReady) throw Error(`Speaker "${v.speaker}" has no ElevenLabs voice ID in config (found "${v.voice}"). No request was made.`);
   const needed = pending.reduce((n, v) => n + v.characters, 0);
@@ -107,6 +108,7 @@ async function multiVoice() {
     if (!Number.isInteger(max) || max < needed) throw Error(`--max-characters must be an integer >= ${needed}. No request was made.`);
     if (!process.env.ELEVENLABS_API_KEY?.trim()) throw Error('ELEVENLABS_API_KEY is not set (use .env). No request was made.');
   }
+  await mkdir(takesDir, {recursive: true}); // only after every check passed
   await writeFile(path.join(job, 'synthesis-plan.json'), JSON.stringify({...plan, pendingSpeakers: pending.map(v => v.speaker)}, null, 2) + '\n');
   let made = 0;
   for (const v of pending) {
