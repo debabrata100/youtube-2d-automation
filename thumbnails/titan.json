@@ -1,0 +1,38 @@
+{
+  "id": "titan",
+  "model": "gpt-image-1.5",
+  "size": "1536x1024",
+  "quality": "medium",
+  "subject": "Saturn's moon Titan: thick orange haze, a huge ringed Saturn in the sky, dark methane lakes on an orange icy landscape.",
+  "variants": [
+    {
+      "id": "a",
+      "prompt": "The astronaut WITHOUT a spacesuit, wearing only an oxygen mask, a puffy red winter coat and homemade feathered bird wings strapped to his arms, flying joyfully over a methane lake, grinning."
+    },
+    {
+      "id": "b",
+      "prompt": "Close-up of the astronaut without a spacesuit, wearing an oxygen mask and a puffy red winter coat with frost on it, huge delighted grin and wide eyes, Saturn looming behind him."
+    },
+    {
+      "id": "c",
+      "prompt": "Split composition: on the left the astronaut sweating inside a bulky spacesuit; on the right the same astronaut relaxed on Titan in just a winter coat and oxygen mask, giving a thumbs up."
+    },
+    {
+      "id": "d",
+      "prompt": "The astronaut in a red winter coat and oxygen mask sinking into a dark methane lake, only his shocked face and one raised hand above the surface, Saturn in the orange sky."
+    }
+  ],
+  "overlay": {
+    "focusY": 0.45,
+    "lines": [
+      {
+        "text": "NO SPACESUIT?!",
+        "x": 44,
+        "y": 80,
+        "size": 96,
+        "color": "#ffffff",
+        "border": 10
+      }
+    ]
+  }
+}

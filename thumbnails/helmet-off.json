@@ -1,0 +1,46 @@
+{
+  "id": "helmet-off",
+  "model": "gpt-image-1.5",
+  "size": "1536x1024",
+  "quality": "medium",
+  "subject": "Outer space near Earth: black starry sky, the curved blue edge of Earth at the bottom.",
+  "variants": [
+    {
+      "id": "a",
+      "prompt": "Extreme close-up of the astronaut who has just taken off his helmet in space. His face is puffy and swelling, eyes bulging wide in shock, cheeks puffed out, tiny bubbles fizzing on his tongue, frost on his eyebrows. His helmet tumbles away beside him."
+    },
+    {
+      "id": "b",
+      "prompt": "The astronaut floats in space without his helmet, panicking, holding his breath, a large old-fashioned stopwatch floating next to him (blank face, no numbers). Arka leans out of a small space-station airlock in the background, reaching towards him in alarm."
+    },
+    {
+      "id": "c",
+      "prompt": "Split composition in the right two-thirds: on the left the astronaut calm and smiling inside his helmet; on the right the same astronaut with the helmet off, face swollen and eyes bulging, a jagged crack dividing the two halves."
+    },
+    {
+      "id": "d",
+      "prompt": "Close-up of the astronaut without a helmet, face turning pale blue, eyes rolling up, on a dramatic orange-and-red radial sunburst background with small stars."
+    }
+  ],
+  "overlay": {
+    "focusY": 0.45,
+    "lines": [
+      {
+        "text": "HELMET OFF?",
+        "x": 48,
+        "y": 70,
+        "size": 92,
+        "color": "#ffffff",
+        "border": 10
+      },
+      {
+        "text": "15s",
+        "x": 40,
+        "y": 200,
+        "size": 240,
+        "color": "#ff3b30",
+        "border": 16
+      }
+    ]
+  }
+}
