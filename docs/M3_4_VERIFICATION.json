@@ -1,0 +1,56 @@
+{
+  "milestone": "M3.4",
+  "job": "jobs/m3-4-short-v2 (copied to jobs/m3-4-short on the Mac)",
+  "format": "1080x1920 @30fps, 1920 frames, 64.0 s",
+  "allChecksPassed": true,
+  "checks": {
+    "schema": true,
+    "assetsPresent": true,
+    "dimensions": true,
+    "fps": true,
+    "frames": true,
+    "duration": true,
+    "codec": true,
+    "noUnintendedBlackFrames": true,
+    "chronologicalTimeline": true,
+    "encodedSamplesExtracted": true,
+    "decodedPresentationTimeline": true,
+    "productionBannerDisabled": true,
+    "sceneScheduleMatchesProvider": true,
+    "sceneTransitionsWithinTarget": true,
+    "exactContainerDuration": true,
+    "exactVideoFrames": true,
+    "embeddedAAC": true,
+    "audioDuration": true,
+    "approvedSourceHash": true,
+    "approvedOriginalStillUnchanged": true,
+    "encodedNarrationMatchesApprovedPerformance": true,
+    "quietIntentionalEnding": true,
+    "loudnessOnTarget": true,
+    "truePeakSafe": true,
+    "musicDuckedUnderSpeech": true,
+    "narrationClearInMix": true,
+    "soundCuesInsideTimeline": true,
+    "providerCaptionMapping": true,
+    "allWordsCovered": true,
+    "providerWordBounds": true,
+    "captionBounds": true,
+    "mobileSafeLayout": true
+  },
+  "mix": {
+    "loudness": {
+      "integratedLufs": -14.9,
+      "truePeakDb": -2.3,
+      "loudnessRange": 2.9
+    },
+    "ducking": {
+      "referenceDb": -39.19,
+      "duckedDb": -56.62,
+      "reductionDb": 17.43
+    }
+  },
+  "paidRequests": 0,
+  "narrationReused": "jobs/m3-3-narration (approved M3.3 take, sha matched)",
+  "renderSecondsPerFrame": 0.659,
+  "segments": 18
+}

@@ -1,5 +1,6 @@
 /** Render one frame range of a prepared job (render-cached-story --prepare-only) to a video-only H.264 segment.
- * Resumable: an existing segment is skipped. Elapsed time per segment is recorded for performance reporting. */
+ * Resumable: an existing segment is skipped. Elapsed time per segment is recorded for performance reporting.
+ * Use whole-second chunk lengths (e.g. 120 frames at 30 fps) so concatenated timestamps stay exact. */
 import path from 'node:path';
 import {existsSync} from 'node:fs';
 import {mkdir, readFile, writeFile, rename} from 'node:fs/promises';

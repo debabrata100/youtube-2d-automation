@@ -34,3 +34,4 @@ jobs/*
 *.aac
 *.m4a
 *.flac
+__pycache__/

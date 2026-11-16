@@ -82,6 +82,10 @@ Complete; review pending. After analysing four reference videos (Alan Becker, Ku
 
 Stage 1 complete: fact-checked 8-beat script (921 characters), figure accessories (mask, coat, wings) and a flap cycle, scream/grin faces, a prop kit (thermometer with animated level, pressure arrows, motion lines, !, ?, tick, cross), drop-shaped particles, SRT/VTT caption export, ~20% faster line boil via pre-baked noise tiles, a long-episode fix in the timeline audit, and an 82 s word-anchored animatic (235 anchors). Stage 2 done: one approved ElevenLabs take (61.7 s), timeline refitted to 64 s with no manual retiming, SFX lowered after a clarity failure, final passes all 32 checks. Viewing/listening approval pending. See [report](M3_3_TITAN_PILOT_REPORT.md) and [verification](M3_3_VERIFICATION.json).
 
+## M3.4 — Shorts version of the pilot
+
+Done: shared `paintkit.py` authoring helpers (pilot regenerates byte-identical), 9:16 Titan Short generator reusing the pilot's story, anchors and sounds, Shorts safe-zone layout rules and tests, burned-in word-highlight caption style, caption word-spacing fix, and a guard against concat timestamp drift (use whole-second chunks). All checks pass; 0 paid requests. See [report](M3_4_SHORTS_REPORT.md).
+
 ## M3 — LangGraph AI storyboard director
 
 Research-to-plan orchestration, structured creative decisions, and plan evaluation. No M3 code is included.
