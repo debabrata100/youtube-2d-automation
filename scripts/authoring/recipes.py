@@ -326,12 +326,13 @@ class Episode:
         self.story = json.loads(self.story_path.read_text())
         self.F = FORMATS[fmt]; self.fmt = fmt; self.project = project_id or self.story['id']
         self.groups, self.plans, self.placements, self._backdrop, self.assets, self._audio = [], {}, [], None, [], None
+        self.pop_db, self.deviation_tolerance = -22, .2
 
-    def music(self, cues, dropouts=(), gain_db=-22, crossfade=1.5):
+    def music(self, cues, dropouts=(), gain_db=-22, crossfade=1.5, target_lufs=-14):
         """Licensed music per section: cues [(beat_id, 'assets/music/x.mp3', offset_seconds)], dropouts [(beat_id, frame, seconds)]."""
         sid = {b['id']: b['sceneId'] for b in self.story['beats']}
-        self._audio = {'music': 'cues', 'musicGainDb': gain_db, 'duckRatio': 8, 'targetLufs': -14, 'crossfadeSeconds': crossfade,
-                       'musicCues': [{'source': src, 'scene': sid[b], 'offsetSeconds': off} for b, src, off in cues],
+        self._audio = {'music': 'cues', 'musicGainDb': gain_db, 'duckRatio': 8, 'targetLufs': target_lufs, 'crossfadeSeconds': crossfade,
+                       'musicCues': [{'source': c[1], 'scene': sid[c[0]], 'offsetSeconds': c[2], **({'gainDb': c[3]} if len(c) > 3 else {})} for c in cues],
                        'musicDropouts': [{'scene': sid[b], 'frame': f, 'seconds': sec} for b, f, sec in dropouts]}
 
     def asset(self, aid, rel_path, width, height):
@@ -420,7 +421,9 @@ class Episode:
             layers += [c.layer(F) for c in chars if not c.top]
             layers += [p.layer for p in plan['props'] if p.layer.get('kit', {}).get('item') in ('vignette', 'counter')]  # dimmer and counter on top
             layers += [c.layer(F) for c in chars if c.top]  # e.g. a rescuer staying bright over the blackout
-            annotations, sounds = [], [] if i == 0 else [('whoosh', 0, -24)]
+            # Short mascot lines are easily masked: no cut whoosh or note pops under a beat Arka speaks alone.
+            quiet = set(beat.get('phraseSpeakers') or ['narrator']) == {'arka'}
+            annotations, sounds = [], [] if i == 0 or quiet else [('whoosh', 0, -24)]
             for j, (n, x, y, b) in enumerate(placed):
                 to = frm = None
                 if n.arrow:
@@ -432,7 +435,7 @@ class Episode:
                 if n.until is not None:
                     a['opacity'] = track((0, 0), (plus(n.at, -1), 0), (plus(n.at, 5), 1), (plus(n.until, -1), 1), (n.until, 0))
                 annotations.append(a)
-                if n.kind not in ('label', 'header'): sounds.append(('pop', n.at, -22))  # name labels appear silently (they often land on dialogue)
+                if n.kind not in ('label', 'header') and not quiet: sounds.append(('pop', n.at, self.pop_db))  # name labels appear silently (they often land on dialogue)
             for k_, (sx, sy, s, at) in enumerate(self._stamps):
                 layers.append(prop(f'stamp{k_}', 'stamp', sx / W, sy / H, s, text='myth', **pop_in(at, (sx, sy))))
                 sounds.append(('boom', at, -27))
@@ -452,7 +455,7 @@ class Episode:
             self.placements.append({'beat': beat['id'], 'notes': [(n.text, round(b.x0), round(b.y0), round(b.x1), round(b.y1)) for n, _, _, b in placed]})
         return {'schemaVersion': '2.1', 'projectId': self.project, 'title': self.story['title'], 'themeId': 'paint-notebook',
                 'format': {'width': W, 'height': H, 'fps': FPS}, 'styleId': 'cinematic-illustrated', 'background': '@sky.top', 'accent': '@text.accent',
-                'assets': self.assets, 'backdrop': {'group': 'backdrop'}, 'narrationTiming': {'minimumSceneFrames': 30 if self.fmt == 'tall' else 45, 'maximumDeviationSeconds': .2},
+                'assets': self.assets, 'backdrop': {'group': 'backdrop'}, 'narrationTiming': {'minimumSceneFrames': 30 if self.fmt == 'tall' else 45, 'maximumDeviationSeconds': self.deviation_tolerance},
                 'audio': self._audio or {'music': 'generated-pad', 'musicGainDb': -24, 'duckRatio': 8, 'targetLufs': -14}, 'groups': groups, 'scenes': scenes}
 
     def write(self, out=None):

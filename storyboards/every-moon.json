@@ -66,13 +66,13 @@
   },
   "narrationTiming": {
     "minimumSceneFrames": 45,
-    "maximumDeviationSeconds": 0.2
+    "maximumDeviationSeconds": 0.3
   },
   "audio": {
     "music": "cues",
     "musicGainDb": -22,
     "duckRatio": 8,
-    "targetLufs": -14,
+    "targetLufs": -16,
     "crossfadeSeconds": 1.5,
     "musicCues": [
       {
@@ -93,7 +93,8 @@
       {
         "source": "assets/music/4-tense-b-standoff.mp3",
         "scene": "em-x1",
-        "offsetSeconds": 0
+        "offsetSeconds": 0,
+        "gainDb": -3
       },
       {
         "source": "assets/music/5-uplifting-a-taking-flight.mp3",
@@ -21358,7 +21359,7 @@
           "frame": {
             "at": "twelve"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "whoosh",
@@ -21433,7 +21434,7 @@
           "frame": {
             "at": "fast"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -21504,7 +21505,7 @@
             "at": "off",
             "offset": 4
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -21571,14 +21572,14 @@
           "frame": {
             "at": "without"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "fifteen"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -21645,7 +21646,7 @@
           "frame": {
             "at": "eight"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -21717,7 +21718,7 @@
           "frame": {
             "at": "kills"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -21784,14 +21785,14 @@
           "frame": {
             "at": "deadliest"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "fly"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -21858,7 +21859,7 @@
           "frame": {
             "at": "picking"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -21926,7 +21927,7 @@
             "at": "walked",
             "offset": 6
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -21993,14 +21994,14 @@
           "frame": {
             "at": "sunlight"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "shadow"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -22067,7 +22068,7 @@
           "frame": {
             "at": "both"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -22134,14 +22135,14 @@
           "frame": {
             "at": "dust"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "wind"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -22208,14 +22209,14 @@
           "frame": {
             "at": "sharp"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "clings"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -22282,7 +22283,7 @@
           "frame": {
             "at": "gunpowder"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -22349,7 +22350,7 @@
           "frame": {
             "at": "three"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -22416,7 +22417,7 @@
           "frame": {
             "at": "gives"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -22483,7 +22484,7 @@
           "frame": {
             "at": "safest"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -22550,7 +22551,7 @@
           "frame": {
             "at": "lower"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -22606,13 +22607,7 @@
         "phraseIndex": 0,
         "edge": "start"
       },
-      "sounds": [
-        {
-          "sound": "whoosh",
-          "frame": 0,
-          "gainDb": -24
-        }
-      ]
+      "sounds": []
     },
     {
       "id": "em-c4",
@@ -22677,14 +22672,14 @@
           "frame": {
             "at": "minus"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "craters"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -22751,7 +22746,7 @@
           "frame": {
             "at": "Ever"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -22807,13 +22802,7 @@
         "phraseIndex": 0,
         "edge": "start"
       },
-      "sounds": [
-        {
-          "sound": "whoosh",
-          "frame": 0,
-          "gainDb": -24
-        }
-      ]
+      "sounds": []
     },
     {
       "id": "em-p1",
@@ -22943,7 +22932,7 @@
           "frame": {
             "at": "fills"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -22999,20 +22988,7 @@
         "phraseIndex": 0,
         "edge": "start"
       },
-      "sounds": [
-        {
-          "sound": "whoosh",
-          "frame": 0,
-          "gainDb": -24
-        },
-        {
-          "sound": "pop",
-          "frame": {
-            "at": "view"
-          },
-          "gainDb": -22
-        }
-      ]
+      "sounds": []
     },
     {
       "id": "em-p4",
@@ -23077,7 +23053,7 @@
           "frame": {
             "at": "gravity"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -23207,7 +23183,7 @@
           "frame": {
             "at": "away"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -23274,7 +23250,7 @@
           "frame": {
             "at": "jump"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -23344,7 +23320,7 @@
           "frame": {
             "at": "drift"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -23400,13 +23376,7 @@
         "phraseIndex": 0,
         "edge": "start"
       },
-      "sounds": [
-        {
-          "sound": "whoosh",
-          "frame": 0,
-          "gainDb": -24
-        }
-      ]
+      "sounds": []
     },
     {
       "id": "em-r1",
@@ -23471,7 +23441,7 @@
           "frame": {
             "at": "twenty"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -23538,7 +23508,7 @@
           "frame": {
             "at": "twice"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -23605,7 +23575,7 @@
           "frame": {
             "at": "twelve"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -23672,14 +23642,14 @@
           "frame": {
             "at": "silent"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "closer"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -23806,7 +23776,7 @@
           "frame": {
             "at": "airbags"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
@@ -23869,13 +23839,7 @@
         "phraseIndex": 0,
         "edge": "start"
       },
-      "sounds": [
-        {
-          "sound": "whoosh",
-          "frame": 0,
-          "gainDb": -24
-        }
-      ]
+      "sounds": []
     },
     {
       "id": "em-e1",
@@ -23940,7 +23904,7 @@
           "frame": {
             "at": "brightest"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -23996,13 +23960,7 @@
         "phraseIndex": 0,
         "edge": "start"
       },
-      "sounds": [
-        {
-          "sound": "whoosh",
-          "frame": 0,
-          "gainDb": -24
-        }
-      ]
+      "sounds": []
     },
     {
       "id": "em-e3",
@@ -24067,7 +24025,7 @@
           "frame": {
             "at": "geysers"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -24134,14 +24092,14 @@
           "frame": {
             "at": "stripes"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "thousand"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -24275,7 +24233,7 @@
           "frame": {
             "at": "long"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -24342,7 +24300,7 @@
           "frame": {
             "at": "half"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -24398,13 +24356,7 @@
         "phraseIndex": 0,
         "edge": "start"
       },
-      "sounds": [
-        {
-          "sound": "whoosh",
-          "frame": 0,
-          "gainDb": -24
-        }
-      ]
+      "sounds": []
     },
     {
       "id": "em-t1",
@@ -24472,7 +24424,7 @@
           "frame": {
             "at": "far"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -24539,14 +24491,14 @@
           "frame": {
             "at": "minus"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "coldest"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -24613,14 +24565,14 @@
           "frame": {
             "at": "backwards"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "eight"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -24687,7 +24639,7 @@
           "frame": {
             "at": "cold"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -24759,14 +24711,14 @@
           "frame": {
             "at": "forever"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "never"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -24833,14 +24785,14 @@
           "frame": {
             "at": "fast"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "thermos"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -24907,7 +24859,7 @@
           "frame": {
             "at": "heat"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -24974,7 +24926,7 @@
           "frame": {
             "at": "wins"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -25030,13 +24982,7 @@
         "phraseIndex": 0,
         "edge": "start"
       },
-      "sounds": [
-        {
-          "sound": "whoosh",
-          "frame": 0,
-          "gainDb": -24
-        }
-      ]
+      "sounds": []
     },
     {
       "id": "em-x1",
@@ -25104,7 +25050,7 @@
           "frame": {
             "at": "belt"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -25171,14 +25117,14 @@
           "frame": {
             "at": "see"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "feel"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -25245,7 +25191,7 @@
           "frame": {
             "at": "faster"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "tick",
@@ -25343,14 +25289,14 @@
           "frame": {
             "at": "biggest"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "Mercury"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -25417,7 +25363,7 @@
           "frame": {
             "at": "field"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -25484,7 +25430,7 @@
           "frame": {
             "at": "months"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -25611,7 +25557,7 @@
           "frame": {
             "at": "twice"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -25667,20 +25613,7 @@
         "phraseIndex": 0,
         "edge": "start"
       },
-      "sounds": [
-        {
-          "sound": "whoosh",
-          "frame": 0,
-          "gainDb": -24
-        },
-        {
-          "sound": "pop",
-          "frame": {
-            "at": "Aliens"
-          },
-          "gainDb": -22
-        }
-      ]
+      "sounds": []
     },
     {
       "id": "em-u3",
@@ -25745,7 +25678,7 @@
           "frame": {
             "at": "day"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -25812,14 +25745,14 @@
           "frame": {
             "at": "dig"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "ice"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -25935,13 +25868,7 @@
         "phraseIndex": 0,
         "edge": "start"
       },
-      "sounds": [
-        {
-          "sound": "whoosh",
-          "frame": 0,
-          "gainDb": -24
-        }
-      ]
+      "sounds": []
     },
     {
       "id": "em-i1",
@@ -26006,7 +25933,7 @@
           "frame": {
             "at": "volcanic"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -26073,14 +26000,14 @@
           "frame": {
             "at": "volcanoes"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "kilometers"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -26150,7 +26077,7 @@
           "frame": {
             "at": "inside"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -26324,7 +26251,7 @@
           "frame": {
             "at": "three"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -26394,7 +26321,7 @@
           "frame": {
             "at": "feel"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -26450,13 +26377,7 @@
         "phraseIndex": 0,
         "edge": "start"
       },
-      "sounds": [
-        {
-          "sound": "whoosh",
-          "frame": 0,
-          "gainDb": -24
-        }
-      ]
+      "sounds": []
     },
     {
       "id": "em-z1",
@@ -26521,7 +26442,7 @@
           "frame": {
             "at": "promised"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -26588,7 +26509,7 @@
           "frame": {
             "at": "half"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -26655,7 +26576,7 @@
           "frame": {
             "at": "all"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -26722,7 +26643,7 @@
           "frame": {
             "at": "minus"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -26789,14 +26710,14 @@
           "frame": {
             "at": "rain"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "lakes"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -26866,7 +26787,7 @@
           "frame": {
             "at": "fly"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -26922,20 +26843,7 @@
         "phraseIndex": 0,
         "edge": "start"
       },
-      "sounds": [
-        {
-          "sound": "whoosh",
-          "frame": 0,
-          "gainDb": -24
-        },
-        {
-          "sound": "pop",
-          "frame": {
-            "at": "going"
-          },
-          "gainDb": -22
-        }
-      ]
+      "sounds": []
     },
     {
       "id": "em-k1",
@@ -27000,7 +26908,7 @@
           "frame": {
             "at": "end"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -27067,21 +26975,21 @@
           "frame": {
             "at": "launch"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "freeze"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "poison"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -27148,7 +27056,7 @@
           "frame": {
             "at": "fly"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     },
@@ -27215,14 +27123,14 @@
           "frame": {
             "at": "pick"
           },
-          "gainDb": -22
+          "gainDb": -25
         },
         {
           "sound": "pop",
           "frame": {
             "at": "comments"
           },
-          "gainDb": -22
+          "gainDb": -25
         }
       ]
     }

@@ -137,6 +137,9 @@ def write_story(duration):
 DURATION = int(sys.argv[1]) if len(sys.argv) > 1 else 520
 write_story(DURATION)
 ep = Episode(str(STORY), 'wide'); F = ep.F; W, H = F['W'], F['H']
+# Anthology pacing: 86 short shots. Note pops a little quieter than in single-topic episodes, and one cut (Arka's short
+# 'Get me out of here' before Titan) cannot land within 0.2 s of its phrase while every shot keeps 1.5 s minimum.
+ep.pop_db, ep.deviation_tolerance = -25, .3
 ep.backdrop(stars=20)
 
 ICE, MAG = '#2f7fd0', '#a24bd6'
@@ -408,8 +411,9 @@ shot('k4', 'TITAN', [arka(slot='center-left', h=.5, poses=[(0, 'point-right'), (
 # ------------------------------------------------------------------ music: one licensed track per section, drop-outs before punchlines
 M = 'assets/music/'
 ep.music([('h1', M + '1-curious-a-science-montage.mp3', 0), ('p1', M + '2-playful-b-sweet-math.mp3', 0), ('t1', M + '3-eerie-b-surface-of-the-moon.mp3', 0),
-          ('x1', M + '4-tense-b-standoff.mp3', 0), ('z1', M + '5-uplifting-a-taking-flight.mp3', 0)],
-         dropouts=[('r7', 0, 1.0), ('c6', 0, .8), ('p9', 0, .8), ('e8', 0, .8), ('u6', 0, .8), ('i6', 30, 2.5), ('z3', 0, 1.0)])
+          ('x1', M + '4-tense-b-standoff.mp3', 0, -3), ('z1', M + '5-uplifting-a-taking-flight.mp3', 0)],
+         dropouts=[('r7', 0, 1.0), ('c6', 0, .8), ('p9', 0, .8), ('e8', 0, .8), ('u6', 0, .8), ('i6', 30, 2.5), ('z3', 0, 1.0)],
+         target_lufs=-16)  # Arka's shouted lines peak 5-7 dB above the rest; at -14 LUFS the final limiter squashed them
 
 if __name__ == '__main__':
     path, board = ep.write(sys.argv[2] if len(sys.argv) > 2 else None)
