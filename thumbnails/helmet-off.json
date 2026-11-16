@@ -27,19 +27,21 @@
     "lines": [
       {
         "text": "HELMET OFF?",
-        "x": 48,
-        "y": 70,
-        "size": 92,
+        "x": 40,
+        "y": 60,
+        "size": 96,
         "color": "#ffffff",
-        "border": 10
+        "border": 12,
+        "borderColor": "#111111"
       },
       {
         "text": "15s",
-        "x": 40,
-        "y": 200,
-        "size": 240,
-        "color": "#ff3b30",
-        "border": 16
+        "x": 34,
+        "y": 180,
+        "size": 260,
+        "color": "#ff2d2d",
+        "border": 16,
+        "borderColor": "#ffffff"
       }
     ]
   }

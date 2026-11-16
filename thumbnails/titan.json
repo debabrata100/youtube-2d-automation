@@ -27,11 +27,12 @@
     "lines": [
       {
         "text": "NO SPACESUIT?!",
-        "x": 44,
-        "y": 80,
-        "size": 96,
+        "x": 40,
+        "y": 60,
+        "size": 104,
         "color": "#ffffff",
-        "border": 10
+        "border": 14,
+        "borderColor": "#111111"
       }
     ]
   }
