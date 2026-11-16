@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "1.0",
+  "id": "helmet-off-short",
+  "title": "What Happens If You Take Your Helmet Off in Space?",
+  "topic": "Vacuum exposure: about 10-15 s of useful consciousness, exhale to protect lungs, swelling but no explosion, saliva boils but blood does not, slow heat loss, lungs pull oxygen from blood, survival if repressurised within about 90 s, Jim LeBlanc 1966 NASA chamber accident",
+  "language": "en-US",
+  "targetAudience": "English-speaking science-curious viewers aged 16-35",
+  "durationSeconds": 30,
+  "storyboard": "storyboards/helmet-off-short.json",
+  "candidatesReport": "stories/helmet-off-notes.md",
+  "beats": [
+    {
+      "id": "hook",
+      "sceneId": "short-hook",
+      "intent": "hook",
+      "emphasis": [
+        "fifteen seconds"
+      ],
+      "narration": "You took your helmet off in space. You have fifteen seconds.",
+      "phrases": [
+        "You took your helmet off in space.",
+        "You have fifteen seconds."
+      ]
+    },
+    {
+      "id": "myths",
+      "sceneId": "short-myths",
+      "intent": "explanation",
+      "emphasis": [
+        "explode"
+      ],
+      "narration": "You won't explode. Your blood won't boil. You won't even freeze.",
+      "phrases": [
+        "You won't explode.",
+        "Your blood won't boil.",
+        "You won't even freeze."
+      ]
+    },
+    {
+      "id": "killer",
+      "sceneId": "short-killer",
+      "intent": "payoff",
+      "emphasis": [
+        "oxygen"
+      ],
+      "narration": "But with no air outside, your lungs pull the oxygen out of your blood.",
+      "phrases": [
+        "But with no air outside,",
+        "your lungs pull the oxygen",
+        "out of your blood."
+      ]
+    },
+    {
+      "id": "blackout",
+      "sceneId": "short-blackout",
+      "intent": "payoff",
+      "emphasis": [
+        "black out"
+      ],
+      "narration": "At zero, you black out.",
+      "phrases": [
+        "At zero, you black out."
+      ]
+    },
+    {
+      "id": "rescue",
+      "sceneId": "short-rescue",
+      "intent": "explanation",
+      "emphasis": [
+        "survive"
+      ],
+      "narration": "Get back to air within about a minute and a half, and you can survive. A NASA engineer did, in 1966.",
+      "phrases": [
+        "Get back to air",
+        "within about a minute and a half,",
+        "and you can survive.",
+        "A NASA engineer did, in 1966."
+      ]
+    },
+    {
+      "id": "closing",
+      "sceneId": "short-closing",
+      "intent": "closing",
+      "emphasis": [
+        "Helmet"
+      ],
+      "narration": "Helmet. Back. On.",
+      "phrases": [
+        "Helmet. Back. On."
+      ],
+      "phraseSpeakers": [
+        "arka"
+      ]
+    }
+  ]
+}

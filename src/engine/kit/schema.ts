@@ -66,6 +66,10 @@ export const kitSchema = z.discriminatedUnion('type', [
     /** Worn items (mask, coat, wings); each appears at `from` and optionally disappears at `until` (frames may be word anchors). */
     accessories: z.array(z.object({item: z.enum(ACCESSORY_IDS), from: keyFrame.default(0), until: keyFrame.optional()}).strict()).max(6).default([]),
     coat: hex.optional(),
+    /** Astronaut helmet on/off keys (default: on). */
+    helmet: z.array(z.object({frame: keyFrame, on: z.boolean()}).strict()).max(12).default([]).refine(increasing, 'Helmet frames must strictly increase'),
+    /** Skin flush 0-1 (sunburn, embarrassment), interpolated between keys. */
+    flush: z.array(z.object({frame: keyFrame, value: z.number().min(0).max(1)}).strict()).max(12).default([]).refine(increasing, 'Flush frames must strictly increase'),
   }).strict(),
   /** Cartoon planet: base colour, wavy bands (gas giants), craters, optional ring and glow. radius is a fraction of the group's shorter side. */
   z.object({
@@ -75,9 +79,15 @@ export const kitSchema = z.discriminatedUnion('type', [
   }).strict(),
   /** Hand-drawn props. size is a fraction of the group's shorter side; thermometer level keys (0-1) interpolate linearly. */
   z.object({
-    type: z.literal('prop'), item: z.enum(['thermometer', 'pressure-arrows', 'motion-lines', 'exclaim', 'question', 'check', 'cross']),
-    x: n, y: n, size: size(.01, 1), rotation: z.number().min(-360).max(360).default(0), color: hex.optional(), count: z.number().int().min(1).max(12).default(6),
+    type: z.literal('prop'), item: z.enum(['thermometer', 'pressure-arrows', 'motion-lines', 'exclaim', 'question', 'check', 'cross', 'counter', 'stamp', 'vignette', 'station', 'helmet', 'doodle-stars', 'chamber']),
+    x: n, y: n, size: size(.01, 1), rotation: z.number().min(-360).max(360).default(0), color: hex.optional(), count: z.number().int().min(1).max(40).default(6),
     level: z.array(z.object({frame: keyFrame, value: z.number().min(0).max(1)}).strict()).min(1).max(12).refine(increasing, 'Level frames must strictly increase').default([{frame: 0, value: .6}]),
+    /** Counter numbers: each key holds until the next, or counts down/up to it in whole steps when ramp is set. */
+    values: z.array(z.object({frame: keyFrame, value: z.number().int().min(-9999).max(9999), ramp: z.boolean().default(false)}).strict()).max(40).default([]).refine(increasing, 'Value frames must strictly increase'),
+    /** Counter caption or stamp text. */
+    text: z.string().min(1).max(24).optional(),
+    /** Pressure arrows: squeeze in, or burst out. */
+    direction: z.enum(['in', 'out']).default('in'),
   }).strict(),
   /** Hand-drawn ground: outlined horizon with bumps, optional planet curvature, speckles and horizon rocks. */
   z.object({

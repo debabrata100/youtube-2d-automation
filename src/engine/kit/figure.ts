@@ -8,7 +8,7 @@ import {easeMotion} from '../motion/primitives/schema';
 export const POSE_IDS = ['stand', 'wave', 'point-right', 'point-left', 'shrug', 'cheer', 'panic', 'scared', 'hands-on-hips', 'think',
   'float', 'tumble', 'reach', 'cower', 'lie', 'walk', 'run', 'flap'] as const;
 export type PoseId = typeof POSE_IDS[number];
-export const FACE_IDS = ['neutral', 'happy', 'shocked', 'scared', 'sad', 'dizzy', 'angry', 'smug', 'pain', 'scream', 'grin'] as const;
+export const FACE_IDS = ['neutral', 'happy', 'shocked', 'scared', 'sad', 'dizzy', 'angry', 'smug', 'pain', 'scream', 'grin', 'puffed', 'tongue', 'asleep'] as const;
 export const ACCESSORY_IDS = ['mask', 'coat', 'wings'] as const;
 export type Accessory = {item: typeof ACCESSORY_IDS[number]; from: number; until?: number};
 /** Accessory worn at a frame: from `from` (inclusive) until `until` (exclusive, optional). */

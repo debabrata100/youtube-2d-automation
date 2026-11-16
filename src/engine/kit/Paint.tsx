@@ -64,7 +64,21 @@ export const Terrain: React.FC<{config: TerrainConfig; theme: Theme; width: numb
   </>;
 };
 
-export type PropConfig = {item: 'thermometer' | 'pressure-arrows' | 'motion-lines' | 'exclaim' | 'question' | 'check' | 'cross'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>};
+export type PropConfig = {item: 'thermometer' | 'pressure-arrows' | 'motion-lines' | 'exclaim' | 'question' | 'check' | 'cross' | 'counter' | 'stamp' | 'vignette' | 'station' | 'helmet' | 'doodle-stars' | 'chamber'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
+  values?: Array<{frame: number; value: number; ramp?: boolean}>; text?: string; direction?: 'in' | 'out'};
+
+/** Counter value: keys hold, or step in whole numbers towards the next key when `ramp` is set (a real-time countdown). */
+export const counterAt = (keys: NonNullable<PropConfig['values']>, frame: number) => {
+  if (!keys.length) return 0;
+  if (frame < keys[0].frame) return keys[0].value;
+  for (let i = 1; i < keys.length; i++) if (frame < keys[i].frame) {
+    const a = keys[i - 1], b = keys[i];
+    if (!a.ramp) return a.value;
+    const t = (frame - a.frame) / (b.frame - a.frame), v = a.value + (b.value - a.value) * t;
+    return b.value < a.value ? Math.ceil(v) : Math.floor(v);
+  }
+  return keys.at(-1)!.value;
+};
 
 const levelAt = (keys: PropConfig['level'], frame: number) => {
   if (frame <= keys[0].frame) return keys[0].value;
@@ -77,7 +91,7 @@ const levelAt = (keys: PropConfig['level'], frame: number) => {
 
 /** Hand-drawn props: thermometer (animated level), pressure arrows, motion lines, ! ? and tick/cross marks. */
 export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; height: number; frame: number}> = ({config: c, theme, width, height, frame}) => {
-  const s = c.size * Math.min(width, height), ink = theme.line.color, red = c.color ?? theme.palette.text.accent, w = Math.max(3, s * .045);
+  const s = c.size * Math.min(width, height), ink = theme.line.color, red = c.color ?? theme.palette.text.accent, w = Math.max(3, s * .045), font = theme.label.fontFamily;
   const at = `translate(${c.x * width} ${c.y * height}) rotate(${c.rotation})`;
   const stroke = (color: string, sw = w) => ({fill: 'none', stroke: color, strokeWidth: sw, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const});
   switch (c.item) {
@@ -91,7 +105,7 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
       </g>;
     }
     case 'pressure-arrows': return <g transform={at}>{Array.from({length: c.count}, (_, i) => {
-      const a = (i / c.count) * Math.PI * 2 - Math.PI / 2, r0 = s * .5, r1 = s * .26, k = s * .07;
+      const a = (i / c.count) * Math.PI * 2 - Math.PI / 2, out = c.direction === 'out', r0 = out ? s * .26 : s * .5, r1 = out ? s * .5 : s * .26, k = s * .07;
       const x0 = Math.cos(a) * r0, y0 = Math.sin(a) * r0, x1 = Math.cos(a) * r1, y1 = Math.sin(a) * r1;
       return <g key={i}><path d={`M ${x0} ${y0} L ${x1} ${y1}`} {...stroke(red)}/>
         <path d={`M ${x1 + k * Math.cos(a + 2.6)} ${y1 + k * Math.sin(a + 2.6)} L ${x1} ${y1} L ${x1 + k * Math.cos(a - 2.6)} ${y1 + k * Math.sin(a - 2.6)}`} {...stroke(red)}/></g>;
@@ -104,5 +118,72 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
     case 'question': return <g transform={at}><path d={`M ${-s * .2} ${-s * .25} Q ${-s * .2} ${-s * .5} 0 ${-s * .5} Q ${s * .22} ${-s * .5} ${s * .22} ${-s * .26} Q ${s * .22} ${-s * .08} 0 0 L 0 ${s * .16}`} {...stroke(red, w * 2)}/><circle cx={0} cy={s * .4} r={w * 1.2} fill={red}/></g>;
     case 'check': return <g transform={at}><path d={`M ${-s * .4} 0 L ${-s * .1} ${s * .3} L ${s * .45} ${-s * .35}`} {...stroke(c.color ?? '#2e9e4f', w * 1.8)}/></g>;
     case 'cross': return <g transform={at}><path d={`M ${-s * .35} ${-s * .35} L ${s * .35} ${s * .35} M ${s * .35} ${-s * .35} L ${-s * .35} ${s * .35}`} {...stroke(red, w * 1.8)}/></g>;
+    case 'counter': {
+      // Big hand-lettered number in a box; it pops each time the value changes and turns red in the last five.
+      const keys = c.values ?? [], v = counterAt(keys, frame);
+      let since = 99; for (let k = 1; k <= 8; k++) if (counterAt(keys, frame - k) !== v) { since = k; break; }
+      const pop = since <= 8 ? 1 + .18 * (1 - since / 8) : 1, bw = s * 1.15, bh = s * .82, col = v <= 5 ? red : ink;
+      return <g transform={`${at} scale(${pop})`}>
+        <rect x={-bw / 2} y={-bh / 2} width={bw} height={bh} rx={s * .12} fill="#ffffff" stroke={ink} strokeWidth={w * 1.2}/>
+        <text x={0} y={bh * .26} textAnchor="middle" fontFamily={font} fontSize={s * .66} fill={col} stroke={col} strokeWidth={s * .012}>{String(v)}</text>
+        {c.text && <text x={0} y={bh / 2 + s * .22} textAnchor="middle" fontFamily={font} fontSize={s * .17} fill={ink}>{c.text}</text>}
+      </g>;
+    }
+    case 'stamp': {
+      const label = (c.text ?? 'MYTH').toUpperCase(), fs = s * .3, bw = label.length * fs * .62 + s * .3, bh = fs * 1.5;
+      return <g transform={`${at} rotate(-12)`} opacity=".92">
+        <rect x={-bw / 2} y={-bh / 2} width={bw} height={bh} rx={s * .05} fill="none" stroke={red} strokeWidth={w * 1.4}/>
+        <rect x={-bw / 2 + w * 2.2} y={-bh / 2 + w * 2.2} width={bw - w * 4.4} height={bh - w * 4.4} rx={s * .03} fill="none" stroke={red} strokeWidth={w * .6}/>
+        <text x={0} y={fs * .36} textAnchor="middle" fontFamily={font} fontSize={fs} fill={red} stroke={red} strokeWidth={fs * .03} letterSpacing={fs * .06}>{label}</text>
+      </g>;
+    }
+    case 'vignette': {
+      // Blackout: edges darken first, then the whole frame (level 0 = clear, 1 = black).
+      const lv = levelAt(c.level, frame), gid = `vig-${Math.round(c.x * 1000)}-${Math.round(c.y * 1000)}`;
+      return <><defs><radialGradient id={gid} cx=".5" cy=".5" r=".75"><stop offset="0" stopColor="#0d0b12" stopOpacity={Math.max(0, lv * 1.6 - .6)}/><stop offset=".55" stopColor="#0d0b12" stopOpacity={Math.min(1, lv * 1.3)}/><stop offset="1" stopColor="#0d0b12" stopOpacity={Math.min(1, lv * 1.8)}/></radialGradient></defs>
+        <rect x={-width * .1} y={-height * .1} width={width * 1.2} height={height * 1.2} fill={`url(#${gid})`}/></>;
+    }
+    case 'station': {
+      // Space station module: hull with windows, a truss with solar panels, and an airlock hatch that swings open (level).
+      const bw = s, bh = s * .42, open = levelAt(c.level, frame), p = theme.palette;
+      const panel = (x0: number, k: string) => <g key={k}><rect x={x0} y={-s * .3} width={s * .34} height={s * .6} fill={p.water.mid} stroke={ink} strokeWidth={w}/>{[1, 2, 3].map(i => <path key={i} d={`M ${x0} ${-s * .3 + s * .15 * i} l ${s * .34} 0`} {...stroke(ink, w * .5)}/>)}<path d={`M ${x0 + s * .17} ${-s * .3} l 0 ${s * .6}`} {...stroke(ink, w * .5)}/></g>;
+      return <g transform={at}>
+        <path d={`M ${-bw * .5} 0 L ${-bw * .78} 0`} {...stroke(ink, w * 1.6)}/>
+        {panel(-bw * 1.12, 'pl')}
+        <rect x={-bw / 2} y={-bh / 2} width={bw} height={bh} rx={bh * .3} fill={p.cloud.light} stroke={ink} strokeWidth={w}/>
+        {[-.3, -.08, .14].map(t => <circle key={t} cx={bw * t} cy={-bh * .05} r={bh * .14} fill={p.water.light} stroke={ink} strokeWidth={w * .8}/>)}
+        {[-.42, .3].map(t => <path key={t} d={`M ${bw * t} ${-bh / 2} l 0 ${bh}`} {...stroke(ink, w * .5)}/>)}
+        <circle cx={bw * .5} cy={0} r={bh * .36} fill="#2a2433" stroke={ink} strokeWidth={w}/>
+        <ellipse cx={bw * .5 + bh * .36 * open * .9} cy={0} rx={Math.max(1, bh * .36 * (1 - open * .82))} ry={bh * .36} fill={p.cloud.shadow} stroke={ink} strokeWidth={w}/>
+      </g>;
+    }
+    case 'doodle-stars': {
+      // Ink sparkles and dots scattered over the whole group (paper-page "space"); positions are seeded by x/y.
+      let seed = Math.round(c.x * 7919 + c.y * 104729) || 1; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+      return <g>{Array.from({length: c.count}, (_, i) => {
+        const x = rnd() * width, y = rnd() * height, k = s * (.025 + rnd() * .03), twinkle = .55 + .45 * Math.sin(frame / 18 + i * 1.7);
+        return i % 3 === 2 ? <circle key={i} cx={x} cy={y} r={k * .22} fill={ink} opacity={.5 * twinkle}/>
+          : <path key={i} d={`M ${x} ${y - k} Q ${x} ${y} ${x + k} ${y} Q ${x} ${y} ${x} ${y + k} Q ${x} ${y} ${x - k} ${y} Q ${x} ${y} ${x} ${y - k} Z`} fill={i % 4 ? '#ffffff' : (c.color ?? theme.palette.sun.glow)} stroke={ink} strokeWidth={Math.max(1.5, k * .14)} opacity={twinkle}/>;
+      })}</g>;
+    }
+    case 'chamber': {
+      // Test vacuum chamber: thick-walled rounded box, porthole and a pump pipe (the figure is drawn separately).
+      const bw = s * 1.1, bh = s, p = theme.palette;
+      return <g transform={at}>
+        <rect x={-bw / 2} y={-bh / 2} width={bw} height={bh} rx={s * .14} fill={p.cloud.shadow} fillOpacity=".35" stroke={ink} strokeWidth={w * 1.6}/>
+        <rect x={-bw / 2 + w * 3} y={-bh / 2 + w * 3} width={bw - w * 6} height={bh - w * 6} rx={s * .11} fill="none" stroke={ink} strokeWidth={w * .6} opacity=".6"/>
+        <circle cx={-bw * .3} cy={-bh * .3} r={s * .08} fill={p.water.light} stroke={ink} strokeWidth={w}/>
+        <path d={`M ${bw / 2} ${bh * .2} l ${s * .22} 0 l 0 ${bh * .3}`} {...stroke(ink, w * 2.2)}/>
+        <circle cx={bw / 2 + s * .11} cy={bh * .2} r={s * .04} fill={red} stroke={ink} strokeWidth={w * .7}/>
+      </g>;
+    }
+    case 'helmet': {
+      const r = s * .5, visor = c.color ?? theme.palette.water.light;
+      return <g transform={at}>
+        <rect x={-r * .62} y={r * .72} width={r * 1.24} height={r * .3} rx={r * .1} fill={theme.palette.cloud.shadow} stroke={ink} strokeWidth={w}/>
+        <circle cx={0} cy={0} r={r} fill={visor} fillOpacity=".25" stroke={ink} strokeWidth={w}/>
+        <path d={`M ${-r * .72} ${-r * .38} A ${r * .85} ${r * .85} 0 0 1 ${-r * .12} ${-r * .82}`} {...stroke('#ffffff', w * 1.4)}/>
+      </g>;
+    }
   }
 };

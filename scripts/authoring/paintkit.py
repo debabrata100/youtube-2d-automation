@@ -46,9 +46,13 @@ def pop_in(at, anchor=None):
     return d
 
 
-def figure(fid, fx, fy, h, poses, faces, accessories=(), outfit='stick', shiver=0, seed=3, **layer):
+def figure(fid, fx, fy, h, poses, faces, accessories=(), outfit='stick', shiver=0, seed=3, facing=None, suit=None, visor=None, helmet=None, flush=None, **layer):
     kit = {'type': 'figure', 'x': fx, 'y': fy, 'height': h, 'outfit': outfit, 'shiver': shiver, 'seed': seed,
            'poses': [{'frame': f, 'pose': p} for f, p in poses], 'faces': [{'frame': f, 'face': c} for f, c in faces]}
+    for k, v in (('facing', facing), ('suit', suit), ('visor', visor)):
+        if v: kit[k] = v
+    if helmet: kit['helmet'] = [{'frame': f, 'on': on} for f, on in helmet]
+    if flush: kit['flush'] = [{'frame': f, 'value': v} for f, v in flush]
     if accessories:
         kit['accessories'] = [dict(item=i, **({'from': f} if f != 0 else {})) for i, f in accessories]
     return {'id': fid, 'kit': kit, **layer}
@@ -59,7 +63,7 @@ def planet(pid, px, py, r, base, bands=(), craters=0, ring=False, shade=.2, seed
 
 
 def prop(pid, item, px, py, size, **extra):
-    layer = {k: extra.pop(k) for k in list(extra) if k in ('opacity', 'scale', 'anchor', 'x', 'y')}
+    layer = {k: extra.pop(k) for k in list(extra) if k in ('opacity', 'scale', 'anchor', 'x', 'y', 'rotate')}
     return {'id': pid, 'kit': {'type': 'prop', 'item': item, 'x': px, 'y': py, 'size': size, **extra}, **layer}
 
 

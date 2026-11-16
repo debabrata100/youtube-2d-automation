@@ -22,7 +22,7 @@ export const trackAt = (frame: number, keys: Track | undefined, fallback: number
 };
 export const layerStateAt = (layer: IllustrationLayerConfig, frame: number) => {
   const phase = layer.pulse ? Math.sin(frame * 2 * Math.PI / layer.pulse.periodFrames + layer.pulse.phase) : 0;
-  return {x: trackAt(frame, layer.x, 0), y: trackAt(frame, layer.y, 0), scale: trackAt(frame, layer.scale, 1), opacity: trackAt(frame, layer.opacity, 1) * (1 - (layer.pulse?.opacity ?? 0) * (.5 + .5 * phase)), brightness: trackAt(frame, layer.brightness, 1) * (1 + (layer.pulse?.brightness ?? 0) * phase)};
+  return {x: trackAt(frame, layer.x, 0), y: trackAt(frame, layer.y, 0), scale: trackAt(frame, layer.scale, 1), rotate: trackAt(frame, layer.rotate, 0), opacity: trackAt(frame, layer.opacity, 1) * (1 - (layer.pulse?.opacity ?? 0) * (.5 + .5 * phase)), brightness: trackAt(frame, layer.brightness, 1) * (1 + (layer.pulse?.brightness ?? 0) * phase)};
 };
 export const wipeRectAt = (reveal: Extract<NonNullable<IllustrationLayerConfig['reveal']>, {type: 'wipe'}>, frame: number) => {
   const p = trackAt(frame, reveal.progress, 0), b = reveal.bounds;

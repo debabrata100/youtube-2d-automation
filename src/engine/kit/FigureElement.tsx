@@ -6,7 +6,17 @@ export type FigureConfig = {
   x: number; y: number; height: number; facing: 'left' | 'right'; outfit: 'stick' | 'astronaut';
   poses: PoseKey[]; faces: Array<{frame: number; face: FaceId}>; blink: boolean; shiver: number; seed: number; suit?: string; visor?: string;
   accessories: Accessory[]; coat?: string;
+  helmet?: Array<{frame: number; on: boolean}>; flush?: Array<{frame: number; value: number}>;
 };
+/** Helmet keys hold until the next key; with none the astronaut keeps the helmet on. */
+export const helmetOn = (keys: FigureConfig['helmet'], frame: number) => { let on = true; for (const k of keys ?? []) if (frame >= k.frame) on = k.on; return on; };
+export const flushAt = (keys: FigureConfig['flush'], frame: number) => {
+  if (!keys?.length) return 0;
+  if (frame <= keys[0].frame) return keys[0].value;
+  for (let i = 1; i < keys.length; i++) if (frame < keys[i].frame) { const a = keys[i - 1], b = keys[i], t = (frame - a.frame) / (b.frame - a.frame); return a.value + (b.value - a.value) * t; }
+  return keys.at(-1)!.value;
+};
+const mix = (a: string, b: string, t: number) => { const p = (h: string, i: number) => parseInt(h.slice(1 + i * 2, 3 + i * 2), 16); return '#' + [0, 1, 2].map(i => Math.round(p(a, i) + (p(b, i) - p(a, i)) * t).toString(16).padStart(2, '0')).join(''); };
 type Pt = {x: number; y: number};
 const line = (a: Pt, b: Pt, c: Pt) => `M ${a.x} ${a.y} L ${b.x} ${b.y} L ${c.x} ${c.y}`;
 
@@ -23,6 +33,9 @@ const Face: React.FC<{s: Skeleton; face: FaceId; ink: string; accent: string; bl
       case 'dizzy': return <>{[-1, 1].map(k => <path key={k} d={`M ${cx + k * ex - r * .11} ${ey - r * .11} l ${r * .22} ${r * .22} m 0 ${-r * .22} l ${-r * .22} ${r * .22}`} {...stroke}/>)}</>;
       case 'pain': return <>{[-1, 1].map(k => <path key={k} d={`M ${cx + k * ex - k * r * .12} ${ey - r * .1} l ${k * r * .2} ${r * .1} l ${-k * r * .2} ${r * .1}`} {...stroke}/>)}</>;
       case 'smug': return <>{[-1, 1].map(k => <path key={k} d={`M ${cx + k * ex - r * .12} ${ey} l ${r * .24} 0`} {...stroke}/>)}</>;
+      case 'tongue': return <>{ring(cx - ex, .09)}{ring(cx + ex, .09)}</>;
+      case 'asleep': return <>{[-1, 1].map(k => <path key={k} d={`M ${cx + k * ex - r * .13} ${ey} Q ${cx + k * ex} ${ey + r * .12} ${cx + k * ex + r * .13} ${ey}`} {...stroke}/>)}</>;
+      case 'puffed': return <>{[-1, 1].map(k => <path key={k} d={`M ${cx + k * ex - r * .12} ${ey + r * .02} L ${cx + k * ex} ${ey - r * .06} L ${cx + k * ex + r * .12} ${ey + r * .02}`} {...stroke}/>)}</>;
       default: return <>{dot(cx - ex)}{dot(cx + ex)}</>;
     }
   })();
@@ -38,6 +51,9 @@ const Face: React.FC<{s: Skeleton; face: FaceId; ink: string; accent: string; bl
       case 'angry': return <path d={`M ${cx - r * .26} ${my + r * .04} L ${cx + r * .26} ${my + r * .04}`} {...stroke}/>;
       case 'smug': return <path d={`M ${cx - r * .2} ${my + r * .02} Q ${cx + r * .1} ${my + r * .12} ${cx + r * .3} ${my - r * .1}`} {...stroke}/>;
       case 'pain': return <><rect x={cx - r * .28} y={my - r * .1} width={r * .56} height={r * .24} rx={r * .06} fill="#ffffff" stroke={ink} strokeWidth={w * .8}/><path d={`M ${cx - r * .28} ${my + r * .02} L ${cx + r * .28} ${my + r * .02}`} stroke={ink} strokeWidth={w * .6}/></>;
+      case 'puffed': return <><circle cx={cx - r * .5} cy={my - r * .04} r={r * .22} fill="#f6b9a8" stroke={ink} strokeWidth={w * .6}/><circle cx={cx + r * .5} cy={my - r * .04} r={r * .22} fill="#f6b9a8" stroke={ink} strokeWidth={w * .6}/><circle cx={cx} cy={my} r={r * .07} fill={ink}/></>;
+      case 'tongue': return <><ellipse cx={cx} cy={my} rx={r * .26} ry={r * .2} fill={ink}/><path d={`M ${cx - r * .17} ${my + r * .05} Q ${cx - r * .19} ${my + r * .42} ${cx} ${my + r * .42} Q ${cx + r * .19} ${my + r * .42} ${cx + r * .17} ${my + r * .05} Z`} fill="#e8707a" stroke={ink} strokeWidth={w * .7}/></>;
+      case 'asleep': return <ellipse cx={cx} cy={my + r * .04} rx={r * .1} ry={r * .07} fill={ink}/>;
       default: return <path d={`M ${cx - r * .18} ${my} L ${cx + r * .18} ${my}`} {...stroke}/>;
     }
   })();
@@ -52,7 +68,7 @@ export const Figure: React.FC<{config: FigureConfig; theme: Theme; width: number
   const h = c.height * height, pose = poseAt(c.poses, frame), s = skeleton(pose, h), ink = theme.line.color;
   const w = Math.max(3, h * .024), face = faceAt(c.faces, frame), blink = c.blink && isBlinking(frame, c.seed);
   const jitter = c.shiver ? Math.sin(frame * 2.7 + c.seed) * c.shiver : 0;
-  const astro = c.outfit === 'astronaut', suit = c.suit ?? theme.palette.cloud.light, visor = c.visor ?? theme.palette.water.light;
+  const astro = c.outfit === 'astronaut', helmet = astro && helmetOn(c.helmet, frame), skin = mix('#ffffff', '#f2876b', flushAt(c.flush, frame)), suit = c.suit ?? theme.palette.cloud.light, visor = c.visor ?? theme.palette.water.light;
   const flip = c.facing === 'left' ? -1 : 1, centre = {x: s.hip.x, y: (s.hip.y + s.neck.y) / 2};
   const transform = `translate(${c.x * width + jitter} ${c.y * height}) scale(${flip} 1) rotate(${pose.rotate} ${centre.x} ${centre.y})`;
   // Limbs: plain stick strokes, or a thick suit tube (ink outline under a lighter fill) for the astronaut.
@@ -101,7 +117,7 @@ export const Figure: React.FC<{config: FigureConfig; theme: Theme; width: number
     {limb(line(s.shoulder, s.elbowR, s.handR), 'armR')}
     {astro && [s.handL, s.handR].map((p, i) => <circle key={i} cx={p.x} cy={p.y} r={h * .036} fill={suit} stroke={ink} strokeWidth={w}/>)}
     {has('coat') && !astro && <circle cx={s.head.x} cy={s.head.y + s.headR * .08} r={s.headR * 1.28} fill={coat} stroke={ink} strokeWidth={w}/>}
-    <circle cx={s.head.x} cy={s.head.y} r={s.headR} fill="#ffffff" stroke={ink} strokeWidth={w}/>
+    <circle cx={s.head.x} cy={s.head.y} r={s.headR} fill={skin} stroke={ink} strokeWidth={w}/>
     <g transform={flip < 0 ? `translate(${2 * s.head.x} 0) scale(-1 1)` : undefined}>
       <Face s={s} face={face} ink={ink} accent={visor} blink={blink} look={flip > 0 ? 1 : -1}/>
     </g>
@@ -111,7 +127,7 @@ export const Figure: React.FC<{config: FigureConfig; theme: Theme; width: number
       <circle cx={s.head.x} cy={s.head.y + s.headR * .47} r={s.headR * .12} fill={ink}/>
       <rect x={s.neck.x + torsoW * .45} y={s.neck.y + torsoLen * .1} width={torsoW * .5} height={torsoLen * .55} rx={torsoW * .2} fill={theme.palette.water.mid} stroke={ink} strokeWidth={w}/>
     </g>}
-    {astro && <>
+    {helmet && <>
       <circle cx={s.head.x} cy={s.head.y} r={s.headR * 1.42} fill={visor} fillOpacity=".18" stroke={ink} strokeWidth={w}/>
       <path d={`M ${s.head.x - s.headR * 1.05} ${s.head.y - s.headR * .55} A ${s.headR * 1.2} ${s.headR * 1.2} 0 0 1 ${s.head.x - s.headR * .2} ${s.head.y - s.headR * 1.18}`} fill="none" stroke="#ffffff" strokeWidth={w * 1.4} strokeLinecap="round" opacity=".9"/>
     </>}

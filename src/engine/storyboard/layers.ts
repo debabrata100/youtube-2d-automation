@@ -15,7 +15,9 @@ export const layerSchema = z.object({
   kit: kitSchema.optional(),
   effects:z.array(motionEffectSchema).max(6).optional(),
   anchor: point.optional(),
-  opacity: trackSchema(0, 1).optional(), x: trackSchema(-4000, 4000).optional(), y: trackSchema(-4000, 4000).optional(), scale: trackSchema(.1, 3).optional(), brightness: trackSchema(.5, 1.5).optional(),
+  opacity: trackSchema(0, 1).optional(), x: trackSchema(-4000, 4000).optional(), y: trackSchema(-4000, 4000).optional(), scale: trackSchema(.1, 3).optional(),
+  /** Rotation in degrees around the layer anchor (tumbling props, floating figures). */
+  rotate: trackSchema(-1440, 1440).optional(), brightness: trackSchema(.5, 1.5).optional(),
   masks: z.array(mask).max(4).optional(),
   maskPadding: z.number().min(0).max(800).optional(),
   flow: flowSchema.optional(),

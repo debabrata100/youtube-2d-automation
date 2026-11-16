@@ -55,6 +55,14 @@ export const synthSfx = (id: SfxId): Float32Array => {
       const n = buffer(3).length, crackle = seededRandom(14), x = highpass(white(n, 15), 2400);
       return normalize(envelope(x, (t, d) => fade(.3, 1)(t, d) * (.35 + .65 * (crackle() > .997 ? 1 : .35))), .35);
     }
+    case 'tick': { // dry clock tick for countdowns
+      const b = buffer(.06), x = highpass(white(b.length, 21), 1800); for (let i = 0; i < b.length; i++) { const t = i / SAMPLE_RATE; b[i] = (x[i] * .7 + Math.sin(2 * Math.PI * 2100 * t) * .5) * Math.exp(-t * 90); }
+      return normalize(b, .55);
+    }
+    case 'heartbeat': { // lub-dub: two soft low thumps
+      const b = buffer(.75); for (let i = 0; i < b.length; i++) { const t = i / SAMPLE_RATE, beat = (t0: number, a: number) => t < t0 ? 0 : a * Math.sin(2 * Math.PI * (52 + 30 * Math.exp(-(t - t0) * 30)) * (t - t0)) * Math.exp(-(t - t0) * 16); b[i] = beat(0, 1) + beat(.26, .75); }
+      return normalize(lowpass(b, 400), .8);
+    }
     case 'riser': { // pitch rise into the payoff
       const b = buffer(1.4); for (let i = 0; i < b.length; i++) { const t = i / SAMPLE_RATE, ph = 2 * Math.PI * (110 * t + 160 * t * t); b[i] = (Math.sin(ph) + .35 * Math.sin(2 * ph) + .15 * Math.sin(3 * ph)) * Math.min(1, t / 1.1) * Math.min(1, (1.4 - t) / .08); }
       return normalize(lowpass(b, 2400), .5);

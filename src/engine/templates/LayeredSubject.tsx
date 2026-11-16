@@ -22,7 +22,7 @@ const Layer: React.FC<{layer: IllustrationLayerConfig; frame: number; group: Ill
   const maskBounds={x:-pad,y:-pad,width:group.width+2*pad,height:group.height+2*pad};
   const flowPosition=flow?.type==='directional'?flowPositionAt(flow,frame):0;
   const flowSequence=flow?.type==='path'?maskSequenceAt(flow.maskKeys,frame):null;
-  const art = <g transform={`translate(${state.x} ${state.y}) translate(${anchor.x} ${anchor.y}) scale(${state.scale}) translate(${-anchor.x} ${-anchor.y})`} style={{filter: `brightness(${state.brightness})`}}>
+  const art = <g transform={`translate(${state.x} ${state.y}) translate(${anchor.x} ${anchor.y}) scale(${state.scale})${state.rotate ? ` rotate(${state.rotate})` : ''} translate(${-anchor.x} ${-anchor.y})`} style={{filter: `brightness(${state.brightness})`}}>
     {image}
     {layer.kit && theme && <KitElement config={layer.kit} theme={theme} width={group.width} height={group.height} frame={frame} id={`${id}-kit`}/>}
     {texture && <g mask={`url(#${id}-self)`} opacity={texture.opacity}><g transform={`translate(${Math.sin(phase) * texture.x} ${Math.cos(phase) * texture.y})`}>{image}</g></g>}

@@ -36,5 +36,11 @@
     },
     "seed": 232,
     "applyTextNormalization": "auto"
+  },
+  "speakers": {
+    "_note": "Extra ElevenLabs voices for multi-voice stories (phraseSpeakers). The narrator uses elevenlabs.voice.",
+    "arka": {
+      "voice": "SET-ARKA-VOICE-ID"
+    }
   }
 }

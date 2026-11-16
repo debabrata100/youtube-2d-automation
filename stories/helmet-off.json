@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "1.0",
+  "id": "helmet-off",
+  "title": "What Happens If You Take Your Helmet Off in Space?",
+  "topic": "Vacuum exposure: about 10-15 s of useful consciousness, exhale to protect lungs, swelling but no explosion, saliva boils but blood does not, slow heat loss, lungs pull oxygen from blood, survival if repressurised within about 90 s, Jim LeBlanc 1966 NASA chamber accident",
+  "language": "en-US",
+  "targetAudience": "English-speaking science-curious viewers aged 16-35",
+  "durationSeconds": 88,
+  "storyboard": "storyboards/helmet-off.json",
+  "candidatesReport": "stories/helmet-off-notes.md",
+  "beats": [
+    {
+      "id": "hook",
+      "sceneId": "helmet-hook",
+      "intent": "hook",
+      "emphasis": [
+        "fifteen seconds"
+      ],
+      "narration": "Take your helmet off in space, and you have about fifteen seconds. Here's how they'd go. Wait, what? Don't do that!",
+      "phrases": [
+        "Take your helmet off in space,",
+        "and you have about fifteen seconds.",
+        "Here's how they'd go.",
+        "Wait, what? Don't do that!"
+      ],
+      "phraseSpeakers": [
+        "narrator",
+        "narrator",
+        "narrator",
+        "arka"
+      ]
+    },
+    {
+      "id": "breath",
+      "sceneId": "helmet-breath",
+      "intent": "setup",
+      "emphasis": [
+        "breathe out"
+      ],
+      "narration": "Fifteen. First, breathe out. If you hold your breath, the air in your lungs expands and tears them.",
+      "phrases": [
+        "Fifteen.",
+        "First, breathe out.",
+        "If you hold your breath,",
+        "the air in your lungs",
+        "expands and tears them."
+      ]
+    },
+    {
+      "id": "explode",
+      "sceneId": "helmet-explode",
+      "intent": "explanation",
+      "emphasis": [
+        "explode"
+      ],
+      "narration": "Twelve. Movies say you'd explode. You wouldn't. Your skin is tough enough to hold you together. You'd swell up, but you won't pop.",
+      "phrases": [
+        "Twelve.",
+        "Movies say you'd explode.",
+        "You wouldn't.",
+        "Your skin is tough enough",
+        "to hold you together.",
+        "You'd swell up,",
+        "but you won't pop."
+      ]
+    },
+    {
+      "id": "boil",
+      "sceneId": "helmet-boil",
+      "intent": "explanation",
+      "emphasis": [
+        "bubble"
+      ],
+      "narration": "Ten. Does your blood boil? No. Your body keeps it under pressure. But the spit on your tongue really does start to bubble. Gross.",
+      "phrases": [
+        "Ten.",
+        "Does your blood boil? No.",
+        "Your body keeps it",
+        "under pressure.",
+        "But the spit on your tongue",
+        "really does start to bubble.",
+        "Gross."
+      ],
+      "phraseSpeakers": [
+        "narrator",
+        "narrator",
+        "narrator",
+        "narrator",
+        "narrator",
+        "narrator",
+        "arka"
+      ]
+    },
+    {
+      "id": "cold",
+      "sceneId": "helmet-cold",
+      "intent": "explanation",
+      "emphasis": [
+        "freeze"
+      ],
+      "narration": "Seven. You don't freeze, either. Space is cold, but it's empty, so heat leaves you slowly. In sunlight, you'd get a brutal sunburn instead.",
+      "phrases": [
+        "Seven.",
+        "You don't freeze, either.",
+        "Space is cold, but it's empty,",
+        "so heat leaves you slowly.",
+        "In sunlight, you'd get",
+        "a brutal sunburn instead."
+      ]
+    },
+    {
+      "id": "blackout",
+      "sceneId": "helmet-blackout",
+      "intent": "payoff",
+      "emphasis": [
+        "real killer"
+      ],
+      "narration": "Four. Here's the real killer. With no air outside, your lungs work in reverse. They pull the oxygen out of your blood. Three. Two. One. Hang on, I've got you!",
+      "phrases": [
+        "Four.",
+        "Here's the real killer.",
+        "With no air outside,",
+        "your lungs work in reverse.",
+        "They pull the oxygen",
+        "out of your blood.",
+        "Three. Two. One.",
+        "Hang on, I've got you!"
+      ],
+      "phraseSpeakers": [
+        "narrator",
+        "narrator",
+        "narrator",
+        "narrator",
+        "narrator",
+        "narrator",
+        "narrator",
+        "arka"
+      ]
+    },
+    {
+      "id": "rescue",
+      "sceneId": "helmet-rescue",
+      "intent": "payoff",
+      "emphasis": [
+        "survive"
+      ],
+      "narration": "Zero. You black out. But you're not dead yet. Get back to air within about a minute and a half, and you can survive.",
+      "phrases": [
+        "Zero.",
+        "You black out.",
+        "But you're not dead yet.",
+        "Get back to air",
+        "within about a minute and a half,",
+        "and you can survive."
+      ]
+    },
+    {
+      "id": "history",
+      "sceneId": "helmet-history",
+      "intent": "explanation",
+      "emphasis": [
+        "1966"
+      ],
+      "narration": "We know, because in 1966 it really happened. A NASA engineer's suit lost pressure inside a vacuum chamber. The last thing he remembered was the saliva on his tongue starting to boil. His team got the air back, and he was fine.",
+      "phrases": [
+        "We know, because in 1966",
+        "it really happened.",
+        "A NASA engineer's suit",
+        "lost pressure",
+        "inside a vacuum chamber.",
+        "The last thing he remembered",
+        "was the saliva on his tongue",
+        "starting to boil.",
+        "His team got the air back,",
+        "and he was fine."
+      ]
+    },
+    {
+      "id": "closing",
+      "sceneId": "helmet-closing",
+      "intent": "closing",
+      "emphasis": [
+        "helmet back on"
+      ],
+      "narration": "So... helmet back on? Helmet back on.",
+      "phrases": [
+        "So... helmet back on?",
+        "Helmet back on."
+      ],
+      "phraseSpeakers": [
+        "arka",
+        "narrator"
+      ]
+    }
+  ]
+}
