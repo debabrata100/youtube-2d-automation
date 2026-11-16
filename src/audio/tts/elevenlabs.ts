@@ -7,6 +7,23 @@ export {characterAlignmentSchema} from './alignment';
 import {ttsConfigSchema,type CharacterAlignment,type SynthesisRequest,type SynthesisResult,type TTSProvider} from './provider';
 const base='https://api.elevenlabs.io/v1';
 class SafeProviderError extends Error {}
+const looseAlignment=z.object({characters:z.array(z.string()),character_start_times_seconds:z.array(z.number().finite()),character_end_times_seconds:z.array(z.number().finite())}).passthrough();
+/** Provider timings can overlap by a few milliseconds (number/abbreviation normalisation); clamp them monotonic instead of discarding a paid take. */
+export const repairAlignment=(a:z.infer<typeof looseAlignment>):CharacterAlignment=>{
+ if(!a.characters.length||a.characters.length!==a.character_start_times_seconds.length||a.characters.length!==a.character_end_times_seconds.length)throw Error('Provider alignment arrays are empty or of different lengths');
+ const starts:number[]=[],ends:number[]=[];let prev=0;
+ a.characters.forEach((_,i)=>{const st=Math.max(prev,a.character_start_times_seconds[i],0),en=Math.max(st,a.character_end_times_seconds[i]);starts.push(st);ends.push(en);prev=en;});
+ return characterAlignmentSchema.parse({characters:a.characters,character_start_times_seconds:starts,character_end_times_seconds:ends}) as CharacterAlignment;
+};
+/** Decode a saved with-timestamps response body into WAV + alignment (used live and to recover a paid take offline). */
+export const decodeTimestampedResponse=(body:string)=>{
+ const data=z.object({audio_base64:z.string().min(1),alignment:looseAlignment.nullable().optional(),normalized_alignment:looseAlignment.nullable().optional()}).passthrough().parse(JSON.parse(body));
+ if(!/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(data.audio_base64))throw Error('Invalid audio encoding');
+ const raw=data.alignment??data.normalized_alignment,alignment=raw?repairAlignment(raw):undefined;
+ const pcm=Buffer.from(data.audio_base64,'base64'),audio=pcm24kToWav(pcm);
+ if(alignment&&alignment.character_end_times_seconds.at(-1)!>pcm.length/48000+.25)throw Error('Provider timing exceeds measured PCM duration');
+ return{audio,alignment};
+};
 /** Read only provider diagnostic fields; never serialize bodies, headers or request options. */
 const credentialValues=(explicit:readonly string[])=>[...explicit,...Object.entries(process.env).filter(([name])=>/(?:key|token|secret|password|credential)/i.test(name)).map(([,value])=>value??'')].filter(value=>value.length>=4);
 export const sanitizeElevenLabsDiagnostic=(value:string,secrets:readonly string[]=[])=>{
@@ -31,7 +48,8 @@ export class ElevenLabsHTTPError extends SafeProviderError {
 }
 export type ElevenConfig=Extract<ReturnType<typeof ttsConfigSchema.parse>,{provider:'elevenlabs'}>;
 const keyOrThrow=(value?:string)=>{const key=value??process.env.ELEVENLABS_API_KEY;if(!key?.trim())throw Error('ELEVENLABS_API_KEY is required; no request was made');return key;};
-const safeFetch=async(transport:typeof fetch,url:string,init:RequestInit)=>{try{return await transport(url,{...init,redirect:'error',signal:AbortSignal.timeout(60000)});}catch{throw new SafeProviderError('ElevenLabs transport failed or timed out; no automatic retry. Any paid attempt remains counted.');}};
+// Synthesis of a long take (and downloading its base64 audio) can exceed a minute; the timeout covers the body read too.
+const safeFetch=async(transport:typeof fetch,url:string,init:RequestInit,timeoutMs=60000)=>{try{return await transport(url,{...init,redirect:'error',signal:AbortSignal.timeout(timeoutMs)});}catch{throw new SafeProviderError('ElevenLabs transport failed or timed out; no automatic retry. Any paid attempt remains counted.');}};
 /** Preserve legacy detail.status and current detail.code/type/message error shapes.
  * Unknown safe codes are retained, preventing future billing errors being discarded. */
 const checkResponse=async(r:Response,operation:string,secrets:readonly string[])=>{
@@ -129,16 +147,16 @@ export class ElevenLabsTTSProvider implements TTSProvider{
    const save=async()=>{await writeFile(file+'.tmp',JSON.stringify(ledger,null,2));await rename(file+'.tmp',file);};
    const attempt:{status:string;characters:number;requestId?:string;error?:ReturnType<ElevenLabsHTTPError['toJSON']>}={status:'reserved-before-request',characters:count};ledger.attempts.push(attempt);await save();
    try{
-    const response=await safeFetch(this.options.fetchImpl??fetch,`${base}/text-to-speech/${config.voice}/with-timestamps?output_format=${config.outputFormat}`,{method:'POST',headers:{'xi-api-key':key,'Content-Type':'application/json'},body:JSON.stringify({text:request.text,model_id:config.model,voice_settings:config.voiceSettings,seed:config.seed,apply_text_normalization:config.applyTextNormalization})});
+    const response=await safeFetch(this.options.fetchImpl??fetch,`${base}/text-to-speech/${config.voice}/with-timestamps?output_format=${config.outputFormat}`,{method:'POST',headers:{'xi-api-key':key,'Content-Type':'application/json'},body:JSON.stringify({text:request.text,model_id:config.model,voice_settings:config.voiceSettings,seed:config.seed,apply_text_normalization:config.applyTextNormalization})},300000);
     await checkResponse(response,'synthesis',[key]);
-    const data=z.object({audio_base64:z.string().min(1),alignment:characterAlignmentSchema.nullable(),normalized_alignment:characterAlignmentSchema.nullable().optional()}).parse(await response.json());
-    const alignment=data.alignment??data.normalized_alignment;
-    if(!/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(data.audio_base64))throw Error('Invalid audio encoding');
-    const pcm=Buffer.from(data.audio_base64,'base64'),audio=pcm24kToWav(pcm);
-    if(alignment&&alignment.character_end_times_seconds.at(-1)!>pcm.length/48000+.05)throw Error('Provider timing exceeds measured PCM duration');
+    attempt.status='response-received';await save();
+    // Save the paid response before any validation, so a parsing problem can be recovered offline without paying again.
+    const body=await response.text(),responseFile=file.replace(/\.json$/,'')+'.response.json';
+    await writeFile(responseFile,body);
+    const {audio,alignment}=decodeTimestampedResponse(body);
     attempt.status='succeeded';attempt.requestId=response.headers.get('request-id')??undefined;await save();
-    return{audio,...(alignment?{alignment:alignment as CharacterAlignment}:{}),provider:this.id,model:config.model,requestId:attempt.requestId,usage:null,syntheticTestAudio:false};
-   }catch(error){attempt.status='failed-or-uncertain';if(error instanceof ElevenLabsHTTPError)attempt.error=error.toJSON();await save();if(error instanceof SafeProviderError)throw error;throw Error('ElevenLabs synthesis failed or returned invalid data; attempt remains counted; no automatic retry. Inspect account status before separately authorizing another request.');}
+    return{audio,...(alignment?{alignment}:{}),provider:this.id,model:config.model,requestId:attempt.requestId,usage:null,syntheticTestAudio:false};
+   }catch(error){attempt.status=attempt.status==='response-received'?'response-received-but-invalid':'failed-or-uncertain';if(error instanceof ElevenLabsHTTPError)attempt.error=error.toJSON();else (attempt as {detail?:string}).detail=sanitizeElevenLabsDiagnostic(String((error as Error)?.message??error),[key]).slice(0,300);await save();if(error instanceof SafeProviderError)throw error;throw Error('ElevenLabs synthesis failed or returned invalid data; attempt remains counted; no automatic retry. Inspect account status before separately authorizing another request.');}
   }finally{await lock.close();await rm(file+'.lock');}
  }
 }

@@ -19,7 +19,7 @@ import {storyScriptSchema, words} from '../src/storytelling/schema';
 import {validateStory} from '../src/storytelling/validate';
 import {parseAnchoredStoryboard} from '../src/storytelling/timing/anchors';
 import {ttsConfigSchema} from '../src/audio/tts/provider';
-import {ElevenLabsTTSProvider, elevenRequestHash} from '../src/audio/tts/elevenlabs';
+import {ElevenLabsTTSProvider, decodeTimestampedResponse, elevenRequestHash} from '../src/audio/tts/elevenlabs';
 import {measureAudio} from '../src/audio/metadata';
 import {estimateAlignment} from '../src/storytelling/timing/estimate';
 import {captionsFromProviderTiming} from '../src/captions/provider-timing';
@@ -99,6 +99,16 @@ async function multiVoice() {
   // Only recorded takes make an output directory "in use"; an empty one (e.g. from a refused run) is fine to reuse.
   const hasTakes = voicePlan!.some(v => existsSync(path.join(takesDir, `${v.speaker}.json`)));
   if (hasTakes && !o.resume) throw Error('Output already has recorded takes; pass --resume to reuse them. No request was made.');
+  // A paid response saved by the provider (e.g. one that failed validation) is turned into a take with no new request.
+  const savedResponse = (speaker: string) => path.join(job, `paid-request-ledger-${speaker}.response.json`);
+  for (const v of voicePlan!) if (!existsSync(path.join(takesDir, `${v.speaker}.json`)) && existsSync(savedResponse(v.speaker))) {
+    const {audio, alignment} = decodeTimestampedResponse(await readFile(savedResponse(v.speaker), 'utf8'));
+    if (!alignment || alignment.characters.join('') !== v.text) throw Error(`Saved response for ${v.speaker} does not match its script text`);
+    await mkdir(takesDir, {recursive: true});
+    await writeFile(path.join(takesDir, `${v.speaker}.wav`), audio);
+    await writeFile(path.join(takesDir, `${v.speaker}.json`), JSON.stringify({speaker: v.speaker, voice: v.voice, recoveredFromSavedResponse: true, requestHash: v.requestHash, characters: v.characters, text: v.text, sha256: createHash('sha256').update(audio).digest('hex'), alignment}, null, 2) + '\n');
+    console.error(JSON.stringify({speaker: v.speaker, recovered: 'take rebuilt from the saved paid response; no new request'}));
+  }
   const pending = voicePlan!.filter(v => !existsSync(path.join(takesDir, `${v.speaker}.json`)));
   for (const v of pending) if (!v.voiceReady) throw Error(`Speaker "${v.speaker}" has no ElevenLabs voice ID in config (found "${v.voice}"). No request was made.`);
   const needed = pending.reduce((n, v) => n + v.characters, 0);
