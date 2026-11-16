@@ -104,3 +104,14 @@ describe('space-episode kit additions', () => {
     expect(layerStateAt(layer, 20).rotate).toBe(180);
   });
 });
+
+describe('multi-voice level matching', () => {
+  it('scales a louder second voice down to the narrator level', () => {
+    const scripts = speakerScripts(speakerRuns(beats));
+    const takes = Object.fromEntries([...scripts].map(([k, s]) => { const t = fakeTake(s.text); if (k === 'arka') t.samples = t.samples.map(v => v * 1.4); return [k, t]; }));
+    const out = assembleTakes(beats, takes);
+    expect(out.gains.narrator).toBe(1);
+    expect(out.gains.arka).toBeCloseTo(1 / 1.4, 2);
+    expect(assembleTakes(beats, takes, {matchLevels: false}).gains.arka).toBe(1);
+  });
+});

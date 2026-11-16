@@ -97,3 +97,7 @@ Voice tracks, word timing, caption layouts, audio mixing, and timing-aware scene
 ## M5 — Automated production and visual QA
 
 Production scheduling, render farms, richer visual diagnostics, human approval gates, and publishing workflow integrations.
+
+## M3.5 — Episode 2 with a mascot and a second voice
+
+Done: "What happens if you take your helmet off in space?" in 16:9 (88 s) and a hook-first Short (27 s); Arka, the gold astronaut mascot, voiced by a second ElevenLabs voice; multi-voice narration (one take per speaker, joined and level-matched); countdown, myth stamps, blackout and station kit pieces; fixes so paid takes are never discarded. See [report](M3_5_EPISODE2_REPORT.md).

@@ -54,8 +54,16 @@ export const speakerScripts = (runs: SpeakerRun[]) => {
 const firstSpoken = (text: string[], from: number, to: number) => { for (let i = from; i < to; i++) if (text[i].trim()) return i; return from; };
 const lastSpoken = (text: string[], from: number, to: number) => { for (let i = to - 1; i >= from; i--) if (text[i].trim()) return i; return to - 1; };
 
-/** Join speaker takes into one track with timings for the full narration text. */
-export const assembleTakes = (beats: Beat[], takes: Record<string, Take>, options: {gapSeconds?: number; padSeconds?: number} = {}) => {
+/** Speech-level RMS: mean power of 20 ms frames within 30 dB of the loudest frame (pauses ignored). */
+export const speechRms = (samples: Float32Array, rate: number) => {
+  const n = Math.max(1, Math.round(rate * .02)), powers: number[] = [];
+  for (let i = 0; i + n <= samples.length; i += n) { let p = 0; for (let j = i; j < i + n; j++) p += samples[j] * samples[j]; powers.push(p / n); }
+  const max = Math.max(...powers, 1e-12), gate = max / 1000, voiced = powers.filter(p => p >= gate);
+  return Math.sqrt(voiced.reduce((a, b) => a + b, 0) / Math.max(1, voiced.length));
+};
+
+/** Join speaker takes into one track with timings for the full narration text. Other voices are level-matched to the narrator. */
+export const assembleTakes = (beats: Beat[], takes: Record<string, Take>, options: {gapSeconds?: number; padSeconds?: number; matchLevels?: boolean} = {}) => {
   const gap = options.gapSeconds ?? .18, pad = options.padSeconds ?? .3;
   const full = Array.from(fullNarration(beats)), runs = speakerRuns(beats), scripts = speakerScripts(runs);
   const rates = new Set(Object.values(takes).map(t => t.sampleRate));
@@ -66,6 +74,9 @@ export const assembleTakes = (beats: Beat[], takes: Record<string, Take>, option
     if (!take) throw Error(`Missing take for speaker ${speaker}`);
     if (take.alignment.characters.join('') !== script.text) throw Error(`Take for ${speaker} does not match its script text`);
   }
+  // Different voices come back at different loudness; scale each to the narrator's speech level (bounded to +/-6 dB).
+  const reference = takes[NARRATOR] ?? Object.values(takes)[0], refRms = speechRms(reference.samples, rate);
+  const gains: Record<string, number> = Object.fromEntries(Object.entries(takes).map(([k, t]) => [k, options.matchLevels === false ? 1 : Math.min(2, Math.max(.5, refRms / Math.max(1e-9, speechRms(t.samples, rate))))]));
   const starts = new Array<number>(full.length).fill(NaN), ends = new Array<number>(full.length).fill(NaN);
   const pieces: Float32Array[] = [];
   let cursor = 0; // seconds written so far
@@ -80,6 +91,7 @@ export const assembleTakes = (beats: Beat[], takes: Record<string, Take>, option
     const cutStart = Math.max(0, t0 - pad, prev ? (prevEnd + t0) / 2 : -Infinity), cutEnd = Math.min(length, t1 + pad, next ? (t1 + nextStart) / 2 : Infinity);
     if (ri > 0) { const silence = new Float32Array(Math.round(gap * rate)); pieces.push(silence); cursor += silence.length / rate; }
     const slice = take.samples.slice(Math.round(cutStart * rate), Math.round(cutEnd * rate));
+    if (gains[run.speaker] !== 1) for (let i = 0; i < slice.length; i++) slice[i] = Math.max(-1, Math.min(1, slice[i] * gains[run.speaker]));
     const fade = Math.min(Math.round(.006 * rate), slice.length >> 1);
     for (let i = 0; i < fade; i++) { const g = i / fade; slice[i] *= g; slice[slice.length - 1 - i] *= g; }
     const shift = cursor - Math.round(cutStart * rate) / rate;
@@ -98,7 +110,7 @@ export const assembleTakes = (beats: Beat[], takes: Record<string, Take>, option
   for (let i = 1; i < full.length; i++) { if (starts[i] < ends[i - 1]) starts[i] = ends[i - 1]; if (ends[i] < starts[i]) ends[i] = starts[i]; }
   const samples = new Float32Array(pieces.reduce((n, p) => n + p.length, 0));
   let o = 0; for (const p of pieces) { samples.set(p, o); o += p.length; }
-  return {samples, sampleRate: rate, alignment: {characters: full, character_start_times_seconds: starts, character_end_times_seconds: ends} as CharacterAlignment, runs};
+  return {samples, sampleRate: rate, alignment: {characters: full, character_start_times_seconds: starts, character_end_times_seconds: ends} as CharacterAlignment, runs, gains};
 };
 
 /** 16-bit PCM mono WAV decoder (the format ElevenLabs pcm_24000 takes are stored in). */

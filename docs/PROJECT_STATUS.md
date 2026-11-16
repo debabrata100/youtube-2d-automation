@@ -1,6 +1,6 @@
 # Project status — YouTube 2D Automation
 
-_Last updated: 2026-11-16, after M3.4. Keep this concise; it is the entry point for any assistant picking up the project._
+_Last updated: 2026-11-16, after M3.5. Keep this concise; it is the entry point for any assistant picking up the project._
 
 ## Vision
 
@@ -25,7 +25,7 @@ Two engines coexist: legacy planet code (`src/scenes`, `src/components`, `src/mo
 
 ## Completed milestones
 
-M1–M1.2 planet engine and art baseline · M2.1 generic storyboard/templates · M2.2/2.2.1 painted volcano integration · M2.3 narration pipeline (mock) · M2.3.1 OpenAI TTS (rejected) · M2.3.2 ElevenLabs (approved voice, 68 credits) · M2.3.3 narration + captions · M2.3.4 narration-driven scene timing · M2.4.1 motion primitives · M2.5 style and staging spike (vector direction chosen) · M2.6 vector style system and shape kit · M2.7 watchability pass · M3.0 first complete episode: "How Lightning Forms" · M3.1 word-anchored timing and storyboard drafter · M3.2 hand-drawn (Paint Explainer) style prototype (`main` @ `cae7e60`, tag `v0.3.2`) · M3.3 Titan pilot (64 s, real narration, all 32 checks pass; published on Gahanarka) · **M3.4 Titan Short (9:16 re-layout, burned-in word captions, 0 paid requests, all checks pass)** (see `docs/M3_4_SHORTS_REPORT.md`).
+M1–M1.2 planet engine and art baseline · M2.1 generic storyboard/templates · M2.2/2.2.1 painted volcano integration · M2.3 narration pipeline (mock) · M2.3.1 OpenAI TTS (rejected) · M2.3.2 ElevenLabs (approved voice, 68 credits) · M2.3.3 narration + captions · M2.3.4 narration-driven scene timing · M2.4.1 motion primitives · M2.5 style and staging spike (vector direction chosen) · M2.6 vector style system and shape kit · M2.7 watchability pass · M3.0 first complete episode: "How Lightning Forms" · M3.1 word-anchored timing and storyboard drafter · M3.2 hand-drawn (Paint Explainer) style prototype (`main` @ `cae7e60`, tag `v0.3.2`) · M3.3 Titan pilot (64 s, real narration, all 32 checks pass; published on Gahanarka) · M3.4 Titan Short (9:16 re-layout, burned-in word captions) · **M3.5 Episode 2 "Helmet off in space" (16:9 88 s + 27 s Short, narrator + Arka multi-voice, all checks pass)** (see `docs/M3_5_EPISODE2_REPORT.md`).
 
 ## Latest branch and commit
 
@@ -52,7 +52,7 @@ Template misuse; two engines; two clocks (camera = output frames, layer effects 
 
 ## Approved next milestone
 
-Titan pilot scheduled on YouTube; Titan Short (`jobs/m3-4-short/output/upload/`) ready for upload. Next milestone awaits approval. Channel: Gahanarka (@Gahanarka), banner made in M3.3's session. Direction: The Paint Explainer style (hand-drawn, 16:9, stick-figure astronaut).
+Titan pilot scheduled on YouTube; Titan Short (`jobs/m3-4-short/output/upload/`) and Episode 2 (`jobs/m3-5-final`, `jobs/m3-5-short-final`) ready for upload. Next milestone awaits approval. Channel: Gahanarka (@Gahanarka), banner made in M3.3's session. Direction: The Paint Explainer style (hand-drawn, 16:9, stick-figure astronaut).
 
 ## Proposed future milestones
 

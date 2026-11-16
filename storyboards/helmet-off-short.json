@@ -2028,8 +2028,8 @@
     {
       "id": "short-hook",
       "template": "hero-reveal",
-      "durationFrames": 151,
-      "animationDurationFrames": 151,
+      "durationFrames": 135,
+      "animationDurationFrames": 135,
       "caption": {
         "text": "short-hook",
         "preset": "body"
@@ -2086,8 +2086,8 @@
     {
       "id": "short-myths",
       "template": "hero-reveal",
-      "durationFrames": 151,
-      "animationDurationFrames": 151,
+      "durationFrames": 135,
+      "animationDurationFrames": 135,
       "caption": {
         "text": "short-myths",
         "preset": "body"
@@ -2150,8 +2150,8 @@
     {
       "id": "short-killer",
       "template": "hero-reveal",
-      "durationFrames": 193,
-      "animationDurationFrames": 193,
+      "durationFrames": 172,
+      "animationDurationFrames": 172,
       "caption": {
         "text": "short-killer",
         "preset": "body"
@@ -2204,8 +2204,8 @@
     {
       "id": "short-blackout",
       "template": "hero-reveal",
-      "durationFrames": 68,
-      "animationDurationFrames": 68,
+      "durationFrames": 61,
+      "animationDurationFrames": 61,
       "caption": {
         "text": "short-blackout",
         "preset": "body"
@@ -2254,8 +2254,8 @@
     {
       "id": "short-rescue",
       "template": "hero-reveal",
-      "durationFrames": 289,
-      "animationDurationFrames": 289,
+      "durationFrames": 259,
+      "animationDurationFrames": 259,
       "caption": {
         "text": "short-rescue",
         "preset": "body"

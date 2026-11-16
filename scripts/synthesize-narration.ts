@@ -143,7 +143,7 @@ async function multiVoice() {
   const measured = await measureAudio(audioPath);
   await writeFile(path.join(job, 'audio/narration-metadata.json'), JSON.stringify({
     key: plan.requestHash, sha256: createHash('sha256').update(audio).digest('hex'), provider: 'elevenlabs', model: config.model, voice: voicePlan!.map(v => `${v.speaker}:${v.voice}`).join(','),
-    syntheticTestAudio: false, multiVoice: true, takes: takeInfo, runs: joined.runs.map(r => ({speaker: r.speaker, start: r.start, end: r.end})), measured, audioPath, sourceAudio: audioPath,
+    syntheticTestAudio: false, multiVoice: true, takes: takeInfo, levelGains: joined.gains, runs: joined.runs.map(r => ({speaker: r.speaker, start: r.start, end: r.end})), measured, audioPath, sourceAudio: audioPath,
     text, characters, paidRequestsThisExecution: made, speedAdjustment: 1, alignment: joined.alignment,
   }, null, 2) + '\n');
   const fits = measured.durationSeconds <= story.durationSeconds - .2;
