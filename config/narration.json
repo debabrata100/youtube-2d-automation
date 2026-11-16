@@ -38,9 +38,9 @@
     "applyTextNormalization": "auto"
   },
   "speakers": {
-    "_note": "Extra ElevenLabs voices for multi-voice stories (phraseSpeakers). The narrator uses elevenlabs.voice.",
+    "_note": "Extra ElevenLabs voices for multi-voice stories (phraseSpeakers). The narrator uses elevenlabs.voice. arka = Jessica (ElevenLabs Default voice), chosen 2026-11-16.",
     "arka": {
-      "voice": "SET-ARKA-VOICE-ID"
+      "voice": "cgSgspJ2msm6clMCkdW9"
     }
   }
 }
