@@ -1,6 +1,6 @@
 # Project status — YouTube 2D Automation
 
-_Last updated: 2026-11-16, after M3.5. Keep this concise; it is the entry point for any assistant picking up the project._
+_Last updated: 2026-11-16, after M3.6. Keep this concise; it is the entry point for any assistant picking up the project._
 
 ## Vision
 
@@ -25,7 +25,7 @@ Two engines coexist: legacy planet code (`src/scenes`, `src/components`, `src/mo
 
 ## Completed milestones
 
-M1–M1.2 planet engine and art baseline · M2.1 generic storyboard/templates · M2.2/2.2.1 painted volcano integration · M2.3 narration pipeline (mock) · M2.3.1 OpenAI TTS (rejected) · M2.3.2 ElevenLabs (approved voice, 68 credits) · M2.3.3 narration + captions · M2.3.4 narration-driven scene timing · M2.4.1 motion primitives · M2.5 style and staging spike (vector direction chosen) · M2.6 vector style system and shape kit · M2.7 watchability pass · M3.0 first complete episode: "How Lightning Forms" · M3.1 word-anchored timing and storyboard drafter · M3.2 hand-drawn (Paint Explainer) style prototype (`main` @ `cae7e60`, tag `v0.3.2`) · M3.3 Titan pilot (64 s, real narration, all 32 checks pass; published on Gahanarka) · M3.4 Titan Short (9:16 re-layout, burned-in word captions) · **M3.5 Episode 2 "Helmet off in space" (16:9 88 s + 27 s Short, narrator + Arka multi-voice, all checks pass)** (see `docs/M3_5_EPISODE2_REPORT.md`).
+M1–M1.2 planet engine and art baseline · M2.1 generic storyboard/templates · M2.2/2.2.1 painted volcano integration · M2.3 narration pipeline (mock) · M2.3.1 OpenAI TTS (rejected) · M2.3.2 ElevenLabs (approved voice, 68 credits) · M2.3.3 narration + captions · M2.3.4 narration-driven scene timing · M2.4.1 motion primitives · M2.5 style and staging spike (vector direction chosen) · M2.6 vector style system and shape kit · M2.7 watchability pass · M3.0 first complete episode: "How Lightning Forms" · M3.1 word-anchored timing and storyboard drafter · M3.2 hand-drawn (Paint Explainer) style prototype (`main` @ `cae7e60`, tag `v0.3.2`) · M3.3 Titan pilot (64 s, real narration, all 32 checks pass; published on Gahanarka) · M3.4 Titan Short (9:16 re-layout, burned-in word captions) · **M3.5 Episode 2 "Helmet off in space" (16:9 88 s + 27 s Short, narrator + Arka multi-voice, all checks pass)** (see `docs/M3_5_EPISODE2_REPORT.md`) · M3.5b AI thumbnails (OpenAI, $0.40 for 8 drafts) · **M3.6 scene recipes: layout solver, camera presets, idle motion; Episode 2 rebuilt from plans with 67% less code** (see `docs/M3_6_RECIPES_REPORT.md`).
 
 ## Latest branch and commit
 

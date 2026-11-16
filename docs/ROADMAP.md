@@ -101,3 +101,11 @@ Production scheduling, render farms, richer visual diagnostics, human approval g
 ## M3.5 — Episode 2 with a mascot and a second voice
 
 Done: "What happens if you take your helmet off in space?" in 16:9 (88 s) and a hook-first Short (27 s); Arka, the gold astronaut mascot, voiced by a second ElevenLabs voice; multi-voice narration (one take per speaker, joined and level-matched); countdown, myth stamps, blackout and station kit pieces; fixes so paid takes are never discarded. See [report](M3_5_EPISODE2_REPORT.md).
+
+## M3.5b — AI thumbnails
+
+Done: `thumbnails:generate` (OpenAI image API under paid rules) + `thumbnails:compose` (offline lettering). 8 drafts for $0.40; picks in the upload folders.
+
+## M3.6 — Scene recipes and camera language
+
+Done: `recipes.py` (layout solver with exact font widths, camera presets, idle motion, auto sound cues, 5 recipes); Episode 2 16:9 and Short rebuilt as plans (−67% code), v2 render passes all checks. See [report](M3_6_RECIPES_REPORT.md).

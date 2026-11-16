@@ -1,0 +1,2788 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "helmet-off-short",
+  "title": "What Happens If You Take Your Helmet Off in Space?",
+  "themeId": "paint-notebook",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "@sky.top",
+  "accent": "@text.accent",
+  "assets": [],
+  "backdrop": {
+    "group": "backdrop"
+  },
+  "narrationTiming": {
+    "minimumSceneFrames": 30,
+    "maximumDeviationSeconds": 0.2
+  },
+  "audio": {
+    "music": "generated-pad",
+    "musicGainDb": -24,
+    "duckRatio": 8,
+    "targetLufs": -14
+  },
+  "groups": [
+    {
+      "id": "backdrop",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "page",
+          "kit": {
+            "type": "sky",
+            "horizon": 0.9,
+            "stars": 0,
+            "seed": 1
+          }
+        },
+        {
+          "id": "stars",
+          "kit": {
+            "type": "prop",
+            "item": "doodle-stars",
+            "x": 0.37,
+            "y": 0.61,
+            "size": 0.5,
+            "count": 22
+          }
+        },
+        {
+          "id": "earth",
+          "kit": {
+            "type": "planet",
+            "x": 0.5,
+            "y": 1.12,
+            "radius": 0.55,
+            "base": "#5aa9e6",
+            "bands": [
+              "#7cc576",
+              "#5aa9e6",
+              "#7cc576"
+            ],
+            "shade": 0.22,
+            "seed": 3
+          }
+        },
+        {
+          "id": "counter",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.47,
+            "y": 0.29,
+            "size": 0.2,
+            "text": "seconds left",
+            "values": [
+              {
+                "frame": 0,
+                "value": 15
+              },
+              {
+                "frame": {
+                  "at": "fifteen",
+                  "beat": "hook"
+                },
+                "value": 15,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "zero",
+                  "beat": "blackout"
+                },
+                "value": 0
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fifteen",
+                "beat": "hook",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fifteen",
+                "beat": "hook"
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Get",
+                "beat": "rescue",
+                "offset": 7
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Get",
+                "offset": 8,
+                "beat": "rescue"
+              },
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-hook",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "helmet",
+          "kit": {
+            "type": "prop",
+            "item": "helmet",
+            "x": 0.46,
+            "y": 0.49760000000000004,
+            "size": 0.14
+          },
+          "anchor": {
+            "x": 496.8,
+            "y": 955.392
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off"
+              },
+              "value": 1
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off",
+                "offset": 70
+              },
+              "value": 280.8,
+              "ease": "ease-out-cubic"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off",
+                "offset": 70
+              },
+              "value": -192.0,
+              "ease": "ease-out-cubic"
+            }
+          ],
+          "rotate": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off",
+                "offset": 70
+              },
+              "value": 260,
+              "ease": "ease-out-cubic"
+            }
+          ]
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.46,
+            "y": 0.76,
+            "height": 0.32,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "float"
+              },
+              {
+                "frame": {
+                  "at": "helmet",
+                  "offset": -2
+                },
+                "pose": "reach"
+              },
+              {
+                "frame": {
+                  "at": "off",
+                  "offset": 2
+                },
+                "pose": "wave"
+              },
+              {
+                "frame": {
+                  "at": "fifteen"
+                },
+                "pose": "shrug"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "happy"
+              },
+              {
+                "frame": {
+                  "at": "off",
+                  "offset": 2
+                },
+                "face": "grin"
+              },
+              {
+                "frame": {
+                  "at": "fifteen"
+                },
+                "face": "shocked"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": {
+                  "at": "off"
+                },
+                "on": false
+              }
+            ]
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 40,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 200,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 280,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 320,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 400,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 440,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 480,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 520,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 560,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 600,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 640,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 680,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 760,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 800,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 840,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 880,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 920,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 960,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1000,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1040,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1120,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1160,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1200,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1240,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1280,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1320,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1360,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1400,
+              "value": 8,
+              "ease": "smoothstep"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "no helmet!",
+          "x": 492,
+          "y": 782,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off",
+                "offset": 3
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off",
+                "offset": 9
+              },
+              "value": 1
+            }
+          ],
+          "connector": {
+            "from": {
+              "x": 393.23744,
+              "y": 788.8
+            },
+            "to": {
+              "x": 423.072,
+              "y": 955.392
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "g-myths",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.66,
+            "y": 0.76,
+            "height": 0.32,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "float"
+              },
+              {
+                "frame": {
+                  "at": "explode"
+                },
+                "pose": "shrug"
+              },
+              {
+                "frame": {
+                  "at": "freeze"
+                },
+                "pose": "hands-on-hips"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "explode"
+                },
+                "face": "happy"
+              },
+              {
+                "frame": {
+                  "at": "freeze"
+                },
+                "face": "smug"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": 0,
+                "on": false
+              }
+            ]
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 40,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 200,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 280,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 320,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 400,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 440,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 480,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 520,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 560,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 600,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 640,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 680,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 760,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 800,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 840,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 880,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 920,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 960,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1000,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1040,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1120,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1160,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1200,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1240,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1280,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1320,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1360,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1400,
+              "value": 8,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "stamp0",
+          "kit": {
+            "type": "prop",
+            "item": "stamp",
+            "x": 0.36707911111111113,
+            "y": 0.43822916666666667,
+            "size": 0.13,
+            "text": "myth"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "explode",
+                "offset": 1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "explode",
+                "offset": 2
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "explode",
+                "offset": 1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "explode",
+                "offset": 11
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 396.44544,
+            "y": 841.4
+          }
+        },
+        {
+          "id": "stamp1",
+          "kit": {
+            "type": "prop",
+            "item": "stamp",
+            "x": 0.37274140740740747,
+            "y": 0.5257291666666667,
+            "size": 0.13,
+            "text": "myth"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "boil",
+                "offset": 1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "boil",
+                "offset": 2
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "boil",
+                "offset": 1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "boil",
+                "offset": 11
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 402.56072000000006,
+            "y": 1009.4
+          }
+        },
+        {
+          "id": "stamp2",
+          "kit": {
+            "type": "prop",
+            "item": "stamp",
+            "x": 0.3760579259259259,
+            "y": 0.6132291666666667,
+            "size": 0.13,
+            "text": "myth"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "freeze",
+                "offset": 1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "freeze",
+                "offset": 2
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "freeze",
+                "offset": 1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "freeze",
+                "offset": 11
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 406.14256,
+            "y": 1177.4
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "explode?",
+          "x": 301,
+          "y": 800,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "explode",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "explode",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "blood boils?",
+          "x": 264,
+          "y": 968,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "boil",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "boil",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "instant ice?",
+          "x": 266,
+          "y": 1136,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "freeze",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "freeze",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-killer",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "you-arrows",
+          "kit": {
+            "type": "prop",
+            "item": "pressure-arrows",
+            "x": 0.46,
+            "y": 0.59,
+            "size": 0.4,
+            "direction": "out",
+            "count": 8,
+            "color": "#2f7fd0"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pull",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pull"
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.46,
+            "y": 0.76,
+            "height": 0.34,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "float"
+              },
+              {
+                "frame": {
+                  "at": "lungs"
+                },
+                "pose": "scared"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "scared"
+              },
+              {
+                "frame": {
+                  "at": "pull"
+                },
+                "face": "pain"
+              },
+              {
+                "frame": {
+                  "at": "blood"
+                },
+                "face": "dizzy"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": 0,
+                "on": false
+              }
+            ]
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 40,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 200,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 280,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 320,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 400,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 440,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 480,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 520,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 560,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 600,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 640,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 680,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 760,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 800,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 840,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 880,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 920,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 960,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1000,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1040,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1120,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1160,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1200,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1240,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1280,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1320,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1360,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1400,
+              "value": 8,
+              "ease": "smoothstep"
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pull"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pull",
+                "offset": 2
+              },
+              "value": -9
+            },
+            {
+              "frame": {
+                "at": "pull",
+                "offset": 4
+              },
+              "value": 9
+            },
+            {
+              "frame": {
+                "at": "pull",
+                "offset": 6
+              },
+              "value": -5
+            },
+            {
+              "frame": {
+                "at": "pull",
+                "offset": 9
+              },
+              "value": 0
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "O2 out!",
+          "x": 170,
+          "y": 1118,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#2f7fd0",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "oxygen",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "oxygen",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-blackout",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.46,
+            "y": 0.76,
+            "height": 0.34,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "float"
+              },
+              {
+                "frame": {
+                  "at": "black"
+                },
+                "pose": "tumble"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "dizzy"
+              },
+              {
+                "frame": {
+                  "at": "black"
+                },
+                "face": "asleep"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": 0,
+                "on": false
+              }
+            ]
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "black"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "out",
+                "offset": 10
+              },
+              "value": -50,
+              "ease": "ease-out-cubic"
+            }
+          ],
+          "anchor": {
+            "x": 496.8,
+            "y": 1165.44
+          }
+        },
+        {
+          "id": "dim",
+          "kit": {
+            "type": "prop",
+            "item": "vignette",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 0.5,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.15
+              },
+              {
+                "frame": {
+                  "at": "zero"
+                },
+                "value": 0.2
+              },
+              {
+                "frame": {
+                  "at": "out",
+                  "offset": 6
+                },
+                "value": 0.55
+              }
+            ]
+          }
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "id": "g-rescue",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "station",
+          "kit": {
+            "type": "prop",
+            "item": "station",
+            "x": 0.26,
+            "y": 0.42,
+            "size": 0.3,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.62,
+            "y": 0.74,
+            "height": 0.3,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "tumble"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "asleep"
+              },
+              {
+                "frame": {
+                  "at": "survive"
+                },
+                "face": "happy"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": 0,
+                "on": false
+              }
+            ]
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": -50
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Get"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "survive",
+                "offset": 4
+              },
+              "value": -210,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Get"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "survive",
+                "offset": 4
+              },
+              "value": -280,
+              "ease": "smoothstep"
+            }
+          ],
+          "anchor": {
+            "x": 669.6,
+            "y": 1161.6
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.5,
+            "y": 0.7,
+            "height": 0.28,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "reach"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "angry"
+              },
+              {
+                "frame": {
+                  "at": "survive"
+                },
+                "face": "grin"
+              }
+            ],
+            "facing": "left",
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Get"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "survive",
+                "offset": 4
+              },
+              "value": -210,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Get"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "survive",
+                "offset": 4
+              },
+              "value": -280,
+              "ease": "smoothstep"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "~90 seconds",
+          "x": 600,
+          "y": 1200,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "minute",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "minute",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "1966: it happened",
+          "x": 540,
+          "y": 1320,
+          "size": 48,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "NASA",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "NASA",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-closing",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "helmet",
+          "kit": {
+            "type": "prop",
+            "item": "helmet",
+            "x": 0.34,
+            "y": 0.595,
+            "size": 0.14
+          },
+          "anchor": {
+            "x": 367.20000000000005,
+            "y": 1142.3999999999999
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "On",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "On"
+              },
+              "value": 0
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "On",
+                "offset": -12
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "On"
+              },
+              "value": 324.0,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "On",
+                "offset": -12
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "On"
+              },
+              "value": -187.00799999999987,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.28,
+            "y": 0.76,
+            "height": 0.3,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "reach"
+              },
+              {
+                "frame": {
+                  "at": "On"
+                },
+                "pose": "hands-on-hips"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "smug"
+              },
+              {
+                "frame": {
+                  "at": "On"
+                },
+                "face": "grin"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 40,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 200,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 280,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 320,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 400,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 440,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 480,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 520,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 560,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 600,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 640,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 680,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 760,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 800,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 840,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 880,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 920,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 960,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1000,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1040,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1120,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1160,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1200,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1240,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1280,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1320,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1360,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1400,
+              "value": 8,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.64,
+            "y": 0.76,
+            "height": 0.32,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "float"
+              },
+              {
+                "frame": {
+                  "at": "On"
+                },
+                "pose": "cheer"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "On"
+                },
+                "face": "grin"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": 0,
+                "on": false
+              },
+              {
+                "frame": {
+                  "at": "On"
+                },
+                "on": true
+              }
+            ]
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 40,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 200,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 280,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 320,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 400,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 440,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 480,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 520,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 560,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 600,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 640,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 680,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 760,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 800,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 840,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 880,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 920,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 960,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1000,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1040,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1120,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1160,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1200,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1240,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1280,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1320,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1360,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1400,
+              "value": 8,
+              "ease": "smoothstep"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "helmet ON",
+          "x": 298,
+          "y": 800,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "On",
+                "offset": 2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "On",
+                "offset": 8
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "short-hook",
+      "template": "hero-reveal",
+      "durationFrames": 135,
+      "animationDurationFrames": 135,
+      "caption": {
+        "text": "short-hook",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.4981,
+              "y": 0.5032
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7010,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-hook",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "hook",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "off",
+            "offset": 4
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "off",
+            "offset": 2
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "tick",
+          "frame": {
+            "at": "fifteen",
+            "offset": -2
+          },
+          "gainDb": -20
+        }
+      ]
+    },
+    {
+      "id": "short-myths",
+      "template": "hero-reveal",
+      "durationFrames": 135,
+      "animationDurationFrames": 135,
+      "caption": {
+        "text": "short-myths",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5076,
+              "y": 0.5032
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7011,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-myths",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "myths",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "explode"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "boil"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "freeze"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "boom",
+          "frame": {
+            "at": "explode",
+            "offset": 2
+          },
+          "gainDb": -27
+        },
+        {
+          "sound": "boom",
+          "frame": {
+            "at": "boil",
+            "offset": 2
+          },
+          "gainDb": -27
+        },
+        {
+          "sound": "boom",
+          "frame": {
+            "at": "freeze",
+            "offset": 2
+          },
+          "gainDb": -27
+        },
+        {
+          "sound": "tick",
+          "frame": 0,
+          "gainDb": -20
+        }
+      ]
+    },
+    {
+      "id": "short-killer",
+      "template": "hero-reveal",
+      "durationFrames": 172,
+      "animationDurationFrames": 172,
+      "caption": {
+        "text": "short-killer",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "blood",
+              "edge": "end"
+            },
+            "focus": {
+              "x": 0.4974,
+              "y": 0.5037
+            },
+            "zoom": 1.07,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7012,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-killer",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "killer",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "oxygen"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "tick",
+          "frame": 0,
+          "gainDb": -20
+        },
+        {
+          "sound": "heartbeat",
+          "frame": {
+            "at": "lungs"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "heartbeat",
+          "frame": {
+            "at": "blood"
+          },
+          "gainDb": -22
+        }
+      ]
+    },
+    {
+      "id": "short-blackout",
+      "template": "hero-reveal",
+      "durationFrames": 61,
+      "animationDurationFrames": 61,
+      "caption": {
+        "text": "short-blackout",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "out",
+              "edge": "end"
+            },
+            "focus": {
+              "x": 0.4974,
+              "y": 0.5037
+            },
+            "zoom": 1.07,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7014,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-blackout",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "blackout",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "tick",
+          "frame": {
+            "at": "zero",
+            "offset": -2
+          },
+          "gainDb": -18
+        },
+        {
+          "sound": "heartbeat",
+          "frame": {
+            "at": "black"
+          },
+          "gainDb": -22
+        }
+      ]
+    },
+    {
+      "id": "short-rescue",
+      "template": "hero-reveal",
+      "durationFrames": 259,
+      "animationDurationFrames": 259,
+      "caption": {
+        "text": "short-rescue",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7012,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-rescue",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "rescue",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "minute"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "NASA"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "Get"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "short-closing",
+      "template": "hero-reveal",
+      "durationFrames": 48,
+      "animationDurationFrames": 48,
+      "caption": {
+        "text": "short-closing",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.4895,
+              "y": 0.5038
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7013,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-closing",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "closing",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "On",
+            "offset": 3
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "Back",
+            "offset": -2
+          },
+          "gainDb": -24
+        }
+      ]
+    }
+  ]
+}

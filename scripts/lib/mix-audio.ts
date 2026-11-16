@@ -18,7 +18,7 @@ export const mixPlanSchema = z.object({
   ]),
   musicGainDb: z.number().min(-40).max(0),
   duckRatio: z.number().min(1).max(20),
-  sfx: z.array(z.object({sound: z.enum(SFX_IDS), startSeconds: z.number().min(0), gainDb: z.number().min(-30).max(6)}).strict()).max(48),
+  sfx: z.array(z.object({sound: z.enum(SFX_IDS), startSeconds: z.number().min(0), gainDb: z.number().min(-30).max(6)}).strict()).max(400), // long anthology episodes carry hundreds of cues
   speech: z.array(z.tuple([z.number(), z.number()])),
   targetLufs: z.number().min(-24).max(-9),
   truePeakDb: z.number().min(-3).max(0),

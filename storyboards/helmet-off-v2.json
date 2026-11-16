@@ -1,0 +1,5259 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "helmet-off",
+  "title": "What Happens If You Take Your Helmet Off in Space?",
+  "themeId": "paint-notebook",
+  "format": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "@sky.top",
+  "accent": "@text.accent",
+  "assets": [],
+  "backdrop": {
+    "group": "backdrop"
+  },
+  "narrationTiming": {
+    "minimumSceneFrames": 45,
+    "maximumDeviationSeconds": 0.2
+  },
+  "audio": {
+    "music": "generated-pad",
+    "musicGainDb": -24,
+    "duckRatio": 8,
+    "targetLufs": -14
+  },
+  "groups": [
+    {
+      "id": "backdrop",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "page",
+          "kit": {
+            "type": "sky",
+            "horizon": 0.9,
+            "stars": 0,
+            "seed": 1
+          }
+        },
+        {
+          "id": "stars",
+          "kit": {
+            "type": "prop",
+            "item": "doodle-stars",
+            "x": 0.37,
+            "y": 0.61,
+            "size": 0.5,
+            "count": 26
+          }
+        },
+        {
+          "id": "earth",
+          "kit": {
+            "type": "planet",
+            "x": 0.04,
+            "y": 1.04,
+            "radius": 0.3,
+            "base": "#5aa9e6",
+            "bands": [
+              "#7cc576",
+              "#5aa9e6",
+              "#7cc576"
+            ],
+            "shade": 0.22,
+            "seed": 3
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "We",
+                "beat": "history",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "We",
+                "beat": "history"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "So",
+                "beat": "closing",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "So",
+                "beat": "closing"
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "counter",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.9,
+            "y": 0.17,
+            "size": 0.16,
+            "text": "seconds left",
+            "values": [
+              {
+                "frame": 0,
+                "value": 15
+              },
+              {
+                "frame": {
+                  "at": "Twelve",
+                  "beat": "explode"
+                },
+                "value": 12
+              },
+              {
+                "frame": {
+                  "at": "Ten",
+                  "beat": "boil"
+                },
+                "value": 10
+              },
+              {
+                "frame": {
+                  "at": "Seven",
+                  "beat": "cold"
+                },
+                "value": 7
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fifteen",
+                "beat": "hook",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fifteen",
+                "beat": "hook"
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Four",
+                "beat": "blackout",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Four",
+                "beat": "blackout"
+              },
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-hook",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "station",
+          "kit": {
+            "type": "prop",
+            "item": "station",
+            "x": 0.2,
+            "y": 0.36,
+            "size": 0.3,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "Wait",
+                  "offset": -8
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "Wait",
+                  "offset": -2
+                },
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "helmet",
+          "kit": {
+            "type": "prop",
+            "item": "helmet",
+            "x": 0.66,
+            "y": 0.4008,
+            "size": 0.15
+          },
+          "anchor": {
+            "x": 1267.2,
+            "y": 432.864
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off"
+              },
+              "value": 1
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off",
+                "offset": 70
+              },
+              "value": 268.8,
+              "ease": "ease-out-cubic"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off",
+                "offset": 70
+              },
+              "value": -291.6,
+              "ease": "ease-out-cubic"
+            }
+          ],
+          "rotate": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off",
+                "offset": 70
+              },
+              "value": 260,
+              "ease": "ease-out-cubic"
+            }
+          ]
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.66,
+            "y": 0.86,
+            "height": 0.56,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "float"
+              },
+              {
+                "frame": {
+                  "at": "helmet",
+                  "offset": -2
+                },
+                "pose": "reach"
+              },
+              {
+                "frame": {
+                  "at": "off",
+                  "offset": 2
+                },
+                "pose": "wave"
+              },
+              {
+                "frame": {
+                  "at": "fifteen"
+                },
+                "pose": "shrug"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "happy"
+              },
+              {
+                "frame": {
+                  "at": "off",
+                  "offset": 2
+                },
+                "face": "grin"
+              },
+              {
+                "frame": {
+                  "at": "fifteen"
+                },
+                "face": "shocked"
+              },
+              {
+                "frame": {
+                  "at": "Wait"
+                },
+                "face": "scared"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": {
+                  "at": "off"
+                },
+                "on": false
+              }
+            ]
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 40,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 200,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 280,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 320,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 400,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 440,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 480,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 520,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 560,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 600,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 640,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 680,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 760,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 800,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 840,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 880,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 920,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 960,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1000,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1040,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1120,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1160,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1200,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1240,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1280,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1320,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1360,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1400,
+              "value": 10,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.30437500000000006,
+            "y": 0.6,
+            "height": 0.32,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "panic"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "shocked"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Wait",
+                "offset": -3
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Wait",
+                "offset": -2
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "Wait",
+                "offset": -3
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "Wait",
+                "offset": 7
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 584.4000000000001,
+            "y": 648.0
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "no helmet!",
+          "x": 901,
+          "y": 620,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off",
+                "offset": 3
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "off",
+                "offset": 9
+              },
+              "value": 1
+            }
+          ],
+          "connector": {
+            "from": {
+              "x": 1020.9701600000001,
+              "y": 563.9
+            },
+            "to": {
+              "x": 1194.624,
+              "y": 432.864
+            }
+          }
+        },
+        {
+          "id": "n1",
+          "text": "Arka",
+          "x": 779,
+          "y": 474,
+          "size": 50,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Wait",
+                "offset": 5
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Wait",
+                "offset": 11
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-breath",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "you-arrows",
+          "kit": {
+            "type": "prop",
+            "item": "pressure-arrows",
+            "x": 0.42,
+            "y": 0.58,
+            "size": 0.3,
+            "direction": "out",
+            "count": 8
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "expands",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "expands"
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.42,
+            "y": 0.86,
+            "height": 0.56,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "float"
+              },
+              {
+                "frame": {
+                  "at": "out"
+                },
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "hold"
+                },
+                "pose": "hands-on-hips"
+              },
+              {
+                "frame": {
+                  "at": "expands"
+                },
+                "pose": "scared"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "out"
+                },
+                "face": "happy"
+              },
+              {
+                "frame": {
+                  "at": "hold"
+                },
+                "face": "puffed"
+              },
+              {
+                "frame": {
+                  "at": "expands"
+                },
+                "face": "pain"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": 0,
+                "on": false
+              }
+            ]
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 40,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 200,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 280,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 320,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 400,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 440,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 480,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 520,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 560,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 600,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 640,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 680,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 760,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 800,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 840,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 880,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 920,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 960,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1000,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1040,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1120,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1160,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1200,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1240,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1280,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1320,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1360,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1400,
+              "value": 10,
+              "ease": "smoothstep"
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "expands"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "expands",
+                "offset": 2
+              },
+              "value": -9
+            },
+            {
+              "frame": {
+                "at": "expands",
+                "offset": 4
+              },
+              "value": 9
+            },
+            {
+              "frame": {
+                "at": "expands",
+                "offset": 6
+              },
+              "value": -5
+            },
+            {
+              "frame": {
+                "at": "expands",
+                "offset": 9
+              },
+              "value": 0
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "BREATHE OUT",
+          "x": 1383,
+          "y": 318,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "out",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "out",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "don't hold it!",
+          "x": 1427,
+          "y": 419,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "hold",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "hold",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "lungs tear",
+          "x": 1424,
+          "y": 512,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tears",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tears",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-explode",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.42,
+            "y": 0.86,
+            "height": 0.56,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "float"
+              },
+              {
+                "frame": {
+                  "at": "explode"
+                },
+                "pose": "panic"
+              },
+              {
+                "frame": {
+                  "at": "wouldn't"
+                },
+                "pose": "float"
+              },
+              {
+                "frame": {
+                  "at": "pop"
+                },
+                "pose": "cheer"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "explode"
+                },
+                "face": "scared"
+              },
+              {
+                "frame": {
+                  "at": "wouldn't"
+                },
+                "face": "happy"
+              },
+              {
+                "frame": {
+                  "at": "swell"
+                },
+                "face": "puffed"
+              },
+              {
+                "frame": {
+                  "at": "pop"
+                },
+                "face": "grin"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": 0,
+                "on": false
+              }
+            ]
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "swell"
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "swell",
+                "offset": 10
+              },
+              "value": 1.16,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 806.4,
+            "y": 656.6399999999999
+          }
+        },
+        {
+          "id": "stamp0",
+          "kit": {
+            "type": "prop",
+            "item": "stamp",
+            "x": 0.79115775,
+            "y": 0.33666666666666667,
+            "size": 0.15,
+            "text": "myth"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wouldn't",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wouldn't"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "wouldn't",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "wouldn't",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1519.02288,
+            "y": 363.6
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "BOOM?",
+          "x": 1424,
+          "y": 318,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "explode",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "explode",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "skin holds you together",
+          "x": 1413,
+          "y": 479,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "skin",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "skin",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "swell, not pop",
+          "x": 1417,
+          "y": 572,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "swell",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "swell",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-boil",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "spit-a",
+          "effects": [
+            {
+              "id": "spit-a",
+              "type": "particles",
+              "count": 22,
+              "seed": 41,
+              "startFrame": {
+                "at": "bubble",
+                "offset": -2
+              },
+              "endFrame": {
+                "at": "bubble",
+                "offset": 48
+              },
+              "emitter": {
+                "x": 0.342,
+                "y": 0.41000000000000003,
+                "width": 0.04,
+                "height": 0.01
+              },
+              "lifetimeFrames": [
+                16,
+                26
+              ],
+              "velocity": {
+                "angleDegrees": -90,
+                "spreadDegrees": 40,
+                "speed": [
+                  0.002,
+                  0.004
+                ]
+              },
+              "acceleration": {
+                "x": 0,
+                "y": 0
+              },
+              "radius": [
+                0.005,
+                0.01
+              ],
+              "colors": [
+                "@water.light"
+              ],
+              "outline": "#1d1d1f",
+              "shape": "circle",
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 0
+                },
+                {
+                  "at": 0.15,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 0
+                }
+              ],
+              "scale": [
+                {
+                  "at": 0,
+                  "value": 0.5
+                },
+                {
+                  "at": 1,
+                  "value": 1.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "spit-b",
+          "effects": [
+            {
+              "id": "spit-b",
+              "type": "particles",
+              "count": 22,
+              "seed": 41,
+              "startFrame": {
+                "at": "bubble",
+                "offset": 26
+              },
+              "endFrame": {
+                "at": "bubble",
+                "offset": 76
+              },
+              "emitter": {
+                "x": 0.342,
+                "y": 0.41000000000000003,
+                "width": 0.04,
+                "height": 0.01
+              },
+              "lifetimeFrames": [
+                16,
+                26
+              ],
+              "velocity": {
+                "angleDegrees": -90,
+                "spreadDegrees": 40,
+                "speed": [
+                  0.002,
+                  0.004
+                ]
+              },
+              "acceleration": {
+                "x": 0,
+                "y": 0
+              },
+              "radius": [
+                0.005,
+                0.01
+              ],
+              "colors": [
+                "@water.light"
+              ],
+              "outline": "#1d1d1f",
+              "shape": "circle",
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 0
+                },
+                {
+                  "at": 0.15,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 0
+                }
+              ],
+              "scale": [
+                {
+                  "at": 0,
+                  "value": 0.5
+                },
+                {
+                  "at": 1,
+                  "value": 1.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.33,
+            "y": 0.86,
+            "height": 0.6,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "float"
+              },
+              {
+                "frame": {
+                  "at": "blood"
+                },
+                "pose": "shrug"
+              },
+              {
+                "frame": {
+                  "at": "tongue"
+                },
+                "pose": "stand"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "blood"
+                },
+                "face": "shocked"
+              },
+              {
+                "frame": {
+                  "at": "No"
+                },
+                "face": "happy"
+              },
+              {
+                "frame": {
+                  "at": "tongue"
+                },
+                "face": "tongue"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": 0,
+                "on": false
+              }
+            ]
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 40,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 200,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 280,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 320,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 400,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 440,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 480,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 520,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 560,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 600,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 640,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 680,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 760,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 800,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 840,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 880,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 920,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 960,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1000,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1040,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1120,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1160,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1200,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1240,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1280,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1320,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1360,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1400,
+              "value": 10,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.9,
+            "y": 0.86,
+            "height": 0.4,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "float"
+              },
+              {
+                "frame": {
+                  "at": "Gross"
+                },
+                "pose": "shrug"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "shocked"
+              },
+              {
+                "frame": {
+                  "at": "Gross"
+                },
+                "face": "pain"
+              }
+            ],
+            "facing": "left",
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 40,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 200,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 280,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 320,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 400,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 440,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 480,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 520,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 560,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 600,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 640,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 680,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 760,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 800,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 840,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 880,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 920,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 960,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1000,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1040,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1120,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1160,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1200,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1240,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1280,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1320,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1360,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1400,
+              "value": 8,
+              "ease": "smoothstep"
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Gross",
+                "offset": -5
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Gross",
+                "offset": -4
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "Gross",
+                "offset": -5
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "Gross",
+                "offset": 5
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1728.0,
+            "y": 928.8
+          }
+        },
+        {
+          "id": "stamp0",
+          "kit": {
+            "type": "prop",
+            "item": "stamp",
+            "x": 0.82844275,
+            "y": 0.33666666666666667,
+            "size": 0.15,
+            "text": "myth"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "No",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "No"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "No",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "No",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1590.61008,
+            "y": 363.6
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "blood boils?",
+          "x": 1420,
+          "y": 318,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "blood",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "blood",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "blood: safe",
+          "x": 1361,
+          "y": 419,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pressure",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pressure",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "spit: bubbles!",
+          "x": 1381,
+          "y": 512,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "bubble",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "bubble",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-cold",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "sun",
+          "kit": {
+            "type": "sun",
+            "x": 0.12,
+            "y": 0.2,
+            "radius": 0.07
+          }
+        },
+        {
+          "id": "thermo",
+          "kit": {
+            "type": "prop",
+            "item": "thermometer",
+            "x": 0.88,
+            "y": 0.66,
+            "size": 0.34,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.62
+              },
+              {
+                "frame": {
+                  "at": "cold"
+                },
+                "value": 0.62
+              },
+              {
+                "frame": {
+                  "at": "slowly",
+                  "offset": 12
+                },
+                "value": 0.52
+              }
+            ]
+          }
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.42,
+            "y": 0.86,
+            "height": 0.56,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "float"
+              },
+              {
+                "frame": {
+                  "at": "freeze"
+                },
+                "pose": "hands-on-hips"
+              },
+              {
+                "frame": {
+                  "at": "sunburn"
+                },
+                "pose": "cower"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "freeze"
+                },
+                "face": "smug"
+              },
+              {
+                "frame": {
+                  "at": "sunburn"
+                },
+                "face": "pain"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": 0,
+                "on": false
+              }
+            ],
+            "flush": [
+              {
+                "frame": {
+                  "at": "sunlight"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "sunburn",
+                  "offset": 10
+                },
+                "value": 0.85
+              }
+            ]
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 40,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 200,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 280,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 320,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 400,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 440,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 480,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 520,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 560,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 600,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 640,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 680,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 760,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 800,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 840,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 880,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 920,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 960,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1000,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1040,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1120,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1160,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1200,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1240,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1280,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1320,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1360,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1400,
+              "value": 10,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "stamp0",
+          "kit": {
+            "type": "prop",
+            "item": "stamp",
+            "x": 0.8304561666666667,
+            "y": 0.33666666666666667,
+            "size": 0.15,
+            "text": "myth"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "freeze",
+                "offset": 1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "freeze",
+                "offset": 2
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "freeze",
+                "offset": 1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "freeze",
+                "offset": 11
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1594.47584,
+            "y": 363.6
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "instant ice?",
+          "x": 1422,
+          "y": 318,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "freeze",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "freeze",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "heat leaves slowly",
+          "x": 1404,
+          "y": 479,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "slowly",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "slowly",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "sunburn!",
+          "x": 237,
+          "y": 488,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sunburn",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sunburn",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-blackout",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "you-arrows",
+          "kit": {
+            "type": "prop",
+            "item": "pressure-arrows",
+            "x": 0.42,
+            "y": 0.58,
+            "size": 0.3,
+            "direction": "out",
+            "count": 8,
+            "color": "#2f7fd0"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pull",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pull"
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Two",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Two"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.42,
+            "y": 0.86,
+            "height": 0.56,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "float"
+              },
+              {
+                "frame": {
+                  "at": "killer"
+                },
+                "pose": "scared"
+              },
+              {
+                "frame": {
+                  "at": "Three"
+                },
+                "pose": "float"
+              },
+              {
+                "frame": {
+                  "at": "One"
+                },
+                "pose": "tumble"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "killer"
+                },
+                "face": "scared"
+              },
+              {
+                "frame": {
+                  "at": "pull"
+                },
+                "face": "pain"
+              },
+              {
+                "frame": {
+                  "at": "Three"
+                },
+                "face": "dizzy"
+              },
+              {
+                "frame": {
+                  "at": "One"
+                },
+                "face": "asleep"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": 0,
+                "on": false
+              }
+            ]
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 40,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 200,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 280,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 320,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 400,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 440,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 480,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 520,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 560,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 600,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 640,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 680,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 760,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 800,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 840,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 880,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 920,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 960,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1000,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1040,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1120,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1160,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1200,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1240,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1280,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1320,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1360,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1400,
+              "value": 10,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "dim",
+          "kit": {
+            "type": "prop",
+            "item": "vignette",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 0.5,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "Three"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "Two"
+                },
+                "value": 0.35
+              },
+              {
+                "frame": {
+                  "at": "One",
+                  "offset": 8
+                },
+                "value": 0.72
+              }
+            ]
+          }
+        },
+        {
+          "id": "counter",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.9210526315789473,
+            "y": 0.15263157894736845,
+            "size": 0.16842105263157897,
+            "text": "seconds left",
+            "values": [
+              {
+                "frame": 0,
+                "value": 4
+              },
+              {
+                "frame": {
+                  "at": "Three"
+                },
+                "value": 3
+              },
+              {
+                "frame": {
+                  "at": "Two"
+                },
+                "value": 2
+              },
+              {
+                "frame": {
+                  "at": "One"
+                },
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.82,
+            "y": 0.92,
+            "height": 0.42,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "reach"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "angry"
+              }
+            ],
+            "facing": "left",
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 864.0
+            },
+            {
+              "frame": {
+                "at": "Hang",
+                "offset": -7
+              },
+              "value": 864.0
+            },
+            {
+              "frame": {
+                "at": "Hang",
+                "offset": 8
+              },
+              "value": 0,
+              "ease": "ease-out-cubic"
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Hang",
+                "offset": -7
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Hang",
+                "offset": -6
+              },
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "the real killer",
+          "x": 1381,
+          "y": 318,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "killer",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "killer",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "lungs work in reverse",
+          "x": 1425,
+          "y": 419,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "reverse",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "reverse",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "O2 out",
+          "x": 1124,
+          "y": 620,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#2f7fd0",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pull",
+                "offset": 1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pull",
+                "offset": 7
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Two",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Two"
+              },
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-rescue",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "station",
+          "kit": {
+            "type": "prop",
+            "item": "station",
+            "x": 0.2,
+            "y": 0.36,
+            "size": 0.3,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.8,
+            "y": 0.82,
+            "height": 0.48,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "tumble"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "asleep"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": 0,
+                "on": false
+              }
+            ]
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": -60
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Get"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "survive",
+                "offset": 6
+              },
+              "value": -720,
+              "ease": "smoothstep"
+            }
+          ],
+          "anchor": {
+            "x": 1536.0,
+            "y": 652.3199999999999
+          }
+        },
+        {
+          "id": "dim",
+          "kit": {
+            "type": "prop",
+            "item": "vignette",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 0.5,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.85
+              },
+              {
+                "frame": {
+                  "at": "But"
+                },
+                "value": 0.85
+              },
+              {
+                "frame": {
+                  "at": "dead",
+                  "offset": 8
+                },
+                "value": 0.2
+              }
+            ]
+          }
+        },
+        {
+          "id": "counter",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.9210526315789473,
+            "y": 0.15263157894736845,
+            "size": 0.16842105263157897,
+            "text": "seconds left",
+            "values": [
+              {
+                "frame": 0,
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.66,
+            "y": 0.78,
+            "height": 0.42,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "reach"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "angry"
+              },
+              {
+                "frame": {
+                  "at": "survive"
+                },
+                "face": "grin"
+              }
+            ],
+            "facing": "left",
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Get"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "survive",
+                "offset": 6
+              },
+              "value": -720,
+              "ease": "smoothstep"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "not dead yet!",
+          "x": 1395,
+          "y": 294,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "dead",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "dead",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "~90 seconds to get air",
+          "x": 905,
+          "y": 311,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "minute",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "minute",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-history",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "chamber",
+          "kit": {
+            "type": "prop",
+            "item": "chamber",
+            "x": 0.52,
+            "y": 0.55,
+            "size": 0.62
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "NASA",
+                "offset": -3
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "NASA",
+                "offset": -2
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "NASA",
+                "offset": -3
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "NASA",
+                "offset": 7
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 998.4000000000001,
+            "y": 594.0
+          }
+        },
+        {
+          "id": "spit",
+          "effects": [
+            {
+              "id": "spit",
+              "type": "particles",
+              "count": 20,
+              "seed": 41,
+              "startFrame": {
+                "at": "saliva",
+                "offset": 2
+              },
+              "endFrame": {
+                "at": "saliva",
+                "offset": 52
+              },
+              "emitter": {
+                "x": 0.53,
+                "y": 0.5049999999999999,
+                "width": 0.04,
+                "height": 0.01
+              },
+              "lifetimeFrames": [
+                16,
+                26
+              ],
+              "velocity": {
+                "angleDegrees": -90,
+                "spreadDegrees": 40,
+                "speed": [
+                  0.002,
+                  0.004
+                ]
+              },
+              "acceleration": {
+                "x": 0,
+                "y": 0
+              },
+              "radius": [
+                0.005,
+                0.01
+              ],
+              "colors": [
+                "@water.light"
+              ],
+              "outline": "#1d1d1f",
+              "shape": "circle",
+              "opacity": [
+                {
+                  "at": 0,
+                  "value": 0
+                },
+                {
+                  "at": 0.15,
+                  "value": 1
+                },
+                {
+                  "at": 1,
+                  "value": 0
+                }
+              ],
+              "scale": [
+                {
+                  "at": 0,
+                  "value": 0.5
+                },
+                {
+                  "at": 1,
+                  "value": 1.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "engineer",
+          "kit": {
+            "type": "figure",
+            "x": 0.52,
+            "y": 0.82,
+            "height": 0.42,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "lost"
+                },
+                "pose": "panic"
+              },
+              {
+                "frame": {
+                  "at": "remembered"
+                },
+                "pose": "scared"
+              },
+              {
+                "frame": {
+                  "at": "back"
+                },
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "fine"
+                },
+                "pose": "cheer"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "lost"
+                },
+                "face": "shocked"
+              },
+              {
+                "frame": {
+                  "at": "saliva"
+                },
+                "face": "tongue"
+              },
+              {
+                "frame": {
+                  "at": "boil",
+                  "offset": 6
+                },
+                "face": "asleep"
+              },
+              {
+                "frame": {
+                  "at": "back",
+                  "offset": 4
+                },
+                "face": "happy"
+              },
+              {
+                "frame": {
+                  "at": "fine"
+                },
+                "face": "grin"
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "NASA",
+                "offset": -2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "NASA",
+                "offset": -1
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "NASA",
+                "offset": -2
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "NASA",
+                "offset": 8
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 998.4000000000001,
+            "y": 885.5999999999999
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "1966",
+          "x": 1550,
+          "y": 318,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "1966",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "1966",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "NASA vacuum test",
+          "x": 1663,
+          "y": 419,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "NASA",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "NASA",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "suit leak!",
+          "x": 1587,
+          "y": 512,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lost",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lost",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "he was fine",
+          "x": 1609,
+          "y": 608,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fine",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fine",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-closing",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "station",
+          "kit": {
+            "type": "prop",
+            "item": "station",
+            "x": 0.2,
+            "y": 0.36,
+            "size": 0.3,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "helmet",
+          "kit": {
+            "type": "prop",
+            "item": "helmet",
+            "x": 0.48,
+            "y": 0.585,
+            "size": 0.15
+          },
+          "anchor": {
+            "x": 921.5999999999999,
+            "y": 631.8
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Helmet",
+                "n": 2,
+                "offset": 1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Helmet",
+                "n": 2,
+                "offset": 2
+              },
+              "value": 0
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Helmet",
+                "n": 2,
+                "offset": -10
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Helmet",
+                "n": 2,
+                "offset": 2
+              },
+              "value": 345.6000000000001,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Helmet",
+                "n": 2,
+                "offset": -10
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Helmet",
+                "n": 2,
+                "offset": 2
+              },
+              "value": -198.93599999999998,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.42,
+            "y": 0.86,
+            "height": 0.5,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "float"
+              },
+              {
+                "frame": {
+                  "at": "So"
+                },
+                "pose": "reach"
+              },
+              {
+                "frame": {
+                  "at": "Helmet",
+                  "n": 2
+                },
+                "pose": "hands-on-hips"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "smug"
+              },
+              {
+                "frame": {
+                  "at": "Helmet",
+                  "n": 2
+                },
+                "face": "grin"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 40,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 200,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 280,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 320,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 400,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 440,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 480,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 520,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 560,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 600,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 640,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 680,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 760,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 800,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 840,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 880,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 920,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 960,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1000,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1040,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1120,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1160,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1200,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1240,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1280,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1320,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1360,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1400,
+              "value": 10,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.66,
+            "y": 0.86,
+            "height": 0.56,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "float"
+              },
+              {
+                "frame": {
+                  "at": "Helmet",
+                  "n": 2
+                },
+                "pose": "cheer"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "So"
+                },
+                "face": "smug"
+              },
+              {
+                "frame": {
+                  "at": "Helmet",
+                  "n": 2
+                },
+                "face": "grin"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": 0,
+                "on": false
+              },
+              {
+                "frame": {
+                  "at": "Helmet",
+                  "n": 2,
+                  "offset": 2
+                },
+                "on": true
+              }
+            ]
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 40,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 200,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 280,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 320,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 400,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 440,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 480,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 520,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 560,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 600,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 640,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 680,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 760,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 800,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 840,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 880,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 920,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 960,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1000,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1040,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1120,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1160,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1200,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1240,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1280,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1320,
+              "value": 10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1360,
+              "value": -10,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1400,
+              "value": 10,
+              "ease": "smoothstep"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "helmet ON",
+          "x": 844,
+          "y": 318,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "on",
+                "n": 2,
+                "offset": 1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "on",
+                "n": 2,
+                "offset": 7
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "helmet-hook",
+      "template": "hero-reveal",
+      "durationFrames": 260,
+      "animationDurationFrames": 260,
+      "caption": {
+        "text": "helmet-hook",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5076,
+              "y": 0.5011
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7011,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-hook",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "hook",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "off",
+            "offset": 4
+          },
+          "gainDb": -22
+        }
+      ]
+    },
+    {
+      "id": "helmet-breath",
+      "template": "hero-reveal",
+      "durationFrames": 223,
+      "animationDurationFrames": 223,
+      "caption": {
+        "text": "helmet-breath",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "them",
+              "edge": "end"
+            },
+            "focus": {
+              "x": 0.4948,
+              "y": 0.5016
+            },
+            "zoom": 1.07,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7013,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-breath",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "breath",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "out"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "hold"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "tears"
+          },
+          "gainDb": -22
+        }
+      ]
+    },
+    {
+      "id": "helmet-explode",
+      "template": "hero-reveal",
+      "durationFrames": 285,
+      "animationDurationFrames": 285,
+      "caption": {
+        "text": "helmet-explode",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.4962,
+              "y": 0.5011
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7014,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-explode",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "explode",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "explode"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "skin"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "swell"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "boom",
+          "frame": {
+            "at": "wouldn't"
+          },
+          "gainDb": -27
+        }
+      ]
+    },
+    {
+      "id": "helmet-boil",
+      "template": "hero-reveal",
+      "durationFrames": 297,
+      "animationDurationFrames": 297,
+      "caption": {
+        "text": "helmet-boil",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.4919,
+              "y": 0.5
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7011,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-boil",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "boil",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "blood"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "pressure"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "bubble"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "boom",
+          "frame": {
+            "at": "No"
+          },
+          "gainDb": -27
+        },
+        {
+          "sound": "bubble",
+          "frame": {
+            "at": "bubble"
+          },
+          "gainDb": -22
+        }
+      ]
+    },
+    {
+      "id": "helmet-cold",
+      "template": "hero-reveal",
+      "durationFrames": 297,
+      "animationDurationFrames": 297,
+      "caption": {
+        "text": "helmet-cold",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.4962,
+              "y": 0.5011
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7011,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-cold",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "cold",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "freeze"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "slowly"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "sunburn"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "boom",
+          "frame": {
+            "at": "freeze",
+            "offset": 2
+          },
+          "gainDb": -27
+        }
+      ]
+    },
+    {
+      "id": "helmet-blackout",
+      "template": "hero-reveal",
+      "durationFrames": 371,
+      "animationDurationFrames": 371,
+      "caption": {
+        "text": "helmet-blackout",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "you",
+              "edge": "end"
+            },
+            "focus": {
+              "x": 0.4948,
+              "y": 0.5016
+            },
+            "zoom": 1.07,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7015,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-blackout",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "blackout",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "killer"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "reverse"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "pull",
+            "offset": 2
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "tick",
+          "frame": {
+            "at": "Four",
+            "offset": -3
+          },
+          "gainDb": -20
+        },
+        {
+          "sound": "tick",
+          "frame": {
+            "at": "Three",
+            "offset": -3
+          },
+          "gainDb": -20
+        },
+        {
+          "sound": "tick",
+          "frame": {
+            "at": "Two",
+            "offset": -3
+          },
+          "gainDb": -20
+        },
+        {
+          "sound": "tick",
+          "frame": {
+            "at": "One",
+            "offset": -3
+          },
+          "gainDb": -20
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "Hang",
+            "offset": -6
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "heartbeat",
+          "frame": {
+            "at": "Three"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "heartbeat",
+          "frame": {
+            "at": "Two"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "heartbeat",
+          "frame": {
+            "at": "One"
+          },
+          "gainDb": -22
+        }
+      ]
+    },
+    {
+      "id": "helmet-rescue",
+      "template": "hero-reveal",
+      "durationFrames": 297,
+      "animationDurationFrames": 297,
+      "caption": {
+        "text": "helmet-rescue",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7013,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-rescue",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "rescue",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "dead"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "minute"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "tick",
+          "frame": {
+            "at": "Zero",
+            "offset": -3
+          },
+          "gainDb": -18
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "survive",
+            "offset": 2
+          },
+          "gainDb": -21
+        }
+      ]
+    },
+    {
+      "id": "helmet-history",
+      "template": "hero-reveal",
+      "durationFrames": 520,
+      "animationDurationFrames": 520,
+      "caption": {
+        "text": "helmet-history",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5006,
+              "y": 0.502
+            },
+            "zoom": 1.03,
+            "easing": "smoothstep",
+            "x": -0.015
+          },
+          {
+            "frame": {
+              "at": "fine",
+              "edge": "end"
+            },
+            "focus": {
+              "x": 0.5006,
+              "y": 0.502
+            },
+            "zoom": 1.03,
+            "easing": "smoothstep",
+            "x": 0.015
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7014,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-history",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "history",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "1966"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "NASA"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "lost"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "fine"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -22
+        },
+        {
+          "sound": "bubble",
+          "frame": {
+            "at": "saliva",
+            "offset": 2
+          },
+          "gainDb": -22
+        }
+      ]
+    },
+    {
+      "id": "helmet-closing",
+      "template": "hero-reveal",
+      "durationFrames": 90,
+      "animationDurationFrames": 90,
+      "caption": {
+        "text": "helmet-closing",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.4962,
+              "y": 0.5029
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7014,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-closing",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "closing",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "on",
+            "n": 2,
+            "offset": 2
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "riser",
+          "frame": {
+            "at": "So",
+            "offset": 4
+          },
+          "gainDb": -28
+        }
+      ]
+    }
+  ]
+}
