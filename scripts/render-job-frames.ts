@@ -7,8 +7,10 @@ import {mkdir, readFile, writeFile, rename} from 'node:fs/promises';
 import {getCompositions, renderMedia} from '@remotion/renderer';
 import {browserExecutable} from './media-tools';
 
-const [job, startArg, endArg] = process.argv.slice(2);
-if (!job || startArg === undefined || endArg === undefined) throw Error('Usage: render-job-frames <prepared-job> <startFrame> <endFrameInclusive>');
+const [job, startArg, endArg, scaleArg] = process.argv.slice(2);
+const scale = scaleArg ? Number(scaleArg) : 1; // review renders (animatics) may render smaller, e.g. 0.5
+if (!job || startArg === undefined || endArg === undefined) throw Error('Usage: render-job-frames <prepared-job> <startFrame> <endFrameInclusive> [scale]');
+if (!(scale > 0 && scale <= 1)) throw Error('scale must be in (0, 1]');
 const start = Number(startArg), end = Number(endArg);
 const dir = path.join(job, 'segments'), file = path.join(dir, `seg-${String(start).padStart(5, '0')}-${String(end).padStart(5, '0')}.mp4`);
 if (existsSync(file)) { console.log(JSON.stringify({skipped: file})); process.exit(0); }
@@ -19,7 +21,7 @@ const serveUrl = path.resolve(job, 'bundle'), inputProps = {storyboard, narratio
 const composition = (await getCompositions(serveUrl, {inputProps, browserExecutable})).find(c => c.id === 'GenericStoryboard');
 if (!composition) throw Error('Composition missing');
 const t = performance.now(), partial = file + '.partial.mp4';
-await renderMedia({serveUrl, composition, inputProps, browserExecutable, outputLocation: partial, codec: 'h264', muted: true, pixelFormat: 'yuv420p', crf: 18, frameRange: [start, end], concurrency: 1, disallowParallelEncoding: true});
+await renderMedia({serveUrl, composition, inputProps, browserExecutable, outputLocation: partial, codec: 'h264', muted: true, pixelFormat: 'yuv420p', crf: 18, frameRange: [start, end], scale, concurrency: 1, disallowParallelEncoding: true});
 await rename(partial, file);
 const elapsed = Number(((performance.now() - t) / 1000).toFixed(2));
 await writeFile(file.replace(/\.mp4$/, '.json'), JSON.stringify({start, end, frames: end - start + 1, elapsedSeconds: elapsed}) + '\n');

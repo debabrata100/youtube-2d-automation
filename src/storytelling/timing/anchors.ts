@@ -57,7 +57,7 @@ const norm = (s: string) => s.toLowerCase().replace(/[’]/g, "'").replace(/[^\p
  */
 const keepOrder = (node: unknown, path: string, warnings: string[]): void => {
   if (Array.isArray(node)) {
-    const keyed = !path.endsWith('.sounds') && node.length > 1 && node.every(k => k && typeof k === 'object' && typeof (k as {frame?: unknown}).frame === 'number');
+    const keyed = !path.endsWith('.sounds') && !path.endsWith('.musicDropouts') && node.length > 1 && node.every(k => k && typeof k === 'object' && typeof (k as {frame?: unknown}).frame === 'number');
     if (keyed) {
       for (let i = 1; i < node.length; i++) {
         const prev = (node[i - 1] as {frame: number}).frame, key = node[i] as {frame: number};

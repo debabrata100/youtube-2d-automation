@@ -1,0 +1,1349 @@
+{
+ "schemaVersion": "1.0",
+ "id": "every-moon",
+ "title": "What Would Kill You First on Every Moon in the Solar System",
+ "topic": "Even in a good spacesuit: what kills you first on twelve moons (dust, drifting off, a 12-minute fall, geysers, cold, Jupiter radiation) and Titan, where you could fly",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 513,
+ "storyboard": "storyboards/every-moon.json",
+ "candidatesReport": "stories/every-moon-script.md",
+ "beats": [
+  {
+   "id": "h1",
+   "sceneId": "em-h1",
+   "intent": "hook",
+   "narration": "On one moon in our solar system, you could step off a cliff and fall for twelve whole minutes.",
+   "phrases": [
+    "On one moon in our solar system,",
+    "you could step off a cliff and",
+    "fall for twelve whole minutes."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "h2",
+   "sceneId": "em-h2",
+   "intent": "explanation",
+   "narration": "On another, walking too fast would launch you into space.",
+   "phrases": [
+    "On another, walking too fast would",
+    "launch you into space."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "h3",
+   "sceneId": "em-h3",
+   "intent": "explanation",
+   "narration": "And on one of them, you could take off your spacesuit, strap on wings, and fly.",
+   "phrases": [
+    "And on one of them, you could take",
+    "off your spacesuit, strap on",
+    "wings, and fly."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "h4",
+   "sceneId": "em-h4",
+   "intent": "setup",
+   "narration": "Now, without a suit, almost any moon kills you in about fifteen seconds.",
+   "phrases": [
+    "Now, without a suit, almost any",
+    "moon kills you in about fifteen",
+    "seconds."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "h5",
+   "sceneId": "em-h5",
+   "intent": "setup",
+   "narration": "So you get a suit. A really good one, with eight hours of air.",
+   "phrases": [
+    "So you get a suit.",
+    "A really good one, with eight",
+    "hours of air."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "h6",
+   "sceneId": "em-h6",
+   "intent": "setup",
+   "narration": "The question is, what kills you first anyway?",
+   "phrases": [
+    "The question is, what kills you",
+    "first anyway?"
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "h7",
+   "sceneId": "em-h7",
+   "intent": "setup",
+   "narration": "We'll save the deadliest moon for last. And the one where you can fly comes after that.",
+   "phrases": [
+    "We'll save the deadliest moon for",
+    "last.",
+    "And the one where you can fly",
+    "comes after that."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "h8",
+   "sceneId": "em-h8",
+   "intent": "setup",
+   "narration": "Ooh. I'm picking one to live on. Of course you are.",
+   "phrases": [
+    "Ooh.",
+    "I'm picking one to live on.",
+    "Of course you are."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m1",
+   "sceneId": "em-m1",
+   "intent": "explanation",
+   "narration": "We start at home. Our Moon is the only one people have walked on, so we know exactly what goes wrong.",
+   "phrases": [
+    "We start at home.",
+    "Our Moon is the only one people",
+    "have walked on, so we know exactly",
+    "what goes wrong."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m2",
+   "sceneId": "em-m2",
+   "intent": "explanation",
+   "narration": "The ground swings from over one hundred degrees in sunlight to below minus one hundred and seventy in shadow.",
+   "phrases": [
+    "The ground swings from over one",
+    "hundred degrees in sunlight to",
+    "below minus one hundred and",
+    "seventy in shadow."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m3",
+   "sceneId": "em-m3",
+   "intent": "explanation",
+   "narration": "Your suit handles both.",
+   "phrases": [
+    "Your suit handles both."
+   ],
+   "phraseSpeakers": [
+    "narrator"
+   ]
+  },
+  {
+   "id": "m4",
+   "sceneId": "em-m4",
+   "intent": "explanation",
+   "narration": "What it can't handle is the dust. Moon dust has never been smoothed by wind or water.",
+   "phrases": [
+    "What it can't handle is the dust.",
+    "Moon dust has never been smoothed",
+    "by wind or water."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m5",
+   "sceneId": "em-m5",
+   "intent": "explanation",
+   "narration": "It's sharp like broken glass, and it clings to everything.",
+   "phrases": [
+    "It's sharp like broken glass, and",
+    "it clings to everything."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m6",
+   "sceneId": "em-m6",
+   "intent": "explanation",
+   "narration": "Astronauts said it smelled like burnt gunpowder.",
+   "phrases": [
+    "Astronauts said it smelled like",
+    "burnt gunpowder."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m7",
+   "sceneId": "em-m7",
+   "intent": "explanation",
+   "narration": "After just three moonwalks, the Apollo seventeen suits were already wearing out.",
+   "phrases": [
+    "After just three moonwalks, the",
+    "Apollo seventeen suits were",
+    "already wearing out."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m8",
+   "sceneId": "em-m8",
+   "intent": "explanation",
+   "narration": "So on the Moon, the dust slowly chews through your suit. Stay long enough, and something gives.",
+   "phrases": [
+    "So on the Moon, the dust slowly",
+    "chews through your suit.",
+    "Stay long enough, and something",
+    "gives."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "c1",
+   "sceneId": "em-c1",
+   "intent": "explanation",
+   "narration": "Out at Jupiter, Callisto is the safest big moon in the outer solar system.",
+   "phrases": [
+    "Out at Jupiter, Callisto is the",
+    "safest big moon in the outer solar",
+    "system."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "c2",
+   "sceneId": "em-c2",
+   "intent": "explanation",
+   "narration": "The radiation here is even lower than on the International Space Station.",
+   "phrases": [
+    "The radiation here is even lower",
+    "than on the International Space",
+    "Station."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "c3",
+   "sceneId": "em-c3",
+   "intent": "explanation",
+   "narration": "Callisto! Safe! I pick Callisto!",
+   "phrases": [
+    "Callisto!",
+    "Safe!",
+    "I pick Callisto!"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "c4",
+   "sceneId": "em-c4",
+   "intent": "explanation",
+   "narration": "It's minus one hundred and forty degrees, dark, and covered in more craters than anywhere we know.",
+   "phrases": [
+    "It's minus one hundred and forty",
+    "degrees, dark, and covered in more",
+    "craters than anywhere we know."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "c5",
+   "sceneId": "em-c5",
+   "intent": "explanation",
+   "narration": "Nothing happens here. Ever.",
+   "phrases": [
+    "Nothing happens here.",
+    "Ever."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "c6",
+   "sceneId": "em-c6",
+   "intent": "explanation",
+   "narration": "Not this one.",
+   "phrases": [
+    "Not this one."
+   ],
+   "phraseSpeakers": [
+    "arka"
+   ]
+  },
+  {
+   "id": "p1",
+   "sceneId": "em-p1",
+   "intent": "explanation",
+   "narration": "The two little moons of Mars.",
+   "phrases": [
+    "The two little moons of Mars."
+   ],
+   "phraseSpeakers": [
+    "narrator"
+   ]
+  },
+  {
+   "id": "p2",
+   "sceneId": "em-p2",
+   "intent": "explanation",
+   "narration": "From Phobos, Mars fills a huge part of the sky.",
+   "phrases": [
+    "From Phobos, Mars fills a huge",
+    "part of the sky."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "p3",
+   "sceneId": "em-p3",
+   "intent": "explanation",
+   "narration": "Ooh, a view! This one!",
+   "phrases": [
+    "Ooh, a view!",
+    "This one!"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "p4",
+   "sceneId": "em-p4",
+   "intent": "explanation",
+   "narration": "But these moons are so small, their gravity barely holds you.",
+   "phrases": [
+    "But these moons are so small,",
+    "their gravity barely holds you."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "p5",
+   "sceneId": "em-p5",
+   "intent": "explanation",
+   "narration": "On parts of Phobos, just walking faster than about five kilometers per hour could lift you off the ground for good.",
+   "phrases": [
+    "On parts of Phobos, just walking",
+    "faster than about five kilometers",
+    "per hour could lift you off the",
+    "ground for good."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "p6",
+   "sceneId": "em-p6",
+   "intent": "explanation",
+   "narration": "You'd push off for a step, and the ground would slowly fall away beneath your boots.",
+   "phrases": [
+    "You'd push off for a step, and the",
+    "ground would slowly fall away",
+    "beneath your boots."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "p7",
+   "sceneId": "em-p7",
+   "intent": "explanation",
+   "narration": "On Deimos, one strong jump would do it.",
+   "phrases": [
+    "On Deimos, one strong jump would",
+    "do it."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "p8",
+   "sceneId": "em-p8",
+   "intent": "explanation",
+   "narration": "And then you'd drift, watching Mars turn, until your air ran out.",
+   "phrases": [
+    "And then you'd drift, watching",
+    "Mars turn, until your air ran out."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "p9",
+   "sceneId": "em-p9",
+   "intent": "explanation",
+   "narration": "Not this one either.",
+   "phrases": [
+    "Not this one either."
+   ],
+   "phraseSpeakers": [
+    "arka"
+   ]
+  },
+  {
+   "id": "r1",
+   "sceneId": "em-r1",
+   "intent": "explanation",
+   "narration": "At Uranus, the moon Miranda has what may be the tallest cliff in the solar system, possibly twenty kilometers high.",
+   "phrases": [
+    "At Uranus, the moon Miranda has",
+    "what may be the tallest cliff in",
+    "the solar system, possibly twenty",
+    "kilometers high."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "r2",
+   "sceneId": "em-r2",
+   "intent": "explanation",
+   "narration": "That's more than twice the height of Everest.",
+   "phrases": [
+    "That's more than twice the height",
+    "of Everest."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "r3",
+   "sceneId": "em-r3",
+   "intent": "explanation",
+   "narration": "Step off the edge, and Miranda's gravity is so weak that you'd fall for about twelve minutes.",
+   "phrases": [
+    "Step off the edge, and Miranda's",
+    "gravity is so weak that you'd fall",
+    "for about twelve minutes."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "r4",
+   "sceneId": "em-r4",
+   "intent": "explanation",
+   "narration": "Twelve silent minutes, watching the ground get closer.",
+   "phrases": [
+    "Twelve silent minutes, watching",
+    "the ground get closer."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "r5",
+   "sceneId": "em-r5",
+   "intent": "explanation",
+   "narration": "You'd hit the bottom at about two hundred kilometers per hour. Without protection, that's the end.",
+   "phrases": [
+    "You'd hit the bottom at about two",
+    "hundred kilometers per hour.",
+    "Without protection, that's the",
+    "end."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "r6",
+   "sceneId": "em-r6",
+   "intent": "explanation",
+   "narration": "But NASA scientists think you could survive it with the right airbags.",
+   "phrases": [
+    "But NASA scientists think you",
+    "could survive it with the right",
+    "airbags."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "r7",
+   "sceneId": "em-r7",
+   "intent": "explanation",
+   "narration": "I brought one!",
+   "phrases": [
+    "I brought one!"
+   ],
+   "phraseSpeakers": [
+    "arka"
+   ]
+  },
+  {
+   "id": "e1",
+   "sceneId": "em-e1",
+   "intent": "explanation",
+   "narration": "At Saturn, little Enceladus is the brightest object in the solar system, covered in fresh snow.",
+   "phrases": [
+    "At Saturn, little Enceladus is the",
+    "brightest object in the solar",
+    "system, covered in fresh snow."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "e2",
+   "sceneId": "em-e2",
+   "intent": "explanation",
+   "narration": "It's snowing! This one, this one!",
+   "phrases": [
+    "It's snowing!",
+    "This one, this one!"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "e3",
+   "sceneId": "em-e3",
+   "intent": "explanation",
+   "narration": "That snow comes from geysers.",
+   "phrases": [
+    "That snow comes from geysers."
+   ],
+   "phraseSpeakers": [
+    "narrator"
+   ]
+  },
+  {
+   "id": "e4",
+   "sceneId": "em-e4",
+   "intent": "explanation",
+   "narration": "Near the south pole, long cracks called tiger stripes blast water and ice into space at over a thousand kilometers per hour.",
+   "phrases": [
+    "Near the south pole, long cracks",
+    "called tiger stripes blast water",
+    "and ice into space at over a",
+    "thousand kilometers per hour."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "e5",
+   "sceneId": "em-e5",
+   "intent": "explanation",
+   "narration": "Stand over a vent, and the jet could throw you high into the sky.",
+   "phrases": [
+    "Stand over a vent, and the jet",
+    "could throw you high into the sky."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "e6",
+   "sceneId": "em-e6",
+   "intent": "explanation",
+   "narration": "In gravity this weak, you'd be up there a long time.",
+   "phrases": [
+    "In gravity this weak, you'd be up",
+    "there a long time."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "e7",
+   "sceneId": "em-e7",
+   "intent": "explanation",
+   "narration": "And if you miss your landing, the tiger stripes are cracks about half a kilometer deep.",
+   "phrases": [
+    "And if you miss your landing, the",
+    "tiger stripes are cracks about",
+    "half a kilometer deep."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "e8",
+   "sceneId": "em-e8",
+   "intent": "explanation",
+   "narration": "Not this one either.",
+   "phrases": [
+    "Not this one either."
+   ],
+   "phraseSpeakers": [
+    "arka"
+   ]
+  },
+  {
+   "id": "t1",
+   "sceneId": "em-t1",
+   "intent": "explanation",
+   "narration": "Now we go far from the Sun.",
+   "phrases": [
+    "Now we go far from the Sun."
+   ],
+   "phraseSpeakers": [
+    "narrator"
+   ]
+  },
+  {
+   "id": "t2",
+   "sceneId": "em-t2",
+   "intent": "explanation",
+   "narration": "Neptune's moon Triton is minus two hundred and thirty-five degrees, one of the coldest places ever measured.",
+   "phrases": [
+    "Neptune's moon Triton is minus two",
+    "hundred and thirty-five degrees,",
+    "one of the coldest places ever",
+    "measured."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "t3",
+   "sceneId": "em-t3",
+   "intent": "explanation",
+   "narration": "It orbits Neptune backwards, and it still has geysers, blasting dark nitrogen eight kilometers into the sky.",
+   "phrases": [
+    "It orbits Neptune backwards, and",
+    "it still has geysers, blasting",
+    "dark nitrogen eight kilometers",
+    "into the sky."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "t4",
+   "sceneId": "em-t4",
+   "intent": "explanation",
+   "narration": "Further out, Pluto's moon Charon is almost as cold.",
+   "phrases": [
+    "Further out, Pluto's moon Charon",
+    "is almost as cold."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "t5",
+   "sceneId": "em-t5",
+   "intent": "explanation",
+   "narration": "From Charon, Pluto hangs in the exact same spot in the sky, forever. It never rises, and never sets.",
+   "phrases": [
+    "From Charon, Pluto hangs in the",
+    "exact same spot in the sky,",
+    "forever.",
+    "It never rises, and never sets."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "t6",
+   "sceneId": "em-t6",
+   "intent": "explanation",
+   "narration": "Here, the cold doesn't kill you fast. Your suit is like a thermos.",
+   "phrases": [
+    "Here, the cold doesn't kill you",
+    "fast.",
+    "Your suit is like a thermos."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "t7",
+   "sceneId": "em-t7",
+   "intent": "explanation",
+   "narration": "But every step on the frozen ground pulls heat from your boots, and your heaters drain the battery to fight it.",
+   "phrases": [
+    "But every step on the frozen",
+    "ground pulls heat from your boots,",
+    "and your heaters drain the battery",
+    "to fight it."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "t8",
+   "sceneId": "em-t8",
+   "intent": "explanation",
+   "narration": "When the battery dies, the cold wins. Slowly. From your fingers and toes inward.",
+   "phrases": [
+    "When the battery dies, the cold",
+    "wins.",
+    "Slowly.",
+    "From your fingers and toes inward."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "t9",
+   "sceneId": "em-t9",
+   "intent": "explanation",
+   "narration": "Hot chocolate. Lots of hot chocolate.",
+   "phrases": [
+    "Hot chocolate.",
+    "Lots of hot chocolate."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "x1",
+   "sceneId": "em-x1",
+   "intent": "explanation",
+   "narration": "Now the deadliest part of the solar system: Jupiter's radiation belt.",
+   "phrases": [
+    "Now the deadliest part of the",
+    "solar system: Jupiter's radiation",
+    "belt."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "x2",
+   "sceneId": "em-x2",
+   "intent": "explanation",
+   "narration": "You can't see it. You can't feel it. But your suit's radiation alarm can.",
+   "phrases": [
+    "You can't see it.",
+    "You can't feel it.",
+    "But your suit's radiation alarm",
+    "can."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "x3",
+   "sceneId": "em-x3",
+   "intent": "explanation",
+   "narration": "And the closer to Jupiter you go, the faster it ticks.",
+   "phrases": [
+    "And the closer to Jupiter you go,",
+    "the faster it ticks."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "g1",
+   "sceneId": "em-g1",
+   "intent": "explanation",
+   "narration": "Ganymede is the biggest moon in the solar system, bigger than the planet Mercury.",
+   "phrases": [
+    "Ganymede is the biggest moon in",
+    "the solar system, bigger than the",
+    "planet Mercury."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "g2",
+   "sceneId": "em-g2",
+   "intent": "explanation",
+   "narration": "It's also the only moon with its own magnetic field, a weak shield against the radiation.",
+   "phrases": [
+    "It's also the only moon with its",
+    "own magnetic field, a weak shield",
+    "against the radiation."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "g3",
+   "sceneId": "em-g3",
+   "intent": "explanation",
+   "narration": "It's weak, but it helps. Here, a deadly dose would take about two months to build up.",
+   "phrases": [
+    "It's weak, but it helps.",
+    "Here, a deadly dose would take",
+    "about two months to build up."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "g4",
+   "sceneId": "em-g4",
+   "intent": "explanation",
+   "narration": "So Ganymede is fine for a visit. Not for a home.",
+   "phrases": [
+    "So Ganymede is fine for a visit.",
+    "Not for a home."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "u1",
+   "sceneId": "em-u1",
+   "intent": "explanation",
+   "narration": "Closer in, Europa. Smooth white ice, hiding an ocean that may hold twice as much water as all of Earth's oceans.",
+   "phrases": [
+    "Closer in, Europa.",
+    "Smooth white ice, hiding an ocean",
+    "that may hold twice as much water",
+    "as all of Earth's oceans."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "u2",
+   "sceneId": "em-u2",
+   "intent": "explanation",
+   "narration": "An ocean! Aliens, maybe! This one!",
+   "phrases": [
+    "An ocean!",
+    "Aliens, maybe!",
+    "This one!"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "u3",
+   "sceneId": "em-u3",
+   "intent": "explanation",
+   "narration": "Up on the surface, the alarm never stops. You'd take in a deadly dose in about a day.",
+   "phrases": [
+    "Up on the surface, the alarm never",
+    "stops.",
+    "You'd take in a deadly dose in",
+    "about a day."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "u4",
+   "sceneId": "em-u4",
+   "intent": "explanation",
+   "narration": "Your only chance is to dig. A few meters of ice would shield you completely.",
+   "phrases": [
+    "Your only chance is to dig.",
+    "A few meters of ice would shield",
+    "you completely."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "u5",
+   "sceneId": "em-u5",
+   "intent": "explanation",
+   "narration": "So I'd live… in an igloo. On an alien ocean. Yes.",
+   "phrases": [
+    "So I'd live…",
+    "in an igloo.",
+    "On an alien ocean.",
+    "Yes."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "u6",
+   "sceneId": "em-u6",
+   "intent": "explanation",
+   "narration": "…Not this one either.",
+   "phrases": [
+    "…Not this one either."
+   ],
+   "phraseSpeakers": [
+    "arka"
+   ]
+  },
+  {
+   "id": "i1",
+   "sceneId": "em-i1",
+   "intent": "explanation",
+   "narration": "And the deadliest moon of all: Io, the most volcanic place in the solar system.",
+   "phrases": [
+    "And the deadliest moon of all: Io,",
+    "the most volcanic place in the",
+    "solar system."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "i2",
+   "sceneId": "em-i2",
+   "intent": "explanation",
+   "narration": "It has about four hundred active volcanoes, some blasting sulfur four hundred kilometers into space.",
+   "phrases": [
+    "It has about four hundred active",
+    "volcanoes, some blasting sulfur",
+    "four hundred kilometers into",
+    "space."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "i3",
+   "sceneId": "em-i3",
+   "intent": "explanation",
+   "narration": "But the volcanoes aren't what gets you. Io sits deep inside Jupiter's radiation belt.",
+   "phrases": [
+    "But the volcanoes aren't what gets",
+    "you.",
+    "Io sits deep inside Jupiter's",
+    "radiation belt."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "i4",
+   "sceneId": "em-i4",
+   "intent": "explanation",
+   "narration": "On Io, your suit's alarm turns into one long scream.",
+   "phrases": [
+    "On Io, your suit's alarm turns",
+    "into one long scream."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "i5",
+   "sceneId": "em-i5",
+   "intent": "explanation",
+   "narration": "You'd absorb a deadly dose in about three hours, long before your air runs out.",
+   "phrases": [
+    "You'd absorb a deadly dose in",
+    "about three hours, long before",
+    "your air runs out."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "i6",
+   "sceneId": "em-i6",
+   "intent": "explanation",
+   "narration": "And the worst part? You wouldn't feel a thing until it was far too late.",
+   "phrases": [
+    "And the worst part?",
+    "You wouldn't feel a thing until it",
+    "was far too late."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "i7",
+   "sceneId": "em-i7",
+   "intent": "explanation",
+   "narration": "Get me out of here.",
+   "phrases": [
+    "Get me out of here."
+   ],
+   "phraseSpeakers": [
+    "arka"
+   ]
+  },
+  {
+   "id": "z1",
+   "sceneId": "em-z1",
+   "intent": "payoff",
+   "narration": "And finally, the moon we promised. Saturn's moon Titan.",
+   "phrases": [
+    "And finally, the moon we promised.",
+    "Saturn's moon Titan."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "z2",
+   "sceneId": "em-z2",
+   "intent": "payoff",
+   "narration": "Titan has air. Thick air, about one and a half times the pressure on Earth.",
+   "phrases": [
+    "Titan has air.",
+    "Thick air, about one and a half",
+    "times the pressure on Earth."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "z3",
+   "sceneId": "em-z3",
+   "intent": "payoff",
+   "narration": "So you don't need a pressure suit at all.",
+   "phrases": [
+    "So you don't need a pressure suit",
+    "at all."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "z4",
+   "sceneId": "em-z4",
+   "intent": "payoff",
+   "narration": "You'd still need an oxygen mask, and the warmest coat ever made, because it's minus one hundred and seventy-nine degrees.",
+   "phrases": [
+    "You'd still need an oxygen mask,",
+    "and the warmest coat ever made,",
+    "because it's minus one hundred and",
+    "seventy-nine degrees."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "z5",
+   "sceneId": "em-z5",
+   "intent": "payoff",
+   "narration": "It even rains here. But the rain is liquid methane, filling lakes and seas bigger than some on Earth.",
+   "phrases": [
+    "It even rains here.",
+    "But the rain is liquid methane,",
+    "filling lakes and seas bigger than",
+    "some on Earth."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "z6",
+   "sceneId": "em-z6",
+   "intent": "payoff",
+   "narration": "And with gravity this low and air this thick, you could strap wings to your arms and actually fly.",
+   "phrases": [
+    "And with gravity this low and air",
+    "this thick, you could strap wings",
+    "to your arms and actually fly."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "z7",
+   "sceneId": "em-z7",
+   "intent": "payoff",
+   "narration": "This one. It's this one. We're going to this one. And if I crash, I brought an airbag.",
+   "phrases": [
+    "This one.",
+    "It's this one.",
+    "We're going to this one.",
+    "And if I crash, I brought an",
+    "airbag."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "k1",
+   "sceneId": "em-k1",
+   "intent": "closing",
+   "narration": "So, almost every moon in our solar system would get you in the end.",
+   "phrases": [
+    "So, almost every moon in our solar",
+    "system would get you in the end."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "k2",
+   "sceneId": "em-k2",
+   "intent": "closing",
+   "narration": "Some would launch you, some would freeze you slowly, and some would poison you with radiation you can't even feel.",
+   "phrases": [
+    "Some would launch you, some would",
+    "freeze you slowly, and some would",
+    "poison you with radiation you",
+    "can't even feel."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "k3",
+   "sceneId": "em-k3",
+   "intent": "closing",
+   "narration": "But one would let you fly.",
+   "phrases": [
+    "But one would let you fly."
+   ],
+   "phraseSpeakers": [
+    "narrator"
+   ]
+  },
+  {
+   "id": "k4",
+   "sceneId": "em-k4",
+   "intent": "closing",
+   "narration": "Which moon would you pick? Tell us in the comments. Titan. Obviously.",
+   "phrases": [
+    "Which moon would you pick?",
+    "Tell us in the comments.",
+    "Titan.",
+    "Obviously."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "arka",
+    "arka"
+   ]
+  }
+ ]
+}

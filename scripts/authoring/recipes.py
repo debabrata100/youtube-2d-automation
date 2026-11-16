@@ -186,10 +186,11 @@ def helmet_handover(F, giver, taker, at, size=.15):
     return Prop(layer, Box(sx * W - r, sy * H - r, sx * W + r, sy * H + r, 'helmet'))
 
 
-def kit(F, pid, item, x, y, size, w=1.0, h=1.0, **extra):
-    """Any kit prop with a footprint of w x h times its size (fractions of the shorter side)."""
+def kit(F, pid, item, kx, ky, size, w=1.0, h=1.0, **extra):
+    """Any kit prop with a footprint of w x h times its size (fractions of the shorter side). Layer tracks such as
+    x/y/opacity may be passed as keywords (the position arguments are kx, ky so they never clash)."""
     W, H = F['W'], F['H']; sp = size * min(W, H)
-    return Prop(prop(pid, item, x, y, size, **extra), Box(x * W - sp * w / 2, y * H - sp * h / 2, x * W + sp * w / 2, y * H + sp * h / 2, pid))
+    return Prop(prop(pid, item, kx, ky, size, **extra), Box(kx * W - sp * w / 2, ky * H - sp * h / 2, kx * W + sp * w / 2, ky * H + sp * h / 2, pid))
 
 
 def effect(lid, *effects):
@@ -324,7 +325,14 @@ class Episode:
         self.story_path = pathlib.Path(story_path)
         self.story = json.loads(self.story_path.read_text())
         self.F = FORMATS[fmt]; self.fmt = fmt; self.project = project_id or self.story['id']
-        self.groups, self.plans, self.placements, self._backdrop, self.assets = [], {}, [], None, []
+        self.groups, self.plans, self.placements, self._backdrop, self.assets, self._audio = [], {}, [], None, [], None
+
+    def music(self, cues, dropouts=(), gain_db=-22, crossfade=1.5):
+        """Licensed music per section: cues [(beat_id, 'assets/music/x.mp3', offset_seconds)], dropouts [(beat_id, frame, seconds)]."""
+        sid = {b['id']: b['sceneId'] for b in self.story['beats']}
+        self._audio = {'music': 'cues', 'musicGainDb': gain_db, 'duckRatio': 8, 'targetLufs': -14, 'crossfadeSeconds': crossfade,
+                       'musicCues': [{'source': src, 'scene': sid[b], 'offsetSeconds': off} for b, src, off in cues],
+                       'musicDropouts': [{'scene': sid[b], 'frame': f, 'seconds': sec} for b, f, sec in dropouts]}
 
     def asset(self, aid, rel_path, width, height):
         """Register a PNG under assets/ (e.g. a prepared NASA photo insert) once; returns its id."""
@@ -383,7 +391,7 @@ class Episode:
                 if not n.pos and any(b.hits(o) for o in taken): continue
                 if target: cost = math.hypot(x - target[0], y - target[1]) + (0 if n.near else 120)
                 else: cost = abs(y - F['prefer'][1] * H) * .6 + abs(x - F['prefer'][0] * W) * .5  # right-side reading column by default
-                if last_y is not None and y < last_y: continue  # reading order: later notes never sit above earlier ones
+                if last_y is not None and y < last_y and not n.pos: continue  # reading order (pinned notes keep their place)
                 if i in stamp_of:  # the claim's stamp must fit too
                     sx, sy = min(b.x1, W * .97) - 40, b.y1 + 18
                     if any(Box(sx - ss * .58, sy - ss * .32, sx + ss * .58, sy + ss * .32).hits(o) for o in taken): continue
@@ -445,7 +453,7 @@ class Episode:
         return {'schemaVersion': '2.1', 'projectId': self.project, 'title': self.story['title'], 'themeId': 'paint-notebook',
                 'format': {'width': W, 'height': H, 'fps': FPS}, 'styleId': 'cinematic-illustrated', 'background': '@sky.top', 'accent': '@text.accent',
                 'assets': self.assets, 'backdrop': {'group': 'backdrop'}, 'narrationTiming': {'minimumSceneFrames': 30 if self.fmt == 'tall' else 45, 'maximumDeviationSeconds': .2},
-                'audio': {'music': 'generated-pad', 'musicGainDb': -24, 'duckRatio': 8, 'targetLufs': -14}, 'groups': groups, 'scenes': scenes}
+                'audio': self._audio or {'music': 'generated-pad', 'musicGainDb': -24, 'duckRatio': 8, 'targetLufs': -14}, 'groups': groups, 'scenes': scenes}
 
     def write(self, out=None):
         board = self.build()
