@@ -49,3 +49,15 @@ describe('ElevenLabs paid-response safety', () => {
     expect(ok.alignment!.characters.length).toBe(Array.from(text).length);
   });
 });
+
+describe('base64 validation on long takes', () => {
+  it('accepts a ~6 MB base64 audio string without overflowing the stack', async () => {
+    const {isBase64} = await import('../audio/tts/elevenlabs');
+    const big = Buffer.alloc(4_500_000, 7).toString('base64');
+    expect(big.length).toBeGreaterThan(5_900_000);
+    expect(isBase64(big)).toBe(true);
+    expect(isBase64('abc')).toBe(false);
+    expect(isBase64('ab$=')).toBe(false);
+    expect(isBase64('a===')).toBe(false);
+  });
+});

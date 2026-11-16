@@ -15,10 +15,12 @@ export const repairAlignment=(a:z.infer<typeof looseAlignment>):CharacterAlignme
  a.characters.forEach((_,i)=>{const st=Math.max(prev,a.character_start_times_seconds[i],0),en=Math.max(st,a.character_end_times_seconds[i]);starts.push(st);ends.push(en);prev=en;});
  return characterAlignmentSchema.parse({characters:a.characters,character_start_times_seconds:starts,character_end_times_seconds:ends}) as CharacterAlignment;
 };
+/** Linear base64 check. (A single regex with a repeated group overflowed V8's stack on takes over ~4 MB of base64, i.e. ~80 s of audio.) */
+export const isBase64=(v:string)=>{if(!v.length||v.length%4)return false;const body=v.replace(/=+$/,'');if(v.length-body.length>2)return false;return !/[^A-Za-z0-9+/]/.test(body);};
 /** Decode a saved with-timestamps response body into WAV + alignment (used live and to recover a paid take offline). */
 export const decodeTimestampedResponse=(body:string)=>{
  const data=z.object({audio_base64:z.string().min(1),alignment:looseAlignment.nullable().optional(),normalized_alignment:looseAlignment.nullable().optional()}).passthrough().parse(JSON.parse(body));
- if(!/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(data.audio_base64))throw Error('Invalid audio encoding');
+ if(!isBase64(data.audio_base64))throw Error('Invalid audio encoding');
  const raw=data.alignment??data.normalized_alignment,alignment=raw?repairAlignment(raw):undefined;
  const pcm=Buffer.from(data.audio_base64,'base64'),audio=pcm24kToWav(pcm);
  if(alignment&&alignment.character_end_times_seconds.at(-1)!>pcm.length/48000+.25)throw Error('Provider timing exceeds measured PCM duration');
