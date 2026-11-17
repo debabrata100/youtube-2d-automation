@@ -73,3 +73,13 @@ All five are uploaded and scheduled (private until their time):
 | Ep 2 Short | https://youtube.com/shorts/36yyCfEwn7Y | Sat 21 Nov, 9:30 PM | Set Related video → Ep 2 once Ep 2 is public; pin comment |
 | Ep 3: every moon | https://youtu.be/MnfXbn6mD8I | Sun 22 Nov, 9:30 PM | A/B test (a1, b1, c1) starts when public; pin comment |
 | Voyager 1 Short (night sky) | https://youtube.com/shorts/tZx2ERI-4ec | Wed 18 Nov, 9:30 PM | Pin comment; on Sun 22 Nov switch Related video from Titan to Ep 3 |
+
+## Channel setup for subscribers (17 Nov 2026, 11:30 PM IST)
+
+- **Description:** added "New hand-drawn space stories every week, plus Shorts in between."
+- **Home tab:** turned on; it was off, so visitors had only seen a video list.
+  - Channel trailer for non-subscribers: the Titan Short for now. Switch it to the Voyager Short once that is public (reminder set for Wed 18 Nov, 9:50 PM).
+  - Featured video for returning subscribers: the Titan long video. Switch it to the newest long episode as each one goes live.
+  - Section: Single playlist "Could You Survive…?". It is currently at the bottom; the drag to reorder didn't work from automation, so move it up by hand in Studio.
+- **Watermark:** the channel logo was already set for the entire video. An Arka alternative is in `docs/brand/arka-watermark.png` (script: `scripts/brand/arka-watermark.tsx`) if we want it later.
+- **In the videos:** each long episode ends with Arka's in-character subscribe line and names the next episode.
