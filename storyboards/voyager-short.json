@@ -1313,15 +1313,15 @@
             },
             {
               "frame": {
-                "at": "looked",
-                "offset": -1
+                "at": "1990",
+                "offset": -7
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "looked",
-                "offset": 4
+                "at": "1990",
+                "offset": -2
               },
               "value": 1
             }
@@ -1337,15 +1337,14 @@
             },
             {
               "frame": {
-                "at": "looked",
-                "offset": -1
+                "at": "1990",
+                "offset": -7
               },
               "value": 0.72
             },
             {
               "frame": {
-                "at": "looked",
-                "offset": 6
+                "at": "1990"
               },
               "value": 0.8,
               "ease": "ease-out-back"
@@ -1374,7 +1373,7 @@
           "y": [
             {
               "frame": 0,
-              "value": 0.0
+              "value": -57.60000000000005
             }
           ]
         }
@@ -1413,9 +1412,9 @@
         },
         {
           "id": "n1",
-          "text": "1990, 6 billion km away",
+          "text": "6 billion km away",
           "x": 540,
-          "y": 1395,
+          "y": 1428,
           "size": 56,
           "anchor": "middle",
           "variant": "ink",
@@ -1439,6 +1438,20 @@
                 "offset": 5
               },
               "value": 1
+            },
+            {
+              "frame": {
+                "at": "tiny",
+                "offset": -5
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "tiny",
+                "offset": -4
+              },
+              "value": 0
             }
           ]
         }

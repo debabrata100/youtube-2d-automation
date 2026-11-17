@@ -136,11 +136,11 @@ ep.scene('v8', explain([], [photo(ep, F, 'vy-record-1977', 'nasa/inserts/vy-reco
                             photo(ep, F, 'vy-golden-record', 'nasa/inserts/vy-golden-record.png', A('sounds'), y=.5, scale=.92, box=(.06, .34, .94, .66), **TALL)],
                        [Note('Golden Record', A('golden'), 'title', pos=(540, 560)), Note('for anyone who finds it', A('finds'), 'small', pos=(540, 1370))]))
 # v9 the real Pale Blue Dot, Earth circled
-pbd = photo(ep, F, 'vy-pale-blue-dot', 'nasa/inserts/vy-pale-blue-dot.png', A('looked'), y=.5, scale=.8, box=(.1, .22, .9, .78), **TALL)
+pbd = photo(ep, F, 'vy-pale-blue-dot', 'nasa/inserts/vy-pale-blue-dot.png', A('1990', -6), y=.47, scale=.8, box=(.1, .22, .9, .78), **TALL)
 pbd.layer['anchor'] = {'x': 540, 'y': 942}
-pbd.layer['scale'] = track((0, .72), (plus(A('looked'), -1), .72), (plus(A('looked'), 6), .8, 'ease-out-back'), (A('tiny', -4), .8), (A('lived'), 1.45, 'smoothstep'))
+pbd.layer['scale'] = track((0, .72), (plus(A('1990', -6), -1), .72), (plus(A('1990', -6), 6), .8, 'ease-out-back'), (A('tiny', -4), .8), (A('lived'), 1.45, 'smoothstep'))
 ep.scene('v9', explain([], [pbd],
-                       [Note('that dot is us', A('dot'), 'title', pos=(540, 520)), Note('1990, 6 billion km away', A('1990'), 'small', pos=(540, 1395))]))
+                       [Note('that dot is us', A('dot'), 'title', pos=(540, 520)), Note('6 billion km away', A('1990'), 'small', pos=(540, 1428), until=A('tiny', -4))]))
 # v10 cameras off; it keeps going
 away = dict(x=track((0, 0), (A('going', -10), 0), (A('going', 30), 160, 'smoothstep')), y=track((0, 0), (A('going', -10), 0), (A('going', 30), -190, 'smoothstep')))
 ep.scene('v10', explain([], [probe(.45, .48, .38, **away)], [Note('cameras: OFF', A('cameras'), 'title'), Note('still going', A('going'), 'note')]))
