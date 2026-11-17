@@ -1,0 +1,1359 @@
+{
+ "schemaVersion": "1.0",
+ "id": "moon-gone",
+ "title": "What If the Moon Disappeared Tonight?",
+ "topic": "Thought experiment: the Moon vanishes tonight. Darker nights (lions, Arctic plankton, human sleep), tides at about a third, less deep-ocean mixing, coral spawning cue, no eclipses, days stop lengthening, the 0-85 degree tilt myth vs 12-38 degrees (Lissauer 2012), Mars as the example, the Moon receding 3.8 cm a year",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 600,
+ "storyboard": "storyboards/moon-gone.json",
+ "candidatesReport": "stories/moon-gone-script.md",
+ "beats": [
+  {
+   "id": "m1",
+   "sceneId": "mg-m1",
+   "intent": "hook",
+   "narration": "Tonight, at exactly nine o'clock, the Moon disappears. No explosion. No warning. It's simply gone.",
+   "phrases": [
+    "Tonight, at exactly nine o'clock,",
+    "the Moon disappears.",
+    "No explosion.",
+    "No warning.",
+    "It's simply gone."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m2",
+   "sceneId": "mg-m2",
+   "intent": "hook",
+   "narration": "Uh... where did it go? I was standing right here!",
+   "phrases": [
+    "Uh...",
+    "where did it go?",
+    "I was standing right here!"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "m3",
+   "sceneId": "mg-m3",
+   "intent": "hook",
+   "narration": "For a moment, nothing changes. The Moon is so far away that its last light is still on the way. It takes about one and a third seconds to reach us.",
+   "phrases": [
+    "For a moment, nothing changes.",
+    "The Moon is so far away that its",
+    "last light is still on the way.",
+    "It takes about one and a third",
+    "seconds to reach us."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m4",
+   "sceneId": "mg-m4",
+   "intent": "hook",
+   "narration": "Then the sky goes out.",
+   "phrases": [
+    "Then the sky goes out."
+   ],
+   "phraseSpeakers": [
+    "narrator"
+   ]
+  },
+  {
+   "id": "m5",
+   "sceneId": "mg-m5",
+   "intent": "setup",
+   "narration": "You've probably heard what happens next. Earth tips over. The seasons go crazy. We all freeze. Everyone dies.",
+   "phrases": [
+    "You've probably heard what happens",
+    "next.",
+    "Earth tips over.",
+    "The seasons go crazy.",
+    "We all freeze.",
+    "Everyone dies."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m6",
+   "sceneId": "mg-m6",
+   "intent": "setup",
+   "narration": "That's what most videos say. It's not what the newest science says. So let's find out what would really happen: the first night, the first week, and the next million years.",
+   "phrases": [
+    "That's what most videos say.",
+    "It's not what the newest science",
+    "says.",
+    "So let's find out what would",
+    "really happen: the first night,",
+    "the first week, and the next",
+    "million years."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m7",
+   "sceneId": "mg-m7",
+   "intent": "setup",
+   "narration": "And whether I need a new job.",
+   "phrases": [
+    "And whether I need a new job."
+   ],
+   "phraseSpeakers": [
+    "arka"
+   ]
+  },
+  {
+   "id": "m8",
+   "sceneId": "mg-m8",
+   "intent": "explanation",
+   "narration": "On a clear night, a full Moon lights the ground about a hundred times more than the stars alone. Without it, every night becomes the darkest kind of night. Forever.",
+   "phrases": [
+    "On a clear night, a full Moon",
+    "lights the ground about a hundred",
+    "times more than the stars alone.",
+    "Without it, every night becomes",
+    "the darkest kind of night.",
+    "Forever."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m9",
+   "sceneId": "mg-m9",
+   "intent": "explanation",
+   "narration": "For us, that mostly means more streetlights. For a lot of animals, it's a much bigger deal.",
+   "phrases": [
+    "For us, that mostly means more",
+    "streetlights.",
+    "For a lot of animals, it's a much",
+    "bigger deal."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m10",
+   "sceneId": "mg-m10",
+   "intent": "explanation",
+   "narration": "Even we might notice. In 2021, scientists tracked the sleep of Indigenous communities in Argentina and of college students in Seattle. In the few days before a full moon, people went to bed later and slept less, even in a city full of electric light.",
+   "phrases": [
+    "Even we might notice.",
+    "In 2021, scientists tracked the",
+    "sleep of Indigenous communities in",
+    "Argentina and of college students",
+    "in Seattle.",
+    "In the few days before a full",
+    "moon, people went to bed later and",
+    "slept less, even in a city full of",
+    "electric light."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m11",
+   "sceneId": "mg-m11",
+   "intent": "explanation",
+   "narration": "Without the Moon, that monthly rhythm in our sleep would have nothing left to follow.",
+   "phrases": [
+    "Without the Moon, that monthly",
+    "rhythm in our sleep would have",
+    "nothing left to follow."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m12",
+   "sceneId": "mg-m12",
+   "intent": "explanation",
+   "narration": "So the Moon was keeping you up all along? Rude.",
+   "phrases": [
+    "So the Moon was keeping you up all",
+    "along?",
+    "Rude."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "m13",
+   "sceneId": "mg-m13",
+   "intent": "explanation",
+   "narration": "Take lions. In the Serengeti, lions eat best on dark nights, when there's no moonlight to give them away. Around the full Moon, their bellies are emptier, and they have to hunt more by day.",
+   "phrases": [
+    "Take lions.",
+    "In the Serengeti, lions eat best",
+    "on dark nights, when there's no",
+    "moonlight to give them away.",
+    "Around the full Moon, their",
+    "bellies are emptier, and they have",
+    "to hunt more by day."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m14",
+   "sceneId": "mg-m14",
+   "intent": "explanation",
+   "narration": "So without the Moon, every single night is a hunter's night. Great news for lions. Not such great news for everything they eat.",
+   "phrases": [
+    "So without the Moon, every single",
+    "night is a hunter's night.",
+    "Great news for lions.",
+    "Not such great news for everything",
+    "they eat."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m15",
+   "sceneId": "mg-m15",
+   "intent": "explanation",
+   "narration": "Note to self: never be a zebra.",
+   "phrases": [
+    "Note to self: never be a zebra."
+   ],
+   "phraseSpeakers": [
+    "arka"
+   ]
+  },
+  {
+   "id": "m16",
+   "sceneId": "mg-m16",
+   "intent": "explanation",
+   "narration": "Now go north, to the Arctic winter, where the Sun doesn't rise for weeks. Tiny sea animals called zooplankton follow the Moon instead. Across the whole Arctic Ocean, they rise and sink with it, and at every full moon, they dive deep to hide from hunters.",
+   "phrases": [
+    "Now go north, to the Arctic",
+    "winter, where the Sun doesn't rise",
+    "for weeks.",
+    "Tiny sea animals called",
+    "zooplankton follow the Moon",
+    "instead.",
+    "Across the whole Arctic Ocean,",
+    "they rise and sink with it, and at",
+    "every full moon, they dive deep to",
+    "hide from hunters."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m17",
+   "sceneId": "mg-m17",
+   "intent": "explanation",
+   "narration": "Take the Moon away, and their clock simply stops.",
+   "phrases": [
+    "Take the Moon away, and their",
+    "clock simply stops."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m18",
+   "sceneId": "mg-m18",
+   "intent": "explanation",
+   "narration": "So who tells them when to go to bed?",
+   "phrases": [
+    "So who tells them when to go to",
+    "bed?"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "m19",
+   "sceneId": "mg-m19",
+   "intent": "explanation",
+   "narration": "Nobody. That's the problem.",
+   "phrases": [
+    "Nobody.",
+    "That's the problem."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m20",
+   "sceneId": "mg-m20",
+   "intent": "explanation",
+   "narration": "The next morning, someone at the beach notices something odd. The tide isn't coming in the way it should.",
+   "phrases": [
+    "The next morning, someone at the",
+    "beach notices something odd.",
+    "The tide isn't coming in the way",
+    "it should."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m21",
+   "sceneId": "mg-m21",
+   "intent": "explanation",
+   "narration": "Tides happen because the Moon's gravity pulls on our oceans. The Sun pulls too, but it's so far away that its effect is much weaker.",
+   "phrases": [
+    "Tides happen because the Moon's",
+    "gravity pulls on our oceans.",
+    "The Sun pulls too, but it's so far",
+    "away that its effect is much",
+    "weaker."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m22",
+   "sceneId": "mg-m22",
+   "intent": "explanation",
+   "narration": "Without the Moon, the Sun is left on its own, and the tides shrink to about a third of their size.",
+   "phrases": [
+    "Without the Moon, the Sun is left",
+    "on its own, and the tides shrink",
+    "to about a third of their size."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m23",
+   "sceneId": "mg-m23",
+   "intent": "explanation",
+   "narration": "Beaches that flood and drain twice a day would barely move. Mudflats, tide pools and mangrove forests, whole worlds that live between high and low tide, would slowly start to change.",
+   "phrases": [
+    "Beaches that flood and drain twice",
+    "a day would barely move.",
+    "Mudflats, tide pools and mangrove",
+    "forests, whole worlds that live",
+    "between high and low tide, would",
+    "slowly start to change."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m24",
+   "sceneId": "mg-m24",
+   "intent": "explanation",
+   "narration": "Tides also do something you'd never notice from a beach. As they sweep over underwater mountains, they stir the deep ocean. Scientists estimate that tides could supply about half of the energy that keeps the deep sea mixed.",
+   "phrases": [
+    "Tides also do something you'd",
+    "never notice from a beach.",
+    "As they sweep over underwater",
+    "mountains, they stir the deep",
+    "ocean.",
+    "Scientists estimate that tides",
+    "could supply about half of the",
+    "energy that keeps the deep sea",
+    "mixed."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m25",
+   "sceneId": "mg-m25",
+   "intent": "explanation",
+   "narration": "The Sun's tides would still stir a little. But the deep ocean would grow calmer, and over thousands of years, that could change how heat and nutrients travel around the planet.",
+   "phrases": [
+    "The Sun's tides would still stir a",
+    "little.",
+    "But the deep ocean would grow",
+    "calmer, and over thousands of",
+    "years, that could change how heat",
+    "and nutrients travel around the",
+    "planet."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m26",
+   "sceneId": "mg-m26",
+   "intent": "explanation",
+   "narration": "So the Moon was secretly stirring the soup?",
+   "phrases": [
+    "So the Moon was secretly stirring",
+    "the soup?"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "m27",
+   "sceneId": "mg-m27",
+   "intent": "explanation",
+   "narration": "Pretty much. And under the sea, something else goes wrong.",
+   "phrases": [
+    "Pretty much.",
+    "And under the sea, something else",
+    "goes wrong."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m28",
+   "sceneId": "mg-m28",
+   "intent": "explanation",
+   "narration": "Every year, a few nights after a full moon, the corals of the Great Barrier Reef release their eggs together. It's the biggest mass spawning on Earth, and moonlight is one of the signals that tells them when.",
+   "phrases": [
+    "Every year, a few nights after a",
+    "full moon, the corals of the Great",
+    "Barrier Reef release their eggs",
+    "together.",
+    "It's the biggest mass spawning on",
+    "Earth, and moonlight is one of the",
+    "signals that tells them when."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m29",
+   "sceneId": "mg-m29",
+   "intent": "explanation",
+   "narration": "So no Moon... no party?",
+   "phrases": [
+    "So no Moon...",
+    "no party?"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "m30",
+   "sceneId": "mg-m30",
+   "intent": "explanation",
+   "narration": "Corals also listen to the water temperature, the tides and the sunset, so some would still spawn. But maybe not all on the same night. And for corals, timing is everything.",
+   "phrases": [
+    "Corals also listen to the water",
+    "temperature, the tides and the",
+    "sunset, so some would still spawn.",
+    "But maybe not all on the same",
+    "night.",
+    "And for corals, timing is",
+    "everything."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m31",
+   "sceneId": "mg-m31",
+   "intent": "explanation",
+   "narration": "A year later, some things haven't changed at all. Earth stays in its orbit. A year is still a year. The Moon has only about one percent of Earth's mass, so at first, Earth hardly notices it's gone.",
+   "phrases": [
+    "A year later, some things haven't",
+    "changed at all.",
+    "Earth stays in its orbit.",
+    "A year is still a year.",
+    "The Moon has only about one",
+    "percent of Earth's mass, so at",
+    "first, Earth hardly notices it's",
+    "gone."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m32",
+   "sceneId": "mg-m32",
+   "intent": "explanation",
+   "narration": "But a few things are gone forever. Total solar eclipses were always a lucky accident. The Sun is about four hundred times wider than the Moon, and also about four hundred times farther away, so from Earth they look almost exactly the same size.",
+   "phrases": [
+    "But a few things are gone forever.",
+    "Total solar eclipses were always a",
+    "lucky accident.",
+    "The Sun is about four hundred",
+    "times wider than the Moon, and",
+    "also about four hundred times",
+    "farther away, so from Earth they",
+    "look almost exactly the same size."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m33",
+   "sceneId": "mg-m33",
+   "intent": "explanation",
+   "narration": "Without the Moon, no more solar eclipses. No more lunar eclipses. Not ever again.",
+   "phrases": [
+    "Without the Moon, no more solar",
+    "eclipses.",
+    "No more lunar eclipses.",
+    "Not ever again."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m34",
+   "sceneId": "mg-m34",
+   "intent": "explanation",
+   "narration": "I never even got to see one!",
+   "phrases": [
+    "I never even got to see one!"
+   ],
+   "phraseSpeakers": [
+    "arka"
+   ]
+  },
+  {
+   "id": "m35",
+   "sceneId": "mg-m35",
+   "intent": "explanation",
+   "narration": "And here's a strange one: our days stop getting longer.",
+   "phrases": [
+    "And here's a strange one: our days",
+    "stop getting longer."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m36",
+   "sceneId": "mg-m36",
+   "intent": "explanation",
+   "narration": "To see why, go back about four and a half billion years. A young planet about the size of Mars smashed into the early Earth. The debris became our Moon, and it left Earth spinning once every four or five hours.",
+   "phrases": [
+    "To see why, go back about four and",
+    "a half billion years.",
+    "A young planet about the size of",
+    "Mars smashed into the early Earth.",
+    "The debris became our Moon, and it",
+    "left Earth spinning once every",
+    "four or five hours."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m37",
+   "sceneId": "mg-m37",
+   "intent": "explanation",
+   "narration": "Wait. The Moon was born in a crash?",
+   "phrases": [
+    "Wait.",
+    "The Moon was born in a crash?"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "m38",
+   "sceneId": "mg-m38",
+   "intent": "explanation",
+   "narration": "A very big one. And ever since, the Moon has been slowing us down.",
+   "phrases": [
+    "A very big one.",
+    "And ever since, the Moon has been",
+    "slowing us down."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m39",
+   "sceneId": "mg-m39",
+   "intent": "explanation",
+   "narration": "Day by day, the days got longer. Even a Tyrannosaurus rex had days about twenty minutes shorter than yours.",
+   "phrases": [
+    "Day by day, the days got longer.",
+    "Even a Tyrannosaurus rex had days",
+    "about twenty minutes shorter than",
+    "yours."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m40",
+   "sceneId": "mg-m40",
+   "intent": "explanation",
+   "narration": "It works like a brake. The Moon pulls on the oceans, and the oceans drag on the spinning Earth. Every century, our day gets about one and three-quarter milliseconds longer. Without the Moon, most of that brake is gone.",
+   "phrases": [
+    "It works like a brake.",
+    "The Moon pulls on the oceans, and",
+    "the oceans drag on the spinning",
+    "Earth.",
+    "Every century, our day gets about",
+    "one and three-quarter milliseconds",
+    "longer.",
+    "Without the Moon, most of that",
+    "brake is gone."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m41",
+   "sceneId": "mg-m41",
+   "intent": "explanation",
+   "narration": "So I never get that extra hour of sleep?",
+   "phrases": [
+    "So I never get that extra hour of",
+    "sleep?"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "m42",
+   "sceneId": "mg-m42",
+   "intent": "explanation",
+   "narration": "You weren't going to get it anyway. At that speed, it takes millions of years just to add one minute.",
+   "phrases": [
+    "You weren't going to get it",
+    "anyway.",
+    "At that speed, it takes millions",
+    "of years just to add one minute."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m43",
+   "sceneId": "mg-m43",
+   "intent": "explanation",
+   "narration": "Now for the part everyone talks about: the tilt.",
+   "phrases": [
+    "Now for the part everyone talks",
+    "about: the tilt."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m44",
+   "sceneId": "mg-m44",
+   "intent": "explanation",
+   "narration": "Earth is tilted by about twenty-three and a half degrees. That tilt is what gives us seasons. Over the last million years, it has only rocked between about twenty-two and twenty-four and a half degrees, and even that small rocking helps pace Earth's ice ages.",
+   "phrases": [
+    "Earth is tilted by about",
+    "twenty-three and a half degrees.",
+    "That tilt is what gives us",
+    "seasons.",
+    "Over the last million years, it",
+    "has only rocked between about",
+    "twenty-two and twenty-four and a",
+    "half degrees, and even that small",
+    "rocking helps pace Earth's ice",
+    "ages."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m45",
+   "sceneId": "mg-m45",
+   "intent": "explanation",
+   "narration": "The Moon helps keep that tilt steady. So what happens without it?",
+   "phrases": [
+    "The Moon helps keep that tilt",
+    "steady.",
+    "So what happens without it?"
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m46",
+   "sceneId": "mg-m46",
+   "intent": "explanation",
+   "narration": "In 1993, a famous study found that without the Moon, Earth's tilt could swing anywhere from zero all the way to eighty-five degrees. At eighty-five degrees, Earth would be lying on its side, with months of endless day and months of endless night.",
+   "phrases": [
+    "In 1993, a famous study found that",
+    "without the Moon, Earth's tilt",
+    "could swing anywhere from zero all",
+    "the way to eighty-five degrees.",
+    "At eighty-five degrees, Earth",
+    "would be lying on its side, with",
+    "months of endless day and months",
+    "of endless night."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m47",
+   "sceneId": "mg-m47",
+   "intent": "explanation",
+   "narration": "That sounds... bad.",
+   "phrases": [
+    "That sounds...",
+    "bad."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "m48",
+   "sceneId": "mg-m48",
+   "intent": "explanation",
+   "narration": "That idea spread everywhere. It's in books, in articles, and in most videos about this question.",
+   "phrases": [
+    "That idea spread everywhere.",
+    "It's in books, in articles, and in",
+    "most videos about this question."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m49",
+   "sceneId": "mg-m49",
+   "intent": "explanation",
+   "narration": "But in 2012, NASA scientist Jack Lissauer and his team ran much more detailed simulations. Their answer was far calmer. Earth would wobble more than it does today, but in their simulations it stayed roughly between twelve and thirty-eight degrees, even over a hundred million years.",
+   "phrases": [
+    "But in 2012, NASA scientist Jack",
+    "Lissauer and his team ran much",
+    "more detailed simulations.",
+    "Their answer was far calmer.",
+    "Earth would wobble more than it",
+    "does today, but in their",
+    "simulations it stayed roughly",
+    "between twelve and thirty-eight",
+    "degrees, even over a hundred",
+    "million years."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m50",
+   "sceneId": "mg-m50",
+   "intent": "explanation",
+   "narration": "That's still a big change. A bigger tilt means hotter summers and colder winters, and the climate would swing more over long stretches of time. But no sudden flip. And no instant freeze.",
+   "phrases": [
+    "That's still a big change.",
+    "A bigger tilt means hotter summers",
+    "and colder winters, and the",
+    "climate would swing more over long",
+    "stretches of time.",
+    "But no sudden flip.",
+    "And no instant freeze."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m51",
+   "sceneId": "mg-m51",
+   "intent": "explanation",
+   "narration": "And we have a real example to look at. Mars has two tiny moons, far too small to steady it. Its tilt wanders a lot over millions of years, and there's evidence of swings of at least forty-five degrees.",
+   "phrases": [
+    "And we have a real example to look",
+    "at.",
+    "Mars has two tiny moons, far too",
+    "small to steady it.",
+    "Its tilt wanders a lot over",
+    "millions of years, and there's",
+    "evidence of swings of at least",
+    "forty-five degrees."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m52",
+   "sceneId": "mg-m52",
+   "intent": "explanation",
+   "narration": "So Mars is what happens when nobody holds your hand.",
+   "phrases": [
+    "So Mars is what happens when",
+    "nobody holds your hand."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "m53",
+   "sceneId": "mg-m53",
+   "intent": "explanation",
+   "narration": "Exactly. Earth without the Moon would be a bit more like Mars. Wobblier. But not tumbling.",
+   "phrases": [
+    "Exactly.",
+    "Earth without the Moon would be a",
+    "bit more like Mars.",
+    "Wobblier.",
+    "But not tumbling."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m54",
+   "sceneId": "mg-m54",
+   "intent": "explanation",
+   "narration": "So we're not all doomed?",
+   "phrases": [
+    "So we're not all doomed?"
+   ],
+   "phraseSpeakers": [
+    "arka"
+   ]
+  },
+  {
+   "id": "m55",
+   "sceneId": "mg-m55",
+   "intent": "explanation",
+   "narration": "Not tonight. And not because of the tilt.",
+   "phrases": [
+    "Not tonight.",
+    "And not because of the tilt."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m56",
+   "sceneId": "mg-m56",
+   "intent": "explanation",
+   "narration": "Now jump ahead a million years.",
+   "phrases": [
+    "Now jump ahead a million years."
+   ],
+   "phraseSpeakers": [
+    "narrator"
+   ]
+  },
+  {
+   "id": "m57",
+   "sceneId": "mg-m57",
+   "intent": "explanation",
+   "narration": "Life would adapt. It always does. Animals that once followed the Moon would find other clocks: the Sun, the seasons, the temperature of the water. Some would struggle. Some would disappear. New ones would take their place.",
+   "phrases": [
+    "Life would adapt.",
+    "It always does.",
+    "Animals that once followed the",
+    "Moon would find other clocks: the",
+    "Sun, the seasons, the temperature",
+    "of the water.",
+    "Some would struggle.",
+    "Some would disappear.",
+    "New ones would take their place."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m58",
+   "sceneId": "mg-m58",
+   "intent": "explanation",
+   "narration": "And the night sky would be the darkest and starriest any human has ever seen.",
+   "phrases": [
+    "And the night sky would be the",
+    "darkest and starriest any human",
+    "has ever seen."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m59",
+   "sceneId": "mg-m59",
+   "intent": "explanation",
+   "narration": "We would lose something too. For thousands of years, people counted time by the Moon. The word \"month\" comes from \"moon\". Even Monday is the Moon's day.",
+   "phrases": [
+    "We would lose something too.",
+    "For thousands of years, people",
+    "counted time by the Moon.",
+    "The word \"month\" comes from",
+    "\"moon\".",
+    "Even Monday is the Moon's day."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m60",
+   "sceneId": "mg-m60",
+   "intent": "explanation",
+   "narration": "So without the Moon... no Mondays?",
+   "phrases": [
+    "So without the Moon...",
+    "no Mondays?"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "m61",
+   "sceneId": "mg-m61",
+   "intent": "explanation",
+   "narration": "You'd still have Mondays, Arka. Sorry.",
+   "phrases": [
+    "You'd still have Mondays, Arka.",
+    "Sorry."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m62",
+   "sceneId": "mg-m62",
+   "intent": "payoff",
+   "narration": "Here's the twist. The Moon is already leaving.",
+   "phrases": [
+    "Here's the twist.",
+    "The Moon is already leaving."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m63",
+   "sceneId": "mg-m63",
+   "intent": "payoff",
+   "narration": "Every year, it drifts about three point eight centimeters farther away, about as fast as your fingernails grow. We know because Apollo astronauts left mirrors on the Moon, and scientists still bounce lasers off them today.",
+   "phrases": [
+    "Every year, it drifts about three",
+    "point eight centimeters farther",
+    "away, about as fast as your",
+    "fingernails grow.",
+    "We know because Apollo astronauts",
+    "left mirrors on the Moon, and",
+    "scientists still bounce lasers off",
+    "them today."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m64",
+   "sceneId": "mg-m64",
+   "intent": "payoff",
+   "narration": "Wait... is it leaving because of me?",
+   "phrases": [
+    "Wait...",
+    "is it leaving because of me?"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "m65",
+   "sceneId": "mg-m65",
+   "intent": "payoff",
+   "narration": "No, Arka. It's the tides. The same tides that slow Earth's spin push the Moon a little farther out.",
+   "phrases": [
+    "No, Arka.",
+    "It's the tides.",
+    "The same tides that slow Earth's",
+    "spin push the Moon a little",
+    "farther out."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m66",
+   "sceneId": "mg-m66",
+   "intent": "payoff",
+   "narration": "If it keeps drifting at today's pace, then in roughly six hundred million years, the Moon will look too small to cover the Sun, and the last total solar eclipse will happen.",
+   "phrases": [
+    "If it keeps drifting at today's",
+    "pace, then in roughly six hundred",
+    "million years, the Moon will look",
+    "too small to cover the Sun, and",
+    "the last total solar eclipse will",
+    "happen."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m67",
+   "sceneId": "mg-m67",
+   "intent": "payoff",
+   "narration": "But it won't get away. Long before it could, our Sun will grow old and change everything. So the Moon isn't going anywhere for billions of years.",
+   "phrases": [
+    "But it won't get away.",
+    "Long before it could, our Sun will",
+    "grow old and change everything.",
+    "So the Moon isn't going anywhere",
+    "for billions of years."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m68",
+   "sceneId": "mg-m68",
+   "intent": "closing",
+   "narration": "So if the Moon vanished tonight, we wouldn't all die. But we'd lose our light at night, two-thirds of our tides, every eclipse, and a clock that life has followed since long before us.",
+   "phrases": [
+    "So if the Moon vanished tonight,",
+    "we wouldn't all die.",
+    "But we'd lose our light at night,",
+    "two-thirds of our tides, every",
+    "eclipse, and a clock that life has",
+    "followed since long before us."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m69",
+   "sceneId": "mg-m69",
+   "intent": "closing",
+   "narration": "Look up tonight. It's still there.",
+   "phrases": [
+    "Look up tonight.",
+    "It's still there."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m70",
+   "sceneId": "mg-m70",
+   "intent": "closing",
+   "narration": "And so am I! Subscribe, and I'll call you from the next world we visit!",
+   "phrases": [
+    "And so am I!",
+    "Subscribe, and I'll call you from",
+    "the next world we visit!"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "m71",
+   "sceneId": "mg-m71",
+   "intent": "closing",
+   "narration": "Next time on Gahanarka: we take away something even bigger.",
+   "phrases": [
+    "Next time on Gahanarka: we take",
+    "away something even bigger."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  }
+ ]
+}
