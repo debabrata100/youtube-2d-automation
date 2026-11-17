@@ -23,3 +23,14 @@ describe('visual density', () => {
     expect(loose).toEqual([]);
   });
 });
+
+describe('information coverage', () => {
+  it('counts time with a readable note or information prop, and ignores scenery-only stretches', async () => {
+    const {infoCoverage} = await import('../engine/storyboard/density');
+    const b = board(); const c = infoCoverage(b);
+    expect(c.scenes).toHaveLength(b.scenes.length);
+    expect(c.overall).toBeGreaterThanOrEqual(0); expect(c.overall).toBeLessThanOrEqual(1);
+    for (const g of b.groups ?? []) { g.annotations = []; g.layers = g.layers.filter(l => !l.asset && !(l.kit && 'item' in l.kit)); }
+    expect(infoCoverage(b).overall).toBe(0);
+  });
+});

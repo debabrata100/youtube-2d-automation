@@ -81,7 +81,7 @@ export const kitSchema = z.discriminatedUnion('type', [
   z.object({
     type: z.literal('prop'), item: z.enum(['thermometer', 'pressure-arrows', 'motion-lines', 'exclaim', 'question', 'check', 'cross', 'counter', 'stamp', 'vignette', 'station', 'helmet', 'doodle-stars', 'chamber',
       'cliff', 'geyser', 'plume', 'radiation-meter', 'radiation-belt', 'battery', 'airbag', 'small-moon', 'ice-cutaway', 'frost',
-      'flag', 'speedometer', 'race-car', 'sunglasses', 'mug', 'calendar', 'sign', 'igloo', 'rocket', 'fish', 'drop', 'tumbleweed', 'thermos', 'shovel', 'magnifier', 'smell-lines']),
+      'flag', 'speedometer', 'race-car', 'sunglasses', 'mug', 'calendar', 'sign', 'igloo', 'rocket', 'fish', 'drop', 'tumbleweed', 'thermos', 'shovel', 'magnifier', 'smell-lines', 'bar', 'ruler', 'moon-map']),
     x: n, y: n, size: size(.01, 1), rotation: z.number().min(-360).max(360).default(0), color: hex.optional(), count: z.number().int().min(1).max(40).default(6),
     level: z.array(z.object({frame: keyFrame, value: z.number().min(0).max(1)}).strict()).min(1).max(12).refine(increasing, 'Level frames must strictly increase').default([{frame: 0, value: .6}]),
     /** Counter numbers: each key holds until the next, or counts down/up to it in whole steps when ramp is set. */

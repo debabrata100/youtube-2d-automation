@@ -66,7 +66,7 @@ export const Terrain: React.FC<{config: TerrainConfig; theme: Theme; width: numb
 
 export type PropConfig = {item: 'thermometer' | 'pressure-arrows' | 'motion-lines' | 'exclaim' | 'question' | 'check' | 'cross' | 'counter' | 'stamp' | 'vignette' | 'station' | 'helmet' | 'doodle-stars' | 'chamber'
   | 'cliff' | 'geyser' | 'plume' | 'radiation-meter' | 'radiation-belt' | 'battery' | 'airbag' | 'small-moon' | 'ice-cutaway' | 'frost'
-  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
+  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
   values?: Array<{frame: number; value: number; ramp?: boolean}>; text?: string; direction?: 'in' | 'out'};
 
 /** Counter value: keys hold, or step in whole numbers towards the next key when `ramp` is set (a real-time countdown). */
@@ -392,6 +392,40 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
     </g>;
     case 'smell-lines': return <g transform={at}>{[-1, 0, 1].map(k =>
       <path key={k} d={`M ${k * s * .2} 0 q ${s * .08} ${-s * .12} 0 ${-s * .24} t 0 ${-s * .24}`} {...stroke(c.color ?? '#7b9a3c', w)} opacity={.5 + .4 * Math.sin(frame / 7 + k * 2) ** 2} transform={`translate(0 ${-((frame / 2 + k * 7) % 14)})`}/>)}</g>;
+    case 'bar': {
+      // Labelled horizontal bar (comparisons, doses, pressure): fill follows level; without a colour it goes
+      // green -> amber -> red as it fills. count > 1 draws that many tick marks.
+      const lv = levelAt(c.level, frame), bw = s, bh = s * .15, col = c.color ?? (lv < .5 ? '#4caf50' : lv < .8 ? '#f2b134' : red);
+      return <g transform={at}>
+        {c.text && <text x={-bw / 2} y={-bh / 2 - s * .04} fontFamily={font} fontSize={s * .15} fill={ink}>{c.text}</text>}
+        <rect x={-bw / 2} y={-bh / 2} width={bw} height={bh} rx={bh * .3} fill="#ffffff" stroke={ink} strokeWidth={w * .8}/>
+        {lv > .005 && <rect x={-bw / 2 + w} y={-bh / 2 + w} width={Math.max(0, (bw - w * 2) * Math.min(1, lv))} height={bh - w * 2} rx={bh * .2} fill={col}/>}
+        {c.count > 1 && c.count <= 12 && Array.from({length: c.count - 1}, (_, i) => <path key={i} d={`M ${-bw / 2 + bw * (i + 1) / c.count} ${bh / 2} l 0 ${s * .04}`} {...stroke(ink, w * .5)}/>)}
+      </g>;
+    }
+    case 'ruler': {
+      // Vertical height scale with a marker at level (0 bottom, 1 top); caption on top.
+      const lv = levelAt(c.level, frame), h = s, x = 0, y0 = h / 2, y = y0 - h * Math.min(1, lv);
+      return <g transform={at}>
+        <path d={`M ${x} ${-h / 2} L ${x} ${h / 2}`} {...stroke(ink, w)}/>
+        {Array.from({length: 9}, (_, i) => <path key={i} d={`M ${x} ${-h / 2 + h * i / 8} l ${i % 2 ? s * .04 : s * .08} 0`} {...stroke(ink, w * .6)}/>)}
+        <path d={`M ${x - s * .03} ${y} l ${-s * .07} ${-s * .04} l 0 ${s * .08} Z`} fill={red} stroke={ink} strokeWidth={w * .5}/>
+        {c.text && <text x={0} y={-h / 2 - s * .05} textAnchor="middle" fontFamily={font} fontSize={s * .1} fill={ink}>{c.text}</text>}
+      </g>;
+    }
+    case 'moon-map': {
+      // Paper map of moons (coloured dots on an arc) with a red pin that hops to the dot chosen by level (0..1).
+      const bw = s * 1.3, bh = s * .8, cols = ['#c4c4c0', '#6e5d4c', '#857a6f', '#cfcfca', '#f4f8fb', '#ecdcd8', '#f1e8d8', '#e9c94b', '#c9843b'];
+      const lv = levelAt(c.level, frame), idx = Math.round(lv * (cols.length - 1)), px = (i: number) => -bw * .4 + bw * .8 * i / (cols.length - 1), py = (i: number) => bh * .12 - Math.sin(Math.PI * i / (cols.length - 1)) * bh * .3;
+      const hop = Math.abs(Math.sin(frame / 6)) * s * .03;
+      return <g transform={at}>
+        <rect x={-bw / 2} y={-bh / 2} width={bw} height={bh} rx={s * .04} fill="#fbf3dc" stroke={ink} strokeWidth={w}/>
+        <path d={`M ${px(0)} ${py(0)} ${cols.map((_, i) => `L ${px(i)} ${py(i)}`).join(' ')}`} {...stroke(ink, w * .4)} strokeDasharray={`${w} ${w * 2}`}/>
+        {cols.map((col, i) => <circle key={i} cx={px(i)} cy={py(i)} r={s * .045} fill={col} stroke={ink} strokeWidth={w * .6}/>)}
+        <g transform={`translate(${px(idx)} ${py(idx) - s * .06 - hop})`}><path d={`M 0 ${s * .05} L ${-s * .035} ${-s * .01} A ${s * .045} ${s * .045} 0 1 1 ${s * .035} ${-s * .01} Z`} fill={red} stroke={ink} strokeWidth={w * .6}/></g>
+        {c.text && <text x={0} y={bh / 2 - s * .07} textAnchor="middle" fontFamily={font} fontSize={s * .1} fill={ink}>{c.text}</text>}
+      </g>;
+    }
     case 'helmet': {
       const r = s * .5, visor = c.color ?? theme.palette.water.light;
       return <g transform={at}>

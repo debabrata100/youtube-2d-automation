@@ -367,6 +367,29 @@
           }
         },
         {
+          "id": "speed",
+          "kit": {
+            "type": "prop",
+            "item": "speedometer",
+            "x": 0.15,
+            "y": 0.45,
+            "size": 0.26,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.2
+              },
+              {
+                "frame": {
+                  "at": "fast"
+                },
+                "value": 0.9
+              }
+            ],
+            "text": "walking speed"
+          }
+        },
+        {
           "id": "ml",
           "kit": {
             "type": "prop",
@@ -767,6 +790,28 @@
               }
             ]
           }
+        },
+        {
+          "id": "count",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.8,
+            "y": 0.5,
+            "size": 0.2,
+            "text": "seconds",
+            "values": [
+              {
+                "frame": 0,
+                "value": 15
+              },
+              {
+                "frame": 150,
+                "value": 1,
+                "ramp": true
+              }
+            ]
+          }
         }
       ],
       "annotations": [
@@ -797,17 +842,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "without",
-                "offset": -1
-              },
+              "frame": 3,
               "value": 0
             },
             {
-              "frame": {
-                "at": "without",
-                "offset": 5
-              },
+              "frame": 9,
               "value": 1
             }
           ]
@@ -816,7 +855,7 @@
           "id": "n2",
           "text": "~15 seconds",
           "x": 1413,
-          "y": 438,
+          "y": 750,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -1286,11 +1325,11 @@
               "value": 0
             },
             {
-              "frame": 4,
+              "frame": 2,
               "value": 0
             },
             {
-              "frame": 5,
+              "frame": 3,
               "value": 1
             }
           ],
@@ -1300,11 +1339,11 @@
               "value": 0.6
             },
             {
-              "frame": 4,
+              "frame": 2,
               "value": 0.6
             },
             {
-              "frame": 14,
+              "frame": 12,
               "value": 1,
               "ease": "ease-out-back"
             }
@@ -1327,6 +1366,279 @@
             "ring": false,
             "shade": 0.25,
             "seed": 4
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 5,
+              "value": 0
+            },
+            {
+              "frame": 6,
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": 5,
+              "value": 0.6
+            },
+            {
+              "frame": 15,
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 821.76,
+            "y": 594.0
+          }
+        },
+        {
+          "id": "moon-ti",
+          "kit": {
+            "type": "planet",
+            "x": 0.572,
+            "y": 0.55,
+            "radius": 0.06,
+            "base": "#c9843b",
+            "bands": [],
+            "craters": 3,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 5
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 8,
+              "value": 0
+            },
+            {
+              "frame": 9,
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": 8,
+              "value": 0.6
+            },
+            {
+              "frame": 18,
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1098.24,
+            "y": 594.0
+          }
+        },
+        {
+          "id": "moon-mi",
+          "kit": {
+            "type": "planet",
+            "x": 0.716,
+            "y": 0.55,
+            "radius": 0.06,
+            "base": "#cfcfca",
+            "bands": [],
+            "craters": 3,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 6
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 11,
+              "value": 0
+            },
+            {
+              "frame": 12,
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": 11,
+              "value": 0.6
+            },
+            {
+              "frame": 21,
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1374.72,
+            "y": 594.0
+          }
+        },
+        {
+          "id": "moon-en",
+          "kit": {
+            "type": "planet",
+            "x": 0.86,
+            "y": 0.55,
+            "radius": 0.06,
+            "base": "#f4f8fb",
+            "bands": [],
+            "craters": 3,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 7
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 14,
+              "value": 0
+            },
+            {
+              "frame": 15,
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": 14,
+              "value": 0.6
+            },
+            {
+              "frame": 24,
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1651.2,
+            "y": 594.0
+          }
+        },
+        {
+          "id": "q0",
+          "kit": {
+            "type": "prop",
+            "item": "question",
+            "x": 0.14,
+            "y": 0.38,
+            "size": 0.1
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 3,
+              "value": 0
+            },
+            {
+              "frame": 4,
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": 3,
+              "value": 0.6
+            },
+            {
+              "frame": 13,
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 268.8,
+            "y": 410.4
+          }
+        },
+        {
+          "id": "q1",
+          "kit": {
+            "type": "prop",
+            "item": "question",
+            "x": 0.28400000000000003,
+            "y": 0.38,
+            "size": 0.1
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 6,
+              "value": 0
+            },
+            {
+              "frame": 7,
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": 6,
+              "value": 0.6
+            },
+            {
+              "frame": 16,
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 545.2800000000001,
+            "y": 410.4
+          }
+        },
+        {
+          "id": "q2",
+          "kit": {
+            "type": "prop",
+            "item": "question",
+            "x": 0.428,
+            "y": 0.38,
+            "size": 0.1
           },
           "opacity": [
             {
@@ -1359,314 +1671,6 @@
           ],
           "anchor": {
             "x": 821.76,
-            "y": 594.0
-          }
-        },
-        {
-          "id": "moon-ti",
-          "kit": {
-            "type": "planet",
-            "x": 0.572,
-            "y": 0.55,
-            "radius": 0.06,
-            "base": "#c9843b",
-            "bands": [],
-            "craters": 3,
-            "ring": false,
-            "shade": 0.25,
-            "seed": 5
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": 14,
-              "value": 0
-            },
-            {
-              "frame": 15,
-              "value": 1
-            }
-          ],
-          "scale": [
-            {
-              "frame": 0,
-              "value": 0.6
-            },
-            {
-              "frame": 14,
-              "value": 0.6
-            },
-            {
-              "frame": 24,
-              "value": 1,
-              "ease": "ease-out-back"
-            }
-          ],
-          "anchor": {
-            "x": 1098.24,
-            "y": 594.0
-          }
-        },
-        {
-          "id": "moon-mi",
-          "kit": {
-            "type": "planet",
-            "x": 0.716,
-            "y": 0.55,
-            "radius": 0.06,
-            "base": "#cfcfca",
-            "bands": [],
-            "craters": 3,
-            "ring": false,
-            "shade": 0.25,
-            "seed": 6
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": 19,
-              "value": 0
-            },
-            {
-              "frame": 20,
-              "value": 1
-            }
-          ],
-          "scale": [
-            {
-              "frame": 0,
-              "value": 0.6
-            },
-            {
-              "frame": 19,
-              "value": 0.6
-            },
-            {
-              "frame": 29,
-              "value": 1,
-              "ease": "ease-out-back"
-            }
-          ],
-          "anchor": {
-            "x": 1374.72,
-            "y": 594.0
-          }
-        },
-        {
-          "id": "moon-en",
-          "kit": {
-            "type": "planet",
-            "x": 0.86,
-            "y": 0.55,
-            "radius": 0.06,
-            "base": "#f4f8fb",
-            "bands": [],
-            "craters": 3,
-            "ring": false,
-            "shade": 0.25,
-            "seed": 7
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": 24,
-              "value": 0
-            },
-            {
-              "frame": 25,
-              "value": 1
-            }
-          ],
-          "scale": [
-            {
-              "frame": 0,
-              "value": 0.6
-            },
-            {
-              "frame": 24,
-              "value": 0.6
-            },
-            {
-              "frame": 34,
-              "value": 1,
-              "ease": "ease-out-back"
-            }
-          ],
-          "anchor": {
-            "x": 1651.2,
-            "y": 594.0
-          }
-        },
-        {
-          "id": "q0",
-          "kit": {
-            "type": "prop",
-            "item": "question",
-            "x": 0.14,
-            "y": 0.38,
-            "size": 0.1
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "first",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "first"
-              },
-              "value": 1
-            }
-          ],
-          "scale": [
-            {
-              "frame": 0,
-              "value": 0.6
-            },
-            {
-              "frame": {
-                "at": "first",
-                "offset": -1
-              },
-              "value": 0.6
-            },
-            {
-              "frame": {
-                "at": "first",
-                "offset": 9
-              },
-              "value": 1,
-              "ease": "ease-out-back"
-            }
-          ],
-          "anchor": {
-            "x": 268.8,
-            "y": 410.4
-          }
-        },
-        {
-          "id": "q1",
-          "kit": {
-            "type": "prop",
-            "item": "question",
-            "x": 0.28400000000000003,
-            "y": 0.38,
-            "size": 0.1
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "first",
-                "offset": 1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "first",
-                "offset": 2
-              },
-              "value": 1
-            }
-          ],
-          "scale": [
-            {
-              "frame": 0,
-              "value": 0.6
-            },
-            {
-              "frame": {
-                "at": "first",
-                "offset": 1
-              },
-              "value": 0.6
-            },
-            {
-              "frame": {
-                "at": "first",
-                "offset": 11
-              },
-              "value": 1,
-              "ease": "ease-out-back"
-            }
-          ],
-          "anchor": {
-            "x": 545.2800000000001,
-            "y": 410.4
-          }
-        },
-        {
-          "id": "q2",
-          "kit": {
-            "type": "prop",
-            "item": "question",
-            "x": 0.428,
-            "y": 0.38,
-            "size": 0.1
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "first",
-                "offset": 3
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "first",
-                "offset": 4
-              },
-              "value": 1
-            }
-          ],
-          "scale": [
-            {
-              "frame": 0,
-              "value": 0.6
-            },
-            {
-              "frame": {
-                "at": "first",
-                "offset": 3
-              },
-              "value": 0.6
-            },
-            {
-              "frame": {
-                "at": "first",
-                "offset": 13
-              },
-              "value": 1,
-              "ease": "ease-out-back"
-            }
-          ],
-          "anchor": {
-            "x": 821.76,
             "y": 410.4
           }
         },
@@ -1685,17 +1689,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "first",
-                "offset": 5
-              },
+              "frame": 12,
               "value": 0
             },
             {
-              "frame": {
-                "at": "first",
-                "offset": 6
-              },
+              "frame": 13,
               "value": 1
             }
           ],
@@ -1705,17 +1703,11 @@
               "value": 0.6
             },
             {
-              "frame": {
-                "at": "first",
-                "offset": 5
-              },
+              "frame": 12,
               "value": 0.6
             },
             {
-              "frame": {
-                "at": "first",
-                "offset": 15
-              },
+              "frame": 22,
               "value": 1,
               "ease": "ease-out-back"
             }
@@ -1740,17 +1732,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "first",
-                "offset": 7
-              },
+              "frame": 15,
               "value": 0
             },
             {
-              "frame": {
-                "at": "first",
-                "offset": 8
-              },
+              "frame": 16,
               "value": 1
             }
           ],
@@ -1760,17 +1746,11 @@
               "value": 0.6
             },
             {
-              "frame": {
-                "at": "first",
-                "offset": 7
-              },
+              "frame": 15,
               "value": 0.6
             },
             {
-              "frame": {
-                "at": "first",
-                "offset": 17
-              },
+              "frame": 25,
               "value": 1,
               "ease": "ease-out-back"
             }
@@ -1795,17 +1775,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "first",
-                "offset": 9
-              },
+              "frame": 18,
               "value": 0
             },
             {
-              "frame": {
-                "at": "first",
-                "offset": 10
-              },
+              "frame": 19,
               "value": 1
             }
           ],
@@ -1815,17 +1789,11 @@
               "value": 0.6
             },
             {
-              "frame": {
-                "at": "first",
-                "offset": 9
-              },
+              "frame": 18,
               "value": 0.6
             },
             {
-              "frame": {
-                "at": "first",
-                "offset": 19
-              },
+              "frame": 28,
               "value": 1,
               "ease": "ease-out-back"
             }
@@ -1854,14 +1822,14 @@
             },
             {
               "frame": {
-                "at": "kills",
+                "at": "question",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "kills",
+                "at": "question",
                 "offset": 5
               },
               "value": 1
@@ -1977,67 +1945,37 @@
       "height": 1080,
       "layers": [
         {
-          "id": "flag",
+          "id": "map",
           "kit": {
             "type": "prop",
-            "item": "flag",
-            "x": 0.62,
-            "y": 0.62,
-            "size": 0.3,
-            "text": "MY MOON"
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "picking",
-                "offset": -1
+            "item": "moon-map",
+            "x": 0.7,
+            "y": 0.52,
+            "size": 0.42,
+            "text": "WHERE TO LIVE?",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
               },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "picking"
+              {
+                "frame": 40,
+                "value": 0.5
               },
-              "value": 1
-            }
-          ],
-          "scale": [
-            {
-              "frame": 0,
-              "value": 0.6
-            },
-            {
-              "frame": {
-                "at": "picking",
-                "offset": -1
-              },
-              "value": 0.6
-            },
-            {
-              "frame": {
-                "at": "picking",
-                "offset": 9
-              },
-              "value": 1,
-              "ease": "ease-out-back"
-            }
-          ],
-          "anchor": {
-            "x": 1190.4,
-            "y": 669.6
+              {
+                "frame": 80,
+                "value": 1
+              }
+            ]
           }
         },
         {
           "id": "arka",
           "kit": {
             "type": "figure",
-            "x": 0.42,
+            "x": 0.33,
             "y": 0.86,
-            "height": 0.56,
+            "height": 0.336,
             "outfit": "astronaut",
             "shiver": 0,
             "seed": 11,
@@ -2071,182 +2009,182 @@
           "y": [
             {
               "frame": 0,
-              "value": -10,
+              "value": -8,
               "ease": "smoothstep"
             },
             {
               "frame": 40,
-              "value": 10,
+              "value": 8,
               "ease": "smoothstep"
             },
             {
               "frame": 80,
-              "value": -10,
+              "value": -8,
               "ease": "smoothstep"
             },
             {
               "frame": 120,
-              "value": 10,
+              "value": 8,
               "ease": "smoothstep"
             },
             {
               "frame": 160,
-              "value": -10,
+              "value": -8,
               "ease": "smoothstep"
             },
             {
               "frame": 200,
-              "value": 10,
+              "value": 8,
               "ease": "smoothstep"
             },
             {
               "frame": 240,
-              "value": -10,
+              "value": -8,
               "ease": "smoothstep"
             },
             {
               "frame": 280,
-              "value": 10,
+              "value": 8,
               "ease": "smoothstep"
             },
             {
               "frame": 320,
-              "value": -10,
+              "value": -8,
               "ease": "smoothstep"
             },
             {
               "frame": 360,
-              "value": 10,
+              "value": 8,
               "ease": "smoothstep"
             },
             {
               "frame": 400,
-              "value": -10,
+              "value": -8,
               "ease": "smoothstep"
             },
             {
               "frame": 440,
-              "value": 10,
+              "value": 8,
               "ease": "smoothstep"
             },
             {
               "frame": 480,
-              "value": -10,
+              "value": -8,
               "ease": "smoothstep"
             },
             {
               "frame": 520,
-              "value": 10,
+              "value": 8,
               "ease": "smoothstep"
             },
             {
               "frame": 560,
-              "value": -10,
+              "value": -8,
               "ease": "smoothstep"
             },
             {
               "frame": 600,
-              "value": 10,
+              "value": 8,
               "ease": "smoothstep"
             },
             {
               "frame": 640,
-              "value": -10,
+              "value": -8,
               "ease": "smoothstep"
             },
             {
               "frame": 680,
-              "value": 10,
+              "value": 8,
               "ease": "smoothstep"
             },
             {
               "frame": 720,
-              "value": -10,
+              "value": -8,
               "ease": "smoothstep"
             },
             {
               "frame": 760,
-              "value": 10,
+              "value": 8,
               "ease": "smoothstep"
             },
             {
               "frame": 800,
-              "value": -10,
+              "value": -8,
               "ease": "smoothstep"
             },
             {
               "frame": 840,
-              "value": 10,
+              "value": 8,
               "ease": "smoothstep"
             },
             {
               "frame": 880,
-              "value": -10,
+              "value": -8,
               "ease": "smoothstep"
             },
             {
               "frame": 920,
-              "value": 10,
+              "value": 8,
               "ease": "smoothstep"
             },
             {
               "frame": 960,
-              "value": -10,
+              "value": -8,
               "ease": "smoothstep"
             },
             {
               "frame": 1000,
-              "value": 10,
+              "value": 8,
               "ease": "smoothstep"
             },
             {
               "frame": 1040,
-              "value": -10,
+              "value": -8,
               "ease": "smoothstep"
             },
             {
               "frame": 1080,
-              "value": 10,
+              "value": 8,
               "ease": "smoothstep"
             },
             {
               "frame": 1120,
-              "value": -10,
+              "value": -8,
               "ease": "smoothstep"
             },
             {
               "frame": 1160,
-              "value": 10,
+              "value": 8,
               "ease": "smoothstep"
             },
             {
               "frame": 1200,
-              "value": -10,
+              "value": -8,
               "ease": "smoothstep"
             },
             {
               "frame": 1240,
-              "value": 10,
+              "value": 8,
               "ease": "smoothstep"
             },
             {
               "frame": 1280,
-              "value": -10,
+              "value": -8,
               "ease": "smoothstep"
             },
             {
               "frame": 1320,
-              "value": 10,
+              "value": 8,
               "ease": "smoothstep"
             },
             {
               "frame": 1360,
-              "value": -10,
+              "value": -8,
               "ease": "smoothstep"
             },
             {
               "frame": 1400,
-              "value": 10,
+              "value": 8,
               "ease": "smoothstep"
             }
           ]
@@ -2256,8 +2194,8 @@
         {
           "id": "n0",
           "text": "Arka's moon hunt",
-          "x": 1423,
-          "y": 390,
+          "x": 1327,
+          "y": 318,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -2269,17 +2207,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "picking",
-                "offset": -1
-              },
+              "frame": 3,
               "value": 0
             },
             {
-              "frame": {
-                "at": "picking",
-                "offset": 5
-              },
+              "frame": 9,
               "value": 1
             }
           ]
@@ -2319,17 +2251,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "walked",
-                "offset": -1
-              },
+              "frame": 3,
               "value": 0
             },
             {
-              "frame": {
-                "at": "walked",
-                "offset": 4
-              },
+              "frame": 8,
               "value": 1
             }
           ],
@@ -2343,17 +2269,11 @@
               "value": 0.648
             },
             {
-              "frame": {
-                "at": "walked",
-                "offset": -1
-              },
+              "frame": 3,
               "value": 0.648
             },
             {
-              "frame": {
-                "at": "walked",
-                "offset": 6
-              },
+              "frame": 10,
               "value": 0.72,
               "ease": "ease-out-back"
             }
@@ -2400,17 +2320,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "walked",
-                "offset": 5
-              },
+              "frame": 11,
               "value": 0
             },
             {
-              "frame": {
-                "at": "walked",
-                "offset": 11
-              },
+              "frame": 17,
               "value": 1
             }
           ]
@@ -3937,9 +3851,34 @@
         },
         {
           "id": "n1",
+          "text": "Apollo crews said...",
+          "x": 1413,
+          "y": 407,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 3,
+              "value": 0
+            },
+            {
+              "frame": 9,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
           "text": "burnt gunpowder?",
-          "x": 635,
-          "y": 296,
+          "x": 1067,
+          "y": 644,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -4487,12 +4426,12 @@
       "height": 1080,
       "layers": [
         {
-          "id": "sky-body",
+          "id": "jupiter",
           "kit": {
             "type": "planet",
-            "x": 0.84,
-            "y": 0.24,
-            "radius": 0.07,
+            "x": 0.12,
+            "y": 0.52,
+            "radius": 0.16,
             "base": "#d9b38c",
             "bands": [
               "#b5733f",
@@ -4504,252 +4443,125 @@
             "craters": 0,
             "ring": false,
             "shade": 0.25,
-            "seed": 5
+            "seed": 7
           }
         },
         {
-          "id": "ground",
+          "id": "gal0",
           "kit": {
-            "type": "terrain",
-            "top": 0.85,
-            "curve": 0.04,
-            "fill": "#6e5d4c",
-            "detail": "#3f342b",
-            "rocks": 6,
-            "bumps": 6,
-            "seed": 8
+            "type": "planet",
+            "x": 0.36,
+            "y": 0.52,
+            "radius": 0.03,
+            "base": "#e9c94b",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
           }
         },
         {
-          "id": "you",
+          "id": "gal1",
           "kit": {
-            "type": "figure",
-            "x": 0.33,
-            "y": 0.86,
-            "height": 0.56,
-            "outfit": "astronaut",
-            "shiver": 0,
-            "seed": 4,
-            "poses": [
+            "type": "planet",
+            "x": 0.5,
+            "y": 0.52,
+            "radius": 0.028,
+            "base": "#f1e8d8",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          }
+        },
+        {
+          "id": "gal2",
+          "kit": {
+            "type": "planet",
+            "x": 0.65,
+            "y": 0.52,
+            "radius": 0.042,
+            "base": "#8e8376",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          }
+        },
+        {
+          "id": "gal3",
+          "kit": {
+            "type": "planet",
+            "x": 0.85,
+            "y": 0.52,
+            "radius": 0.04,
+            "base": "#6e5d4c",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          }
+        },
+        {
+          "id": "far",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.55,
+            "y": 0.74,
+            "size": 0.6,
+            "level": [
               {
                 "frame": 0,
-                "pose": "wave"
+                "value": 0.2
+              },
+              {
+                "frame": {
+                  "at": "safest"
+                },
+                "value": 1
               }
             ],
-            "faces": [
-              {
-                "frame": 0,
-                "face": "happy"
-              }
-            ],
-            "helmet": [
-              {
-                "frame": 0,
-                "on": true
-              }
-            ]
-          },
-          "y": [
-            {
-              "frame": 0,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 40,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 80,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 120,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 160,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 200,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 240,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 280,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 320,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 360,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 400,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 440,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 480,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 520,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 560,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 600,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 640,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 680,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 720,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 760,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 800,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 840,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 880,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 920,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 960,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1000,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1040,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1080,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1120,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1160,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1200,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1240,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1280,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1320,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1360,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1400,
-              "value": 10,
-              "ease": "smoothstep"
-            }
-          ]
+            "color": "#2f7fd0",
+            "text": "distance from Jupiter"
+          }
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "CALLISTO",
-          "x": 960,
-          "y": 92,
-          "size": 60,
+          "text": "Callisto",
+          "x": 1625,
+          "y": 474,
+          "size": 50,
           "anchor": "middle",
           "variant": "ink",
           "color": "@text.fill",
-          "pop": false
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 3,
+              "value": 0
+            },
+            {
+              "frame": 9,
+              "value": 1
+            }
+          ]
         },
         {
           "id": "n1",
-          "text": "safest big moon",
-          "x": 1415,
-          "y": 438,
+          "text": "farthest = safest",
+          "x": 1315,
+          "y": 318,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -6337,6 +6149,48 @@
           }
         },
         {
+          "id": "b-moon",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.55,
+            "y": 0.6,
+            "size": 0.49,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.03
+              }
+            ],
+            "color": "#8c8c88",
+            "text": "our Moon, from Earth"
+          }
+        },
+        {
+          "id": "b-mars",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.55,
+            "y": 0.78,
+            "size": 0.49,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.03
+              },
+              {
+                "frame": {
+                  "at": "huge"
+                },
+                "value": 1
+              }
+            ],
+            "color": "#c4501f",
+            "text": "Mars, from Phobos"
+          }
+        },
+        {
           "id": "you",
           "kit": {
             "type": "figure",
@@ -6563,8 +6417,8 @@
         },
         {
           "id": "n1",
-          "text": "Mars: huge!",
-          "x": 1023,
+          "text": "~40x wider",
+          "x": 1031,
           "y": 320,
           "size": 66,
           "anchor": "middle",
@@ -6578,14 +6432,14 @@
             },
             {
               "frame": {
-                "at": "fills",
+                "at": "huge",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "fills",
+                "at": "huge",
                 "offset": 5
               },
               "value": 1
@@ -6929,26 +6783,25 @@
             "y": 0.7,
             "size": 0.25,
             "count": 3
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "gravity",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "gravity"
-              },
-              "value": 1
-            }
-          ]
+          }
+        },
+        {
+          "id": "g-bar",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.16,
+            "y": 0.5,
+            "size": 0.38,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.01
+              }
+            ],
+            "color": "#2f7fd0",
+            "text": "gravity vs Earth"
+          }
         },
         {
           "id": "you",
@@ -7177,8 +7030,8 @@
         },
         {
           "id": "n1",
-          "text": "gravity: almost zero",
-          "x": 1423,
+          "text": "almost zero",
+          "x": 1413,
           "y": 704,
           "size": 66,
           "anchor": "middle",
@@ -7393,6 +7246,27 @@
           }
         },
         {
+          "id": "height",
+          "kit": {
+            "type": "prop",
+            "item": "ruler",
+            "x": 0.14,
+            "y": 0.55,
+            "size": 0.45,
+            "text": "height",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.05
+              },
+              {
+                "frame": 160,
+                "value": 0.6
+              }
+            ]
+          }
+        },
+        {
           "id": "you",
           "kit": {
             "type": "figure",
@@ -7517,6 +7391,24 @@
             "rocks": 2,
             "bumps": 6,
             "seed": 6
+          }
+        },
+        {
+          "id": "g-bar",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.16,
+            "y": 0.5,
+            "size": 0.38,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.005
+              }
+            ],
+            "color": "#2f7fd0",
+            "text": "gravity: even less"
           }
         },
         {
@@ -8325,7 +8217,8 @@
             "item": "cliff",
             "x": 0.34,
             "y": 0.3,
-            "size": 0.6
+            "size": 0.6,
+            "text": "20 km"
           }
         },
         {
@@ -8884,9 +8777,34 @@
         },
         {
           "id": "n1",
+          "text": "NASA scientists:",
+          "x": 1422,
+          "y": 395,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 3,
+              "value": 0
+            },
+            {
+              "frame": 9,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
           "text": "survivable!",
           "x": 1416,
-          "y": 404,
+          "y": 488,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -8968,6 +8886,17 @@
                 "value": 1
               }
             ]
+          }
+        },
+        {
+          "id": "tag",
+          "kit": {
+            "type": "prop",
+            "item": "sign",
+            "x": 0.62,
+            "y": 0.82,
+            "size": 0.16,
+            "text": "AIRBAG"
           }
         },
         {
@@ -9235,7 +9164,7 @@
           "kit": {
             "type": "prop",
             "item": "sunglasses",
-            "x": 0.33,
+            "x": 0.2,
             "y": 0.43,
             "size": 0.1
           },
@@ -9281,15 +9210,69 @@
             }
           ],
           "anchor": {
-            "x": 633.6,
+            "x": 384.0,
             "y": 464.4
+          }
+        },
+        {
+          "id": "br-en",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.62,
+            "y": 0.4,
+            "size": 0.49,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.99
+              }
+            ],
+            "color": "#5fa3d6",
+            "text": "Enceladus"
+          }
+        },
+        {
+          "id": "br-sn",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.62,
+            "y": 0.58,
+            "size": 0.49,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.85
+              }
+            ],
+            "color": "#9cc3e0",
+            "text": "fresh snow"
+          }
+        },
+        {
+          "id": "br-mo",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.62,
+            "y": 0.76,
+            "size": 0.49,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.12
+              }
+            ],
+            "color": "#8c8c88",
+            "text": "our Moon"
           }
         },
         {
           "id": "you",
           "kit": {
             "type": "figure",
-            "x": 0.33,
+            "x": 0.2,
             "y": 0.86,
             "height": 0.56,
             "outfit": "astronaut",
@@ -9519,9 +9502,9 @@
         },
         {
           "id": "n1",
-          "text": "brightest thing in the solar system",
-          "x": 1425,
-          "y": 395,
+          "text": "brightness",
+          "x": 1190,
+          "y": 280,
           "size": 56,
           "anchor": "middle",
           "variant": "ink",
@@ -9533,17 +9516,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "brightest",
-                "offset": -1
-              },
+              "frame": 3,
               "value": 0
             },
             {
-              "frame": {
-                "at": "brightest",
-                "offset": 5
-              },
+              "frame": 9,
               "value": 1
             }
           ]
@@ -9825,6 +9802,31 @@
           "variant": "ink",
           "color": "@text.fill",
           "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "snow... from where?",
+          "x": 1500,
+          "y": 760,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 5,
+              "value": 0
+            },
+            {
+              "frame": 11,
+              "value": 1
+            }
+          ]
         }
       ]
     },
@@ -10355,7 +10357,7 @@
             "item": "geyser",
             "x": 0.5,
             "y": 0.86,
-            "size": 0.75,
+            "size": 0.62,
             "level": [
               {
                 "frame": 0,
@@ -10436,7 +10438,7 @@
                 "at": "throw",
                 "offset": 40
               },
-              "value": -216.0,
+              "value": -129.6,
               "ease": "ease-out-cubic"
             }
           ]
@@ -10453,6 +10455,62 @@
           "variant": "ink",
           "color": "@text.fill",
           "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "vent",
+          "x": 780,
+          "y": 1000,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 3,
+              "value": 0
+            },
+            {
+              "frame": 9,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "1,000+ km/h jet",
+          "x": 1450,
+          "y": 520,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "throw",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "throw",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
         }
       ]
     },
@@ -10623,7 +10681,8 @@
             "item": "cliff",
             "x": 0.44,
             "y": 0.62,
-            "size": 0.4
+            "size": 0.4,
+            "text": "500 m"
           }
         },
         {
@@ -11082,6 +11141,28 @@
               "ease": "smoothstep"
             }
           ]
+        },
+        {
+          "id": "light",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.5,
+            "y": 0.2,
+            "size": 0.58,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              },
+              {
+                "frame": 150,
+                "value": 0.02
+              }
+            ],
+            "color": "#f2b134",
+            "text": "sunlight"
+          }
         }
       ],
       "annotations": [
@@ -11101,17 +11182,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "far",
-                "offset": -1
-              },
+              "frame": 5,
               "value": 0
             },
             {
-              "frame": {
-                "at": "far",
-                "offset": 5
-              },
+              "frame": 11,
               "value": 1
             }
           ]
@@ -12236,9 +12311,34 @@
         },
         {
           "id": "n1",
+          "text": "Pluto",
+          "x": 1617,
+          "y": 438,
+          "size": 50,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 3,
+              "value": 0
+            },
+            {
+              "frame": 9,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
           "text": "same spot, forever",
-          "x": 1414,
-          "y": 443,
+          "x": 1254,
+          "y": 323,
           "size": 56,
           "anchor": "middle",
           "variant": "ink",
@@ -12266,10 +12366,10 @@
           ]
         },
         {
-          "id": "n2",
+          "id": "n3",
           "text": "never rises, never sets",
           "x": 1424,
-          "y": 527,
+          "y": 515,
           "size": 56,
           "anchor": "middle",
           "variant": "ink",
@@ -12348,16 +12448,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "thermos",
-                "offset": -1
-              },
+              "frame": 3,
               "value": 0
             },
             {
-              "frame": {
-                "at": "thermos"
-              },
+              "frame": 4,
               "value": 1
             }
           ],
@@ -12367,17 +12462,11 @@
               "value": 0.6
             },
             {
-              "frame": {
-                "at": "thermos",
-                "offset": -1
-              },
+              "frame": 3,
               "value": 0.6
             },
             {
-              "frame": {
-                "at": "thermos",
-                "offset": 9
-              },
+              "frame": 13,
               "value": 1,
               "ease": "ease-out-back"
             }
@@ -12614,8 +12703,8 @@
         },
         {
           "id": "n1",
-          "text": "not fast...",
-          "x": 1352,
+          "text": "cold kills slowly",
+          "x": 1285,
           "y": 323,
           "size": 56,
           "anchor": "middle",
@@ -12628,17 +12717,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "fast",
-                "offset": -1
-              },
+              "frame": 5,
               "value": 0
             },
             {
-              "frame": {
-                "at": "fast",
-                "offset": 5
-              },
+              "frame": 11,
               "value": 1
             }
           ]
@@ -13239,8 +13322,8 @@
           "kit": {
             "type": "prop",
             "item": "mug",
-            "x": 0.56,
-            "y": 0.6,
+            "x": 0.52,
+            "y": 0.62,
             "size": 0.2
           },
           "opacity": [
@@ -13273,8 +13356,24 @@
             }
           ],
           "anchor": {
-            "x": 1075.2,
-            "y": 648.0
+            "x": 998.4000000000001,
+            "y": 669.6
+          }
+        },
+        {
+          "id": "thermo",
+          "kit": {
+            "type": "prop",
+            "item": "thermometer",
+            "x": 0.78,
+            "y": 0.55,
+            "size": 0.3,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.95
+              }
+            ]
           }
         },
         {
@@ -13497,6 +13596,56 @@
           "variant": "ink",
           "color": "@text.fill",
           "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "+70 °C inside",
+          "x": 1354,
+          "y": 323,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 5,
+              "value": 0
+            },
+            {
+              "frame": 11,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "-235 °C outside",
+          "x": 1249,
+          "y": 407,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#2f7fd0",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 9,
+              "value": 0
+            },
+            {
+              "frame": 15,
+              "value": 1
+            }
+          ]
         }
       ]
     },
@@ -17566,6 +17715,30 @@
           }
         },
         {
+          "id": "dose",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.66,
+            "y": 0.78,
+            "size": 0.6,
+            "count": 3,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.1
+              },
+              {
+                "frame": {
+                  "at": "late"
+                },
+                "value": 1
+              }
+            ],
+            "text": "dose: 1 h / 2 h / 3 h"
+          }
+        },
+        {
           "id": "you",
           "kit": {
             "type": "figure",
@@ -17800,7 +17973,7 @@
                 "frame": {
                   "at": "late"
                 },
-                "value": 0.85
+                "value": 0.6
               }
             ]
           }
@@ -17898,6 +18071,17 @@
             "x": 0.62,
             "y": 0.66,
             "size": 0.3
+          }
+        },
+        {
+          "id": "go",
+          "kit": {
+            "type": "prop",
+            "item": "sign",
+            "x": 0.82,
+            "y": 0.78,
+            "size": 0.16,
+            "text": "EXIT"
           }
         },
         {
@@ -18007,216 +18191,205 @@
           }
         },
         {
-          "id": "you",
+          "id": "z1m0",
           "kit": {
-            "type": "figure",
-            "x": 0.33,
-            "y": 0.86,
-            "height": 0.56,
-            "outfit": "astronaut",
-            "shiver": 0,
-            "seed": 4,
-            "poses": [
-              {
-                "frame": 0,
-                "pose": "wave"
-              }
-            ],
-            "faces": [
-              {
-                "frame": 0,
-                "face": "happy"
-              }
-            ],
-            "helmet": [
-              {
-                "frame": 0,
-                "on": true
-              }
-            ]
-          },
-          "y": [
-            {
-              "frame": 0,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 40,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 80,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 120,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 160,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 200,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 240,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 280,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 320,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 360,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 400,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 440,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 480,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 520,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 560,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 600,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 640,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 680,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 720,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 760,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 800,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 840,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 880,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 920,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 960,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1000,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1040,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1080,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1120,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1160,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1200,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1240,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1280,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1320,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1360,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1400,
-              "value": 10,
-              "ease": "smoothstep"
-            }
-          ]
+            "type": "planet",
+            "x": 0.1,
+            "y": 0.45,
+            "radius": 0.035,
+            "base": "#c4c4c0",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          }
+        },
+        {
+          "id": "z1m1",
+          "kit": {
+            "type": "planet",
+            "x": 0.2,
+            "y": 0.45,
+            "radius": 0.035,
+            "base": "#6e5d4c",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          }
+        },
+        {
+          "id": "z1m2",
+          "kit": {
+            "type": "planet",
+            "x": 0.30000000000000004,
+            "y": 0.45,
+            "radius": 0.035,
+            "base": "#857a6f",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          }
+        },
+        {
+          "id": "z1m3",
+          "kit": {
+            "type": "planet",
+            "x": 0.4,
+            "y": 0.45,
+            "radius": 0.035,
+            "base": "#9a8d80",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          }
+        },
+        {
+          "id": "z1m4",
+          "kit": {
+            "type": "planet",
+            "x": 0.5,
+            "y": 0.45,
+            "radius": 0.035,
+            "base": "#cfcfca",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          }
+        },
+        {
+          "id": "z1m5",
+          "kit": {
+            "type": "planet",
+            "x": 0.6,
+            "y": 0.45,
+            "radius": 0.035,
+            "base": "#f4f8fb",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          }
+        },
+        {
+          "id": "z1m6",
+          "kit": {
+            "type": "planet",
+            "x": 0.7000000000000001,
+            "y": 0.45,
+            "radius": 0.035,
+            "base": "#ecdcd8",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          }
+        },
+        {
+          "id": "z1x0",
+          "kit": {
+            "type": "prop",
+            "item": "cross",
+            "x": 0.1,
+            "y": 0.45,
+            "size": 0.08
+          }
+        },
+        {
+          "id": "z1x1",
+          "kit": {
+            "type": "prop",
+            "item": "cross",
+            "x": 0.2,
+            "y": 0.45,
+            "size": 0.08
+          }
+        },
+        {
+          "id": "z1x2",
+          "kit": {
+            "type": "prop",
+            "item": "cross",
+            "x": 0.30000000000000004,
+            "y": 0.45,
+            "size": 0.08
+          }
+        },
+        {
+          "id": "z1x3",
+          "kit": {
+            "type": "prop",
+            "item": "cross",
+            "x": 0.4,
+            "y": 0.45,
+            "size": 0.08
+          }
+        },
+        {
+          "id": "z1x4",
+          "kit": {
+            "type": "prop",
+            "item": "cross",
+            "x": 0.5,
+            "y": 0.45,
+            "size": 0.08
+          }
+        },
+        {
+          "id": "z1x5",
+          "kit": {
+            "type": "prop",
+            "item": "cross",
+            "x": 0.6,
+            "y": 0.45,
+            "size": 0.08
+          }
+        },
+        {
+          "id": "z1x6",
+          "kit": {
+            "type": "prop",
+            "item": "cross",
+            "x": 0.7000000000000001,
+            "y": 0.45,
+            "size": 0.08
+          }
+        },
+        {
+          "id": "titan-big",
+          "kit": {
+            "type": "planet",
+            "x": 0.86,
+            "y": 0.45,
+            "radius": 0.1,
+            "base": "#c9843b",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 9,
+            "glow": "#f2a54a"
+          }
+        },
+        {
+          "id": "z1q",
+          "kit": {
+            "type": "prop",
+            "item": "question",
+            "x": 0.86,
+            "y": 0.62,
+            "size": 0.1
+          }
         }
       ],
       "annotations": [
@@ -18234,8 +18407,8 @@
         {
           "id": "n1",
           "text": "the twist",
-          "x": 1419,
-          "y": 378,
+          "x": 1323,
+          "y": 318,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -18663,6 +18836,60 @@
           }
         },
         {
+          "id": "pr-sp",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.72,
+            "y": 0.38,
+            "size": 0.46,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.01
+              }
+            ],
+            "color": "#2f7fd0",
+            "text": "space: 0"
+          }
+        },
+        {
+          "id": "pr-ea",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.72,
+            "y": 0.56,
+            "size": 0.46,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.66
+              }
+            ],
+            "color": "#2f7fd0",
+            "text": "Earth: 1x"
+          }
+        },
+        {
+          "id": "pr-ti",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.72,
+            "y": 0.74,
+            "size": 0.46,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "color": "#c9843b",
+            "text": "Titan: 1.5x"
+          }
+        },
+        {
           "id": "you",
           "kit": {
             "type": "figure",
@@ -18726,8 +18953,8 @@
         {
           "id": "n1",
           "text": "no pressure suit!",
-          "x": 1410,
-          "y": 356,
+          "x": 1382,
+          "y": 250,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -19438,6 +19665,42 @@
           }
         },
         {
+          "id": "lift-g",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.72,
+            "y": 0.4,
+            "size": 0.43,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.14
+              }
+            ],
+            "color": "#2f7fd0",
+            "text": "gravity: 1/7 Earth"
+          }
+        },
+        {
+          "id": "lift-a",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.72,
+            "y": 0.58,
+            "size": 0.43,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "color": "#c9843b",
+            "text": "air: 4x denser"
+          }
+        },
+        {
           "id": "you",
           "kit": {
             "type": "figure",
@@ -19645,6 +19908,22 @@
                   "at": "airbag",
                   "offset": 8
                 },
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "map",
+          "kit": {
+            "type": "prop",
+            "item": "moon-map",
+            "x": 0.86,
+            "y": 0.3,
+            "size": 0.22,
+            "level": [
+              {
+                "frame": 0,
                 "value": 1
               }
             ]
@@ -20108,7 +20387,7 @@
         {
           "id": "n1",
           "text": "this one!",
-          "x": 1452,
+          "x": 924,
           "y": 356,
           "size": 66,
           "anchor": "middle",
@@ -20121,17 +20400,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "going",
-                "offset": -1
-              },
+              "frame": 3,
               "value": 0
             },
             {
-              "frame": {
-                "at": "going",
-                "offset": 5
-              },
+              "frame": 9,
               "value": 1
             }
           ]
@@ -21007,6 +21280,31 @@
       "annotations": [
         {
           "id": "n0",
+          "text": "the one exception",
+          "x": 1417,
+          "y": 287,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 3,
+              "value": 0
+            },
+            {
+              "frame": 9,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
           "text": "Titan",
           "x": 1455,
           "y": 750,
@@ -21093,13 +21391,58 @@
           }
         },
         {
+          "id": "map",
+          "kit": {
+            "type": "prop",
+            "item": "moon-map",
+            "x": 0.72,
+            "y": 0.5,
+            "size": 0.34,
+            "text": "your pick?",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": 60,
+                "value": 0.5
+              },
+              {
+                "frame": 120,
+                "value": 1
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Obviously",
+                "offset": 29
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Obviously",
+                "offset": 30
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
           "id": "bye",
           "kit": {
             "type": "prop",
             "item": "sign",
-            "x": 0.72,
-            "y": 0.7,
-            "size": 0.26,
+            "x": 0.5,
+            "y": 0.9,
+            "size": 0.2,
             "text": "SEE YOU ON TITAN"
           },
           "opacity": [
@@ -21110,14 +21453,14 @@
             {
               "frame": {
                 "at": "Obviously",
-                "offset": 19
+                "offset": 39
               },
               "value": 0
             },
             {
               "frame": {
                 "at": "Obviously",
-                "offset": 20
+                "offset": 40
               },
               "value": 1
             }
@@ -21130,22 +21473,22 @@
             {
               "frame": {
                 "at": "Obviously",
-                "offset": 19
+                "offset": 39
               },
               "value": 0.6
             },
             {
               "frame": {
                 "at": "Obviously",
-                "offset": 29
+                "offset": 49
               },
               "value": 1,
               "ease": "ease-out-back"
             }
           ],
           "anchor": {
-            "x": 1382.3999999999999,
-            "y": 756.0
+            "x": 960.0,
+            "y": 972.0
           }
         },
         {
@@ -21214,7 +21557,7 @@
                 "at": "Obviously",
                 "offset": 160
               },
-              "value": -648.0,
+              "value": -1404.0,
               "ease": "smoothstep"
             }
           ]
@@ -21260,6 +21603,20 @@
                 "offset": 5
               },
               "value": 1
+            },
+            {
+              "frame": {
+                "at": "Obviously",
+                "offset": 39
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Obviously",
+                "offset": 40
+              },
+              "value": 0
             }
           ]
         },
@@ -21267,7 +21624,7 @@
           "id": "n2",
           "text": "tell us in the comments",
           "x": 1417,
-          "y": 443,
+          "y": 755,
           "size": 56,
           "anchor": "middle",
           "variant": "ink",
@@ -21289,6 +21646,51 @@
               "frame": {
                 "at": "comments",
                 "offset": 5
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Obviously",
+                "offset": 39
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Obviously",
+                "offset": 40
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "thanks for watching!",
+          "x": 960,
+          "y": 260,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Obviously",
+                "offset": 49
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Obviously",
+                "offset": 55
               },
               "value": 1
             }
@@ -21569,9 +21971,7 @@
         },
         {
           "sound": "pop",
-          "frame": {
-            "at": "without"
-          },
+          "frame": 4,
           "gainDb": -25
         },
         {
@@ -21716,7 +22116,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "kills"
+            "at": "question"
           },
           "gainDb": -25
         }
@@ -21812,8 +22212,8 @@
           {
             "frame": 0,
             "focus": {
-              "x": 0.4962,
-              "y": 0.5011
+              "x": 0.4919,
+              "y": 0.5075
             },
             "zoom": 1.05,
             "easing": "smoothstep"
@@ -21856,9 +22256,7 @@
         },
         {
           "sound": "pop",
-          "frame": {
-            "at": "picking"
-          },
+          "frame": 4,
           "gainDb": -25
         }
       ]
@@ -21923,10 +22321,7 @@
         },
         {
           "sound": "pop",
-          "frame": {
-            "at": "walked",
-            "offset": 6
-          },
+          "frame": 12,
           "gainDb": -25
         }
       ]
@@ -22280,6 +22675,11 @@
         },
         {
           "sound": "pop",
+          "frame": 4,
+          "gainDb": -25
+        },
+        {
+          "sound": "pop",
           "frame": {
             "at": "gunpowder"
           },
@@ -22437,8 +22837,8 @@
           {
             "frame": 0,
             "focus": {
-              "x": 0.4919,
-              "y": 0.5011
+              "x": 0.5,
+              "y": 0.5
             },
             "zoom": 1.05,
             "easing": "smoothstep"
@@ -22930,7 +23330,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "fills"
+            "at": "huge"
           },
           "gainDb": -25
         }
@@ -23773,6 +24173,11 @@
         },
         {
           "sound": "pop",
+          "frame": 4,
+          "gainDb": -25
+        },
+        {
+          "sound": "pop",
           "frame": {
             "at": "airbags"
           },
@@ -23857,7 +24262,7 @@
           {
             "frame": 0,
             "focus": {
-              "x": 0.4919,
+              "x": 0.4857,
               "y": 0.5011
             },
             "zoom": 1.05,
@@ -23901,9 +24306,7 @@
         },
         {
           "sound": "pop",
-          "frame": {
-            "at": "brightest"
-          },
+          "frame": 4,
           "gainDb": -25
         }
       ]
@@ -24160,6 +24563,18 @@
           "sound": "whoosh",
           "frame": 0,
           "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": 4,
+          "gainDb": -25
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "throw"
+          },
+          "gainDb": -25
         },
         {
           "sound": "whoosh",
@@ -24421,9 +24836,7 @@
         },
         {
           "sound": "pop",
-          "frame": {
-            "at": "far"
-          },
+          "frame": 6,
           "gainDb": -25
         }
       ]
@@ -24782,9 +25195,7 @@
         },
         {
           "sound": "pop",
-          "frame": {
-            "at": "fast"
-          },
+          "frame": 6,
           "gainDb": -25
         },
         {
@@ -26395,8 +26806,8 @@
           {
             "frame": 0,
             "focus": {
-              "x": 0.4919,
-              "y": 0.5011
+              "x": 0.5,
+              "y": 0.5
             },
             "zoom": 1.05,
             "easing": "smoothstep"
@@ -27053,6 +27464,11 @@
         },
         {
           "sound": "pop",
+          "frame": 4,
+          "gainDb": -25
+        },
+        {
+          "sound": "pop",
           "frame": {
             "at": "fly"
           },
@@ -27063,7 +27479,7 @@
     {
       "id": "em-k4",
       "template": "hero-reveal",
-      "durationFrames": 183,
+      "durationFrames": 543,
       "animationDurationFrames": 183,
       "caption": {
         "text": "em-k4",
@@ -27129,6 +27545,14 @@
           "sound": "pop",
           "frame": {
             "at": "comments"
+          },
+          "gainDb": -25
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "Obviously",
+            "offset": 50
           },
           "gainDb": -25
         }

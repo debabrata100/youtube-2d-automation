@@ -16,7 +16,7 @@ import {getTheme} from '../src/engine/style/theme';
 import {browserExecutable} from './media-tools';
 import {estimateAlignment} from '../src/storytelling/timing/estimate';
 import {encodeWav} from '../src/audio/synth';
-import {densityGaps} from '../src/engine/storyboard/density';
+import {densityGaps, infoCoverage} from '../src/engine/storyboard/density';
 
 const {values: o} = parseArgs({options: {
   script: {type: 'string'}, storyboard: {type: 'string'}, metadata: {type: 'string'}, audio: {type: 'string'},
@@ -43,6 +43,8 @@ if (o.script) {
   if (anchors.resolutions.length) console.error(JSON.stringify({anchors: anchors.resolutions.length, warnings: anchors.warnings}));
   const gaps = densityGaps(storyboard);
   console.error(JSON.stringify({visualDensity: gaps.length ? {gapsOver6s: gaps} : 'ok: a new visual at least every 6 s'}));
+  const info = infoCoverage(storyboard), weak = info.scenes.filter(x => x.coverage < .6).map(x => `${x.scene} ${Math.round(x.coverage * 100)}%`);
+  console.error(JSON.stringify({informationCoverage: `${Math.round(info.overall * 100)}% of the time something readable is on screen (target 85%)`, weakShots: weak}));
   console.error(JSON.stringify({scheduledFrames: storyboard.scenes.map(s => s.durationFrames), exceptions: schedule.exceptions}));
   const style = captionStyleSchema.parse(o['caption-style'] ? JSON.parse(await readFile(o['caption-style'], 'utf8')) : source.themeId ? getTheme(source.themeId).caption : {});
   narration = narrationOverlaySchema.parse({audioSrc: 'narration/narration.wav', captionsEnabled: style.enabled !== false, syntheticTestAudio: false, showAiDisclosureBanner: false, cues: mapping.cues, style});
