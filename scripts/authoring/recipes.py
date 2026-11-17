@@ -27,7 +27,7 @@ FORMATS = {
 }
 # Scene groups render a little smaller than the frame (primary size); this maps a backdrop spot into a scene group.
 SCENE_SCALE = .95
-NOTE_SIZE = {'title': 92, 'note': 66, 'label': 50, 'small': 56, 'header': 60}
+NOTE_SIZE = {'title': 92, 'note': 72, 'label': 58, 'small': 66, 'header': 64, 'skylabel': 46}  # small text sized for phone screens (M3.7)
 _ADV = json.loads((pathlib.Path(__file__).resolve().parent / 'patrick-hand-widths.json').read_text())['advance']
 
 
@@ -113,7 +113,7 @@ class Note:
 
     def __init__(self, text, at, kind='note', color=None, near=None, arrow=None, until=None, size=None, pos=None):
         self.text, self.at, self.kind, self.near, self.arrow, self.until, self.pos = text, at, kind, near, arrow, until, pos
-        self.color = color or (INK if kind in ('label', 'small', 'header') else RED)
+        self.color = color or (INK if kind in ('label', 'small', 'header', 'skylabel') else RED)
         self.size = size or NOTE_SIZE[kind]
 
 
@@ -227,6 +227,34 @@ SKY_BODIES = {
     'jupiter': JUPITER, 'saturn': SATURN, 'uranus': dict(base='#9fe0e6', bands=['#b7ebef'], ring=True), 'neptune': dict(base='#3d63d6', bands=['#5a7fe3', '#3354be']),
     'pluto': dict(base='#d8b48a', bands=['#e9d3b4']),
 }
+SKY_NAMES = {'earth': 'Earth', 'mars': 'Mars', 'jupiter': 'Jupiter', 'saturn': 'Saturn', 'uranus': 'Uranus', 'neptune': 'Neptune', 'pluto': 'Pluto'}
+# Planet systems for the where-are-we card: planet colour, moons inner to outer (name, colour), ring, belt, strip index.
+SYSTEMS = {
+    'earth': dict(color=EARTH, moons=[('The Moon', '#c4c4c0')], strip=2),
+    'mars': dict(color='#c4501f', moons=[('Phobos', '#857a6f'), ('Deimos', '#9a8d80')], strip=3),
+    'jupiter': dict(color='#d9b38c', moons=[('Io', '#e9c94b'), ('Europa', '#f1e8d8'), ('Ganymede', '#8e8376'), ('Callisto', '#6e5d4c')], strip=4, belt=True),
+    'saturn': dict(color='#e3c98f', moons=[('Mimas', '#cfcfca'), ('Enceladus', '#f4f8fb'), ('Rhea', '#bdbdb8'), ('Titan', '#c9843b'), ('Iapetus', '#7a6a5a')], strip=5, ring=True),
+    'uranus': dict(color='#9fe0e6', moons=[('Miranda', '#cfcfca'), ('Ariel', '#c8c8c4'), ('Umbriel', '#8d8d89'), ('Titania', '#b8b0a8'), ('Oberon', '#a39a90')], strip=6),
+    'neptune': dict(color='#3d63d6', moons=[('Proteus', '#8d8d89'), ('Triton', '#ecdcd8'), ('Nereid', '#a8a8a4')], strip=7),
+    'pluto': dict(color='#d8b48a', moons=[('Charon', '#a19c97'), ('Nix', '#c8c8c4'), ('Hydra', '#bdbdb8')], strip=8),
+}
+
+
+def where(F, system, moon, until=None, belt=None, start=None):
+    """Where-are-we card: the planet's system with `moon` highlighted, and the solar system strip with the planet
+    circled. Opaque, drawn above the stage; visible from the start of the shot until `until` (None = whole shot)."""
+    sys_ = SYSTEMS[system]; names = [m[0] for m in sys_['moons']]
+    keys = [(0, 1)] if start is None else [(0, 0), (plus(start, -1), 0), (plus(start, 4), 1)]
+    if until is not None: keys += [(plus(until, -6), 1), (until, 0)]
+    op = {} if keys == [(0, 1)] else {'opacity': track(*keys)}
+    card = Prop(prop(f'map-{system}', 'system-map', .36, .58, .62, color=sys_['color'], labels=names, colors=[m[1] for m in sys_['moons']],
+                     highlight=names.index(moon), ring=sys_.get('ring', False), belt=sys_.get('belt', False) if belt is None else belt,
+                     text=SKY_NAMES.get(system, system.title()), **op))
+    strip = Prop(prop('solar-strip', 'solar-strip', .5, .17, .56, highlight=sys_['strip'], **op))
+    card.hides_labels = 'always' if until is None and start is None else (until if start is None else ('from', start, until))
+    return [card, strip]
+
+
 # Each moon: ground fill/detail, the parent body hanging in its sky (x, y, radius as fractions), crater count.
 WORLDS = {
     'THE MOON': dict(ground='#c4c4c0', detail='#8c8c88', sky=('earth', .84, .24, .07), rocks=4),
@@ -259,7 +287,16 @@ def world(F, name, sky=True, ground=True, top=None):
         props.append(Prop({'id': 'ground', 'kit': {'type': 'terrain', 'top': t, 'curve': .04, 'fill': w['ground'], 'detail': w['detail'], 'rocks': w['rocks'], 'bumps': 6, 'seed': len(name)}},
                           Box(0, t * H, W, H, 'ground')))
     header = Note(name, 0, 'header', pos=(W / 2, round(.085 * H)))
+    if sky and w.get('sky'):
+        body, x, y, r = w['sky']
+        props.append(_SkyLabel(Note(SKY_NAMES[body], 0, 'skylabel', pos=(round((x - r * (2.1 if SKY_BODIES[body].get('ring') else 1.25) * H / W) * W - len(SKY_NAMES[body]) * 11), round(y * H + 14)))))
     return props, header
+
+
+class _SkyLabel(Prop):
+    """Carries the parent planet's name label from world() into the shot's notes (Episode.scene unpacks it)."""
+    def __init__(self, note):
+        super().__init__({'id': 'sky-label-carrier'}); self.note = note
 
 
 def photo(ep, F, aid, rel_path, at, until=None, x=.5, y=.48, scale=.72, size=(1920, 1080), box=(.27, .16, .73, .82)):
@@ -366,6 +403,12 @@ class Episode:
 
     # scenes -------------------------------------------------------------------------------------
     def scene(self, beat_id, plan):
+        labels = [p.note for p in plan['props'] if isinstance(p, _SkyLabel)]
+        hide = next((p.hides_labels for p in plan['props'] if hasattr(p, 'hides_labels')), None)
+        if hide == 'always': labels = []  # the where-are-we card already names the planet
+        for n in labels: n.after = hide
+        plan['props'] = [p for p in plan['props'] if not isinstance(p, _SkyLabel)]
+        plan['notes'] = plan['notes'][:1] + labels + plan['notes'][1:] if labels else plan['notes']
         self.plans[beat_id] = plan
 
     def _end_anchor(self, beat):
@@ -417,9 +460,10 @@ class Episode:
             chars = [c.resolve(F) for c in plan['chars']]
             obstacles = [c.box(F) for c in chars] + [b for b in (p.box(F) for p in plan['props']) if b]
             placed = self._place(beat['id'], plan['notes'], obstacles, plan['stamps'])
-            layers = [p.layer for p in plan['props'] if p.layer.get('kit', {}).get('item') not in ('vignette', 'counter')]
+            TOP = ('vignette', 'counter', 'system-map', 'solar-strip')  # dimmers, counters and the where-are-we card cover the stage
+            layers = [p.layer for p in plan['props'] if p.layer.get('kit', {}).get('item') not in TOP]
             layers += [c.layer(F) for c in chars if not c.top]
-            layers += [p.layer for p in plan['props'] if p.layer.get('kit', {}).get('item') in ('vignette', 'counter')]  # dimmer and counter on top
+            layers += [p.layer for p in plan['props'] if p.layer.get('kit', {}).get('item') in TOP]  # dimmer, counter, map card on top
             layers += [c.layer(F) for c in chars if c.top]  # e.g. a rescuer staying bright over the blackout
             # Short mascot lines are easily masked: no cut whoosh or note pops under a beat Arka speaks alone.
             quiet = set(beat.get('phraseSpeakers') or ['narrator']) == {'arka'}
@@ -430,12 +474,18 @@ class Episode:
                     c = next(c for c in chars if c.cid == n.arrow); hx, hy = c.head(); tx, ty = hx * W + (c.fh * H * .12) * (1 if x > hx * W else -1), hy * H
                     frm = (b.x0 + 20 if x > tx else b.x1 - 20, b.y1 - 10 if y < ty else b.y0); to = (tx, ty)
                 a = note(f'n{j}', n.text, round(x), round(y), n.at, size=round(n.size * F['scale']), color=n.color, to=to, frm=frm)
-                if n.kind == 'header':
+                if n.kind in ('header', 'skylabel'):
                     a.pop('opacity', None); a['pop'] = False
+                    after = getattr(n, 'after', None)
+                    if isinstance(after, tuple):  # card shown from `start` (to `until`): label hides while it is up
+                        _, st, un = after
+                        a['opacity'] = track((0, 1), (plus(st, -1), 1), (st, 0)) if un is None else track((0, 1), (plus(st, -1), 1), (st, 0), (un, 0), (plus(un, 4), 1))
+                    elif after is not None:
+                        a['opacity'] = track((0, 0), (plus(after, -1), 0), (plus(after, 4), 1))
                 if n.until is not None:
                     a['opacity'] = track((0, 0), (plus(n.at, -1), 0), (plus(n.at, 5), 1), (plus(n.until, -1), 1), (n.until, 0))
                 annotations.append(a)
-                if n.kind not in ('label', 'header') and not quiet: sounds.append(('pop', n.at, self.pop_db))  # name labels appear silently (they often land on dialogue)
+                if n.kind not in ('label', 'header', 'skylabel') and not quiet: sounds.append(('pop', n.at, self.pop_db))  # name labels appear silently (they often land on dialogue)
             for k_, (sx, sy, s, at) in enumerate(self._stamps):
                 layers.append(prop(f'stamp{k_}', 'stamp', sx / W, sy / H, s, text='myth', **pop_in(at, (sx, sy))))
                 sounds.append(('boom', at, -27))

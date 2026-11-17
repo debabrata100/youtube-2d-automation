@@ -66,8 +66,9 @@ export const Terrain: React.FC<{config: TerrainConfig; theme: Theme; width: numb
 
 export type PropConfig = {item: 'thermometer' | 'pressure-arrows' | 'motion-lines' | 'exclaim' | 'question' | 'check' | 'cross' | 'counter' | 'stamp' | 'vignette' | 'station' | 'helmet' | 'doodle-stars' | 'chamber'
   | 'cliff' | 'geyser' | 'plume' | 'radiation-meter' | 'radiation-belt' | 'battery' | 'airbag' | 'small-moon' | 'ice-cutaway' | 'frost'
-  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
-  values?: Array<{frame: number; value: number; ramp?: boolean}>; text?: string; direction?: 'in' | 'out'};
+  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
+  values?: Array<{frame: number; value: number; ramp?: boolean}>; text?: string; direction?: 'in' | 'out';
+  labels?: string[]; colors?: string[]; highlight?: number; ring?: boolean; belt?: boolean};
 
 /** Counter value: keys hold, or step in whole numbers towards the next key when `ramp` is set (a real-time countdown). */
 export const counterAt = (keys: NonNullable<PropConfig['values']>, frame: number) => {
@@ -424,6 +425,49 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
         {cols.map((col, i) => <circle key={i} cx={px(i)} cy={py(i)} r={s * .045} fill={col} stroke={ink} strokeWidth={w * .6}/>)}
         <g transform={`translate(${px(idx)} ${py(idx) - s * .06 - hop})`}><path d={`M 0 ${s * .05} L ${-s * .035} ${-s * .01} A ${s * .045} ${s * .045} 0 1 1 ${s * .035} ${-s * .01} Z`} fill={red} stroke={ink} strokeWidth={w * .6}/></g>
         {c.text && <text x={0} y={bh / 2 - s * .07} textAnchor="middle" fontFamily={font} fontSize={s * .1} fill={ink}>{c.text}</text>}
+      </g>;
+    }
+    case 'system-map': {
+      // "Where are we?" card: an opaque paper page with the parent planet (colour = color), its moons on orbits
+      // (labels/colors, inner to outer) and the moon we visit (highlight) bigger, ringed in red with its name;
+      // optional Saturn ring and Jupiter radiation belt. Not to scale, and says so.
+      const n = c.labels?.length ?? 0, cx = c.x * width, cy = c.y * height, pr = s * .11, hl = c.highlight ?? -1, hot = theme.palette.text.accent, lw = Math.max(2, s * .007);
+      const rx = (i: number) => pr * 2.7 + (s * 1.05 - pr * 2.7) * (n > 1 ? i / (n - 1) : 0), ry = (i: number) => rx(i) * .34;
+      const ang = (i: number) => (-.25 + i * .73) % (Math.PI * 2);
+      return <g>
+        <rect x={-width * .1} y={-height * .1} width={width * 1.2} height={height * 1.2} fill={theme.palette.sky.top}/>
+        {c.belt && <ellipse cx={cx} cy={cy} rx={rx(Math.min(1, n - 1)) * 1.08} ry={ry(Math.min(1, n - 1)) * 1.6} fill="none" stroke="#a24bd6" strokeWidth={s * .09} opacity={.25 + .1 * Math.sin(frame / 12)}/>}
+        {Array.from({length: n}, (_, i) => <ellipse key={`o${i}`} cx={cx} cy={cy} rx={rx(i)} ry={ry(i)} fill="none" stroke={i === hl ? hot : ink} strokeWidth={i === hl ? lw * 2.2 : lw} strokeDasharray={i === hl ? undefined : `${lw * 4} ${lw * 5}`} opacity={i === hl ? 1 : .55}/>)}
+        {c.ring && <ellipse cx={cx} cy={cy} rx={pr * 1.7} ry={pr * .38} fill="none" stroke={ink} strokeWidth={lw * 2} transform={`rotate(-12 ${cx} ${cy})`}/>}
+        <circle cx={cx} cy={cy} r={pr} fill={c.color ?? '#d9b38c'} stroke={ink} strokeWidth={lw * 1.6}/>
+        <path d={`M ${cx - pr * .55} ${cy - pr * .35} A ${pr * .65} ${pr * .65} 0 0 1 ${cx - pr * .1} ${cy - pr * .66}`} fill="none" stroke="#ffffff" strokeWidth={lw * 2} strokeLinecap="round" opacity=".6"/>
+        {Array.from({length: n}, (_, i) => {
+          const mx = cx + Math.cos(ang(i)) * rx(i), my = cy + Math.sin(ang(i)) * ry(i), big = i === hl, mr = big ? s * .05 : s * .028;
+          return <g key={`m${i}`}>
+            <circle cx={mx} cy={my} r={mr} fill={c.colors?.[i] ?? '#bbbbbb'} stroke={ink} strokeWidth={lw * (big ? 1.5 : 1)}/>
+            {big && <circle cx={mx} cy={my} r={mr * 1.8} fill="none" stroke={hot} strokeWidth={lw * 2.2}/>}
+            <text x={mx} y={my + mr + s * (big ? .085 : .06)} textAnchor="middle" fontFamily={font} fontSize={s * (big ? .1 : .066)} fill={big ? hot : ink}>{c.labels![i]}</text>
+          </g>;
+        })}
+        <text x={cx} y={cy + pr + s * .07} textAnchor="middle" fontFamily={font} fontSize={s * .075} fill={ink}>{c.text ?? ''}</text>
+        <text x={width * .97} y={height * .95} textAnchor="end" fontFamily={font} fontSize={height * .026} fill={ink} opacity=".6">not to scale</text>
+      </g>;
+    }
+    case 'solar-strip': {
+      // The Sun and the planets in order (plus Pluto) on one line; highlight = the planet whose moons we visit.
+      const names = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto'];
+      const cols = ['#9c8f86', '#e3b86b', '#5aa9e6', '#c4501f', '#d9b38c', '#e3c98f', '#9fe0e6', '#3d63d6', '#d8b48a'];
+      const rad = [.012, .02, .021, .015, .05, .043, .031, .03, .009], bw = s * 1.9, x0 = c.x * width - bw / 2, y = c.y * height, hl = c.highlight ?? -1, hot = theme.palette.text.accent, lw = Math.max(2, s * .008);
+      return <g>
+        <path d={`M ${x0} ${y} L ${x0 + bw} ${y}`} {...stroke(ink, lw)} opacity=".4"/>
+        <circle cx={x0 - s * .06} cy={y} r={s * .09} fill={theme.palette.sun.core ?? '#ffd34d'} stroke={ink} strokeWidth={lw}/>
+        {names.map((nm, i) => { const x = x0 + s * .12 + (bw - s * .12) * i / (names.length - 1), r = s * rad[i] * 1.6;
+          return <g key={nm}>
+            <circle cx={x} cy={y} r={r} fill={cols[i]} stroke={ink} strokeWidth={lw}/>
+            {i === 5 && <ellipse cx={x} cy={y} rx={r * 1.8} ry={r * .45} fill="none" stroke={ink} strokeWidth={lw}/>}
+            {i === hl && <circle cx={x} cy={y} r={r + s * .03} fill="none" stroke={hot} strokeWidth={lw * 2}/>}
+            <text x={x} y={y + r + s * .07} textAnchor="middle" fontFamily={font} fontSize={s * (i === hl ? .075 : .055)} fill={i === hl ? hot : ink} opacity={i === hl ? 1 : .75}>{nm}</text>
+          </g>; })}
       </g>;
     }
     case 'helmet': {
