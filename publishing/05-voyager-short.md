@@ -1,7 +1,9 @@
 # 05: Voyager 1 one-light-day Short
 
-- **File:** `jobs/vy-final/output/narrated-animation.mp4`. Rename it to `voyager-1-one-light-day-away.mp4` before uploading.
-- **Captions:** `jobs/vy-final/output/captions.srt`, or let me inject them as with the other uploads (they are also burned into the video).
+- **Status:** uploaded 17 Nov and scheduled for Wed 18 Nov, 9:30 PM IST: https://youtube.com/shorts/tZx2ERI-4ec
+- **File:** `jobs/vy-final-c/output/narrated-animation.mp4` (night-sky render), uploaded as `voyager-1-one-light-day-away.mp4`.
+- **Thumbnail:** `thumb-a-night.jpg` (dark "1 LIGHT-DAY AWAY"). Alternative kept for comparison: B, the Pale Blue Dot. Compare with a YouTube AI thumbnail after about a week.
+- **Captions:** English SRT uploaded in Studio (also burned into the video).
 - **When:** Wed 18 Nov, 9:30 PM IST, about 6 hours after Voyager 1 crosses one light-day (3:46 PM IST). The news peaks over the following 2-3 days, so publish no later than Thursday.
 
 ## Title (pick 1)
