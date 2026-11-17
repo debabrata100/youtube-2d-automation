@@ -3,7 +3,7 @@
 - **File:** `jobs/m3-7-final-e/output/narrated-animation.mp4` (7:06, the final render with the Phobos and Titan-note fixes; all checks pass). Rename it to `how-you-would-die-on-every-moon.mp4` before uploading; YouTube reads the file name too.
 - **Captions:** `jobs/m3-7-upload/3-captions-english.srt`
 - **Thumbnails for Test & compare:** `jobs/m3-7-upload/thumb-a1.png`, `thumb-b1.png`, `thumb-c1.png`
-- **When:** Sun 23 Nov, 9:30 PM IST (schedule it)
+- **When:** Sun 22 Nov, 9:30 PM IST (schedule it)
 
 ## Title (pick 1)
 
@@ -42,7 +42,7 @@ Survival times are rounded, illustrative estimates for an unshielded surface and
 
 More from Gahanarka:
 ▶ The only moon where you don't need a spacesuit: https://youtu.be/2VuBbvgJnXA
-▶ What happens if you take off your helmet in space: [Ep 2 link]
+▶ What happens if you take off your helmet in space: https://youtu.be/bUK19RqsLok
 
 Images: NASA (Apollo 17), NASA/JPL (Voyager 2), NASA/JPL/SSI (Cassini), NASA/JHUAPL/SwRI (New Horizons), NASA/JPL-Caltech/ASI (Cassini). NASA images are public domain.
 Music from the YouTube Audio Library: Singularity, False Vacuum Decay and Spaghettification (The Grey Room / Density & Time), Science Montage (Jeremy Blake), Sweet Math (Mini Vandals), Surface of the Moon (John Patitucci), Taking Flight (Blue Deer Studio).

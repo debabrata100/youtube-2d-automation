@@ -16,7 +16,7 @@ This Short is already built the way a Short should be: it starts on the hook ("Y
 ```
 What happens if you take your helmet off in space? You have about 15 seconds. You won't explode, your blood won't boil, and you won't freeze, but your lungs start pulling the oxygen out of your blood. A NASA engineer survived exactly this in 1966.
 
-▶ Full second-by-second breakdown: [paste the Ep 2 link once it's live]
+▶ Full second-by-second breakdown: https://youtu.be/bUK19RqsLok
 
 Narration uses AI voices.
 
@@ -29,7 +29,7 @@ Ep 2, "What Happens If You Take Off Your Helmet in Space?"
 ## Pinned comment
 
 ```
-Could you hold out for 15 seconds? ⏱️ The full breakdown (including the man who really survived it): [Ep 2 link]
+Could you hold out for 15 seconds? ⏱️ The full breakdown (including the man who really survived it): https://youtu.be/bUK19RqsLok
 ```
 
 ## Tags

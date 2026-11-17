@@ -19,7 +19,7 @@ All times IST. 9:30 PM IST is 11:00 AM US Eastern, a good slot for both the US a
 | 1 | **Tue 17 Nov, 9:30 PM** (today) | Titan Short (64 s, 9:16) | `01-titan-short.md` | Related video → Titan long |
 | 2 | Thu 19 Nov, 9:30 PM | Ep 2: helmet off in space (88 s, 16:9) | `02-helmet-off.md` | End screen → Titan |
 | 3 | Sat 21 Nov, 9:30 PM | Ep 2 Short (27 s, 9:16) | `03-helmet-off-short.md` | Related video → Ep 2 long |
-| 4 | Sun 23 Nov, 9:30 PM | Ep 3: every moon (7:06, 16:9) | `04-every-moon.md` | End screen → Titan or Ep 2 |
+| 4 | Sun 22 Nov, 9:30 PM | Ep 3: every moon (7:06, 16:9) | `04-every-moon.md` | End screen → Titan or Ep 2 |
 | 5 | Wed 26 Nov (proposed) | Miranda Short, "12-minute fall" | not built yet | Related video → Ep 3 |
 
 The order matters. Each Short goes up after the long video it links to, because a Short's "Related video" can only point at something already uploaded.
@@ -61,3 +61,14 @@ The title and thumbnail stay as they are until the test picks a winner. The firs
 (Then keep the rest of the current description.) Tell me if you want me to make this change in Studio for you.
 
 Sources for the SEO points: YouTube Official Blog, "Related videos traffic guide"; vidIQ, "YouTube SEO in 2026"; AIR Media-Tech, "Strategy to grow YouTube channel in 2026".
+
+## Upload status (17 Nov, 2:20 PM IST)
+
+All four are uploaded and scheduled (private until their time):
+
+| Video | Link | Goes public (IST) | Still to do |
+|---|---|---|---|
+| Titan Short | https://youtube.com/shorts/iwFV0rciufU | Tue 17 Nov, 9:30 PM | Pin comment after it's live |
+| Ep 2: helmet off | https://youtu.be/bUK19RqsLok | Thu 19 Nov, 9:30 PM | A/B test (a, c, d) starts when public; pin comment |
+| Ep 2 Short | https://youtube.com/shorts/36yyCfEwn7Y | Sat 21 Nov, 9:30 PM | Set Related video → Ep 2 once Ep 2 is public; pin comment |
+| Ep 3: every moon | https://youtu.be/MnfXbn6mD8I | Sun 22 Nov, 9:30 PM | A/B test (a1, b1, c1) starts when public; pin comment |
