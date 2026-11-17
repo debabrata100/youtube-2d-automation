@@ -2,7 +2,7 @@
   "schemaVersion": "2.1",
   "projectId": "voyager-short",
   "title": "Voyager 1 Is Now One Light-Day Away",
-  "themeId": "paint-notebook",
+  "themeId": "paint-night",
   "format": {
     "width": 1080,
     "height": 1920,
@@ -82,7 +82,8 @@
             "x": 0.37,
             "y": 0.61,
             "size": 0.5,
-            "count": 30
+            "count": 30,
+            "ink": "#eef1f8"
           }
         },
         {
@@ -154,7 +155,8 @@
             "item": "probe",
             "x": 0.72,
             "y": 0.5,
-            "size": 0.3
+            "size": 0.3,
+            "ink": "#8d97b0"
           }
         },
         {
@@ -195,7 +197,8 @@
                 },
                 "value": 24
               }
-            ]
+            ],
+            "ink": "#eef1f8"
           }
         }
       ],
@@ -239,7 +242,7 @@
           "size": 49,
           "anchor": "middle",
           "variant": "ink",
-          "color": "@text.fill",
+          "color": "#eef1f8",
           "pop": true,
           "opacity": [
             {
@@ -276,7 +279,8 @@
             "item": "probe",
             "x": 0.5,
             "y": 0.44,
-            "size": 0.44
+            "size": 0.44,
+            "ink": "#8d97b0"
           }
         }
       ],
@@ -351,7 +355,7 @@
           "size": 56,
           "anchor": "middle",
           "variant": "ink",
-          "color": "@text.fill",
+          "color": "#eef1f8",
           "pop": true,
           "opacity": [
             {
@@ -388,7 +392,8 @@
             "item": "probe",
             "x": 0.5,
             "y": 0.44,
-            "size": 0.42
+            "size": 0.42,
+            "ink": "#8d97b0"
           }
         },
         {
@@ -400,7 +405,7 @@
             "y": 0.56,
             "size": 0.26,
             "rotation": 120,
-            "color": "#2f7fd0"
+            "color": "#7fc0ff"
           }
         },
         {
@@ -489,7 +494,8 @@
             "item": "probe",
             "x": 0.64,
             "y": 0.5,
-            "size": 0.3
+            "size": 0.3,
+            "ink": "#8d97b0"
           }
         },
         {
@@ -610,7 +616,7 @@
           "size": 56,
           "anchor": "middle",
           "variant": "ink",
-          "color": "@text.fill",
+          "color": "#eef1f8",
           "pop": true,
           "opacity": [
             {
@@ -641,7 +647,7 @@
           "size": 56,
           "anchor": "middle",
           "variant": "ink",
-          "color": "@text.fill",
+          "color": "#eef1f8",
           "pop": true,
           "opacity": [
             {
@@ -725,7 +731,8 @@
                 "value": 0.18
               }
             ],
-            "color": "#2f7fd0"
+            "color": "#2f7fd0",
+            "ink": "#eef1f8"
           }
         },
         {
@@ -751,7 +758,8 @@
                 "value": 1
               }
             ],
-            "color": "@text.accent"
+            "color": "@text.accent",
+            "ink": "#eef1f8"
           }
         }
       ],
@@ -795,7 +803,7 @@
           "size": 56,
           "anchor": "middle",
           "variant": "ink",
-          "color": "@text.fill",
+          "color": "#eef1f8",
           "pop": true,
           "opacity": [
             {
@@ -848,7 +856,8 @@
                 "value": 0.025
               }
             ],
-            "color": "#2f7fd0"
+            "color": "#2f7fd0",
+            "ink": "#eef1f8"
           }
         },
         {
@@ -874,7 +883,8 @@
                 "value": 1
               }
             ],
-            "color": "@text.accent"
+            "color": "@text.accent",
+            "ink": "#eef1f8"
           }
         }
       ],
@@ -955,7 +965,8 @@
             "item": "bulb",
             "x": 0.28,
             "y": 0.5,
-            "size": 0.2
+            "size": 0.2,
+            "ink": "#eef1f8"
           }
         },
         {
@@ -965,7 +976,8 @@
             "item": "probe",
             "x": 0.62,
             "y": 0.44,
-            "size": 0.32
+            "size": 0.32,
+            "ink": "#8d97b0"
           }
         },
         {
@@ -1273,7 +1285,7 @@
           "size": 56,
           "anchor": "middle",
           "variant": "ink",
-          "color": "@text.fill",
+          "color": "#eef1f8",
           "pop": true,
           "opacity": [
             {
@@ -1418,7 +1430,7 @@
           "size": 56,
           "anchor": "middle",
           "variant": "ink",
-          "color": "@text.fill",
+          "color": "#eef1f8",
           "pop": true,
           "opacity": [
             {
@@ -1469,7 +1481,8 @@
             "item": "probe",
             "x": 0.45,
             "y": 0.48,
-            "size": 0.38
+            "size": 0.38,
+            "ink": "#8d97b0"
           },
           "x": [
             {
@@ -1592,7 +1605,8 @@
             "item": "probe",
             "x": 0.5,
             "y": 0.44,
-            "size": 0.42
+            "size": 0.42,
+            "ink": "#8d97b0"
           }
         },
         {
@@ -1604,7 +1618,7 @@
             "y": 0.56,
             "size": 0.26,
             "rotation": 120,
-            "color": "#2f7fd0"
+            "color": "#7fc0ff"
           }
         },
         {

@@ -64,7 +64,7 @@ export const Terrain: React.FC<{config: TerrainConfig; theme: Theme; width: numb
   </>;
 };
 
-export type PropConfig = {item: 'thermometer' | 'pressure-arrows' | 'motion-lines' | 'exclaim' | 'question' | 'check' | 'cross' | 'counter' | 'stamp' | 'vignette' | 'station' | 'helmet' | 'doodle-stars' | 'chamber'
+export type PropConfig = {ink?: string; item: 'thermometer' | 'pressure-arrows' | 'motion-lines' | 'exclaim' | 'question' | 'check' | 'cross' | 'counter' | 'stamp' | 'vignette' | 'station' | 'helmet' | 'doodle-stars' | 'chamber'
   | 'cliff' | 'geyser' | 'plume' | 'radiation-meter' | 'radiation-belt' | 'battery' | 'airbag' | 'small-moon' | 'ice-cutaway' | 'frost'
   | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
   values?: Array<{frame: number; value: number; ramp?: boolean}>; text?: string; direction?: 'in' | 'out';
@@ -94,7 +94,7 @@ const levelAt = (keys: PropConfig['level'], frame: number) => {
 
 /** Hand-drawn props: thermometer (animated level), pressure arrows, motion lines, ! ? and tick/cross marks. */
 export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; height: number; frame: number}> = ({config: c, theme, width, height, frame}) => {
-  const s = c.size * Math.min(width, height), ink = theme.line.color, red = c.color ?? theme.palette.text.accent, w = Math.max(3, s * .045), font = theme.label.fontFamily;
+  const s = c.size * Math.min(width, height), ink = c.ink ?? theme.line.color, red = c.color ?? theme.palette.text.accent, w = Math.max(3, s * .045), font = theme.label.fontFamily;
   const at = `translate(${c.x * width} ${c.y * height}) rotate(${c.rotation})`;
   const stroke = (color: string, sw = w) => ({fill: 'none', stroke: color, strokeWidth: sw, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const});
   switch (c.item) {
@@ -127,7 +127,7 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
       let since = 99; for (let k = 1; k <= 8; k++) if (counterAt(keys, frame - k) !== v) { since = k; break; }
       const pop = since <= 8 ? 1 + .18 * (1 - since / 8) : 1, bw = s * 1.15, bh = s * .82, col = v <= 5 ? red : ink;
       return <g transform={`${at} scale(${pop})`}>
-        <rect x={-bw / 2} y={-bh / 2} width={bw} height={bh} rx={s * .12} fill="#ffffff" stroke={ink} strokeWidth={w * 1.2}/>
+        <rect x={-bw / 2} y={-bh / 2} width={bw} height={bh} rx={s * .12} fill={c.ink ? 'none' : '#ffffff'} stroke={ink} strokeWidth={w * 1.2}/>
         <text x={0} y={bh * .26} textAnchor="middle" fontFamily={font} fontSize={s * .66} fill={col} stroke={col} strokeWidth={s * .012}>{String(v)}</text>
         {c.text && <text x={0} y={bh / 2 + s * .22} textAnchor="middle" fontFamily={font} fontSize={s * .17} fill={ink}>{c.text}</text>}
       </g>;

@@ -9,6 +9,9 @@ Usage: python3 scripts/authoring/plan-voyager-short.py [duration_seconds] [outpu
 import json, pathlib, re, sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from recipes import *  # noqa: F401,F403
+import recipes
+LIGHT = '#eef1f8'  # night page: small labels and line-art props are drawn in light ink
+recipes.INK = LIGHT
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 STORY = ROOT / 'stories/voyager-short.json'
@@ -72,6 +75,7 @@ DURATION = int(sys.argv[1]) if len(sys.argv) > 1 else 48
 write_story(DURATION)
 ep = Episode(str(STORY), 'tall'); F = ep.F; W, H = F['W'], F['H']
 ep.pop_db, ep.deviation_tolerance = -24, .3
+ep.theme = 'paint-night'
 ep.backdrop(stars=30, earth={'r': .5, 'hidden': [(A('left', -6, beat='v4'), A('talking', -6, beat='v11'))]})
 ep.music([('v1', 'assets/music/6-space-event-horizon.mp3', 0)], target_lufs=-16)
 BLUE = '#2f7fd0'
@@ -115,7 +119,7 @@ ep.scene('v2', explain([], [probe(.5, .44, .44)],
                        [Note('1 light-day', A('one'), 'title'), Note('first ever', A('first'), 'note'), Note('26 billion km', A('Twenty-six'), 'small')]))
 # v3 Arka waves from the dish; the reply needs a day
 arka = rider(.5, .338, [(0, 'float'), (A('Hi', -2), 'wave')], [(0, 'happy'), (A('Hi'), 'grin')])
-ep.scene('v3', explain([arka], [probe(.5, .44, .42), signal(.38, .56, .26, 120, color=BLUE)], [Note('+1 day', A('tomorrow'), 'title')]))
+ep.scene('v3', explain([arka], [probe(.5, .44, .42), signal(.38, .56, .26, 120, color='#7fc0ff')], [Note('+1 day', A('tomorrow'), 'title')]))
 # v4 the journey: 1977, Jupiter, Saturn
 ep.scene('v4', explain([], [probe(.64, .5, .3), disc('jupiter', .22, .36, .09, JUPITER, A('Jupiter')), disc('saturn', .3, .6, .07, SATURN, A('Saturn'))],
                        [Note('1977', A('1977'), 'title'), Note('Jupiter 1979', A('Jupiter'), 'small', near='jupiter'), Note('Saturn 1980', A('Saturn'), 'small', near='saturn'),
@@ -146,8 +150,15 @@ away = dict(x=track((0, 0), (A('going', -10), 0), (A('going', 30), 160, 'smooths
 ep.scene('v10', explain([], [probe(.45, .48, .38, **away)], [Note('cameras: OFF', A('cameras'), 'title'), Note('still going', A('going'), 'note')]))
 # v11 the channel's signature: a light in the deep dark
 arka = rider(.5, .338, [(0, 'float'), (A('Call', -2), 'wave')], [(0, 'happy'), (A('Call'), 'grin')])
-ep.scene('v11', explain([arka], [probe(.5, .44, .42), signal(.38, .56, .26, 120, color=BLUE)],
+ep.scene('v11', explain([arka], [probe(.5, .44, .42), signal(.38, .56, .26, 120, color='#7fc0ff')],
                         [Note('GAHANARKA', A('light'), 'title', size=117, pos=(540, 1190), color=GOLD), Note('light in the unfathomable', A('dark'), 'note', pos=(540, 1300))]))
+
+LIGHT_INK = {'doodle-stars', 'counter', 'bar', 'bulb'}
+PROBE_INK = '#8d97b0'  # mid grey: outlines the white dish and still shows the booms against the navy page
+for layer in [l for pl in ep.plans.values() for pr in pl['props'] for l in [pr.layer]] + ep._backdrop['layers']:
+    k = layer.get('kit', {})
+    if k.get('type') == 'prop' and k.get('item') in LIGHT_INK: k['ink'] = LIGHT
+    if k.get('type') == 'prop' and k.get('item') == 'probe': k['ink'] = PROBE_INK
 
 if __name__ == '__main__':
     path, board = ep.write(sys.argv[2] if len(sys.argv) > 2 else None)

@@ -364,6 +364,7 @@ class Episode:
         self.F = FORMATS[fmt]; self.fmt = fmt; self.project = project_id or self.story['id']
         self.groups, self.plans, self.placements, self._backdrop, self.assets, self._audio = [], {}, [], None, [], None
         self.pop_db, self.deviation_tolerance = -22, .2
+        self.theme = 'paint-notebook'
 
     def music(self, cues, dropouts=(), gain_db=-22, crossfade=1.5, target_lufs=-14):
         """Licensed music per section: cues [(beat_id, 'assets/music/x.mp3', offset_seconds)], dropouts [(beat_id, frame, seconds)]."""
@@ -503,7 +504,7 @@ class Episode:
                            'narrationCue': {'beatId': beat['id'], 'phraseIndex': 0, 'edge': 'start'},
                            'sounds': [{'sound': s, 'frame': f, 'gainDb': g} for s, f, g in sounds]})
             self.placements.append({'beat': beat['id'], 'notes': [(n.text, round(b.x0), round(b.y0), round(b.x1), round(b.y1)) for n, _, _, b in placed]})
-        return {'schemaVersion': '2.1', 'projectId': self.project, 'title': self.story['title'], 'themeId': 'paint-notebook',
+        return {'schemaVersion': '2.1', 'projectId': self.project, 'title': self.story['title'], 'themeId': self.theme,
                 'format': {'width': W, 'height': H, 'fps': FPS}, 'styleId': 'cinematic-illustrated', 'background': '@sky.top', 'accent': '@text.accent',
                 'assets': self.assets, 'backdrop': {'group': 'backdrop'}, 'narrationTiming': {'minimumSceneFrames': 30 if self.fmt == 'tall' else 45, 'maximumDeviationSeconds': self.deviation_tolerance},
                 'audio': self._audio or {'music': 'generated-pad', 'musicGainDb': -24, 'duckRatio': 8, 'targetLufs': -14}, 'groups': groups, 'scenes': scenes}
