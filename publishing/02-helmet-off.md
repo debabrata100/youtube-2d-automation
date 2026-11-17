@@ -6,7 +6,7 @@
 
   Watch v2 once. If it looks right, upload v2. Both use the same narration, so the captions fit either one.
 - **Captions:** `jobs/m3-5-final/output/upload/3-captions-english.srt`
-- **Thumbnails for Test & compare:** `jobs/thumbs-helmet-off/thumb-a.png`, `thumb-c.png`, `thumb-d.png`. I left out `b`: too much happens in it to read at phone size.
+- **Thumbnails for Test & compare (as set 17 Nov, 3 PM):** 1 = `jobs/thumbs-helmet-off/thumb-a.png` (bold cartoon, "HELMET OFF? 15s"); 2 and 3 replaced by Debabrata with YouTube-AI thumbnails in the video's white hand-drawn style: "YOU HAVE 15 SECONDS" (floating stick figure, 00:07 timer) and "NEVER DO THIS" (figure lifting the helmet off).
 - **When:** Thu 19 Nov, 9:30 PM IST (schedule it)
 
 ## Title (pick 1)

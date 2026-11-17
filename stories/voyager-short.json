@@ -1,0 +1,205 @@
+{
+ "schemaVersion": "1.0",
+ "id": "voyager-short",
+ "title": "Voyager 1 Is Now One Light-Day Away",
+ "topic": "Voyager 1 reaches 1 light-day from Earth (18 Nov 2026): a day-long message delay, launched 1977, ~17 km/s, ~69 KB of computer memory, a ~22 W radio, the 1990 Pale Blue Dot photo, cameras off since",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 60,
+ "storyboard": "storyboards/voyager-short.json",
+ "candidatesReport": "stories/voyager-short-script.md",
+ "beats": [
+  {
+   "id": "v1",
+   "sceneId": "vy-v1",
+   "intent": "hook",
+   "narration": "Right now, a message from Earth needs a full day to reach Voyager 1.",
+   "phrases": [
+    "Right now, a message from",
+    "Earth needs a full day to",
+    "reach Voyager 1."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "v2",
+   "sceneId": "vy-v2",
+   "intent": "hook",
+   "narration": "It's the first thing we've ever built that's one light-day away. Twenty-six billion kilometers.",
+   "phrases": [
+    "It's the first thing we've",
+    "ever built that's one",
+    "light-day away.",
+    "Twenty-six billion",
+    "kilometers."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "v3",
+   "sceneId": "vy-v3",
+   "intent": "explanation",
+   "narration": "Hi, Earth! Say hi back, and Arka hears it tomorrow.",
+   "phrases": [
+    "Hi, Earth!",
+    "Say hi back, and Arka",
+    "hears it tomorrow."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "v4",
+   "sceneId": "vy-v4",
+   "intent": "explanation",
+   "narration": "It left in 1977, flew past Jupiter and Saturn, and never stopped.",
+   "phrases": [
+    "It left in 1977, flew past",
+    "Jupiter and Saturn, and",
+    "never stopped."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "v5",
+   "sceneId": "vy-v5",
+   "intent": "explanation",
+   "narration": "It's now more than five times farther away than Neptune.",
+   "phrases": [
+    "It's now more than five",
+    "times farther away than",
+    "Neptune."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "v6",
+   "sceneId": "vy-v6",
+   "intent": "explanation",
+   "narration": "Its computers: sixty-nine kilobytes. Less than one photo on your phone.",
+   "phrases": [
+    "Its computers:",
+    "sixty-nine kilobytes.",
+    "Less than one photo on",
+    "your phone."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "v7",
+   "sceneId": "vy-v7",
+   "intent": "explanation",
+   "narration": "Its radio: about as strong as a fridge light bulb. And we still hear it? Barely. But yes.",
+   "phrases": [
+    "Its radio:",
+    "about as strong as a",
+    "fridge light bulb.",
+    "And we still hear it?",
+    "Barely.",
+    "But yes."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "arka",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "v8",
+   "sceneId": "vy-v8",
+   "intent": "explanation",
+   "narration": "It carries a golden record: sounds and pictures of Earth, for anyone who finds it.",
+   "phrases": [
+    "It carries a golden",
+    "record:",
+    "sounds and pictures of",
+    "Earth, for anyone who",
+    "finds it."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "v9",
+   "sceneId": "vy-v9",
+   "intent": "payoff",
+   "narration": "In 1990, it looked back and took this. That tiny dot is every person who ever lived.",
+   "phrases": [
+    "In 1990, it looked back",
+    "and took this.",
+    "That tiny dot is every",
+    "person who ever lived."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "v10",
+   "sceneId": "vy-v10",
+   "intent": "payoff",
+   "narration": "Then its cameras went dark, and it kept going.",
+   "phrases": [
+    "Then its cameras went",
+    "dark, and it kept going."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "v11",
+   "sceneId": "vy-v11",
+   "intent": "closing",
+   "narration": "A tiny light in the deep dark, still talking to us. Call you tomorrow!",
+   "phrases": [
+    "A tiny light in the deep",
+    "dark, still talking to us.",
+    "Call you tomorrow!"
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "arka"
+   ]
+  }
+ ]
+}

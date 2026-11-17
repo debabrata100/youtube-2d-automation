@@ -2,7 +2,7 @@
 
 - **File:** `jobs/m3-7-final-e/output/narrated-animation.mp4` (7:06, the final render with the Phobos and Titan-note fixes; all checks pass). Rename it to `how-you-would-die-on-every-moon.mp4` before uploading; YouTube reads the file name too.
 - **Captions:** `jobs/m3-7-upload/3-captions-english.srt`
-- **Thumbnails for Test & compare:** `jobs/m3-7-upload/thumb-a1.png`, `thumb-b1.png`, `thumb-c1.png`
+- **Thumbnails for Test & compare (as set 17 Nov):** `thumb-a1.png` (Io vs Triton), `thumb-b1.png` (12-minute fall), and slot 3 replaced by Debabrata with a YouTube-AI thumbnail in the video's own white hand-drawn style: "12-MINUTE FREE FALL", stick figure falling past a cliff with an 11:59 timer (updated 17 Nov, 3 PM). `thumb-c1.png` (Titan flying) is no longer in the test. Slots 2 and 3 now share the same hook in two styles (bold cartoon vs white hand-drawn).
 - **When:** Sun 22 Nov, 9:30 PM IST (schedule it)
 
 ## Title (pick 1)

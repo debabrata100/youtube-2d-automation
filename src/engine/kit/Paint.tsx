@@ -66,7 +66,7 @@ export const Terrain: React.FC<{config: TerrainConfig; theme: Theme; width: numb
 
 export type PropConfig = {item: 'thermometer' | 'pressure-arrows' | 'motion-lines' | 'exclaim' | 'question' | 'check' | 'cross' | 'counter' | 'stamp' | 'vignette' | 'station' | 'helmet' | 'doodle-stars' | 'chamber'
   | 'cliff' | 'geyser' | 'plume' | 'radiation-meter' | 'radiation-belt' | 'battery' | 'airbag' | 'small-moon' | 'ice-cutaway' | 'frost'
-  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
+  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
   values?: Array<{frame: number; value: number; ramp?: boolean}>; text?: string; direction?: 'in' | 'out';
   labels?: string[]; colors?: string[]; highlight?: number; ring?: boolean; belt?: boolean};
 
@@ -327,6 +327,43 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
       <path d={`M ${-s * .06} ${-s * .08} q ${s * .06} ${-s * .05} ${s * .12} 0`} {...stroke(ink, w)}/>
       <path d={`M ${-s * .38} ${-s * .06} l ${s * .08} ${s * .08}`} {...stroke('#ffffff', w * .8)} opacity=".7"/>
     </g>;
+    case 'probe': {
+      // Voyager-style probe: big high-gain dish, a ten-sided bus with the gold record, magnetometer boom, RTG boom.
+      const gold = '#d9a628', sway = Math.sin(frame / 30) * 2;
+      return <g transform={`${at} rotate(${sway})`}>
+        <path d={`M ${s * .05} ${-s * .02} L ${s * .95} ${-s * .55}`} {...stroke(ink, w * .9)}/>
+        <path d={`M ${s * .62} ${-s * .35} l ${s * .05} ${s * .06} M ${s * .8} ${-s * .46} l ${s * .05} ${s * .06}`} {...stroke(ink, w * .7)}/>
+        <path d={`M ${-s * .05} ${s * .12} L ${-s * .62} ${s * .52}`} {...stroke(ink, w * 1.1)}/>
+        {[.3, .43, .56].map(t => <rect key={t} x={-s * t * 1.1 - s * .05} y={s * (.1 + t * .72) - s * .045} width={s * .1} height={s * .09} rx={s * .015} fill="#8c8c8c" stroke={ink} strokeWidth={w * .7}/>)}
+        <path d={`M 0 ${s * .02} L ${-s * .1} ${s * .3} M 0 ${s * .02} L ${s * .12} ${s * .32}`} {...stroke(ink, w * .7)}/>
+        <polygon points={Array.from({length: 10}, (_, i) => { const a = i * Math.PI / 5; return `${Math.cos(a) * s * .17},${s * .12 + Math.sin(a) * s * .1}`; }).join(' ')} fill="#e8e1d2" stroke={ink} strokeWidth={w}/>
+        <circle cx={s * .07} cy={s * .13} r={s * .045} fill={gold} stroke={ink} strokeWidth={w * .6}/>
+        <path d={`M 0 ${s * .02} L 0 ${-s * .12}`} {...stroke(ink, w)}/>
+        <ellipse cx={0} cy={-s * .22} rx={s * .42} ry={s * .14} fill="#f6f6f2" stroke={ink} strokeWidth={w * 1.1}/>
+        <ellipse cx={0} cy={-s * .24} rx={s * .3} ry={s * .08} fill="none" stroke={ink} strokeWidth={w * .5} opacity=".5"/>
+        <path d={`M 0 ${-s * .22} L 0 ${-s * .4}`} {...stroke(ink, w * .8)}/>
+        <circle cx={0} cy={-s * .42} r={s * .025} fill={ink}/>
+      </g>;
+    }
+    case 'signal': {
+      // Radio waves leaving the origin towards +x (rotate the prop to aim). Arcs travel outwards and fade.
+      const col = c.color ?? red, n = 4, period = 36;
+      return <g transform={at}>{Array.from({length: n}, (_, i) => {
+        const t = ((frame + i * period / n) % period) / period, r = s * (.12 + .88 * t), a = .55;
+        return <path key={i} d={`M ${Math.cos(-a) * r} ${Math.sin(-a) * r} A ${r} ${r} 0 0 1 ${Math.cos(a) * r} ${Math.sin(a) * r}`} {...stroke(col, w * 1.2)} opacity={(1 - t) * .9}/>;
+      })}</g>;
+    }
+    case 'bulb': {
+      // Small glowing light bulb (fridge-bulb scale gag).
+      const glow = .35 + .15 * Math.sin(frame / 6);
+      return <g transform={at}>
+        <circle cx={0} cy={-s * .12} r={s * .5} fill="#ffe27a" opacity={glow * .5}/>
+        <path d={`M ${-s * .14} ${s * .16} Q ${-s * .3} ${-s * .02} ${-s * .26} ${-s * .2} A ${s * .27} ${s * .27} 0 1 1 ${s * .26} ${-s * .2} Q ${s * .3} ${-s * .02} ${s * .14} ${s * .16} Z`} fill="#fff4b8" stroke={ink} strokeWidth={w}/>
+        <path d={`M ${-s * .07} ${s * .1} L ${-s * .05} ${-s * .14} q ${s * .05} ${-s * .06} ${s * .1} 0 L ${s * .07} ${s * .1}`} {...stroke('#c98a1a', w * .7)}/>
+        <rect x={-s * .14} y={s * .16} width={s * .28} height={s * .2} rx={s * .03} fill="#b8b8b8" stroke={ink} strokeWidth={w}/>
+        <path d={`M ${-s * .14} ${s * .23} L ${s * .14} ${s * .23} M ${-s * .14} ${s * .3} L ${s * .14} ${s * .3}`} {...stroke(ink, w * .6)}/>
+      </g>;
+    }
     case 'mug': {
       const col = c.color ?? '#c0504d';
       return <g transform={at}>
