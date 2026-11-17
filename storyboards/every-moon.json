@@ -6383,7 +6383,7 @@
           "kit": {
             "type": "prop",
             "item": "bar",
-            "x": 0.55,
+            "x": 0.47,
             "y": 0.6,
             "size": 0.49,
             "level": [
@@ -6401,7 +6401,7 @@
           "kit": {
             "type": "prop",
             "item": "bar",
-            "x": 0.55,
+            "x": 0.47,
             "y": 0.78,
             "size": 0.49,
             "level": [
@@ -6659,7 +6659,7 @@
         {
           "id": "n2",
           "text": "~40x wider",
-          "x": 1492,
+          "x": 1428,
           "y": 709,
           "size": 72,
           "anchor": "middle",
@@ -19825,8 +19825,8 @@
         {
           "id": "n2",
           "text": "the twist",
-          "x": 1640,
-          "y": 470,
+          "x": 960,
+          "y": 300,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -19850,6 +19850,19 @@
                 "offset": 5
               },
               "value": 1
+            },
+            {
+              "frame": {
+                "at": "Saturn's",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Saturn's"
+              },
+              "value": 0
             }
           ]
         }

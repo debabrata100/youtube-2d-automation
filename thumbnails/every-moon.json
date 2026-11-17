@@ -1,0 +1,40 @@
+{
+  "id": "every-moon",
+  "model": "gpt-image-1.5",
+  "size": "1536x1024",
+  "quality": "medium",
+  "subject": "Moons of the solar system and the funny, dramatic ways a cartoon astronaut in a spacesuit could die on them.",
+  "variants": [
+    {
+      "id": "a1",
+      "prompt": "Exception to the layout rule: two large cartoon astronaut heads in helmets side by side, filling the whole frame edge to edge on a dark starry background, like a before/after comparison. Left head: face glowing sickly neon green, dizzy eyes, a huge banded Jupiter reflected in the visor (radiation on Io). Right head: face frozen solid and pale blue, visor cracked and covered in frost and icicles (extreme cold on Triton). Leave a strip of plain dark space above each head for a label."
+    },
+    {
+      "id": "a2",
+      "prompt": "Exception to the layout rule: two large cartoon astronaut heads in helmets side by side, filling the whole frame edge to edge on a dark starry background. Left head: screaming, being blasted upward by a white icy geyser jet, ice crystals all around (Enceladus). Right head: face glowing sickly neon green with radiation, dizzy eyes, a huge banded Jupiter reflected in the visor (Io). Leave a strip of plain dark space above each head for a label."
+    },
+    {
+      "id": "b1",
+      "prompt": "The astronaut tumbling off the edge of an impossibly tall grey ice cliff on a small pale moon, arms and legs flailing, shocked face, a pale blue ringed Uranus in the black sky, huge empty drop below him so the fall looks endless."
+    },
+    {
+      "id": "b2",
+      "prompt": "The astronaut falling calmly beside an impossibly tall grey ice cliff on a small pale moon, bored expression, checking a wristwatch mid-fall, a pale blue ringed Uranus in the black sky, the bottom of the cliff far below and out of sight."
+    },
+    {
+      "id": "c1",
+      "prompt": "The astronaut WITHOUT a spacesuit, wearing only an oxygen mask, a puffy red winter coat and homemade feathered bird wings strapped to his arms, flying joyfully through thick orange haze over a dark methane lake on Titan, huge ringed Saturn faint in the sky, Arka (gold spacesuit) flying beside him with wings too."
+    },
+    {
+      "id": "c2",
+      "prompt": "Arka, the gold-suited mascot, standing triumphantly with homemade bird wings on an orange hazy moon (Titan) with Saturn in the sky, while behind him in the dark sky a row of six small grey moons each has a big red X over it."
+    }
+  ],
+  "overlay": {
+    "focusY": 0.45,
+    "lines": [
+      {"text": "IO", "x": 300, "y": 40, "size": 110, "color": "#ffffff", "border": 14, "borderColor": "#111111"},
+      {"text": "TRITON", "x": 1010, "y": 40, "size": 110, "color": "#ffffff", "border": 14, "borderColor": "#111111"}
+    ]
+  }
+}

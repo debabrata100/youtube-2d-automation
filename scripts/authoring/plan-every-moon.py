@@ -262,8 +262,8 @@ shot('c6', 'CALLISTO', [arka(slot='center-left', h=.5, poses=[(0, 'shrug')], fac
 # ------------------------------------------------------------------ Phobos and Deimos
 shot('p1', None, [], where(F, 'mars', 'Phobos'), [Note('2 tiny moons', A('two'), 'small', pos=(1640, 560))])
 shot('p2', 'PHOBOS', [you(slot='left', poses=[(0, 'point-right')], faces=[(0, 'happy')])],
-     [kit(F, 'b-moon', 'bar', .55, .6, 0.49, w=1.0, h=.3, level=[{'frame': 0, 'value': .03}], color='#8c8c88', text='our Moon, from Earth'),
-      kit(F, 'b-mars', 'bar', .55, .78, 0.49, w=1.0, h=.3, level=[{'frame': 0, 'value': .03}, {'frame': A('huge'), 'value': 1}], color='#c4501f', text='Mars, from Phobos')],
+     [kit(F, 'b-moon', 'bar', .47, .6, 0.49, w=1.0, h=.3, level=[{'frame': 0, 'value': .03}], color='#8c8c88', text='our Moon, from Earth'),
+      kit(F, 'b-mars', 'bar', .47, .78, 0.49, w=1.0, h=.3, level=[{'frame': 0, 'value': .03}, {'frame': A('huge'), 'value': 1}], color='#c4501f', text='Mars, from Phobos')],
      [Note('~40x wider', A('huge'))])
 shot('p3', 'PHOBOS', [arka(slot='center-left', h=.5, poses=[(0, 'reach')], faces=[(0, 'grin')])], [], [Note('a view!', A('view'), near='arka')])
 shot('p4', 'PHOBOS', [you(slot='center', poses=[(0, 'stand')], faces=[(0, 'shocked')])],
@@ -400,7 +400,7 @@ shot('i7', 'IO', [arka(slot='center-left', h=.45, idle=None, poses=[(0, 'run')],
 # ------------------------------------------------------------------ Titan
 shot('z1', 'TITAN', [], [body(f'z1m{i}', col, .1 + i * .1, .45, .035) for i, col in enumerate(['#c4c4c0', '#6e5d4c', '#857a6f', '#9a8d80', '#cfcfca', '#f4f8fb', '#ecdcd8'])]
      + [kit(F, f'z1x{i}', 'cross', .1 + i * .1, .45, .08) for i in range(7)] + [body('titan-big', '#c9843b', .86, .45, .1, glow='#f2a54a'), kit(F, 'z1q', 'question', .86, .62, .1)] + where(F, 'saturn', 'Titan', start=A("Saturn's")),
-     [Note('the twist', A('promised'), 'title', pos=(1640, 470))])
+     [Note('the twist', A('promised'), 'title', pos=(960, 300), until=A("Saturn's"))])
 shot('z2', 'TITAN', [you(slot='center-left', poses=[(0, 'stand')], faces=[(0, 'happy')])], [chest_arrows(F, you(slot='center-left'), A('Thick'), direction='in', color=BLUE)],
      [Note('1.5x Earth pressure', A('half'))])
 shot('z3', 'TITAN', [you(slot='center-left', idle=None, helmet=[(0, True), (A('need'), False)], poses=[(0, 'stand'), (A('need'), 'cheer')], faces=[(0, 'neutral'), (A('need'), 'grin')])],
