@@ -45,6 +45,27 @@
         "source": "assets/music/3-eerie-a-lake-jupiter.mp3",
         "scene": "mg-m31",
         "offsetSeconds": 0
+      },
+      {
+        "source": "assets/music/4-tense-b-standoff.mp3",
+        "scene": "mg-m43",
+        "offsetSeconds": 0,
+        "gainDb": -2
+      },
+      {
+        "source": "assets/music/5-uplifting-b-defying-gravity.mp3",
+        "scene": "mg-m56",
+        "offsetSeconds": 0
+      },
+      {
+        "source": "assets/music/8-space-laniakea.mp3",
+        "scene": "mg-m62",
+        "offsetSeconds": 0
+      },
+      {
+        "source": "assets/music/6-space-singularity.mp3",
+        "scene": "mg-m68",
+        "offsetSeconds": 0
       }
     ],
     "musicDropouts": [
@@ -52,6 +73,16 @@
         "scene": "mg-m4",
         "frame": 0,
         "seconds": 1.2
+      },
+      {
+        "scene": "mg-m49",
+        "frame": 0,
+        "seconds": 1.0
+      },
+      {
+        "scene": "mg-m62",
+        "frame": 0,
+        "seconds": 1.0
       }
     ]
   },
@@ -7577,35 +7608,45 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
+          "id": "tilt",
           "kit": {
-            "type": "planet",
-            "x": 0.72,
+            "type": "prop",
+            "item": "earth-axis",
+            "x": 0.3,
             "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
+            "size": 0.55,
+            "rotation": 23,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
             ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
+            "ink": "#c9d3ea"
           }
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "M43",
-          "x": 1426,
-          "y": 320,
-          "size": 66,
+          "text": "THE BIG MYTH",
+          "x": 960,
+          "y": 92,
+          "size": 64,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "the tilt",
+          "x": 1424,
+          "y": 318,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
           "pop": true,
           "opacity": [
             {
@@ -7613,11 +7654,17 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "tilt",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 9,
+              "frame": {
+                "at": "tilt",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -7630,31 +7677,157 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
+          "id": "tilt",
           "kit": {
-            "type": "planet",
-            "x": 0.72,
+            "type": "prop",
+            "item": "earth-axis",
+            "x": 0.24,
             "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
+            "size": 0.5,
+            "rotation": 23,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
             ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "dial",
+          "kit": {
+            "type": "prop",
+            "item": "tilt-dial",
+            "x": 0.5,
+            "y": 0.55,
+            "size": 0.5,
+            "range": [
+              22.1,
+              24.5
+            ],
+            "color": "#4caf50",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.26
+              }
+            ],
+            "text": "today",
+            "ink": "#c9d3ea"
           }
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "M44",
-          "x": 1424,
-          "y": 320,
+          "text": "THE BIG MYTH",
+          "x": 960,
+          "y": 92,
+          "size": 64,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "23.5°",
+          "x": 1418,
+          "y": 318,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "twenty-three",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "twenty-three",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "= seasons",
+          "x": 1417,
+          "y": 421,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "seasons",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "seasons",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "22° to 24.5°",
+          "x": 1419,
+          "y": 529,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "rocked",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "rocked",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "text": "paces the ice ages",
+          "x": 1488,
+          "y": 632,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -7666,11 +7839,17 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "ice",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 9,
+              "frame": {
+                "at": "ice",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -7683,35 +7862,62 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
+          "id": "tilt",
           "kit": {
-            "type": "planet",
-            "x": 0.72,
+            "type": "prop",
+            "item": "earth-axis",
+            "x": 0.3,
             "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
+            "size": 0.5,
+            "rotation": 23,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
             ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "m",
+          "kit": {
+            "type": "prop",
+            "item": "crescent",
+            "x": 0.55,
+            "y": 0.35,
+            "size": 0.16,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
           }
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "M45",
-          "x": 1425,
-          "y": 320,
-          "size": 66,
+          "text": "THE BIG MYTH",
+          "x": 960,
+          "y": 92,
+          "size": 64,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "the Moon keeps it steady",
+          "x": 1502,
+          "y": 373,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
           "pop": true,
           "opacity": [
             {
@@ -7719,11 +7925,48 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "steady",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 9,
+              "frame": {
+                "at": "steady",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "without it?",
+          "x": 1417,
+          "y": 498,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "without",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "without",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -7736,31 +7979,168 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
+          "id": "dial",
           "kit": {
-            "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
+            "type": "prop",
+            "item": "tilt-dial",
+            "x": 0.32,
+            "y": 0.56,
+            "size": 0.6,
+            "range": [
+              0,
+              85
             ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.26
+              },
+              {
+                "frame": 40,
+                "value": 0.05
+              },
+              {
+                "frame": 80,
+                "value": 0.94
+              },
+              {
+                "frame": 120,
+                "value": 0.1
+              },
+              {
+                "frame": 160,
+                "value": 0.9
+              },
+              {
+                "frame": 200,
+                "value": 0.2
+              },
+              {
+                "frame": 240,
+                "value": 0.94
+              }
+            ],
+            "text": "1993 study",
+            "ink": "#c9d3ea"
           }
+        },
+        {
+          "id": "side",
+          "kit": {
+            "type": "prop",
+            "item": "earth-axis",
+            "x": 0.7,
+            "y": 0.68,
+            "size": 0.3,
+            "rotation": 85,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "side",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "side"
+              },
+              "value": 1
+            }
+          ]
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "M46",
-          "x": 1424,
-          "y": 320,
+          "text": "THE BIG MYTH",
+          "x": 960,
+          "y": 92,
+          "size": 64,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "0° to 85°",
+          "x": 1427,
+          "y": 318,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "eighty-five",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "eighty-five",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "lying on its side",
+          "x": 1336,
+          "y": 529,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "side",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "side",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "months of day, months of night",
+          "x": 1414,
+          "y": 416,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -7772,11 +8152,17 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "endless",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 9,
+              "frame": {
+                "at": "endless",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -7789,44 +8175,54 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
+          "id": "dial",
           "kit": {
-            "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
+            "type": "prop",
+            "item": "tilt-dial",
+            "x": 0.66,
+            "y": 0.58,
+            "size": 0.45,
+            "range": [
+              0,
+              85
             ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.9
+              },
+              {
+                "frame": 30,
+                "value": 0.1
+              },
+              {
+                "frame": 60,
+                "value": 0.9
+              }
+            ],
+            "ink": "#c9d3ea"
           }
         },
         {
           "id": "arka",
           "kit": {
             "type": "figure",
-            "x": 0.42,
-            "y": 0.86,
-            "height": 0.56,
+            "x": 0.32,
+            "y": 0.8,
+            "height": 0.5,
             "outfit": "astronaut",
             "shiver": 0,
             "seed": 11,
             "poses": [
               {
                 "frame": 0,
-                "pose": "float"
+                "pose": "panic"
               }
             ],
             "faces": [
               {
                 "frame": 0,
-                "face": "neutral"
+                "face": "scared"
               }
             ],
             "suit": "#e8b84a",
@@ -8019,13 +8415,13 @@
       "annotations": [
         {
           "id": "n0",
-          "text": "M47",
-          "x": 1428,
-          "y": 320,
-          "size": 66,
+          "text": "bad.",
+          "x": 1300,
+          "y": 260,
+          "size": 92,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#eef1f8",
+          "color": "@text.accent",
           "pop": true,
           "opacity": [
             {
@@ -8033,11 +8429,17 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "bad",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 9,
+              "frame": {
+                "at": "bad",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -8050,35 +8452,203 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
+          "id": "book",
           "kit": {
-            "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
-            ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
+            "type": "prop",
+            "item": "sign",
+            "x": 0.25,
+            "y": 0.5,
+            "size": 0.3,
+            "text": "BOOKS"
+          }
+        },
+        {
+          "id": "art",
+          "kit": {
+            "type": "prop",
+            "item": "sign",
+            "x": 0.45,
+            "y": 0.38,
+            "size": 0.26,
+            "text": "ARTICLES"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "articles",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "articles"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "articles",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "articles",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 864.0,
+            "y": 410.4
+          }
+        },
+        {
+          "id": "vid",
+          "kit": {
+            "type": "prop",
+            "item": "sign",
+            "x": 0.4,
+            "y": 0.66,
+            "size": 0.26,
+            "text": "VIDEOS"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "videos",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "videos"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "videos",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "videos",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 768.0,
+            "y": 712.8000000000001
+          }
+        },
+        {
+          "id": "stamp0",
+          "kit": {
+            "type": "prop",
+            "item": "stamp",
+            "x": 0.8160495,
+            "y": 0.33666666666666667,
+            "size": 0.15,
+            "text": "myth"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "videos",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "videos"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "videos",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "videos",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1566.81504,
+            "y": 363.6
           }
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "M48",
-          "x": 1426,
-          "y": 320,
-          "size": 66,
+          "text": "THE BIG MYTH",
+          "x": 960,
+          "y": 92,
+          "size": 64,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "\"0° to 85°\"",
+          "x": 1424,
+          "y": 318,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
           "pop": true,
           "opacity": [
             {
@@ -8091,6 +8661,37 @@
             },
             {
               "frame": 9,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "it spread everywhere",
+          "x": 1434,
+          "y": 493,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "everywhere",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "everywhere",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -8103,30 +8704,61 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
+          "id": "dial",
           "kit": {
-            "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
+            "type": "prop",
+            "item": "tilt-dial",
+            "x": 0.3,
+            "y": 0.56,
+            "size": 0.6,
+            "range": [
+              12,
+              38
             ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
+            "color": "#4caf50",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.26
+              },
+              {
+                "frame": 50,
+                "value": 0.14
+              },
+              {
+                "frame": 100,
+                "value": 0.42
+              },
+              {
+                "frame": 150,
+                "value": 0.2
+              },
+              {
+                "frame": 200,
+                "value": 0.4
+              }
+            ],
+            "text": "2012 simulations",
+            "ink": "#c9d3ea"
           }
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "M49",
-          "x": 1423,
+          "text": "THE BIG MYTH",
+          "x": 960,
+          "y": 92,
+          "size": 64,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "NASA: Lissauer et al.",
+          "x": 1377,
           "y": 320,
           "size": 66,
           "anchor": "middle",
@@ -8139,11 +8771,110 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "Lissauer",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 9,
+              "frame": {
+                "at": "Lissauer",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "far calmer",
+          "x": 1427,
+          "y": 421,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "calmer",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "calmer",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "12° to 38°",
+          "x": 1414,
+          "y": 546,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "thirty-eight",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "thirty-eight",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "text": "100 million years",
+          "x": 1415,
+          "y": 644,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "hundred",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "hundred",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -8156,35 +8887,70 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
+          "id": "hot",
           "kit": {
-            "type": "planet",
-            "x": 0.72,
+            "type": "prop",
+            "item": "thermometer",
+            "x": 0.25,
             "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
+            "size": 0.45,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.5
+              },
+              {
+                "frame": 40,
+                "value": 0.9
+              }
             ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "cold",
+          "kit": {
+            "type": "prop",
+            "item": "thermometer",
+            "x": 0.4,
+            "y": 0.55,
+            "size": 0.45,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.5
+              },
+              {
+                "frame": 40,
+                "value": 0.12
+              }
+            ],
+            "color": "#7fc0ff",
+            "ink": "#c9d3ea"
           }
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "M50",
-          "x": 1428,
-          "y": 320,
-          "size": 66,
+          "text": "THE BIG MYTH",
+          "x": 960,
+          "y": 92,
+          "size": 64,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "hotter summers",
+          "x": 1405,
+          "y": 325,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
           "pop": true,
           "opacity": [
             {
@@ -8192,11 +8958,110 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "hotter",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 9,
+              "frame": {
+                "at": "hotter",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "colder winters",
+          "x": 1425,
+          "y": 433,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "colder",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "colder",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "no sudden flip",
+          "x": 1428,
+          "y": 558,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "flip",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "flip",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "text": "no instant freeze",
+          "x": 1425,
+          "y": 678,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "freeze",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "freeze",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -8209,31 +9074,119 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
+          "id": "mars",
           "kit": {
             "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
+            "x": 0.3,
+            "y": 0.52,
             "radius": 0.16,
-            "base": "#5aa9e6",
+            "base": "#c4501f",
             "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
+              "#d9703f",
+              "#b2441a"
             ],
-            "craters": 0,
+            "craters": 3,
             "ring": false,
-            "shade": 0.2,
-            "seed": 3
+            "shade": 0.25,
+            "seed": 4
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": -20
+            },
+            {
+              "frame": 80,
+              "value": 25,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -20,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": 25,
+              "ease": "smoothstep"
+            }
+          ],
+          "anchor": {
+            "x": 576.0,
+            "y": 561.6
+          }
+        },
+        {
+          "id": "pho",
+          "kit": {
+            "type": "prop",
+            "item": "small-moon",
+            "x": 0.46,
+            "y": 0.32,
+            "size": 0.05,
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "dei",
+          "kit": {
+            "type": "prop",
+            "item": "small-moon",
+            "x": 0.5,
+            "y": 0.7,
+            "size": 0.04,
+            "ink": "#c9d3ea"
           }
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "M51",
-          "x": 1425,
-          "y": 320,
+          "text": "THE BIG MYTH",
+          "x": 960,
+          "y": 92,
+          "size": 64,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "a real example: Mars",
+          "x": 1420,
+          "y": 373,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Mars",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Mars",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "2 tiny moons",
+          "x": 1426,
+          "y": 476,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -8245,11 +9198,48 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "tiny",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 9,
+              "frame": {
+                "at": "tiny",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "swings of 45°+",
+          "x": 1416,
+          "y": 594,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "forty-five",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "forty-five",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -8262,44 +9252,43 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
+          "id": "mars",
           "kit": {
             "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
+            "x": 0.68,
+            "y": 0.5,
+            "radius": 0.12,
+            "base": "#c4501f",
             "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
+              "#d9703f",
+              "#b2441a"
             ],
-            "craters": 0,
+            "craters": 2,
             "ring": false,
-            "shade": 0.2,
-            "seed": 3
+            "shade": 0.25,
+            "seed": 4
           }
         },
         {
           "id": "arka",
           "kit": {
             "type": "figure",
-            "x": 0.42,
-            "y": 0.86,
-            "height": 0.56,
+            "x": 0.3,
+            "y": 0.8,
+            "height": 0.5,
             "outfit": "astronaut",
             "shiver": 0,
             "seed": 11,
             "poses": [
               {
                 "frame": 0,
-                "pose": "float"
+                "pose": "shrug"
               }
             ],
             "faces": [
               {
                 "frame": 0,
-                "face": "neutral"
+                "face": "smug"
               }
             ],
             "suit": "#e8b84a",
@@ -8492,9 +9481,9 @@
       "annotations": [
         {
           "id": "n0",
-          "text": "M52",
-          "x": 1428,
-          "y": 320,
+          "text": "Mars: no big moon",
+          "x": 1300,
+          "y": 250,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -8511,6 +9500,37 @@
             },
             {
               "frame": 9,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "nobody holds your hand",
+          "x": 1300,
+          "y": 820,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "hand",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "hand",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -8523,35 +9543,70 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
+          "id": "tilt",
           "kit": {
-            "type": "planet",
-            "x": 0.72,
+            "type": "prop",
+            "item": "earth-axis",
+            "x": 0.3,
             "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
+            "size": 0.5,
+            "rotation": 23,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
             ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
+            "ink": "#c9d3ea"
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 40,
+              "value": 12,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -6,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 10,
+              "ease": "smoothstep"
+            }
+          ],
+          "anchor": {
+            "x": 576.0,
+            "y": 594.0
           }
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "M53",
-          "x": 1428,
-          "y": 320,
-          "size": 66,
+          "text": "THE BIG MYTH",
+          "x": 960,
+          "y": 92,
+          "size": 64,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "a bit like Mars",
+          "x": 1426,
+          "y": 325,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
           "pop": true,
           "opacity": [
             {
@@ -8559,11 +9614,79 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "Mars",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 9,
+              "frame": {
+                "at": "Mars",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "wobblier",
+          "x": 1425,
+          "y": 433,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Wobblier",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Wobblier",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "not tumbling",
+          "x": 1427,
+          "y": 558,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tumbling",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tumbling",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -8576,38 +9699,30 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
+          "id": "q",
           "kit": {
-            "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
-            ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
+            "type": "prop",
+            "item": "question",
+            "x": 0.62,
+            "y": 0.45,
+            "size": 0.22,
+            "ink": "#c9d3ea"
           }
         },
         {
           "id": "arka",
           "kit": {
             "type": "figure",
-            "x": 0.42,
-            "y": 0.86,
-            "height": 0.56,
+            "x": 0.32,
+            "y": 0.8,
+            "height": 0.5,
             "outfit": "astronaut",
             "shiver": 0,
             "seed": 11,
             "poses": [
               {
                 "frame": 0,
-                "pose": "float"
+                "pose": "think"
               }
             ],
             "faces": [
@@ -8806,13 +9921,13 @@
       "annotations": [
         {
           "id": "n0",
-          "text": "M54",
-          "x": 1425,
-          "y": 320,
-          "size": 66,
+          "text": "not doomed?",
+          "x": 1300,
+          "y": 300,
+          "size": 92,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#eef1f8",
+          "color": "@text.accent",
           "pop": true,
           "opacity": [
             {
@@ -8820,11 +9935,17 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "doomed",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 9,
+              "frame": {
+                "at": "doomed",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -8840,274 +9961,9 @@
           "id": "earth",
           "kit": {
             "type": "planet",
-            "x": 0.72,
+            "x": 0.32,
             "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
-            ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
-          }
-        }
-      ],
-      "annotations": [
-        {
-          "id": "n0",
-          "text": "M55",
-          "x": 1427,
-          "y": 320,
-          "size": 66,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#eef1f8",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": 3,
-              "value": 0
-            },
-            {
-              "frame": 9,
-              "value": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "g-m56",
-      "width": 1920,
-      "height": 1080,
-      "layers": [
-        {
-          "id": "earth",
-          "kit": {
-            "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
-            ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
-          }
-        }
-      ],
-      "annotations": [
-        {
-          "id": "n0",
-          "text": "M56",
-          "x": 1426,
-          "y": 320,
-          "size": 66,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#eef1f8",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": 3,
-              "value": 0
-            },
-            {
-              "frame": 9,
-              "value": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "g-m57",
-      "width": 1920,
-      "height": 1080,
-      "layers": [
-        {
-          "id": "earth",
-          "kit": {
-            "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
-            ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
-          }
-        }
-      ],
-      "annotations": [
-        {
-          "id": "n0",
-          "text": "M57",
-          "x": 1413,
-          "y": 320,
-          "size": 66,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#eef1f8",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": 3,
-              "value": 0
-            },
-            {
-              "frame": 9,
-              "value": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "g-m58",
-      "width": 1920,
-      "height": 1080,
-      "layers": [
-        {
-          "id": "earth",
-          "kit": {
-            "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
-            ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
-          }
-        }
-      ],
-      "annotations": [
-        {
-          "id": "n0",
-          "text": "M58",
-          "x": 1427,
-          "y": 320,
-          "size": 66,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#eef1f8",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": 3,
-              "value": 0
-            },
-            {
-              "frame": 9,
-              "value": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "g-m59",
-      "width": 1920,
-      "height": 1080,
-      "layers": [
-        {
-          "id": "earth",
-          "kit": {
-            "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
-            ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
-          }
-        }
-      ],
-      "annotations": [
-        {
-          "id": "n0",
-          "text": "M59",
-          "x": 1425,
-          "y": 320,
-          "size": 66,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#eef1f8",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": 3,
-              "value": 0
-            },
-            {
-              "frame": 9,
-              "value": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "g-m60",
-      "width": 1920,
-      "height": 1080,
-      "layers": [
-        {
-          "id": "earth",
-          "kit": {
-            "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
-            "radius": 0.16,
+            "radius": 0.17,
             "base": "#5aa9e6",
             "bands": [
               "#7cc576",
@@ -9121,25 +9977,732 @@
           }
         },
         {
+          "id": "ok",
+          "kit": {
+            "type": "prop",
+            "item": "check",
+            "x": 0.55,
+            "y": 0.5,
+            "size": 0.26,
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tonight",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tonight"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "tonight",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "tonight",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1056.0,
+            "y": 540.0
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "THE BIG MYTH",
+          "x": 960,
+          "y": 92,
+          "size": 64,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "not tonight",
+          "x": 1415,
+          "y": 318,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tonight",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tonight",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "not because of the tilt",
+          "x": 1533,
+          "y": 421,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tilt",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tilt",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-m56",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "cnt",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.32,
+            "y": 0.55,
+            "size": 0.3,
+            "text": "thousand years",
+            "values": [
+              {
+                "frame": 0,
+                "value": 0,
+                "ramp": true
+              },
+              {
+                "frame": 50,
+                "value": 1000
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "A MILLION YEARS LATER",
+          "x": 960,
+          "y": 92,
+          "size": 64,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "+1,000,000 years",
+          "x": 1419,
+          "y": 390,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "million",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "million",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-m57",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "lion",
+          "kit": {
+            "type": "prop",
+            "item": "lion",
+            "x": 0.2,
+            "y": 0.7,
+            "size": 0.3,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.7
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "coral",
+          "kit": {
+            "type": "prop",
+            "item": "coral",
+            "x": 0.42,
+            "y": 0.78,
+            "size": 0.32,
+            "count": 10,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.6
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "sun",
+          "kit": {
+            "type": "planet",
+            "x": 0.3,
+            "y": 0.3,
+            "radius": 0.07,
+            "base": "#ffcf4a",
+            "bands": [
+              "#ffe27a",
+              "#ffcf4a"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.05,
+            "seed": 2
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Sun",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Sun"
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "th",
+          "kit": {
+            "type": "prop",
+            "item": "thermometer",
+            "x": 0.55,
+            "y": 0.5,
+            "size": 0.3,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.5
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "temperature",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "temperature"
+              },
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "A MILLION YEARS LATER",
+          "x": 960,
+          "y": 92,
+          "size": 64,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "life adapts",
+          "x": 1419,
+          "y": 318,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "adapt",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "adapt",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "new clocks: Sun, seasons, water",
+          "x": 1430,
+          "y": 817,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "clocks",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "clocks",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "some struggle, some vanish",
+          "x": 1415,
+          "y": 920,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "disappear",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "disappear",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-m58",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "stars2",
+          "kit": {
+            "type": "prop",
+            "item": "doodle-stars",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 0.9,
+            "count": 40,
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "darkest"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "darkest",
+                "offset": 40
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "town",
+          "kit": {
+            "type": "prop",
+            "item": "town",
+            "x": 0.3,
+            "y": 0.88,
+            "size": 0.5,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "A MILLION YEARS LATER",
+          "x": 960,
+          "y": 92,
+          "size": 64,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "the darkest, starriest sky",
+          "x": 1180,
+          "y": 420,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "starriest",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "starriest",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-m59",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "cal",
+          "kit": {
+            "type": "prop",
+            "item": "calendar",
+            "x": 0.28,
+            "y": 0.5,
+            "size": 0.3,
+            "text": "MOON"
+          }
+        },
+        {
+          "id": "m",
+          "kit": {
+            "type": "prop",
+            "item": "crescent",
+            "x": 0.45,
+            "y": 0.34,
+            "size": 0.14,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "mon",
+          "kit": {
+            "type": "prop",
+            "item": "sign",
+            "x": 0.5,
+            "y": 0.66,
+            "size": 0.26,
+            "text": "MONDAY = MOON'S DAY"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Monday",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Monday"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "Monday",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "Monday",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 960.0,
+            "y": 712.8000000000001
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "A MILLION YEARS LATER",
+          "x": 960,
+          "y": 92,
+          "size": 64,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "we counted time by the Moon",
+          "x": 1427,
+          "y": 373,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "counted",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "counted",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "month ← moon",
+          "x": 1421,
+          "y": 498,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "month",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "month",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-m60",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "cal",
+          "kit": {
+            "type": "prop",
+            "item": "calendar",
+            "x": 0.66,
+            "y": 0.5,
+            "size": 0.26,
+            "text": "MON"
+          }
+        },
+        {
           "id": "arka",
           "kit": {
             "type": "figure",
-            "x": 0.42,
-            "y": 0.86,
-            "height": 0.56,
+            "x": 0.32,
+            "y": 0.8,
+            "height": 0.5,
             "outfit": "astronaut",
             "shiver": 0,
             "seed": 11,
             "poses": [
               {
                 "frame": 0,
-                "pose": "float"
+                "pose": "cheer"
               }
             ],
             "faces": [
               {
                 "frame": 0,
-                "face": "neutral"
+                "face": "grin"
               }
             ],
             "suit": "#e8b84a",
@@ -9332,13 +10895,13 @@
       "annotations": [
         {
           "id": "n0",
-          "text": "M60",
-          "x": 1427,
-          "y": 320,
-          "size": 66,
+          "text": "no Mondays?!",
+          "x": 1300,
+          "y": 280,
+          "size": 92,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#eef1f8",
+          "color": "@text.accent",
           "pop": true,
           "opacity": [
             {
@@ -9346,11 +10909,17 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "Mondays",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 9,
+              "frame": {
+                "at": "Mondays",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -9363,35 +10932,55 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
+          "id": "cal",
           "kit": {
-            "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
-            ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
+            "type": "prop",
+            "item": "calendar",
+            "x": 0.3,
+            "y": 0.5,
+            "size": 0.32,
+            "text": "MON"
           }
+        },
+        {
+          "id": "x",
+          "kit": {
+            "type": "prop",
+            "item": "cross",
+            "x": 0.3,
+            "y": 0.5,
+            "size": 0.3,
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            }
+          ]
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "M61",
-          "x": 1424,
-          "y": 320,
-          "size": 66,
+          "text": "A MILLION YEARS LATER",
+          "x": 960,
+          "y": 92,
+          "size": 64,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "still Mondays.",
+          "x": 1378,
+          "y": 318,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
           "pop": true,
           "opacity": [
             {
@@ -9399,11 +10988,48 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "Mondays",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 9,
+              "frame": {
+                "at": "Mondays",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "sorry, Arka.",
+          "x": 1427,
+          "y": 421,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Sorry",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Sorry",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -9419,9 +11045,9 @@
           "id": "earth",
           "kit": {
             "type": "planet",
-            "x": 0.72,
+            "x": 0.25,
             "y": 0.55,
-            "radius": 0.16,
+            "radius": 0.15,
             "base": "#5aa9e6",
             "bands": [
               "#7cc576",
@@ -9433,18 +11059,66 @@
             "shade": 0.2,
             "seed": 3
           }
+        },
+        {
+          "id": "m",
+          "kit": {
+            "type": "prop",
+            "item": "crescent",
+            "x": 0.55,
+            "y": 0.5,
+            "size": 0.14,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "leaving"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "leaving",
+                "offset": 60
+              },
+              "value": 260,
+              "ease": "smoothstep"
+            }
+          ]
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "M62",
-          "x": 1428,
-          "y": 320,
-          "size": 66,
+          "text": "THE TWIST",
+          "x": 960,
+          "y": 92,
+          "size": 64,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "the Moon is already leaving",
+          "x": 1400,
+          "y": 390,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
           "pop": true,
           "opacity": [
             {
@@ -9452,11 +11126,17 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "leaving",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 9,
+              "frame": {
+                "at": "leaving",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -9469,31 +11149,151 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
+          "id": "ruler",
           "kit": {
-            "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
+            "type": "prop",
+            "item": "ruler",
+            "x": 0.52,
+            "y": 0.5,
+            "size": 0.45,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": 60,
+                "value": 0.5
+              }
             ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
+            "text": "3.8 cm / year",
+            "ink": "#c9d3ea"
           }
+        },
+        {
+          "id": "refl",
+          "kit": {
+            "type": "prop",
+            "item": "reflector",
+            "x": 0.3,
+            "y": 0.72,
+            "size": 0.36,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": 120,
+                "value": 0
+              },
+              {
+                "frame": 200,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Apollo",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Apollo"
+              },
+              "value": 1
+            }
+          ]
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "M63",
-          "x": 1427,
-          "y": 320,
+          "text": "THE TWIST",
+          "x": 960,
+          "y": 92,
+          "size": 64,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "3.8 cm a year",
+          "x": 1388,
+          "y": 318,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "three",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "three",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "= fingernail speed",
+          "x": 1418,
+          "y": 421,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fingernails",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fingernails",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "Apollo mirrors + lasers",
+          "x": 1428,
+          "y": 524,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -9505,11 +11305,17 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "lasers",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 9,
+              "frame": {
+                "at": "lasers",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -9522,44 +11328,53 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
+          "id": "m",
           "kit": {
-            "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
+            "type": "prop",
+            "item": "crescent",
+            "x": 0.7,
+            "y": 0.45,
+            "size": 0.14,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
             ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
-          }
+            "ink": "#c9d3ea"
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 90,
+              "value": 120,
+              "ease": "smoothstep"
+            }
+          ]
         },
         {
           "id": "arka",
           "kit": {
             "type": "figure",
-            "x": 0.42,
-            "y": 0.86,
-            "height": 0.56,
+            "x": 0.3,
+            "y": 0.8,
+            "height": 0.5,
             "outfit": "astronaut",
             "shiver": 0,
             "seed": 11,
             "poses": [
               {
                 "frame": 0,
-                "pose": "float"
+                "pose": "point-right"
               }
             ],
             "faces": [
               {
                 "frame": 0,
-                "face": "neutral"
+                "face": "sad"
               }
             ],
             "suit": "#e8b84a",
@@ -9752,13 +11567,13 @@
       "annotations": [
         {
           "id": "n0",
-          "text": "M64",
-          "x": 1424,
-          "y": 320,
-          "size": 66,
+          "text": "because of me?",
+          "x": 1300,
+          "y": 760,
+          "size": 92,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#eef1f8",
+          "color": "@text.accent",
           "pop": true,
           "opacity": [
             {
@@ -9766,11 +11581,17 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "me",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 9,
+              "frame": {
+                "at": "me",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -9783,35 +11604,99 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
+          "id": "spin",
           "kit": {
-            "type": "planet",
-            "x": 0.72,
+            "type": "prop",
+            "item": "earth-axis",
+            "x": 0.25,
             "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
+            "size": 0.45,
+            "rotation": 23,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              },
+              {
+                "frame": 150,
+                "value": 0.6
+              }
             ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "m",
+          "kit": {
+            "type": "prop",
+            "item": "crescent",
+            "x": 0.58,
+            "y": 0.45,
+            "size": 0.14,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "push"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "push",
+                "offset": 50
+              },
+              "value": 140,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "arr",
+          "kit": {
+            "type": "prop",
+            "item": "pressure-arrows",
+            "x": 0.45,
+            "y": 0.5,
+            "size": 0.2,
+            "direction": "out",
+            "count": 3,
+            "ink": "#c9d3ea"
           }
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "M65",
-          "x": 1426,
-          "y": 320,
-          "size": 66,
+          "text": "THE TWIST",
+          "x": 960,
+          "y": 92,
+          "size": 64,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "the tides",
+          "x": 1418,
+          "y": 318,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
           "pop": true,
           "opacity": [
             {
@@ -9819,11 +11704,48 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "tides",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 9,
+              "frame": {
+                "at": "tides",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "slow Earth, push the Moon out",
+          "x": 1425,
+          "y": 637,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "push",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "push",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -9836,35 +11758,118 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
+          "id": "sun",
           "kit": {
             "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
+            "x": 0.3,
+            "y": 0.5,
+            "radius": 0.15,
+            "base": "#ffcf4a",
             "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
+              "#ffe27a",
+              "#ffcf4a"
             ],
             "craters": 0,
             "ring": false,
-            "shade": 0.2,
-            "seed": 3
+            "shade": 0.05,
+            "seed": 2
+          }
+        },
+        {
+          "id": "m",
+          "kit": {
+            "type": "prop",
+            "item": "crescent",
+            "x": 0.3,
+            "y": 0.5,
+            "size": 0.11,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.3
+            },
+            {
+              "frame": {
+                "at": "small"
+              },
+              "value": 1.3
+            },
+            {
+              "frame": {
+                "at": "small",
+                "offset": 60
+              },
+              "value": 0.8,
+              "ease": "smoothstep"
+            }
+          ],
+          "anchor": {
+            "x": 576.0,
+            "y": 540.0
+          }
+        },
+        {
+          "id": "cnt",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.62,
+            "y": 0.74,
+            "size": 0.2,
+            "text": "million years",
+            "values": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "six"
+                },
+                "value": 0,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "six",
+                  "offset": 45
+                },
+                "value": 600
+              }
+            ],
+            "ink": "#c9d3ea"
           }
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "M66",
-          "x": 1425,
-          "y": 320,
-          "size": 66,
+          "text": "THE TWIST",
+          "x": 960,
+          "y": 92,
+          "size": 64,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "~600 million years",
+          "x": 1417,
+          "y": 390,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
           "pop": true,
           "opacity": [
             {
@@ -9872,11 +11877,48 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "six",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 9,
+              "frame": {
+                "at": "six",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "the last total eclipse",
+          "x": 1418,
+          "y": 493,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "last",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "last",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -9889,171 +11931,54 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
+          "id": "sun",
           "kit": {
             "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
+            "x": 0.25,
+            "y": 0.5,
+            "radius": 0.12,
+            "base": "#ffcf4a",
             "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
+              "#ffe27a",
+              "#ffcf4a"
             ],
             "craters": 0,
             "ring": false,
-            "shade": 0.2,
-            "seed": 3
-          }
-        }
-      ],
-      "annotations": [
-        {
-          "id": "n0",
-          "text": "M67",
-          "x": 1428,
-          "y": 320,
-          "size": 66,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#eef1f8",
-          "pop": true,
-          "opacity": [
+            "shade": 0.05,
+            "seed": 2
+          },
+          "scale": [
             {
               "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": 3,
-              "value": 0
-            },
-            {
-              "frame": 9,
               "value": 1
+            },
+            {
+              "frame": {
+                "at": "old"
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "old",
+                "offset": 60
+              },
+              "value": 1.8,
+              "ease": "smoothstep"
             }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "g-m68",
-      "width": 1920,
-      "height": 1080,
-      "layers": [
+          ],
+          "anchor": {
+            "x": 480.0,
+            "y": 540.0
+          }
+        },
         {
           "id": "earth",
           "kit": {
             "type": "planet",
-            "x": 0.72,
+            "x": 0.55,
             "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
-            ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
-          }
-        }
-      ],
-      "annotations": [
-        {
-          "id": "n0",
-          "text": "M68",
-          "x": 1426,
-          "y": 320,
-          "size": 66,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#eef1f8",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": 3,
-              "value": 0
-            },
-            {
-              "frame": 9,
-              "value": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "g-m69",
-      "width": 1920,
-      "height": 1080,
-      "layers": [
-        {
-          "id": "earth",
-          "kit": {
-            "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
-            ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
-          }
-        }
-      ],
-      "annotations": [
-        {
-          "id": "n0",
-          "text": "M69",
-          "x": 1424,
-          "y": 320,
-          "size": 66,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#eef1f8",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": 3,
-              "value": 0
-            },
-            {
-              "frame": 9,
-              "value": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "g-m70",
-      "width": 1920,
-      "height": 1080,
-      "layers": [
-        {
-          "id": "earth",
-          "kit": {
-            "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
-            "radius": 0.16,
+            "radius": 0.09,
             "base": "#5aa9e6",
             "bands": [
               "#7cc576",
@@ -10067,25 +11992,508 @@
           }
         },
         {
+          "id": "m",
+          "kit": {
+            "type": "prop",
+            "item": "crescent",
+            "x": 0.66,
+            "y": 0.46,
+            "size": 0.07,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "THE TWIST",
+          "x": 960,
+          "y": 92,
+          "size": 64,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "it won't get away",
+          "x": 1409,
+          "y": 325,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "away",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "away",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "the Sun grows old first",
+          "x": 1494,
+          "y": 613,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "old",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "old",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "billions of years",
+          "x": 1468,
+          "y": 738,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "billions",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "billions",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-m68",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "ghost",
+          "kit": {
+            "type": "prop",
+            "item": "crescent",
+            "x": 0.3,
+            "y": 0.45,
+            "size": 0.25,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "SO, IF IT VANISHED TONIGHT...",
+          "x": 960,
+          "y": 92,
+          "size": 64,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": false
+        },
+        {
+          "id": "n1",
+          "text": "we would not all die",
+          "x": 1420,
+          "y": 390,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "die",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "die",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "- light at night",
+          "x": 1421,
+          "y": 493,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "light",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "light",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "- 2/3 of our tides",
+          "x": 1424,
+          "y": 601,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tides",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tides",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "text": "- every eclipse",
+          "x": 1419,
+          "y": 709,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "eclipse",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "eclipse",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n5",
+          "text": "- an ancient clock",
+          "x": 1428,
+          "y": 817,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "clock",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "clock",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-m69",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "town",
+          "kit": {
+            "type": "prop",
+            "item": "town",
+            "x": 0.42,
+            "y": 0.88,
+            "size": 0.62,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "moon",
+          "kit": {
+            "type": "prop",
+            "item": "crescent",
+            "x": 0.66,
+            "y": 0.34,
+            "size": 0.26,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 20,
+              "value": 0
+            },
+            {
+              "frame": 60,
+              "value": 1,
+              "ease": "smoothstep"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "it's still there.",
+          "x": 1240,
+          "y": 640,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "there",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "there",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-m70",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "moon",
+          "kit": {
+            "type": "prop",
+            "item": "crescent",
+            "x": 0.66,
+            "y": 0.3,
+            "size": 0.16,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "sub",
+          "kit": {
+            "type": "prop",
+            "item": "sign",
+            "x": 0.62,
+            "y": 0.62,
+            "size": 0.3,
+            "text": "SUBSCRIBE"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Subscribe",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Subscribe"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "Subscribe",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "Subscribe",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1190.4,
+            "y": 669.6
+          }
+        },
+        {
           "id": "arka",
           "kit": {
             "type": "figure",
-            "x": 0.42,
-            "y": 0.86,
-            "height": 0.56,
+            "x": 0.3,
+            "y": 0.8,
+            "height": 0.5,
             "outfit": "astronaut",
             "shiver": 0,
             "seed": 11,
             "poses": [
               {
                 "frame": 0,
-                "pose": "float"
+                "pose": "wave"
               }
             ],
             "faces": [
               {
                 "frame": 0,
-                "face": "neutral"
+                "face": "grin"
               }
             ],
             "suit": "#e8b84a",
@@ -10275,16 +12683,249 @@
           ]
         }
       ],
+      "annotations": []
+    },
+    {
+      "id": "g-m71",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "moon",
+          "kit": {
+            "type": "prop",
+            "item": "crescent",
+            "x": 0.14,
+            "y": 0.3,
+            "size": 0.1,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.14,
+            "y": 0.8,
+            "height": 0.38,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "wave"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "happy"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 40,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 200,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 280,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 320,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 400,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 440,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 480,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 520,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 560,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 600,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 640,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 680,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 760,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 800,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 840,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 880,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 920,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 960,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1000,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1040,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1120,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1160,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1200,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1240,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1280,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1320,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1360,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1400,
+              "value": 8,
+              "ease": "smoothstep"
+            }
+          ]
+        }
+      ],
       "annotations": [
         {
           "id": "n0",
-          "text": "M70",
-          "x": 1414,
-          "y": 320,
-          "size": 66,
+          "text": "GAHANARKA",
+          "x": 960,
+          "y": 190,
+          "size": 100,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#eef1f8",
+          "color": "#e8b84a",
           "pop": true,
           "opacity": [
             {
@@ -10300,40 +12941,12 @@
               "value": 1
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "g-m71",
-      "width": 1920,
-      "height": 1080,
-      "layers": [
+        },
         {
-          "id": "earth",
-          "kit": {
-            "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
-            "radius": 0.16,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
-            ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
-          }
-        }
-      ],
-      "annotations": [
-        {
-          "id": "n0",
-          "text": "M71",
-          "x": 1427,
-          "y": 320,
+          "id": "n1",
+          "text": "light in the unfathomable",
+          "x": 960,
+          "y": 270,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -10345,11 +12958,42 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": 9,
               "value": 0
             },
             {
-              "frame": 9,
+              "frame": 15,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "next: something even bigger",
+          "x": 960,
+          "y": 360,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "bigger",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "bigger",
+                "offset": 5
+              },
               "value": 1
             }
           ]
@@ -10361,8 +13005,8 @@
     {
       "id": "mg-m1",
       "template": "hero-reveal",
-      "durationFrames": 184,
-      "animationDurationFrames": 184,
+      "durationFrames": 173,
+      "animationDurationFrames": 173,
       "caption": {
         "text": "mg-m1",
         "preset": "body"
@@ -10433,8 +13077,8 @@
     {
       "id": "mg-m2",
       "template": "hero-reveal",
-      "durationFrames": 122,
-      "animationDurationFrames": 122,
+      "durationFrames": 115,
+      "animationDurationFrames": 115,
       "caption": {
         "text": "mg-m2",
         "preset": "body"
@@ -10487,8 +13131,8 @@
     {
       "id": "mg-m3",
       "template": "hero-reveal",
-      "durationFrames": 381,
-      "animationDurationFrames": 381,
+      "durationFrames": 359,
+      "animationDurationFrames": 359,
       "caption": {
         "text": "mg-m3",
         "preset": "body"
@@ -10561,8 +13205,8 @@
     {
       "id": "mg-m4",
       "template": "hero-reveal",
-      "durationFrames": 61,
-      "animationDurationFrames": 61,
+      "durationFrames": 57,
+      "animationDurationFrames": 57,
       "caption": {
         "text": "mg-m4",
         "preset": "body"
@@ -10631,8 +13275,8 @@
     {
       "id": "mg-m5",
       "template": "hero-reveal",
-      "durationFrames": 221,
-      "animationDurationFrames": 221,
+      "durationFrames": 208,
+      "animationDurationFrames": 208,
       "caption": {
         "text": "mg-m5",
         "preset": "body"
@@ -10719,8 +13363,8 @@
     {
       "id": "mg-m6",
       "template": "hero-reveal",
-      "durationFrames": 381,
-      "animationDurationFrames": 381,
+      "durationFrames": 359,
+      "animationDurationFrames": 359,
       "caption": {
         "text": "mg-m6",
         "preset": "body"
@@ -10805,8 +13449,8 @@
     {
       "id": "mg-m7",
       "template": "hero-reveal",
-      "durationFrames": 86,
-      "animationDurationFrames": 86,
+      "durationFrames": 81,
+      "animationDurationFrames": 81,
       "caption": {
         "text": "mg-m7",
         "preset": "body"
@@ -10859,8 +13503,8 @@
     {
       "id": "mg-m8",
       "template": "hero-reveal",
-      "durationFrames": 368,
-      "animationDurationFrames": 368,
+      "durationFrames": 347,
+      "animationDurationFrames": 347,
       "caption": {
         "text": "mg-m8",
         "preset": "body"
@@ -10933,8 +13577,8 @@
     {
       "id": "mg-m9",
       "template": "hero-reveal",
-      "durationFrames": 209,
-      "animationDurationFrames": 209,
+      "durationFrames": 197,
+      "animationDurationFrames": 197,
       "caption": {
         "text": "mg-m9",
         "preset": "body"
@@ -11007,8 +13651,8 @@
     {
       "id": "mg-m10",
       "template": "hero-reveal",
-      "durationFrames": 553,
-      "animationDurationFrames": 553,
+      "durationFrames": 521,
+      "animationDurationFrames": 521,
       "caption": {
         "text": "mg-m10",
         "preset": "body"
@@ -11095,8 +13739,8 @@
     {
       "id": "mg-m11",
       "template": "hero-reveal",
-      "durationFrames": 184,
-      "animationDurationFrames": 184,
+      "durationFrames": 173,
+      "animationDurationFrames": 173,
       "caption": {
         "text": "mg-m11",
         "preset": "body"
@@ -11162,8 +13806,8 @@
     {
       "id": "mg-m12",
       "template": "hero-reveal",
-      "durationFrames": 122,
-      "animationDurationFrames": 122,
+      "durationFrames": 115,
+      "animationDurationFrames": 115,
       "caption": {
         "text": "mg-m12",
         "preset": "body"
@@ -11216,8 +13860,8 @@
     {
       "id": "mg-m13",
       "template": "hero-reveal",
-      "durationFrames": 430,
-      "animationDurationFrames": 430,
+      "durationFrames": 405,
+      "animationDurationFrames": 405,
       "caption": {
         "text": "mg-m13",
         "preset": "body"
@@ -11297,8 +13941,8 @@
     {
       "id": "mg-m14",
       "template": "hero-reveal",
-      "durationFrames": 282,
-      "animationDurationFrames": 282,
+      "durationFrames": 266,
+      "animationDurationFrames": 266,
       "caption": {
         "text": "mg-m14",
         "preset": "body"
@@ -11371,8 +14015,8 @@
     {
       "id": "mg-m15",
       "template": "hero-reveal",
-      "durationFrames": 86,
-      "animationDurationFrames": 86,
+      "durationFrames": 81,
+      "animationDurationFrames": 81,
       "caption": {
         "text": "mg-m15",
         "preset": "body"
@@ -11425,8 +14069,8 @@
     {
       "id": "mg-m16",
       "template": "hero-reveal",
-      "durationFrames": 565,
-      "animationDurationFrames": 565,
+      "durationFrames": 533,
+      "animationDurationFrames": 533,
       "caption": {
         "text": "mg-m16",
         "preset": "body"
@@ -11513,8 +14157,8 @@
     {
       "id": "mg-m17",
       "template": "hero-reveal",
-      "durationFrames": 110,
-      "animationDurationFrames": 110,
+      "durationFrames": 104,
+      "animationDurationFrames": 104,
       "caption": {
         "text": "mg-m17",
         "preset": "body"
@@ -11580,8 +14224,8 @@
     {
       "id": "mg-m18",
       "template": "hero-reveal",
-      "durationFrames": 110,
-      "animationDurationFrames": 110,
+      "durationFrames": 104,
+      "animationDurationFrames": 104,
       "caption": {
         "text": "mg-m18",
         "preset": "body"
@@ -11634,8 +14278,8 @@
     {
       "id": "mg-m19",
       "template": "hero-reveal",
-      "durationFrames": 49,
-      "animationDurationFrames": 49,
+      "durationFrames": 46,
+      "animationDurationFrames": 46,
       "caption": {
         "text": "mg-m19",
         "preset": "body"
@@ -11701,8 +14345,8 @@
     {
       "id": "mg-m20",
       "template": "hero-reveal",
-      "durationFrames": 233,
-      "animationDurationFrames": 233,
+      "durationFrames": 220,
+      "animationDurationFrames": 220,
       "caption": {
         "text": "mg-m20",
         "preset": "body"
@@ -11775,8 +14419,8 @@
     {
       "id": "mg-m21",
       "template": "hero-reveal",
-      "durationFrames": 307,
-      "animationDurationFrames": 307,
+      "durationFrames": 289,
+      "animationDurationFrames": 289,
       "caption": {
         "text": "mg-m21",
         "preset": "body"
@@ -11849,8 +14493,8 @@
     {
       "id": "mg-m22",
       "template": "hero-reveal",
-      "durationFrames": 258,
-      "animationDurationFrames": 258,
+      "durationFrames": 243,
+      "animationDurationFrames": 243,
       "caption": {
         "text": "mg-m22",
         "preset": "body"
@@ -11916,8 +14560,8 @@
     {
       "id": "mg-m23",
       "template": "hero-reveal",
-      "durationFrames": 381,
-      "animationDurationFrames": 381,
+      "durationFrames": 359,
+      "animationDurationFrames": 359,
       "caption": {
         "text": "mg-m23",
         "preset": "body"
@@ -12004,8 +14648,8 @@
     {
       "id": "mg-m24",
       "template": "hero-reveal",
-      "durationFrames": 467,
-      "animationDurationFrames": 467,
+      "durationFrames": 440,
+      "animationDurationFrames": 440,
       "caption": {
         "text": "mg-m24",
         "preset": "body"
@@ -12078,8 +14722,8 @@
     {
       "id": "mg-m25",
       "template": "hero-reveal",
-      "durationFrames": 381,
-      "animationDurationFrames": 381,
+      "durationFrames": 359,
+      "animationDurationFrames": 359,
       "caption": {
         "text": "mg-m25",
         "preset": "body"
@@ -12159,8 +14803,8 @@
     {
       "id": "mg-m26",
       "template": "hero-reveal",
-      "durationFrames": 98,
-      "animationDurationFrames": 98,
+      "durationFrames": 92,
+      "animationDurationFrames": 92,
       "caption": {
         "text": "mg-m26",
         "preset": "body"
@@ -12213,8 +14857,8 @@
     {
       "id": "mg-m27",
       "template": "hero-reveal",
-      "durationFrames": 122,
-      "animationDurationFrames": 122,
+      "durationFrames": 115,
+      "animationDurationFrames": 115,
       "caption": {
         "text": "mg-m27",
         "preset": "body"
@@ -12287,8 +14931,8 @@
     {
       "id": "mg-m28",
       "template": "hero-reveal",
-      "durationFrames": 467,
-      "animationDurationFrames": 467,
+      "durationFrames": 440,
+      "animationDurationFrames": 440,
       "caption": {
         "text": "mg-m28",
         "preset": "body"
@@ -12368,8 +15012,8 @@
     {
       "id": "mg-m29",
       "template": "hero-reveal",
-      "durationFrames": 61,
-      "animationDurationFrames": 61,
+      "durationFrames": 57,
+      "animationDurationFrames": 57,
       "caption": {
         "text": "mg-m29",
         "preset": "body"
@@ -12422,8 +15066,8 @@
     {
       "id": "mg-m30",
       "template": "hero-reveal",
-      "durationFrames": 381,
-      "animationDurationFrames": 381,
+      "durationFrames": 359,
+      "animationDurationFrames": 359,
       "caption": {
         "text": "mg-m30",
         "preset": "body"
@@ -12510,8 +15154,8 @@
     {
       "id": "mg-m31",
       "template": "hero-reveal",
-      "durationFrames": 467,
-      "animationDurationFrames": 467,
+      "durationFrames": 440,
+      "animationDurationFrames": 440,
       "caption": {
         "text": "mg-m31",
         "preset": "body"
@@ -12584,8 +15228,8 @@
     {
       "id": "mg-m32",
       "template": "hero-reveal",
-      "durationFrames": 541,
-      "animationDurationFrames": 541,
+      "durationFrames": 510,
+      "animationDurationFrames": 510,
       "caption": {
         "text": "mg-m32",
         "preset": "body"
@@ -12672,8 +15316,8 @@
     {
       "id": "mg-m33",
       "template": "hero-reveal",
-      "durationFrames": 172,
-      "animationDurationFrames": 172,
+      "durationFrames": 162,
+      "animationDurationFrames": 162,
       "caption": {
         "text": "mg-m33",
         "preset": "body"
@@ -12746,8 +15390,8 @@
     {
       "id": "mg-m34",
       "template": "hero-reveal",
-      "durationFrames": 86,
-      "animationDurationFrames": 86,
+      "durationFrames": 81,
+      "animationDurationFrames": 81,
       "caption": {
         "text": "mg-m34",
         "preset": "body"
@@ -12800,8 +15444,8 @@
     {
       "id": "mg-m35",
       "template": "hero-reveal",
-      "durationFrames": 122,
-      "animationDurationFrames": 122,
+      "durationFrames": 115,
+      "animationDurationFrames": 115,
       "caption": {
         "text": "mg-m35",
         "preset": "body"
@@ -12867,8 +15511,8 @@
     {
       "id": "mg-m36",
       "template": "hero-reveal",
-      "durationFrames": 504,
-      "animationDurationFrames": 504,
+      "durationFrames": 475,
+      "animationDurationFrames": 475,
       "caption": {
         "text": "mg-m36",
         "preset": "body"
@@ -12956,8 +15600,8 @@
     {
       "id": "mg-m37",
       "template": "hero-reveal",
-      "durationFrames": 98,
-      "animationDurationFrames": 98,
+      "durationFrames": 92,
+      "animationDurationFrames": 92,
       "caption": {
         "text": "mg-m37",
         "preset": "body"
@@ -13010,8 +15654,8 @@
     {
       "id": "mg-m38",
       "template": "hero-reveal",
-      "durationFrames": 172,
-      "animationDurationFrames": 172,
+      "durationFrames": 162,
+      "animationDurationFrames": 162,
       "caption": {
         "text": "mg-m38",
         "preset": "body"
@@ -13084,8 +15728,8 @@
     {
       "id": "mg-m39",
       "template": "hero-reveal",
-      "durationFrames": 233,
-      "animationDurationFrames": 233,
+      "durationFrames": 220,
+      "animationDurationFrames": 220,
       "caption": {
         "text": "mg-m39",
         "preset": "body"
@@ -13158,8 +15802,8 @@
     {
       "id": "mg-m40",
       "template": "hero-reveal",
-      "durationFrames": 479,
-      "animationDurationFrames": 479,
+      "durationFrames": 452,
+      "animationDurationFrames": 452,
       "caption": {
         "text": "mg-m40",
         "preset": "body"
@@ -13239,8 +15883,8 @@
     {
       "id": "mg-m41",
       "template": "hero-reveal",
-      "durationFrames": 110,
-      "animationDurationFrames": 110,
+      "durationFrames": 104,
+      "animationDurationFrames": 104,
       "caption": {
         "text": "mg-m41",
         "preset": "body"
@@ -13293,8 +15937,8 @@
     {
       "id": "mg-m42",
       "template": "hero-reveal",
-      "durationFrames": 245,
-      "animationDurationFrames": 245,
+      "durationFrames": 231,
+      "animationDurationFrames": 231,
       "caption": {
         "text": "mg-m42",
         "preset": "body"
@@ -13367,8 +16011,8 @@
     {
       "id": "mg-m43",
       "template": "hero-reveal",
-      "durationFrames": 110,
-      "animationDurationFrames": 110,
+      "durationFrames": 104,
+      "animationDurationFrames": 104,
       "caption": {
         "text": "mg-m43",
         "preset": "body"
@@ -13383,16 +16027,19 @@
               "x": 0.5,
               "y": 0.5
             },
-            "zoom": 1.05,
+            "zoom": 1.0,
             "easing": "smoothstep"
           },
           {
-            "frame": 24,
+            "frame": {
+              "at": "tilt",
+              "edge": "end"
+            },
             "focus": {
               "x": 0.5,
               "y": 0.5
             },
-            "zoom": 1.0,
+            "zoom": 1.07,
             "easing": "smoothstep"
           }
         ]
@@ -13424,7 +16071,9 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "tilt"
+          },
           "gainDb": -22
         }
       ]
@@ -13432,8 +16081,8 @@
     {
       "id": "mg-m44",
       "template": "hero-reveal",
-      "durationFrames": 553,
-      "animationDurationFrames": 553,
+      "durationFrames": 521,
+      "animationDurationFrames": 521,
       "caption": {
         "text": "mg-m44",
         "preset": "body"
@@ -13489,7 +16138,30 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "twenty-three"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "seasons"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "rocked"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "ice"
+          },
           "gainDb": -22
         }
       ]
@@ -13497,8 +16169,8 @@
     {
       "id": "mg-m45",
       "template": "hero-reveal",
-      "durationFrames": 147,
-      "animationDurationFrames": 147,
+      "durationFrames": 139,
+      "animationDurationFrames": 139,
       "caption": {
         "text": "mg-m45",
         "preset": "body"
@@ -13554,7 +16226,16 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "steady"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "without"
+          },
           "gainDb": -22
         }
       ]
@@ -13562,8 +16243,8 @@
     {
       "id": "mg-m46",
       "template": "hero-reveal",
-      "durationFrames": 528,
-      "animationDurationFrames": 528,
+      "durationFrames": 498,
+      "animationDurationFrames": 498,
       "caption": {
         "text": "mg-m46",
         "preset": "body"
@@ -13619,7 +16300,23 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "eighty-five"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "side"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "endless"
+          },
           "gainDb": -22
         }
       ]
@@ -13640,8 +16337,8 @@
           {
             "frame": 0,
             "focus": {
-              "x": 0.4962,
-              "y": 0.5011
+              "x": 0.4914,
+              "y": 0.5
             },
             "zoom": 1.05,
             "easing": "smoothstep"
@@ -13681,8 +16378,8 @@
     {
       "id": "mg-m48",
       "template": "hero-reveal",
-      "durationFrames": 196,
-      "animationDurationFrames": 196,
+      "durationFrames": 185,
+      "animationDurationFrames": 185,
       "caption": {
         "text": "mg-m48",
         "preset": "body"
@@ -13740,14 +16437,28 @@
           "sound": "pop",
           "frame": 4,
           "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "everywhere"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "boom",
+          "frame": {
+            "at": "videos"
+          },
+          "gainDb": -27
         }
       ]
     },
     {
       "id": "mg-m49",
       "template": "hero-reveal",
-      "durationFrames": 565,
-      "animationDurationFrames": 565,
+      "durationFrames": 533,
+      "animationDurationFrames": 533,
       "caption": {
         "text": "mg-m49",
         "preset": "body"
@@ -13803,7 +16514,30 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "Lissauer"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "calmer"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "thirty-eight"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "hundred"
+          },
           "gainDb": -22
         }
       ]
@@ -13811,8 +16545,8 @@
     {
       "id": "mg-m50",
       "template": "hero-reveal",
-      "durationFrames": 405,
-      "animationDurationFrames": 405,
+      "durationFrames": 382,
+      "animationDurationFrames": 382,
       "caption": {
         "text": "mg-m50",
         "preset": "body"
@@ -13868,7 +16602,30 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "hotter"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "colder"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "flip"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "freeze"
+          },
           "gainDb": -22
         }
       ]
@@ -13876,8 +16633,8 @@
     {
       "id": "mg-m51",
       "template": "hero-reveal",
-      "durationFrames": 479,
-      "animationDurationFrames": 479,
+      "durationFrames": 452,
+      "animationDurationFrames": 452,
       "caption": {
         "text": "mg-m51",
         "preset": "body"
@@ -13933,7 +16690,23 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "Mars"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "tiny"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "forty-five"
+          },
           "gainDb": -22
         }
       ]
@@ -13941,8 +16714,8 @@
     {
       "id": "mg-m52",
       "template": "hero-reveal",
-      "durationFrames": 122,
-      "animationDurationFrames": 122,
+      "durationFrames": 115,
+      "animationDurationFrames": 115,
       "caption": {
         "text": "mg-m52",
         "preset": "body"
@@ -13954,8 +16727,8 @@
           {
             "frame": 0,
             "focus": {
-              "x": 0.4962,
-              "y": 0.5011
+              "x": 0.4905,
+              "y": 0.5
             },
             "zoom": 1.05,
             "easing": "smoothstep"
@@ -13995,8 +16768,8 @@
     {
       "id": "mg-m53",
       "template": "hero-reveal",
-      "durationFrames": 196,
-      "animationDurationFrames": 196,
+      "durationFrames": 185,
+      "animationDurationFrames": 185,
       "caption": {
         "text": "mg-m53",
         "preset": "body"
@@ -14052,7 +16825,23 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "Mars"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "Wobblier"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "tumbling"
+          },
           "gainDb": -22
         }
       ]
@@ -14060,8 +16849,8 @@
     {
       "id": "mg-m54",
       "template": "hero-reveal",
-      "durationFrames": 61,
-      "animationDurationFrames": 61,
+      "durationFrames": 57,
+      "animationDurationFrames": 57,
       "caption": {
         "text": "mg-m54",
         "preset": "body"
@@ -14073,8 +16862,8 @@
           {
             "frame": 0,
             "focus": {
-              "x": 0.4962,
-              "y": 0.5011
+              "x": 0.4914,
+              "y": 0.5
             },
             "zoom": 1.05,
             "easing": "smoothstep"
@@ -14114,8 +16903,8 @@
     {
       "id": "mg-m55",
       "template": "hero-reveal",
-      "durationFrames": 98,
-      "animationDurationFrames": 98,
+      "durationFrames": 92,
+      "animationDurationFrames": 92,
       "caption": {
         "text": "mg-m55",
         "preset": "body"
@@ -14171,7 +16960,16 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "tonight"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "tilt"
+          },
           "gainDb": -22
         }
       ]
@@ -14179,8 +16977,8 @@
     {
       "id": "mg-m56",
       "template": "hero-reveal",
-      "durationFrames": 73,
-      "animationDurationFrames": 73,
+      "durationFrames": 69,
+      "animationDurationFrames": 69,
       "caption": {
         "text": "mg-m56",
         "preset": "body"
@@ -14195,16 +16993,19 @@
               "x": 0.5,
               "y": 0.5
             },
-            "zoom": 1.05,
+            "zoom": 1.0,
             "easing": "smoothstep"
           },
           {
-            "frame": 24,
+            "frame": {
+              "at": "years",
+              "edge": "end"
+            },
             "focus": {
               "x": 0.5,
               "y": 0.5
             },
-            "zoom": 1.0,
+            "zoom": 1.07,
             "easing": "smoothstep"
           }
         ]
@@ -14236,7 +17037,9 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "million"
+          },
           "gainDb": -22
         }
       ]
@@ -14244,8 +17047,8 @@
     {
       "id": "mg-m57",
       "template": "hero-reveal",
-      "durationFrames": 455,
-      "animationDurationFrames": 455,
+      "durationFrames": 429,
+      "animationDurationFrames": 429,
       "caption": {
         "text": "mg-m57",
         "preset": "body"
@@ -14301,7 +17104,23 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "adapt"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "clocks"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "disappear"
+          },
           "gainDb": -22
         }
       ]
@@ -14309,8 +17128,8 @@
     {
       "id": "mg-m58",
       "template": "hero-reveal",
-      "durationFrames": 184,
-      "animationDurationFrames": 184,
+      "durationFrames": 173,
+      "animationDurationFrames": 173,
       "caption": {
         "text": "mg-m58",
         "preset": "body"
@@ -14366,7 +17185,9 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "starriest"
+          },
           "gainDb": -22
         }
       ]
@@ -14374,8 +17195,8 @@
     {
       "id": "mg-m59",
       "template": "hero-reveal",
-      "durationFrames": 332,
-      "animationDurationFrames": 332,
+      "durationFrames": 313,
+      "animationDurationFrames": 313,
       "caption": {
         "text": "mg-m59",
         "preset": "body"
@@ -14431,7 +17252,16 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "counted"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "month"
+          },
           "gainDb": -22
         }
       ]
@@ -14439,8 +17269,8 @@
     {
       "id": "mg-m60",
       "template": "hero-reveal",
-      "durationFrames": 73,
-      "animationDurationFrames": 73,
+      "durationFrames": 69,
+      "animationDurationFrames": 69,
       "caption": {
         "text": "mg-m60",
         "preset": "body"
@@ -14452,8 +17282,8 @@
           {
             "frame": 0,
             "focus": {
-              "x": 0.4962,
-              "y": 0.5011
+              "x": 0.4914,
+              "y": 0.5
             },
             "zoom": 1.05,
             "easing": "smoothstep"
@@ -14493,8 +17323,8 @@
     {
       "id": "mg-m61",
       "template": "hero-reveal",
-      "durationFrames": 73,
-      "animationDurationFrames": 73,
+      "durationFrames": 69,
+      "animationDurationFrames": 69,
       "caption": {
         "text": "mg-m61",
         "preset": "body"
@@ -14550,7 +17380,16 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "Mondays"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "Sorry"
+          },
           "gainDb": -22
         }
       ]
@@ -14558,8 +17397,8 @@
     {
       "id": "mg-m62",
       "template": "hero-reveal",
-      "durationFrames": 98,
-      "animationDurationFrames": 98,
+      "durationFrames": 92,
+      "animationDurationFrames": 92,
       "caption": {
         "text": "mg-m62",
         "preset": "body"
@@ -14574,16 +17413,19 @@
               "x": 0.5,
               "y": 0.5
             },
-            "zoom": 1.05,
+            "zoom": 1.0,
             "easing": "smoothstep"
           },
           {
-            "frame": 24,
+            "frame": {
+              "at": "leaving",
+              "edge": "end"
+            },
             "focus": {
               "x": 0.5,
               "y": 0.5
             },
-            "zoom": 1.0,
+            "zoom": 1.07,
             "easing": "smoothstep"
           }
         ]
@@ -14615,7 +17457,9 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "leaving"
+          },
           "gainDb": -22
         }
       ]
@@ -14623,8 +17467,8 @@
     {
       "id": "mg-m63",
       "template": "hero-reveal",
-      "durationFrames": 442,
-      "animationDurationFrames": 442,
+      "durationFrames": 417,
+      "animationDurationFrames": 417,
       "caption": {
         "text": "mg-m63",
         "preset": "body"
@@ -14680,7 +17524,23 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "three"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "fingernails"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "lasers"
+          },
           "gainDb": -22
         }
       ]
@@ -14688,8 +17548,8 @@
     {
       "id": "mg-m64",
       "template": "hero-reveal",
-      "durationFrames": 86,
-      "animationDurationFrames": 86,
+      "durationFrames": 81,
+      "animationDurationFrames": 81,
       "caption": {
         "text": "mg-m64",
         "preset": "body"
@@ -14701,8 +17561,8 @@
           {
             "frame": 0,
             "focus": {
-              "x": 0.4962,
-              "y": 0.5011
+              "x": 0.4905,
+              "y": 0.5
             },
             "zoom": 1.05,
             "easing": "smoothstep"
@@ -14742,8 +17602,8 @@
     {
       "id": "mg-m65",
       "template": "hero-reveal",
-      "durationFrames": 233,
-      "animationDurationFrames": 233,
+      "durationFrames": 220,
+      "animationDurationFrames": 220,
       "caption": {
         "text": "mg-m65",
         "preset": "body"
@@ -14799,7 +17659,16 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "tides"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "push"
+          },
           "gainDb": -22
         }
       ]
@@ -14807,8 +17676,8 @@
     {
       "id": "mg-m66",
       "template": "hero-reveal",
-      "durationFrames": 393,
-      "animationDurationFrames": 393,
+      "durationFrames": 371,
+      "animationDurationFrames": 371,
       "caption": {
         "text": "mg-m66",
         "preset": "body"
@@ -14864,7 +17733,16 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "six"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "last"
+          },
           "gainDb": -22
         }
       ]
@@ -14872,8 +17750,8 @@
     {
       "id": "mg-m67",
       "template": "hero-reveal",
-      "durationFrames": 332,
-      "animationDurationFrames": 332,
+      "durationFrames": 313,
+      "animationDurationFrames": 313,
       "caption": {
         "text": "mg-m67",
         "preset": "body"
@@ -14929,7 +17807,23 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "away"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "old"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "billions"
+          },
           "gainDb": -22
         }
       ]
@@ -14937,8 +17831,8 @@
     {
       "id": "mg-m68",
       "template": "hero-reveal",
-      "durationFrames": 418,
-      "animationDurationFrames": 418,
+      "durationFrames": 394,
+      "animationDurationFrames": 394,
       "caption": {
         "text": "mg-m68",
         "preset": "body"
@@ -14994,7 +17888,37 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "die"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "light"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "tides"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "eclipse"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "clock"
+          },
           "gainDb": -22
         }
       ]
@@ -15002,8 +17926,8 @@
     {
       "id": "mg-m69",
       "template": "hero-reveal",
-      "durationFrames": 73,
-      "animationDurationFrames": 73,
+      "durationFrames": 69,
+      "animationDurationFrames": 69,
       "caption": {
         "text": "mg-m69",
         "preset": "body"
@@ -15018,16 +17942,19 @@
               "x": 0.5,
               "y": 0.5
             },
-            "zoom": 1.05,
+            "zoom": 1.0,
             "easing": "smoothstep"
           },
           {
-            "frame": 24,
+            "frame": {
+              "at": "there",
+              "edge": "end"
+            },
             "focus": {
               "x": 0.5,
               "y": 0.5
             },
-            "zoom": 1.0,
+            "zoom": 1.07,
             "easing": "smoothstep"
           }
         ]
@@ -15059,7 +17986,9 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
+          "frame": {
+            "at": "there"
+          },
           "gainDb": -22
         }
       ]
@@ -15067,8 +17996,8 @@
     {
       "id": "mg-m70",
       "template": "hero-reveal",
-      "durationFrames": 184,
-      "animationDurationFrames": 184,
+      "durationFrames": 173,
+      "animationDurationFrames": 173,
       "caption": {
         "text": "mg-m70",
         "preset": "body"
@@ -15080,8 +18009,8 @@
           {
             "frame": 0,
             "focus": {
-              "x": 0.4962,
-              "y": 0.5011
+              "x": 0.4905,
+              "y": 0.5
             },
             "zoom": 1.05,
             "easing": "smoothstep"
@@ -15121,8 +18050,8 @@
     {
       "id": "mg-m71",
       "template": "hero-reveal",
-      "durationFrames": 158,
-      "animationDurationFrames": 158,
+      "durationFrames": 520,
+      "animationDurationFrames": 160,
       "caption": {
         "text": "mg-m71",
         "preset": "body"
@@ -15134,8 +18063,8 @@
           {
             "frame": 0,
             "focus": {
-              "x": 0.5,
-              "y": 0.5
+              "x": 0.4829,
+              "y": 0.5034
             },
             "zoom": 1.05,
             "easing": "smoothstep"
@@ -15179,6 +18108,18 @@
         {
           "sound": "pop",
           "frame": 4,
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": 10,
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "bigger"
+          },
           "gainDb": -22
         }
       ]

@@ -146,9 +146,11 @@ if __name__ == '__main__' and '--script-only' in sys.argv:
 import recipes
 LIGHT = '#eef1f8'
 recipes.INK = LIGHT  # night page: small labels in light ink
-DURATION = int(sys.argv[1]) if len(sys.argv) > 1 else 600
+DURATION = int(sys.argv[1]) if len(sys.argv) > 1 else 578
+END_CARD = 12  # seconds of end card after the last line (YouTube end-screen elements need 5-20 s)
 write_story(DURATION)
 ep = Episode(str(STORY), 'wide'); F = ep.F; W, H = F['W'], F['H']
+ep.story['durationSeconds'] = DURATION - END_CARD
 ep.theme = 'paint-night'
 ep.backdrop(stars=26)
 SUN = '#ffcf4a'
@@ -163,8 +165,8 @@ def arka(x=.3, fy=.8, h=.5, poses=((0, 'float'),), faces=((0, 'happy'),), **k):
     return Char('arka', 'arka', x=x, fy=fy, h=h, poses=list(poses), faces=list(faces), **k)
 
 
-def moon(pid, x, y, size, lit=1, **extra):
-    return kit(F, pid, 'crescent', x, y, size, level=[{'frame': 0, 'value': lit}], **extra)
+def moon(pid, px, py, size, lit=1, **extra):
+    return kit(F, pid, 'crescent', px, py, size, level=[{'frame': 0, 'value': lit}], **extra)
 
 
 def earth(pid, x, y, r, **layer):
@@ -308,6 +310,86 @@ shot('m41', None, [arka(x=.32, poses=[(0, 'stand')], faces=[(0, 'puffed')])], [k
 shot('m42', T3, [], [kit(F, 'clock', 'clock', .3, .52, 0.47, level=lv((0, .1)), text='+1 minute')],
      [Note('millions of years', A('millions'), 'title'), Note('per extra minute', A('minute'), 'note')])
 
+# ------------------------------------------------------------------ chapter 4: the big myth
+T4, T5, T6 = 'THE BIG MYTH', 'A MILLION YEARS LATER', 'THE TWIST'
+GREEN = '#4caf50'
+shot('m43', T4, [], [kit(F, 'tilt', 'earth-axis', .3, .55, .55, rotation=23, level=lv((0, 1)))], [Note('the tilt', A('tilt'), 'title')], cam='push')
+shot('m44', T4, [], [kit(F, 'tilt', 'earth-axis', .24, .55, .5, rotation=23, level=lv((0, 1))),
+                     kit(F, 'dial', 'tilt-dial', .5, .55, .5, w=1.0, h=1.0, range=[22.1, 24.5], color=GREEN, level=lv((0, .26)), text='today')],
+     [Note('23.5°', A('twenty-three'), 'title'), Note('= seasons', A('seasons'), 'note'), Note('22° to 24.5°', A('rocked'), 'note'), Note('paces the ice ages', A('ice'), 'small')])
+shot('m45', T4, [], [kit(F, 'tilt', 'earth-axis', .3, .55, .5, rotation=23, level=lv((0, 1))), moon('m', .55, .35, .16)],
+     [Note('the Moon keeps it steady', A('steady'), 'note'), Note('without it?', A('without'), 'title')])
+shot('m46', T4, [], [kit(F, 'dial', 'tilt-dial', .32, .56, .6, w=1.0, h=1.0, range=[0, 85], level=lv((0, .26), (40, .05), (80, .94), (120, .1), (160, .9), (200, .2), (240, .94)), text='1993 study'),
+                     kit(F, 'side', 'earth-axis', .7, .68, .3, rotation=85, level=lv((0, 1)), opacity=show_from(A('side')))],
+     [Note('0° to 85°', A('eighty-five'), 'title'), Note('lying on its side', A('side'), 'note', near='side'), Note('months of day, months of night', A('endless'), 'small')])
+shot('m47', None, [arka(x=.32, poses=[(0, 'panic')], faces=[(0, 'scared')])], [kit(F, 'dial', 'tilt-dial', .66, .58, .45, w=1.0, h=1.0, range=[0, 85], level=lv((0, .9), (30, .1), (60, .9)))],
+     [Note('bad.', A('bad'), 'title', pos=(1300, 260))])
+shot('m48', T4, [], [kit(F, 'book', 'sign', .25, .5, .3, w=1.8, h=1.0, text='BOOKS'), kit(F, 'art', 'sign', .45, .38, .26, w=1.8, h=1.0, text='ARTICLES', **pop_in(A('articles'), (.45 * W, .38 * H))),
+                     kit(F, 'vid', 'sign', .4, .66, .26, w=1.8, h=1.0, text='VIDEOS', **pop_in(A('videos'), (.4 * W, .66 * H)))],
+     [Note('"0° to 85°"', 4, 'title'), Note('it spread everywhere', A('everywhere'), 'note')], stamps=[(0, A('videos'))])
+shot('m49', T4, [], [kit(F, 'dial', 'tilt-dial', .3, .56, .6, w=1.0, h=1.0, range=[12, 38], color=GREEN, level=lv((0, .26), (50, .14), (100, .42), (150, .2), (200, .4)), text='2012 simulations')],
+     [Note('NASA: Lissauer et al.', A('Lissauer'), 'small'), Note('far calmer', A('calmer'), 'note'), Note('12° to 38°', A('thirty-eight'), 'title'), Note('100 million years', A('hundred'), 'small')])
+shot('m50', T4, [], [kit(F, 'hot', 'thermometer', .25, .55, .45, w=.4, h=1.2, level=lv((0, .5), (40, .9))), kit(F, 'cold', 'thermometer', .4, .55, .45, w=.4, h=1.2, level=lv((0, .5), (40, .12)), color='#7fc0ff')],
+     [Note('hotter summers', A('hotter'), 'note'), Note('colder winters', A('colder'), 'note'), Note('no sudden flip', A('flip'), 'title'), Note('no instant freeze', A('freeze'), 'title')])
+shot('m51', T4, [], [Prop(planet('mars', .3, .52, .16, '#c4501f', ('#d9703f', '#b2441a'), craters=3, shade=.25, seed=4,
+                                rotate=track((0, -20), (80, 25, 'smoothstep'), (160, -20, 'smoothstep'), (240, 25, 'smoothstep')), anchor={'x': .3 * W, 'y': .52 * H}), Box(.18 * W, .32 * H, .42 * W, .72 * H, 'mars')),
+                     kit(F, 'pho', 'small-moon', .46, .32, .05), kit(F, 'dei', 'small-moon', .5, .7, .04)],
+     [Note('a real example: Mars', A('Mars'), 'note'), Note('2 tiny moons', A('tiny'), 'small'), Note('swings of 45°+', A('forty-five'), 'title')])
+shot('m52', None, [arka(x=.3, poses=[(0, 'shrug')], faces=[(0, 'smug')])], [Prop(planet('mars', .68, .5, .12, '#c4501f', ('#d9703f', '#b2441a'), craters=2, shade=.25, seed=4), Box(.6 * W, .38 * H, .76 * W, .62 * H, 'mars'))],
+     [Note('Mars: no big moon', 4, 'small', pos=(1300, 250)), Note('nobody holds your hand', A('hand'), 'note', pos=(1300, 820))])
+shot('m53', T4, [], [kit(F, 'tilt', 'earth-axis', .3, .55, .5, rotation=23, level=lv((0, 1)), rotate=track((0, 0), (40, 12, 'smoothstep'), (80, -6, 'smoothstep'), (120, 10, 'smoothstep')), anchor={'x': .3 * W, 'y': .55 * H})],
+     [Note('a bit like Mars', A('Mars'), 'note'), Note('wobblier', A('Wobblier'), 'note'), Note('not tumbling', A('tumbling'), 'title')])
+shot('m54', None, [arka(x=.32, poses=[(0, 'think')], faces=[(0, 'neutral')])], [kit(F, 'q', 'question', .62, .45, .22)], [Note('not doomed?', A('doomed'), 'title', pos=(1300, 300))])
+shot('m55', T4, [], [earth('earth', .32, .55, .17), kit(F, 'ok', 'check', .55, .5, .26, **pop_in(A('tonight'), (.55 * W, .5 * H)))],
+     [Note('not tonight', A('tonight'), 'title'), Note('not because of the tilt', A('tilt'), 'note')])
+
+# ------------------------------------------------------------------ chapter 5: a million years later
+shot('m56', T5, [], [kit(F, 'cnt', 'counter', .32, .55, .3, text='thousand years', values=[{'frame': 0, 'value': 0, 'ramp': True}, {'frame': 50, 'value': 1000}])],
+     [Note('+1,000,000 years', A('million'), 'title')], cam='push')
+shot('m57', T5, [], [kit(F, 'lion', 'lion', .2, .7, .3, w=1.2, h=.8, level=lv((0, .7))), kit(F, 'coral', 'coral', .42, .78, .32, w=1.0, h=1.0, count=10, level=lv((0, .6))),
+                     sun('sun', .3, .3, .07, opacity=show_from(A('Sun'))), kit(F, 'th', 'thermometer', .55, .5, .3, w=.4, h=1.2, level=lv((0, .5)), opacity=show_from(A('temperature')))],
+     [Note('life adapts', A('adapt'), 'title'), Note('new clocks: Sun, seasons, water', A('clocks'), 'note'), Note('some struggle, some vanish', A('disappear'), 'small')])
+shot('m58', T5, [], [kit(F, 'stars2', 'doodle-stars', .5, .5, .9, count=40, opacity=track((0, 0), (A('darkest'), 0), (plus(A('darkest'), 40), 1))),
+                     kit(F, 'town', 'town', .3, .88, .5, w=1.1, h=.5, level=lv((0, 0)))],
+     [Note('the darkest, starriest sky', A('starriest'), 'title', pos=(1180, 420))])
+shot('m59', T5, [], [kit(F, 'cal', 'calendar', .28, .5, .3, text='MOON'), moon('m', .45, .34, .14),
+                     kit(F, 'mon', 'sign', .5, .66, .26, w=1.8, h=1.0, text="MONDAY = MOON'S DAY", **pop_in(A('Monday'), (.5 * W, .66 * H)))],
+     [Note('we counted time by the Moon', A('counted'), 'note'), Note('month ← moon', A('month'), 'title')])
+shot('m60', None, [arka(x=.32, poses=[(0, 'cheer')], faces=[(0, 'grin')])], [kit(F, 'cal', 'calendar', .66, .5, .26, text='MON')], [Note('no Mondays?!', A('Mondays'), 'title', pos=(1300, 280))])
+shot('m61', T5, [], [kit(F, 'cal', 'calendar', .3, .5, .32, text='MON'), kit(F, 'x', 'cross', .3, .5, .3, opacity=track((0, 0)))],
+     [Note('still Mondays.', A('Mondays'), 'title'), Note('sorry, Arka.', A('Sorry'), 'note')])
+
+# ------------------------------------------------------------------ chapter 6: the twist
+shot('m62', T6, [], [earth('earth', .25, .55, .15), moon('m', .55, .5, .14, x=track((0, 0), (A('leaving'), 0), (plus(A('leaving'), 60), 260, 'smoothstep')))],
+     [Note('the Moon is already leaving', A('leaving'), 'title')], cam='push')
+shot('m63', T6, [], [kit(F, 'ruler', 'ruler', .52, .5, .45, w=.4, h=1.0, level=lv((0, 0), (60, .5)), text='3.8 cm / year'),
+                     kit(F, 'refl', 'reflector', .3, .72, .36, w=1.0, h=.8, level=lv((0, 0), (120, 0), (200, 1)), opacity=show_from(A('Apollo')))],
+     [Note('3.8 cm a year', A('three'), 'title'), Note('= fingernail speed', A('fingernails'), 'note'), Note('Apollo mirrors + lasers', A('lasers'), 'small')])
+shot('m64', None, [arka(x=.3, poses=[(0, 'point-right')], faces=[(0, 'sad')])], [moon('m', .7, .45, .14, x=track((0, 0), (90, 120, 'smoothstep')))],
+     [Note('because of me?', A('me'), 'title', pos=(1300, 760))])
+shot('m65', T6, [], [kit(F, 'spin', 'earth-axis', .25, .55, .45, rotation=23, level=lv((0, 1), (150, .6))), moon('m', .58, .45, .14, x=track((0, 0), (A('push'), 0), (plus(A('push'), 50), 140, 'smoothstep'))),
+                     kit(F, 'arr', 'pressure-arrows', .45, .5, .2, direction='out', count=3)],
+     [Note('the tides', A('tides'), 'title'), Note('slow Earth, push the Moon out', A('push'), 'note')])
+shot('m66', T6, [], [sun('sun', .3, .5, .15), moon('m', .3, .5, .11, scale=track((0, 1.3), (A('small'), 1.3), (plus(A('small'), 60), .8, 'smoothstep')), anchor={'x': .3 * W, 'y': .5 * H}),
+                     kit(F, 'cnt', 'counter', .62, .74, .2, text='million years', values=[{'frame': 0, 'value': 0}, {'frame': A('six'), 'value': 0, 'ramp': True}, {'frame': plus(A('six'), 45), 'value': 600}])],
+     [Note('~600 million years', A('six'), 'title'), Note('the last total eclipse', A('last'), 'note')])
+shot('m67', T6, [], [sun('sun', .25, .5, .12, scale=track((0, 1), (A('old'), 1), (plus(A('old'), 60), 1.8, 'smoothstep')), anchor={'x': .25 * W, 'y': .5 * H}),
+                     earth('earth', .55, .55, .09), moon('m', .66, .46, .07)],
+     [Note("it won't get away", A('away'), 'note'), Note('the Sun grows old first', A('old'), 'note'), Note('billions of years', A('billions'), 'title')])
+
+# ------------------------------------------------------------------ ending
+shot('m68', 'SO, IF IT VANISHED TONIGHT...', [], [moon('ghost', .3, .45, .25, lit=0)],
+     [Note('we would not all die', A('die'), 'title'), Note('- light at night', A('light'), 'note'), Note('- 2/3 of our tides', A('tides'), 'note'),
+      Note('- every eclipse', A('eclipse'), 'note'), Note('- an ancient clock', A('clock'), 'note')])
+shot('m69', None, [], [kit(F, 'town', 'town', .42, .88, .62, w=1.1, h=.5, level=lv((0, 1))), moon('moon', .66, .34, .26, opacity=track((0, 0), (20, 0), (60, 1, 'smoothstep')))],
+     [Note("it's still there.", A('there'), 'title', pos=(1240, 640))], cam='push')
+shot('m70', None, [arka(x=.3, poses=[(0, 'wave')], faces=[(0, 'grin')])],
+     [moon('moon', .66, .3, .16), kit(F, 'sub', 'sign', .62, .62, .3, w=1.8, h=1.0, text='SUBSCRIBE', **pop_in(A('Subscribe'), (.62 * W, .62 * H)))], [])
+shot('m71', None, [arka(x=.14, h=.38, poses=[(0, 'wave')], faces=[(0, 'happy')])],
+     [moon('moon', .14, .3, .1)],
+     [Note('GAHANARKA', 4, 'title', size=100, pos=(W / 2, 190), color=GOLD), Note('light in the unfathomable', 10, 'small', pos=(W / 2, 270)),
+      Note('next: something even bigger', A('bigger'), 'note', pos=(W / 2, 360))])
+
 # ------------------------------------------------------------------ chapters 4-6 + ending: placeholders until pass 2
 for bid, intent, parts in SHOTS:
     if bid in ep.plans: continue
@@ -317,17 +399,21 @@ for bid, intent, parts in SHOTS:
 
 # Night page: line-art and new props get light ink so they read on navy.
 LIGHT_INK = {'doodle-stars', 'counter', 'bar', 'bulb', 'question', 'thermometer', 'fish', 'crescent', 'orbit-ring', 'town', 'lion', 'zebra',
-             'coral', 'plankton', 'tide-gauge', 'tilt-dial', 'earth-axis', 'impact', 'dino', 'reflector', 'bed', 'stir', 'clock', 'pressure-arrows', 'cross'}
+             'coral', 'plankton', 'tide-gauge', 'tilt-dial', 'earth-axis', 'impact', 'dino', 'reflector', 'bed', 'stir', 'clock', 'pressure-arrows', 'cross', 'ruler', 'check', 'small-moon'}
 for layer in [pr.layer for pl in ep.plans.values() for pr in pl['props']] + ep._backdrop['layers']:
     k = layer.get('kit', {})
     if k.get('type') == 'prop' and k.get('item') in LIGHT_INK: k.setdefault('ink', '#c9d3ea')
 
+# One licensed track per chapter (all YouTube Audio Library License, see docs/MUSIC_SOURCES.md); a different order from Ep 3.
 ep.music([('m1', 'assets/music/6-space-event-horizon.mp3', 0), ('m8', 'assets/music/1-curious-b-frame-dragging.mp3', 0),
-          ('m20', 'assets/music/2-playful-a-quirk-n-twerk.mp3', 0), ('m31', 'assets/music/3-eerie-a-lake-jupiter.mp3', 0)],
-         dropouts=[('m4', 0, 1.2)], target_lufs=-16)
+          ('m20', 'assets/music/2-playful-a-quirk-n-twerk.mp3', 0), ('m31', 'assets/music/3-eerie-a-lake-jupiter.mp3', 0),
+          ('m43', 'assets/music/4-tense-b-standoff.mp3', 0, -2), ('m56', 'assets/music/5-uplifting-b-defying-gravity.mp3', 0),
+          ('m62', 'assets/music/8-space-laniakea.mp3', 0), ('m68', 'assets/music/6-space-singularity.mp3', 0)],
+         dropouts=[('m4', 0, 1.2), ('m49', 0, 1.0), ('m62', 0, 1.0)], target_lufs=-16)
 
 if __name__ == '__main__':
     board = ep.build()
+    board['scenes'][-1]['durationFrames'] += END_CARD * FPS
     path = ROOT / (sys.argv[2] if len(sys.argv) > 2 else 'storyboards/moon-gone.json')
     path.write_text(json.dumps(board, indent=2, ensure_ascii=False) + '\n')
     print('wrote', path.name, len(board['scenes']), 'shots,', sum(s['durationFrames'] for s in board['scenes']), 'frames;', sum(len(p['notes']) for p in ep.placements), 'notes placed')
