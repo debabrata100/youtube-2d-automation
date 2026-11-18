@@ -235,9 +235,16 @@ shot('m13', T1, [], [kit(F, 'lion1', 'lion', .28, .62, 0.44, w=1.2, h=.8, level=
                      kit(F, 'lion2', 'lion', .68, .62, 0.44, w=1.2, h=.8, level=lv((0, 0)), **pop_in(A('emptier'), (.68 * W, .62 * H))),
                      moon('m', .68, .3, 0.15, opacity=show_from(A('full')))],
      [Note('Serengeti, Tanzania', A('Serengeti'), 'small'), Note('study: Packer et al. 2011', A('bellies'), 'small'), Note('dark night: full belly', A('dark'), 'note', near='lion1'), Note('full Moon: hungry', A('emptier'), 'note', near='lion2')])
-shot('m14', T1, [], [kit(F, 'lion', 'lion', .3, .64, 0.44, w=1.2, h=.8, level=lv((0, 1))),
-                     kit(F, 'zebra', 'zebra', .66, .64, 0.42, w=1.2, h=.9, x=track((0, 0), (A('eat'), 0), (plus(A('eat'), 25), 320, 'ease-out-cubic')))],
-     [Note("every night: a hunter's night", A("hunter's"), 'note'), Note('great for lions', A('lions'), 'small')])
+# The lion crouches, then pounces; the zebra bolts first and gets clear (nothing is caught: advertiser-friendly).
+LEAP = A('Not')
+shot('m14', T1, [], [kit(F, 'lion', 'lion', .3, .64, 0.44, w=1.2, h=.8, level=lv((0, 1)),
+                         x=track((0, 0), (LEAP, 0), (plus(LEAP, 26), 400, 'ease-out-cubic')),
+                         y=track((0, 0), (plus(LEAP, -10), 0), (LEAP, 14, 'smoothstep'), (plus(LEAP, 12), -70, 'ease-out-cubic'), (plus(LEAP, 26), 0, 'smoothstep')),
+                         rotate=track((0, 0), (LEAP, 0), (plus(LEAP, 8), -14, 'smoothstep'), (plus(LEAP, 22), 8, 'smoothstep'), (plus(LEAP, 30), 0, 'smoothstep')),
+                         anchor={'x': .3 * W, 'y': .64 * H}),
+                     kit(F, 'zebra', 'zebra', .66, .64, 0.42, w=1.2, h=.9, x=track((0, 0), (plus(LEAP, 2), 0), (plus(LEAP, 22), 420, 'smoothstep')))],
+     [Note("every night: a hunter's night", A("hunter's"), 'note'), Note('great for lions', A('lions'), 'small')],
+     sounds=[('whoosh', LEAP, -20)])
 shot('m15', None, [arka(x=.3, poses=[(0, 'cower')], faces=[(0, 'scared')])], [kit(F, 'zebra', 'zebra', .66, .62, 0.42, w=1.2, h=.9)],
      [Note('never be a zebra', A('zebra'), 'title', pos=(1250, 330))])
 shot('m16', T1, [], [kit(F, 'plank', 'plankton', .32, .55, 0.65, w=1.1, h=1.0, count=34, level=lv((0, .2), (80, .25), (140, .85), (220, .85))),

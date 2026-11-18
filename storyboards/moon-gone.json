@@ -2621,6 +2621,102 @@
               }
             ],
             "ink": "#c9d3ea"
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Not"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Not",
+                "offset": 26
+              },
+              "value": 400,
+              "ease": "ease-out-cubic"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Not",
+                "offset": -10
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Not"
+              },
+              "value": 14,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": {
+                "at": "Not",
+                "offset": 12
+              },
+              "value": -70,
+              "ease": "ease-out-cubic"
+            },
+            {
+              "frame": {
+                "at": "Not",
+                "offset": 26
+              },
+              "value": 0,
+              "ease": "smoothstep"
+            }
+          ],
+          "rotate": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Not"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Not",
+                "offset": 8
+              },
+              "value": -14,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": {
+                "at": "Not",
+                "offset": 22
+              },
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": {
+                "at": "Not",
+                "offset": 30
+              },
+              "value": 0,
+              "ease": "smoothstep"
+            }
+          ],
+          "anchor": {
+            "x": 576.0,
+            "y": 691.2
           }
         },
         {
@@ -2640,17 +2736,18 @@
             },
             {
               "frame": {
-                "at": "eat"
+                "at": "Not",
+                "offset": 2
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "eat",
-                "offset": 25
+                "at": "Not",
+                "offset": 22
               },
-              "value": 320,
-              "ease": "ease-out-cubic"
+              "value": 420,
+              "ease": "smoothstep"
             }
           ]
         }
@@ -15123,6 +15220,13 @@
             "at": "lions"
           },
           "gainDb": -22
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "Not"
+          },
+          "gainDb": -20
         }
       ]
     },
