@@ -1,6 +1,6 @@
 # 06: Episode 4, What If the Moon Disappeared Tonight?
 
-- **File:** `jobs/mg-final-a/output/narrated-animation.mp4` (9:38, 1920×1080, 30 fps, −16.3 LUFS; all automated checks pass; 0 paid requests for the render). Rename it to `what-if-the-moon-disappeared-tonight.mp4` before uploading.
+- **File:** `jobs/mg-final-b/output/narrated-animation.mp4` (re-render after the 18 Nov review fixes; 9:38, 1920×1080, 30 fps, −16.3 LUFS; all automated checks pass; 0 paid requests for the render). Rename it to `what-if-the-moon-disappeared-tonight.mp4` before uploading.
 - **Captions:** `jobs/mg-upload/6-captions-english.srt` (318 cues, timed to the narration).
 - **Thumbnails (free, drawn from the episode's own art):** `jobs/mg-upload/thumb-a.png` (THE MOON IS GONE), `thumb-b.png` (EARTH TIPS OVER? + MYTH), `thumb-c.png` (NO MOON. NOW WHAT?). Use all three in Test & compare.
 - **When:** to be decided by Debabrata (suggested Thu 26 Nov, 9:30 PM IST).
@@ -32,7 +32,7 @@ The Moon can't really vanish; this is a thought experiment. Numbers are rounded.
 - Earth's tilt without the Moon, 1993: Laskar, Joutel & Robutel, Nature 361
 - Earth's tilt without the Moon, 2012 simulations (about 12° to 38°): Lissauer, Barnes & Chambers, Icarus
 - Tilt history and the ice ages: NASA Science, Milankovitch cycles
-- Lions and moonlight: Packer et al. 2011, PLoS ONE
+- Lions and moonlight (Serengeti, Tanzania): Packer et al. 2011, PLoS ONE
 - Arctic zooplankton and the full Moon: Last et al. 2016, Current Biology
 - Sleep before a full Moon: Casiraghi et al. 2021, Science Advances
 - Coral spawning and moonlight: Kaniewska et al. 2015, eLife
@@ -45,7 +45,7 @@ More from Gahanarka:
 ▶ How you would die on every moon: https://youtu.be/MnfXbn6mD8I
 ▶ What happens if you take off your helmet in space: https://youtu.be/bUK19RqsLok
 
-All drawings are made for this video.
+Images: NASA (Apollo 11, AS11-40-5952); NASA/Aubrey Gemignani (2017 total solar eclipse, Madras, Oregon); NASA ISS crew photo (Great Barrier Reef, ISS045-E-56257). NASA images are public domain. All drawings are made for this video.
 Music from the YouTube Audio Library: Event Horizon, Frame-Dragging, Laniakea and Singularity (The Grey Room / Density & Time), Defying Gravity (Density & Time), Quirk n Twerk (The Soundlings), Lake Jupiter (John Patitucci), Standoff.
 Narration voiced with AI (ElevenLabs).
 
@@ -80,7 +80,7 @@ what if the moon disappeared, what if the moon disappeared tonight, what if ther
 ### Assets and licences
 - [x] Narration generated on the paid ElevenLabs Starter plan (active since 15 Nov); request IDs recorded above.
 - [x] All 8 music tracks are listed in `docs/MUSIC_SOURCES.md` under the YouTube Audio Library Licence.
-- [x] No photos used; nothing to credit.
+- [x] Three NASA photos (public domain, no NASA logo or endorsement implied): Apollo 11 reflector AS11-40-5952, 2017 eclipse by NASA/Aubrey Gemignani, Great Barrier Reef ISS045-E-56257. Credited on screen and in the description. Source files in `assets/nasa/` (not committed).
 - [x] Arka drawn by our own renderer.
 - [x] No third-party characters, logos or film or TV material.
 

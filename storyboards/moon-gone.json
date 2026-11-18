@@ -11923,34 +11923,34 @@
           "scale": [
             {
               "frame": 0,
-              "value": 0.558
+              "value": 0.765
             },
             {
               "frame": {
                 "at": "still",
                 "offset": -1
               },
-              "value": 0.558
+              "value": 0.765
             },
             {
               "frame": {
                 "at": "still",
                 "offset": 6
               },
-              "value": 0.62,
+              "value": 0.85,
               "ease": "ease-out-back"
             }
           ],
           "x": [
             {
               "frame": 0,
-              "value": -191.99999999999994
+              "value": -230.39999999999998
             }
           ],
           "y": [
             {
               "frame": 0,
-              "value": 21.60000000000002
+              "value": 32.40000000000003
             }
           ]
         }

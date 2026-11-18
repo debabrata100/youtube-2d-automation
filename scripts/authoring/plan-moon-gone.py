@@ -380,7 +380,7 @@ shot('m62', T6, [], [earth('earth', .25, .55, .15), moon('m', .55, .5, .14, x=tr
      [Note('the Moon is already leaving', A('leaving'), 'title')], cam='push')
 shot('m63', T6, [], [kit(F, 'ruler', 'ruler', .52, .5, .45, w=.4, h=1.0, level=lv((0, 0), (60, .5)), text='3.8 cm / year', opacity=show_until(A('still'))),
                      kit(F, 'refl', 'reflector', .3, .72, .36, w=1.0, h=.8, level=lv((0, 0), (120, 0), (200, 1)), opacity=track((0, 0), (A('Apollo'), 0), (plus(A('Apollo'), 4), 1), (plus(A('still'), -1), 1), (A('still'), 0))),
-                     photo(ep, F, 'photo-reflector', 'nasa/inserts/photo-reflector.png', A('still'), x=.4, y=.52, scale=.62, box=(.3, .2, .7, .84))],
+                     photo(ep, F, 'photo-reflector', 'nasa/inserts/photo-reflector.png', A('still'), x=.38, y=.53, scale=.85, box=(.3, .18, .7, .86))],
      [Note('3.8 cm a year', A('three'), 'title', pos=(.8 * W, .34 * H)), Note('= fingernail speed', A('fingernails'), 'note', pos=(.8 * W, .44 * H)),
       Note('Apollo mirrors + lasers', A('lasers'), 'small', pos=(.8 * W, .53 * H))])
 shot('m64', None, [arka(x=.3, poses=[(0, 'point-right')], faces=[(0, 'sad')])], [moon('m', .7, .45, .14, x=track((0, 0), (90, 120, 'smoothstep')))],
