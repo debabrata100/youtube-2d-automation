@@ -1,7 +1,7 @@
 # 06: Episode 4, What If the Moon Disappeared Tonight?
 
 - **Upload folder:** `~/Downloads/gahanarka-upload/6-moon-gone/` (every upload lives in `gahanarka-upload`). It holds the video `what-if-the-moon-disappeared-tonight.mp4` (render `jobs/mg-final-b`, approved by Debabrata 19 Nov; 9:38, 1920×1080, 30 fps, −16.3 LUFS; 0 paid requests), `captions-english.srt` (318 cues) and three thumbnails for Test & compare: `thumb-a-moon-is-gone.png`, `thumb-b-tips-over-myth.png`, `thumb-c-no-moon-now-what.png` (drawn from the episode's own art, free).
-- **When:** Thu 26 Nov, 9:30 PM IST (decided 18 Nov). Playlist: new "What If…?".
+- **Status:** uploaded and scheduled 19 Nov, 1:20 AM IST: https://youtu.be/ZbEeo3Xx0lw goes public **Thu 26 Nov 2026, 9:30 PM IST**. Copyright and Community Guidelines checks: no issues. Thumbnail A/B test (a, b, c) starts when public. End screen 9:26–9:38: Ep 3 + Subscribe. Playlist: "What If…?" (created 19 Nov). Still to do after it's live: pin the comment below.
 - **Script, sources and fact check:** `stories/moon-gone-script.md`. Narration request IDs: aiFBSbbE5FTiM81uSeCP, xtWSejIn5vpKawSTbE4Z (ElevenLabs Starter, 18 Nov 2026).
 
 ## Title (pick 1)
@@ -99,9 +99,9 @@ what if the moon disappeared, what if the moon disappeared tonight, what if ther
 - [x] Title and thumbnail don't repeat the template of the previous 3 uploads.
 
 ### Studio settings at upload
-- [ ] Audience: No, it's not made for kids. Age restriction: No.
-- [ ] Altered or synthetic content: No.
-- [ ] Paid promotion: No.
-- [ ] Category Science & Technology; playlist set; SRT uploaded.
-- [ ] Copyright check in Studio passed before scheduling.
-- [ ] End screen points to Ep 3.
+- [x] Audience: No, it's not made for kids. Age restriction: No.
+- [x] Altered or synthetic content (AI use): No.
+- [x] Paid promotion: No.
+- [x] Category Science & Technology; playlist set; SRT uploaded.
+- [x] Copyright check in Studio passed before scheduling.
+- [x] End screen points to Ep 3.
