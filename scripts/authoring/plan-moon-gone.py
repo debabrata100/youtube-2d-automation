@@ -208,7 +208,8 @@ shot('m6', T0, [], [kit(F, 'q', 'question', .25, .5, 0.39)],
      [Note('"we all die"', 4, 'title'), Note('what science says', A('science'), 'note'),
       Note('night · week · million years', A('million'), 'small')], stamps=[(0, A('newest'))])
 shot('m7', None, [arka(x=.32, poses=[(0, 'shrug')], faces=[(0, 'sad')])],
-     [kit(F, 'job', 'sign', .62, .55, 0.42, w=1.8, h=1.0, text='MOON JOB: GONE?', **pop_in(A('job'), (.62 * W, .55 * H)))], [])
+     [kit(F, 'job', 'sign', .62, .55, 0.42, w=1.8, h=1.0, text='MOON JOB: GONE?', **pop_in(2, (.62 * W, .55 * H)))],
+     [Note('new job?', A('job'), 'title', pos=(1190, 300))])
 
 # ------------------------------------------------------------------ chapter 1: the first night
 shot('m8', T1, [], [kit(F, 'b1', 'bar', .3, .45, 0.65, w=1.0, h=.4, text='full Moon', level=lv((0, 0), (20, .95)), color='#ffe27a'),
@@ -381,7 +382,7 @@ shot('m67', T6, [], [sun('sun', .25, .5, .12, scale=track((0, 1), (A('old'), 1),
 shot('m68', 'SO, IF IT VANISHED TONIGHT...', [], [moon('ghost', .3, .45, .25, lit=0)],
      [Note('we would not all die', A('die'), 'title'), Note('- light at night', A('light'), 'note'), Note('- 2/3 of our tides', A('tides'), 'note'),
       Note('- every eclipse', A('eclipse'), 'note'), Note('- an ancient clock', A('clock'), 'note')])
-shot('m69', None, [], [kit(F, 'town', 'town', .42, .88, .62, w=1.1, h=.5, level=lv((0, 1))), moon('moon', .66, .34, .26, opacity=track((0, 0), (20, 0), (60, 1, 'smoothstep')))],
+shot('m69', None, [], [kit(F, 'town', 'town', .42, .88, .62, w=1.1, h=.5, level=lv((0, 1))), moon('moon', .66, .34, .26, opacity=track((0, 0), (8, 0), (32, 1, 'smoothstep')))],
      [Note("it's still there.", A('there'), 'title', pos=(1240, 640))], cam='push')
 shot('m70', None, [arka(x=.3, poses=[(0, 'wave')], faces=[(0, 'grin')])],
      [moon('moon', .66, .3, .16), kit(F, 'sub', 'sign', .62, .62, .3, w=1.8, h=1.0, text='SUBSCRIBE', **pop_in(A('Subscribe'), (.62 * W, .62 * H)))], [])
