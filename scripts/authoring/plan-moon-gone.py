@@ -8,6 +8,11 @@ Usage: python3 scripts/authoring/plan-moon-gone.py --script-only
 import json, pathlib, re, sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from recipes import *  # noqa: F401,F403
+import recipes
+# Night page: red notes read poorly on navy (3.0:1 contrast). Notes are warm yellow (9.7:1);
+# red (WARN) is kept for myths, warnings and danger, so it still means "wrong" or "bad".
+YELLOW, WARN = '#ffd25e', '#ff5a4a'
+recipes.RED = YELLOW
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 STORY = ROOT / 'stories/moon-gone.json'
@@ -205,7 +210,7 @@ shot('m4', T0, [], [kit(F, 'town', 'town', .42, .86, 0.9, w=1.1, h=.5, level=lv(
 shot('m5', T0, [], [kit(F, 'tilt', 'earth-axis', .25, .55, .6, rotation=23, level=lv((0, 1)), rotate=track((0, 0), (A('tips'), 0), (plus(A('tips'), 40), 60, 'smoothstep')), anchor={'x': .25 * W, 'y': .55 * H})],
      [Note('Earth tips over', A('tips'), 'note'), Note('seasons go crazy', A('crazy'), 'note'), Note('we all freeze', A('freeze'), 'note'), Note('everyone dies', A('dies'), 'title')])
 shot('m6', T0, [], [kit(F, 'q', 'question', .25, .5, 0.39)],
-     [Note('"we all die"', 4, 'title'), Note('what science says', A('science'), 'note'),
+     [Note('"we all die"', 4, 'title', color=WARN), Note('what science says', A('science'), 'note'),
       Note('night · week · million years', A('million'), 'small')], stamps=[(0, A('newest'))])
 shot('m7', None, [arka(x=.32, poses=[(0, 'shrug')], faces=[(0, 'sad')])],
      [kit(F, 'job', 'sign', .62, .55, 0.42, w=1.8, h=1.0, text='MOON JOB: GONE?', **pop_in(2, (.62 * W, .55 * H)))],
@@ -229,7 +234,7 @@ shot('m12', None, [arka(x=.32, poses=[(0, 'hands-on-hips')], faces=[(0, 'smug')]
 shot('m13', T1, [], [kit(F, 'lion1', 'lion', .28, .62, 0.44, w=1.2, h=.8, level=lv((0, 1))),
                      kit(F, 'lion2', 'lion', .68, .62, 0.44, w=1.2, h=.8, level=lv((0, 0)), **pop_in(A('emptier'), (.68 * W, .62 * H))),
                      moon('m', .68, .3, 0.15, opacity=show_from(A('full')))],
-     [Note('Serengeti', A('Serengeti'), 'small'), Note('dark night: full belly', A('dark'), 'note', near='lion1'), Note('full Moon: hungry', A('emptier'), 'note', near='lion2')])
+     [Note('Serengeti, Tanzania', A('Serengeti'), 'small'), Note('study: Packer et al. 2011', A('bellies'), 'small'), Note('dark night: full belly', A('dark'), 'note', near='lion1'), Note('full Moon: hungry', A('emptier'), 'note', near='lion2')])
 shot('m14', T1, [], [kit(F, 'lion', 'lion', .3, .64, 0.44, w=1.2, h=.8, level=lv((0, 1))),
                      kit(F, 'zebra', 'zebra', .66, .64, 0.42, w=1.2, h=.9, x=track((0, 0), (A('eat'), 0), (plus(A('eat'), 25), 320, 'ease-out-cubic')))],
      [Note("every night: a hunter's night", A("hunter's"), 'note'), Note('great for lions', A('lions'), 'small')])
@@ -266,8 +271,14 @@ shot('m26', None, [arka(x=.3, poses=[(0, 'point-right')], faces=[(0, 'grin')])],
      [Note('cosmic soup!', A('soup'), 'title', pos=(1270, 300))])
 shot('m27', T2, [], [kit(F, 'coral', 'coral', .32, .7, 0.59, w=1.0, h=1.0, level=lv((0, 0))), kit(F, 'fish', 'fish', .6, .45, 0.18)],
      [Note('pretty much.', A('Pretty'), 'note'), Note('under the sea...', A('sea'), 'note')])
-shot('m28', T2, [], [kit(F, 'coral', 'coral', .3, .72, 0.65, w=1.0, h=1.0, count=16, level=lv((0, 0), (30, 1))), moon('m', .3, .2, 0.12)],
-     [Note('Great Barrier Reef', A('Great'), 'small'), Note('biggest mass spawning', A('biggest'), 'note'), Note('cue: moonlight', A('moonlight'), 'title')])
+shot('m28', T2, [], [kit(F, 'coral0', 'coral', .3, .74, 0.6, w=1.0, h=1.0, count=16, level=lv((0, 0)),
+                         opacity=track((0, 1), (plus(A('Great'), -1), 1), (plus(A('Great'), 4), 0), (A('biggest'), 0), (plus(A('biggest'), 6), 1), (plus(A('moonlight'), -1), 1), (A('moonlight'), 0))),
+                     kit(F, 'coral', 'coral', .3, .74, 0.6, w=1.0, h=1.0, count=16, level=lv((0, 1)), opacity=show_from(A('moonlight'))),
+                     kit(F, 'beam', 'moonbeam', .3, .26, 0.62, level=lv((0, 1)), opacity=track((0, 0), (A('moonlight'), 0), (plus(A('moonlight'), 20), 1, 'smoothstep'))),
+                     moon('m', .3, .2, 0.14, opacity=show_from(A('biggest'))),
+                     photo(ep, F, 'photo-gbr', 'nasa/inserts/photo-gbr.png', A('Great'), until=A('biggest'), x=.5, y=.5, scale=.72, box=(.27, .16, .73, .84))],
+     [Note('Great Barrier Reef, from space', A('Great'), 'small', pos=(.5 * W, .93 * H), until=A('biggest')), Note('biggest mass spawning', A('biggest'), 'note', pos=(.68 * W, .36 * H)),
+      Note('cue: moonlight', A('moonlight'), 'title', pos=(.68 * W, .5 * H))])
 shot('m29', None, [arka(x=.3, poses=[(0, 'shrug')], faces=[(0, 'sad')])], [kit(F, 'coral', 'coral', .66, .72, 0.55, w=1.0, h=1.0, level=lv((0, 0)))],
      [Note('no party?', A('party'), 'title', pos=(1270, 300))])
 shot('m30', T2, [], [kit(F, 'coral', 'coral', .25, .74, 0.52, w=1.0, h=1.0, count=8, level=lv((0, .5))), kit(F, 'thermo', 'thermometer', .48, .55, 0.36, w=.4, h=1.2, level=lv((0, .55)))],
@@ -279,31 +290,35 @@ shot('m31', T3, [], [earth('earth', .28, .52, .18), kit(F, 'orbit', 'orbit-ring'
                      kit(F, 'b1', 'bar', .6, .62, 0.59, w=1.0, h=.4, text='Earth', level=lv((0, 1)), color='#3f7fd6', opacity=show_from(A('mass'))),
                      kit(F, 'b2', 'bar', .6, .84, 0.59, w=1.0, h=.4, text='Moon', level=lv((0, .012)), color='#ece8d6', opacity=show_from(A('mass')))],
      [Note('orbit: unchanged', A('orbit'), 'note'), Note('Moon = ~1% of the mass', A('percent'), 'note')])
-shot('m32', T3, [], [sun('sun', .22, .5, .26), moon('m', .7, .5, 0.12)],
+shot('m32', T3, [], [sun('sun', .22, .5, .26, opacity=show_until(A('same'))), moon('m', .7, .5, 0.12, opacity=show_until(A('same'))),
+                     photo(ep, F, 'photo-eclipse', 'nasa/inserts/photo-eclipse.png', A('same'), x=.42, y=.5, scale=.72, box=(.2, .16, .64, .84))],
      [Note('lucky accident', A('accident'), 'note'), Note('400x wider', A('wider'), 'title', near='sun'), Note('400x farther', A('farther'), 'title', near='m'),
       Note('same size in our sky', A('same'), 'small')])
-shot('m33', T3, [], [sun('sun', .3, .5, .18), moon('ghost', .3, .5, 0.18, lit=0), kit(F, 'x', 'cross', .3, .5, 0.39, **pop_in(A('solar'), (.3 * W, .5 * H)))],
-     [Note('no more eclipses', A('solar'), 'title'), Note('not ever again', A('ever'), 'note')])
-shot('m34', None, [arka(x=.32, poses=[(0, 'shrug')], faces=[(0, 'sad')])], [sun('sun', .7, .45, .12)],
+shot('m33', T3, [], [kit(F, 'sol', 'eclipse', .2, .55, .26, text='solar', level=lv((0, .3), (45, 1)), **pop_in(A('solar'), (.2 * W, .55 * H))),
+                     kit(F, 'lun', 'eclipse', .44, .55, .22, text='lunar', level=lv((0, 0), (40, 0), (90, 1)), **pop_in(A('lunar'), (.44 * W, .55 * H))),
+                     kit(F, 'x1', 'cross', .2, .55, 0.3, **pop_in(A('ever'), (.2 * W, .55 * H))), kit(F, 'x2', 'cross', .44, .55, 0.26, **pop_in(A('ever'), (.44 * W, .55 * H)))],
+     [Note('solar eclipse', A('solar'), 'label', near='sol'), Note('lunar eclipse', A('lunar'), 'label', near='lun'), Note('not ever again', A('ever'), 'title')])
+shot('m34', None, [arka(x=.32, poses=[(0, 'shrug')], faces=[(0, 'sad')])], [kit(F, 'sol', 'eclipse', .7, .45, .24, text='solar', level=lv((0, 1)))],
      [Note('never saw one!', A('never'), 'title', pos=(1290, 760))])
 shot('m35', T3, [], [kit(F, 'clock', 'clock', .3, .52, 0.47, level=lv((0, .6)), text='day length')],
      [Note('days stop getting longer', A('longer'), 'title')])
-shot('m36', T3, [], [earth('earth', .28, .55, .17),
+shot('m36', T3, [], [kit(F, 'earth', 'young-earth', .28, .55, .34, level=lv((0, .9))),
                      Prop(planet('theia', .78, .3, .09, '#c4501f', ('#d9703f', '#b2441a'), shade=.25, seed=7,
                                  x=track((0, 0), (A('smashed', -20), 0), (A('smashed'), -760, 'ease-in-back')), y=track((0, 0), (A('smashed', -20), 0), (A('smashed'), 230, 'ease-in-back')),
                                  opacity=show_until(plus(A('smashed'), 2))), Box(.7 * W, .2 * H, .86 * W, .4 * H, 'theia')),
                      kit(F, 'boom', 'impact', .36, .52, .5, count=12, level=lv((0, .9)), **pop_in(A('smashed'), (.38 * W, .5 * H))),
                      moon('m', .62, .5, 0.12, opacity=show_from(A('Moon'))),
                      kit(F, 'clock', 'clock', .6, .78, .2, level=lv((0, 1)), opacity=show_from(A('hours')))],
-     [Note('4.5 billion years ago', A('billion'), 'small'), Note('Theia', A('Mars'), 'note', near='theia'), Note('a day: 4-5 hours', A('hours'), 'title')],
+     [Note('4.5 billion years ago', A('billion'), 'small', pos=(.28 * W, .26 * H)), Note('Theia', A('young'), 'label', pos=(.78 * W, .3 * H + 135), until=A('smashed')), Note('a day: 4-5 hours', A('hours'), 'title')],
      sounds=[('whoosh', A('smashed', -10), -18)])
 shot('m37', None, [arka(x=.32, poses=[(0, 'panic')], faces=[(0, 'shocked')])], [kit(F, 'boom', 'impact', .7, .45, 0.39, count=8, level=lv((0, .7)))],
      [Note('born in a crash?!', A('crash'), 'title', pos=(1290, 800))])
-shot('m38', T3, [], [earth('earth', .3, .52, .17), moon('m', .62, .4, 0.12), kit(F, 'clock', 'clock', .78, .62, 0.34, level=lv((0, 1), (120, .3)), text='slowing')],
+shot('m38', T3, [], [kit(F, 'hot', 'young-earth', .3, .52, .34, level=lv((0, .7)), opacity=track((0, 1), (30, 1), (110, 0, 'smoothstep'))),
+                     earth('earth', .3, .52, .17, opacity=track((0, 0), (30, 0), (110, 1, 'smoothstep'))), moon('m', .62, .4, 0.12), kit(F, 'clock', 'clock', .78, .62, 0.34, level=lv((0, 1), (120, .3)), text='slowing')],
      [Note('a very big one', A('big'), 'note'), Note('slowing us down', A('slowing'), 'note')])
 shot('m39', T3, [], [kit(F, 'rex', 'dino', .3, .6, 0.59, w=1.2, h=1.0), kit(F, 'clock', 'clock', .7, .5, 0.34, level=lv((0, .6)), text='T. rex day')],
      [Note('days got longer', A('longer'), 'small'), Note('-20 minutes', A('twenty'), 'title')])
-shot('m40', T3, [], [kit(F, 'spin', 'earth-axis', .28, .52, 0.59, rotation=23, level=lv((0, 1), (150, .7))), moon('m', .62, .35, 0.12),
+shot('m40', T3, [], [kit(F, 'spin', 'earth-axis', .28, .52, 0.59, rotation=23, level=lv((0, 1), (60, 1), (200, .2))), moon('m', .62, .35, 0.12),
                      kit(F, 'arr', 'pressure-arrows', .45, .45, 0.26, direction='in', count=3)],
      [Note('a brake', A('brake'), 'note'), Note('+1.7 ms per century', A('milliseconds'), 'title'), Note('without the Moon: mostly gone', A('gone'), 'small')])
 shot('m41', None, [arka(x=.32, poses=[(0, 'stand')], faces=[(0, 'puffed')])], [kit(F, 'bed', 'bed', .68, .62, 0.52, w=1.0, h=.6, level=lv((0, 0)))],
@@ -322,12 +337,12 @@ shot('m45', T4, [], [kit(F, 'tilt', 'earth-axis', .3, .55, .5, rotation=23, leve
      [Note('the Moon keeps it steady', A('steady'), 'note'), Note('without it?', A('without'), 'title')])
 shot('m46', T4, [], [kit(F, 'dial', 'tilt-dial', .32, .56, .6, w=1.0, h=1.0, range=[0, 85], level=lv((0, .26), (40, .05), (80, .94), (120, .1), (160, .9), (200, .2), (240, .94)), text='1993 study'),
                      kit(F, 'side', 'earth-axis', .7, .68, .3, rotation=85, level=lv((0, 1)), opacity=show_from(A('side')))],
-     [Note('0° to 85°', A('eighty-five'), 'title'), Note('lying on its side', A('side'), 'note', near='side'), Note('months of day, months of night', A('endless'), 'small')])
+     [Note('0° to 85°', A('eighty-five'), 'title', color=WARN), Note('lying on its side', A('side'), 'note', near='side'), Note('months of day, months of night', A('endless'), 'small')])
 shot('m47', None, [arka(x=.32, poses=[(0, 'panic')], faces=[(0, 'scared')])], [kit(F, 'dial', 'tilt-dial', .66, .58, .45, w=1.0, h=1.0, range=[0, 85], level=lv((0, .9), (30, .1), (60, .9)))],
-     [Note('bad.', A('bad'), 'title', pos=(1300, 260))])
+     [Note('bad.', A('bad'), 'title', pos=(1300, 260), color=WARN)])
 shot('m48', T4, [], [kit(F, 'book', 'sign', .25, .5, .3, w=1.8, h=1.0, text='BOOKS'), kit(F, 'art', 'sign', .45, .38, .26, w=1.8, h=1.0, text='ARTICLES', **pop_in(A('articles'), (.45 * W, .38 * H))),
                      kit(F, 'vid', 'sign', .4, .66, .26, w=1.8, h=1.0, text='VIDEOS', **pop_in(A('videos'), (.4 * W, .66 * H)))],
-     [Note('"0° to 85°"', 4, 'title'), Note('it spread everywhere', A('everywhere'), 'note')], stamps=[(0, A('videos'))])
+     [Note('"0° to 85°"', 4, 'title', color=WARN), Note('it spread everywhere', A('everywhere'), 'note')], stamps=[(0, A('videos'))])
 shot('m49', T4, [], [kit(F, 'dial', 'tilt-dial', .3, .56, .6, w=1.0, h=1.0, range=[12, 38], color=GREEN, level=lv((0, .26), (50, .14), (100, .42), (150, .2), (200, .4)), text='2012 simulations')],
      [Note('NASA: Lissauer et al.', A('Lissauer'), 'small'), Note('far calmer', A('calmer'), 'note'), Note('12° to 38°', A('thirty-eight'), 'title'), Note('100 million years', A('hundred'), 'small')])
 shot('m50', T4, [], [kit(F, 'hot', 'thermometer', .25, .55, .45, w=.4, h=1.2, level=lv((0, .5), (40, .9))), kit(F, 'cold', 'thermometer', .4, .55, .45, w=.4, h=1.2, level=lv((0, .5), (40, .12)), color='#7fc0ff')],
@@ -363,9 +378,11 @@ shot('m61', T5, [], [kit(F, 'cal', 'calendar', .3, .5, .32, text='MON'), kit(F, 
 # ------------------------------------------------------------------ chapter 6: the twist
 shot('m62', T6, [], [earth('earth', .25, .55, .15), moon('m', .55, .5, .14, x=track((0, 0), (A('leaving'), 0), (plus(A('leaving'), 60), 260, 'smoothstep')))],
      [Note('the Moon is already leaving', A('leaving'), 'title')], cam='push')
-shot('m63', T6, [], [kit(F, 'ruler', 'ruler', .52, .5, .45, w=.4, h=1.0, level=lv((0, 0), (60, .5)), text='3.8 cm / year'),
-                     kit(F, 'refl', 'reflector', .3, .72, .36, w=1.0, h=.8, level=lv((0, 0), (120, 0), (200, 1)), opacity=show_from(A('Apollo')))],
-     [Note('3.8 cm a year', A('three'), 'title'), Note('= fingernail speed', A('fingernails'), 'note'), Note('Apollo mirrors + lasers', A('lasers'), 'small')])
+shot('m63', T6, [], [kit(F, 'ruler', 'ruler', .52, .5, .45, w=.4, h=1.0, level=lv((0, 0), (60, .5)), text='3.8 cm / year', opacity=show_until(A('still'))),
+                     kit(F, 'refl', 'reflector', .3, .72, .36, w=1.0, h=.8, level=lv((0, 0), (120, 0), (200, 1)), opacity=track((0, 0), (A('Apollo'), 0), (plus(A('Apollo'), 4), 1), (plus(A('still'), -1), 1), (A('still'), 0))),
+                     photo(ep, F, 'photo-reflector', 'nasa/inserts/photo-reflector.png', A('still'), x=.4, y=.52, scale=.62, box=(.3, .2, .7, .84))],
+     [Note('3.8 cm a year', A('three'), 'title', pos=(.8 * W, .34 * H)), Note('= fingernail speed', A('fingernails'), 'note', pos=(.8 * W, .44 * H)),
+      Note('Apollo mirrors + lasers', A('lasers'), 'small', pos=(.8 * W, .53 * H))])
 shot('m64', None, [arka(x=.3, poses=[(0, 'point-right')], faces=[(0, 'sad')])], [moon('m', .7, .45, .14, x=track((0, 0), (90, 120, 'smoothstep')))],
      [Note('because of me?', A('me'), 'title', pos=(1300, 760))])
 shot('m65', T6, [], [kit(F, 'spin', 'earth-axis', .25, .55, .45, rotation=23, level=lv((0, 1), (150, .6))), moon('m', .58, .45, .14, x=track((0, 0), (A('push'), 0), (plus(A('push'), 50), 140, 'smoothstep'))),
@@ -379,9 +396,16 @@ shot('m67', T6, [], [sun('sun', .25, .5, .12, scale=track((0, 1), (A('old'), 1),
      [Note("it won't get away", A('away'), 'note'), Note('the Sun grows old first', A('old'), 'note'), Note('billions of years', A('billions'), 'title')])
 
 # ------------------------------------------------------------------ ending
-shot('m68', 'SO, IF IT VANISHED TONIGHT...', [], [moon('ghost', .3, .45, .25, lit=0)],
-     [Note('we would not all die', A('die'), 'title'), Note('- light at night', A('light'), 'note'), Note('- 2/3 of our tides', A('tides'), 'note'),
-      Note('- every eclipse', A('eclipse'), 'note'), Note('- an ancient clock', A('clock'), 'note')])
+shot('m68', 'SO, IF IT VANISHED TONIGHT...', [], [moon('lit', .24, .36, .2, opacity=show_until(A('light'))), moon('ghost', .24, .36, .2, lit=0, opacity=show_from(A('light'))),
+                     kit(F, 'town1', 'town', .24, .66, .34, w=1.1, h=.5, level=lv((0, 1)), opacity=show_until(A('light'))),
+                     kit(F, 'town0', 'town', .24, .66, .34, w=1.1, h=.5, level=lv((0, 0)), opacity=show_from(A('light'))),
+                     kit(F, 'tide', 'tide-gauge', .52, .78, .22, w=.4, h=1.0, level=lv((0, .33)), **pop_in(A('tides'), (.52 * W, .78 * H))),
+                     kit(F, 'ecl', 'eclipse', .66, .8, .14, text='solar', level=lv((0, 1)), **pop_in(A('eclipse'), (.66 * W, .8 * H))),
+                     kit(F, 'ex', 'cross', .66, .8, .16, **pop_in(plus(A('eclipse'), 12), (.66 * W, .8 * H))),
+                     kit(F, 'clk', 'clock', .8, .8, .16, level=lv((0, 0)), **pop_in(A('clock'), (.8 * W, .8 * H)))],
+     [Note('we would not all die', A('die'), 'title', pos=(.66 * W, .22 * H)), Note('- light at night', A('light'), 'note', pos=(.66 * W, .32 * H)),
+      Note('- 2/3 of our tides', A('tides'), 'note', pos=(.66 * W, .40 * H)), Note('- every eclipse', A('eclipse'), 'note', pos=(.66 * W, .48 * H)),
+      Note('- an ancient clock', A('clock'), 'note', pos=(.66 * W, .56 * H))])
 shot('m69', None, [], [kit(F, 'town', 'town', .42, .88, .62, w=1.1, h=.5, level=lv((0, 1))), moon('moon', .66, .34, .26, opacity=track((0, 0), (8, 0), (32, 1, 'smoothstep')))],
      [Note("it's still there.", A('there'), 'title', pos=(1240, 640))], cam='push')
 shot('m70', None, [arka(x=.3, poses=[(0, 'wave')], faces=[(0, 'grin')])],
@@ -389,7 +413,7 @@ shot('m70', None, [arka(x=.3, poses=[(0, 'wave')], faces=[(0, 'grin')])],
 shot('m71', None, [arka(x=.14, h=.38, poses=[(0, 'wave')], faces=[(0, 'happy')])],
      [moon('moon', .14, .3, .1)],
      [Note('GAHANARKA', 4, 'title', size=100, pos=(W / 2, 190), color=GOLD), Note('light in the unfathomable', 10, 'small', pos=(W / 2, 270)),
-      Note('next: something even bigger', A('bigger'), 'note', pos=(W / 2, 360))])
+      Note('next: something even bigger', A('bigger'), 'note', size=84, pos=(W / 2, 370))])
 
 # ------------------------------------------------------------------ chapters 4-6 + ending: placeholders until pass 2
 for bid, intent, parts in SHOTS:
@@ -400,7 +424,7 @@ for bid, intent, parts in SHOTS:
 
 # Night page: line-art and new props get light ink so they read on navy.
 LIGHT_INK = {'doodle-stars', 'counter', 'bar', 'bulb', 'question', 'thermometer', 'fish', 'crescent', 'orbit-ring', 'town', 'lion', 'zebra',
-             'coral', 'plankton', 'tide-gauge', 'tilt-dial', 'earth-axis', 'impact', 'dino', 'reflector', 'bed', 'stir', 'clock', 'pressure-arrows', 'cross', 'ruler', 'check', 'small-moon'}
+             'coral', 'plankton', 'tide-gauge', 'tilt-dial', 'earth-axis', 'impact', 'dino', 'reflector', 'bed', 'stir', 'clock', 'pressure-arrows', 'cross', 'ruler', 'check', 'small-moon', 'eclipse', 'moonbeam', 'young-earth'}
 for layer in [pr.layer for pl in ep.plans.values() for pr in pl['props']] + ep._backdrop['layers']:
     k = layer.get('kit', {})
     if k.get('type') == 'prop' and k.get('item') in LIGHT_INK: k.setdefault('ink', '#c9d3ea')

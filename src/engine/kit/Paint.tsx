@@ -66,7 +66,7 @@ export const Terrain: React.FC<{config: TerrainConfig; theme: Theme; width: numb
 
 export type PropConfig = {ink?: string; item: 'thermometer' | 'pressure-arrows' | 'motion-lines' | 'exclaim' | 'question' | 'check' | 'cross' | 'counter' | 'stamp' | 'vignette' | 'station' | 'helmet' | 'doodle-stars' | 'chamber'
   | 'cliff' | 'geyser' | 'plume' | 'radiation-meter' | 'radiation-belt' | 'battery' | 'airbag' | 'small-moon' | 'ice-cutaway' | 'frost'
-  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb' | 'crescent' | 'orbit-ring' | 'town' | 'lion' | 'zebra' | 'coral' | 'plankton' | 'tide-gauge' | 'tilt-dial' | 'earth-axis' | 'impact' | 'dino' | 'reflector' | 'bed' | 'stir' | 'clock'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
+  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb' | 'crescent' | 'orbit-ring' | 'town' | 'lion' | 'zebra' | 'coral' | 'plankton' | 'tide-gauge' | 'tilt-dial' | 'earth-axis' | 'impact' | 'dino' | 'reflector' | 'bed' | 'stir' | 'clock' | 'eclipse' | 'moonbeam' | 'young-earth'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
   values?: Array<{frame: number; value: number; ramp?: boolean}>; text?: string; direction?: 'in' | 'out';
   labels?: string[]; colors?: string[]; highlight?: number; ring?: boolean; belt?: boolean; range?: [number, number]};
 
@@ -518,6 +518,56 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
         <path d={`M 0 0 L 0 ${-r * .78}`} {...stroke(red, w)} transform={`rotate(${mn})`}/>
         <circle r={w} fill="#1b1b1b"/>
         {c.text && <text x={0} y={r + s * .17} textAnchor="middle" fontFamily={font} fontSize={s * .17} fill={ink}>{c.text}</text>}
+      </g>;
+    }
+    case 'eclipse': {
+      // text 'solar' (default): the Moon slides across the Sun; at level 1 it covers it and the corona shows.
+      // text 'lunar': Earth's shadow slides over the Moon, which turns copper-red when fully inside. level = progress 0..1.
+      const p = levelAt(c.level, frame), r = s * .5, id = `ecl-${Math.round(c.x * 1000)}-${Math.round(c.y * 1000)}`;
+      if (c.text === 'lunar') {
+        const sx = (1 - p) * r * 2.6;
+        return <g transform={at}>
+          <defs><clipPath id={id}><circle r={r}/></clipPath></defs>
+          <circle r={r * 1.3} fill="#ff7a4a" opacity={p * p * .12}/>
+          <circle r={r} fill="#ece8d6" stroke={ink} strokeWidth={w}/>
+          <circle r={r} fill="#b4442a" opacity={p * p * .85}/>
+          <g clipPath={`url(#${id})`}><circle cx={sx} r={r * 1.35} fill="#2a1410" opacity={.55 * (1 - p * .6)}/></g>
+          {[[-.3, -.25, .14], [.2, -.1, .1], [-.05, .3, .17], [.32, .28, .08]].map(([cx, cy, cr], i) =>
+            <circle key={i} cx={cx * r} cy={cy * r} r={cr * r} fill="none" stroke={ink} strokeWidth={w * .4} opacity=".5"/>)}
+          <circle r={r} fill="none" stroke={ink} strokeWidth={w}/>
+        </g>;
+      }
+      const mx = (1 - p) * -r * 2.2, cor = Math.max(0, (p - .85) / .15);
+      return <g transform={at}>
+        {Array.from({length: 16}, (_, i) => { const a = i / 16 * Math.PI * 2, l = r * (1.45 + (i % 3) * .22);
+          return <path key={i} d={`M ${Math.cos(a) * r * 1.02} ${Math.sin(a) * r * 1.02} L ${Math.cos(a) * l} ${Math.sin(a) * l}`} {...stroke('#fff4c2', w * .9)} opacity={cor * .85}/>; })}
+        <circle r={r * 1.12} fill="#fff6d8" opacity={cor * .55}/>
+        <circle r={r} fill="#ffd34d" stroke={ink} strokeWidth={w} opacity={1 - cor * .2}/>
+        <circle cx={mx} r={r * 1.02} fill="#141a33" stroke={ink} strokeWidth={w * .8}/>
+      </g>;
+    }
+    case 'moonbeam': {
+      // A soft cone of moonlight shining down from (x, y); size is its length, w its spread. level = brightness.
+      const lv = levelAt(c.level, frame), L = s, top = s * .06, bot = s * .42, id = `mb-${Math.round(c.x * 1000)}`;
+      return <g transform={at} opacity={lv}>
+        <defs><linearGradient id={id} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#fff6c8" stopOpacity=".55"/><stop offset="1" stopColor="#fff6c8" stopOpacity="0"/></linearGradient></defs>
+        <path d={`M ${-top} 0 L ${top} 0 L ${bot} ${L} L ${-bot} ${L} Z`} fill={`url(#${id})`}/>
+        {[.35, .6, .85].map((f, i) => <path key={i} d={`M ${-bot * f * .9} ${L * f} q ${bot * .2} ${-s * .015} ${bot * .4} 0 t ${bot * .4} 0`} {...stroke('#fff6c8', w * .35)}
+          opacity={.35 + .25 * Math.sin(frame / 12 + i)}/>)}
+      </g>;
+    }
+    case 'young-earth': {
+      // The molten young Earth: glowing lava ocean with dark crust plates that drift as it spins. level = spin speed (1 = one turn in about half a second).
+      const r = s * .5, sp = levelAt(c.level, frame), off = ((frame * sp * 7) % 100) / 100, id = `ye-${Math.round(c.x * 1000)}`;
+      return <g transform={at}>
+        <defs><clipPath id={id}><circle r={r}/></clipPath><radialGradient id={`${id}-g`}><stop offset="0" stopColor="#ffb347"/><stop offset="1" stopColor="#d9431f"/></radialGradient></defs>
+        <circle r={r * 1.18} fill="#ff6a2a" opacity={.18 + .06 * Math.sin(frame / 9)}/>
+        <circle r={r} fill={`url(#${id}-g)`} stroke={ink} strokeWidth={w}/>
+        <g clipPath={`url(#${id})`}>{[0, 1, 2, 3].map(i => { const x = (((off + i / 4) % 1) * 2 - 1) * r * 1.4, y = (i % 2 ? .3 : -.28) * r;
+          return <g key={i}><path d={`M ${x - r * .3} ${y} q ${r * .1} ${-r * .2} ${r * .3} ${-r * .12} q ${r * .25} ${r * .05} ${r * .28} ${r * .2} q ${-r * .1} ${r * .2} ${-r * .3} ${r * .14} q ${-r * .2} ${-r * .02} ${-r * .28} ${-r * .22} Z`}
+            fill="#4a2414" stroke="#2a120a" strokeWidth={w * .4}/>
+            <path d={`M ${x - r * .12} ${y - r * .04} l ${r * .1} ${r * .06} l ${r * .08} ${-r * .05}`} {...stroke('#ffcf6a', w * .45)}/></g>; })}</g>
+        <circle r={r} fill="none" stroke={ink} strokeWidth={w}/>
       </g>;
     }
     case 'probe': {

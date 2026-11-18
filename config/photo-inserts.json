@@ -7,6 +7,9 @@
     {"id": "photo-enceladus", "source": "nasa/nasa-enceladus-plumes-PIA07758.jpg", "credit": "NASA/JPL/SSI - Cassini", "nasaId": "PIA07758"},
     {"id": "photo-triton", "source": "nasa/nasa-triton-PIA00317.jpg", "credit": "NASA/JPL - Voyager 2", "nasaId": "PIA00317"},
     {"id": "photo-io", "source": "nasa/nasa-io-tvashtar-plume-PIA09248.jpg", "credit": "NASA/JHUAPL/SwRI - New Horizons", "nasaId": "PIA09248"},
-    {"id": "photo-titan", "source": "nasa/nasa-titan-lakes-PIA21434.jpg", "credit": "NASA/JPL-Caltech/ASI - Cassini", "nasaId": "PIA21434"}
+    {"id": "photo-titan", "source": "nasa/nasa-titan-lakes-PIA21434.jpg", "credit": "NASA/JPL-Caltech/ASI - Cassini", "nasaId": "PIA21434"},
+    {"id": "photo-gbr", "source": "nasa/nasa-great-barrier-reef-iss045-e-56257.jpg", "credit": "NASA - ISS crew photo", "nasaId": "ISS045-E-56257"},
+    {"id": "photo-eclipse", "source": "nasa/nasa-eclipse-2017-madras.jpg", "credit": "NASA/Aubrey Gemignani", "nasaId": "2017 total eclipse, Madras OR"},
+    {"id": "photo-reflector", "source": "nasa/nasa-apollo11-reflector-as11-40-5952.jpg", "credit": "NASA - Apollo 11", "nasaId": "AS11-40-5952"}
   ]
 }
