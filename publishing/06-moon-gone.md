@@ -1,9 +1,7 @@
 # 06: Episode 4, What If the Moon Disappeared Tonight?
 
-- **File:** `jobs/mg-final-b/output/narrated-animation.mp4` (re-render after the 18 Nov review fixes; 9:38, 1920×1080, 30 fps, −16.3 LUFS; all automated checks pass; 0 paid requests for the render). Rename it to `what-if-the-moon-disappeared-tonight.mp4` before uploading.
-- **Captions:** `jobs/mg-upload/6-captions-english.srt` (318 cues, timed to the narration).
-- **Thumbnails (free, drawn from the episode's own art):** `jobs/mg-upload/thumb-a.png` (THE MOON IS GONE), `thumb-b.png` (EARTH TIPS OVER? + MYTH), `thumb-c.png` (NO MOON. NOW WHAT?). Use all three in Test & compare.
-- **When:** to be decided by Debabrata (suggested Thu 26 Nov, 9:30 PM IST).
+- **Upload folder:** `~/Downloads/gahanarka-upload/6-moon-gone/` (every upload lives in `gahanarka-upload`). It holds the video `what-if-the-moon-disappeared-tonight.mp4` (render `jobs/mg-final-b`, approved by Debabrata 19 Nov; 9:38, 1920×1080, 30 fps, −16.3 LUFS; 0 paid requests), `captions-english.srt` (318 cues) and three thumbnails for Test & compare: `thumb-a-moon-is-gone.png`, `thumb-b-tips-over-myth.png`, `thumb-c-no-moon-now-what.png` (drawn from the episode's own art, free).
+- **When:** Thu 26 Nov, 9:30 PM IST (decided 18 Nov). Playlist: new "What If…?".
 - **Script, sources and fact check:** `stories/moon-gone-script.md`. Narration request IDs: aiFBSbbE5FTiM81uSeCP, xtWSejIn5vpKawSTbE4Z (ElevenLabs Starter, 18 Nov 2026).
 
 ## Title (pick 1)
@@ -64,7 +62,7 @@ what if the moon disappeared, what if the moon disappeared tonight, what if ther
 ## Settings
 - End screen: the last 12 s (9:26 to 9:38) are left empty for it. Add one video element (Ep 3, every moon) and a subscribe button.
 - Chapters: already in the description.
-- Playlist: a new "What If…?" playlist (this isn't a survival episode, so it doesn't fit "Could You Survive…?"). Debabrata to confirm.
+- Playlist: a new "What If…?" playlist (this isn't a survival episode, so it doesn't fit "Could You Survive…?"). Confirmed by Debabrata 18 Nov.
 - Not made for kids · Science & Technology · English
 - Altered or synthetic content: No (drawn animation and a generic AI narrator; no realistic AI footage, no imitation of a real person).
 
