@@ -82,6 +82,26 @@ After completing a milestone, provide:
 
 **Approval required:** Stop and wait for my decision.
 
+## YouTube compliance (keep the channel monetizable)
+
+Before any video is scheduled, validate it against `docs/YOUTUBE_COMPLIANCE_CHECKLIST.md` and report the result. It covers:
+- the inauthentic content rule;
+- AI personas on sensitive topics;
+- AI voice disclosure and the ElevenLabs paid-plan licence;
+- music licences;
+- image credits;
+- Arka's originality;
+- Made for Kids;
+- advertiser-friendly topics;
+- the 8,000-hour Partner Program bar.
+
+Records:
+- music: `docs/MUSIC_SOURCES.md` (every new track must be added);
+- voices: `docs/VOICE_LICENSING.md` (generate narration only while a paid ElevenLabs plan is active);
+- Arka: `docs/brand/ARKA.md` (draw Arka with our own renderer, never as an AI-generated image).
+
+Long episodes should run 8–15 minutes, because Shorts don't count toward watch hours. Flag any item that fails; never schedule a video with an unresolved failure without my approval.
+
 ## Important
 
 Do not blindly follow the existing roadmap if the evidence suggests a better approach.
