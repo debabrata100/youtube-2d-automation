@@ -517,7 +517,7 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
         <path d={`M 0 0 L 0 ${-r * .5}`} {...stroke('#1b1b1b', w * 1.4)} transform={`rotate(${hr})`}/>
         <path d={`M 0 0 L 0 ${-r * .78}`} {...stroke(red, w)} transform={`rotate(${mn})`}/>
         <circle r={w} fill="#1b1b1b"/>
-        {c.text && <text x={0} y={r + s * .14} textAnchor="middle" fontFamily={font} fontSize={s * .12} fill={ink}>{c.text}</text>}
+        {c.text && <text x={0} y={r + s * .17} textAnchor="middle" fontFamily={font} fontSize={s * .17} fill={ink}>{c.text}</text>}
       </g>;
     }
     case 'probe': {

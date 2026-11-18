@@ -96,7 +96,7 @@
             "item": "town",
             "x": 0.42,
             "y": 0.88,
-            "size": 0.62,
+            "size": 0.81,
             "level": [
               {
                 "frame": 0,
@@ -113,7 +113,7 @@
             "item": "crescent",
             "x": 0.66,
             "y": 0.34,
-            "size": 0.26,
+            "size": 0.33,
             "level": [
               {
                 "frame": 0,
@@ -150,7 +150,7 @@
             "item": "crescent",
             "x": 0.66,
             "y": 0.34,
-            "size": 0.26,
+            "size": 0.33,
             "level": [
               {
                 "frame": 0,
@@ -522,7 +522,7 @@
             "item": "crescent",
             "x": 0.8,
             "y": 0.45,
-            "size": 0.2,
+            "size": 0.25,
             "level": [
               {
                 "frame": 0,
@@ -653,8 +653,8 @@
             "type": "prop",
             "item": "town",
             "x": 0.42,
-            "y": 0.88,
-            "size": 0.62,
+            "y": 0.86,
+            "size": 0.9,
             "level": [
               {
                 "frame": 0,
@@ -662,16 +662,42 @@
               }
             ],
             "ink": "#c9d3ea"
-          }
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "out",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "out"
+              },
+              "value": 0
+            }
+          ]
         },
         {
-          "id": "dark",
+          "id": "town2",
           "kit": {
             "type": "prop",
-            "item": "vignette",
-            "x": 0.5,
-            "y": 0.5,
-            "size": 1.0
+            "item": "town",
+            "x": 0.42,
+            "y": 0.86,
+            "size": 0.9,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              }
+            ],
+            "ink": "#c9d3ea"
           },
           "opacity": [
             {
@@ -692,6 +718,23 @@
               "value": 1
             }
           ]
+        },
+        {
+          "id": "ghost",
+          "kit": {
+            "type": "prop",
+            "item": "crescent",
+            "x": 0.7,
+            "y": 0.3,
+            "size": 0.25,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
         }
       ],
       "annotations": [
@@ -709,8 +752,8 @@
         {
           "id": "n1",
           "text": "the sky goes out",
-          "x": 960,
-          "y": 420,
+          "x": 1180,
+          "y": 560,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -750,8 +793,8 @@
             "type": "prop",
             "item": "earth-axis",
             "x": 0.25,
-            "y": 0.52,
-            "size": 0.5,
+            "y": 0.55,
+            "size": 0.6,
             "rotation": 23,
             "level": [
               {
@@ -780,7 +823,11 @@
               "value": 60,
               "ease": "smoothstep"
             }
-          ]
+          ],
+          "anchor": {
+            "x": 480.0,
+            "y": 594.0
+          }
         }
       ],
       "annotations": [
@@ -933,7 +980,7 @@
             "item": "question",
             "x": 0.25,
             "y": 0.5,
-            "size": 0.3,
+            "size": 0.39,
             "ink": "#c9d3ea"
           }
         },
@@ -1106,9 +1153,8 @@
             "item": "sign",
             "x": 0.62,
             "y": 0.55,
-            "size": 0.32,
-            "text": "MOON JOB: GONE?",
-            "ink": "#c9d3ea"
+            "size": 0.42,
+            "text": "MOON JOB: GONE?"
           },
           "opacity": [
             {
@@ -1378,7 +1424,7 @@
             "item": "bar",
             "x": 0.3,
             "y": 0.45,
-            "size": 0.5,
+            "size": 0.65,
             "text": "full Moon",
             "level": [
               {
@@ -1400,8 +1446,8 @@
             "type": "prop",
             "item": "bar",
             "x": 0.3,
-            "y": 0.62,
-            "size": 0.5,
+            "y": 0.72,
+            "size": 0.65,
             "text": "stars only",
             "level": [
               {
@@ -1506,7 +1552,7 @@
             "item": "town",
             "x": 0.3,
             "y": 0.8,
-            "size": 0.5,
+            "size": 0.65,
             "level": [
               {
                 "frame": 0,
@@ -1523,7 +1569,7 @@
             "item": "lion",
             "x": 0.72,
             "y": 0.62,
-            "size": 0.3,
+            "size": 0.39,
             "level": [
               {
                 "frame": 0,
@@ -1666,7 +1712,7 @@
             "item": "bed",
             "x": 0.3,
             "y": 0.62,
-            "size": 0.45,
+            "size": 0.59,
             "level": [
               {
                 "frame": 0,
@@ -1683,9 +1729,8 @@
             "item": "calendar",
             "x": 0.3,
             "y": 0.3,
-            "size": 0.16,
-            "text": "full Moon",
-            "ink": "#c9d3ea"
+            "size": 0.21,
+            "text": "FULL"
           },
           "opacity": [
             {
@@ -1883,7 +1928,7 @@
             "item": "bed",
             "x": 0.3,
             "y": 0.62,
-            "size": 0.45,
+            "size": 0.59,
             "level": [
               {
                 "frame": 0,
@@ -1900,7 +1945,7 @@
             "item": "crescent",
             "x": 0.3,
             "y": 0.3,
-            "size": 0.14,
+            "size": 0.18,
             "level": [
               {
                 "frame": 0,
@@ -1968,7 +2013,7 @@
             "item": "crescent",
             "x": 0.7,
             "y": 0.35,
-            "size": 0.16,
+            "size": 0.2,
             "level": [
               {
                 "frame": 0,
@@ -2233,7 +2278,7 @@
             "item": "lion",
             "x": 0.28,
             "y": 0.62,
-            "size": 0.34,
+            "size": 0.44,
             "level": [
               {
                 "frame": 0,
@@ -2250,7 +2295,7 @@
             "item": "lion",
             "x": 0.68,
             "y": 0.62,
-            "size": 0.34,
+            "size": 0.44,
             "level": [
               {
                 "frame": 0,
@@ -2311,7 +2356,7 @@
             "item": "crescent",
             "x": 0.68,
             "y": 0.3,
-            "size": 0.12,
+            "size": 0.15,
             "level": [
               {
                 "frame": 0,
@@ -2356,7 +2401,7 @@
         {
           "id": "n1",
           "text": "Serengeti",
-          "x": 1514,
+          "x": 1530,
           "y": 368,
           "size": 66,
           "anchor": "middle",
@@ -2388,7 +2433,7 @@
           "id": "n2",
           "text": "dark night: full belly",
           "x": 537,
-          "y": 481,
+          "y": 433,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
@@ -2419,7 +2464,7 @@
           "id": "n3",
           "text": "full Moon: hungry",
           "x": 1312,
-          "y": 481,
+          "y": 937,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
@@ -2460,7 +2505,7 @@
             "item": "lion",
             "x": 0.3,
             "y": 0.64,
-            "size": 0.34,
+            "size": 0.44,
             "level": [
               {
                 "frame": 0,
@@ -2477,7 +2522,7 @@
             "item": "zebra",
             "x": 0.66,
             "y": 0.64,
-            "size": 0.32,
+            "size": 0.42,
             "ink": "#c9d3ea"
           },
           "x": [
@@ -2548,8 +2593,8 @@
         {
           "id": "n2",
           "text": "great for lions",
-          "x": 1415,
-          "y": 476,
+          "x": 823,
+          "y": 380,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -2590,7 +2635,7 @@
             "item": "zebra",
             "x": 0.66,
             "y": 0.62,
-            "size": 0.32,
+            "size": 0.42,
             "ink": "#c9d3ea"
           }
         },
@@ -2849,7 +2894,7 @@
             "item": "plankton",
             "x": 0.32,
             "y": 0.55,
-            "size": 0.5,
+            "size": 0.65,
             "count": 34,
             "level": [
               {
@@ -2879,7 +2924,7 @@
             "item": "crescent",
             "x": 0.32,
             "y": 0.2,
-            "size": 0.1,
+            "size": 0.12,
             "level": [
               {
                 "frame": 0,
@@ -3040,7 +3085,7 @@
             "item": "plankton",
             "x": 0.3,
             "y": 0.55,
-            "size": 0.5,
+            "size": 0.65,
             "count": 34,
             "level": [
               {
@@ -3058,7 +3103,7 @@
             "item": "clock",
             "x": 0.7,
             "y": 0.5,
-            "size": 0.3,
+            "size": 0.39,
             "level": [
               {
                 "frame": 0,
@@ -3085,8 +3130,8 @@
         {
           "id": "n1",
           "text": "their clock stops",
-          "x": 1333,
-          "y": 318,
+          "x": 1413,
+          "y": 846,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -3127,7 +3172,7 @@
             "item": "plankton",
             "x": 0.68,
             "y": 0.55,
-            "size": 0.4,
+            "size": 0.52,
             "count": 20,
             "level": [
               {
@@ -3393,7 +3438,7 @@
             "item": "plankton",
             "x": 0.4,
             "y": 0.55,
-            "size": 0.5,
+            "size": 0.65,
             "count": 30,
             "level": [
               {
@@ -3419,7 +3464,7 @@
             "item": "question",
             "x": 0.25,
             "y": 0.35,
-            "size": 0.14,
+            "size": 0.18,
             "ink": "#c9d3ea"
           }
         },
@@ -3430,7 +3475,7 @@
             "item": "question",
             "x": 0.55,
             "y": 0.3,
-            "size": 0.12,
+            "size": 0.16,
             "ink": "#c9d3ea"
           }
         }
@@ -3492,7 +3537,7 @@
             "item": "tide-gauge",
             "x": 0.3,
             "y": 0.55,
-            "size": 0.5,
+            "size": 0.65,
             "level": [
               {
                 "frame": 0,
@@ -3615,7 +3660,7 @@
             "item": "crescent",
             "x": 0.7,
             "y": 0.5,
-            "size": 0.14,
+            "size": 0.18,
             "level": [
               {
                 "frame": 0,
@@ -3632,7 +3677,7 @@
             "item": "pressure-arrows",
             "x": 0.45,
             "y": 0.55,
-            "size": 0.25,
+            "size": 0.33,
             "rotation": 0,
             "direction": "out",
             "count": 3,
@@ -3643,9 +3688,9 @@
           "id": "sun",
           "kit": {
             "type": "planet",
-            "x": 0.08,
-            "y": 0.2,
-            "radius": 0.06,
+            "x": 0.1,
+            "y": 0.3,
+            "radius": 0.07,
             "base": "#ffcf4a",
             "bands": [
               "#ffe27a",
@@ -3723,8 +3768,8 @@
         {
           "id": "n2",
           "text": "Sun: much weaker",
-          "x": 1419,
-          "y": 692,
+          "x": 283,
+          "y": 848,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -3765,7 +3810,7 @@
             "item": "tide-gauge",
             "x": 0.25,
             "y": 0.55,
-            "size": 0.45,
+            "size": 0.59,
             "level": [
               {
                 "frame": 0,
@@ -3783,7 +3828,7 @@
             "item": "tide-gauge",
             "x": 0.45,
             "y": 0.55,
-            "size": 0.45,
+            "size": 0.59,
             "level": [
               {
                 "frame": 0,
@@ -3896,7 +3941,7 @@
             "item": "tide-gauge",
             "x": 0.25,
             "y": 0.55,
-            "size": 0.45,
+            "size": 0.59,
             "level": [
               {
                 "frame": 0,
@@ -3914,7 +3959,7 @@
             "item": "fish",
             "x": 0.45,
             "y": 0.72,
-            "size": 0.16,
+            "size": 0.21,
             "ink": "#c9d3ea"
           }
         }
@@ -4069,7 +4114,7 @@
             "item": "stir",
             "x": 0.32,
             "y": 0.58,
-            "size": 0.5,
+            "size": 0.65,
             "level": [
               {
                 "frame": 0,
@@ -4168,7 +4213,7 @@
             "item": "stir",
             "x": 0.32,
             "y": 0.58,
-            "size": 0.5,
+            "size": 0.65,
             "level": [
               {
                 "frame": 0,
@@ -4302,7 +4347,7 @@
             "item": "stir",
             "x": 0.66,
             "y": 0.58,
-            "size": 0.42,
+            "size": 0.55,
             "level": [
               {
                 "frame": 0,
@@ -4567,7 +4612,7 @@
             "item": "coral",
             "x": 0.32,
             "y": 0.7,
-            "size": 0.45,
+            "size": 0.59,
             "level": [
               {
                 "frame": 0,
@@ -4584,7 +4629,7 @@
             "item": "fish",
             "x": 0.6,
             "y": 0.45,
-            "size": 0.14,
+            "size": 0.18,
             "ink": "#c9d3ea"
           }
         }
@@ -4635,7 +4680,7 @@
         {
           "id": "n2",
           "text": "under the sea...",
-          "x": 1471,
+          "x": 1487,
           "y": 433,
           "size": 72,
           "anchor": "middle",
@@ -4677,7 +4722,7 @@
             "item": "coral",
             "x": 0.3,
             "y": 0.72,
-            "size": 0.5,
+            "size": 0.65,
             "count": 16,
             "level": [
               {
@@ -4699,7 +4744,7 @@
             "item": "crescent",
             "x": 0.3,
             "y": 0.2,
-            "size": 0.1,
+            "size": 0.12,
             "level": [
               {
                 "frame": 0,
@@ -4829,7 +4874,7 @@
             "item": "coral",
             "x": 0.66,
             "y": 0.72,
-            "size": 0.42,
+            "size": 0.55,
             "level": [
               {
                 "frame": 0,
@@ -5094,7 +5139,7 @@
             "item": "coral",
             "x": 0.25,
             "y": 0.74,
-            "size": 0.4,
+            "size": 0.52,
             "count": 8,
             "level": [
               {
@@ -5112,7 +5157,7 @@
             "item": "thermometer",
             "x": 0.48,
             "y": 0.55,
-            "size": 0.28,
+            "size": 0.36,
             "level": [
               {
                 "frame": 0,
@@ -5301,9 +5346,9 @@
           "kit": {
             "type": "prop",
             "item": "bar",
-            "x": 0.62,
-            "y": 0.74,
-            "size": 0.45,
+            "x": 0.6,
+            "y": 0.62,
+            "size": 0.59,
             "text": "Earth",
             "level": [
               {
@@ -5339,9 +5384,9 @@
           "kit": {
             "type": "prop",
             "item": "bar",
-            "x": 0.62,
-            "y": 0.86,
-            "size": 0.45,
+            "x": 0.6,
+            "y": 0.84,
+            "size": 0.59,
             "text": "Moon",
             "level": [
               {
@@ -5479,7 +5524,7 @@
             "item": "crescent",
             "x": 0.7,
             "y": 0.5,
-            "size": 0.1,
+            "size": 0.12,
             "level": [
               {
                 "frame": 0,
@@ -5568,7 +5613,7 @@
           "id": "n3",
           "text": "400x farther",
           "x": 1346,
-          "y": 690,
+          "y": 702,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -5658,7 +5703,7 @@
             "item": "crescent",
             "x": 0.3,
             "y": 0.5,
-            "size": 0.14,
+            "size": 0.18,
             "level": [
               {
                 "frame": 0,
@@ -5675,7 +5720,7 @@
             "item": "cross",
             "x": 0.3,
             "y": 0.5,
-            "size": 0.3,
+            "size": 0.39,
             "ink": "#c9d3ea"
           },
           "opacity": [
@@ -6078,7 +6123,7 @@
             "item": "clock",
             "x": 0.3,
             "y": 0.52,
-            "size": 0.36,
+            "size": 0.47,
             "level": [
               {
                 "frame": 0,
@@ -6242,8 +6287,8 @@
           "kit": {
             "type": "prop",
             "item": "impact",
-            "x": 0.38,
-            "y": 0.5,
+            "x": 0.36,
+            "y": 0.52,
             "size": 0.5,
             "count": 12,
             "level": [
@@ -6306,7 +6351,7 @@
             "item": "crescent",
             "x": 0.62,
             "y": 0.5,
-            "size": 0.1,
+            "size": 0.12,
             "level": [
               {
                 "frame": 0,
@@ -6340,8 +6385,8 @@
           "kit": {
             "type": "prop",
             "item": "clock",
-            "x": 0.82,
-            "y": 0.72,
+            "x": 0.6,
+            "y": 0.78,
             "size": 0.2,
             "level": [
               {
@@ -6449,8 +6494,8 @@
         {
           "id": "n3",
           "text": "a day: 4-5 hours",
-          "x": 1158,
-          "y": 906,
+          "x": 1574,
+          "y": 738,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -6491,7 +6536,7 @@
             "item": "impact",
             "x": 0.7,
             "y": 0.45,
-            "size": 0.3,
+            "size": 0.39,
             "count": 8,
             "level": [
               {
@@ -6776,7 +6821,7 @@
             "item": "crescent",
             "x": 0.62,
             "y": 0.4,
-            "size": 0.1,
+            "size": 0.12,
             "level": [
               {
                 "frame": 0,
@@ -6793,7 +6838,7 @@
             "item": "clock",
             "x": 0.78,
             "y": 0.62,
-            "size": 0.26,
+            "size": 0.34,
             "level": [
               {
                 "frame": 0,
@@ -6897,7 +6942,7 @@
             "item": "dino",
             "x": 0.3,
             "y": 0.6,
-            "size": 0.45,
+            "size": 0.59,
             "ink": "#c9d3ea"
           }
         },
@@ -6908,7 +6953,7 @@
             "item": "clock",
             "x": 0.7,
             "y": 0.5,
-            "size": 0.26,
+            "size": 0.34,
             "level": [
               {
                 "frame": 0,
@@ -6966,8 +7011,8 @@
         {
           "id": "n2",
           "text": "-20 minutes",
-          "x": 985,
-          "y": 330,
+          "x": 1417,
+          "y": 822,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -7008,7 +7053,7 @@
             "item": "earth-axis",
             "x": 0.28,
             "y": 0.52,
-            "size": 0.45,
+            "size": 0.59,
             "rotation": 23,
             "level": [
               {
@@ -7030,7 +7075,7 @@
             "item": "crescent",
             "x": 0.62,
             "y": 0.35,
-            "size": 0.1,
+            "size": 0.12,
             "level": [
               {
                 "frame": 0,
@@ -7047,7 +7092,7 @@
             "item": "pressure-arrows",
             "x": 0.45,
             "y": 0.45,
-            "size": 0.2,
+            "size": 0.26,
             "direction": "in",
             "count": 3,
             "ink": "#c9d3ea"
@@ -7101,7 +7146,7 @@
           "id": "n2",
           "text": "+1.7 ms per century",
           "x": 1426,
-          "y": 534,
+          "y": 546,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -7132,7 +7177,7 @@
           "id": "n3",
           "text": "without the Moon: mostly gone",
           "x": 1418,
-          "y": 632,
+          "y": 644,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -7173,7 +7218,7 @@
             "item": "bed",
             "x": 0.68,
             "y": 0.62,
-            "size": 0.4,
+            "size": 0.52,
             "level": [
               {
                 "frame": 0,
@@ -7438,7 +7483,7 @@
             "item": "clock",
             "x": 0.3,
             "y": 0.52,
-            "size": 0.36,
+            "size": 0.47,
             "level": [
               {
                 "frame": 0,
