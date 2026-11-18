@@ -85,7 +85,7 @@ After completing a milestone, provide:
 ## YouTube compliance (keep the channel monetizable)
 
 Before any video is scheduled, validate it against `docs/YOUTUBE_COMPLIANCE_CHECKLIST.md` and report the result. It covers:
-- the inauthentic content rule;
+- the inauthentic content rule, including repetition across the channel (compare each video with the last 5 uploads);
 - AI personas on sensitive topics;
 - AI voice disclosure and the ElevenLabs paid-plan licence;
 - music licences;
