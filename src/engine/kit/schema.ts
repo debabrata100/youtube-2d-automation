@@ -81,7 +81,7 @@ export const kitSchema = z.discriminatedUnion('type', [
   z.object({
     type: z.literal('prop'), item: z.enum(['thermometer', 'pressure-arrows', 'motion-lines', 'exclaim', 'question', 'check', 'cross', 'counter', 'stamp', 'vignette', 'station', 'helmet', 'doodle-stars', 'chamber',
       'cliff', 'geyser', 'plume', 'radiation-meter', 'radiation-belt', 'battery', 'airbag', 'small-moon', 'ice-cutaway', 'frost',
-      'flag', 'speedometer', 'race-car', 'sunglasses', 'mug', 'calendar', 'sign', 'igloo', 'rocket', 'fish', 'drop', 'tumbleweed', 'thermos', 'shovel', 'magnifier', 'smell-lines', 'bar', 'ruler', 'moon-map', 'system-map', 'solar-strip', 'probe', 'signal', 'bulb']),
+      'flag', 'speedometer', 'race-car', 'sunglasses', 'mug', 'calendar', 'sign', 'igloo', 'rocket', 'fish', 'drop', 'tumbleweed', 'thermos', 'shovel', 'magnifier', 'smell-lines', 'bar', 'ruler', 'moon-map', 'system-map', 'solar-strip', 'probe', 'signal', 'bulb', 'crescent', 'orbit-ring', 'town', 'lion', 'zebra', 'coral', 'plankton', 'tide-gauge', 'tilt-dial', 'earth-axis', 'impact', 'dino', 'reflector', 'bed', 'stir', 'clock']),
     x: n, y: n, size: size(.01, 1), rotation: z.number().min(-360).max(360).default(0), color: hex.optional(), ink: hex.optional(), count: z.number().int().min(1).max(40).default(6),
     level: z.array(z.object({frame: keyFrame, value: z.number().min(0).max(1)}).strict()).min(1).max(12).refine(increasing, 'Level frames must strictly increase').default([{frame: 0, value: .6}]),
     /** Counter numbers: each key holds until the next, or counts down/up to it in whole steps when ramp is set. */
@@ -93,6 +93,8 @@ export const kitSchema = z.discriminatedUnion('type', [
     /** System map: moon names and colours (inner to outer), the highlighted index, Saturn-style ring, radiation belt. */
     labels: z.array(z.string().min(1).max(14)).max(8).optional(), colors: z.array(hex).max(8).optional(),
     highlight: z.number().int().min(0).max(9).optional(), ring: z.boolean().default(false), belt: z.boolean().default(false),
+    /** Tilt dial: shaded band [lo, hi] in degrees. */
+    range: z.tuple([z.number().min(0).max(90), z.number().min(0).max(90)]).optional(),
   }).strict(),
   /** Hand-drawn ground: outlined horizon with bumps, optional planet curvature, speckles and horizon rocks. */
   z.object({

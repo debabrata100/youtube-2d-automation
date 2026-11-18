@@ -40,7 +40,7 @@ export const densityGaps = (board: Storyboard, maxSeconds = 6): DensityGap[] => 
 };
 
 /** Kit items that carry information on their own (a reading, a label, a diagram); characters and scenery do not. */
-export const INFO_ITEMS = new Set(['thermometer', 'counter', 'radiation-meter', 'battery', 'speedometer', 'calendar', 'sign', 'flag', 'bar', 'moon-map',
+export const INFO_ITEMS = new Set(['tide-gauge', 'tilt-dial', 'clock', 'lion', 'zebra', 'coral', 'plankton', 'dino', 'reflector', 'bed', 'stir', 'impact', 'earth-axis', 'crescent', 'town', 'thermometer', 'counter', 'radiation-meter', 'battery', 'speedometer', 'calendar', 'sign', 'flag', 'bar', 'moon-map',
   'ice-cutaway', 'pressure-arrows', 'cliff', 'ruler', 'system-map', 'solar-strip', 'check', 'cross', 'question', 'exclaim', 'radiation-belt', 'magnifier', 'stamp', 'probe', 'signal', 'bulb']);
 
 const valueAt = (track: Keyed[] | undefined, frame: number, fallback = 1) => {

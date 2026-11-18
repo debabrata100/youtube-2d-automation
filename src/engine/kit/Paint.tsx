@@ -66,9 +66,9 @@ export const Terrain: React.FC<{config: TerrainConfig; theme: Theme; width: numb
 
 export type PropConfig = {ink?: string; item: 'thermometer' | 'pressure-arrows' | 'motion-lines' | 'exclaim' | 'question' | 'check' | 'cross' | 'counter' | 'stamp' | 'vignette' | 'station' | 'helmet' | 'doodle-stars' | 'chamber'
   | 'cliff' | 'geyser' | 'plume' | 'radiation-meter' | 'radiation-belt' | 'battery' | 'airbag' | 'small-moon' | 'ice-cutaway' | 'frost'
-  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
+  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb' | 'crescent' | 'orbit-ring' | 'town' | 'lion' | 'zebra' | 'coral' | 'plankton' | 'tide-gauge' | 'tilt-dial' | 'earth-axis' | 'impact' | 'dino' | 'reflector' | 'bed' | 'stir' | 'clock'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
   values?: Array<{frame: number; value: number; ramp?: boolean}>; text?: string; direction?: 'in' | 'out';
-  labels?: string[]; colors?: string[]; highlight?: number; ring?: boolean; belt?: boolean};
+  labels?: string[]; colors?: string[]; highlight?: number; ring?: boolean; belt?: boolean; range?: [number, number]};
 
 /** Counter value: keys hold, or step in whole numbers towards the next key when `ramp` is set (a real-time countdown). */
 export const counterAt = (keys: NonNullable<PropConfig['values']>, frame: number) => {
@@ -327,6 +327,199 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
       <path d={`M ${-s * .06} ${-s * .08} q ${s * .06} ${-s * .05} ${s * .12} 0`} {...stroke(ink, w)}/>
       <path d={`M ${-s * .38} ${-s * .06} l ${s * .08} ${s * .08}`} {...stroke('#ffffff', w * .8)} opacity=".7"/>
     </g>;
+    case 'crescent': {
+      // The Moon: lit disc with craters and a soft glow while level is 1; as level falls it fades to a dashed ghost outline.
+      const lv = levelAt(c.level, frame), r = s * .5;
+      return <g transform={at}>
+        <circle r={r * 1.25} fill="#fff6c8" opacity={lv * .1}/>
+        <circle r={r} fill="#ece8d6" stroke={ink} strokeWidth={w} opacity={lv}/>
+        {[[-.3, -.25, .14], [.2, -.1, .1], [-.05, .3, .17], [.32, .28, .08], [-.38, .12, .07]].map(([cx, cy, cr], i) =>
+          <circle key={i} cx={cx * r} cy={cy * r} r={cr * r} fill="#cfc9b2" stroke={ink} strokeWidth={w * .4} opacity={lv * .9}/>)}
+        <circle r={r} fill="none" stroke={ink} strokeWidth={w * .8} strokeDasharray={`${w * 2.5} ${w * 2.5}`} opacity={(1 - lv) * .75}/>
+      </g>;
+    }
+    case 'orbit-ring': {
+      // Dashed empty orbit (the Moon's missing path). size is the diameter.
+      return <g transform={at}><circle r={s * .5} fill="none" stroke={c.color ?? ink} strokeWidth={w * .6} strokeDasharray={`${w * 3} ${w * 3}`} opacity=".65"
+        strokeDashoffset={-frame * .6}/></g>;
+    }
+    case 'town': {
+      // A row of houses at night; windows glow while level > .5.
+      const lit = levelAt(c.level, frame) > .5, hs = [[-.5, .22, .3], [-.3, .3, .22], [-.1, .2, .28], [.1, .34, .24], [.3, .24, .26]];
+      return <g transform={at}>{hs.map(([x0, h, bw], i) => {
+        const x = x0 * s, wdt = bw * s * .9, hh = h * s;
+        return <g key={i}>
+          <rect x={x} y={-hh} width={wdt} height={hh} fill="#1b2747" stroke={ink} strokeWidth={w * .6}/>
+          <path d={`M ${x - wdt * .08} ${-hh} L ${x + wdt / 2} ${-hh - wdt * .45} L ${x + wdt * 1.08} ${-hh}`} fill="#24335c" stroke={ink} strokeWidth={w * .6} strokeLinejoin="round"/>
+          {[.2, .6].map(fx => [.3, .65].map(fy => <rect key={`${fx}${fy}`} x={x + wdt * fx} y={-hh + hh * fy} width={wdt * .2} height={hh * .14} fill={lit && (i + fx * 10 + fy * 10) % 3 > .5 ? '#ffd86b' : '#0f1830'} stroke={ink} strokeWidth={w * .3}/>))}
+        </g>;
+      })}</g>;
+    }
+    case 'lion': {
+      // Side-on lion; level is belly fullness (0 thin, 1 round).
+      const lv = levelAt(c.level, frame), body = '#d9a441', mane = '#a8641f', by = s * .16 * (1 + lv * .35), tail = Math.sin(frame / 10) * s * .03;
+      return <g transform={at}>
+        {[-.22, -.1, .12, .24].map(t => <path key={t} d={`M ${t * s} ${s * .05} L ${t * s} ${s * .3}`} {...stroke(ink, w * 1.6)}/>)}
+        <path d={`M ${-s * .32} ${-s * .02} q ${-s * .14} ${s * .02} ${-s * .2} ${-s * .14 + tail}`} {...stroke(ink, w)}/>
+        <circle cx={-s * .53} cy={-s * .17 + tail} r={s * .035} fill={mane} stroke={ink} strokeWidth={w * .6}/>
+        <ellipse cx={0} cy={s * .02} rx={s * .34} ry={by} fill={body} stroke={ink} strokeWidth={w}/>
+        <circle cx={s * .36} cy={-s * .14} r={s * .17} fill={mane} stroke={ink} strokeWidth={w}/>
+        <circle cx={s * .38} cy={-s * .13} r={s * .11} fill={body} stroke={ink} strokeWidth={w}/>
+        <circle cx={s * .42} cy={-s * .16} r={s * .014} fill="#1b1b1b"/>
+        <path d={`M ${s * .47} ${-s * .1} l ${s * .02} ${s * .02} l ${-s * .03} ${s * .01}`} {...stroke('#1b1b1b', w * .6)}/>
+      </g>;
+    }
+    case 'zebra': {
+      const id = `zebra-${Math.round(c.x * 1000)}-${Math.round(c.y * 1000)}`;
+      return <g transform={at}>
+        {[-.2, -.08, .12, .22].map(t => <path key={t} d={`M ${t * s} ${s * .05} L ${t * s} ${s * .3}`} {...stroke(ink, w * 1.4)}/>)}
+        <defs><clipPath id={id}><ellipse cx={0} cy={0} rx={s * .3} ry={s * .14}/></clipPath></defs>
+        <ellipse cx={0} cy={0} rx={s * .3} ry={s * .14} fill="#f7f7f2"/>
+        <g clipPath={`url(#${id})`}>{Array.from({length: 7}, (_, i) => <path key={i} d={`M ${(-.27 + i * .085) * s} ${-s * .16} l ${s * .03} ${s * .32}`} {...stroke('#1b1b1b', w * 1.5)}/>)}</g>
+        <ellipse cx={0} cy={0} rx={s * .3} ry={s * .14} fill="none" stroke={ink} strokeWidth={w}/>
+        <path d={`M ${s * .24} ${-s * .06} L ${s * .36} ${-s * .28}`} {...stroke(ink, w * 2.6)}/><path d={`M ${s * .24} ${-s * .06} L ${s * .36} ${-s * .28}`} {...stroke('#f7f7f2', w * 1.4)}/>
+        <ellipse cx={s * .42} cy={-s * .3} rx={s * .09} ry={s * .045} transform={`rotate(25 ${s * .42} ${-s * .3})`} fill="#f7f7f2" stroke={ink} strokeWidth={w}/>
+        <circle cx={s * .41} cy={-s * .33} r={s * .012} fill="#1b1b1b"/>
+        <path d={`M ${-s * .3} 0 q ${-s * .08} ${s * .04} ${-s * .1} ${s * .14}`} {...stroke(ink, w)}/>
+      </g>;
+    }
+    case 'coral': {
+      // Branching coral; level > 0 releases rising pink eggs (count of them).
+      const lv = levelAt(c.level, frame), col = c.color ?? '#f07c7c';
+      const br = ['M 0 0 L 0 -0.35 L -0.12 -0.5', 'M 0 -0.2 L 0.14 -0.38 L 0.16 -0.52', 'M 0 -0.35 L 0.06 -0.58', 'M -0.2 0 L -0.22 -0.25 L -0.32 -0.38', 'M 0.22 0 L 0.26 -0.2 L 0.36 -0.3'];
+      return <g transform={at}>
+        {br.map((d, i) => <path key={i} d={d.replace(/-?\d*\.?\d+/g, v => String(+v * s))} {...stroke(ink, w * 3.2)}/>)}
+        {br.map((d, i) => <path key={`f${i}`} d={d.replace(/-?\d*\.?\d+/g, v => String(+v * s))} {...stroke(col, w * 2)}/>)}
+        <ellipse cx={0} cy={s * .02} rx={s * .42} ry={s * .06} fill="#8a7a66" stroke={ink} strokeWidth={w}/>
+        {lv > .01 && Array.from({length: c.count}, (_, i) => {
+          const t = ((frame * 1.1 + i * 41) % 120) / 120, x = (((i * 37) % 70) / 70 - .5) * s * .7 + Math.sin(frame / 15 + i) * s * .03;
+          return <circle key={`e${i}`} cx={x} cy={-s * .45 - t * s * .7} r={s * .022} fill="#ffc2d6" stroke={ink} strokeWidth={w * .3} opacity={lv * (1 - t)}/>;
+        })}
+      </g>;
+    }
+    case 'plankton': {
+      // A swarm of tiny animals; level is depth (0 near the surface line, 1 deep).
+      const lv = levelAt(c.level, frame);
+      return <g transform={at}>
+        <path d={`M ${-s * .55} ${-s * .5} q ${s * .1} ${-s * .03} ${s * .2} 0 t ${s * .2} 0 t ${s * .2} 0 t ${s * .2} 0 t ${s * .2} 0 t ${s * .1} 0`} {...stroke(c.color ?? '#7fc0ff', w * .8)}/>
+        {Array.from({length: c.count}, (_, i) => {
+          const x = ((i * 53) % 100 / 100 - .5) * s, y = (-.4 + lv * .8) * s + ((i * 29) % 30 / 100 - .15) * s + Math.sin(frame / 12 + i) * s * .015;
+          return <g key={i}><circle cx={x} cy={y} r={s * .024} fill="#bfe6ff" stroke={ink} strokeWidth={w * .3}/><path d={`M ${x} ${y + s * .024} l ${s * .012} ${s * .035}`} {...stroke(ink, w * .4)}/></g>;
+        })}
+      </g>;
+    }
+    case 'tide-gauge': {
+      // Tide post: the water swings around mid-height with amplitude = level (1 = today's tide).
+      const amp = levelAt(c.level, frame) * .38, lvl = .5 + amp * Math.sin(frame * 2 * Math.PI / 80), h = s, bw = s * .26, top = -h / 2, y = h / 2 - h * lvl;
+      return <g transform={at}>
+        <rect x={-bw / 2} y={y} width={bw} height={h / 2 - y} fill="#3d7fd0" opacity=".85"/>
+        <path d={`M ${-bw / 2} ${y} q ${bw / 4} ${-s * .03} ${bw / 2} 0 t ${bw / 2} 0`} {...stroke('#bfe6ff', w * .7)}/>
+        <rect x={-bw / 2} y={top} width={bw} height={h} fill="none" stroke={ink} strokeWidth={w}/>
+        {Array.from({length: 9}, (_, i) => <path key={i} d={`M ${-bw / 2} ${top + h * i / 8} l ${i % 2 ? s * .05 : s * .09} 0`} {...stroke(ink, w * .6)}/>)}
+        {c.text && <text x={0} y={top - s * .05} textAnchor="middle" fontFamily={font} fontSize={s * .11} fill={ink}>{c.text}</text>}
+      </g>;
+    }
+    case 'tilt-dial': {
+      // Quarter dial: 0 deg (upright) to 90 deg (on its side). level 0-1 maps to the needle angle; range [lo, hi] shades a band.
+      const R = s * .5, cx = -s * .3, cy = s * .3, pt = (a: number, r = R) => [cx + r * Math.sin(a * Math.PI / 180), cy - r * Math.cos(a * Math.PI / 180)];
+      const arc = (a0: number, a1: number, r = R) => { const [x0, y0] = pt(a0, r), [x1, y1] = pt(a1, r); return `M ${x0} ${y0} A ${r} ${r} 0 0 1 ${x1} ${y1}`; };
+      const needle = levelAt(c.level, frame) * 90, [nx, ny] = pt(needle, R * .92);
+      return <g transform={at}>
+        {c.range && <path d={arc(c.range[0], c.range[1], R * .82)} {...stroke(c.color ?? red, s * .1)} opacity=".55" strokeLinecap="butt"/>}
+        <path d={`${arc(0, 90)} L ${cx} ${cy} Z`} fill="none" stroke={ink} strokeWidth={w}/>
+        {[0, 15, 30, 45, 60, 75, 90].map(a => { const [x0, y0] = pt(a, R), [x1, y1] = pt(a, R * (a % 45 ? .93 : .88)); return <path key={a} d={`M ${x0} ${y0} L ${x1} ${y1}`} {...stroke(ink, w * .7)}/>; })}
+        {[0, 45, 90].map(a => { const [x, y] = pt(a, R * 1.13); return <text key={`t${a}`} x={x} y={y + s * .03} textAnchor="middle" fontFamily={font} fontSize={s * .11} fill={ink}>{a}°</text>; })}
+        <path d={`M ${cx} ${cy} L ${nx} ${ny}`} {...stroke(red, w * 1.6)}/><circle cx={cx} cy={cy} r={w * 1.6} fill={red}/>
+        {c.text && <text x={cx + R * .5} y={cy + s * .14} textAnchor="middle" fontFamily={font} fontSize={s * .09} fill={ink}>{c.text}</text>}
+      </g>;
+    }
+    case 'earth-axis': {
+      // Earth with its spin axis; rotate the prop to tilt it. level is spin speed (rotating land bands).
+      const r = s * .35, sp = levelAt(c.level, frame), off = ((frame * sp * 3) % 100) / 100;
+      return <g transform={at}>
+        <defs><clipPath id={`ea-${Math.round(c.x * 1000)}`}><circle r={r}/></clipPath></defs>
+        <circle r={r} fill="#3f7fd6" stroke={ink} strokeWidth={w}/>
+        <g clipPath={`url(#ea-${Math.round(c.x * 1000)})`}>{[0, 1, 2].map(i => { const x = (((off + i / 3) % 1) * 2 - 1) * r * 1.4;
+          return <ellipse key={i} cx={x} cy={(i - 1) * r * .45} rx={r * .28} ry={r * .18} fill="#5bb36a" stroke={ink} strokeWidth={w * .4}/>; })}</g>
+        <ellipse rx={r} ry={r * .2} fill="none" stroke={ink} strokeWidth={w * .4} opacity=".5"/>
+        <path d={`M 0 ${-r * 1.45} L 0 ${r * 1.45}`} {...stroke(red, w * 1.1)} strokeDasharray={`${w * 2} ${w * 1.5}`}/>
+        <path d={`M ${-r * .35} ${-r * 1.25} A ${r * .35} ${r * .1} 0 1 0 ${r * .35} ${-r * 1.25}`} {...stroke(ink, w * .8)}/>
+        <path d={`M ${r * .35} ${-r * 1.25} l ${-r * .1} ${-r * .06} m ${r * .1} ${r * .06} l ${-r * .02} ${r * .1}`} {...stroke(ink, w * .8)}/>
+      </g>;
+    }
+    case 'impact': {
+      // A giant impact: a starburst grows with level, debris flies outward and fades.
+      const p = levelAt(c.level, frame), R = s * .5 * p;
+      const star = Array.from({length: 16}, (_, i) => { const a = i * Math.PI / 8, rr = i % 2 ? R * .5 : R; return `${Math.cos(a) * rr},${Math.sin(a) * rr}`; }).join(' ');
+      return <g transform={at} opacity={p > 0 ? Math.min(1, 1.6 - p) : 0}>
+        <circle r={R * 1.2} fill="#ffcf4a" opacity=".25"/>
+        <polygon points={star} fill="#ffe27a" stroke={red} strokeWidth={w}/>
+        {Array.from({length: c.count}, (_, i) => { const a = i * 2.39, d = R * (1.1 + (i % 3) * .3); return <circle key={i} cx={Math.cos(a) * d} cy={Math.sin(a) * d} r={s * .02 * (1 + i % 2)} fill="#9a8d80" stroke={ink} strokeWidth={w * .4}/>; })}
+      </g>;
+    }
+    case 'dino': {
+      // Cartoon T. rex, side-on, facing right.
+      const g = '#6fa86a', bob = Math.sin(frame / 9) * s * .01;
+      return <g transform={`${at} translate(0 ${bob})`}>
+        <path d={`M ${-s * .05} ${s * .1} L ${-s * .1} ${s * .38} M ${s * .08} ${s * .1} L ${s * .1} ${s * .38}`} {...stroke(ink, w * 2.2)}/>
+        <path d={`M ${-s * .14} ${s * .38} l ${-s * .06} 0 M ${s * .1} ${s * .38} l ${s * .07} 0`} {...stroke(ink, w * 1.6)}/>
+        <path d={`M ${-s * .12} ${s * .02} Q ${-s * .4} ${s * .05} ${-s * .55} ${s * .2} Q ${-s * .38} ${s * .14} ${-s * .1} ${s * .16} Z`} fill={g} stroke={ink} strokeWidth={w}/>
+        <ellipse cx={0} cy={s * .04} rx={s * .2} ry={s * .14} transform={`rotate(-25)`} fill={g} stroke={ink} strokeWidth={w}/>
+        <path d={`M ${s * .12} ${s * .02} l ${s * .07} ${s * .05} M ${s * .1} ${s * .06} l ${s * .06} ${s * .05}`} {...stroke(ink, w)}/>
+        <path d={`M ${s * .08} ${-s * .14} L ${s * .38} ${-s * .16} Q ${s * .44} ${-s * .1} ${s * .38} ${-s * .04} L ${s * .2} ${-s * .04} Q ${s * .08} ${-s * .02} ${s * .06} ${-s * .08} Z`} fill={g} stroke={ink} strokeWidth={w}/>
+        <path d={`M ${s * .24} ${-s * .06} l ${s * .02} ${s * .02} l ${s * .02} ${-s * .02} l ${s * .02} ${s * .02} l ${s * .02} ${-s * .02}`} {...stroke('#ffffff', w * .6)}/>
+        <circle cx={s * .2} cy={-s * .12} r={s * .018} fill="#1b1b1b"/>
+      </g>;
+    }
+    case 'reflector': {
+      // Apollo-style laser reflector panel on legs; a red beam arrives from upper-left (level 0-.5) and returns (.5-1).
+      const p = levelAt(c.level, frame), sx = -s * 1.4, sy = -s * .9, ex = 0, ey = -s * .12;
+      const go = Math.min(1, p * 2), back = Math.max(0, p * 2 - 1);
+      return <g transform={at}>
+        {go > 0 && <path d={`M ${sx} ${sy} L ${sx + (ex - sx) * go} ${sy + (ey - sy) * go}`} {...stroke('#ff4d4d', w * 1.2)}/>}
+        {back > 0 && <path d={`M ${ex} ${ey} L ${ex + (sx - ex) * back} ${ey + (sy - ey) * back}`} {...stroke('#ff9a9a', w * .8)} strokeDasharray={`${w * 2} ${w}`}/>}
+        <path d={`M ${-s * .14} ${s * .05} L ${-s * .2} ${s * .22} M ${s * .14} ${s * .05} L ${s * .2} ${s * .22}`} {...stroke(ink, w)}/>
+        <rect x={-s * .22} y={-s * .2} width={s * .44} height={s * .26} rx={s * .02} fill="#b9b9b2" stroke={ink} strokeWidth={w} transform={`rotate(-12)`}/>
+        <g transform="rotate(-12)">{Array.from({length: 12}, (_, i) => <circle key={i} cx={-s * .16 + (i % 4) * s * .107} cy={-s * .14 + Math.floor(i / 4) * s * .075} r={s * .028} fill="#e8e8e2" stroke={ink} strokeWidth={w * .4}/>)}</g>
+      </g>;
+    }
+    case 'bed': {
+      // Someone in bed; level 0 asleep (Zzz), 1 wide awake (open eyes, no Zzz).
+      const awake = levelAt(c.level, frame) > .5;
+      return <g transform={at}>
+        <rect x={-s * .45} y={-s * .02} width={s * .9} height={s * .16} rx={s * .03} fill="#8a6a4a" stroke={ink} strokeWidth={w}/>
+        <path d={`M ${-s * .45} ${-s * .02} L ${-s * .45} ${-s * .2} M ${s * .45} ${-s * .02} L ${s * .45} ${-s * .12}`} {...stroke(ink, w * 1.4)}/>
+        <ellipse cx={-s * .3} cy={-s * .07} rx={s * .1} ry={s * .05} fill="#ffffff" stroke={ink} strokeWidth={w * .7}/>
+        <circle cx={-s * .27} cy={-s * .13} r={s * .07} fill="#ffffff" stroke={ink} strokeWidth={w}/>
+        {awake ? <>{[-.3, -.24].map(t => <circle key={t} cx={t * s} cy={-s * .14} r={s * .012} fill={ink}/>)}</>
+          : <path d={`M ${-s * .31} ${-s * .13} l ${s * .03} 0 M ${-s * .25} ${-s * .13} l ${s * .03} 0`} {...stroke(ink, w * .6)}/>}
+        <path d={`M ${-s * .2} ${-s * .06} Q 0 ${-s * .14} ${s * .42} ${-s * .06} L ${s * .42} ${s * .02} L ${-s * .2} ${s * .02} Z`} fill={c.color ?? '#5b7fc7'} stroke={ink} strokeWidth={w}/>
+        {!awake && ['z', 'z', 'Z'].map((z, i) => <text key={i} x={-s * .2 + i * s * .07} y={-s * .25 - i * s * .07 - (frame % 40) * s * .001} fontFamily={font} fontSize={s * (.06 + i * .02)} fill={ink} opacity={.5 + .5 * Math.sin(frame / 10 + i)}>{z}</text>)}
+      </g>;
+    }
+    case 'stir': {
+      // A block of ocean with swirling arrows; level is how strongly it's stirred.
+      const lv = levelAt(c.level, frame), rot = frame * lv * 4;
+      return <g transform={at}>
+        <rect x={-s * .5} y={-s * .3} width={s} height={s * .6} rx={s * .04} fill="#1f4f8f" stroke={ink} strokeWidth={w}/>
+        <path d={`M ${-s * .5} ${-s * .3} q ${s * .125} ${-s * .04} ${s * .25} 0 t ${s * .25} 0 t ${s * .25} 0 t ${s * .25} 0`} {...stroke('#7fc0ff', w * .8)}/>
+        <g transform={`rotate(${rot})`} opacity={.25 + lv * .75}>{[0, 120, 240].map(a => <g key={a} transform={`rotate(${a})`}>
+          <path d={`M ${s * .18} 0 A ${s * .18} ${s * .18} 0 0 1 ${-s * .09} ${s * .156}`} {...stroke('#bfe6ff', w * 1.1)}/>
+          <path d={`M ${-s * .09} ${s * .156} l ${s * .06} ${s * .01} m ${-s * .06} ${-s * .01} l ${s * .01} ${-s * .06}`} {...stroke('#bfe6ff', w * 1.1)}/></g>)}</g>
+      </g>;
+    }
+    case 'clock': {
+      // Clock face; level sets how fast the hands spin (0 stopped, 1 fast). text: caption below.
+      const lv = levelAt(c.level, frame), r = s * .4, hr = frame * lv * 2, mn = frame * lv * 24;
+      return <g transform={at}>
+        <circle r={r} fill="#ffffff" stroke={ink} strokeWidth={w}/>
+        {Array.from({length: 12}, (_, i) => { const a = i * Math.PI / 6; return <path key={i} d={`M ${Math.sin(a) * r * .85} ${-Math.cos(a) * r * .85} L ${Math.sin(a) * r * .95} ${-Math.cos(a) * r * .95}`} {...stroke('#1b1b1b', w * .6)}/>; })}
+        <path d={`M 0 0 L 0 ${-r * .5}`} {...stroke('#1b1b1b', w * 1.4)} transform={`rotate(${hr})`}/>
+        <path d={`M 0 0 L 0 ${-r * .78}`} {...stroke(red, w)} transform={`rotate(${mn})`}/>
+        <circle r={w} fill="#1b1b1b"/>
+        {c.text && <text x={0} y={r + s * .14} textAnchor="middle" fontFamily={font} fontSize={s * .12} fill={ink}>{c.text}</text>}
+      </g>;
+    }
     case 'probe': {
       // Voyager-style probe: big high-gain dish, a ten-sided bus with the gold record, magnetometer boom, RTG boom.
       const gold = '#d9a628', sway = Math.sin(frame / 30) * 2;
