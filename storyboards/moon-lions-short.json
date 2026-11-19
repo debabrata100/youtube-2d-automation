@@ -758,9 +758,9 @@
           "kit": {
             "type": "prop",
             "item": "zebra",
-            "x": 0.7,
+            "x": 0.8,
             "y": 0.62,
-            "size": 0.3,
+            "size": 0.26,
             "ink": "#c9d3ea"
           }
         },
@@ -768,7 +768,7 @@
           "id": "arka",
           "kit": {
             "type": "figure",
-            "x": 0.36,
+            "x": 0.5,
             "y": 0.74,
             "height": 0.26,
             "outfit": "astronaut",
@@ -976,10 +976,10 @@
       "annotations": [
         {
           "id": "n0",
-          "text": "full story below",
-          "x": 540,
-          "y": 600,
-          "size": 61,
+          "text": "Lions are just the start",
+          "x": 590,
+          "y": 620,
+          "size": 75,
           "anchor": "middle",
           "variant": "ink",
           "color": "#ffd25e",
@@ -990,20 +990,24 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "zebra",
-                "offset": 5
-              },
+              "frame": -1,
               "value": 0
             },
             {
-              "frame": {
-                "at": "zebra",
-                "offset": 11
-              },
+              "frame": 5,
               "value": 1
             }
-          ]
+          ],
+          "connector": {
+            "from": {
+              "x": 296.652,
+              "y": 648.5
+            },
+            "to": {
+              "x": 150,
+              "y": 1590
+            }
+          }
         }
       ]
     }
@@ -1012,8 +1016,8 @@
     {
       "id": "ml-l1",
       "template": "hero-reveal",
-      "durationFrames": 155,
-      "animationDurationFrames": 155,
+      "durationFrames": 158,
+      "animationDurationFrames": 158,
       "caption": {
         "text": "ml-l1",
         "preset": "body"
@@ -1084,8 +1088,8 @@
     {
       "id": "ml-l2",
       "template": "hero-reveal",
-      "durationFrames": 358,
-      "animationDurationFrames": 358,
+      "durationFrames": 366,
+      "animationDurationFrames": 366,
       "caption": {
         "text": "ml-l2",
         "preset": "body"
@@ -1158,8 +1162,8 @@
     {
       "id": "ml-l3",
       "template": "hero-reveal",
-      "durationFrames": 418,
-      "animationDurationFrames": 418,
+      "durationFrames": 427,
+      "animationDurationFrames": 427,
       "caption": {
         "text": "ml-l3",
         "preset": "body"
@@ -1239,8 +1243,8 @@
     {
       "id": "ml-l4",
       "template": "hero-reveal",
-      "durationFrames": 274,
-      "animationDurationFrames": 274,
+      "durationFrames": 281,
+      "animationDurationFrames": 281,
       "caption": {
         "text": "ml-l4",
         "preset": "body"
@@ -1320,8 +1324,8 @@
     {
       "id": "ml-l5",
       "template": "hero-reveal",
-      "durationFrames": 85,
-      "animationDurationFrames": 85,
+      "durationFrames": 88,
+      "animationDurationFrames": 88,
       "caption": {
         "text": "ml-l5",
         "preset": "body"
@@ -1333,7 +1337,7 @@
           {
             "frame": 0,
             "focus": {
-              "x": 0.4933,
+              "x": 0.5,
               "y": 0.504
             },
             "zoom": 1.05,

@@ -1,6 +1,6 @@
 # 10: Moon Short, "The lions' night" (links to Ep 4)
 
-- **Status:** rendered 19 Nov (`jobs/ml-final-a`, 43 s, 1080×1920, −16.2 LUFS, all checks passed). Waiting for Debabrata's review.
+- **Status:** rendered 19 Nov (`jobs/ml-final-b`, 44 s, 1080×1920, −16.2 LUFS, all checks passed). Waiting for Debabrata's review.
 - **Upload folder:** `~/Downloads/gahanarka-upload/10-moon-lions-short/`: `without-the-moon-lions-win.mp4`, `captions-english.srt` (29 cues), `thumb-a-lions-win.jpg`.
 - **Narration:** the second new hook line (same paid request as 09), then Ep 4's approved lines.
 - **When:** Tue 1 Dec, 9:30 PM IST.
@@ -28,7 +28,7 @@ Ep 4, "What If the Moon Disappeared Tonight?" (`ZbEeo3Xx0Iw`). Copy the ID from 
 ## Pinned comment
 
 ```
-Team lion or team zebra? 🦁🦓👇
+Team lion or team zebra? 🦁🦓 Lions are just the start: corals, plankton and even our sleep follow the Moon. Full video linked above 👆
 ```
 
 ## Tags

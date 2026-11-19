@@ -1,6 +1,6 @@
 # 08: Miranda Short, "12-minute fall" (links to Ep 3)
 
-- **Status:** rendered 19 Nov (`jobs/mr-final-a`, 36 s, 1080×1920, −16.5 LUFS, all checks passed). Waiting for Debabrata's review.
+- **Status:** rendered 19 Nov (`jobs/mr-final-b`, 37 s, 1080×1920, −16.5 LUFS, all checks passed). Waiting for Debabrata's review.
 - **Upload folder:** `~/Downloads/gahanarka-upload/8-miranda-short/`: `youd-fall-for-12-minutes-on-this-moon.mp4`, `captions-english.srt` (27 cues; captions are also burned in), `thumb-a-12-minutes.jpg`.
 - **Narration:** cut from Ep 3's approved narration (`jobs/m3-7-narration`) with `scripts/cut-narration.py`. **0 paid requests.**
 - **When:** Tue 24 Nov, 9:30 PM IST, after Ep 3 is public (Sun 22 Nov), because the Related video must point at it.
@@ -32,7 +32,7 @@ Ep 3, "How You'd Die on Every Moon in the Solar System" (`MnfXbn6mD8I`). Copy th
 ## Pinned comment
 
 ```
-12 minutes of falling... what would YOU do on the way down? 🪂👇
+12 minutes of falling is just ONE of the ways a moon can get you. Which moon kills you fastest? The full video is linked above 👆
 ```
 
 ## Tags

@@ -1107,7 +1107,7 @@
           "kit": {
             "type": "prop",
             "item": "airbag",
-            "x": 0.66,
+            "x": 0.8,
             "y": 0.66,
             "size": 0.2,
             "level": [
@@ -1127,7 +1127,7 @@
           "kit": {
             "type": "prop",
             "item": "sign",
-            "x": 0.66,
+            "x": 0.8,
             "y": 0.78,
             "size": 0.14,
             "text": "AIRBAG"
@@ -1137,9 +1137,9 @@
           "id": "arka",
           "kit": {
             "type": "figure",
-            "x": 0.38,
+            "x": 0.52,
             "y": 0.76,
-            "height": 0.26,
+            "height": 0.24,
             "outfit": "astronaut",
             "shiver": 0,
             "seed": 11,
@@ -1345,10 +1345,10 @@
       "annotations": [
         {
           "id": "n0",
-          "text": "full story below",
-          "x": 540,
-          "y": 600,
-          "size": 61,
+          "text": "Which moon kills you fastest?",
+          "x": 590,
+          "y": 620,
+          "size": 75,
           "anchor": "middle",
           "variant": "ink",
           "color": "@text.accent",
@@ -1359,20 +1359,24 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "brought",
-                "offset": -1
-              },
+              "frame": -1,
               "value": 0
             },
             {
-              "frame": {
-                "at": "brought",
-                "offset": 5
-              },
+              "frame": 5,
               "value": 1
             }
-          ]
+          ],
+          "connector": {
+            "from": {
+              "x": 203.988,
+              "y": 648.5
+            },
+            "to": {
+              "x": 150,
+              "y": 1590
+            }
+          }
         }
       ]
     }
@@ -1381,8 +1385,8 @@
     {
       "id": "mr-h1",
       "template": "hero-reveal",
-      "durationFrames": 196,
-      "animationDurationFrames": 196,
+      "durationFrames": 202,
+      "animationDurationFrames": 202,
       "caption": {
         "text": "mr-h1",
         "preset": "body"
@@ -1454,8 +1458,8 @@
     {
       "id": "mr-r1",
       "template": "hero-reveal",
-      "durationFrames": 207,
-      "animationDurationFrames": 207,
+      "durationFrames": 213,
+      "animationDurationFrames": 213,
       "caption": {
         "text": "mr-r1",
         "preset": "body"
@@ -1528,8 +1532,8 @@
     {
       "id": "mr-r2",
       "template": "hero-reveal",
-      "durationFrames": 82,
-      "animationDurationFrames": 82,
+      "durationFrames": 85,
+      "animationDurationFrames": 85,
       "caption": {
         "text": "mr-r2",
         "preset": "body"
@@ -1595,8 +1599,8 @@
     {
       "id": "mr-r3",
       "template": "hero-reveal",
-      "durationFrames": 176,
-      "animationDurationFrames": 176,
+      "durationFrames": 181,
+      "animationDurationFrames": 181,
       "caption": {
         "text": "mr-r3",
         "preset": "body"
@@ -1669,8 +1673,8 @@
     {
       "id": "mr-r4",
       "template": "hero-reveal",
-      "durationFrames": 82,
-      "animationDurationFrames": 82,
+      "durationFrames": 85,
+      "animationDurationFrames": 85,
       "caption": {
         "text": "mr-r4",
         "preset": "body"
@@ -1743,8 +1747,8 @@
     {
       "id": "mr-r5",
       "template": "hero-reveal",
-      "durationFrames": 165,
-      "animationDurationFrames": 165,
+      "durationFrames": 170,
+      "animationDurationFrames": 170,
       "caption": {
         "text": "mr-r5",
         "preset": "body"
@@ -1810,8 +1814,8 @@
     {
       "id": "mr-r6",
       "template": "hero-reveal",
-      "durationFrames": 124,
-      "animationDurationFrames": 124,
+      "durationFrames": 127,
+      "animationDurationFrames": 127,
       "caption": {
         "text": "mr-r6",
         "preset": "body"
@@ -1889,8 +1893,8 @@
     {
       "id": "mr-r7",
       "template": "hero-reveal",
-      "durationFrames": 48,
-      "animationDurationFrames": 48,
+      "durationFrames": 47,
+      "animationDurationFrames": 47,
       "caption": {
         "text": "mr-r7",
         "preset": "body"
@@ -1902,8 +1906,8 @@
           {
             "frame": 0,
             "focus": {
-              "x": 0.4943,
-              "y": 0.505
+              "x": 0.501,
+              "y": 0.5055
             },
             "zoom": 1.05,
             "easing": "smoothstep"

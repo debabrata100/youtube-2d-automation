@@ -19,7 +19,7 @@ import recipes
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 N, K = 'narrator', 'arka'
 EP3, EP4, HOOKS = 'jobs/m3-7-narration', 'jobs/mg-narration-b', 'jobs/msh-hooks-narration'
-TAIL = 1.5  # seconds after the last word: Shorts loop, so the ending stays short
+TAIL = 2.5  # seconds after the last word: room to read the closing teaser; Shorts loop, so keep it short
 
 HOOK_TILT = "Every video says Earth tips over without the Moon. It doesn't."
 HOOK_LIONS = 'If the Moon vanished tonight, lions would be the happiest animals on Earth.'
@@ -127,9 +127,12 @@ def earth(pid, x, y, r, **layer):
     return Prop(planet(pid, x, y, r, EARTH, (EARTH_LAND, EARTH, EARTH_LAND), shade=.2, seed=3, **layer), Box((x - r * H / W) * W, (y - r) * H, (x + r * H / W) * W, (y + r) * H, pid))
 
 
-def end_note(at):
-    """Last line: points viewers at the Related video link shown under the Short."""
-    return Note('full story below', at, 'note', pos=(W / 2, 600))
+def end_note(text, at=0, y=620):
+    """Closing teaser for the open question the Short leaves, with an arrow down to the Related video link
+    (bottom left, above the title). Shown from the start of the last line, so it's read before the loop."""
+    n = Note(text, at, 'title', size=88, pos=(W / 2 + 50, y))
+    n.point = (150, 1590)
+    return n
 
 
 def tall_photo(aid, at, until=None, y=.47, scale=.95):
@@ -177,9 +180,9 @@ elif KEY == 'miranda':
     shot('r6', [you(x=.42, fy=.74, h=.16, idle=None, poses=[(0, 'lie')], faces=[(0, 'dizzy'), (A('survive'), 'grin')])],
          ground + [kit(F, 'bag', 'airbag', .44, .7, .32, level=[{'frame': 0, 'value': 0}, {'frame': A('survive', -4), 'value': 0}, {'frame': A('survive', 6), 'value': 1}])],
          [Note('NASA scientists:', 4, 'small', pos=(W / 2, 580)), Note('survivable!', A('airbags'), 'title', pos=(W / 2, 690))], sounds=[('pop', A('survive'), -18)])
-    shot('r7', [arka(x=.38, fy=.76, h=.26, poses=[(0, 'cheer')], faces=[(0, 'grin')])],
-         ground + [kit(F, 'bag', 'airbag', .66, .66, .2, level=[{'frame': 0, 'value': 0}, {'frame': 8, 'value': 1}]), kit(F, 'tag', 'sign', .66, .78, .14, w=1.4, h=1.0, text='AIRBAG')],
-         [end_note(A('brought'))])
+    shot('r7', [arka(x=.52, fy=.76, h=.24, poses=[(0, 'cheer')], faces=[(0, 'grin')])],
+         ground + [kit(F, 'bag', 'airbag', .8, .66, .2, level=[{'frame': 0, 'value': 0}, {'frame': 8, 'value': 1}]), kit(F, 'tag', 'sign', .8, .78, .14, w=1.4, h=1.0, text='AIRBAG')],
+         [end_note('Which moon kills you fastest?')])
     M = 'assets/music/'
     ep.music([('h1', M + '6-space-singularity.mp3', 0), ('r1', M + '2-playful-b-sweet-math.mp3', 0)], dropouts=[('r7', 0, 1.0)], target_lufs=-16)
 
@@ -203,7 +206,7 @@ elif KEY == 'tilt':
     shot('t6', [arka(x=.4, fy=.74, poses=[(0, 'think')], faces=[(0, 'neutral')])], [kit(F, 'q', 'question', .68, .44, .18)],
          [Note('not doomed?', A('doomed'), 'title', pos=(W / 2, 600))])
     shot('t7', [], [earth('earth', .5, .5, .16), kit(F, 'ok', 'check', .76, .38, .2, **pop_in(A('tonight'), (.76 * W, .38 * H)))],
-         [end_note(A('tilt', 6)), Note('not doomed', A('tonight'), 'title', pos=(W / 2, 1320))])
+         [end_note('So what WOULD change?'), Note('not doomed', A('tonight'), 'title', pos=(W / 2, 1320))])
     M = 'assets/music/'
     ep.music([('t1', M + '4-tense-b-standoff.mp3', 0, -2), ('t4', M + '5-uplifting-b-defying-gravity.mp3', 0)], dropouts=[('t4', 0, 1.0)], target_lufs=-16)
 
@@ -230,8 +233,8 @@ elif KEY == 'lions':
                     kit(F, 'zebra', 'zebra', .72, .6, .36, w=1.2, h=.9, x=track((0, 0), (plus(LEAP, 2), 0), (plus(LEAP, 22), 420, 'smoothstep')))],
          [Note("every night: a hunter's night", A("hunter's"), 'note', pos=(W / 2, 600)), Note('great for lions', A('lions'), 'small', pos=(W / 2, 1300))],
          sounds=[('whoosh', LEAP, -20)])
-    shot('l5', [arka(x=.36, fy=.74, poses=[(0, 'cower')], faces=[(0, 'scared')])], [kit(F, 'zebra', 'zebra', .7, .62, .3, w=1.2, h=.9)],
-         [end_note(A('zebra', 6))])
+    shot('l5', [arka(x=.5, fy=.74, poses=[(0, 'cower')], faces=[(0, 'scared')])], [kit(F, 'zebra', 'zebra', .8, .62, .26, w=1.2, h=.9)],
+         [end_note('Lions are just the start')])
     M = 'assets/music/'
     ep.music([('l1', M + '6-space-event-horizon.mp3', 0), ('l3', M + '1-curious-b-frame-dragging.mp3', 0)], target_lufs=-16)
 

@@ -1350,10 +1350,10 @@
       "annotations": [
         {
           "id": "n0",
-          "text": "full story below",
-          "x": 540,
-          "y": 600,
-          "size": 61,
+          "text": "So what WOULD change?",
+          "x": 590,
+          "y": 620,
+          "size": 75,
           "anchor": "middle",
           "variant": "ink",
           "color": "#ffd25e",
@@ -1364,20 +1364,24 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "tilt",
-                "offset": 5
-              },
+              "frame": -1,
               "value": 0
             },
             {
-              "frame": {
-                "at": "tilt",
-                "offset": 11
-              },
+              "frame": 5,
               "value": 1
             }
-          ]
+          ],
+          "connector": {
+            "from": {
+              "x": 285.108,
+              "y": 648.5
+            },
+            "to": {
+              "x": 150,
+              "y": 1590
+            }
+          }
         },
         {
           "id": "n1",
@@ -1417,8 +1421,8 @@
     {
       "id": "mt-t1",
       "template": "hero-reveal",
-      "durationFrames": 137,
-      "animationDurationFrames": 137,
+      "durationFrames": 140,
+      "animationDurationFrames": 140,
       "caption": {
         "text": "mt-t1",
         "preset": "body"
@@ -1497,8 +1501,8 @@
     {
       "id": "mt-t2",
       "template": "hero-reveal",
-      "durationFrames": 538,
-      "animationDurationFrames": 538,
+      "durationFrames": 549,
+      "animationDurationFrames": 549,
       "caption": {
         "text": "mt-t2",
         "preset": "body"
@@ -1625,8 +1629,8 @@
     {
       "id": "mt-t4",
       "template": "hero-reveal",
-      "durationFrames": 250,
-      "animationDurationFrames": 250,
+      "durationFrames": 255,
+      "animationDurationFrames": 255,
       "caption": {
         "text": "mt-t4",
         "preset": "body"
@@ -1699,8 +1703,8 @@
     {
       "id": "mt-t4b",
       "template": "hero-reveal",
-      "durationFrames": 325,
-      "animationDurationFrames": 325,
+      "durationFrames": 332,
+      "animationDurationFrames": 332,
       "caption": {
         "text": "mt-t4b",
         "preset": "body"
@@ -1773,8 +1777,8 @@
     {
       "id": "mt-t5",
       "template": "hero-reveal",
-      "durationFrames": 100,
-      "animationDurationFrames": 100,
+      "durationFrames": 102,
+      "animationDurationFrames": 102,
       "caption": {
         "text": "mt-t5",
         "preset": "body"
@@ -1847,8 +1851,8 @@
     {
       "id": "mt-t6",
       "template": "hero-reveal",
-      "durationFrames": 62,
-      "animationDurationFrames": 62,
+      "durationFrames": 63,
+      "animationDurationFrames": 63,
       "caption": {
         "text": "mt-t6",
         "preset": "body"
@@ -1901,8 +1905,8 @@
     {
       "id": "mt-t7",
       "template": "hero-reveal",
-      "durationFrames": 104,
-      "animationDurationFrames": 104,
+      "durationFrames": 105,
+      "animationDurationFrames": 105,
       "caption": {
         "text": "mt-t7",
         "preset": "body"
@@ -1958,10 +1962,7 @@
         },
         {
           "sound": "pop",
-          "frame": {
-            "at": "tilt",
-            "offset": 6
-          },
+          "frame": 0,
           "gainDb": -24
         },
         {
