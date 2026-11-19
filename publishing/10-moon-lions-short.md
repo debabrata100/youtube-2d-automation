@@ -1,6 +1,7 @@
 # 10: Moon Short, "The lions' night" (links to Ep 4)
 
 - **Status:** rendered 19 Nov (`jobs/ml-final-c`, 44 s, 1080×1920, −16.2 LUFS, all checks passed). Approved by Debabrata 19 Nov.
+- **Uploaded:** 19 Nov, scheduled for **Tue 1 Dec 2026, 9:30 PM IST**: https://youtube.com/shorts/1imI95ToPoI (ID copied from Studio). Copyright and Community Guidelines checks: no issues. Title, description, thumbnail, captions, playlist, tags and settings are in. Still to do: Related video → Ep 4 (`ZbEeo3Xx0Iw`) on Thu 26 Nov, once Ep 4 is public; pinned comment after it's live (reminders set).
 - **Upload folder:** `~/Downloads/gahanarka-upload/10-moon-lions-short/`: `without-the-moon-lions-win.mp4`, `captions-english.srt` (29 cues), `thumb-a-lions-win.jpg`.
 - **Narration:** the second new hook line (same paid request as 09), then Ep 4's approved lines.
 - **When:** Tue 1 Dec, 9:30 PM IST.
