@@ -48,6 +48,7 @@ Supporting records: `docs/MUSIC_SOURCES.md`, `docs/VOICE_LICENSING.md`, `docs/br
 - [ ] Category: Science & Technology; playlist set; captions (SRT) uploaded.
 - [ ] YouTube's copyright check in Studio passed before scheduling.
 - [ ] Related video (Shorts) or end screen (long) points to the right video.
+- [ ] When this episode is the one the previous episode teased, switch the previous episode's end-screen video to this one once it's public.
 
 ### Channel health (monthly)
 - [ ] Long-form watch hours tracked toward 8,000; long episodes of 8–15 min.

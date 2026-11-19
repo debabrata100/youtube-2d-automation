@@ -50,16 +50,33 @@ Legend: **Debabrata** = Debabrata's idea, **Claude** = Claude's addition. Facts 
 
 ---
 
-## Suggested order (to decide later)
+## Suggested order (updated 19 Nov 2026, agreed with Debabrata)
 
-1. **M1** Why is the Moon leaving us, and could it come back? (a *Why* title, straight after Ep 4)
-2. **S1** The 8-minute ghost Sun (a *What if* title; starts the Sun track)
+1. **S1** The 8-minute ghost Sun. Ep 4 ends with "Next time on Gahanarka: we take away something even bigger", so this pays off that promise.
+2. **M1** Why is the Moon leaving us, and could it come back? (a *Why* title)
 3. **E1** When will a day be 25 hours long? (a *When* title; starts the Earth track)
 4. **S2** Would a black-hole Sun suck us in? (myth-bust)
 5. **M4** Does Earth have more than one moon?
 6. **E3** Would dinosaurs come back?
 
 Each long episode gets 2–3 Shorts, each with its own hook, layout and ending. Good Short-only ideas: **S4** (Sun is white), **M6** (one side of the Moon), **E5** (magnetic flip), M4 as a teaser.
+
+## Episode ending: Arka's next question (from Ep 5 on, agreed 19 Nov 2026)
+
+Every long episode ends with an open loop: Arka wonders about something that grows out of this episode, and the narrator promises it's next.
+
+1. Payoff: the narrator sums up.
+2. One emotional closing line (for example, "Look up tonight.").
+3. **Arka's new question,** with a thought bubble sketching the next topic. Example, at the end of the Sun episode: "Wait… if the Sun can't become a black hole… what would happen if it did?"
+4. Narrator: "Good question, Arka. That's our next episode."
+5. Arka: "Subscribe so you don't miss it!"
+6. End card (12 s, end-screen elements).
+
+Rules:
+- **Only tease what's really next:** its script is at least drafted. Say "next", never a date.
+- **Vary the wording and the picture every time.** Same shape, never the same lines or animation (repetition rule 13).
+- **Keep steps 3–5 under about 10 seconds.**
+- **When the teased episode goes live, switch the previous episode's end-screen video to it** (see the publishing checklist).
 
 ## Notes
 
