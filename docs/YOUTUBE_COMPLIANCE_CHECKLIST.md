@@ -38,6 +38,8 @@ Supporting records: `docs/MUSIC_SOURCES.md`, `docs/VOICE_LICENSING.md`, `docs/br
 
 ### Packaging (title, thumbnail, description)
 - [ ] Title written by hand for this video (not a recycled template); a promise the video keeps.
+- [ ] Title is **50 characters or less**, so it isn't cut off with "…" on phones.
+- [ ] The first 5 seconds confirm the title and thumbnail's promise (no slow build-up).
 - [ ] Thumbnail designed individually; it differs from the last 10 uploads.
 - [ ] Description includes sources, image credits and "Narration voiced with AI (ElevenLabs)"; the channel footer is present.
 - [ ] Tags relevant; none aimed at children.
@@ -61,6 +63,10 @@ Supporting records: `docs/MUSIC_SOURCES.md`, `docs/VOICE_LICENSING.md`, `docs/br
 - [ ] YouTube's copyright check in Studio passed before scheduling.
 - [ ] Related video (Shorts) or end screen (long) points to the right video.
 - [ ] When this episode is the one the previous episode teased, switch the previous episode's end-screen video to this one once it's public.
+
+### Quality over schedule
+- [ ] If an episode isn't good enough by its slot, skip the week instead of publishing something weaker (one late episode costs less than a weak one).
+- [ ] The episode's publishing file records **one thing we improved** compared with the previous episode.
 
 ### Channel health (monthly)
 - [ ] Long-form watch hours tracked toward 8,000; long episodes of 8–15 min.
