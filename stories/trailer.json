@@ -1,0 +1,144 @@
+{
+ "schemaVersion": "1.0",
+ "id": "trailer",
+ "title": "This is Gahanarka",
+ "topic": "Channel trailer: four episode questions (Moon gone, Titan, helmet off, every moon), what Gahanarka is, Arka, a new episode every week, subscribe",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 40,
+ "storyboard": "storyboards/trailer.json",
+ "beats": [
+  {
+   "id": "t1",
+   "sceneId": "tr-t1",
+   "intent": "hook",
+   "narration": "What if the Moon disappeared tonight?",
+   "phrases": [
+    "What if the Moon disappeared",
+    "tonight?"
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "t2",
+   "sceneId": "tr-t2",
+   "intent": "hook",
+   "narration": "Could you step outside on Titan without a spacesuit?",
+   "phrases": [
+    "Could you step outside on Titan",
+    "without a spacesuit?"
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "t3",
+   "sceneId": "tr-t3",
+   "intent": "hook",
+   "narration": "What happens if you take your helmet off in space?",
+   "phrases": [
+    "What happens if you take your",
+    "helmet off in space?"
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "t4",
+   "sceneId": "tr-t4",
+   "intent": "hook",
+   "narration": "And how would you die on every moon in the solar system?",
+   "phrases": [
+    "And how would you die on every",
+    "moon in the solar system?"
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "t5",
+   "sceneId": "tr-t5",
+   "intent": "setup",
+   "narration": "This is Gahanarka. Hand-drawn stories about space and science.",
+   "phrases": [
+    "This is Gahanarka.",
+    "Hand-drawn stories about space and",
+    "science."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "t6",
+   "sceneId": "tr-t6",
+   "intent": "setup",
+   "narration": "Big questions, real answers, every fact checked against real research.",
+   "phrases": [
+    "Big questions, real answers, every",
+    "fact checked against real",
+    "research."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "t7",
+   "sceneId": "tr-t7",
+   "intent": "explanation",
+   "narration": "And me! I'm Arka. I ask the questions so you don't have to.",
+   "phrases": [
+    "And me!",
+    "I'm Arka.",
+    "I ask the questions so you don't",
+    "have to."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "t8",
+   "sceneId": "tr-t8",
+   "intent": "closing",
+   "narration": "A new episode every week.",
+   "phrases": [
+    "A new episode every week."
+   ],
+   "phraseSpeakers": [
+    "narrator"
+   ]
+  },
+  {
+   "id": "t9",
+   "sceneId": "tr-t9",
+   "intent": "closing",
+   "narration": "Subscribe, and let's explore the unknown together!",
+   "phrases": [
+    "Subscribe, and let's explore the",
+    "unknown together!"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  }
+ ]
+}
