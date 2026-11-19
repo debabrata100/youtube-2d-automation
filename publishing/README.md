@@ -77,7 +77,7 @@ All six are uploaded and scheduled (private until their time):
 | Ep 3: every moon | https://youtu.be/MnfXbn6mD8I | Sun 22 Nov, 9:30 PM | A/B test (a1, b1, c1) starts when public; pin comment |
 | Voyager 1 Short (night sky) | https://youtube.com/shorts/tZx2ERI-4ec | Wed 18 Nov, 9:30 PM | Pin comment; on Sun 22 Nov switch Related video from Titan to Ep 3 |
 | Miranda Short | https://youtube.com/shorts/d1yDnS3FVGA | Tue 24 Nov, 9:30 PM | Related video → Ep 3 (after 22 Nov); pin comment |
-| Ep 4: What If the Moon Disappeared Tonight? | https://youtu.be/ZbEeo3Xx0Iw | Thu 26 Nov, 9:30 PM | A/B test (a, b, c) starts when public; pin comment |
+| Ep 4: What If the Moon Disappeared Tonight? | https://youtu.be/ZbEeo3Xx0Iw | Thu 26 Nov, 9:30 PM | A/B test (c, e, b) starts when public; pin comment |
 | Moon Short: Earth won't tip over | https://youtube.com/shorts/Fc0FfkVvZJE | Sat 28 Nov, 9:30 PM | Related video → Ep 4 (after 26 Nov); pin comment |
 | Moon Short: lions | https://youtube.com/shorts/1imI95ToPoI | Tue 1 Dec, 9:30 PM | Related video → Ep 4 (after 26 Nov); pin comment |
 
