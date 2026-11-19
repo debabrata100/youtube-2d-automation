@@ -74,26 +74,75 @@ if __name__ == '__main__' and '--script-only' in sys.argv:
     sys.exit(0)
 
 
-# ------------------------------------------------------------------ storyboard (16:9, night sky): placeholder until narration exists
+# ------------------------------------------------------------------ storyboard (16:9, night sky)
+# t1-t4 leave an empty "screen" (SCREEN box) in the middle: scripts/trailer-clips.sh drops the real episode clip
+# into it after the render (free, local ffmpeg), so the trailer shows actual footage from each episode.
 recipes.INK = '#eef1f8'
-DURATION = int(sys.argv[1]) if len(sys.argv) > 1 else 40
+YELLOW = '#ffd25e'
+recipes.RED = YELLOW
+DURATION = int(sys.argv[1]) if len(sys.argv) > 1 else 37
+TAIL = 2  # seconds held after the last word
 write_story(DURATION)
 ep = Episode(str(STORY), 'wide'); F = ep.F; W, H = F['W'], F['H']
+ep.story['durationSeconds'] = DURATION - TAIL
 ep.theme = 'paint-night'
-ep.backdrop(stars=26)
+ep.backdrop(stars=30)
+SCREEN = (384, 300, 1536, 948)  # x0, y0, x1, y1 in output pixels: 1152 x 648 (16:9)
 
 
-def earth(pid, x, y, r, **layer):
-    return Prop(planet(pid, x, y, r, EARTH, (EARTH_LAND, EARTH, EARTH_LAND), shade=.2, seed=3, **layer), Box((x - r * H / W) * W, (y - r) * H, (x + r * H / W) * W, (y + r) * H, pid))
+def arka(x=.3, fy=.8, h=.5, poses=((0, 'float'),), faces=((0, 'happy'),), **k):
+    return Char('arka', 'arka', x=x, fy=fy, h=h, poses=list(poses), faces=list(faces), **k)
 
 
-for bid, intent, parts in SHOTS:
-    speakers = {sp for sp, _ in parts}
-    chars = [Char('arka', 'arka', slot='center')] if K in speakers else []
-    ep.scene(bid, explain(chars, [earth('earth', .72, .55, .16)], [Note(bid.upper(), 4, 'small')]))
+def lv(*pairs):
+    return [{'frame': f, 'value': v} for f, v in pairs]
+
+
+def question(bid, text, arka_pose='point-right'):
+    """A question shot: the line as a big title, the clip screen in the middle, Arka pointing at it from the side."""
+    ep.scene(bid, explain([arka(x=.1, fy=.86, h=.34, poses=[(0, arka_pose)], faces=[(0, 'grin')])], [],
+                          [Note(text, 2, 'title', size=76, pos=(W / 2, 170))], camera_preset='settle'))
+
+
+question('t1', 'What if the Moon disappeared tonight?')
+question('t2', 'Could you go outside on Titan without a spacesuit?')
+question('t3', 'What if you took your helmet off in space?')
+question('t4', 'How would you die on every moon?')
+
+ep.scene('t5', explain([], [kit(F, 'moon', 'crescent', .5, .5, .5, level=lv((0, 1)), opacity=track((0, 0), (6, 0), (30, .35, 'smoothstep')))],
+                       [Note('GAHANARKA', A('Gahanarka'), 'title', size=100, pos=(W / 2, .44 * H), color=GOLD),
+                        Note('light in the unfathomable', plus(A('Gahanarka'), 12), 'small', pos=(W / 2, .56 * H)),
+                        Note('hand-drawn space & science stories', A('Hand-drawn'), 'note', pos=(W / 2, .7 * H))], camera_preset='push'))
+
+ep.scene('t6', explain([], [kit(F, 'q', 'question', .22, .48, .22, **pop_in(A('questions'), (.22 * W, .48 * H))),
+                            kit(F, 'ecl', 'eclipse', .5, .48, .22, text='solar', level=lv((0, .4), (50, 1)), **pop_in(A('answers'), (.5 * W, .48 * H))),
+                            kit(F, 'ok', 'check', .78, .48, .22, **pop_in(A('checked'), (.78 * W, .48 * H)))],
+                       [Note('big questions', A('questions'), 'note', pos=(.22 * W, .72 * H)), Note('real answers', A('answers'), 'note', pos=(.5 * W, .72 * H)),
+                        Note('fact-checked', A('checked'), 'note', pos=(.78 * W, .72 * H))]))
+
+ep.scene('t7', explain([arka(x=.36, fy=.84, h=.62, poses=[(0, 'wave')], faces=[(0, 'grin')])], [],
+                       [Note("hi! I'm Arka", A('Arka'), 'title', pos=(.68 * W, .38 * H)), Note('I ask the questions', A('ask'), 'note', pos=(.68 * W, .5 * H))]))
+
+ep.scene('t8', explain([], [kit(F, 'cal', 'calendar', .5, .5, .34, text='NEW', **pop_in(2, (.5 * W, .5 * H)))],
+                       [Note('a new episode every week', A('week'), 'title', pos=(W / 2, .8 * H))], camera_preset='push'))
+
+ep.scene('t9', explain([arka(x=.3, fy=.84, h=.56, poses=[(0, 'wave')], faces=[(0, 'grin')])],
+                       [kit(F, 'moon', 'crescent', .74, .26, .16, level=lv((0, 1))),
+                        kit(F, 'sub', 'sign', .68, .58, .32, w=1.8, h=1.0, text='SUBSCRIBE', **pop_in(A('Subscribe'), (.68 * W, .58 * H)))],
+                       [Note('GAHANARKA', A('explore'), 'title', size=96, pos=(W / 2, .13 * H), color=GOLD)]))
+
+LIGHT_INK = {'question', 'crescent', 'eclipse', 'check'}
+for layer in [pr.layer for pl in ep.plans.values() for pr in pl['props']] + ep._backdrop['layers']:
+    k = layer.get('kit', {})
+    if k.get('type') == 'prop' and k.get('item') in LIGHT_INK: k.setdefault('ink', '#c9d3ea')
+
+ep.music([('t1', 'assets/music/6-space-event-horizon.mp3', 0)], target_lufs=-16)
 
 if __name__ == '__main__':
     board = ep.build()
+    board['scenes'][-1]['durationFrames'] += TAIL * FPS
     path = ROOT / 'storyboards/trailer.json'
     path.write_text(json.dumps(board, indent=2, ensure_ascii=False) + '\n')
-    print('wrote', path.name, len(board['scenes']), 'shots,', sum(s['durationFrames'] for s in board['scenes']), 'frames')
+    t = 0
+    for sc in board['scenes']:
+        print(sc['id'], 'frames', t, '-', t + sc['durationFrames']); t += sc['durationFrames']
