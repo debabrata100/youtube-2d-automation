@@ -1,0 +1,38 @@
+{
+ "id": "moon-tilt-short",
+ "segments": [
+  {
+   "source": "jobs/msh-hooks-narration",
+   "text": "Every video says Earth tips over without the Moon. It doesn't."
+  },
+  {
+   "source": "jobs/mg-narration-b",
+   "text": "In 1993, a famous study found that without the Moon, Earth's tilt could swing anywhere from zero all the way to eighty-five degrees. At eighty-five degrees, Earth would be lying on its side, with months of endless day and months of endless night."
+  },
+  {
+   "source": "jobs/mg-narration-b",
+   "text": "That sounds... bad."
+  },
+  {
+   "source": "jobs/mg-narration-b",
+   "text": "But in 2012, NASA scientist Jack Lissauer and his team ran much more detailed simulations. Their answer was far calmer.",
+   "gapAfter": 0.1
+  },
+  {
+   "source": "jobs/mg-narration-b",
+   "text": "Earth would wobble more than it does today, but in their simulations it stayed roughly between twelve and thirty-eight degrees, even over a hundred million years."
+  },
+  {
+   "source": "jobs/mg-narration-b",
+   "text": "But no sudden flip. And no instant freeze."
+  },
+  {
+   "source": "jobs/mg-narration-b",
+   "text": "So we're not all doomed?"
+  },
+  {
+   "source": "jobs/mg-narration-b",
+   "text": "Not tonight. And not because of the tilt."
+  }
+ ]
+}

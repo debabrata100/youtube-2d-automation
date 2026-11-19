@@ -1,0 +1,49 @@
+{
+ "schemaVersion": "1.0",
+ "id": "moon-shorts-hooks",
+ "title": "Moon Shorts: new hook lines",
+ "topic": "Recording only: the two new hook lines for the Moon Shorts (cut into each Short)",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 16,
+ "storyboard": "storyboards/moon-shorts-hooks.json",
+ "candidatesReport": "stories/moon-shorts-script.md",
+ "beats": [
+  {
+   "id": "k1",
+   "sceneId": "hk-k1",
+   "intent": "hook",
+   "narration": "Every video says Earth tips over without the Moon. It doesn't.",
+   "phrases": [
+    "Every video says Earth",
+    "tips over without the",
+    "Moon.",
+    "It doesn't."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "k2",
+   "sceneId": "hk-k2",
+   "intent": "closing",
+   "narration": "If the Moon vanished tonight, lions would be the happiest animals on Earth.",
+   "phrases": [
+    "If the Moon vanished",
+    "tonight, lions would be",
+    "the happiest animals on",
+    "Earth."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  }
+ ]
+}

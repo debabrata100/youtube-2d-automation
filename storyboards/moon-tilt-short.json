@@ -1,0 +1,1977 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "moon-tilt-short",
+  "title": "Earth Wouldn't Tip Over Without the Moon",
+  "themeId": "paint-night",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "@sky.top",
+  "accent": "@text.accent",
+  "assets": [],
+  "backdrop": {
+    "group": "backdrop"
+  },
+  "narrationTiming": {
+    "minimumSceneFrames": 30,
+    "maximumDeviationSeconds": 0.3
+  },
+  "audio": {
+    "music": "cues",
+    "musicGainDb": -22,
+    "duckRatio": 8,
+    "targetLufs": -16,
+    "crossfadeSeconds": 1.5,
+    "musicCues": [
+      {
+        "source": "assets/music/4-tense-b-standoff.mp3",
+        "scene": "mt-t1",
+        "offsetSeconds": 0,
+        "gainDb": -2
+      },
+      {
+        "source": "assets/music/5-uplifting-b-defying-gravity.mp3",
+        "scene": "mt-t4",
+        "offsetSeconds": 0
+      }
+    ],
+    "musicDropouts": [
+      {
+        "scene": "mt-t4",
+        "frame": 0,
+        "seconds": 1.0
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "backdrop",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "page",
+          "kit": {
+            "type": "sky",
+            "horizon": 0.9,
+            "stars": 0,
+            "seed": 1
+          }
+        },
+        {
+          "id": "stars",
+          "kit": {
+            "type": "prop",
+            "item": "doodle-stars",
+            "x": 0.37,
+            "y": 0.61,
+            "size": 0.5,
+            "count": 26,
+            "ink": "#c9d3ea"
+          }
+        }
+      ]
+    },
+    {
+      "id": "g-t1",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "tilt",
+          "kit": {
+            "type": "prop",
+            "item": "earth-axis",
+            "x": 0.5,
+            "y": 0.52,
+            "size": 0.5,
+            "rotation": 23,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tips"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tips",
+                "offset": 24
+              },
+              "value": 62,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": {
+                "at": "doesn't",
+                "offset": -2
+              },
+              "value": 62
+            },
+            {
+              "frame": {
+                "at": "doesn't",
+                "offset": 10
+              },
+              "value": 0,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 540.0,
+            "y": 998.4000000000001
+          }
+        },
+        {
+          "id": "stamp0",
+          "kit": {
+            "type": "prop",
+            "item": "stamp",
+            "x": 0.6058762962962964,
+            "y": 0.7038541666666667,
+            "size": 0.13,
+            "text": "myth"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "doesn't",
+                "offset": 1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "doesn't",
+                "offset": 2
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "doesn't",
+                "offset": 1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "doesn't",
+                "offset": 11
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 654.3464,
+            "y": 1351.4
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "tips over?",
+          "x": 540,
+          "y": 1310,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ff5a4a",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tips",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tips",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-t2",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "dial",
+          "kit": {
+            "type": "prop",
+            "item": "tilt-dial",
+            "x": 0.5,
+            "y": 0.42,
+            "size": 0.5,
+            "range": [
+              0,
+              85
+            ],
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.26
+              },
+              {
+                "frame": 40,
+                "value": 0.05
+              },
+              {
+                "frame": 80,
+                "value": 0.94
+              },
+              {
+                "frame": 120,
+                "value": 0.1
+              },
+              {
+                "frame": 160,
+                "value": 0.9
+              },
+              {
+                "frame": 200,
+                "value": 0.2
+              },
+              {
+                "frame": 240,
+                "value": 0.94
+              }
+            ],
+            "text": "1993 study",
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "side",
+          "kit": {
+            "type": "prop",
+            "item": "earth-axis",
+            "x": 0.5,
+            "y": 0.64,
+            "size": 0.22,
+            "rotation": 85,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "side",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "side"
+              },
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "0° to 85°",
+          "x": 540,
+          "y": 580,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ff5a4a",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "eighty-five",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "eighty-five",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "lying on its side",
+          "x": 540,
+          "y": 1410,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "side",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "side",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-t3",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "dial",
+          "kit": {
+            "type": "prop",
+            "item": "tilt-dial",
+            "x": 0.66,
+            "y": 0.44,
+            "size": 0.34,
+            "range": [
+              0,
+              85
+            ],
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.9
+              },
+              {
+                "frame": 20,
+                "value": 0.1
+              },
+              {
+                "frame": 40,
+                "value": 0.9
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.36,
+            "y": 0.74,
+            "height": 0.26,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "panic"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "scared"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 40,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 200,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 280,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 320,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 400,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 440,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 480,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 520,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 560,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 600,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 640,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 680,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 760,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 800,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 840,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 880,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 920,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 960,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1000,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1040,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1120,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1160,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1200,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1240,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1280,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1320,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1360,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1400,
+              "value": 8,
+              "ease": "smoothstep"
+            }
+          ]
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "id": "g-t4",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "paper",
+          "kit": {
+            "type": "prop",
+            "item": "sign",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 0.34,
+            "text": "2012 SIMULATIONS"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "simulations",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "simulations"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "simulations",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "simulations",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "NASA: Lissauer et al.",
+          "x": 540,
+          "y": 620,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Lissauer",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Lissauer",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "far calmer",
+          "x": 540,
+          "y": 1300,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "calmer",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "calmer",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-t4b",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "dial",
+          "kit": {
+            "type": "prop",
+            "item": "tilt-dial",
+            "x": 0.5,
+            "y": 0.48,
+            "size": 0.56,
+            "range": [
+              12,
+              38
+            ],
+            "color": "#5fd38a",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.26
+              },
+              {
+                "frame": 50,
+                "value": 0.14
+              },
+              {
+                "frame": 100,
+                "value": 0.42
+              },
+              {
+                "frame": 150,
+                "value": 0.2
+              },
+              {
+                "frame": 200,
+                "value": 0.4
+              }
+            ],
+            "text": "2012 simulations",
+            "ink": "#c9d3ea"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "wobblier",
+          "x": 540,
+          "y": 600,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wobble",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wobble",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "12° to 38°",
+          "x": 540,
+          "y": 1300,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "thirty-eight",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "thirty-eight",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-t5",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "earth",
+          "kit": {
+            "type": "planet",
+            "x": 0.5,
+            "y": 0.52,
+            "radius": 0.16,
+            "base": "#5aa9e6",
+            "bands": [
+              "#7cc576",
+              "#5aa9e6",
+              "#7cc576"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.2,
+            "seed": 3
+          }
+        },
+        {
+          "id": "ok",
+          "kit": {
+            "type": "prop",
+            "item": "check",
+            "x": 0.76,
+            "y": 0.4,
+            "size": 0.2,
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "flip",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "flip"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "flip",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "flip",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 820.8,
+            "y": 768.0
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "no sudden flip",
+          "x": 540,
+          "y": 600,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "flip",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "flip",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "no instant freeze",
+          "x": 540,
+          "y": 1300,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "freeze",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "freeze",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-t6",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "q",
+          "kit": {
+            "type": "prop",
+            "item": "question",
+            "x": 0.68,
+            "y": 0.44,
+            "size": 0.18,
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.4,
+            "y": 0.74,
+            "height": 0.26,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "think"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 40,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 200,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 280,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 320,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 400,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 440,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 480,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 520,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 560,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 600,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 640,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 680,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 760,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 800,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 840,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 880,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 920,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 960,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1000,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1040,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1120,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1160,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1200,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1240,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1280,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1320,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1360,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1400,
+              "value": 8,
+              "ease": "smoothstep"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "not doomed?",
+          "x": 540,
+          "y": 600,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "doomed",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "doomed",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-t7",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "earth",
+          "kit": {
+            "type": "planet",
+            "x": 0.5,
+            "y": 0.5,
+            "radius": 0.16,
+            "base": "#5aa9e6",
+            "bands": [
+              "#7cc576",
+              "#5aa9e6",
+              "#7cc576"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.2,
+            "seed": 3
+          }
+        },
+        {
+          "id": "ok",
+          "kit": {
+            "type": "prop",
+            "item": "check",
+            "x": 0.76,
+            "y": 0.38,
+            "size": 0.2,
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tonight",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tonight"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "tonight",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "tonight",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 820.8,
+            "y": 729.6
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "full story below",
+          "x": 540,
+          "y": 600,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tilt",
+                "offset": 5
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tilt",
+                "offset": 11
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "not doomed",
+          "x": 540,
+          "y": 1320,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tonight",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tonight",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "mt-t1",
+      "template": "hero-reveal",
+      "durationFrames": 137,
+      "animationDurationFrames": 137,
+      "caption": {
+        "text": "mt-t1",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "doesn't",
+              "edge": "end"
+            },
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.07,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-t1",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "t1",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "tips"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "boom",
+          "frame": {
+            "at": "doesn't",
+            "offset": 2
+          },
+          "gainDb": -27
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "tips"
+          },
+          "gainDb": -22
+        }
+      ]
+    },
+    {
+      "id": "mt-t2",
+      "template": "hero-reveal",
+      "durationFrames": 538,
+      "animationDurationFrames": 538,
+      "caption": {
+        "text": "mt-t2",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-t2",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "t2",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "eighty-five"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "side"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "mt-t3",
+      "template": "hero-reveal",
+      "durationFrames": 44,
+      "animationDurationFrames": 44,
+      "caption": {
+        "text": "mt-t3",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.4933,
+              "y": 0.504
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-t3",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "t3",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": []
+    },
+    {
+      "id": "mt-t4",
+      "template": "hero-reveal",
+      "durationFrames": 250,
+      "animationDurationFrames": 250,
+      "caption": {
+        "text": "mt-t4",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-t4",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "t4",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "Lissauer"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "calmer"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "mt-t4b",
+      "template": "hero-reveal",
+      "durationFrames": 325,
+      "animationDurationFrames": 325,
+      "caption": {
+        "text": "mt-t4b",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7006,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-t4b",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "t4b",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "wobble"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "thirty-eight"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "mt-t5",
+      "template": "hero-reveal",
+      "durationFrames": 100,
+      "animationDurationFrames": 100,
+      "caption": {
+        "text": "mt-t5",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-t5",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "t5",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "flip"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "freeze"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "mt-t6",
+      "template": "hero-reveal",
+      "durationFrames": 62,
+      "animationDurationFrames": 62,
+      "caption": {
+        "text": "mt-t6",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.4952,
+              "y": 0.504
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-t6",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "t6",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": []
+    },
+    {
+      "id": "mt-t7",
+      "template": "hero-reveal",
+      "durationFrames": 104,
+      "animationDurationFrames": 104,
+      "caption": {
+        "text": "mt-t7",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-t7",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "t7",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "tilt",
+            "offset": 6
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "tonight"
+          },
+          "gainDb": -24
+        }
+      ]
+    }
+  ]
+}

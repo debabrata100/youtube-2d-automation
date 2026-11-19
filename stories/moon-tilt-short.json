@@ -1,0 +1,165 @@
+{
+ "schemaVersion": "1.0",
+ "id": "moon-tilt-short",
+ "title": "Earth Wouldn't Tip Over Without the Moon",
+ "topic": "Myth-bust: the 1993 study (Laskar et al.) found 0-85 degrees of tilt without the Moon; 2012 simulations (Lissauer et al.) found roughly 12-38 degrees over 100 million years; no sudden flip",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 52,
+ "storyboard": "storyboards/moon-tilt-short.json",
+ "candidatesReport": "stories/moon-shorts-script.md",
+ "beats": [
+  {
+   "id": "t1",
+   "sceneId": "mt-t1",
+   "intent": "hook",
+   "narration": "Every video says Earth tips over without the Moon. It doesn't.",
+   "phrases": [
+    "Every video says Earth",
+    "tips over without the",
+    "Moon.",
+    "It doesn't."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "t2",
+   "sceneId": "mt-t2",
+   "intent": "setup",
+   "narration": "In 1993, a famous study found that without the Moon, Earth's tilt could swing anywhere from zero all the way to eighty-five degrees. At eighty-five degrees, Earth would be lying on its side, with months of endless day and months of endless night.",
+   "phrases": [
+    "In 1993, a famous study",
+    "found that without the",
+    "Moon, Earth's tilt could",
+    "swing anywhere from zero",
+    "all the way to eighty-five",
+    "degrees.",
+    "At eighty-five degrees,",
+    "Earth would be lying on",
+    "its side, with months of",
+    "endless day and months of",
+    "endless night."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "t3",
+   "sceneId": "mt-t3",
+   "intent": "setup",
+   "narration": "That sounds... bad.",
+   "phrases": [
+    "That sounds...",
+    "bad."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "t4",
+   "sceneId": "mt-t4",
+   "intent": "explanation",
+   "narration": "But in 2012, NASA scientist Jack Lissauer and his team ran much more detailed simulations. Their answer was far calmer.",
+   "phrases": [
+    "But in 2012, NASA",
+    "scientist Jack Lissauer",
+    "and his team ran much more",
+    "detailed simulations.",
+    "Their answer was far",
+    "calmer."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "t4b",
+   "sceneId": "mt-t4b",
+   "intent": "explanation",
+   "narration": "Earth would wobble more than it does today, but in their simulations it stayed roughly between twelve and thirty-eight degrees, even over a hundred million years.",
+   "phrases": [
+    "Earth would wobble more",
+    "than it does today, but in",
+    "their simulations it",
+    "stayed roughly between",
+    "twelve and thirty-eight",
+    "degrees, even over a",
+    "hundred million years."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "t5",
+   "sceneId": "mt-t5",
+   "intent": "explanation",
+   "narration": "But no sudden flip. And no instant freeze.",
+   "phrases": [
+    "But no sudden flip.",
+    "And no instant freeze."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "t6",
+   "sceneId": "mt-t6",
+   "intent": "explanation",
+   "narration": "So we're not all doomed?",
+   "phrases": [
+    "So we're not all doomed?"
+   ],
+   "phraseSpeakers": [
+    "arka"
+   ]
+  },
+  {
+   "id": "t7",
+   "sceneId": "mt-t7",
+   "intent": "closing",
+   "narration": "Not tonight. And not because of the tilt.",
+   "phrases": [
+    "Not tonight.",
+    "And not because of the",
+    "tilt."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  }
+ ]
+}

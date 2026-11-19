@@ -1,0 +1,1944 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "miranda-short",
+  "title": "You'd Fall for 12 Minutes on This Moon",
+  "themeId": "paint-notebook",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "@sky.top",
+  "accent": "@text.accent",
+  "assets": [
+    {
+      "id": "photo-miranda",
+      "path": "nasa/inserts/photo-miranda.png",
+      "type": "png",
+      "width": 1920,
+      "height": 1080,
+      "transparent": true
+    }
+  ],
+  "backdrop": {
+    "group": "backdrop"
+  },
+  "narrationTiming": {
+    "minimumSceneFrames": 30,
+    "maximumDeviationSeconds": 0.3
+  },
+  "audio": {
+    "music": "cues",
+    "musicGainDb": -22,
+    "duckRatio": 8,
+    "targetLufs": -16,
+    "crossfadeSeconds": 1.5,
+    "musicCues": [
+      {
+        "source": "assets/music/6-space-singularity.mp3",
+        "scene": "mr-h1",
+        "offsetSeconds": 0
+      },
+      {
+        "source": "assets/music/2-playful-b-sweet-math.mp3",
+        "scene": "mr-r1",
+        "offsetSeconds": 0
+      }
+    ],
+    "musicDropouts": [
+      {
+        "scene": "mr-r7",
+        "frame": 0,
+        "seconds": 1.0
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "backdrop",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "page",
+          "kit": {
+            "type": "sky",
+            "horizon": 0.9,
+            "stars": 0,
+            "seed": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "g-h1",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "ground",
+          "kit": {
+            "type": "terrain",
+            "top": 0.75,
+            "curve": 0.04,
+            "fill": "#cfcfca",
+            "detail": "#8f8f8a",
+            "rocks": 3,
+            "bumps": 6,
+            "seed": 7
+          }
+        },
+        {
+          "id": "uranus",
+          "kit": {
+            "type": "planet",
+            "x": 0.8,
+            "y": 0.3,
+            "radius": 0.05,
+            "base": "#9fe0e6",
+            "bands": [
+              "#b7ebef"
+            ],
+            "craters": 0,
+            "ring": true,
+            "shade": 0.25,
+            "seed": 5
+          }
+        },
+        {
+          "id": "cliff",
+          "kit": {
+            "type": "prop",
+            "item": "cliff",
+            "x": 0.53,
+            "y": 0.36,
+            "size": 0.7111111111111111,
+            "text": "20 km"
+          }
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.5,
+            "y": 0.36,
+            "height": 0.12,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "step"
+                },
+                "pose": "tumble"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "happy"
+              },
+              {
+                "frame": {
+                  "at": "step"
+                },
+                "face": "scream"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": 0,
+                "on": true
+              }
+            ]
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "step",
+                "offset": 3
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "step",
+                "offset": 80
+              },
+              "value": 422.4,
+              "ease": "smoothstep"
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "step"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "step",
+                "offset": 20
+              },
+              "value": 110,
+              "ease": "ease-out-cubic"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "12 minutes",
+          "x": 290,
+          "y": 820,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "twelve",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "twelve",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-r1",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "photo-miranda",
+          "asset": "photo-miranda",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 5,
+              "value": 0
+            },
+            {
+              "frame": 10,
+              "value": 1
+            }
+          ],
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.575
+            },
+            {
+              "frame": 5,
+              "value": 1.575
+            },
+            {
+              "frame": 12,
+              "value": 1.75,
+              "ease": "ease-out-back"
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0.0
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 38.400000000000034
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "Miranda, a moon of Uranus",
+          "x": 540,
+          "y": 560,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Miranda",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Miranda",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "~20 km tall?",
+          "x": 540,
+          "y": 1400,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "twenty",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "twenty",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-r2",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "ground",
+          "kit": {
+            "type": "terrain",
+            "top": 0.75,
+            "curve": 0.04,
+            "fill": "#cfcfca",
+            "detail": "#8f8f8a",
+            "rocks": 3,
+            "bumps": 6,
+            "seed": 7
+          }
+        },
+        {
+          "id": "uranus",
+          "kit": {
+            "type": "planet",
+            "x": 0.8,
+            "y": 0.3,
+            "radius": 0.05,
+            "base": "#9fe0e6",
+            "bands": [
+              "#b7ebef"
+            ],
+            "craters": 0,
+            "ring": true,
+            "shade": 0.25,
+            "seed": 5
+          }
+        },
+        {
+          "id": "cliff",
+          "kit": {
+            "type": "prop",
+            "item": "cliff",
+            "x": 0.62,
+            "y": 0.36,
+            "size": 0.7111111111111111,
+            "text": "20 km"
+          }
+        },
+        {
+          "id": "ev",
+          "kit": {
+            "type": "prop",
+            "item": "sign",
+            "x": 0.3,
+            "y": 0.66,
+            "size": 0.18,
+            "text": "Everest"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "2x Everest",
+          "x": 300,
+          "y": 620,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "twice",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "twice",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-r3",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "ground",
+          "kit": {
+            "type": "terrain",
+            "top": 0.75,
+            "curve": 0.04,
+            "fill": "#cfcfca",
+            "detail": "#8f8f8a",
+            "rocks": 3,
+            "bumps": 6,
+            "seed": 7
+          }
+        },
+        {
+          "id": "uranus",
+          "kit": {
+            "type": "planet",
+            "x": 0.8,
+            "y": 0.3,
+            "radius": 0.05,
+            "base": "#9fe0e6",
+            "bands": [
+              "#b7ebef"
+            ],
+            "craters": 0,
+            "ring": true,
+            "shade": 0.25,
+            "seed": 5
+          }
+        },
+        {
+          "id": "cliff",
+          "kit": {
+            "type": "prop",
+            "item": "cliff",
+            "x": 0.53,
+            "y": 0.36,
+            "size": 0.7111111111111111,
+            "text": "20 km"
+          }
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.5,
+            "y": 0.36,
+            "height": 0.12,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "edge"
+                },
+                "pose": "tumble"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "edge"
+                },
+                "face": "shocked"
+              },
+              {
+                "frame": {
+                  "at": "weak"
+                },
+                "face": "scared"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": 0,
+                "on": true
+              }
+            ]
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "edge",
+                "offset": 1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "edge",
+                "offset": 142
+              },
+              "value": 268.8,
+              "ease": "smoothstep"
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "edge"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "edge",
+                "offset": 24
+              },
+              "value": 120,
+              "ease": "ease-out-cubic"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "weak gravity",
+          "x": 290,
+          "y": 800,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "weak",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "weak",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "12:00",
+          "x": 290,
+          "y": 960,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "twelve",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "twelve",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-r4",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "ml",
+          "kit": {
+            "type": "prop",
+            "item": "motion-lines",
+            "x": 0.5,
+            "y": 0.4,
+            "size": 0.16,
+            "rotation": -90
+          }
+        },
+        {
+          "id": "ml2",
+          "kit": {
+            "type": "prop",
+            "item": "motion-lines",
+            "x": 0.22,
+            "y": 0.62,
+            "size": 0.12,
+            "rotation": -90
+          }
+        },
+        {
+          "id": "ml3",
+          "kit": {
+            "type": "prop",
+            "item": "motion-lines",
+            "x": 0.76,
+            "y": 0.5,
+            "size": 0.12,
+            "rotation": -90
+          }
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.5,
+            "y": 0.58,
+            "height": 0.16,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "lie"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "asleep"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": 0,
+                "on": true
+              }
+            ]
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -40
+            },
+            {
+              "frame": 300,
+              "value": 40
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "...still falling",
+          "x": 540,
+          "y": 560,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "silent",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "silent",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "7:41",
+          "x": 540,
+          "y": 1300,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "closer",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "closer",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-r5",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "ground",
+          "kit": {
+            "type": "terrain",
+            "top": 0.75,
+            "curve": 0.04,
+            "fill": "#cfcfca",
+            "detail": "#8f8f8a",
+            "rocks": 3,
+            "bumps": 6,
+            "seed": 7
+          }
+        },
+        {
+          "id": "speed",
+          "kit": {
+            "type": "prop",
+            "item": "speedometer",
+            "x": 0.66,
+            "y": 0.44,
+            "size": 0.3,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.2
+              },
+              {
+                "frame": {
+                  "at": "hundred"
+                },
+                "value": 0.95
+              }
+            ],
+            "text": "200 km/h"
+          }
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.36,
+            "y": 0.7,
+            "height": 0.18,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "tumble"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "scream"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": 0,
+                "on": true
+              }
+            ]
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -300
+            },
+            {
+              "frame": {
+                "at": "bottom"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "dim",
+          "kit": {
+            "type": "prop",
+            "item": "vignette",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 0.5,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "end",
+                  "offset": -6
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "end",
+                  "offset": 4
+                },
+                "value": 0.8
+              }
+            ]
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "~200 km/h",
+          "x": 700,
+          "y": 1150,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "hundred",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "hundred",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-r6",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "ground",
+          "kit": {
+            "type": "terrain",
+            "top": 0.75,
+            "curve": 0.04,
+            "fill": "#cfcfca",
+            "detail": "#8f8f8a",
+            "rocks": 3,
+            "bumps": 6,
+            "seed": 7
+          }
+        },
+        {
+          "id": "bag",
+          "kit": {
+            "type": "prop",
+            "item": "airbag",
+            "x": 0.44,
+            "y": 0.7,
+            "size": 0.32,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "survive",
+                  "offset": -4
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "survive",
+                  "offset": 6
+                },
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.42,
+            "y": 0.74,
+            "height": 0.16,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "lie"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "dizzy"
+              },
+              {
+                "frame": {
+                  "at": "survive"
+                },
+                "face": "grin"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": 0,
+                "on": true
+              }
+            ]
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "NASA scientists:",
+          "x": 540,
+          "y": 580,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.fill",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 3,
+              "value": 0
+            },
+            {
+              "frame": 9,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "survivable!",
+          "x": 540,
+          "y": 690,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "airbags",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "airbags",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-r7",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "ground",
+          "kit": {
+            "type": "terrain",
+            "top": 0.75,
+            "curve": 0.04,
+            "fill": "#cfcfca",
+            "detail": "#8f8f8a",
+            "rocks": 3,
+            "bumps": 6,
+            "seed": 7
+          }
+        },
+        {
+          "id": "bag",
+          "kit": {
+            "type": "prop",
+            "item": "airbag",
+            "x": 0.66,
+            "y": 0.66,
+            "size": 0.2,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": 8,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "tag",
+          "kit": {
+            "type": "prop",
+            "item": "sign",
+            "x": 0.66,
+            "y": 0.78,
+            "size": 0.14,
+            "text": "AIRBAG"
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.38,
+            "y": 0.76,
+            "height": 0.26,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "cheer"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "grin"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 40,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 200,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 280,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 320,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 400,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 440,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 480,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 520,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 560,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 600,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 640,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 680,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 760,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 800,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 840,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 880,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 920,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 960,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1000,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1040,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1120,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1160,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1200,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1240,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1280,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1320,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1360,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1400,
+              "value": 8,
+              "ease": "smoothstep"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "full story below",
+          "x": 540,
+          "y": 600,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "brought",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "brought",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "mr-h1",
+      "template": "hero-reveal",
+      "durationFrames": 196,
+      "animationDurationFrames": 196,
+      "caption": {
+        "text": "mr-h1",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "minutes",
+              "edge": "end"
+            },
+            "focus": {
+              "x": 0.5,
+              "y": 0.4861
+            },
+            "zoom": 1.07,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-h1",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "h1",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "twelve"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "step",
+            "offset": 4
+          },
+          "gainDb": -22
+        }
+      ]
+    },
+    {
+      "id": "mr-r1",
+      "template": "hero-reveal",
+      "durationFrames": 207,
+      "animationDurationFrames": 207,
+      "caption": {
+        "text": "mr-r1",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-r1",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "r1",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "Miranda"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "twenty"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "mr-r2",
+      "template": "hero-reveal",
+      "durationFrames": 82,
+      "animationDurationFrames": 82,
+      "caption": {
+        "text": "mr-r2",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-r2",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "r2",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "twice"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "mr-r3",
+      "template": "hero-reveal",
+      "durationFrames": 176,
+      "animationDurationFrames": 176,
+      "caption": {
+        "text": "mr-r3",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.4899
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-r3",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "r3",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "weak"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "twelve"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "mr-r4",
+      "template": "hero-reveal",
+      "durationFrames": 82,
+      "animationDurationFrames": 82,
+      "caption": {
+        "text": "mr-r4",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.4992
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-r4",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "r4",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "silent"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "closer"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "mr-r5",
+      "template": "hero-reveal",
+      "durationFrames": 165,
+      "animationDurationFrames": 165,
+      "caption": {
+        "text": "mr-r5",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.4933,
+              "y": 0.5044
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-r5",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "r5",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "hundred"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "mr-r6",
+      "template": "hero-reveal",
+      "durationFrames": 124,
+      "animationDurationFrames": 124,
+      "caption": {
+        "text": "mr-r6",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.4962,
+              "y": 0.5069
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-r6",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "r6",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": 4,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "airbags"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "survive"
+          },
+          "gainDb": -18
+        }
+      ]
+    },
+    {
+      "id": "mr-r7",
+      "template": "hero-reveal",
+      "durationFrames": 48,
+      "animationDurationFrames": 48,
+      "caption": {
+        "text": "mr-r7",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.4943,
+              "y": 0.505
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-r7",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "r7",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": []
+    }
+  ]
+}

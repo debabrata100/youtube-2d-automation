@@ -1,0 +1,147 @@
+{
+ "schemaVersion": "1.0",
+ "id": "miranda-short",
+ "title": "You'd Fall for 12 Minutes on This Moon",
+ "topic": "Miranda (Uranus): Verona Rupes, possibly ~20 km tall; Miranda's weak gravity means a ~12-minute fall ending at ~200 km/h; NASA scientists think airbags could make it survivable",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 36,
+ "storyboard": "storyboards/miranda-short.json",
+ "candidatesReport": "stories/moon-shorts-script.md",
+ "beats": [
+  {
+   "id": "h1",
+   "sceneId": "mr-h1",
+   "intent": "hook",
+   "narration": "On one moon in our solar system, you could step off a cliff and fall for twelve whole minutes.",
+   "phrases": [
+    "On one moon in our solar",
+    "system, you could step off",
+    "a cliff and fall for",
+    "twelve whole minutes."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "r1",
+   "sceneId": "mr-r1",
+   "intent": "setup",
+   "narration": "At Uranus, the moon Miranda has what may be the tallest cliff in the solar system, possibly twenty kilometers high.",
+   "phrases": [
+    "At Uranus, the moon",
+    "Miranda has what may be",
+    "the tallest cliff in the",
+    "solar system, possibly",
+    "twenty kilometers high."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "r2",
+   "sceneId": "mr-r2",
+   "intent": "explanation",
+   "narration": "That's more than twice the height of Everest.",
+   "phrases": [
+    "That's more than twice the",
+    "height of Everest."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "r3",
+   "sceneId": "mr-r3",
+   "intent": "explanation",
+   "narration": "Step off the edge, and Miranda's gravity is so weak that you'd fall for about twelve minutes.",
+   "phrases": [
+    "Step off the edge, and",
+    "Miranda's gravity is so",
+    "weak that you'd fall for",
+    "about twelve minutes."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "r4",
+   "sceneId": "mr-r4",
+   "intent": "explanation",
+   "narration": "Twelve silent minutes, watching the ground get closer.",
+   "phrases": [
+    "Twelve silent minutes,",
+    "watching the ground get",
+    "closer."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "r5",
+   "sceneId": "mr-r5",
+   "intent": "explanation",
+   "narration": "You'd hit the bottom at about two hundred kilometers per hour. Without protection, that's the end.",
+   "phrases": [
+    "You'd hit the bottom at",
+    "about two hundred",
+    "kilometers per hour.",
+    "Without protection, that's",
+    "the end."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "r6",
+   "sceneId": "mr-r6",
+   "intent": "explanation",
+   "narration": "But NASA scientists think you could survive it with the right airbags.",
+   "phrases": [
+    "But NASA scientists think",
+    "you could survive it with",
+    "the right airbags."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "r7",
+   "sceneId": "mr-r7",
+   "intent": "closing",
+   "narration": "I brought one!",
+   "phrases": [
+    "I brought one!"
+   ],
+   "phraseSpeakers": [
+    "arka"
+   ]
+  }
+ ]
+}

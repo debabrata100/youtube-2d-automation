@@ -1,0 +1,121 @@
+{
+ "schemaVersion": "1.0",
+ "id": "moon-lions-short",
+ "title": "Without the Moon, Lions Win",
+ "topic": "Without the Moon every night is moonless: about 100x darker than under a full Moon; Serengeti lions eat best on dark nights (Packer et al. 2011), so every night would be a hunting night",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 43,
+ "storyboard": "storyboards/moon-lions-short.json",
+ "candidatesReport": "stories/moon-shorts-script.md",
+ "beats": [
+  {
+   "id": "l1",
+   "sceneId": "ml-l1",
+   "intent": "hook",
+   "narration": "If the Moon vanished tonight, lions would be the happiest animals on Earth.",
+   "phrases": [
+    "If the Moon vanished",
+    "tonight, lions would be",
+    "the happiest animals on",
+    "Earth."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "l2",
+   "sceneId": "ml-l2",
+   "intent": "setup",
+   "narration": "On a clear night, a full Moon lights the ground about a hundred times more than the stars alone. Without it, every night becomes the darkest kind of night. Forever.",
+   "phrases": [
+    "On a clear night, a full",
+    "Moon lights the ground",
+    "about a hundred times more",
+    "than the stars alone.",
+    "Without it, every night",
+    "becomes the darkest kind",
+    "of night.",
+    "Forever."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "l3",
+   "sceneId": "ml-l3",
+   "intent": "explanation",
+   "narration": "Take lions. In the Serengeti, lions eat best on dark nights, when there's no moonlight to give them away. Around the full Moon, their bellies are emptier, and they have to hunt more by day.",
+   "phrases": [
+    "Take lions.",
+    "In the Serengeti, lions",
+    "eat best on dark nights,",
+    "when there's no moonlight",
+    "to give them away.",
+    "Around the full Moon,",
+    "their bellies are emptier,",
+    "and they have to hunt more",
+    "by day."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "l4",
+   "sceneId": "ml-l4",
+   "intent": "explanation",
+   "narration": "So without the Moon, every single night is a hunter's night. Great news for lions. Not such great news for everything they eat.",
+   "phrases": [
+    "So without the Moon, every",
+    "single night is a hunter's",
+    "night.",
+    "Great news for lions.",
+    "Not such great news for",
+    "everything they eat."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "l5",
+   "sceneId": "ml-l5",
+   "intent": "closing",
+   "narration": "Note to self: never be a zebra.",
+   "phrases": [
+    "Note to self:",
+    "never be a zebra."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  }
+ ]
+}

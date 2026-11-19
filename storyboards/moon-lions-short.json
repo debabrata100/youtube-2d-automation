@@ -1,0 +1,1375 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "moon-lions-short",
+  "title": "Without the Moon, Lions Win",
+  "themeId": "paint-night",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "@sky.top",
+  "accent": "@text.accent",
+  "assets": [],
+  "backdrop": {
+    "group": "backdrop"
+  },
+  "narrationTiming": {
+    "minimumSceneFrames": 30,
+    "maximumDeviationSeconds": 0.3
+  },
+  "audio": {
+    "music": "cues",
+    "musicGainDb": -22,
+    "duckRatio": 8,
+    "targetLufs": -16,
+    "crossfadeSeconds": 1.5,
+    "musicCues": [
+      {
+        "source": "assets/music/6-space-event-horizon.mp3",
+        "scene": "ml-l1",
+        "offsetSeconds": 0
+      },
+      {
+        "source": "assets/music/1-curious-b-frame-dragging.mp3",
+        "scene": "ml-l3",
+        "offsetSeconds": 0
+      }
+    ],
+    "musicDropouts": []
+  },
+  "groups": [
+    {
+      "id": "backdrop",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "page",
+          "kit": {
+            "type": "sky",
+            "horizon": 0.9,
+            "stars": 0,
+            "seed": 1
+          }
+        },
+        {
+          "id": "stars",
+          "kit": {
+            "type": "prop",
+            "item": "doodle-stars",
+            "x": 0.37,
+            "y": 0.61,
+            "size": 0.5,
+            "count": 26,
+            "ink": "#c9d3ea"
+          }
+        }
+      ]
+    },
+    {
+      "id": "g-l1",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "lion",
+          "kit": {
+            "type": "prop",
+            "item": "lion",
+            "x": 0.5,
+            "y": 0.6,
+            "size": 0.46,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "moon",
+          "kit": {
+            "type": "prop",
+            "item": "crescent",
+            "x": 0.62,
+            "y": 0.36,
+            "size": 0.2,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "tonight",
+                "offset": 1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "tonight",
+                "offset": 2
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "ghost",
+          "kit": {
+            "type": "prop",
+            "item": "crescent",
+            "x": 0.62,
+            "y": 0.36,
+            "size": 0.2,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tonight",
+                "offset": 1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tonight",
+                "offset": 2
+              },
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "happiest?",
+          "x": 540,
+          "y": 1410,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "happiest",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "happiest",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-l2",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "b1",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.5,
+            "y": 0.42,
+            "size": 0.62,
+            "text": "full Moon",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": 20,
+                "value": 0.95
+              }
+            ],
+            "color": "#ffe27a",
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "b2",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.5,
+            "y": 0.6,
+            "size": 0.62,
+            "text": "stars only",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": 40,
+                "value": 0.012
+              }
+            ],
+            "color": "#7fc0ff",
+            "ink": "#c9d3ea"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "~100x darker",
+          "x": 540,
+          "y": 560,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "hundred",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "hundred",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "forever",
+          "x": 540,
+          "y": 1300,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Forever",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Forever",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-l3",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "lion1",
+          "kit": {
+            "type": "prop",
+            "item": "lion",
+            "x": 0.5,
+            "y": 0.4,
+            "size": 0.36,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "lion2",
+          "kit": {
+            "type": "prop",
+            "item": "lion",
+            "x": 0.5,
+            "y": 0.64,
+            "size": 0.36,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "emptier",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "emptier"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "emptier",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "emptier",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 540.0,
+            "y": 1228.8
+          }
+        },
+        {
+          "id": "m",
+          "kit": {
+            "type": "prop",
+            "item": "crescent",
+            "x": 0.8,
+            "y": 0.56,
+            "size": 0.09,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "full",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "full"
+              },
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "Serengeti, Tanzania",
+          "x": 540,
+          "y": 560,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Serengeti",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Serengeti",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "dark night: full belly",
+          "x": 540,
+          "y": 1000,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "dark",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "dark",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "full Moon: hungry",
+          "x": 540,
+          "y": 1420,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "emptier",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "emptier",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-l4",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "lion",
+          "kit": {
+            "type": "prop",
+            "item": "lion",
+            "x": 0.32,
+            "y": 0.6,
+            "size": 0.4,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Not"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Not",
+                "offset": 26
+              },
+              "value": 300,
+              "ease": "ease-out-cubic"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Not",
+                "offset": -10
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Not"
+              },
+              "value": 14,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": {
+                "at": "Not",
+                "offset": 12
+              },
+              "value": -90,
+              "ease": "ease-out-cubic"
+            },
+            {
+              "frame": {
+                "at": "Not",
+                "offset": 26
+              },
+              "value": 0,
+              "ease": "smoothstep"
+            }
+          ],
+          "rotate": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Not"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Not",
+                "offset": 8
+              },
+              "value": -14,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": {
+                "at": "Not",
+                "offset": 22
+              },
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": {
+                "at": "Not",
+                "offset": 30
+              },
+              "value": 0,
+              "ease": "smoothstep"
+            }
+          ],
+          "anchor": {
+            "x": 345.6,
+            "y": 1152.0
+          }
+        },
+        {
+          "id": "zebra",
+          "kit": {
+            "type": "prop",
+            "item": "zebra",
+            "x": 0.72,
+            "y": 0.6,
+            "size": 0.36,
+            "ink": "#c9d3ea"
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Not",
+                "offset": 2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Not",
+                "offset": 22
+              },
+              "value": 420,
+              "ease": "smoothstep"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "every night: a hunter's night",
+          "x": 540,
+          "y": 600,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "hunter's",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "hunter's",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "great for lions",
+          "x": 540,
+          "y": 1300,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lions",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lions",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-l5",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "zebra",
+          "kit": {
+            "type": "prop",
+            "item": "zebra",
+            "x": 0.7,
+            "y": 0.62,
+            "size": 0.3,
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.36,
+            "y": 0.74,
+            "height": 0.26,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "cower"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "scared"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 40,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 200,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 280,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 320,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 400,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 440,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 480,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 520,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 560,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 600,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 640,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 680,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 760,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 800,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 840,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 880,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 920,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 960,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1000,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1040,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1120,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1160,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1200,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1240,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1280,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1320,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1360,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1400,
+              "value": 8,
+              "ease": "smoothstep"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "full story below",
+          "x": 540,
+          "y": 600,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "zebra",
+                "offset": 5
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "zebra",
+                "offset": 11
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "ml-l1",
+      "template": "hero-reveal",
+      "durationFrames": 155,
+      "animationDurationFrames": 155,
+      "caption": {
+        "text": "ml-l1",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "Earth",
+              "edge": "end"
+            },
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.07,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-l1",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "l1",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "happiest"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "tonight"
+          },
+          "gainDb": -20
+        }
+      ]
+    },
+    {
+      "id": "ml-l2",
+      "template": "hero-reveal",
+      "durationFrames": 358,
+      "animationDurationFrames": 358,
+      "caption": {
+        "text": "ml-l2",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-l2",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "l2",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "hundred"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "Forever"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "ml-l3",
+      "template": "hero-reveal",
+      "durationFrames": 418,
+      "animationDurationFrames": 418,
+      "caption": {
+        "text": "ml-l3",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-l3",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "l3",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "Serengeti"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "dark"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "emptier"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "ml-l4",
+      "template": "hero-reveal",
+      "durationFrames": 274,
+      "animationDurationFrames": 274,
+      "caption": {
+        "text": "ml-l4",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-l4",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "l4",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "hunter's"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "lions"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "Not"
+          },
+          "gainDb": -20
+        }
+      ]
+    },
+    {
+      "id": "ml-l5",
+      "template": "hero-reveal",
+      "durationFrames": 85,
+      "animationDurationFrames": 85,
+      "caption": {
+        "text": "ml-l5",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.4933,
+              "y": 0.504
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-l5",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "l5",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": []
+    }
+  ]
+}

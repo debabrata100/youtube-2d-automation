@@ -1,0 +1,25 @@
+{
+ "id": "moon-lions-short",
+ "segments": [
+  {
+   "source": "jobs/msh-hooks-narration",
+   "text": "If the Moon vanished tonight, lions would be the happiest animals on Earth."
+  },
+  {
+   "source": "jobs/mg-narration-b",
+   "text": "On a clear night, a full Moon lights the ground about a hundred times more than the stars alone. Without it, every night becomes the darkest kind of night. Forever."
+  },
+  {
+   "source": "jobs/mg-narration-b",
+   "text": "Take lions. In the Serengeti, lions eat best on dark nights, when there's no moonlight to give them away. Around the full Moon, their bellies are emptier, and they have to hunt more by day."
+  },
+  {
+   "source": "jobs/mg-narration-b",
+   "text": "So without the Moon, every single night is a hunter's night. Great news for lions. Not such great news for everything they eat."
+  },
+  {
+   "source": "jobs/mg-narration-b",
+   "text": "Note to self: never be a zebra."
+  }
+ ]
+}
