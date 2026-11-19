@@ -7,7 +7,7 @@
 
 ## Title (pick 1)
 
-1. **How You Would Die on Every Moon in the Solar System** (recommended)
+1. **How You'd Die on Every Moon in the Solar System** (live title since 19 Nov 2026: shortened from "How You Would Die…" to 47 characters so it isn't cut off on phones)
 2. What Would Kill You First on Every Moon?
 
 Why I changed the title: YouTube suggests "how you would die on every planet" and "dying on every moon" when you start typing, so people already search for exactly this format. The old title, "What Would Kill You First on Every Moon in the Solar System", is close but matches no common search, and at 58 characters it gets cut off on phones. If Studio offers *Test & compare* for titles on your account, test 1 against 2.
