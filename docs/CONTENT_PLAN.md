@@ -80,7 +80,7 @@ Rules:
 
 ## Notes
 
-- The Moon Shorts for Ep 4 are on hold for now (Debabrata, 19 Nov).
+- Moon Shorts for Ep 4 built 19 Nov: "Earth won't tip over" (Sat 28 Nov) and "The lions' night" (Tue 1 Dec). Still unused from Ep 4: "The Moon is already leaving" and "Our last solar eclipses" (the second overlaps the ghost-Sun episode).
 - Facts marked *(check)* are unverified. Every episode still gets its own fact-check table in `stories/<id>-script.md`.
 - Sources checked while writing this list (19 Nov 2026):
   - day length and the 25-hour estimate: NASA and Durham University via news coverage

@@ -194,8 +194,8 @@ elif KEY == 'tilt':
          [Note('0° to 85°', A('eighty-five'), 'title', color=WARN, pos=(W / 2, 580)), Note('lying on its side', A('side'), 'note', pos=(W / 2, 1410))])
     shot('t3', [arka(x=.36, fy=.74, poses=[(0, 'panic')], faces=[(0, 'scared')])],
          [kit(F, 'dial', 'tilt-dial', .66, .44, .34, w=1.0, h=1.0, range=[0, 85], level=lv((0, .9), (20, .1), (40, .9)))], [])
-    shot('t4', [], [kit(F, 'paper', 'sign', .5, .5, .34, w=1.8, h=1.0, text='2012 SIMULATIONS', **pop_in(A('simulations'), (.5 * W, .5 * H)))],
-         [Note('NASA: Lissauer et al.', A('Lissauer'), 'small', pos=(W / 2, 620)), Note('far calmer', A('calmer'), 'title', pos=(W / 2, 1300))])
+    shot('t4', [], [kit(F, 'paper', 'sign', .5, .5, .34, w=1.8, h=1.0, text='2012 SIMULATIONS', **pop_in(A('2012'), (.5 * W, .5 * H)))],
+         [Note('NASA: Lissauer et al.', A('NASA'), 'small', pos=(W / 2, 620)), Note('far calmer', A('calmer'), 'title', pos=(W / 2, 1300))])
     shot('t4b', [], [kit(F, 'dial', 'tilt-dial', .5, .48, .56, w=1.0, h=1.0, range=[12, 38], color=GREEN_OK, level=lv((0, .26), (50, .14), (100, .42), (150, .2), (200, .4)), text='2012 simulations')],
          [Note('wobblier', A('wobble'), 'note', pos=(W / 2, 600)), Note('12° to 38°', A('thirty-eight'), 'title', pos=(W / 2, 1300))])
     shot('t5', [], [earth('earth', .5, .52, .16), kit(F, 'ok', 'check', .76, .4, .2, **pop_in(A('flip'), (.76 * W, .4 * H)))],

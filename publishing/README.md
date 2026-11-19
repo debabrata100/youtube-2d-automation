@@ -20,11 +20,14 @@ All times IST. 9:30 PM IST is 11:00 AM US Eastern, a good slot for both the US a
 | 2 | Thu 19 Nov, 9:30 PM | Ep 2: helmet off in space (88 s, 16:9) | `02-helmet-off.md` | End screen → Titan |
 | 3 | Sat 21 Nov, 9:30 PM | Ep 2 Short (27 s, 9:16) | `03-helmet-off-short.md` | Related video → Ep 2 long |
 | 4 | Sun 22 Nov, 9:30 PM | Ep 3: every moon (7:06, 16:9) | `04-every-moon.md` | End screen → Titan or Ep 2 |
-| 5 | Wed 26 Nov (proposed) | Miranda Short, "12-minute fall" | not built yet | Related video → Ep 3 |
+| 5 | Tue 24 Nov, 9:30 PM | Miranda Short, "12-minute fall" (36 s, 9:16) | `08-miranda-short.md` | Related video → Ep 3 |
+| 6 | Thu 26 Nov, 9:30 PM | Ep 4: What If the Moon Disappeared Tonight? (9:38, 16:9) | `06-moon-gone.md` | End screen → Ep 3 |
+| 7 | Sat 28 Nov, 9:30 PM | Moon Short, "Earth won't tip over" (52 s, 9:16) | `09-moon-tilt-short.md` | Related video → Ep 4 |
+| 8 | Tue 1 Dec, 9:30 PM | Moon Short, "The lions' night" (43 s, 9:16) | `10-moon-lions-short.md` | Related video → Ep 4 |
 
 The order matters. Each Short goes up after the long video it links to, because a Short's "Related video" can only point at something already uploaded.
 
-The Miranda Short can be cut from the narration we already have, so it needs no paid voice requests. I'll build it once you approve.
+Shorts cut from an episode's approved narration (`scripts/cut-narration.py`) need no paid voice requests; only new lines (like the Moon Shorts' hooks) do.
 
 ## SEO: what matters, in order
 
