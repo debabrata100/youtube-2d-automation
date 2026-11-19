@@ -40,7 +40,7 @@ The Moon can't really vanish; this is a thought experiment. Numbers are rounded.
 - The last total solar eclipse: NASA lunar scientist Noah Petro
 
 More from Gahanarka:
-▶ How you would die on every moon: https://youtu.be/MnfXbn6mD8I
+▶ How You'd Die on Every Moon in the Solar System: https://youtu.be/MnfXbn6mD8I
 ▶ What happens if you take off your helmet in space: https://youtu.be/bUK19RqsLok
 
 Images: NASA (Apollo 11, AS11-40-5952); NASA/Aubrey Gemignani (2017 total solar eclipse, Madras, Oregon); NASA ISS crew photo (Great Barrier Reef, ISS045-E-56257). NASA images are public domain. All drawings are made for this video.
