@@ -1,6 +1,6 @@
 # 09: Moon Short, "Earth won't tip over" (links to Ep 4)
 
-- **Status:** rendered 19 Nov (`jobs/mt-final-d`, 53 s, 1080×1920, −16.2 LUFS, all checks passed). Waiting for Debabrata's review.
+- **Status:** rendered 19 Nov (`jobs/mt-final-d`, 53 s, 1080×1920, −16.2 LUFS, all checks passed). Approved by Debabrata 19 Nov.
 - **Upload folder:** `~/Downloads/gahanarka-upload/9-moon-tilt-short/`: `earth-wouldnt-tip-over-without-the-moon.mp4`, `captions-english.srt` (36 cues), `thumb-a-tips-over-myth.jpg`.
 - **Narration:** a new hook line (1 paid request for both Moon hooks: 138 characters, request `FHDDxyEVO9jPEpfUSkb9`, `jobs/msh-hooks-narration`), then Ep 4's approved lines, cut with `scripts/cut-narration.py`.
 - **When:** Sat 28 Nov, 9:30 PM IST, two days after Ep 4 goes public (Thu 26 Nov).
