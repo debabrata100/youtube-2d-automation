@@ -41,6 +41,17 @@ Supporting records: `docs/MUSIC_SOURCES.md`, `docs/VOICE_LICENSING.md`, `docs/br
 - [ ] Description includes sources, image credits and "Narration voiced with AI (ElevenLabs)"; the channel footer is present.
 - [ ] Tags relevant; none aimed at children.
 
+### Repetition check (compare with the last 5 uploads)
+- [ ] The topic is new; if it's part of a series ("every moon", "what if X disappeared"), this episode answers a genuinely different question with different facts, not a swapped noun.
+- [ ] The structure differs from the last episode in at least one visible way: a different cold open, chapter shape, recurring device or ending.
+- [ ] Arka's jokes are new lines, not a repeated catchphrase in the same spot (one signature sign-off is fine).
+- [ ] The ending's "Arka's next question" uses new wording and a new picture, and teases an episode whose script is at least drafted (see `docs/CONTENT_PLAN.md`).
+- [ ] At least one new drawing piece, scene type or animated idea that previous videos didn't have.
+- [ ] Music isn't the identical track list in the identical order as the previous episode.
+- [ ] Each Short has its own hook, its own 9:16 layout and its own ending; it is not a trimmed clip of the long episode.
+- [ ] Compilations are at most 1 in 4 long uploads, only of our own content, with new connecting material.
+- [ ] Title and thumbnail don't follow the same template as the previous 3 uploads.
+
 ### Studio settings at upload
 - [ ] Audience: **No, it's not made for kids**. Age restriction: No.
 - [ ] Altered or synthetic content: **No** (non-realistic animation plus a generic AI narrator). Switch to Yes if a video ever shows realistic AI footage or imitates a real person's voice.
