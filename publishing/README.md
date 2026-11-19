@@ -73,7 +73,7 @@ All six are uploaded and scheduled (private until their time):
 | Ep 2 Short | https://youtube.com/shorts/36yyCfEwn7Y | Sat 21 Nov, 9:30 PM | Set Related video → Ep 2 once Ep 2 is public; pin comment |
 | Ep 3: every moon | https://youtu.be/MnfXbn6mD8I | Sun 22 Nov, 9:30 PM | A/B test (a1, b1, c1) starts when public; pin comment |
 | Voyager 1 Short (night sky) | https://youtube.com/shorts/tZx2ERI-4ec | Wed 18 Nov, 9:30 PM | Pin comment; on Sun 22 Nov switch Related video from Titan to Ep 3 |
-| Ep 4: What If the Moon Disappeared Tonight? | https://youtu.be/ZbEeo3Xx0lw | Thu 26 Nov, 9:30 PM | A/B test (a, b, c) starts when public; pin comment |
+| Ep 4: What If the Moon Disappeared Tonight? | https://youtu.be/ZbEeo3Xx0Iw | Thu 26 Nov, 9:30 PM | A/B test (a, b, c) starts when public; pin comment |
 
 ## Channel setup for subscribers (17 Nov 2026, 11:30 PM IST)
 
