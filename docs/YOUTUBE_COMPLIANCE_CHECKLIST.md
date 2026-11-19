@@ -18,6 +18,7 @@ Supporting records: `docs/MUSIC_SOURCES.md`, `docs/VOICE_LICENSING.md`, `docs/br
 10. **Advertiser-friendly topics.** Death and danger are fine when educational and non-graphic. No gore, no self-harm, no real-person tragedies, no politics. A yellow icon means limited ads, not a ban; ask for a human review if it seems wrong.
 11. **Partner Program bar.** From 1 Feb 2027 new applicants need 1,000 subscribers plus **8,000 long-form watch hours in 12 months** (or 20M Shorts views in 90 days). Shorts don't count toward watch hours, so long episodes of **8–15 min** carry the channel.
 12. **Fact accuracy.** Every claim is sourced in the episode's fact-check table. Uncertain science is hedged ("in their simulations", "could"). Myths are named as myths.
+13. **Repetition (the old "repetitious content" rule).** It is now part of the inauthentic content policy (rule 1) and is judged across the whole channel, with no published threshold. A consistent style and a recognizable series are fine. What isn't fine: fill-in-the-blank videos, the same structure every time, trimmed clips posted as new Shorts, or a channel made mostly of compilations. Each video needs its own substance: a new topic, a new angle and new visuals.
 
 ## Checklist (copy into each episode's publishing file and tick)
 
