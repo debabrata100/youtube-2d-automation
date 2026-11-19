@@ -23,3 +23,8 @@ rsvg-convert docs/brand/arka-reference-sheet.svg -o docs/brand/arka-reference-sh
 - **Poses:** stand, wave, point, think, shrug, cheer, float, panic (plus the other `POSE_IDS` in `src/engine/kit/figure.ts`).
 - **Expressions:** happy, grin, shocked, smug, sad, dizzy (plus the other `FACE_IDS`).
 - **Helmet:** on by default; off for close-ups and expressions.
+
+## Where Arka is used on the channel
+
+- **Profile picture** (since 19 Nov 2026): `arka-watermark.png` (600×600), replacing the gold "G".
+- **Video watermark:** still the older stick-figure `jobs/branding/gahanarka-watermark-150.png` (as of 19 Nov 2026).
