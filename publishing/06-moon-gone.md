@@ -105,3 +105,6 @@ what if the moon disappeared, what if the moon disappeared tonight, what if ther
 - [x] Category Science & Technology; playlist set; SRT uploaded.
 - [x] Copyright check in Studio passed before scheduling.
 - [x] End screen points to Ep 3.
+
+## What we improved (vs Ep 3)
+- **Main improvement:** a story timeline (tonight → first night → week → year → a million years) instead of a list, plus a myth-busting chapter with sources. Also new: the night-sky look, NASA photos as proof, and animation timed to individual words (the lion's pounce, the losses in m68).
