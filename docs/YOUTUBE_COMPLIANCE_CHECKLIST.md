@@ -43,6 +43,7 @@ Supporting records: `docs/MUSIC_SOURCES.md`, `docs/VOICE_LICENSING.md`, `docs/br
 - [ ] Thumbnail designed individually; it differs from the last 10 uploads.
 - [ ] Description includes sources, image credits and "Narration voiced with AI (ElevenLabs)"; the channel footer is present.
 - [ ] Tags relevant; none aimed at children.
+- [ ] **Every video link is copied, never retyped.** Take the video ID from the Studio address bar or the page text (copy/paste or read it as text), never from a screenshot: `I`/`l`, `0`/`O` and `1`/`l` look the same in YouTube's font. After saving, open each `youtu.be/` link once and check it reaches the right video, and run `grep -o 'youtu.be/[A-Za-z0-9_-]*' publishing/*.md` to match the IDs against the Studio content list. (19 Nov 2026: Ep 4's ID `ZbEeo3Xx0Iw` was read from a screenshot as `…0lw` and went into the trailer description as a broken link.)
 
 ### Repetition check (compare with the last 5 uploads)
 - [ ] The topic is new; if it's part of a series ("every moon", "what if X disappeared"), this episode answers a genuinely different question with different facts, not a swapped noun.
