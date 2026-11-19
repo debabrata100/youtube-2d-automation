@@ -1,6 +1,6 @@
 # 10: Moon Short, "The lions' night" (links to Ep 4)
 
-- **Status:** rendered 19 Nov (`jobs/ml-final-b`, 44 s, 1080×1920, −16.2 LUFS, all checks passed). Waiting for Debabrata's review.
+- **Status:** rendered 19 Nov (`jobs/ml-final-c`, 44 s, 1080×1920, −16.2 LUFS, all checks passed). Waiting for Debabrata's review.
 - **Upload folder:** `~/Downloads/gahanarka-upload/10-moon-lions-short/`: `without-the-moon-lions-win.mp4`, `captions-english.srt` (29 cues), `thumb-a-lions-win.jpg`.
 - **Narration:** the second new hook line (same paid request as 09), then Ep 4's approved lines.
 - **When:** Tue 1 Dec, 9:30 PM IST.
@@ -41,7 +41,8 @@ Playlist "What If…?", not made for kids, Science & Technology, Altered or synt
 - [x] Script: new hook approved by Debabrata (19 Nov); the rest is Ep 4's approved narration with the Packer et al. 2011 source.
 - [x] Narration on the paid ElevenLabs plan (request in 09).
 - [x] Music: YouTube Audio Library (Event Horizon, Frame Dragging).
-- [x] No photos; Arka drawn by our renderer. The pounce stays non-graphic: the zebra gets away.
+- [x] No photos; Arka drawn by our renderer.
+- [x] Night captions: white text, navy outline, yellow active word (`config/caption-styles/shorts-night.json`); red on navy reads poorly, as in Ep 4. The pounce stays non-graphic: the zebra gets away.
 - [x] Title ≤50 characters; the first 5 s deliver the hook (the Moon goes out over a lion).
 - [x] Repetition: own hook, own vertical layout (stacked lions, pounce), ends on Arka's joke; not a trimmed clip.
 - [ ] Video link copied from Studio; Related video set; pinned comment after it's live.

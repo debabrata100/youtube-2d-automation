@@ -165,8 +165,10 @@ elif KEY == 'miranda':
     shot('h1', [you(x=.5, fy=TOP, h=.12, idle=None, poses=[(0, 'stand'), (A('step'), 'tumble')], faces=[(0, 'happy'), (A('step'), 'scream')],
                     layer={'y': fall(A('step', 4), .22, 76), 'x': track((0, 0), (A('step'), 0), (A('step', 20), 110, 'ease-out-cubic'))})],
          ground + [sky, tall_cliff(.53)], [Note('12 minutes', A('twelve'), 'title', pos=(290, 820))], cam='push', sounds=[('whoosh', A('step', 4), -22)])
-    shot('r1', [], [tall_photo('photo-miranda', 6, y=.52, scale=1.75)],
-         [Note('Miranda, a moon of Uranus', A('Miranda'), 'small', pos=(W / 2, 560)), Note('~20 km tall?', A('twenty'), 'title', pos=(W / 2, 1400))])
+    cliff_note = Note('cliff: ~20 km tall?', A('tallest'), 'title', pos=(W / 2, 1450))
+    cliff_note.point = (606, 1192)  # Verona Rupes: the bright scarp at the bottom of the Voyager 2 photo
+    shot('r1', [], [tall_photo('photo-miranda', 6, y=.5, scale=1.65)],
+         [Note('Miranda, a moon of Uranus', A('Miranda'), 'small', pos=(W / 2, 560)), cliff_note])
     shot('r2', [], ground + [sky, tall_cliff(.62), Prop(prop('ev', 'sign', .3, .66, .18, text='Everest'))],
          [Note('2x Everest', A('twice'), 'title', pos=(300, 620))])
     shot('r3', [you(x=.5, fy=TOP, h=.12, idle=None, poses=[(0, 'stand'), (A('edge'), 'tumble')], faces=[(0, 'neutral'), (A('edge'), 'shocked'), (A('weak'), 'scared')],

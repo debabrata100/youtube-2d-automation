@@ -475,7 +475,7 @@ class Episode:
                     c = next(c for c in chars if c.cid == n.arrow); hx, hy = c.head(); tx, ty = hx * W + (c.fh * H * .12) * (1 if x > hx * W else -1), hy * H
                     frm = (b.x0 + 20 if x > tx else b.x1 - 20, b.y1 - 10 if y < ty else b.y0); to = (tx, ty)
                 elif getattr(n, 'point', None):  # arrow to a fixed spot (e.g. a Short's Related video link)
-                    to = n.point; frm = (b.x0 + 40 if n.point[0] < x else b.x1 - 40, b.y1 + 6)
+                    to = n.point; frm = (b.x0 + 40 if n.point[0] < x else b.x1 - 40, b.y1 + 6) if n.point[1] > y else ((b.x0 + b.x1) / 2, b.y0 - 4)
                 a = note(f'n{j}', n.text, round(x), round(y), n.at, size=round(n.size * F['scale']), color=n.color, to=to, frm=frm)
                 if n.kind in ('header', 'skylabel'):
                     a.pop('opacity', None); a['pop'] = False

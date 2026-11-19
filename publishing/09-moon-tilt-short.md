@@ -1,6 +1,6 @@
 # 09: Moon Short, "Earth won't tip over" (links to Ep 4)
 
-- **Status:** rendered 19 Nov (`jobs/mt-final-c`, 53 s, 1080×1920, −16.2 LUFS, all checks passed). Waiting for Debabrata's review.
+- **Status:** rendered 19 Nov (`jobs/mt-final-d`, 53 s, 1080×1920, −16.2 LUFS, all checks passed). Waiting for Debabrata's review.
 - **Upload folder:** `~/Downloads/gahanarka-upload/9-moon-tilt-short/`: `earth-wouldnt-tip-over-without-the-moon.mp4`, `captions-english.srt` (36 cues), `thumb-a-tips-over-myth.jpg`.
 - **Narration:** a new hook line (1 paid request for both Moon hooks: 138 characters, request `FHDDxyEVO9jPEpfUSkb9`, `jobs/msh-hooks-narration`), then Ep 4's approved lines, cut with `scripts/cut-narration.py`.
 - **When:** Sat 28 Nov, 9:30 PM IST, two days after Ep 4 goes public (Thu 26 Nov).
@@ -44,6 +44,7 @@ Playlist "What If…?", not made for kids, Science & Technology, Altered or synt
 - [x] Narration on the paid ElevenLabs plan; the request is recorded above.
 - [x] Music: YouTube Audio Library (Standoff, Defying Gravity).
 - [x] No photos; Arka drawn by our renderer.
+- [x] Night captions: white text, navy outline, yellow active word (`config/caption-styles/shorts-night.json`); red on navy reads poorly, as in Ep 4.
 - [x] Title ≤50 characters; the first 5 s state the myth and bust it.
 - [x] Repetition: own hook line, own layout (tilt dials, MYTH stamp), own ending; not a trimmed clip.
 - [x] Myth named as a myth; the newer result is hedged ("in their simulations").

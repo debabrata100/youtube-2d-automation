@@ -264,15 +264,15 @@
           "scale": [
             {
               "frame": 0,
-              "value": 1.575
+              "value": 1.4849999999999999
             },
             {
               "frame": 5,
-              "value": 1.575
+              "value": 1.4849999999999999
             },
             {
               "frame": 12,
-              "value": 1.75,
+              "value": 1.65,
               "ease": "ease-out-back"
             }
           ],
@@ -285,7 +285,7 @@
           "y": [
             {
               "frame": 0,
-              "value": 38.400000000000034
+              "value": 0.0
             }
           ]
         }
@@ -324,9 +324,9 @@
         },
         {
           "id": "n1",
-          "text": "~20 km tall?",
+          "text": "cliff: ~20 km tall?",
           "x": 540,
-          "y": 1400,
+          "y": 1450,
           "size": 78,
           "anchor": "middle",
           "variant": "ink",
@@ -339,19 +339,29 @@
             },
             {
               "frame": {
-                "at": "twenty",
+                "at": "tallest",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "twenty",
+                "at": "tallest",
                 "offset": 5
               },
               "value": 1
             }
-          ]
+          ],
+          "connector": {
+            "from": {
+              "x": 540.0,
+              "y": 1379.7
+            },
+            "to": {
+              "x": 606,
+              "y": 1192
+            }
+          }
         }
       ]
     },
@@ -1523,7 +1533,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "twenty"
+            "at": "tallest"
           },
           "gainDb": -24
         }
