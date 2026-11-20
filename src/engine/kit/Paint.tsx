@@ -66,7 +66,7 @@ export const Terrain: React.FC<{config: TerrainConfig; theme: Theme; width: numb
 
 export type PropConfig = {ink?: string; item: 'thermometer' | 'pressure-arrows' | 'motion-lines' | 'exclaim' | 'question' | 'check' | 'cross' | 'counter' | 'stamp' | 'vignette' | 'station' | 'helmet' | 'doodle-stars' | 'chamber'
   | 'cliff' | 'geyser' | 'plume' | 'radiation-meter' | 'radiation-belt' | 'battery' | 'airbag' | 'small-moon' | 'ice-cutaway' | 'frost'
-  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb' | 'crescent' | 'orbit-ring' | 'town' | 'lion' | 'zebra' | 'coral' | 'plankton' | 'tide-gauge' | 'tilt-dial' | 'earth-axis' | 'impact' | 'dino' | 'reflector' | 'bed' | 'stir' | 'clock' | 'eclipse' | 'moonbeam' | 'young-earth'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
+  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb' | 'crescent' | 'orbit-ring' | 'town' | 'lion' | 'zebra' | 'coral' | 'plankton' | 'tide-gauge' | 'tilt-dial' | 'earth-axis' | 'impact' | 'dino' | 'reflector' | 'bed' | 'stir' | 'clock' | 'eclipse' | 'moonbeam' | 'young-earth' | 'bee' | 'flower' | 'tree' | 'tardigrade' | 'vent' | 'shell' | 'snowfall' | 'night-half' | 'mushroom'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
   values?: Array<{frame: number; value: number; ramp?: boolean}>; text?: string; direction?: 'in' | 'out';
   labels?: string[]; colors?: string[]; highlight?: number; ring?: boolean; belt?: boolean; range?: [number, number]};
 
@@ -554,6 +554,96 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
         <path d={`M ${-top} 0 L ${top} 0 L ${bot} ${L} L ${-bot} ${L} Z`} fill={`url(#${id})`}/>
         {[.35, .6, .85].map((f, i) => <path key={i} d={`M ${-bot * f * .9} ${L * f} q ${bot * .2} ${-s * .015} ${bot * .4} 0 t ${bot * .4} 0`} {...stroke('#fff6c8', w * .35)}
           opacity={.35 + .25 * Math.sin(frame / 12 + i)}/>)}
+      </g>;
+    }
+    case 'bee': {
+      // A honeybee. level 1 = flying (wings flutter, gentle bob); 0 = resting, wings still.
+      const lv = levelAt(c.level, frame), bob = lv * Math.sin(frame / 5) * s * .04, flap = lv > .5 ? Math.sin(frame * 1.6) * 22 : 0;
+      return <g transform={`${at} translate(0 ${bob})`}>
+        <ellipse cx={-s * .06} cy={-s * .2} rx={s * .16} ry={s * .09} fill="#ffffff" fillOpacity=".7" stroke={ink} strokeWidth={w * .6} transform={`rotate(${-30 + flap} ${-s * .02} ${-s * .1})`}/>
+        <ellipse cx={s * .08} cy={-s * .2} rx={s * .15} ry={s * .08} fill="#ffffff" fillOpacity=".6" stroke={ink} strokeWidth={w * .6} transform={`rotate(${20 - flap} ${s * .04} ${-s * .1})`}/>
+        <ellipse rx={s * .3} ry={s * .19} fill="#f6c431" stroke={ink} strokeWidth={w}/>
+        {[-.08, .06, .18].map((x, i) => <path key={i} d={`M ${x * s} ${-s * .18} Q ${(x + .04) * s} 0 ${x * s} ${s * .18}`} {...stroke('#2a2018', w * 1.3)}/>)}
+        <circle cx={-s * .3} cy={-s * .02} r={s * .12} fill="#2a2018" stroke={ink} strokeWidth={w * .6}/>
+        <circle cx={-s * .34} cy={-s * .05} r={s * .025} fill="#ffffff"/>
+        <path d={`M ${s * .3} 0 l ${s * .08} ${s * .02}`} {...stroke('#2a2018', w)}/>
+      </g>;
+    }
+    case 'flower': return <g transform={at}>
+      <path d={`M 0 0 Q ${-s * .05} ${s * .3} 0 ${s * .6}`} {...stroke('#3f8a3a', w * 1.2)}/>
+      <path d={`M 0 ${s * .35} q ${s * .15} ${-s * .08} ${s * .2} ${-s * .2} q ${-s * .14} ${s * .02} ${-s * .2} ${s * .2} Z`} fill="#5aa84e" stroke={ink} strokeWidth={w * .5}/>
+      {Array.from({length: 6}, (_, i) => { const a = i * 60 + Math.sin(frame / 25) * 3; return <ellipse key={i} cx={0} cy={-s * .14} rx={s * .08} ry={s * .14} fill={c.color ?? '#ff8fb1'} stroke={ink} strokeWidth={w * .5} transform={`rotate(${a})`}/>; })}
+      <circle r={s * .08} fill="#ffcf4a" stroke={ink} strokeWidth={w * .6}/>
+    </g>;
+    case 'tree': {
+      // A broad tree. level 1 = full green canopy; 0 = bare, grey branches (dormant / dying).
+      const lv = levelAt(c.level, frame), leaf = `rgb(${Math.round(70 + (1 - lv) * 80)},${Math.round(150 - (1 - lv) * 50)},${Math.round(70 + (1 - lv) * 40)})`;
+      return <g transform={at}>
+        <path d={`M ${-s * .07} ${s * .5} L ${-s * .05} 0 L ${-s * .2} ${-s * .2} M ${-s * .05} 0 L ${s * .05} ${-s * .3} M ${s * .05} ${s * .5} L ${s * .05} ${-s * .02} L ${s * .22} ${-s * .18}`} {...stroke('#6b4a2e', w * 1.6)}/>
+        <path d={`M ${-s * .07} ${s * .5} L ${s * .05} ${s * .5}`} {...stroke(ink, w)}/>
+        {[[-.18, -.22, .18], [.02, -.34, .22], [.2, -.2, .17], [0, -.12, .2]].map(([x, y, r], i) =>
+          <circle key={i} cx={x * s} cy={y * s} r={r * s * (.4 + .6 * lv)} fill={leaf} stroke={ink} strokeWidth={w * .7} opacity={.25 + .75 * lv}/>)}
+      </g>;
+    }
+    case 'tardigrade': {
+      // A cartoon water bear: chubby segmented body, eight stubby clawed legs, small face; it wiggles and waves one leg.
+      const wig = Math.sin(frame / 8) * s * .01, wave = Math.sin(frame / 6) * 18;
+      return <g transform={`${at} translate(0 ${wig})`}>
+        {[-.3, -.1, .1, .3].map((x, i) => <g key={i}><path d={`M ${x * s} ${s * .12} l ${-s * .02} ${s * .14}`} {...stroke(ink, w * 1.6)} transform={i === 0 ? `rotate(${wave} ${x * s} ${s * .12})` : undefined}/>
+          <path d={`M ${(x - .04) * s} ${s * .27} l ${s * .02} ${-s * .02} l ${s * .02} ${s * .02} l ${s * .02} ${-s * .02}`} {...stroke(ink, w * .5)}/></g>)}
+        <path d={`M ${-s * .45} 0 Q ${-s * .45} ${-s * .22} ${-s * .2} ${-s * .22} Q 0 ${-s * .3} ${s * .2} ${-s * .22} Q ${s * .45} ${-s * .2} ${s * .45} 0 Q ${s * .45} ${s * .16} ${s * .2} ${s * .16} L ${-s * .2} ${s * .16} Q ${-s * .45} ${s * .16} ${-s * .45} 0 Z`}
+          fill={c.color ?? '#d9c8a8'} stroke={ink} strokeWidth={w}/>
+        {[-.2, 0, .2].map((x, i) => <path key={i} d={`M ${x * s} ${-s * .2} q ${s * .03} ${s * .17} 0 ${s * .34}`} {...stroke(ink, w * .45)} opacity=".6"/>)}
+        <circle cx={-s * .36} cy={-s * .06} r={s * .025} fill={ink}/>
+        <path d={`M ${-s * .44} ${s * .03} q ${s * .03} ${s * .03} ${s * .06} 0`} {...stroke(ink, w * .5)}/>
+      </g>;
+    }
+    case 'vent': {
+      // A deep-sea hydrothermal vent ("black smoker") with a billowing dark plume and tube worms at its base. level = plume strength.
+      const lv = levelAt(c.level, frame), random = seededRandom(17);
+      return <g transform={at}>
+        {Array.from({length: 7}, (_, i) => { const t = ((frame * .6 + i * 14) % 100) / 100; return <circle key={`p${i}`} cx={Math.sin(t * 6 + i) * s * .08 * (1 + t)} cy={-s * .32 - t * s * .55} r={s * (.07 + t * .12)} fill="#1c1a22" opacity={lv * (.75 - t * .6)}/>; })}
+        <path d={`M ${-s * .14} ${s * .45} L ${-s * .08} ${-s * .3} L ${s * .08} ${-s * .32} L ${s * .16} ${s * .45} Z`} fill="#4a3a33" stroke={ink} strokeWidth={w}/>
+        <path d={`M ${-s * .08} ${-s * .3} Q 0 ${-s * .36} ${s * .08} ${-s * .32}`} {...stroke('#ff8a3a', w * .8)} opacity={.6 + .3 * Math.sin(frame / 7)}/>
+        {Array.from({length: c.count}, (_, i) => { const x = (i % 2 ? 1 : -1) * s * (.2 + random() * .2), h = s * (.15 + random() * .15), sway = Math.sin(frame / 14 + i) * s * .02;
+          return <g key={i}><path d={`M ${x} ${s * .45} Q ${x + sway} ${s * .45 - h * .5} ${x + sway * 2} ${s * .45 - h}`} {...stroke('#f2efe6', w * 1.1)}/>
+            <circle cx={x + sway * 2} cy={s * .45 - h} r={s * .028} fill="#e0413a"/></g>; })}
+        <path d={`M ${-s * .5} ${s * .45} L ${s * .5} ${s * .45}`} {...stroke(ink, w)}/>
+      </g>;
+    }
+    case 'shell': {
+      // An expanding shell of darkness (a missing pulse of sunlight) seen as a dark band around the Sun. level = how far it has travelled
+      // (0 = at the Sun, 1 = at size/2); count = band thickness in 40ths of the full radius (40 = the whole radius).
+      const lv = levelAt(c.level, frame), R = s * .5 * lv, band = s * .5 * c.count / 40, r0 = Math.max(0, R - band), mid = (R + r0) / 2;
+      return <g transform={at}>
+        <circle r={mid} fill="none" stroke="#02040c" strokeWidth={Math.max(.5, R - r0)} opacity=".88"/>
+        <circle r={R} fill="none" stroke="#7fa3ff" strokeWidth={w * .35} opacity=".5"/>
+        {r0 > 1 && <circle r={r0} fill="none" stroke="#ffe27a" strokeWidth={w * .35} opacity=".5"/>}
+      </g>;
+    }
+    case 'snowfall': {
+      // Flakes of frozen air drifting down over a wide area (size = width; height = 0.7 x size). level = density.
+      const lv = levelAt(c.level, frame), random = seededRandom(23), n = Math.round(c.count * 3 * lv), Wd = s, Ht = s * .7;
+      return <g transform={at}>{Array.from({length: c.count * 3}, (_, i) => { const x0 = (random() - .5) * Wd, sp = .4 + random() * .6, ph = random(), r = s * (.006 + random() * .008);
+        if (i >= n) return null; const y = (((frame * sp * .004 + ph) % 1) - .5) * Ht, x = x0 + Math.sin(frame / 20 + i) * s * .01;
+        return <g key={i} transform={`translate(${x} ${y})`}><path d={`M ${-r} 0 L ${r} 0 M 0 ${-r} L 0 ${r} M ${-r * .7} ${-r * .7} L ${r * .7} ${r * .7} M ${-r * .7} ${r * .7} L ${r * .7} ${-r * .7}`} {...stroke('#f4f8ff', Math.max(1.5, r * .5))}/></g>; })}</g>;
+    }
+    case 'night-half': {
+      // Shadow over half of a planet disc (size = diameter): level 0 = no shadow, 1 = the day side fully dark. Rotate to choose the side.
+      const lv = levelAt(c.level, frame), r = s * .5, id = `nh-${Math.round(c.x * 1000)}-${Math.round(c.y * 1000)}`;
+      return <g transform={at} opacity={lv}>
+        <defs><clipPath id={id}><circle r={r}/></clipPath></defs>
+        <rect x={0} y={-r} width={r} height={r * 2} fill="#03050d" opacity=".9" clipPath={`url(#${id})`}/>
+        <rect x={-r * .12} y={-r} width={r * .12} height={r * 2} fill="#03050d" opacity=".45" clipPath={`url(#${id})`}/>
+      </g>;
+    }
+    case 'mushroom': {
+      const random = seededRandom(5);
+      return <g transform={at}>{Array.from({length: c.count}, (_, i) => { const x = (i - (c.count - 1) / 2) * s * .22 + (random() - .5) * s * .05, h = s * (.2 + random() * .2), cw = s * (.12 + random() * .08);
+        return <g key={i}><path d={`M ${x - cw * .2} ${s * .3} L ${x - cw * .15} ${s * .3 - h} L ${x + cw * .15} ${s * .3 - h} L ${x + cw * .2} ${s * .3} Z`} fill="#efe4cf" stroke={ink} strokeWidth={w * .6}/>
+          <path d={`M ${x - cw} ${s * .3 - h} Q ${x} ${s * .3 - h - cw * 1.2} ${x + cw} ${s * .3 - h} Z`} fill={c.color ?? '#c9733f'} stroke={ink} strokeWidth={w * .7}/>
+          <circle cx={x - cw * .3} cy={s * .3 - h - cw * .35} r={cw * .12} fill="#fff4e0"/></g>; })}
+        <path d={`M ${-s * .5} ${s * .3} L ${s * .5} ${s * .3}`} {...stroke(ink, w)}/>
       </g>;
     }
     case 'young-earth': {

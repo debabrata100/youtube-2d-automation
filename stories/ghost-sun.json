@@ -5,7 +5,7 @@
  "topic": "Thought experiment: the Sun vanishes for 8 min 20 s (blackout longer than any eclipse, silent bees, the Moon goes out, Earth 740 m off course, a 1 AU shell of darkness passing the planets and Voyager 1), then for good: Earth flies off, cooling to 0, -20, -70 and -240 C, oxygen lasts, trees last decades, oceans freeze from the top, the air freezes and falls, survivors (fungi, tardigrades, vent life), the Sun cannot really vanish",
  "language": "en-US",
  "targetAudience": "English-speaking science-curious viewers aged 16-35",
- "durationSeconds": 720,
+ "durationSeconds": 714,
  "storyboard": "storyboards/ghost-sun.json",
  "candidatesReport": "stories/ghost-sun-script.md",
  "beats": [
