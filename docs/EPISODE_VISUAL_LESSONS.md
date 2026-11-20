@@ -41,3 +41,10 @@ Source: the M3.8 review commits (7ee7d03, ffdb8f1, 8cdc6fb, 9fb412b, 803ed1d, 9d
 - No red text on the navy night page: low contrast and it reads as an error. Titles and big numbers in warm gold (#ffd25e), handwritten notes in pale sky blue (#a9d8ff), small labels in light ink.
 - Red stays only where it means something (a failure cross). Comparison bars use amber, not red.
 - Shorts: keep the brand tag top-left; the Shorts player puts its own buttons top-right.
+
+## Background colour per concept (decided 20 Nov 2026)
+
+- Do not default to the night sky. Ep 4, Ep 5 and the three Voyager Shorts were all paint-night in a row, and the channel started to look the same in every video.
+- Pick the page colour from the concept at storyboard time and say why: paper notebook (paint-notebook) for experiments, the body and "what would happen to you"; a warm dusk or sunlit page for Sun and heat stories; deep ocean blue-green for ocean worlds; rust for Mars; night sky only when the dark of space is itself the point (deep space, a probe alone, blackout).
+- Vary it across the release order too: no more than two uploads in a row on the same background.
+- A new background is a new theme JSON in src/engine/style/themes (free); check text contrast on it with preview stills before rendering (the no-red-text rule applies to any dark page).
