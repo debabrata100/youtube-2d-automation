@@ -21,7 +21,7 @@
   "elevenlabs": {
     "provider": "elevenlabs",
     "model": "eleven_multilingual_v2",
-    "voice": "iiidtqDt9FBdT1vfBluA",
+    "voice": "q80kpsDmnu4IR4Zm7jWZ",
     "language": "en-US",
     "speakingRate": 1,
     "format": "wav",
@@ -38,7 +38,7 @@
     "applyTextNormalization": "auto"
   },
   "speakers": {
-    "_note": "Extra ElevenLabs voices for multi-voice stories (phraseSpeakers). The narrator uses elevenlabs.voice. arka = Jessica (ElevenLabs Default voice), chosen 2026-11-16.",
+    "_note": "Extra ElevenLabs voices for multi-voice stories (phraseSpeakers). The narrator uses elevenlabs.voice: Gahanarka R1 (designed for the channel with Voice Design, chosen in a blind test 2026-11-20) from Ep 5 on; Eps 1-4 and their Shorts used Bill L. Oxley (iiidtqDt9FBdT1vfBluA) and keep their cached audio. arka = Jessica (ElevenLabs Default voice), chosen 2026-11-16.",
     "arka": {
       "voice": "cgSgspJ2msm6clMCkdW9"
     }

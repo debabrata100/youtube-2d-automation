@@ -1,0 +1,51 @@
+{
+ "schemaVersion": "1.0",
+ "id": "voice-test",
+ "title": "Narrator voice blind test",
+ "topic": "Recording only: same lines in four narrator voices for a blind comparison",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 16,
+ "storyboard": "storyboards/moon-shorts-hooks.json",
+ "candidatesReport": "stories/moon-shorts-script.md",
+ "beats": [
+  {
+   "id": "k1",
+   "sceneId": "hk-k1",
+   "intent": "hook",
+   "narration": "Here's a strange fact. The Moon is drifting away from us, about four centimeters every year, as fast as your fingernails grow.",
+   "phrases": [
+    "Here's a strange fact.",
+    "The Moon is drifting away from us,",
+    "about four centimeters every year,",
+    "as fast as your fingernails grow."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "k2",
+   "sceneId": "hk-k2",
+   "intent": "closing",
+   "narration": "Will it ever leave? Not quite. But tonight, look up. It's still there.",
+   "phrases": [
+    "Will it ever leave?",
+    "Not quite.",
+    "But tonight,",
+    "look up.",
+    "It's still there."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  }
+ ]
+}
