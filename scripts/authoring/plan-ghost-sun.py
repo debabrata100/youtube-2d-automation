@@ -246,12 +246,12 @@ shot('s32', None, [arka(x=.3, poses=[(0, 'panic')], faces=[(0, 'scared')])], [ki
      [Note('back to 8 minutes, please?', A('please'), 'title', pos=(1240, 820))])
 shot('s33', T4, [], [kit(F, 'ring', 'orbit-ring', .3, .55, .6), earth('earth', .3 + .3 * H / W, .55, .06, y=track((0, 0), (A('snaps'), 0), (A('second'), -380, 'linear'))),
                      kit(F, 'ml', 'motion-lines', .3 + .3 * H / W, .66, .14, rotation=90, opacity=show_from(A('snaps')))],
-     [Note('the rope snaps', A('snaps'), 'title'), Note('a straight line', A('straight'), 'note'), Note('30 km per second', A('kilometers'), 'note')])
+     [Note('the rope snaps', A('snaps'), 'title'), Note('a straight line', A('straight'), 'note'), Note('30 km per second', A('kilometers'), 'note'), Note('London → New York in 3 minutes', A('second'), 'small')])
 shot('s34', T4, [], [earth('earth', .34, .55, .12, x=track((0, 0), (200, 120, 'linear'))), moon('moon', .5, .4, .1, lit=0, x=track((0, 0), (200, 120, 'linear')))],
      [Note('the Moon comes with us', A('us'), 'title'), Note('a dark companion', A('companion'), 'note')])
 shot('s35', T4, [], [earth('earth', .2, .55, .06), sun('star', .9, .45, .02),
                      kit(F, 'cnt', 'counter', .55, .7, .22, text='thousand years', values=[{'frame': 0, 'value': 0}, {'frame': A('forty'), 'value': 0, 'ramp': True}, {'frame': plus(A('forty'), 40), 'value': 40}])],
-     [Note('the nearest star', A('star'), 'note'), Note('40,000+ years', A('thousand'), 'title')])
+     [Note('the nearest star', A('star'), 'note'), Note('40,000+ years', A('thousand'), 'title'), Note('8 × all of written history', A('years'), 'small')])
 shot('s36', T4, [], [kit(F, 'clock', 'clock', .26, .5, .3, level=lv((0, 1)), text='24 h days'), kit(F, 'cal', 'calendar', .5, .5, .26, text='YEAR'),
                      kit(F, 'x', 'cross', .5, .5, .3, **pop_in(A('years'), (.5 * W, .5 * H)))],
      [Note('days keep ticking', A('tick'), 'note'), Note('no sunrise, no sunset', A('sunset'), 'note'), Note('no more years', A('years'), 'title')])
@@ -311,13 +311,13 @@ shot('s57', T8, [], [kit(F, 'q', 'question', .3, .5, .3)], [Note('everything gon
 shot('s58', T8, [], [kit(F, 'mush', 'mushroom', .3, .62, .5, count=4)],
      [Note('fungi feast on dead things', A('dead'), 'note'), Note('for a while', A('feast'), 'title')])
 shot('s59', T8, [], [kit(F, 'tard', 'tardigrade', .3, .55, .5), kit(F, 'mag', 'magnifier', .52, .4, .2)],
-     [Note('tardigrades', A('tardigrades'), 'title'), Note('~0.5 mm long', A('millimeter'), 'small'), Note('frozen · radiation · space', A('space'), 'note')])
+     [Note('tardigrades', A('tardigrades'), 'title'), Note('~0.5 mm long', A('millimeter'), 'small'), Note('frozen · radiation · space', A('space'), 'note'), Note('2007: 10 days in open space, and lived', A('space'), 'small')])
 shot('s60', None, [arka(x=.3, poses=[(0, 'shrug')], faces=[(0, 'smug')])], [kit(F, 'tard', 'tardigrade', .68, .55, .3)],
      [Note('always the tardigrades.', A('always'), 'title', pos=(1240, 260))])
 shot('s61', T8, [], [kit(F, 'vent', 'vent', .28, .7, .46, count=8, level=lv((0, 1))), kit(F, 'fish', 'fish', .52, .4, .1)],
      [Note('1977: deep-sea hot springs', A('1977'), 'note'), Note('tube worms, clams, shrimp', A('worms'), 'note'), Note('in total darkness', A('darkness'), 'title')])
 shot('s62', T8, [], [kit(F, 'vent', 'vent', .28, .7, .46, count=8, level=lv((0, 1)))],
-     [Note('no sunlight needed', A('sunlight'), 'title'), Note('energy from chemicals', A('chemicals'), 'note'), Note('as long as Earth is warm inside', A('inside'), 'small')])
+     [Note('no sunlight needed', A('sunlight'), 'title'), Note('energy from chemicals', A('chemicals'), 'note'), Note('as long as Earth is warm inside', A('inside'), 'small'), Note("today: Europa's ocean may hide vents like these", A('going'), 'small', pos=(.68 * W, .74 * H))])
 shot('s63', None, [arka(x=.3, poses=[(0, 'think')], faces=[(0, 'neutral')])], [kit(F, 'vent', 'vent', .68, .6, .4, count=6, level=lv((0, .8)))],
      [Note('...worms?', A('worms'), 'title', pos=(1320, 260))])
 shot('s64', T8, [], [kit(F, 'gey', 'geyser', .22, .66, .36, level=lv((0, .6))), kit(F, 'bulb', 'bulb', .38, .44, .12, level=lv((0, 1)))],

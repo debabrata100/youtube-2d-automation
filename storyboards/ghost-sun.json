@@ -7358,6 +7358,37 @@
               "value": 1
             }
           ]
+        },
+        {
+          "id": "n4",
+          "text": "London → New York in 3 minutes",
+          "x": 1416,
+          "y": 632,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "second",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "second",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
         }
       ]
     },
@@ -7644,6 +7675,37 @@
             {
               "frame": {
                 "at": "thousand",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "8 × all of written history",
+          "x": 1413,
+          "y": 584,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "years",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "years",
                 "offset": 5
               },
               "value": 1
@@ -11467,6 +11529,37 @@
               "value": 1
             }
           ]
+        },
+        {
+          "id": "n4",
+          "text": "2007: 10 days in open space, and lived",
+          "x": 1395,
+          "y": 620,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "space",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "space",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
         }
       ]
     },
@@ -11994,6 +12087,37 @@
             {
               "frame": {
                 "at": "inside",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "text": "today: Europa's ocean may hide vents like these",
+          "x": 1306,
+          "y": 799,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "going",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "going",
                 "offset": 5
               },
               "value": 1
@@ -15963,6 +16087,13 @@
             "at": "kilometers"
           },
           "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "second"
+          },
+          "gainDb": -22
         }
       ]
     },
@@ -16109,6 +16240,13 @@
           "sound": "pop",
           "frame": {
             "at": "thousand"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "years"
           },
           "gainDb": -22
         }
@@ -17853,6 +17991,13 @@
             "at": "space"
           },
           "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "space"
+          },
+          "gainDb": -22
         }
       ]
     },
@@ -18067,6 +18212,13 @@
           "sound": "pop",
           "frame": {
             "at": "inside"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "going"
           },
           "gainDb": -22
         }
