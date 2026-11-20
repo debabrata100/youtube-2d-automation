@@ -516,3 +516,14 @@ class Episode:
         path = self.root / (out or self.story['storyboard'])
         path.write_text(json.dumps(board, indent=2, ensure_ascii=False) + '\n')
         return path, board
+
+
+def brand_sting(at, W, H, gold='#ffd25e'):
+    """The channel's 2-second brand sting (first used in Ep 5): a small Sun pops up, then the GAHANARKA wordmark and the
+    tagline, with one whoosh. Place it right after the cold open's hook (never in Shorts). Returns (props, notes, sounds)
+    to add to that shot; hide the shot's other elements from `at` (opacity show_until / Note until)."""
+    sun = planet('sting-sun', .5, .36, .085, '#ffcf4a', ('#ffe27a', '#ffcf4a'), shade=.05, seed=2, **pop_in(at, (.5 * W, .36 * H)))
+    props = [Prop(sun, Box(.5 * W - .085 * H, .36 * H - .085 * H, .5 * W + .085 * H, .36 * H + .085 * H, 'sting-sun'))]
+    notes = [Note('GAHANARKA', plus(at, 5), 'title', size=100, pos=(W / 2, round(.6 * H)), color=gold),
+             Note('light in the unfathomable', plus(at, 16), 'small', size=56, pos=(W / 2, round(.7 * H)))]
+    return props, notes, [('whoosh', at, -18)]

@@ -83,7 +83,7 @@ import recipes  # noqa: E402
 YELLOW, WARN, ICE = '#ffd25e', '#ff5a4a', '#bfe3ff'
 recipes.RED = YELLOW
 recipes.INK = '#eef1f8'
-DURATION = int(sys.argv[1]) if len(sys.argv) > 1 else 714  # narration 699.4 s + 2.6 s tail + 12 s end card
+DURATION = int(sys.argv[1]) if len(sys.argv) > 1 else 716  # narration 701.4 s (with the 2.6 s brand-sting gap after s7) + 2.6 s tail + 12 s end card
 END_CARD = 12
 write_story(DURATION)
 ep = Episode(str(STORY), 'wide'); F = ep.F; W, H = F['W'], F['H']
@@ -157,11 +157,14 @@ shot('s5', T0, [], [earth('earth', .28, .55, .17), shadow('night', .28, .55, .17
      [Note('the twist', A('twist'), 'note'), Note('lights out on Earth...', A('out'), 'note'), Note('...the Sun is already back', A('back'), 'title')], cam='push')
 shot('s6', None, [arka(x=.32, poses=[(0, 'think')], faces=[(0, 'shocked')])], [kit(F, 'q', 'question', .66, .45, .24)],
      [Note('not gone anymore?', A('anymore'), 'title', pos=(1320, 800))])
-shot('s7', T0, [], [kit(F, 'clock', 'clock', .2, .5, .26, level=lv((0, .6)), text='8:20 of dark'),
-                    kit(F, 'q', 'question', .45, .45, .22, **pop_in(A('question'), (.45 * W, .45 * H))),
-                    Prop(prop('snow', 'snowfall', .7, .52, .6, count=30, level=lv((0, 0), (A('fall', -2), 0), (A('fall'), 1)))),
-                    Prop(prop('frost', 'frost', .7, .86, .5, opacity=show_from(A('fall'))))],
-     [Note('what if it never came back?', A('question'), 'note'), Note('even the air would fall', A('fall'), 'title', color=WARN)])
+STING = plus(A('sky', edge='end'), 8)   # the brand sting starts right after the hook (docs/EPISODE_VISUAL_LESSONS.md)
+sting_props, sting_notes, sting_sounds = brand_sting(STING, W, H)
+shot('s7', None, [], [kit(F, 'clock', 'clock', .2, .5, .26, level=lv((0, .6)), text='8:20 of dark', opacity=show_until(STING)),
+                    kit(F, 'q', 'question', .45, .45, .22, opacity=track((0, 0), (A('question', -1), 0), (A('question'), 1), (STING, 1), (plus(STING, 1), 0))),
+                    Prop(prop('snow', 'snowfall', .7, .52, .6, count=30, level=lv((0, 0), (A('fall', -2), 0), (A('fall'), 1)), opacity=show_until(STING))),
+                    Prop(prop('frost', 'frost', .7, .86, .5, opacity=track((0, 0), (A('fall', -1), 0), (A('fall'), 1), (STING, 1), (plus(STING, 1), 0))))] + sting_props,
+     [Note('what if it never came back?', A('question'), 'note', until=STING), Note('even the air would fall', A('fall'), 'title', color=WARN, until=STING)] + sting_notes,
+     sounds=sting_sounds)
 
 # ------------------------------------------------------------------ chapter 1: 8 minutes, 20 seconds
 shot('s8', T1, [], [sun('sun', .14, .55, .12), earth('earth', .86, .55, .07), kit(F, 'beam', 'signal', .5, .55, .6, color='#fff6c8')],

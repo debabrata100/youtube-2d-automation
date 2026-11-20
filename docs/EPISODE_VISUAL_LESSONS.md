@@ -21,6 +21,9 @@ Source: the M3.8 review commits (7ee7d03, ffdb8f1, 8cdc6fb, 9fb412b, 803ed1d, 9d
 - **At least one moment of real motion per chapter** (the lion's pounce, Theia's impact, the Moon drifting away). Keep anything violent non-graphic.
 - **State changes are swaps between two layers** at the exact word (lit Moon → ghost Moon), not slow fades that blur the moment.
 
+## Brand
+- **Brand sting after the hook** (from Ep 5): `recipes.brand_sting()` adds a Sun, the GAHANARKA wordmark and the tagline with one whoosh, about 2.5 s, right after the cold open's question. Make room with a ~2.6 s gap in the narration (`scripts/cut-narration.py`, free). Never in Shorts. Check the retention graph at the sting after launch.
+
 ## Proof and honesty
 - **Real photos as proof** where we have them (NASA/NOAA public domain), with credits in the upload sheet.
 - **Name the study on screen** when a fact rests on one (for example "Packer et al. 2011").

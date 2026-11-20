@@ -1404,7 +1404,29 @@
             ],
             "text": "8:20 of dark",
             "ink": "#c9d3ea"
-          }
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 7
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 8
+              },
+              "value": 0
+            }
+          ]
         },
         {
           "id": "q",
@@ -1433,33 +1455,24 @@
                 "at": "question"
               },
               "value": 1
-            }
-          ],
-          "scale": [
-            {
-              "frame": 0,
-              "value": 0.6
             },
             {
               "frame": {
-                "at": "question",
-                "offset": -1
+                "at": "sky",
+                "edge": "end",
+                "offset": 8
               },
-              "value": 0.6
+              "value": 1
             },
             {
               "frame": {
-                "at": "question",
+                "at": "sky",
+                "edge": "end",
                 "offset": 9
               },
-              "value": 1,
-              "ease": "ease-out-back"
+              "value": 0
             }
-          ],
-          "anchor": {
-            "x": 864.0,
-            "y": 486.0
-          }
+          ]
         },
         {
           "id": "snow",
@@ -1489,7 +1502,29 @@
                 "value": 1
               }
             ]
-          }
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 7
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 8
+              },
+              "value": 0
+            }
+          ]
         },
         {
           "id": "frost",
@@ -1517,26 +1552,98 @@
                 "at": "fall"
               },
               "value": 1
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 8
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 9
+              },
+              "value": 0
             }
           ]
+        },
+        {
+          "id": "sting-sun",
+          "kit": {
+            "type": "planet",
+            "x": 0.5,
+            "y": 0.36,
+            "radius": 0.085,
+            "base": "#ffcf4a",
+            "bands": [
+              "#ffe27a",
+              "#ffcf4a"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.05,
+            "seed": 2
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 7
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 8
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 7
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 17
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 960.0,
+            "y": 388.8
+          }
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "NOON: THE SUN VANISHES",
-          "x": 960,
-          "y": 92,
-          "size": 64,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#eef1f8",
-          "pop": false
-        },
-        {
-          "id": "n1",
           "text": "what if it never came back?",
-          "x": 1424,
+          "x": 1456,
           "y": 373,
           "size": 72,
           "anchor": "middle",
@@ -1561,13 +1668,29 @@
                 "offset": 5
               },
               "value": 1
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 7
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 8
+              },
+              "value": 0
             }
           ]
         },
         {
-          "id": "n2",
+          "id": "n1",
           "text": "even the air would fall",
-          "x": 1424,
+          "x": 1472,
           "y": 498,
           "size": 92,
           "anchor": "middle",
@@ -1590,6 +1713,88 @@
               "frame": {
                 "at": "fall",
                 "offset": 5
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 7
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 8
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "GAHANARKA",
+          "x": 960,
+          "y": 648,
+          "size": 100,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 12
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 18
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "light in the unfathomable",
+          "x": 960,
+          "y": 756,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 23
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 29
               },
               "value": 1
             }
@@ -13083,8 +13288,8 @@
     {
       "id": "gs-s2",
       "template": "hero-reveal",
-      "durationFrames": 160,
-      "animationDurationFrames": 160,
+      "durationFrames": 161,
+      "animationDurationFrames": 161,
       "caption": {
         "text": "gs-s2",
         "preset": "body"
@@ -13137,8 +13342,8 @@
     {
       "id": "gs-s3",
       "template": "hero-reveal",
-      "durationFrames": 395,
-      "animationDurationFrames": 395,
+      "durationFrames": 397,
+      "animationDurationFrames": 397,
       "caption": {
         "text": "gs-s3",
         "preset": "body"
@@ -13299,8 +13504,8 @@
     {
       "id": "gs-s5",
       "template": "hero-reveal",
-      "durationFrames": 309,
-      "animationDurationFrames": 309,
+      "durationFrames": 310,
+      "animationDurationFrames": 310,
       "caption": {
         "text": "gs-s5",
         "preset": "body"
@@ -13383,8 +13588,8 @@
     {
       "id": "gs-s6",
       "template": "hero-reveal",
-      "durationFrames": 160,
-      "animationDurationFrames": 160,
+      "durationFrames": 161,
+      "animationDurationFrames": 161,
       "caption": {
         "text": "gs-s6",
         "preset": "body"
@@ -13437,8 +13642,8 @@
     {
       "id": "gs-s7",
       "template": "hero-reveal",
-      "durationFrames": 507,
-      "animationDurationFrames": 507,
+      "durationFrames": 508,
+      "animationDurationFrames": 508,
       "caption": {
         "text": "gs-s7",
         "preset": "body"
@@ -13505,14 +13710,41 @@
             "at": "fall"
           },
           "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "sky",
+            "edge": "end",
+            "offset": 13
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "sky",
+            "edge": "end",
+            "offset": 24
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "sky",
+            "edge": "end",
+            "offset": 8
+          },
+          "gainDb": -18
         }
       ]
     },
     {
       "id": "gs-s8",
       "template": "hero-reveal",
-      "durationFrames": 395,
-      "animationDurationFrames": 395,
+      "durationFrames": 397,
+      "animationDurationFrames": 397,
       "caption": {
         "text": "gs-s8",
         "preset": "body"
@@ -13592,8 +13824,8 @@
     {
       "id": "gs-s9",
       "template": "hero-reveal",
-      "durationFrames": 457,
-      "animationDurationFrames": 457,
+      "durationFrames": 459,
+      "animationDurationFrames": 459,
       "caption": {
         "text": "gs-s9",
         "preset": "body"
@@ -13720,8 +13952,8 @@
     {
       "id": "gs-s11",
       "template": "hero-reveal",
-      "durationFrames": 618,
-      "animationDurationFrames": 618,
+      "durationFrames": 620,
+      "animationDurationFrames": 620,
       "caption": {
         "text": "gs-s11",
         "preset": "body"
@@ -13801,8 +14033,8 @@
     {
       "id": "gs-s12",
       "template": "hero-reveal",
-      "durationFrames": 185,
-      "animationDurationFrames": 185,
+      "durationFrames": 186,
+      "animationDurationFrames": 186,
       "caption": {
         "text": "gs-s12",
         "preset": "body"
@@ -13875,8 +14107,8 @@
     {
       "id": "gs-s13",
       "template": "hero-reveal",
-      "durationFrames": 556,
-      "animationDurationFrames": 556,
+      "durationFrames": 558,
+      "animationDurationFrames": 558,
       "caption": {
         "text": "gs-s13",
         "preset": "body"
@@ -13956,8 +14188,8 @@
     {
       "id": "gs-s14",
       "template": "hero-reveal",
-      "durationFrames": 445,
-      "animationDurationFrames": 445,
+      "durationFrames": 446,
+      "animationDurationFrames": 446,
       "caption": {
         "text": "gs-s14",
         "preset": "body"
@@ -14037,8 +14269,8 @@
     {
       "id": "gs-s15",
       "template": "hero-reveal",
-      "durationFrames": 395,
-      "animationDurationFrames": 395,
+      "durationFrames": 397,
+      "animationDurationFrames": 397,
       "caption": {
         "text": "gs-s15",
         "preset": "body"
@@ -14121,8 +14353,8 @@
     {
       "id": "gs-s16",
       "template": "hero-reveal",
-      "durationFrames": 420,
-      "animationDurationFrames": 420,
+      "durationFrames": 421,
+      "animationDurationFrames": 421,
       "caption": {
         "text": "gs-s16",
         "preset": "body"
@@ -14200,8 +14432,8 @@
     {
       "id": "gs-s17",
       "template": "hero-reveal",
-      "durationFrames": 445,
-      "animationDurationFrames": 445,
+      "durationFrames": 446,
+      "animationDurationFrames": 446,
       "caption": {
         "text": "gs-s17",
         "preset": "body"
@@ -14281,8 +14513,8 @@
     {
       "id": "gs-s18",
       "template": "hero-reveal",
-      "durationFrames": 334,
-      "animationDurationFrames": 334,
+      "durationFrames": 335,
+      "animationDurationFrames": 335,
       "caption": {
         "text": "gs-s18",
         "preset": "body"
@@ -14423,8 +14655,8 @@
     {
       "id": "gs-s20",
       "template": "hero-reveal",
-      "durationFrames": 371,
-      "animationDurationFrames": 371,
+      "durationFrames": 372,
+      "animationDurationFrames": 372,
       "caption": {
         "text": "gs-s20",
         "preset": "body"
@@ -14504,8 +14736,8 @@
     {
       "id": "gs-s21",
       "template": "hero-reveal",
-      "durationFrames": 470,
-      "animationDurationFrames": 470,
+      "durationFrames": 471,
+      "animationDurationFrames": 471,
       "caption": {
         "text": "gs-s21",
         "preset": "body"
@@ -14585,8 +14817,8 @@
     {
       "id": "gs-s22",
       "template": "hero-reveal",
-      "durationFrames": 346,
-      "animationDurationFrames": 346,
+      "durationFrames": 347,
+      "animationDurationFrames": 347,
       "caption": {
         "text": "gs-s22",
         "preset": "body"
@@ -14666,8 +14898,8 @@
     {
       "id": "gs-s23",
       "template": "hero-reveal",
-      "durationFrames": 420,
-      "animationDurationFrames": 420,
+      "durationFrames": 421,
+      "animationDurationFrames": 421,
       "caption": {
         "text": "gs-s23",
         "preset": "body"
@@ -14747,8 +14979,8 @@
     {
       "id": "gs-s24",
       "template": "hero-reveal",
-      "durationFrames": 383,
-      "animationDurationFrames": 383,
+      "durationFrames": 384,
+      "animationDurationFrames": 384,
       "caption": {
         "text": "gs-s24",
         "preset": "body"
@@ -14828,8 +15060,8 @@
     {
       "id": "gs-s25",
       "template": "hero-reveal",
-      "durationFrames": 358,
-      "animationDurationFrames": 358,
+      "durationFrames": 359,
+      "animationDurationFrames": 359,
       "caption": {
         "text": "gs-s25",
         "preset": "body"
@@ -14895,8 +15127,8 @@
     {
       "id": "gs-s26",
       "template": "hero-reveal",
-      "durationFrames": 482,
-      "animationDurationFrames": 482,
+      "durationFrames": 483,
+      "animationDurationFrames": 483,
       "caption": {
         "text": "gs-s26",
         "preset": "body"
@@ -15104,8 +15336,8 @@
     {
       "id": "gs-s29",
       "template": "hero-reveal",
-      "durationFrames": 98,
-      "animationDurationFrames": 98,
+      "durationFrames": 99,
+      "animationDurationFrames": 99,
       "caption": {
         "text": "gs-s29",
         "preset": "body"
@@ -15174,8 +15406,8 @@
     {
       "id": "gs-s30",
       "template": "hero-reveal",
-      "durationFrames": 296,
-      "animationDurationFrames": 296,
+      "durationFrames": 297,
+      "animationDurationFrames": 297,
       "caption": {
         "text": "gs-s30",
         "preset": "body"
@@ -15258,8 +15490,8 @@
     {
       "id": "gs-s31",
       "template": "hero-reveal",
-      "durationFrames": 284,
-      "animationDurationFrames": 284,
+      "durationFrames": 285,
+      "animationDurationFrames": 285,
       "caption": {
         "text": "gs-s31",
         "preset": "body"
@@ -15393,8 +15625,8 @@
     {
       "id": "gs-s33",
       "template": "hero-reveal",
-      "durationFrames": 358,
-      "animationDurationFrames": 358,
+      "durationFrames": 359,
+      "animationDurationFrames": 359,
       "caption": {
         "text": "gs-s33",
         "preset": "body"
@@ -15548,8 +15780,8 @@
     {
       "id": "gs-s35",
       "template": "hero-reveal",
-      "durationFrames": 259,
-      "animationDurationFrames": 259,
+      "durationFrames": 260,
+      "animationDurationFrames": 260,
       "caption": {
         "text": "gs-s35",
         "preset": "body"
@@ -15622,8 +15854,8 @@
     {
       "id": "gs-s36",
       "template": "hero-reveal",
-      "durationFrames": 420,
-      "animationDurationFrames": 420,
+      "durationFrames": 421,
+      "animationDurationFrames": 421,
       "caption": {
         "text": "gs-s36",
         "preset": "body"
@@ -15703,8 +15935,8 @@
     {
       "id": "gs-s37",
       "template": "hero-reveal",
-      "durationFrames": 160,
-      "animationDurationFrames": 160,
+      "durationFrames": 161,
+      "animationDurationFrames": 161,
       "caption": {
         "text": "gs-s37",
         "preset": "body"
@@ -15757,8 +15989,8 @@
     {
       "id": "gs-s38",
       "template": "hero-reveal",
-      "durationFrames": 494,
-      "animationDurationFrames": 494,
+      "durationFrames": 496,
+      "animationDurationFrames": 496,
       "caption": {
         "text": "gs-s38",
         "preset": "body"
@@ -15838,8 +16070,8 @@
     {
       "id": "gs-s39",
       "template": "hero-reveal",
-      "durationFrames": 346,
-      "animationDurationFrames": 346,
+      "durationFrames": 347,
+      "animationDurationFrames": 347,
       "caption": {
         "text": "gs-s39",
         "preset": "body"
@@ -15912,8 +16144,8 @@
     {
       "id": "gs-s40",
       "template": "hero-reveal",
-      "durationFrames": 358,
-      "animationDurationFrames": 358,
+      "durationFrames": 359,
+      "animationDurationFrames": 359,
       "caption": {
         "text": "gs-s40",
         "preset": "body"
@@ -15993,8 +16225,8 @@
     {
       "id": "gs-s41",
       "template": "hero-reveal",
-      "durationFrames": 544,
-      "animationDurationFrames": 544,
+      "durationFrames": 545,
+      "animationDurationFrames": 545,
       "caption": {
         "text": "gs-s41",
         "preset": "body"
@@ -16121,8 +16353,8 @@
     {
       "id": "gs-s43",
       "template": "hero-reveal",
-      "durationFrames": 197,
-      "animationDurationFrames": 197,
+      "durationFrames": 198,
+      "animationDurationFrames": 198,
       "caption": {
         "text": "gs-s43",
         "preset": "body"
@@ -16195,8 +16427,8 @@
     {
       "id": "gs-s44",
       "template": "hero-reveal",
-      "durationFrames": 309,
-      "animationDurationFrames": 309,
+      "durationFrames": 310,
+      "animationDurationFrames": 310,
       "caption": {
         "text": "gs-s44",
         "preset": "body"
@@ -16330,8 +16562,8 @@
     {
       "id": "gs-s46",
       "template": "hero-reveal",
-      "durationFrames": 371,
-      "animationDurationFrames": 371,
+      "durationFrames": 372,
+      "animationDurationFrames": 372,
       "caption": {
         "text": "gs-s46",
         "preset": "body"
@@ -16404,8 +16636,8 @@
     {
       "id": "gs-s47",
       "template": "hero-reveal",
-      "durationFrames": 309,
-      "animationDurationFrames": 309,
+      "durationFrames": 310,
+      "animationDurationFrames": 310,
       "caption": {
         "text": "gs-s47",
         "preset": "body"
@@ -16559,8 +16791,8 @@
     {
       "id": "gs-s49",
       "template": "hero-reveal",
-      "durationFrames": 395,
-      "animationDurationFrames": 395,
+      "durationFrames": 397,
+      "animationDurationFrames": 397,
       "caption": {
         "text": "gs-s49",
         "preset": "body"
@@ -16687,8 +16919,8 @@
     {
       "id": "gs-s51",
       "template": "hero-reveal",
-      "durationFrames": 482,
-      "animationDurationFrames": 482,
+      "durationFrames": 483,
+      "animationDurationFrames": 483,
       "caption": {
         "text": "gs-s51",
         "preset": "body"
@@ -16768,8 +17000,8 @@
     {
       "id": "gs-s52",
       "template": "hero-reveal",
-      "durationFrames": 284,
-      "animationDurationFrames": 284,
+      "durationFrames": 285,
+      "animationDurationFrames": 285,
       "caption": {
         "text": "gs-s52",
         "preset": "body"
@@ -16842,8 +17074,8 @@
     {
       "id": "gs-s53",
       "template": "hero-reveal",
-      "durationFrames": 197,
-      "animationDurationFrames": 197,
+      "durationFrames": 198,
+      "animationDurationFrames": 198,
       "caption": {
         "text": "gs-s53",
         "preset": "body"
@@ -16916,8 +17148,8 @@
     {
       "id": "gs-s54",
       "template": "hero-reveal",
-      "durationFrames": 395,
-      "animationDurationFrames": 395,
+      "durationFrames": 397,
+      "animationDurationFrames": 397,
       "caption": {
         "text": "gs-s54",
         "preset": "body"
@@ -17007,8 +17239,8 @@
     {
       "id": "gs-s55",
       "template": "hero-reveal",
-      "durationFrames": 123,
-      "animationDurationFrames": 123,
+      "durationFrames": 124,
+      "animationDurationFrames": 124,
       "caption": {
         "text": "gs-s55",
         "preset": "body"
@@ -17061,8 +17293,8 @@
     {
       "id": "gs-s56",
       "template": "hero-reveal",
-      "durationFrames": 160,
-      "animationDurationFrames": 160,
+      "durationFrames": 161,
+      "animationDurationFrames": 161,
       "caption": {
         "text": "gs-s56",
         "preset": "body"
@@ -17209,8 +17441,8 @@
     {
       "id": "gs-s58",
       "template": "hero-reveal",
-      "durationFrames": 296,
-      "animationDurationFrames": 296,
+      "durationFrames": 297,
+      "animationDurationFrames": 297,
       "caption": {
         "text": "gs-s58",
         "preset": "body"
@@ -17283,8 +17515,8 @@
     {
       "id": "gs-s59",
       "template": "hero-reveal",
-      "durationFrames": 334,
-      "animationDurationFrames": 334,
+      "durationFrames": 335,
+      "animationDurationFrames": 335,
       "caption": {
         "text": "gs-s59",
         "preset": "body"
@@ -17418,8 +17650,8 @@
     {
       "id": "gs-s61",
       "template": "hero-reveal",
-      "durationFrames": 383,
-      "animationDurationFrames": 383,
+      "durationFrames": 384,
+      "animationDurationFrames": 384,
       "caption": {
         "text": "gs-s61",
         "preset": "body"
@@ -17499,8 +17731,8 @@
     {
       "id": "gs-s62",
       "template": "hero-reveal",
-      "durationFrames": 433,
-      "animationDurationFrames": 433,
+      "durationFrames": 434,
+      "animationDurationFrames": 434,
       "caption": {
         "text": "gs-s62",
         "preset": "body"
@@ -17580,8 +17812,8 @@
     {
       "id": "gs-s63",
       "template": "hero-reveal",
-      "durationFrames": 222,
-      "animationDurationFrames": 222,
+      "durationFrames": 223,
+      "animationDurationFrames": 223,
       "caption": {
         "text": "gs-s63",
         "preset": "body"
@@ -17634,8 +17866,8 @@
     {
       "id": "gs-s64",
       "template": "hero-reveal",
-      "durationFrames": 433,
-      "animationDurationFrames": 433,
+      "durationFrames": 434,
+      "animationDurationFrames": 434,
       "caption": {
         "text": "gs-s64",
         "preset": "body"
@@ -17715,8 +17947,8 @@
     {
       "id": "gs-s65",
       "template": "hero-reveal",
-      "durationFrames": 507,
-      "animationDurationFrames": 507,
+      "durationFrames": 508,
+      "animationDurationFrames": 508,
       "caption": {
         "text": "gs-s65",
         "preset": "body"
@@ -17796,8 +18028,8 @@
     {
       "id": "gs-s66",
       "template": "hero-reveal",
-      "durationFrames": 383,
-      "animationDurationFrames": 383,
+      "durationFrames": 384,
+      "animationDurationFrames": 384,
       "caption": {
         "text": "gs-s66",
         "preset": "body"
@@ -17877,8 +18109,8 @@
     {
       "id": "gs-s67",
       "template": "hero-reveal",
-      "durationFrames": 346,
-      "animationDurationFrames": 346,
+      "durationFrames": 347,
+      "animationDurationFrames": 347,
       "caption": {
         "text": "gs-s67",
         "preset": "body"
@@ -18001,8 +18233,8 @@
     {
       "id": "gs-s69",
       "template": "hero-reveal",
-      "durationFrames": 473,
-      "animationDurationFrames": 113,
+      "durationFrames": 471,
+      "animationDurationFrames": 111,
       "caption": {
         "text": "gs-s69",
         "preset": "body"
