@@ -1572,11 +1572,44 @@
           ]
         },
         {
+          "id": "sting-glow",
+          "kit": {
+            "type": "prop",
+            "item": "sparkle",
+            "x": 0.5,
+            "y": 0.34,
+            "size": 0.5,
+            "count": 12,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "sky",
+                  "edge": "end",
+                  "offset": 8
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "sky",
+                  "edge": "end",
+                  "offset": 18
+                },
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
           "id": "sting-sun",
           "kit": {
             "type": "planet",
             "x": 0.5,
-            "y": 0.36,
+            "y": 0.34,
             "radius": 0.085,
             "base": "#ffcf4a",
             "bands": [
@@ -1635,16 +1668,246 @@
           ],
           "anchor": {
             "x": 960.0,
-            "y": 388.8
+            "y": 367.20000000000005
           }
+        },
+        {
+          "id": "sting-arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.29,
+            "y": 0.8,
+            "height": 0.34,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "wave"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "grin"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 17
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 18
+              },
+              "value": 1
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 40,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 80,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 120,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 160,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 200,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 240,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 280,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 320,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 400,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 440,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 480,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 520,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 560,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 600,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 640,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 680,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 760,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 800,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 840,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 880,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 920,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 960,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1000,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1040,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1120,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1160,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1200,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1240,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1280,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1320,
+              "value": 8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1360,
+              "value": -8,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1400,
+              "value": 8,
+              "ease": "smoothstep"
+            }
+          ]
         }
       ],
       "annotations": [
         {
           "id": "n0",
           "text": "what if it never came back?",
-          "x": 1456,
-          "y": 373,
+          "x": 1424,
+          "y": 661,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
@@ -1690,8 +1953,8 @@
         {
           "id": "n1",
           "text": "even the air would fall",
-          "x": 1472,
-          "y": 498,
+          "x": 1424,
+          "y": 786,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -13655,8 +13918,8 @@
           {
             "frame": 0,
             "focus": {
-              "x": 0.5,
-              "y": 0.5
+              "x": 0.49,
+              "y": 0.5046
             },
             "zoom": 1.05,
             "easing": "smoothstep"
@@ -13730,13 +13993,13 @@
           "gainDb": -22
         },
         {
-          "sound": "whoosh",
+          "sound": "chime",
           "frame": {
             "at": "sky",
             "edge": "end",
             "offset": 8
           },
-          "gainDb": -18
+          "gainDb": -14
         }
       ]
     },

@@ -519,11 +519,15 @@ class Episode:
 
 
 def brand_sting(at, W, H, gold='#ffd25e'):
-    """The channel's 2-second brand sting (first used in Ep 5): a small Sun pops up, then the GAHANARKA wordmark and the
-    tagline, with one whoosh. Place it right after the cold open's hook (never in Shorts). Returns (props, notes, sounds)
-    to add to that shot; hide the shot's other elements from `at` (opacity show_until / Note until)."""
-    sun = planet('sting-sun', .5, .36, .085, '#ffcf4a', ('#ffe27a', '#ffcf4a'), shade=.05, seed=2, **pop_in(at, (.5 * W, .36 * H)))
-    props = [Prop(sun, Box(.5 * W - .085 * H, .36 * H - .085 * H, .5 * W + .085 * H, .36 * H + .085 * H, 'sting-sun'))]
+    """The channel's brand sting, about 2.5 s (first used in Ep 5): a glowing, sparkling Sun pops up with the Gahanarka chime,
+    then the GAHANARKA wordmark and the tagline, and Arka waves beside it. Place it right after the cold open's hook (never in
+    Shorts). Returns (chars, props, notes, sounds) to add to that shot; hide the shot's other elements from `at`."""
+    cx, cy, r = .5, .34, .085
+    glow = prop('sting-glow', 'sparkle', cx, cy, .5, count=12, level=[{'frame': 0, 'value': 0}, {'frame': at, 'value': 0}, {'frame': plus(at, 10), 'value': 1}])
+    sun = planet('sting-sun', cx, cy, r, '#ffcf4a', ('#ffe27a', '#ffcf4a'), shade=.05, seed=2, **pop_in(at, (cx * W, cy * H)))
+    box = lambda pid, s: Box((cx * W) - s * H, (cy * H) - s * H, (cx * W) + s * H, (cy * H) + s * H, pid)
+    props = [Prop(glow, box('sting-glow', .2)), Prop(sun, box('sting-sun', r))]
+    arka = Char('sting-arka', 'arka', x=.29, fy=.8, h=.34, poses=[(0, 'wave')], faces=[(0, 'grin')], layer={'opacity': show_from(plus(at, 10))})
     notes = [Note('GAHANARKA', plus(at, 5), 'title', size=100, pos=(W / 2, round(.6 * H)), color=gold),
              Note('light in the unfathomable', plus(at, 16), 'small', size=56, pos=(W / 2, round(.7 * H)))]
-    return props, notes, [('whoosh', at, -18)]
+    return [arka], props, notes, [('chime', at, -14)]

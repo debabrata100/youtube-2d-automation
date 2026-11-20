@@ -66,7 +66,7 @@ export const Terrain: React.FC<{config: TerrainConfig; theme: Theme; width: numb
 
 export type PropConfig = {ink?: string; item: 'thermometer' | 'pressure-arrows' | 'motion-lines' | 'exclaim' | 'question' | 'check' | 'cross' | 'counter' | 'stamp' | 'vignette' | 'station' | 'helmet' | 'doodle-stars' | 'chamber'
   | 'cliff' | 'geyser' | 'plume' | 'radiation-meter' | 'radiation-belt' | 'battery' | 'airbag' | 'small-moon' | 'ice-cutaway' | 'frost'
-  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb' | 'crescent' | 'orbit-ring' | 'town' | 'lion' | 'zebra' | 'coral' | 'plankton' | 'tide-gauge' | 'tilt-dial' | 'earth-axis' | 'impact' | 'dino' | 'reflector' | 'bed' | 'stir' | 'clock' | 'eclipse' | 'moonbeam' | 'young-earth' | 'bee' | 'flower' | 'tree' | 'tardigrade' | 'vent' | 'shell' | 'snowfall' | 'night-half' | 'mushroom'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
+  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb' | 'crescent' | 'orbit-ring' | 'town' | 'lion' | 'zebra' | 'coral' | 'plankton' | 'tide-gauge' | 'tilt-dial' | 'earth-axis' | 'impact' | 'dino' | 'reflector' | 'bed' | 'stir' | 'clock' | 'eclipse' | 'moonbeam' | 'young-earth' | 'bee' | 'flower' | 'tree' | 'tardigrade' | 'vent' | 'shell' | 'snowfall' | 'night-half' | 'mushroom' | 'sparkle'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
   values?: Array<{frame: number; value: number; ramp?: boolean}>; text?: string; direction?: 'in' | 'out';
   labels?: string[]; colors?: string[]; highlight?: number; ring?: boolean; belt?: boolean; range?: [number, number]};
 
@@ -644,6 +644,17 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
           <path d={`M ${x - cw} ${s * .3 - h} Q ${x} ${s * .3 - h - cw * 1.2} ${x + cw} ${s * .3 - h} Z`} fill={c.color ?? '#c9733f'} stroke={ink} strokeWidth={w * .7}/>
           <circle cx={x - cw * .3} cy={s * .3 - h - cw * .35} r={cw * .12} fill="#fff4e0"/></g>; })}
         <path d={`M ${-s * .5} ${s * .3} L ${s * .5} ${s * .3}`} {...stroke(ink, w)}/>
+      </g>;
+    }
+    case 'sparkle': {
+      // A soft glow (radius size/2) with twinkling four-point stars around it; level = intensity (0 = none, 1 = full).
+      const lv = levelAt(c.level, frame), random = seededRandom(31), id = `sp-${Math.round(c.x * 1000)}-${Math.round(c.y * 1000)}`, col = c.color ?? '#ffe27a';
+      return <g transform={at} opacity={lv}>
+        <defs><radialGradient id={id}><stop offset="0" stopColor={col} stopOpacity=".55"/><stop offset=".55" stopColor={col} stopOpacity=".18"/><stop offset="1" stopColor={col} stopOpacity="0"/></radialGradient></defs>
+        <circle r={s * .5} fill={`url(#${id})`}/>
+        {Array.from({length: c.count}, (_, i) => { const a = random() * Math.PI * 2, d = s * (.28 + random() * .3), r = s * (.02 + random() * .03),
+          tw = .35 + .65 * Math.max(0, Math.sin(frame / 4 + i * 1.7)), x = Math.cos(a) * d, y = Math.sin(a) * d;
+          return <path key={i} d={`M ${x} ${y - r} Q ${x} ${y} ${x + r} ${y} Q ${x} ${y} ${x} ${y + r} Q ${x} ${y} ${x - r} ${y} Q ${x} ${y} ${x} ${y - r} Z`} fill="#fff7d6" opacity={tw}/>; })}
       </g>;
     }
     case 'young-earth': {

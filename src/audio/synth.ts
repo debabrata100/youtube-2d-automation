@@ -63,6 +63,14 @@ export const synthSfx = (id: SfxId): Float32Array => {
       const b = buffer(.75); for (let i = 0; i < b.length; i++) { const t = i / SAMPLE_RATE, beat = (t0: number, a: number) => t < t0 ? 0 : a * Math.sin(2 * Math.PI * (52 + 30 * Math.exp(-(t - t0) * 30)) * (t - t0)) * Math.exp(-(t - t0) * 16); b[i] = beat(0, 1) + beat(.26, .75); }
       return normalize(lowpass(b, 400), .8);
     }
+    case 'chime': { // the Gahanarka brand chime: three soft bell notes rising (A5, C#6, E6) with a long shimmer
+      const b = buffer(1.9), notes = [[0, 880], [.11, 1108.73], [.22, 1318.51]];
+      for (let i = 0; i < b.length; i++) { const t = i / SAMPLE_RATE; let v = 0;
+        for (const [t0, f] of notes) { if (t < t0) continue; const u = t - t0, env = Math.exp(-u * 2.6) * Math.min(1, u / .004);
+          v += env * (Math.sin(2 * Math.PI * f * u) + .32 * Math.sin(2 * Math.PI * f * 2.76 * u) * Math.exp(-u * 6) + .18 * Math.sin(2 * Math.PI * f * 5.4 * u) * Math.exp(-u * 12)); }
+        b[i] = v; }
+      return normalize(lowpass(b, 7000), .55);
+    }
     case 'riser': { // pitch rise into the payoff
       const b = buffer(1.4); for (let i = 0; i < b.length; i++) { const t = i / SAMPLE_RATE, ph = 2 * Math.PI * (110 * t + 160 * t * t); b[i] = (Math.sin(ph) + .35 * Math.sin(2 * ph) + .15 * Math.sin(3 * ph)) * Math.min(1, t / 1.1) * Math.min(1, (1.4 - t) / .08); }
       return normalize(lowpass(b, 2400), .5);

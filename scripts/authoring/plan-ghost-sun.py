@@ -158,8 +158,8 @@ shot('s5', T0, [], [earth('earth', .28, .55, .17), shadow('night', .28, .55, .17
 shot('s6', None, [arka(x=.32, poses=[(0, 'think')], faces=[(0, 'shocked')])], [kit(F, 'q', 'question', .66, .45, .24)],
      [Note('not gone anymore?', A('anymore'), 'title', pos=(1320, 800))])
 STING = plus(A('sky', edge='end'), 8)   # the brand sting starts right after the hook (docs/EPISODE_VISUAL_LESSONS.md)
-sting_props, sting_notes, sting_sounds = brand_sting(STING, W, H)
-shot('s7', None, [], [kit(F, 'clock', 'clock', .2, .5, .26, level=lv((0, .6)), text='8:20 of dark', opacity=show_until(STING)),
+sting_chars, sting_props, sting_notes, sting_sounds = brand_sting(STING, W, H)
+shot('s7', None, sting_chars, [kit(F, 'clock', 'clock', .2, .5, .26, level=lv((0, .6)), text='8:20 of dark', opacity=show_until(STING)),
                     kit(F, 'q', 'question', .45, .45, .22, opacity=track((0, 0), (A('question', -1), 0), (A('question'), 1), (STING, 1), (plus(STING, 1), 0))),
                     Prop(prop('snow', 'snowfall', .7, .52, .6, count=30, level=lv((0, 0), (A('fall', -2), 0), (A('fall'), 1)), opacity=show_until(STING))),
                     Prop(prop('frost', 'frost', .7, .86, .5, opacity=track((0, 0), (A('fall', -1), 0), (A('fall'), 1), (STING, 1), (plus(STING, 1), 0))))] + sting_props,
