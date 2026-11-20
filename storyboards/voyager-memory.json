@@ -1,0 +1,1966 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "voyager-memory",
+  "title": "Voyager Has Less Memory Than One Photo on Your Phone",
+  "themeId": "paint-night",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "@sky.top",
+  "accent": "@text.accent",
+  "assets": [],
+  "backdrop": {
+    "group": "backdrop"
+  },
+  "narrationTiming": {
+    "minimumSceneFrames": 30,
+    "maximumDeviationSeconds": 0.3
+  },
+  "audio": {
+    "music": "cues",
+    "musicGainDb": -22,
+    "duckRatio": 8,
+    "targetLufs": -16,
+    "crossfadeSeconds": 1.5,
+    "musicCues": [
+      {
+        "source": "assets/music/6-space-event-horizon.mp3",
+        "scene": "vym-m1",
+        "offsetSeconds": 0
+      }
+    ],
+    "musicDropouts": []
+  },
+  "groups": [
+    {
+      "id": "backdrop",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "page",
+          "kit": {
+            "type": "sky",
+            "horizon": 0.9,
+            "stars": 0,
+            "seed": 1
+          }
+        },
+        {
+          "id": "stars",
+          "kit": {
+            "type": "prop",
+            "item": "doodle-stars",
+            "x": 0.37,
+            "y": 0.61,
+            "size": 0.5,
+            "count": 30,
+            "ink": "#eef1f8"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "brand-tag",
+          "text": "GAHANARKA",
+          "x": 880,
+          "y": 150,
+          "size": 44,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": false,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-m1",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "photo",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.44,
+            "y": 0.42,
+            "size": 0.62,
+            "text": "your last photo",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": 8,
+                "value": 0
+              },
+              {
+                "frame": 30,
+                "value": 1
+              }
+            ],
+            "color": "@text.accent",
+            "ink": "#eef1f8"
+          }
+        },
+        {
+          "id": "voy",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.44,
+            "y": 0.58,
+            "size": 0.62,
+            "text": "Voyager's memory",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": 40,
+                "value": 0
+              },
+              {
+                "frame": 52,
+                "value": 0.023
+              }
+            ],
+            "color": "#2f7fd0",
+            "ink": "#eef1f8"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "~3,000 KB",
+          "x": 473,
+          "y": 1328,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "photo",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "photo",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "69 KB",
+          "x": 753,
+          "y": 1328,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "entire",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "entire",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-m2",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "probe",
+          "kit": {
+            "type": "prop",
+            "item": "probe",
+            "x": 0.5,
+            "y": 0.42,
+            "size": 0.42,
+            "ink": "#8d97b0"
+          }
+        },
+        {
+          "id": "c1",
+          "kit": {
+            "type": "prop",
+            "item": "battery",
+            "x": 0.3,
+            "y": 0.66,
+            "size": 0.1
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "three",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "three"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "three",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "three",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 324.0,
+            "y": 1267.2
+          }
+        },
+        {
+          "id": "c2",
+          "kit": {
+            "type": "prop",
+            "item": "battery",
+            "x": 0.5,
+            "y": 0.66,
+            "size": 0.1
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "three",
+                "offset": 3
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "three",
+                "offset": 4
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "three",
+                "offset": 3
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "three",
+                "offset": 13
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 540.0,
+            "y": 1267.2
+          }
+        },
+        {
+          "id": "c3",
+          "kit": {
+            "type": "prop",
+            "item": "battery",
+            "x": 0.7,
+            "y": 0.66,
+            "size": 0.1
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "three",
+                "offset": 7
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "three",
+                "offset": 8
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "three",
+                "offset": 7
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "three",
+                "offset": 17
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 756.0,
+            "y": 1267.2
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "farthest machine ever",
+          "x": 492,
+          "y": 1110,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "farthest",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "farthest",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "3 computers",
+          "x": 540,
+          "y": 1400,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "computers",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "computers",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "69 KB",
+          "x": 540,
+          "y": 1520,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sixty-nine",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sixty-nine",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "combined!",
+          "x": 540,
+          "y": 1640,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Combined.",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Combined.",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-m3",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "probe",
+          "kit": {
+            "type": "prop",
+            "item": "probe",
+            "x": 0.5,
+            "y": 0.44,
+            "size": 0.42,
+            "ink": "#8d97b0"
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.5,
+            "y": 0.338,
+            "height": 0.11,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "float"
+              },
+              {
+                "frame": {
+                  "at": "Kilobytes?",
+                  "offset": -2
+                },
+                "pose": "shrug"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "shocked"
+              },
+              {
+                "frame": {
+                  "at": "selfies"
+                },
+                "face": "grin"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "1 selfie ≈ 3 MB",
+          "x": 540,
+          "y": 1300,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "selfies",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "selfies",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-m4",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "probe",
+          "kit": {
+            "type": "prop",
+            "item": "probe",
+            "x": 0.68,
+            "y": 0.36,
+            "size": 0.3,
+            "ink": "#8d97b0"
+          }
+        },
+        {
+          "id": "signal",
+          "kit": {
+            "type": "prop",
+            "item": "signal",
+            "x": 0.42,
+            "y": 0.56,
+            "size": 0.3,
+            "rotation": -130
+          }
+        },
+        {
+          "id": "tape",
+          "kit": {
+            "type": "prop",
+            "item": "sign",
+            "x": 0.5,
+            "y": 0.8,
+            "size": 0.28,
+            "text": "8-track tape"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tape,",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tape,"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "tape,",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "tape,",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 540.0,
+            "y": 1536.0
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "can't keep its data",
+          "x": 540,
+          "y": 330,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "can't",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "can't",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "160 bits/s",
+          "x": 400,
+          "y": 1250,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "hundred",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "hundred",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-m5",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "dial",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.44,
+            "y": 0.42,
+            "size": 0.62,
+            "text": "old dial-up",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": 10,
+                "value": 0
+              },
+              {
+                "frame": 40,
+                "value": 1
+              }
+            ],
+            "color": "@text.accent",
+            "ink": "#eef1f8"
+          }
+        },
+        {
+          "id": "voy2",
+          "kit": {
+            "type": "prop",
+            "item": "bar",
+            "x": 0.44,
+            "y": 0.58,
+            "size": 0.62,
+            "text": "Voyager 1",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": 10,
+                "value": 0
+              },
+              {
+                "frame": 14,
+                "value": 0.02
+              }
+            ],
+            "color": "#2f7fd0",
+            "ink": "#eef1f8"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "20,000 bits/s",
+          "x": 474,
+          "y": 1310,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "dial-up",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "dial-up",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "160",
+          "x": 688,
+          "y": 1310,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "modem",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "modem",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "×125",
+          "x": 540,
+          "y": 1500,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "hundred",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "hundred",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-m6",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "probe",
+          "kit": {
+            "type": "prop",
+            "item": "probe",
+            "x": 0.5,
+            "y": 0.4,
+            "size": 0.36,
+            "ink": "#8d97b0"
+          }
+        },
+        {
+          "id": "fail",
+          "kit": {
+            "type": "prop",
+            "item": "cross",
+            "x": 0.5,
+            "y": 0.62,
+            "size": 0.14
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "failed.",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "failed."
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "failed.",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "failed.",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 540.0,
+            "y": 1190.4
+          }
+        },
+        {
+          "id": "fix",
+          "kit": {
+            "type": "prop",
+            "item": "check",
+            "x": 0.5,
+            "y": 0.62,
+            "size": 0.16
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "squeezed",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "squeezed"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "squeezed",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "squeezed",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 540.0,
+            "y": 1190.4
+          }
+        },
+        {
+          "id": "uplink",
+          "kit": {
+            "type": "prop",
+            "item": "signal",
+            "x": 0.5,
+            "y": 0.78,
+            "size": 0.22,
+            "rotation": -90
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "squeezed",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "squeezed"
+              },
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "2023",
+          "x": 540,
+          "y": 300,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "2023,",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "2023,",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "1 chip failed",
+          "x": 540,
+          "y": 1420,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "failed.",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "failed.",
+                "offset": 5
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "squeezed",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "squeezed"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "fix squeezed in",
+          "x": 540,
+          "y": 1420,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "squeezed",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "squeezed",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "24 billion km away",
+          "x": 540,
+          "y": 1560,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "twenty-four",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "twenty-four",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-m7",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "probe",
+          "kit": {
+            "type": "prop",
+            "item": "probe",
+            "x": 0.5,
+            "y": 0.44,
+            "size": 0.42,
+            "ink": "#8d97b0"
+          }
+        },
+        {
+          "id": "cal",
+          "kit": {
+            "type": "prop",
+            "item": "calendar",
+            "x": 0.26,
+            "y": 0.7,
+            "size": 0.16,
+            "text": "5 mo"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "five",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "five"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "five",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "five",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 280.8,
+            "y": 1344.0
+          }
+        },
+        {
+          "id": "signal",
+          "kit": {
+            "type": "prop",
+            "item": "signal",
+            "x": 0.38,
+            "y": 0.56,
+            "size": 0.26,
+            "rotation": 120,
+            "color": "#7fc0ff"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "talking",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "talking"
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.5,
+            "y": 0.338,
+            "height": 0.11,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "float"
+              },
+              {
+                "frame": {
+                  "at": "worked.",
+                  "offset": -2
+                },
+                "pose": "wave"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "happy"
+              },
+              {
+                "frame": {
+                  "at": "worked."
+                },
+                "face": "grin"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "it worked!",
+          "x": 640,
+          "y": 1240,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "worked.",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "worked.",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "still talking to us",
+          "x": 540,
+          "y": 1400,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "@text.accent",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "still",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "still",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "vym-m1",
+      "template": "hero-reveal",
+      "durationFrames": 150,
+      "animationDurationFrames": 150,
+      "caption": {
+        "text": "vym-m1",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7006,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-m1",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "m1",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "photo"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "entire"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "tick",
+          "frame": {
+            "at": "memory"
+          },
+          "gainDb": -22
+        }
+      ]
+    },
+    {
+      "id": "vym-m2",
+      "template": "hero-reveal",
+      "durationFrames": 200,
+      "animationDurationFrames": 200,
+      "caption": {
+        "text": "vym-m2",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7006,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-m2",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "m2",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "farthest"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "computers"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "sixty-nine"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "Combined."
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "vym-m3",
+      "template": "hero-reveal",
+      "durationFrames": 87,
+      "animationDurationFrames": 87,
+      "caption": {
+        "text": "vym-m3",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.4891
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7006,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-m3",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "m3",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": []
+    },
+    {
+      "id": "vym-m4",
+      "template": "hero-reveal",
+      "durationFrames": 350,
+      "animationDurationFrames": 350,
+      "caption": {
+        "text": "vym-m4",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7006,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-m4",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "m4",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "can't"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "hundred"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "tick",
+          "frame": {
+            "at": "tape,"
+          },
+          "gainDb": -22
+        }
+      ]
+    },
+    {
+      "id": "vym-m5",
+      "template": "hero-reveal",
+      "durationFrames": 137,
+      "animationDurationFrames": 137,
+      "caption": {
+        "text": "vym-m5",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7006,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-m5",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "m5",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "dial-up"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "modem"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "hundred"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "vym-m6",
+      "template": "hero-reveal",
+      "durationFrames": 300,
+      "animationDurationFrames": 300,
+      "caption": {
+        "text": "vym-m6",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7006,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-m6",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "m6",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "2023,"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "failed."
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "squeezed"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "twenty-four"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "vym-m7",
+      "template": "hero-reveal",
+      "durationFrames": 216,
+      "animationDurationFrames": 216,
+      "caption": {
+        "text": "vym-m7",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.4891
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7006,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-m7",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "m7",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "worked."
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "still"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "chime",
+          "frame": {
+            "at": "talking"
+          },
+          "gainDb": -26
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+ "schemaVersion": "1.0",
+ "id": "voyager-memory",
+ "title": "Voyager Has Less Memory Than One Photo on Your Phone",
+ "topic": "Voyager 1's computers: 69.63 KB of memory across three computers, an 8-track digital tape recorder, 160 bit/s downlink, the 2023 memory-chip failure fixed from 24 billion km away in five months",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 48,
+ "storyboard": "storyboards/voyager-memory.json",
+ "candidatesReport": "stories/voyager-shorts-script.md",
+ "beats": [
+  {
+   "id": "m1",
+   "sceneId": "vym-m1",
+   "intent": "hook",
+   "narration": "The last photo you took is bigger than Voyager 1's entire memory.",
+   "phrases": [
+    "The last photo you took is",
+    "bigger than Voyager 1's",
+    "entire memory."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m2",
+   "sceneId": "vym-m2",
+   "intent": "hook",
+   "narration": "The farthest machine humans ever built runs on three computers with sixty-nine kilobytes of memory. Combined.",
+   "phrases": [
+    "The farthest machine",
+    "humans ever built runs on",
+    "three computers with",
+    "sixty-nine kilobytes of",
+    "memory.",
+    "Combined."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m3",
+   "sceneId": "vym-m3",
+   "intent": "explanation",
+   "narration": "Kilobytes? My selfies are bigger than that!",
+   "phrases": [
+    "Kilobytes?",
+    "My selfies are bigger than",
+    "that!"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "m4",
+   "sceneId": "vym-m4",
+   "intent": "explanation",
+   "narration": "It can't even keep its own data. It records onto tape, on an eight-track tape recorder, and sends it home at a hundred and sixty bits per second.",
+   "phrases": [
+    "It can't even keep its own",
+    "data.",
+    "It records onto tape, on",
+    "an eight-track tape",
+    "recorder, and sends it",
+    "home at a hundred and",
+    "sixty bits per second."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m5",
+   "sceneId": "vym-m5",
+   "intent": "explanation",
+   "narration": "An old dial-up modem was more than a hundred times faster.",
+   "phrases": [
+    "An old dial-up modem was",
+    "more than a hundred times",
+    "faster."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m6",
+   "sceneId": "vym-m6",
+   "intent": "payoff",
+   "narration": "In 2023, one memory chip failed. With almost no room to spare, engineers squeezed a fix into the gaps, from twenty-four billion kilometers away.",
+   "phrases": [
+    "In 2023, one memory chip",
+    "failed.",
+    "With almost no room to",
+    "spare, engineers squeezed",
+    "a fix into the gaps, from",
+    "twenty-four billion",
+    "kilometers away."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "m7",
+   "sceneId": "vym-m7",
+   "intent": "closing",
+   "narration": "It took five months. And it worked. Nearly fifty years later, Voyager is still talking to us.",
+   "phrases": [
+    "It took five months.",
+    "And it worked.",
+    "Nearly fifty years later,",
+    "Voyager is still talking",
+    "to us."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  }
+ ]
+}

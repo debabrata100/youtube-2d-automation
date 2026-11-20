@@ -1,0 +1,155 @@
+{
+ "schemaVersion": "1.0",
+ "id": "voyager-silent",
+ "title": "NASA Lost Voyager 1 for 48 Hours",
+ "topic": "Voyager 1 went silent on 18-19 Oct 2026 and came back on 20 Oct before any command was sent, having switched to backup thrusters on its own (NASA JPL, 29 Oct 2026); four weeks later it reached one light-day from Earth",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 48,
+ "storyboard": "storyboards/voyager-silent.json",
+ "candidatesReport": "stories/voyager-shorts-script.md",
+ "beats": [
+  {
+   "id": "l1",
+   "sceneId": "vys-l1",
+   "intent": "hook",
+   "narration": "On October eighteenth, NASA called Voyager 1. Nothing answered.",
+   "phrases": [
+    "On October eighteenth,",
+    "NASA called Voyager 1.",
+    "Nothing answered."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "l2",
+   "sceneId": "vys-l2",
+   "intent": "hook",
+   "narration": "The next day, they tried again. Still nothing.",
+   "phrases": [
+    "The next day, they tried",
+    "again.",
+    "Still nothing."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "l3",
+   "sceneId": "vys-l3",
+   "intent": "explanation",
+   "narration": "Wait... is this the end?",
+   "phrases": [
+    "Wait...",
+    "is this the end?"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "l4",
+   "sceneId": "vys-l4",
+   "intent": "explanation",
+   "narration": "Voyager is so far away that a message takes almost a full day to arrive. So the team could only plan a rescue, and wait.",
+   "phrases": [
+    "Voyager is so far away",
+    "that a message takes",
+    "almost a full day to",
+    "arrive.",
+    "So the team could only",
+    "plan a rescue, and wait."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "l5",
+   "sceneId": "vys-l5",
+   "intent": "payoff",
+   "narration": "Then, on October twentieth, before they had sent a single command, the signal came back.",
+   "phrases": [
+    "Then, on October",
+    "twentieth, before they had",
+    "sent a single command, the",
+    "signal came back."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "l6",
+   "sceneId": "vys-l6",
+   "intent": "payoff",
+   "narration": "A group of its thrusters had gone offline, and Voyager had switched to its backups on its own. Exactly why it went quiet is still a mystery.",
+   "phrases": [
+    "A group of its thrusters",
+    "had gone offline, and",
+    "Voyager had switched to",
+    "its backups on its own.",
+    "Exactly why it went quiet",
+    "is still a mystery."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "l7",
+   "sceneId": "vys-l7",
+   "intent": "explanation",
+   "narration": "Almost fifty years old, and still rescuing itself. Respect.",
+   "phrases": [
+    "Almost fifty years old,",
+    "and still rescuing itself.",
+    "Respect."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "l8",
+   "sceneId": "vys-l8",
+   "intent": "closing",
+   "narration": "Four weeks later, it became the first object ever to reach one light-day from Earth.",
+   "phrases": [
+    "Four weeks later, it",
+    "became the first object",
+    "ever to reach one",
+    "light-day from Earth."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  }
+ ]
+}
