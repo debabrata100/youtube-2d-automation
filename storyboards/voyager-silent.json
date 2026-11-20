@@ -343,7 +343,7 @@
           "size": 78,
           "anchor": "middle",
           "variant": "ink",
-          "color": "@text.accent",
+          "color": "#ffd25e",
           "pop": true,
           "opacity": [
             {
@@ -515,7 +515,7 @@
           "size": 78,
           "anchor": "middle",
           "variant": "ink",
-          "color": "@text.accent",
+          "color": "#ffd25e",
           "pop": true,
           "opacity": [
             {
@@ -592,7 +592,7 @@
           "size": 78,
           "anchor": "middle",
           "variant": "ink",
-          "color": "@text.accent",
+          "color": "#ffd25e",
           "pop": true,
           "opacity": [
             {
@@ -705,7 +705,7 @@
           "size": 61,
           "anchor": "middle",
           "variant": "ink",
-          "color": "@text.accent",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -736,7 +736,7 @@
           "size": 78,
           "anchor": "middle",
           "variant": "ink",
-          "color": "@text.accent",
+          "color": "#ffd25e",
           "pop": true,
           "opacity": [
             {
@@ -958,7 +958,7 @@
           "size": 78,
           "anchor": "middle",
           "variant": "ink",
-          "color": "@text.accent",
+          "color": "#ffd25e",
           "pop": true,
           "opacity": [
             {
@@ -1179,7 +1179,7 @@
           "size": 61,
           "anchor": "middle",
           "variant": "ink",
-          "color": "@text.accent",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -1210,7 +1210,7 @@
           "size": 78,
           "anchor": "middle",
           "variant": "ink",
-          "color": "@text.accent",
+          "color": "#ffd25e",
           "pop": true,
           "opacity": [
             {
@@ -1301,7 +1301,7 @@
           "size": 61,
           "anchor": "middle",
           "variant": "ink",
-          "color": "@text.accent",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -1395,7 +1395,7 @@
           "size": 78,
           "anchor": "middle",
           "variant": "ink",
-          "color": "@text.accent",
+          "color": "#ffd25e",
           "pop": true,
           "opacity": [
             {
@@ -1426,7 +1426,7 @@
           "size": 61,
           "anchor": "middle",
           "variant": "ink",
-          "color": "@text.accent",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {

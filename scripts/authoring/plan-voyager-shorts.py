@@ -88,7 +88,7 @@ write_story(DURATION)
 ep = Episode(str(STORY), 'tall'); F = ep.F; W, H = F['W'], F['H']
 ep.pop_db, ep.deviation_tolerance = -24, .3
 ep.theme = 'paint-night'
-BLUE, GOLD, GREEN = '#2f7fd0', '#ffd25e', '#2e9e4f'
+BLUE, GOLD, GREEN, AMBER = '#2f7fd0', '#ffd25e', '#2e9e4f', '#f2a33a'
 LAST = SHOTS[-1][0]
 
 
@@ -131,7 +131,7 @@ if NAME == 'memory':
     ep.backdrop(stars=30)
     ep.music([('m1', 'assets/music/6-space-event-horizon.mp3', 0)], target_lufs=-16)
     # m1 hook: your last photo vs Voyager's whole memory
-    ep.scene('m1', explain([], [bars('photo', .44, .34, 'your last photo', 8, 30, 1, RED), bars('voy', .44, .6, "Voyager's memory", 40, 52, .023, BLUE)],
+    ep.scene('m1', explain([], [bars('photo', .44, .34, 'your last photo', 8, 30, 1, AMBER), bars('voy', .44, .6, "Voyager's memory", 40, 52, .023, BLUE)],
                            [Note('~3,000 KB', A('photo'), 'title', pos=(540, 850)), Note('69 KB', A('entire'), 'title', pos=(540, 1350))], sounds=[('tick', A('memory'), -22)]))
     # m2 three computers, 69 KB combined
     ep.scene('m2', explain([], [probe(.5, .42, .42), icon('c1', 'battery', .3, .66, .1, A('three')), icon('c2', 'battery', .5, .66, .1, plus(A('three'), 4)),
@@ -142,11 +142,11 @@ if NAME == 'memory':
     arka = rider(.5, .338, [(0, 'float'), (A('Kilobytes?', -2), 'shrug')], [(0, 'shocked'), (A('selfies'), 'grin')])
     ep.scene('m3', explain([arka], [probe(.5, .44, .42)], [Note('1 selfie ≈ 3 MB', A('selfies'), 'title', pos=(540, 1300))]))
     # m4 tape recorder and a 160 bit/s trickle home
-    ep.scene('m4', explain([], [probe(.68, .36, .3), signal(.42, .56, .3, -130), boxed('tape', 'sign', .5, .8, .28, A('tape,'), text='8-track tape')],
+    ep.scene('m4', explain([], [probe(.68, .36, .3), signal(.42, .56, .3, -130, color='#7fc0ff'), boxed('tape', 'sign', .5, .8, .28, A('tape,'), text='8-track tape')],
                            [Note("can't keep its data", A("can't"), 'note', pos=(540, 330)), Note('160 bits/s', A('hundred'), 'title', pos=(400, 1250))],
                            sounds=[('tick', A('tape,'), -22)]))
     # m5 dial-up was 125x faster
-    ep.scene('m5', explain([], [bars('dial', .44, .34, 'old dial-up', 10, 40, 1, RED), bars('voy2', .44, .6, 'Voyager 1', 10, 14, .02, BLUE)],
+    ep.scene('m5', explain([], [bars('dial', .44, .34, 'old dial-up', 10, 40, 1, AMBER), bars('voy2', .44, .6, 'Voyager 1', 10, 14, .02, BLUE)],
                            [Note('20,000 bits/s', A('dial-up'), 'small', pos=(540, 840)), Note('160 bits/s', A('modem'), 'small', pos=(540, 1340)),
                             Note('×125 faster', A('hundred'), 'title', pos=(540, 1560))]))
     # m6 the 2023 chip failure and the long-distance fix
@@ -195,6 +195,13 @@ else:
                             Note('first ever', A('first'), 'note', pos=(540, 1440))], sounds=[('chime', A('first'), -26)]))
 
 ep._backdrop.setdefault('annotations', []).append(tag)
+
+# Text colour on the night page: no red text (low contrast, reads as an error). Big numbers and titles in warm gold,
+# handwritten notes in pale sky blue; small labels stay in light ink. Red stays only for meaning (the failure cross).
+NOTE_BLUE = '#a9d8ff'
+for pl in ep.plans.values():
+    for n in pl['notes']:
+        if n.color == RED: n.color = GOLD if n.kind == 'title' else NOTE_BLUE
 
 LIGHT_INK = {'doodle-stars', 'counter', 'bar', 'clock'}
 PROBE_INK = '#8d97b0'  # mid grey: outlines the white dish and still shows the booms against the navy page
