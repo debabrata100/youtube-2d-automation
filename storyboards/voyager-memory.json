@@ -1416,8 +1416,8 @@
     {
       "id": "vym-m1",
       "template": "hero-reveal",
-      "durationFrames": 150,
-      "animationDurationFrames": 150,
+      "durationFrames": 156,
+      "animationDurationFrames": 156,
       "caption": {
         "text": "vym-m1",
         "preset": "body"
@@ -1492,8 +1492,8 @@
     {
       "id": "vym-m2",
       "template": "hero-reveal",
-      "durationFrames": 200,
-      "animationDurationFrames": 200,
+      "durationFrames": 208,
+      "animationDurationFrames": 208,
       "caption": {
         "text": "vym-m2",
         "preset": "body"
@@ -1580,8 +1580,8 @@
     {
       "id": "vym-m3",
       "template": "hero-reveal",
-      "durationFrames": 87,
-      "animationDurationFrames": 87,
+      "durationFrames": 91,
+      "animationDurationFrames": 91,
       "caption": {
         "text": "vym-m3",
         "preset": "body"
@@ -1634,8 +1634,8 @@
     {
       "id": "vym-m4",
       "template": "hero-reveal",
-      "durationFrames": 350,
-      "animationDurationFrames": 350,
+      "durationFrames": 365,
+      "animationDurationFrames": 365,
       "caption": {
         "text": "vym-m4",
         "preset": "body"
@@ -1715,8 +1715,8 @@
     {
       "id": "vym-m5",
       "template": "hero-reveal",
-      "durationFrames": 137,
-      "animationDurationFrames": 137,
+      "durationFrames": 143,
+      "animationDurationFrames": 143,
       "caption": {
         "text": "vym-m5",
         "preset": "body"
@@ -1796,8 +1796,8 @@
     {
       "id": "vym-m6",
       "template": "hero-reveal",
-      "durationFrames": 300,
-      "animationDurationFrames": 300,
+      "durationFrames": 313,
+      "animationDurationFrames": 313,
       "caption": {
         "text": "vym-m6",
         "preset": "body"
@@ -1884,8 +1884,8 @@
     {
       "id": "vym-m7",
       "template": "hero-reveal",
-      "durationFrames": 216,
-      "animationDurationFrames": 216,
+      "durationFrames": 224,
+      "animationDurationFrames": 224,
       "caption": {
         "text": "vym-m7",
         "preset": "body"

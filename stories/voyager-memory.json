@@ -5,7 +5,7 @@
  "topic": "Voyager 1's computers: 69.63 KB of memory across three computers, an 8-track digital tape recorder, 160 bit/s downlink, the 2023 memory-chip failure fixed from 24 billion km away in five months",
  "language": "en-US",
  "targetAudience": "English-speaking science-curious viewers aged 16-35",
- "durationSeconds": 48,
+ "durationSeconds": 50,
  "storyboard": "storyboards/voyager-memory.json",
  "candidatesReport": "stories/voyager-shorts-script.md",
  "beats": [
