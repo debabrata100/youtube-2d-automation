@@ -1,0 +1,1455 @@
+{
+ "schemaVersion": "1.0",
+ "id": "ghost-sun",
+ "title": "If the Sun Disappeared, Even the Air Would Fall",
+ "topic": "Thought experiment: the Sun vanishes for 8 min 20 s (blackout longer than any eclipse, silent bees, the Moon goes out, Earth 740 m off course, a 1 AU shell of darkness passing the planets and Voyager 1), then for good: Earth flies off, cooling to 0, -20, -70 and -240 C, oxygen lasts, trees last decades, oceans freeze from the top, the air freezes and falls, survivors (fungi, tardigrades, vent life), the Sun cannot really vanish",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 720,
+ "storyboard": "storyboards/ghost-sun.json",
+ "candidatesReport": "stories/ghost-sun-script.md",
+ "beats": [
+  {
+   "id": "s1",
+   "sceneId": "gs-s1",
+   "intent": "hook",
+   "narration": "It's twelve o'clock, noon. The Sun is shining. And it's already gone.",
+   "phrases": [
+    "It's twelve o'clock, noon.",
+    "The Sun is shining.",
+    "And it's already gone."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s2",
+   "sceneId": "gs-s2",
+   "intent": "hook",
+   "narration": "Um... it's right there. I can see it. I'm literally getting a tan.",
+   "phrases": [
+    "Um...",
+    "it's right there.",
+    "I can see it.",
+    "I'm literally getting a tan."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "s3",
+   "sceneId": "gs-s3",
+   "intent": "hook",
+   "narration": "What you're seeing is a ghost. The light hitting your face left the Sun eight minutes and twenty seconds ago. If the Sun vanished, you'd have no way of knowing. Not yet.",
+   "phrases": [
+    "What you're seeing is a ghost.",
+    "The light hitting your face left",
+    "the Sun eight minutes and twenty",
+    "seconds ago.",
+    "If the Sun vanished, you'd have no",
+    "way of knowing.",
+    "Not yet."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s4",
+   "sceneId": "gs-s4",
+   "intent": "hook",
+   "narration": "So let's try an experiment. The Sun disappears for exactly eight minutes and twenty seconds. Then it comes back.",
+   "phrases": [
+    "So let's try an experiment.",
+    "The Sun disappears for exactly",
+    "eight minutes and twenty seconds.",
+    "Then it comes back."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s5",
+   "sceneId": "gs-s5",
+   "intent": "hook",
+   "narration": "And here's the twist. At the very moment the lights go out on Earth, the Sun is already back. We just can't see it yet.",
+   "phrases": [
+    "And here's the twist.",
+    "At the very moment the lights go",
+    "out on Earth, the Sun is already",
+    "back.",
+    "We just can't see it yet."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s6",
+   "sceneId": "gs-s6",
+   "intent": "hook",
+   "narration": "Wait. So by the time we notice it's gone... it's not gone anymore?",
+   "phrases": [
+    "Wait.",
+    "So by the time we notice it's",
+    "gone...",
+    "it's not gone anymore?"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "s7",
+   "sceneId": "gs-s7",
+   "intent": "hook",
+   "narration": "Exactly. But we'd still get eight minutes and twenty seconds of darkness. And then we'll ask the bigger question: what if it never came back? Because if it didn't, in the end, even the air would fall out of the sky.",
+   "phrases": [
+    "Exactly.",
+    "But we'd still get eight minutes",
+    "and twenty seconds of darkness.",
+    "And then we'll ask the bigger",
+    "question: what if it never came",
+    "back?",
+    "Because if it didn't, in the end,",
+    "even the air would fall out of the",
+    "sky."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s8",
+   "sceneId": "gs-s8",
+   "intent": "explanation",
+   "narration": "First, why the delay? The Sun is about a hundred and fifty million kilometers away. Even light, the fastest thing there is, needs eight minutes and twenty seconds to cross that gap.",
+   "phrases": [
+    "First, why the delay?",
+    "The Sun is about a hundred and",
+    "fifty million kilometers away.",
+    "Even light, the fastest thing",
+    "there is, needs eight minutes and",
+    "twenty seconds to cross that gap."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s9",
+   "sceneId": "gs-s9",
+   "intent": "explanation",
+   "narration": "But here's the strange part. Gravity is just as slow. If the Sun vanished, Earth would keep circling the empty spot where it used to be, for eight minutes and twenty seconds, as if nothing had happened.",
+   "phrases": [
+    "But here's the strange part.",
+    "Gravity is just as slow.",
+    "If the Sun vanished, Earth would",
+    "keep circling the empty spot where",
+    "it used to be, for eight minutes",
+    "and twenty seconds, as if nothing",
+    "had happened."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s10",
+   "sceneId": "gs-s10",
+   "intent": "explanation",
+   "narration": "Orbiting nothing? That's like dancing with an invisible partner.",
+   "phrases": [
+    "Orbiting nothing?",
+    "That's like dancing with an",
+    "invisible partner."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "s11",
+   "sceneId": "gs-s11",
+   "intent": "explanation",
+   "narration": "Think of Earth as a ball on a string, with the Sun holding the other end. If the Sun let go, the string wouldn't go slack right away. The news that the Sun is gone has to travel down the string first, and that news can't travel faster than light.",
+   "phrases": [
+    "Think of Earth as a ball on a",
+    "string, with the Sun holding the",
+    "other end.",
+    "If the Sun let go, the string",
+    "wouldn't go slack right away.",
+    "The news that the Sun is gone has",
+    "to travel down the string first,",
+    "and that news can't travel faster",
+    "than light."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s12",
+   "sceneId": "gs-s12",
+   "intent": "explanation",
+   "narration": "Einstein predicted this more than a hundred years ago. And in 2017, we finally checked.",
+   "phrases": [
+    "Einstein predicted this more than",
+    "a hundred years ago.",
+    "And in 2017, we finally checked."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s13",
+   "sceneId": "gs-s13",
+   "intent": "explanation",
+   "narration": "Two dead stars collided in a galaxy about a hundred and thirty million light-years away. The ripple in gravity and the flash of light raced each other across space, for a hundred and thirty million years. They arrived on Earth less than two seconds apart.",
+   "phrases": [
+    "Two dead stars collided in a",
+    "galaxy about a hundred and thirty",
+    "million light-years away.",
+    "The ripple in gravity and the",
+    "flash of light raced each other",
+    "across space, for a hundred and",
+    "thirty million years.",
+    "They arrived on Earth less than",
+    "two seconds apart."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s14",
+   "sceneId": "gs-s14",
+   "intent": "explanation",
+   "narration": "Light and gravity travel at the same speed. So we'd feel the Sun disappear at exactly the moment we saw it go. And we'd feel it return at exactly the moment we saw it come back.",
+   "phrases": [
+    "Light and gravity travel at the",
+    "same speed.",
+    "So we'd feel the Sun disappear at",
+    "exactly the moment we saw it go.",
+    "And we'd feel it return at exactly",
+    "the moment we saw it come back."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s15",
+   "sceneId": "gs-s15",
+   "intent": "explanation",
+   "narration": "So, back to our experiment. Twelve o'clock, noon: the Sun vanishes. For eight minutes and twenty seconds, nothing happens at all. Then the whole daytime side of Earth goes dark at once.",
+   "phrases": [
+    "So, back to our experiment.",
+    "Twelve o'clock, noon: the Sun",
+    "vanishes.",
+    "For eight minutes and twenty",
+    "seconds, nothing happens at all.",
+    "Then the whole daytime side of",
+    "Earth goes dark at once."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s16",
+   "sceneId": "gs-s16",
+   "intent": "explanation",
+   "narration": "No eclipse can ever do this. The longest possible total eclipse lasts about seven and a half minutes, along one narrow strip of the planet. This blackout covers half of Earth, and lasts longer.",
+   "phrases": [
+    "No eclipse can ever do this.",
+    "The longest possible total eclipse",
+    "lasts about seven and a half",
+    "minutes, along one narrow strip of",
+    "the planet.",
+    "This blackout covers half of",
+    "Earth, and lasts longer."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s17",
+   "sceneId": "gs-s17",
+   "intent": "explanation",
+   "narration": "The air starts to cool. During the 2017 total eclipse in America, temperatures along the path of darkness dropped by three or four degrees in just a few minutes. Now imagine that across half the world.",
+   "phrases": [
+    "The air starts to cool.",
+    "During the 2017 total eclipse in",
+    "America, temperatures along the",
+    "path of darkness dropped by three",
+    "or four degrees in just a few",
+    "minutes.",
+    "Now imagine that across half the",
+    "world."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s18",
+   "sceneId": "gs-s18",
+   "intent": "explanation",
+   "narration": "Animals notice too. During that same eclipse, volunteers hid tiny microphones among flowers. When the Sun disappeared, the bees went almost completely silent. They simply stopped flying.",
+   "phrases": [
+    "Animals notice too.",
+    "During that same eclipse,",
+    "volunteers hid tiny microphones",
+    "among flowers.",
+    "When the Sun disappeared, the bees",
+    "went almost completely silent.",
+    "They simply stopped flying."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s19",
+   "sceneId": "gs-s19",
+   "intent": "explanation",
+   "narration": "The bees went on strike. Honestly, fair.",
+   "phrases": [
+    "The bees went on strike.",
+    "Honestly, fair."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "s20",
+   "sceneId": "gs-s20",
+   "intent": "explanation",
+   "narration": "On the night side of Earth, something stranger happens. The Moon goes out. It only shines with reflected sunlight, so for those eight minutes, it simply vanishes from the sky.",
+   "phrases": [
+    "On the night side of Earth,",
+    "something stranger happens.",
+    "The Moon goes out.",
+    "It only shines with reflected",
+    "sunlight, so for those eight",
+    "minutes, it simply vanishes from",
+    "the sky."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s21",
+   "sceneId": "gs-s21",
+   "intent": "explanation",
+   "narration": "And without the Sun's pull, Earth stops curving and drifts in a straight line. By the time the pull returns, we've strayed about seven hundred and forty meters off our usual path. For a planet, that's almost nothing.",
+   "phrases": [
+    "And without the Sun's pull, Earth",
+    "stops curving and drifts in a",
+    "straight line.",
+    "By the time the pull returns,",
+    "we've strayed about seven hundred",
+    "and forty meters off our usual",
+    "path.",
+    "For a planet, that's almost",
+    "nothing."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s22",
+   "sceneId": "gs-s22",
+   "intent": "explanation",
+   "narration": "Then, sixteen minutes and forty seconds after the Sun vanished, the light comes back. The Moon reappears. The bees go back to work. As if nothing had happened.",
+   "phrases": [
+    "Then, sixteen minutes and forty",
+    "seconds after the Sun vanished,",
+    "the light comes back.",
+    "The Moon reappears.",
+    "The bees go back to work.",
+    "As if nothing had happened."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s23",
+   "sceneId": "gs-s23",
+   "intent": "explanation",
+   "narration": "But the darkness doesn't stop at Earth. It spreads out from the Sun in every direction, like a ripple in a pond: a hollow shell of darkness, racing outward at the speed of light.",
+   "phrases": [
+    "But the darkness doesn't stop at",
+    "Earth.",
+    "It spreads out from the Sun in",
+    "every direction, like a ripple in",
+    "a pond: a hollow shell of",
+    "darkness, racing outward at the",
+    "speed of light."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s24",
+   "sceneId": "gs-s24",
+   "intent": "explanation",
+   "narration": "And it's thick. Eight minutes and twenty seconds of missing light makes a shell about a hundred and fifty million kilometers deep. That's exactly the distance from the Sun to Earth.",
+   "phrases": [
+    "And it's thick.",
+    "Eight minutes and twenty seconds",
+    "of missing light makes a shell",
+    "about a hundred and fifty million",
+    "kilometers deep.",
+    "That's exactly the distance from",
+    "the Sun to Earth."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s25",
+   "sceneId": "gs-s25",
+   "intent": "explanation",
+   "narration": "About thirteen minutes after the Sun vanishes, the darkness reaches Mars. After forty-three minutes, Jupiter. After four hours, Neptune. Every world gets its own eight-minute night, one after another.",
+   "phrases": [
+    "About thirteen minutes after the",
+    "Sun vanishes, the darkness reaches",
+    "Mars.",
+    "After forty-three minutes,",
+    "Jupiter.",
+    "After four hours, Neptune.",
+    "Every world gets its own",
+    "eight-minute night, one after",
+    "another."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s26",
+   "sceneId": "gs-s26",
+   "intent": "explanation",
+   "narration": "And a full day later, it reaches the farthest thing humans have ever built. Voyager 1 is now one light-day from Earth. Out there, the Sun is just a bright star, and for eight minutes, it would go missing.",
+   "phrases": [
+    "And a full day later, it reaches",
+    "the farthest thing humans have",
+    "ever built.",
+    "Voyager 1 is now one light-day",
+    "from Earth.",
+    "Out there, the Sun is just a",
+    "bright star, and for eight",
+    "minutes, it would go missing."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s27",
+   "sceneId": "gs-s27",
+   "intent": "explanation",
+   "narration": "So Voyager would be the last one to find out. Classic.",
+   "phrases": [
+    "So Voyager would be the last one",
+    "to find out.",
+    "Classic."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "s28",
+   "sceneId": "gs-s28",
+   "intent": "explanation",
+   "narration": "Then the shell keeps going, fainter and fainter, forever. And everything behind it goes back to normal.",
+   "phrases": [
+    "Then the shell keeps going,",
+    "fainter and fainter, forever.",
+    "And everything behind it goes back",
+    "to normal."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s29",
+   "sceneId": "gs-s29",
+   "intent": "explanation",
+   "narration": "But now, let's not bring the Sun back.",
+   "phrases": [
+    "But now, let's not bring the Sun",
+    "back."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s30",
+   "sceneId": "gs-s30",
+   "intent": "explanation",
+   "narration": "This time, eight minutes and twenty seconds after the Sun vanishes, the lights go out and stay out. Day becomes night, everywhere on Earth.",
+   "phrases": [
+    "This time, eight minutes and",
+    "twenty seconds after the Sun",
+    "vanishes, the lights go out and",
+    "stay out.",
+    "Day becomes night, everywhere on",
+    "Earth."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s31",
+   "sceneId": "gs-s31",
+   "intent": "explanation",
+   "narration": "The Moon goes dark again, and this time it stays dark. The planets fade from the sky. Only the distant stars are left.",
+   "phrases": [
+    "The Moon goes dark again, and this",
+    "time it stays dark.",
+    "The planets fade from the sky.",
+    "Only the distant stars are left."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s32",
+   "sceneId": "gs-s32",
+   "intent": "explanation",
+   "narration": "Can we go back to the eight-minute version, please?",
+   "phrases": [
+    "Can we go back to the eight-minute",
+    "version, please?"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "s33",
+   "sceneId": "gs-s33",
+   "intent": "explanation",
+   "narration": "At the same moment, the invisible rope snaps for good. Earth stops curving around the Sun and flies off in a straight line, at about thirty kilometers per second.",
+   "phrases": [
+    "At the same moment, the invisible",
+    "rope snaps for good.",
+    "Earth stops curving around the Sun",
+    "and flies off in a straight line,",
+    "at about thirty kilometers per",
+    "second."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s34",
+   "sceneId": "gs-s34",
+   "intent": "explanation",
+   "narration": "We don't go alone. The Moon still orbits Earth, so it comes with us, a dark companion on a journey to nowhere.",
+   "phrases": [
+    "We don't go alone.",
+    "The Moon still orbits Earth, so it",
+    "comes with us, a dark companion on",
+    "a journey to nowhere."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s35",
+   "sceneId": "gs-s35",
+   "intent": "explanation",
+   "narration": "Even at that speed, space is enormous. Covering the distance to the nearest star would take more than forty thousand years.",
+   "phrases": [
+    "Even at that speed, space is",
+    "enormous.",
+    "Covering the distance to the",
+    "nearest star would take more than",
+    "forty thousand years."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s36",
+   "sceneId": "gs-s36",
+   "intent": "explanation",
+   "narration": "Earth still spins, so clocks still tick through twenty-four-hour days. But there's no sunrise, no sunset, and no more years. A year was just one trip around the Sun, and that trip is over.",
+   "phrases": [
+    "Earth still spins, so clocks still",
+    "tick through twenty-four-hour",
+    "days.",
+    "But there's no sunrise, no sunset,",
+    "and no more years.",
+    "A year was just one trip around",
+    "the Sun, and that trip is over."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s37",
+   "sceneId": "gs-s37",
+   "intent": "explanation",
+   "narration": "No more years? So I stay this age forever? ...Honestly, I'll take it.",
+   "phrases": [
+    "No more years?",
+    "So I stay this age forever?",
+    "...Honestly, I'll take it."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "s38",
+   "sceneId": "gs-s38",
+   "intent": "explanation",
+   "narration": "Even the oceans notice. About a third of the pull that makes our tides comes from the Sun. Without it, tides shrink, and the monthly rhythm of extra-high and extra-low tides disappears. Only the Moon's smaller, steadier tides are left.",
+   "phrases": [
+    "Even the oceans notice.",
+    "About a third of the pull that",
+    "makes our tides comes from the",
+    "Sun.",
+    "Without it, tides shrink, and the",
+    "monthly rhythm of extra-high and",
+    "extra-low tides disappears.",
+    "Only the Moon's smaller, steadier",
+    "tides are left."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s39",
+   "sceneId": "gs-s39",
+   "intent": "explanation",
+   "narration": "Earth is a warm planet. The ground and the oceans have soaked up sunlight for billions of years, so the cold doesn't arrive instantly. But it arrives fast.",
+   "phrases": [
+    "Earth is a warm planet.",
+    "The ground and the oceans have",
+    "soaked up sunlight for billions of",
+    "years, so the cold doesn't arrive",
+    "instantly.",
+    "But it arrives fast."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s40",
+   "sceneId": "gs-s40",
+   "intent": "explanation",
+   "narration": "One planetary scientist estimates that Earth would cool by about twenty degrees every day at first. Within two or three days, almost the whole world would be below freezing.",
+   "phrases": [
+    "One planetary scientist estimates",
+    "that Earth would cool by about",
+    "twenty degrees every day at first.",
+    "Within two or three days, almost",
+    "the whole world would be below",
+    "freezing."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s41",
+   "sceneId": "gs-s41",
+   "intent": "explanation",
+   "narration": "What about air to breathe? Plants make our oxygen, so does it run out? Not for a very long time. There's so much oxygen in the air already that, even with every plant gone, it would take something like two million years to disappear.",
+   "phrases": [
+    "What about air to breathe?",
+    "Plants make our oxygen, so does it",
+    "run out?",
+    "Not for a very long time.",
+    "There's so much oxygen in the air",
+    "already that, even with every",
+    "plant gone, it would take",
+    "something like two million years",
+    "to disappear."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s42",
+   "sceneId": "gs-s42",
+   "intent": "explanation",
+   "narration": "So we won't run out of air. Great. We'll just freeze while breathing it.",
+   "phrases": [
+    "So we won't run out of air.",
+    "Great.",
+    "We'll just freeze while breathing",
+    "it."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "s43",
+   "sceneId": "gs-s43",
+   "intent": "explanation",
+   "narration": "Plants feel it first. Without sunlight, photosynthesis stops at once. Most plants would die within weeks.",
+   "phrases": [
+    "Plants feel it first.",
+    "Without sunlight, photosynthesis",
+    "stops at once.",
+    "Most plants would die within",
+    "weeks."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s44",
+   "sceneId": "gs-s44",
+   "intent": "explanation",
+   "narration": "But big trees are survivors. They grow slowly and store a lot of sugar, so some could hang on for decades, standing in the dark.",
+   "phrases": [
+    "But big trees are survivors.",
+    "They grow slowly and store a lot",
+    "of sugar, so some could hang on",
+    "for decades, standing in the dark."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s45",
+   "sceneId": "gs-s45",
+   "intent": "explanation",
+   "narration": "Trees with a secret snack stash. Respect.",
+   "phrases": [
+    "Trees with a secret snack stash.",
+    "Respect."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "s46",
+   "sceneId": "gs-s46",
+   "intent": "explanation",
+   "narration": "Everything that eats plants, and everything that eats those animals, is in trouble. Almost every food chain on the surface begins with sunlight. And the cold is only getting started.",
+   "phrases": [
+    "Everything that eats plants, and",
+    "everything that eats those",
+    "animals, is in trouble.",
+    "Almost every food chain on the",
+    "surface begins with sunlight.",
+    "And the cold is only getting",
+    "started."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s47",
+   "sceneId": "gs-s47",
+   "intent": "explanation",
+   "narration": "A year later, the average temperature on Earth's surface would be around minus seventy degrees Celsius. Colder than the coldest night ever measured in Siberia.",
+   "phrases": [
+    "A year later, the average",
+    "temperature on Earth's surface",
+    "would be around minus seventy",
+    "degrees Celsius.",
+    "Colder than the coldest night ever",
+    "measured in Siberia."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s48",
+   "sceneId": "gs-s48",
+   "intent": "explanation",
+   "narration": "Ponds freeze within a week, lakes within months. The oceans start to freeze from the top down.",
+   "phrases": [
+    "Ponds freeze within a week, lakes",
+    "within months.",
+    "The oceans start to freeze from",
+    "the top down."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s49",
+   "sceneId": "gs-s49",
+   "intent": "explanation",
+   "narration": "But that ice does something surprising. It works like a blanket. The frozen surface traps the heat below, so deep under the ice, the ocean stays liquid for a very long time.",
+   "phrases": [
+    "But that ice does something",
+    "surprising.",
+    "It works like a blanket.",
+    "The frozen surface traps the heat",
+    "below, so deep under the ice, the",
+    "ocean stays liquid for a very long",
+    "time."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s50",
+   "sceneId": "gs-s50",
+   "intent": "explanation",
+   "narration": "The ocean wraps itself in a blanket. Same, honestly.",
+   "phrases": [
+    "The ocean wraps itself in a",
+    "blanket.",
+    "Same, honestly."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "s51",
+   "sceneId": "gs-s51",
+   "intent": "explanation",
+   "narration": "Near volcanoes on the sea floor, where the planet's own heat leaks out, the water could stay liquid as long as those volcanoes keep running. But the strangest change is still to come. It just takes a little longer.",
+   "phrases": [
+    "Near volcanoes on the sea floor,",
+    "where the planet's own heat leaks",
+    "out, the water could stay liquid",
+    "as long as those volcanoes keep",
+    "running.",
+    "But the strangest change is still",
+    "to come.",
+    "It just takes a little longer."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s52",
+   "sceneId": "gs-s52",
+   "intent": "explanation",
+   "narration": "Over millions of years, Earth keeps cooling, until the only heat left is the little that seeps up from deep inside the planet.",
+   "phrases": [
+    "Over millions of years, Earth",
+    "keeps cooling, until the only heat",
+    "left is the little that seeps up",
+    "from deep inside the planet."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s53",
+   "sceneId": "gs-s53",
+   "intent": "explanation",
+   "narration": "It settles at around minus two hundred and forty degrees. That's colder than Pluto is today.",
+   "phrases": [
+    "It settles at around minus two",
+    "hundred and forty degrees.",
+    "That's colder than Pluto is today."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s54",
+   "sceneId": "gs-s54",
+   "intent": "explanation",
+   "narration": "And at that temperature, something eerie happens. The air itself freezes, and falls. Nitrogen and oxygen drift down as snow and frost, and lie on the ground in a thin, frozen layer.",
+   "phrases": [
+    "And at that temperature, something",
+    "eerie happens.",
+    "The air itself freezes, and falls.",
+    "Nitrogen and oxygen drift down as",
+    "snow and frost, and lie on the",
+    "ground in a thin, frozen layer."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s55",
+   "sceneId": "gs-s55",
+   "intent": "explanation",
+   "narration": "Wait. The air... falls down? So there's no sky anymore?",
+   "phrases": [
+    "Wait.",
+    "The air...",
+    "falls down?",
+    "So there's no sky anymore?"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "s56",
+   "sceneId": "gs-s56",
+   "intent": "explanation",
+   "narration": "No sky. No wind. Just stars, all the way down to the ground.",
+   "phrases": [
+    "No sky.",
+    "No wind.",
+    "Just stars, all the way down to",
+    "the ground."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s57",
+   "sceneId": "gs-s57",
+   "intent": "explanation",
+   "narration": "So is everything gone? Not quite.",
+   "phrases": [
+    "So is everything gone?",
+    "Not quite."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s58",
+   "sceneId": "gs-s58",
+   "intent": "explanation",
+   "narration": "Fungi feed on dead things, and suddenly there's plenty of that. The cold would get them in the end, but not before a feast.",
+   "phrases": [
+    "Fungi feed on dead things, and",
+    "suddenly there's plenty of that.",
+    "The cold would get them in the",
+    "end, but not before a feast."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s59",
+   "sceneId": "gs-s59",
+   "intent": "explanation",
+   "narration": "And tardigrades, tiny animals about half a millimeter long, are famously hard to kill. They can survive being frozen, blasted with radiation, even a trip into space.",
+   "phrases": [
+    "And tardigrades, tiny animals",
+    "about half a millimeter long, are",
+    "famously hard to kill.",
+    "They can survive being frozen,",
+    "blasted with radiation, even a",
+    "trip into space."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s60",
+   "sceneId": "gs-s60",
+   "intent": "explanation",
+   "narration": "Of course it's the tardigrades. It's always the tardigrades.",
+   "phrases": [
+    "Of course it's the tardigrades.",
+    "It's always the tardigrades."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "s61",
+   "sceneId": "gs-s61",
+   "intent": "explanation",
+   "narration": "In 1977, scientists exploring the deep sea found something nobody expected: whole communities of life around hot springs on the ocean floor. Tube worms, clams and shrimp, living in total darkness.",
+   "phrases": [
+    "In 1977, scientists exploring the",
+    "deep sea found something nobody",
+    "expected: whole communities of",
+    "life around hot springs on the",
+    "ocean floor.",
+    "Tube worms, clams and shrimp,",
+    "living in total darkness."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s62",
+   "sceneId": "gs-s62",
+   "intent": "explanation",
+   "narration": "They don't depend on sunlight at all. Their food chain starts with bacteria that get energy from chemicals pouring out of the rocks. As long as the planet stays warm inside, they could keep going.",
+   "phrases": [
+    "They don't depend on sunlight at",
+    "all.",
+    "Their food chain starts with",
+    "bacteria that get energy from",
+    "chemicals pouring out of the",
+    "rocks.",
+    "As long as the planet stays warm",
+    "inside, they could keep going."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s63",
+   "sceneId": "gs-s63",
+   "intent": "explanation",
+   "narration": "So the last living things on Earth would be... worms. I'm not sure how I feel about that.",
+   "phrases": [
+    "So the last living things on Earth",
+    "would be...",
+    "worms.",
+    "I'm not sure how I feel about",
+    "that."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "s64",
+   "sceneId": "gs-s64",
+   "intent": "explanation",
+   "narration": "And us? Scientists say a few people might survive deep underground or near volcanic heat, in places like Iceland, powered by geothermal or nuclear energy. But for almost everything else, it would be an extinction.",
+   "phrases": [
+    "And us?",
+    "Scientists say a few people might",
+    "survive deep underground or near",
+    "volcanic heat, in places like",
+    "Iceland, powered by geothermal or",
+    "nuclear energy.",
+    "But for almost everything else, it",
+    "would be an extinction."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s65",
+   "sceneId": "gs-s65",
+   "intent": "payoff",
+   "narration": "Now, the good news. This can't actually happen. Mass doesn't just vanish; that's why this is only a thought experiment. Our Sun has been shining for four and a half billion years, and it has about five billion more to go.",
+   "phrases": [
+    "Now, the good news.",
+    "This can't actually happen.",
+    "Mass doesn't just vanish; that's",
+    "why this is only a thought",
+    "experiment.",
+    "Our Sun has been shining for four",
+    "and a half billion years, and it",
+    "has about five billion more to go."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s66",
+   "sceneId": "gs-s66",
+   "intent": "payoff",
+   "narration": "So the next time sunlight touches your face, remember: it left the Sun eight minutes ago, crossed a hundred and fifty million kilometers of empty space, and arrived right on time.",
+   "phrases": [
+    "So the next time sunlight touches",
+    "your face, remember: it left the",
+    "Sun eight minutes ago, crossed a",
+    "hundred and fifty million",
+    "kilometers of empty space, and",
+    "arrived right on time."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s67",
+   "sceneId": "gs-s67",
+   "intent": "closing",
+   "narration": "Wait... you said the Moon would come with us. But in the Moon episode, you said it's already leaving. Why is it leaving? Could it ever come back?",
+   "phrases": [
+    "Wait...",
+    "you said the Moon would come with",
+    "us.",
+    "But in the Moon episode, you said",
+    "it's already leaving.",
+    "Why is it leaving?",
+    "Could it ever come back?"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka",
+    "arka",
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "s68",
+   "sceneId": "gs-s68",
+   "intent": "closing",
+   "narration": "Good question, Arka. That's our next episode.",
+   "phrases": [
+    "Good question, Arka.",
+    "That's our next episode."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "s69",
+   "sceneId": "gs-s69",
+   "intent": "closing",
+   "narration": "Subscribe so you don't miss it!",
+   "phrases": [
+    "Subscribe so you don't miss it!"
+   ],
+   "phraseSpeakers": [
+    "arka"
+   ]
+  }
+ ]
+}
