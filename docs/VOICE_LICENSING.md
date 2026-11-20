@@ -17,3 +17,11 @@ Checked 17 Nov 2026 from Debabrata's ElevenLabs account screenshots.
   - Narrator for Eps 1-4 and their Shorts: Bill L. Oxley (`iiidtqDt9FBdT1vfBluA`), a Voice Library voice with a **2-year notice period**. If the owner stops sharing it, we can keep using it for 2 years; audio already generated stays usable.
   - Arka: Jessica (`cgSgspJ2msm6clMCkdW9`), an ElevenLabs default voice, so there is no removal risk.
 - **Rule:** generate narration only while a paid plan is active, since the commercial licence covers audio made during the subscription. Keep invoices.
+
+## Voice override trap (found 20 Nov 2026)
+
+`ELEVENLABS_VOICE_ID` in `.env` overrides `config/narration.json` → `elevenlabs.voice`. Until 20 Nov the `.env` still held
+Bill's ID, so an Ep 5 dry run planned Bill instead of Gahanarka R1. The line is now commented out, so
+`config/narration.json` is the single source for the narrator voice. **Before every paid run, check that the dry run's
+"voice" lines show `q80kpsDmnu4IR4Zm7jWZ` (R1).** To use another voice for one run, put the override before that
+command only (for example `ELEVENLABS_VOICE_ID=<id> npm run narration:synthesize …`).
