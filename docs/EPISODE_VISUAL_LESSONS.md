@@ -35,3 +35,9 @@ Source: the M3.8 review commits (7ee7d03, ffdb8f1, 8cdc6fb, 9fb412b, 803ed1d, 9d
 ## Process
 - **Check a mid-beat still for every shot** before rendering (Ep 4 reached 98% coverage with no weak shots left).
 - Shorts: notes get an explicit `pos=`, kit size ≤ 1, at most 12 caption phrases per beat.
+
+## Text colour on night pages (Voyager Shorts, 20 Nov 2026)
+
+- No red text on the navy night page: low contrast and it reads as an error. Titles and big numbers in warm gold (#ffd25e), handwritten notes in pale sky blue (#a9d8ff), small labels in light ink.
+- Red stays only where it means something (a failure cross). Comparison bars use amber, not red.
+- Shorts: keep the brand tag top-left; the Shorts player puts its own buttons top-right.

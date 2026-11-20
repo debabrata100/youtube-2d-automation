@@ -66,8 +66,8 @@
         {
           "id": "brand-tag",
           "text": "GAHANARKA",
-          "x": 880,
-          "y": 150,
+          "x": 200,
+          "y": 250,
           "size": 44,
           "anchor": "middle",
           "variant": "ink",
@@ -93,7 +93,7 @@
             "type": "prop",
             "item": "bar",
             "x": 0.44,
-            "y": 0.42,
+            "y": 0.34,
             "size": 0.62,
             "text": "your last photo",
             "level": [
@@ -120,7 +120,7 @@
             "type": "prop",
             "item": "bar",
             "x": 0.44,
-            "y": 0.58,
+            "y": 0.6,
             "size": 0.62,
             "text": "Voyager's memory",
             "level": [
@@ -146,8 +146,8 @@
         {
           "id": "n0",
           "text": "~3,000 KB",
-          "x": 473,
-          "y": 1328,
+          "x": 540,
+          "y": 850,
           "size": 78,
           "anchor": "middle",
           "variant": "ink",
@@ -177,8 +177,8 @@
         {
           "id": "n1",
           "text": "69 KB",
-          "x": 753,
-          "y": 1328,
+          "x": 540,
+          "y": 1350,
           "size": 78,
           "anchor": "middle",
           "variant": "ink",
@@ -764,7 +764,7 @@
             "type": "prop",
             "item": "bar",
             "x": 0.44,
-            "y": 0.42,
+            "y": 0.34,
             "size": 0.62,
             "text": "old dial-up",
             "level": [
@@ -791,7 +791,7 @@
             "type": "prop",
             "item": "bar",
             "x": 0.44,
-            "y": 0.58,
+            "y": 0.6,
             "size": 0.62,
             "text": "Voyager 1",
             "level": [
@@ -817,8 +817,8 @@
         {
           "id": "n0",
           "text": "20,000 bits/s",
-          "x": 474,
-          "y": 1310,
+          "x": 540,
+          "y": 840,
           "size": 56,
           "anchor": "middle",
           "variant": "ink",
@@ -847,9 +847,9 @@
         },
         {
           "id": "n1",
-          "text": "160",
-          "x": 688,
-          "y": 1310,
+          "text": "160 bits/s",
+          "x": 540,
+          "y": 1340,
           "size": 56,
           "anchor": "middle",
           "variant": "ink",
@@ -878,9 +878,9 @@
         },
         {
           "id": "n2",
-          "text": "×125",
+          "text": "×125 faster",
           "x": 540,
-          "y": 1500,
+          "y": 1560,
           "size": 78,
           "anchor": "middle",
           "variant": "ink",
@@ -951,33 +951,21 @@
                 "at": "failed."
               },
               "value": 1
-            }
-          ],
-          "scale": [
-            {
-              "frame": 0,
-              "value": 0.6
             },
             {
               "frame": {
-                "at": "failed.",
+                "at": "squeezed",
                 "offset": -1
               },
-              "value": 0.6
+              "value": 1
             },
             {
               "frame": {
-                "at": "failed.",
-                "offset": 9
+                "at": "squeezed"
               },
-              "value": 1,
-              "ease": "ease-out-back"
+              "value": 0
             }
-          ],
-          "anchor": {
-            "x": 540.0,
-            "y": 1190.4
-          }
+          ]
         },
         {
           "id": "fix",
@@ -1038,10 +1026,11 @@
           "kit": {
             "type": "prop",
             "item": "signal",
-            "x": 0.5,
-            "y": 0.78,
+            "x": 0.24,
+            "y": 0.6,
             "size": 0.22,
-            "rotation": -90
+            "rotation": -60,
+            "color": "#7fc0ff"
           },
           "opacity": [
             {
@@ -1225,8 +1214,8 @@
           "kit": {
             "type": "prop",
             "item": "calendar",
-            "x": 0.26,
-            "y": 0.7,
+            "x": 0.8,
+            "y": 0.72,
             "size": 0.16,
             "text": "5 mo"
           },
@@ -1271,8 +1260,8 @@
             }
           ],
           "anchor": {
-            "x": 280.8,
-            "y": 1344.0
+            "x": 864.0,
+            "y": 1382.3999999999999
           }
         },
         {
@@ -1280,9 +1269,9 @@
           "kit": {
             "type": "prop",
             "item": "signal",
-            "x": 0.38,
-            "y": 0.56,
-            "size": 0.26,
+            "x": 0.3,
+            "y": 0.5,
+            "size": 0.2,
             "rotation": 120,
             "color": "#7fc0ff"
           },
@@ -1350,8 +1339,8 @@
         {
           "id": "n0",
           "text": "it worked!",
-          "x": 640,
-          "y": 1240,
+          "x": 540,
+          "y": 1250,
           "size": 78,
           "anchor": "middle",
           "variant": "ink",
@@ -1382,7 +1371,7 @@
           "id": "n1",
           "text": "still talking to us",
           "x": 540,
-          "y": 1400,
+          "y": 1580,
           "size": 61,
           "anchor": "middle",
           "variant": "ink",

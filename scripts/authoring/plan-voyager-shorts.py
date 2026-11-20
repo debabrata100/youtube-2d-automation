@@ -124,15 +124,15 @@ def boxed(pid, item, x, y, size, at, **extra):
 
 
 # Corner tag for the whole Short (backdrop annotation: same place in every shot, no pop, no sound).
-tag = note('brand-tag', 'GAHANARKA', 880, 150, 0, size=44, color=GOLD)
+tag = note('brand-tag', 'GAHANARKA', 200, 250, 0, size=44, color=GOLD)  # top-left: the Shorts player keeps its icons top-right
 tag.pop('opacity', None); tag['pop'] = False; tag['opacity'] = track((0, .85))
 
 if NAME == 'memory':
     ep.backdrop(stars=30)
     ep.music([('m1', 'assets/music/6-space-event-horizon.mp3', 0)], target_lufs=-16)
     # m1 hook: your last photo vs Voyager's whole memory
-    ep.scene('m1', explain([], [bars('photo', .44, .42, 'your last photo', 8, 30, 1, RED), bars('voy', .44, .58, "Voyager's memory", 40, 52, .023, BLUE)],
-                           [Note('~3,000 KB', A('photo'), 'title', near='photo'), Note('69 KB', A('entire'), 'title', near='voy')], sounds=[('tick', A('memory'), -22)]))
+    ep.scene('m1', explain([], [bars('photo', .44, .34, 'your last photo', 8, 30, 1, RED), bars('voy', .44, .6, "Voyager's memory", 40, 52, .023, BLUE)],
+                           [Note('~3,000 KB', A('photo'), 'title', pos=(540, 850)), Note('69 KB', A('entire'), 'title', pos=(540, 1350))], sounds=[('tick', A('memory'), -22)]))
     # m2 three computers, 69 KB combined
     ep.scene('m2', explain([], [probe(.5, .42, .42), icon('c1', 'battery', .3, .66, .1, A('three')), icon('c2', 'battery', .5, .66, .1, plus(A('three'), 4)),
                                 icon('c3', 'battery', .7, .66, .1, plus(A('three'), 8))],
@@ -146,17 +146,18 @@ if NAME == 'memory':
                            [Note("can't keep its data", A("can't"), 'note', pos=(540, 330)), Note('160 bits/s', A('hundred'), 'title', pos=(400, 1250))],
                            sounds=[('tick', A('tape,'), -22)]))
     # m5 dial-up was 125x faster
-    ep.scene('m5', explain([], [bars('dial', .44, .42, 'old dial-up', 10, 40, 1, RED), bars('voy2', .44, .58, 'Voyager 1', 10, 14, .02, BLUE)],
-                           [Note('20,000 bits/s', A('dial-up'), 'small', near='dial'), Note('160', A('modem'), 'small', near='voy2'), Note('×125', A('hundred'), 'title', pos=(540, 1500))]))
+    ep.scene('m5', explain([], [bars('dial', .44, .34, 'old dial-up', 10, 40, 1, RED), bars('voy2', .44, .6, 'Voyager 1', 10, 14, .02, BLUE)],
+                           [Note('20,000 bits/s', A('dial-up'), 'small', pos=(540, 840)), Note('160 bits/s', A('modem'), 'small', pos=(540, 1340)),
+                            Note('×125 faster', A('hundred'), 'title', pos=(540, 1560))]))
     # m6 the 2023 chip failure and the long-distance fix
-    ep.scene('m6', explain([], [probe(.5, .4, .36), icon('fail', 'cross', .5, .62, .14, A('failed.')), icon('fix', 'check', .5, .62, .16, A('squeezed')),
-                                signal(.5, .78, .22, -90, pid='uplink', opacity=show_from(A('squeezed')))],
+    ep.scene('m6', explain([], [probe(.5, .4, .36), Prop(prop('fail', 'cross', .5, .62, .14, opacity=track((0, 0), (plus(A('failed.'), -1), 0), (A('failed.'), 1), (plus(A('squeezed'), -1), 1), (A('squeezed'), 0)))),
+                                icon('fix', 'check', .5, .62, .16, A('squeezed')), signal(.24, .6, .22, -60, pid='uplink', color='#7fc0ff', opacity=show_from(A('squeezed')))],
                            [Note('2023', A('2023,'), 'title', pos=(540, 300)), Note('1 chip failed', A('failed.'), 'note', pos=(540, 1420), until=A('squeezed')),
                             Note('fix squeezed in', A('squeezed'), 'note', pos=(540, 1420)), Note('24 billion km away', A('twenty-four'), 'small', pos=(540, 1560))]))
     # m7 five months, it worked, still talking (soft brand chime under the last line)
     arka = rider(.5, .338, [(0, 'float'), (A('worked.', -2), 'wave')], [(0, 'happy'), (A('worked.'), 'grin')])
-    ep.scene('m7', explain([arka], [probe(.5, .44, .42), boxed('cal', 'calendar', .26, .7, .16, A('five'), text='5 mo'), signal(.38, .56, .26, 120, color='#7fc0ff', opacity=show_from(A('talking')))],
-                           [Note('it worked!', A('worked.'), 'title', pos=(640, 1240)), Note('still talking to us', A('still'), 'note', pos=(540, 1400))],
+    ep.scene('m7', explain([arka], [probe(.5, .44, .42), boxed('cal', 'calendar', .8, .72, .16, A('five'), text='5 mo'), signal(.3, .5, .2, 120, color='#7fc0ff', opacity=show_from(A('talking')))],
+                           [Note('it worked!', A('worked.'), 'title', pos=(540, 1250)), Note('still talking to us', A('still'), 'note', pos=(540, 1580))],
                            sounds=[('chime', A('talking'), -26)]))
 else:
     ep.backdrop(stars=30, earth={'r': .5, 'hidden': [(A('Voyager', beat='l4'), A('Then', beat='l5')), (A('group', beat='l6'), A('Almost', beat='l7'))]})
@@ -175,19 +176,19 @@ else:
     ep.scene('l3', explain([arka], [probe(.7, .2, .2)], [Note('the end?', A('end?'), 'title', pos=(540, 560))]))
     # l4 a day each way: plan, and wait
     ep.scene('l4', explain([], [probe(.72, .3, .26), boxed('clock', 'clock', .3, .56, .3, A('message'), level=[{'frame': 0, 'value': .6}], text='~1 day each way')],
-                           [Note('plan a rescue', A('plan'), 'note', pos=(560, 1280)), Note('...and wait', A('wait.'), 'title', pos=(540, 1440))]))
+                           [Note('plan a rescue', A('plan'), 'note', pos=(540, 1420)), Note('...and wait', A('wait.'), 'title', pos=(540, 1560))]))
     # l5 20 Oct: the signal comes back before any command
     ep.scene('l5', explain([], [probe(.66, .26, .3), boxed('day20', 'calendar', .24, .4, .16, A('twentieth,'), text='20'),
                                 signal(.45, .5, .32, 120, pid='back', color='#7fc0ff', opacity=show_from(A('came'))), icon('ok', 'check', .76, .46, .14, A('back.'))],
-                           [Note('0 commands sent', A('single'), 'small', pos=(540, 1180)), Note('signal back!', A('came'), 'title', pos=(540, 1320))],
+                           [Note('0 commands sent', A('single'), 'small', pos=(540, 1400)), Note('signal back!', A('came'), 'title', pos=(540, 1540))],
                            sounds=[('tick', A('came'), -20)]))
     # l6 backups switched on by itself; why it went quiet is a mystery
     ep.scene('l6', explain([], [probe(.5, .4, .42), icon('off', 'cross', .3, .6, .12, A('offline,')), icon('on', 'check', .7, .6, .14, A('backups'))],
                            [Note('thrusters: offline', A('thrusters'), 'small', pos=(330, 1290)), Note('backups: ON', A('backups'), 'small', pos=(750, 1290)),
-                            Note('by itself', A('own.'), 'note', pos=(540, 1420)), Note('why? still a mystery', A('mystery.'), 'title', pos=(540, 1560))]))
+                            Note('by itself', A('own.'), 'note', pos=(540, 1450)), Note('why? still a mystery', A('mystery.'), 'title', pos=(540, 1600))]))
     # l7 Arka salutes the old probe
     arka = Char('arka', 'arka', x=.5, fy=.74, h=.24, idle=None, poses=[(0, 'float'), (A('Respect.', -4), 'wave')], faces=[(0, 'happy'), (A('Respect.', -4), 'grin')])
-    ep.scene('l7', explain([arka], [probe(.7, .22, .22)], [Note('49 years old', A('fifty'), 'note', pos=(540, 520))]))
+    ep.scene('l7', explain([arka], [probe(.7, .22, .22)], [Note('49 years old', A('fifty'), 'note', pos=(360, 700))]))
     # l8 four weeks later: one light-day (soft brand chime under the last line)
     ep.scene('l8', explain([], [probe(.5, .4, .42), signal(.38, .53, .26, 120, color='#7fc0ff')],
                            [Note('18 Nov 2026', A('Four'), 'small', pos=(540, 260)), Note('1 light-day', A('light-day'), 'title', pos=(540, 1300)),
