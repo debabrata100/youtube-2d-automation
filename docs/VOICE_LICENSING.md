@@ -25,3 +25,12 @@ Bill's ID, so an Ep 5 dry run planned Bill instead of Gahanarka R1. The line is 
 `config/narration.json` is the single source for the narrator voice. **Before every paid run, check that the dry run's
 "voice" lines show `q80kpsDmnu4IR4Zm7jWZ` (R1).** To use another voice for one run, put the override before that
 command only (for example `ELEVENLABS_VOICE_ID=<id> npm run narration:synthesize …`).
+
+## Brand voice decision (20 Nov 2026)
+
+**Gahanarka R1 (`q80kpsDmnu4IR4Zm7jWZ`) is the channel's brand narrator from Ep 5 on**, approved by Debabrata after hearing
+the full Ep 5 narration (`jobs/gs-narration`, 699.4 s, requests WeffTfEY7PQQVPgCnp3o + HSRS9PzBAiZdUaVQRB4l, 9,595 credits).
+Considered and rejected the same day: Bill for Ep 5 (shared by ~762K users, so no brand value) and a new design, R5
+(`oQGDobpGClfCv5sPeYxY`, 285 credits, deleted unused). The "0d notice period" tooltip in My Voices refers to Voice Library
+voices; R1 is our own designed voice and can only be removed by us. The real risk is the plan: on a downgrade, voices
+beyond the plan's custom voice slots become inaccessible (not deleted), so keep a paid plan and stay within the slots.
