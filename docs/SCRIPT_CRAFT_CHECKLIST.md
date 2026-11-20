@@ -28,3 +28,7 @@ our Ep 5 script with Astrum's "What Voyager 1 Found Beyond the Edge of Our Solar
 ## Free fixes after narration
 When the narration is already approved and paid for, add missing links as **on-screen notes** (then-and-now, comparisons, names)
 and in the description and pinned comment, rather than re-recording.
+
+## Shorts: the first second (from the Voyager Shorts, 21 Nov 2026)
+- [ ] **Open on the shock or the stakes, not a date or a setup.** "NASA lost contact with Voyager 1" beats "On October eighteenth, NASA called Voyager 1". Put dates and context in the second line. (V3 opened on a date: 61% swiped away in its first two hours; V1 opened on the hook, "Right now, a message from Earth needs a full day...": 46% stayed, our best.)
+- [ ] **The first frame shows the subject and the problem at once** (the probe, a cross, a number), so the line and the picture land together in the first second.
