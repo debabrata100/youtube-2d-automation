@@ -29,6 +29,8 @@ Last full check: **20 Nov 2026, 5 PM IST** (language and subtitles checked for e
 | S4 | You'd Fall for 12 Minutes on This Moon (Miranda) | [d1yDnS3FVGA](https://youtube.com/shorts/d1yDnS3FVGA) | Scheduled **Tue 24 Nov, 9:30 PM** | ⏳ → Ep 3 once it's public (22 Nov) | ✅ English SRT | ⏳ after launch | Could You Survive…? | `08-miranda-short.md` |
 | S5 | Earth Wouldn't Tip Over Without the Moon | [Fc0FfkVvZJE](https://youtube.com/shorts/Fc0FfkVvZJE) | Scheduled **Sat 28 Nov, 9:30 PM** | ⏳ → Ep 4 once it's public (26 Nov) | ✅ English SRT | ⏳ after launch | What If…? | `09-moon-tilt-short.md` |
 | S6 | Without the Moon, Lions Would Win | [1imI95ToPoI](https://youtube.com/shorts/1imI95ToPoI) | Scheduled **Tue 1 Dec, 9:30 PM** | ⏳ → Ep 4 | ✅ English SRT | ⏳ after launch | What If…? | `10-moon-lions-short.md` |
+| S7 | NASA Lost Voyager 1 for 48 Hours | [-FTg1FvhxKI](https://youtube.com/shorts/-FTg1FvhxKI) | Public since **Fri 20 Nov, 10:20 PM** | ✅ → S2 Voyager light-day (switch to Ep 3 on 22 Nov) | ✅ English SRT | ✅ posted and pinned 20 Nov ("…What should NASA name its next interstellar probe?") | Could You Survive…? | `11-voyager-silent-short.md` |
+| S8 | Voyager Has Less Memory Than One Photo on Your Phone | not uploaded | Ready: to schedule for **Mon 23 Nov, 9:30 PM** | → Ep 3 | SRT ready | ⏳ after launch | Could You Survive…? | `12-voyager-memory-short.md` |
 
 ## Settings that are the same on every upload (checked 20 Nov)
 - Video language **English**, title and description language **English** (all 11 uploads).
@@ -38,4 +40,4 @@ Last full check: **20 Nov 2026, 5 PM IST** (language and subtitles checked for e
 - **Trailer:** upload the English SRT (it only has auto-captions).
 - **Ep 1 Titan:** pinned comment and end screen were never recorded; check in Studio and fill in.
 - **S1 Titan and S2 Voyager:** confirm the Related video and pinned comment in Studio and record them here.
-- Launch-day jobs are covered by the scheduled checks (Ep 3 + Miranda/Voyager Related videos on 22 Nov, Ep 4 + Moon Shorts on 26 Nov, and so on); each one should update this file.
+- Launch-day jobs are covered by the scheduled checks (Ep 3 + Miranda/Voyager Related videos, including S7 → Ep 3, on 22 Nov, Ep 4 + Moon Shorts on 26 Nov, and so on); each one should update this file.
