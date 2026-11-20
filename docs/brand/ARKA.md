@@ -7,6 +7,7 @@ Arka is Gahanarka's mascot: a curious girl astronaut in a gold suit, named after
 ## Who Arka is (decided 19 Nov 2026)
 
 - **She/her.** Arka is a girl; her voice (ElevenLabs, voice `cgSgspJ2msm6clMCkdW9`) has been the same since Ep 2, so it stays.
+- **Voice backup plan.** Jessica is an ElevenLabs default voice (no Voice Library owner can withdraw it), so we don't keep a designed backup. If it is ever retired, use the recorded Arka takes (`jobs/*/audio/takes/arka.wav`, e.g. `jobs/mg-narration-b`) as the reference for Voice Design and pick the closest match in a blind test. If we ever want Arka's voice to be unique to the channel, switch at the start of a new series with a story reason, not mid-series (decided 20 Nov 2026).
 - **Role:** she asks the questions viewers are thinking, makes the jokes, and from Ep 5 on ends each episode with the next question (see `docs/CONTENT_PLAN.md`).
 - **In scripts:** the narrator calls her by name ("Sorry, Arka"); use "she" in descriptions, comments and docs.
 
