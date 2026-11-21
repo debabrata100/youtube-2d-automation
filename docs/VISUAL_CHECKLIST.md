@@ -52,3 +52,10 @@ Related: `docs/SCRIPT_CRAFT_CHECKLIST.md` (the words), `docs/EPISODE_VISUAL_LESS
 - [ ] **Sound-off test:** looking at the stills alone, would a viewer understand what each shot is saying? If not, the shot needs more action or a clearer label.
 - [ ] **Check stills at the key words** (numbers, "disappears", "snaps", "falls") rather than at evenly spaced frames, so the moments that matter are seen.
 - [ ] **Sample render of the first few minutes** before the full render (`scripts/render-sample.sh`).
+
+## 9. Grown-up audience signals (positioning, 21 Nov 2026)
+- [ ] **Editorial, not toddler:** the hand-drawn notebook or night style with measured colour; no all-primary, bouncy toy-box palettes or cartoon chaos.
+- [ ] **No child characters as the stars;** Arka behaves as a witty grown-up companion, not a baby mascot.
+- [ ] **Thumbnails promise a real idea or question** (a number, a striking consequence), not just a cute character.
+- [ ] **Sound:** no children's music or toy sound effects; the music stays from our licensed library list.
+- [ ] **After launch:** when Studio shows age data, check the audience age split; if under-18 viewers grow unusually, review tone and thumbnails.

@@ -32,3 +32,11 @@ and in the description and pinned comment, rather than re-recording.
 ## Shorts: the first second (from the Voyager Shorts, 21 Nov 2026)
 - [ ] **Open on the shock or the stakes, not a date or a setup.** "NASA lost contact with Voyager 1" beats "On October eighteenth, NASA called Voyager 1". Put dates and context in the second line. (V3 opened on a date: 61% swiped away in its first two hours; V1 opened on the hook, "Right now, a message from Earth needs a full day...": 46% stayed, our best.)
 - [ ] **The first frame shows the subject and the problem at once** (the probe, a cross, a number), so the line and the picture land together in the first second.
+
+## Grown-up audience (positioning, 21 Nov 2026)
+Our viewer is a curious 16–35-year-old, not a child. A cartoon style is fine; a children's tone is not.
+- [ ] **Stakes and topics for adults:** real science, real numbers and sources, consequences that matter to grown-ups (energy, work, cities, extinction), told calmly. Dark themes stay non-graphic.
+- [ ] **Arka's humour is dry or ironic, never babyish:** adult references (Mondays, coffee, deadlines, taxes, a tan), no baby talk, no "yay!" or silly noises as the joke.
+- [ ] **Normal adult vocabulary;** never "kids", "boys and girls", "let's learn", or explaining as if to a child. Explain clearly, don't talk down.
+- [ ] **No children's songs, nursery rhymes or sing-along** moments; no toy-like sound effects (boings, squeaks) as gags.
+- [ ] **Titles, descriptions and tags written for adults** and honest (no fear-mongering, no "for kids"); audience setting "No, it's not made for kids".
