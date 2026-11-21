@@ -64,6 +64,13 @@ Supporting records: `docs/MUSIC_SOURCES.md`, `docs/VOICE_LICENSING.md`, `docs/br
 - [ ] YouTube's copyright check in Studio passed before scheduling.
 - [ ] Related video (Shorts) or end screen (long) points to the right video.
 - [ ] When this episode is the one the previous episode teased, switch the previous episode's end-screen video to this one once it's public.
+- [ ] **Cards at callback moments (long episodes):** wherever the narration mentions an earlier episode ("as we saw in our Moon episode"), add a card to that episode at that second. Up to 5 cards per video; never in the first 15 s.
+- [ ] **File name carries the title words** (`how-you-would-die-on-every-moon.mp4`, not `final_v3.mp4`). A small signal at most, but free.
+
+### Launch day (from Chiamaka Okoli's "6 things after every upload", checked 22 Nov 2026)
+- [ ] **Community post for every long episode at launch:** one curious hook line (a question from the episode, not "new video out!"), one of **our own drawings** (Arka or a key frame, not the thumbnail, which crops badly in posts), and the link. Optional for Shorts. Subscribers don't all get upload notifications, so this is the second chance to reach them. Ask Debabrata before posting (public action).
+- [ ] Post goes live within the first hour after the episode does; reply to the first comments that day.
+- [ ] Ignore the myths in that video: "the algorithm reads the file name, not the title or thumbnail", "private for 2 h teaches the algorithm keywords", "monetize in 30 days". Packaging (title + thumbnail CTR) and the first minute's retention decide reach.
 
 ### Quality over schedule
 - [ ] If an episode isn't good enough by its slot, skip the week instead of publishing something weaker (one late episode costs less than a weak one).
