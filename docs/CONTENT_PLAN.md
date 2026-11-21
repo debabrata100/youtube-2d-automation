@@ -59,7 +59,7 @@ Legend: **Debabrata** = Debabrata's idea, **Claude** = Claude's addition. Facts 
 
 | # | Working title | From | Angle / surprise | Notes |
 |---|---|---|---|---|
-| E1 | **When will a day be 25 hours long?** | Debabrata | Days are lengthening by a couple of milliseconds per century, so a 25-hour day is roughly 200 million years away *(check)*. Twist: melting ice is now changing day length too. | **Next after M1** (M1's rewind shows shorter days in the past, so Arka asks "When will a day be 25 hours?"). Reuses the Ep 4 clock and Moon drawings; "When…" title shape. Its ending teases **E7 Apophis**. |
+| E1 | **When will a day be 25 hours long?** | Debabrata | Days are lengthening by a couple of milliseconds per century, so a 25-hour day is roughly 200 million years away *(check)*. Twist: melting ice is now changing day length too. | **Script draft 1 written 21 Nov 2026** (`stories/day-25-script.md`: the 25th-hour bar; the Moon builds it, ice-age rebound and the core drain it, leap seconds and the first negative one, melting ice now lengthening the day; body clocks and Mars-time rover teams; ≈ 10.4 min). **Next after M1** (M1's rewind shows shorter days in the past, so Arka asks "When will a day be 25 hours?"). Reuses the Ep 4 clock and Moon drawings; "When…" title shape. Its ending teases **E7 Apophis**. |
 | E2 | **How would we die if the Moon fell on Earth?** | Debabrata | ⚠ Kurzgesagt's video (21.8M views) owns this. Only possible angle: the Moon never reaches the ground; it shatters into rings first. | **Hold.** |
 | E3 | **If an asteroid hit again, would dinosaurs come back?** | Debabrata | Birds *are* dinosaurs; evolution doesn't repeat itself. | Strong title plus a myth-bust ending. Keep it non-graphic. |
 | E4 | What if Earth stopped spinning for one second? | Claude | Everything not bolted down keeps moving at up to about 1,670 km/h *(check)*. | Demand check 20 Nov: alive (recent 165K-232K views on small channels). |
@@ -85,7 +85,7 @@ Legend: **Debabrata** = Debabrata's idea, **Claude** = Claude's addition. Facts 
 1. **S1 / Ep 5** If the Sun Disappeared, Even the Air Would Fall (final render done; proposed Thu 3 Dec; needs thumbnails + M1 draft).
 2. **V2, V3** Voyager Shorts (V3 published 20 Nov, V2 scheduled 23 Nov).
 3. **M1** Could the Moon Ever Come Back? (Ep 5's ending teases it; teases E1.) Script draft 1 done 21 Nov.
-4. **E1** When will a day be 25 hours long? (teases E7.)
+4. **E1** When will a day be 25 hours long? (teases E7.) Script draft 1 done 21 Nov.
 5. **E7** Apophis 2029 (strongest demand; researched carefully).
 6. **S2** Would a black-hole Sun suck us in?
 7. **V4** Voyager 50th anniversary episode (target: published mid-August 2027).
