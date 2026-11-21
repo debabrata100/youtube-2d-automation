@@ -49,7 +49,7 @@ The Sun can't really vanish (mass doesn't just disappear); this is a thought exp
 - Voyager 1 one light-day from Earth (18 Nov 2026): NASA/JPL
 
 More from Gahanarka:
-▶ What If the Moon Disappeared Tonight? https://youtu.be/ZbEeo3Xx0Iw
+▶ What Actually Happens If the Moon Disappears? https://youtu.be/ZbEeo3Xx0Iw
 ▶ NASA Lost Voyager 1 for 48 Hours: https://youtube.com/shorts/-FTg1FvhxKI
 
 Images: NASA/Aubrey Gemignani (2017 total solar eclipse). NASA images are public domain. All drawings and animation are original.

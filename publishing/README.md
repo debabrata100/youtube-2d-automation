@@ -21,7 +21,7 @@ All times IST. 9:30 PM IST is 11:00 AM US Eastern, a good slot for both the US a
 | 3 | Sat 21 Nov, 9:30 PM | Ep 2 Short (27 s, 9:16) | `03-helmet-off-short.md` | Related video → Ep 2 long |
 | 4 | Sun 22 Nov, 9:30 PM | Ep 3: every moon (7:06, 16:9) | `04-every-moon.md` | End screen → Titan or Ep 2 |
 | 5 | Tue 24 Nov, 9:30 PM | Miranda Short, "12-minute fall" (36 s, 9:16) | `08-miranda-short.md` | Related video → Ep 3 |
-| 6 | Thu 26 Nov, 9:30 PM | Ep 4: What If the Moon Disappeared Tonight? (9:38, 16:9) | `06-moon-gone.md` | End screen → Ep 3 |
+| 6 | Thu 26 Nov, 9:30 PM | Ep 4: What Actually Happens If the Moon Disappears? (9:38, 16:9) | `06-moon-gone.md` | End screen → Ep 3 |
 | 7 | Sat 28 Nov, 9:30 PM | Moon Short, "Earth won't tip over" (52 s, 9:16) | `09-moon-tilt-short.md` | Related video → Ep 4 |
 | 8 | Tue 1 Dec, 9:30 PM | Moon Short, "The lions' night" (43 s, 9:16) | `10-moon-lions-short.md` | Related video → Ep 4 |
 
@@ -77,7 +77,7 @@ All six are uploaded and scheduled (private until their time):
 | Ep 3: every moon | https://youtu.be/MnfXbn6mD8I | Sun 22 Nov, 9:30 PM | A/B test (a1, b1, c1) starts when public; pin comment |
 | Voyager 1 Short (night sky) | https://youtube.com/shorts/tZx2ERI-4ec | Wed 18 Nov, 9:30 PM | Pin comment; on Sun 22 Nov switch Related video from Titan to Ep 3 |
 | Miranda Short | https://youtube.com/shorts/d1yDnS3FVGA | Tue 24 Nov, 9:30 PM | Related video → Ep 3 (after 22 Nov); pin comment |
-| Ep 4: What If the Moon Disappeared Tonight? | https://youtu.be/ZbEeo3Xx0Iw | Thu 26 Nov, 9:30 PM | A/B test (c, e, b) starts when public; pin comment |
+| Ep 4: What Actually Happens If the Moon Disappears? | https://youtu.be/ZbEeo3Xx0Iw | Thu 26 Nov, 9:30 PM | A/B test (MYTH | REALITY, WE SURVIVE?, EARTH TIPS OVER?) starts when public; pin comment |
 | Moon Short: Earth won't tip over | https://youtube.com/shorts/Fc0FfkVvZJE | Sat 28 Nov, 9:30 PM | Related video → Ep 4 (after 26 Nov); pin comment |
 | Moon Short: lions | https://youtube.com/shorts/1imI95ToPoI | Tue 1 Dec, 9:30 PM | Related video → Ep 4 (after 26 Nov); pin comment |
 

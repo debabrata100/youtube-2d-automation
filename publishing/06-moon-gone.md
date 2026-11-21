@@ -1,15 +1,17 @@
-# 06: Episode 4, What If the Moon Disappeared Tonight?
+# 06: Episode 4, What Actually Happens If the Moon Disappears?
 
 - **Upload folder:** `~/Downloads/gahanarka-upload/6-moon-gone/` (every upload lives in `gahanarka-upload`). It holds the video `what-if-the-moon-disappeared-tonight.mp4` (render `jobs/mg-final-b`, approved by Debabrata 19 Nov; 9:38, 1920×1080, 30 fps, −16.3 LUFS; 0 paid requests), `captions-english.srt` (318 cues) and thumbnails for Test & compare: `thumb-c-no-moon-now-what.png` (slot 1, default), `thumb-e-arka-points.png` (slot 2: Arka pointing at the empty Moon, "9:00 PM." / "GONE." inside the dashed outline; rendered with the engine's point-right pose, free) and `thumb-b-tips-over-myth.png` (slot 3). `thumb-a-moon-is-gone.png` was dropped 19 Nov because its "The Moon is gone" text is common on other videos; `thumb-d-nine-pm-gone.png` was a draft that E replaced.
 - **Status:** uploaded and scheduled 19 Nov, 1:20 AM IST: https://youtu.be/ZbEeo3Xx0Iw goes public **Thu 26 Nov 2026, 9:30 PM IST**. Copyright and Community Guidelines checks: no issues. Thumbnail A/B test (c, e, b; reset 19 Nov to swap A for E, no data lost) starts when public. End screen 9:26–9:38: Ep 3 + Subscribe. Playlist: "What If…?" (created 19 Nov). Still to do after it's live: pin the comment below.
+- **Repackaged 21–22 Nov by Debabrata in Studio** (checked read-only by Chat B, 22 Nov): title now **What Actually Happens If the Moon Disappears?** (45 characters); description reworked with the channel footer (sources, credits, AI-narration line); new thumbnail set for Test & compare: "MYTH | REALITY" (frozen Earth vs real Earth with Arka), "WE SURVIVE?", "EARTH TIPS OVER?" (replaces c, e, b; no data lost, the test hadn't started). Playlist and audience unchanged. Open: switch the red text on "MYTH" and "TIPS OVER?" to white/gold/cyan; consider "DO WE SURVIVE?"; description line 1 still names the old title. The live description in Studio is the source of truth; the block below is the original 19 Nov text.
 - **Script, sources and fact check:** `stories/moon-gone-script.md`. Narration request IDs: aiFBSbbE5FTiM81uSeCP, xtWSejIn5vpKawSTbE4Z (ElevenLabs Starter, 18 Nov 2026).
 
-## Title (pick 1)
+## Title
 
-1. **What If the Moon Disappeared Tonight?** (recommended; 39 characters, matches what people search)
-2. The Moon Vanishes Tonight. Here's What Really Happens
+1. **What Actually Happens If the Moon Disappears?** (live from 22 Nov; 45 characters)
+2. What If the Moon Disappeared Tonight? (used 19–22 Nov; 39 characters)
+3. The Moon Vanishes Tonight. Here's What Really Happens
 
-## Description (paste as is)
+## Description (original, 19 Nov; superseded by the reworked one in Studio)
 
 ```
 What if the Moon disappeared tonight at 9 PM? Most videos say Earth tips over and we all die. Newer science says something calmer, and stranger. We follow the first night, the first week, the first year and the next million years, from hungry lions and confused coral to the myth of the tumbling Earth. And then the twist: the Moon is already leaving.

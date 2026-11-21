@@ -18,13 +18,13 @@ If the Moon vanished tonight, every night would be the darkest kind of night: a 
 
 Source: Packer et al. (2011), "Fear of darkness, the full moon and the nocturnal ecology of African lions", PLoS ONE.
 
-Full episode: What If the Moon Disappeared Tonight?
+Full episode: What Actually Happens If the Moon Disappears?
 
 #Moon #Lions #Shorts
 ```
 
 ## Related video
-Ep 4, "What If the Moon Disappeared Tonight?" (`ZbEeo3Xx0Iw`). Copy the ID from Studio, never retype it.
+Ep 4, "What Actually Happens If the Moon Disappears?" (`ZbEeo3Xx0Iw`; titled "What If the Moon Disappeared Tonight?" until 22 Nov). Copy the ID from Studio, never retype it.
 
 ## Pinned comment
 
