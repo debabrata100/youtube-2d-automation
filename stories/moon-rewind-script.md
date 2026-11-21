@@ -1,6 +1,6 @@
 # M1 "Could the Moon Ever Come Back?": script draft 1
 
-Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka: **voice to be chosen** (grown-up voice test on this draft's Arka lines, pending approval; Jessica stays as the fallback).
+Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka: **Arka D2** (new grown-up designed voice, chosen by Debabrata in a blind test on 21 Nov 2026; replaces Jessica from this episode on).
 
 **Title (chosen by Debabrata, 21 Nov 2026):** **Could the Moon Ever Come Back?** (30 characters). A "Could…" shape after two "If/What if" titles.
 **Thumbnail idea (Debabrata, 21 Nov):** the second title option becomes the thumbnail promise: a giant Moon over the young Earth, Arka tiny below it, text **"IT USED TO BE THIS CLOSE"**.
@@ -241,6 +241,6 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 - **New props to draw:** retroreflector panel with prisms; laser beam and returning photons; tidal bulge diagram (Earth, bulges ahead of the Moon, arrows); clay tablet; eclipse shadow sliding across a map; coral with daily ridges and yearly bands (zoom); banded iron cliff; wobbling axis (precession cone); air tide on the day side; giant Moon over a molten Earth; two-faced locked Earth with a fixed Moon; Roche ring; Phobos with grooves rising in the west; Mars ring.
 - **Reusable:** Earth, Moon, Mars, Sun, clock-time, Arka, ice/ocean layers, ring (orbit-ring), town.
 - **Photo inserts (public domain, NASA):** Aldrin beside the Apollo 11 reflector (AS11-40-5952 area); Phobos from MRO HiRISE (NASA/JPL/UArizona; check licence); the Joffre Gorge cliff only if a CC-licensed photo exists (otherwise draw it).
-- **Narration estimate:** about 8,990 characters of line text (Arka ≈ 1,090); two paid requests (narrator, Arka). Exact count from the free `--dry-run` after approval. Arka's voice is decided by the voice test first.
+- **Narration estimate:** about 8,990 characters of line text (Arka ≈ 1,090); two paid requests (narrator, Arka). Exact count from the free `--dry-run` after approval. Arka's voice: D2 (`TL9f5lGrdeX5wHMushRC`, set in `config/narration.json`); check the dry run's speaker voices before the paid run.
 - **Shorts from this narration (no extra paid audio):** (1) "The eclipse in the wrong place" r23–r30; (2) "Five extra Mondays" r32–r38 (the coral calendar); (3) "The moon that's falling" r67–r73.
 - **Thumbnails (A/B/C):** (a) giant Moon over a molten young Earth, tiny Arka, "IT USED TO BE THIS CLOSE"; (b) a clock reading 17:00 as the end of the day, "DAYS WERE 17 HOURS"; (c) Phobos cracking into a ring above Mars, "THIS MOON IS FALLING".
