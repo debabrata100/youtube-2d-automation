@@ -6,8 +6,8 @@ Arka is Gahanarka's mascot: a curious girl astronaut in a gold suit, named after
 
 ## Who Arka is (decided 19 Nov 2026)
 
-- **She/her.** Arka is a girl; her voice (ElevenLabs, voice `cgSgspJ2msm6clMCkdW9`) has been the same since Ep 2, so it stays.
-- **Voice backup plan.** Jessica is an ElevenLabs default voice (no Voice Library owner can withdraw it), so we don't keep a designed backup. If it is ever retired, use the recorded Arka takes (`jobs/*/audio/takes/arka.wav`, e.g. `jobs/mg-narration-b`) as the reference for Voice Design and pick the closest match in a blind test. If we ever want Arka's voice to be unique to the channel, switch at the start of a new series with a story reason, not mid-series (decided 20 Nov 2026).
+- **She/her.** Arka is a grown-up woman (around thirty in voice and manner). Her voice from M1 on is **Arka D2** (ElevenLabs Voice Design, `TL9f5lGrdeX5wHMushRC`, chosen in a blind test on 21 Nov 2026 with the grown-up positioning); Eps 2-5 used Jessica (`cgSgspJ2msm6clMCkdW9`). The switch happens at the start of the new "thought experiment" series, as decided on 20 Nov.
+- **Voice backup plan.** D2 is private to our account, so no Voice Library owner can withdraw it. Keep the recorded takes (`jobs/avt-d2`, later `jobs/*/audio/takes/arka.wav`) as the reference if it ever had to be recreated with Voice Design (prompt in `docs/VOICE_LICENSING.md`).
 - **Role:** she asks the questions viewers are thinking, makes the jokes, and from Ep 5 on ends each episode with the next question (see `docs/CONTENT_PLAN.md`).
 - **In scripts:** the narrator calls her by name ("Sorry, Arka"); use "she" in descriptions, comments and docs.
 
