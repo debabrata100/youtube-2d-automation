@@ -4,6 +4,7 @@ import day from './themes/explainer-day.json';
 import storm from './themes/explainer-storm.json';
 import paint from './themes/paint-notebook.json';
 import paintNight from './themes/paint-night.json';
+import paintNightGold from './themes/paint-night-gold.json';
 
 const hex = z.string().regex(/^#[0-9a-fA-F]{6}$/, 'Expected a six-digit hex color');
 const ramp = z.array(hex).min(2).max(8);
@@ -40,7 +41,7 @@ export const themeSchema = z.object({
 }).strict();
 export type Theme = z.infer<typeof themeSchema>;
 
-const registry = new Map<string, Theme>([dusk, day, storm, paint, paintNight].map(raw => {
+const registry = new Map<string, Theme>([dusk, day, storm, paint, paintNight, paintNightGold].map(raw => {
   const theme = themeSchema.parse(raw);
   return [theme.id, Object.freeze(theme)] as const;
 }));
