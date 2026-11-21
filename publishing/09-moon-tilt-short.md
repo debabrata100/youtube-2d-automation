@@ -26,7 +26,7 @@ Full episode: What Actually Happens If the Moon Disappears?
 ```
 
 ## Related video
-Ep 4, "What Actually Happens If the Moon Disappears?" (`ZbEeo3Xx0Iw`; titled "What If the Moon Disappeared Tonight?" until 22 Nov). Copy the ID from Studio, never retype it.
+Ep 4, "What Actually Happens If the Moon Disappears?" (`ZbEeo3Xx0Iw`; titled "What If the Moon Disappeared Tonight?" until 22 Nov). Studio description updated to the new title 22 Nov, 00:35. Copy the ID from Studio, never retype it.
 
 ## Pinned comment
 

@@ -6,7 +6,7 @@ tags and pinned-comment text for each upload live in its sheet (`publishing/NN-*
 **Rule:** update this file every time something changes in Studio (upload, schedule, thumbnail test, subtitles, Related video,
 pinned comment, end screen, playlist). Copy video IDs from Studio or the address bar, never from a screenshot.
 
-Last full check: **20 Nov 2026, 5 PM IST** (language and subtitles checked for every upload in Studio and on the watch pages).
+Last full check: **20 Nov 2026, 5 PM IST**. Last change: **22 Nov, 00:40 IST** (Ep 4 thumbnails + description line 1; Moon Shorts' "Full episode" lines) (language and subtitles checked for every upload in Studio and on the watch pages).
 
 ## Long videos (16:9)
 
@@ -15,7 +15,7 @@ Last full check: **20 Nov 2026, 5 PM IST** (language and subtitles checked for e
 | Ep 1 | The Only Place You Could Go Outside Without a Spacesuit (Titan) | [2VuBbvgJnXA](https://youtu.be/2VuBbvgJnXA) | Public since 16 Nov | Running (result due 1 Dec) | ✅ English SRT | not recorded | not recorded | Could You Survive…? | none (made before sheets) |
 | Ep 2 | What Happens If You Take Off Your Helmet in Space? | [bUK19RqsLok](https://youtu.be/bUK19RqsLok) | Public since 19 Nov, 9:30 PM | Running (a, c, d) | ✅ English SRT | ✅ posted and pinned 20 Nov ("Which one did you believe…", Watch next → Titan) | → Titan + subscribe (per sheet) | Could You Survive…? | `02-helmet-off.md` |
 | Ep 3 | How You'd Die on Every Moon in the Solar System | [MnfXbn6mD8I](https://youtu.be/MnfXbn6mD8I) | Scheduled **Sun 22 Nov, 9:30 PM**; **being reworked 22 Nov** (new script, narration, visuals): a new upload will replace this copy (removal only with Debabrata's OK) | Set (3 thumbnails) | ✅ English SRT | ⏳ after launch | ⏳ last 12 s left empty: add Ep 2 + subscribe | Could You Survive…? | `04-every-moon.md` |
-| Ep 4 | What Actually Happens If the Moon Disappears? (was "What If the Moon Disappeared Tonight?" until 22 Nov) | [ZbEeo3Xx0Iw](https://youtu.be/ZbEeo3Xx0Iw) | Scheduled **Thu 26 Nov, 9:30 PM** | Set (22 Nov): "MYTH \| REALITY", "WE SURVIVE?", "EARTH TIPS OVER?" (replaced c, e, b; test starts when public) | ✅ English SRT | ⏳ after launch | ⏳ last 12 s left empty: add Ep 3 + subscribe | What If…? | `06-moon-gone.md` |
+| Ep 4 | What Actually Happens If the Moon Disappears? (was "What If the Moon Disappeared Tonight?" until 22 Nov) | [ZbEeo3Xx0Iw](https://youtu.be/ZbEeo3Xx0Iw) | Scheduled **Thu 26 Nov, 9:30 PM** | Set (22 Nov, 00:40): 1 "MYTH \| REALITY" (gold MYTH), 2 "WE SURVIVE?", 3 "EARTH TIPS OVER?" (gold text); files `myth-vs-reality-gold.png`, `we-survive.png`, `earth-tips-over-gold.png`; replaced c, e, b; test starts when public | ✅ English SRT | ⏳ after launch | ⏳ last 12 s left empty: add Ep 3 + subscribe | What If…? | `06-moon-gone.md` |
 | Ep 5 | If the Sun Disappeared, Even the Air Would Fall | not uploaded | Rendered; date not confirmed (Thu 3 Dec, 9:30 PM proposed) | Ready: 3 thumbnails in `13-ghost-sun/` | to do | to do | to do | What If…? | `13-ghost-sun.md` |
 | — | Channel trailer, "This is Gahanarka" | [AanxfhmzenM](https://youtu.be/AanxfhmzenM) | Unlisted since 19 Nov | — | ⚠️ **auto-captions only, no SRT** | — | — | — | `07-channel-trailer.md` |
 
