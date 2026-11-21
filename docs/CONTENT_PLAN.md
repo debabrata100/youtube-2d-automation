@@ -76,6 +76,11 @@ Legend: **Debabrata** = Debabrata's idea, **Claude** = Claude's addition. Facts 
 | V3 | **NASA Lost Voyager 1 for 48 Hours** | Claude | 18-20 Oct 2026 silence; it switched to backup thrusters on its own | **Published 20 Nov** (-FTg1FvhxKI); fastest start so far, but 61% swiped away in the first hours (opened on a date, not the shock). |
 | V4 | **What If You Rode Voyager 1 for 50 Years?** (long episode) | Claude | Arka's point of view: launch, Jupiter, Saturn, the Pale Blue Dot, the heliopause, interstellar space, the Golden Record | **Plan for the 50th anniversary:** Voyager 2 launched 20 Aug 1977, Voyager 1 on 5 Sep 1977. Make it months ahead and publish about a week before. Big channels (Astrum 1.37M in a day) own the news moment, so our edge is the ride-along story. |
 
+| V5 | **Voyager Is Slowly Switching Itself Off** (Short, 30–40 s) | Debabrata (more Voyager Shorts, 21 Nov) + Claude (angle) | Plutonium heat source losing a few watts a year; NASA turning instruments off one by one to keep it talking *(check figures)*. Hook = stakes, second act = what gets switched off next, loop ending. | **Approved 21 Nov.** Build after the Every Moon rework, first Shorts under the new Shorts rules. Proposed Fri 27 Nov. ~500 credits. |
+| V6 | **The Planet Alignment That Happens Once Every 176 Years** (Short, 30–40 s) | Debabrata + Claude (angle) | Gary Flandro (1965) spotted the late-1970s alignment that let one spacecraft slingshot past the outer planets; miss it and wait 176 years *(check)*. | **Approved 21 Nov.** Proposed Wed 2 Dec. ~500 credits. |
+
+**Voyager series linking (21 Nov 2026):** all Voyager Shorts go in a "Voyager" playlist and each Short's Related video points to the next one in the set; once the Voyager long episode (V4) exists, switch them all to it (Shorts earn no watch hours toward monetization). Every Voyager Short needs its own shock and second act and a different look ("One Light-Day Away" got only 118 views; "Lost for 48 Hours" ~1,000).
+
 **News rule:** for big space news, publish a Short on the day (catches the wave), and a deeper long video with an evergreen title later (keeps earning). Astrum's Voyager video did both in one: news in the first 3 minutes, an evergreen title ("What Voyager 1 Found…").
 
 ---
@@ -88,7 +93,8 @@ Legend: **Debabrata** = Debabrata's idea, **Claude** = Claude's addition. Facts 
 4. **E1** When will a day be 25 hours long? (teases E7.) Script draft 1 done 21 Nov.
 5. **E7** Apophis 2029 (strongest demand; researched carefully).
 6. **S2** Would a black-hole Sun suck us in?
-7. **V4** Voyager 50th anniversary episode (target: published mid-August 2027).
+7. **V5, V6** two more Voyager Shorts (after the Every Moon rework; Fri 27 Nov and Wed 2 Dec proposed).
+8. **V4** Voyager 50th anniversary episode (target: published mid-August 2027; consider making it earlier since Voyager performs best).
 
 Each long episode gets 2–3 Shorts, each with its own hook, layout and ending. Good Short-only ideas: **S4** (Sun is white), **M6** (one side of the Moon), **E5** (magnetic flip), M4 as a teaser. **No brand sting in Shorts.**
 
