@@ -32,6 +32,16 @@ and in the description and pinned comment, rather than re-recording.
 ## Shorts: the first second (from the Voyager Shorts, 21 Nov 2026)
 - [ ] **Open on the shock or the stakes, not a date or a setup.** "NASA lost contact with Voyager 1" beats "On October eighteenth, NASA called Voyager 1". Put dates and context in the second line. (V3 opened on a date: 61% swiped away in its first two hours; V1 opened on the hook, "Right now, a message from Earth needs a full day...": 46% stayed, our best.)
 - [ ] **The first frame shows the subject and the problem at once** (the probe, a cross, a number), so the line and the picture land together in the first second.
+- [ ] **Tie the hook to something in the viewer's pocket or daily life.** "The last photo you took is bigger than Voyager 1's entire memory" works because the comparison is already on their phone. Abstract astronomy facts come second.
+
+## Shorts: the middle, the length and the ending (from YouTube's analysis of V2, 21 Nov 2026)
+- [ ] **Escalate, never repeat.** After the hook, every line adds something new and bigger; never restate the hook or its joke (V2 repeated "my selfies are bigger than that" at 0:12–0:16, the exact window where viewers decide to stay or swipe).
+- [ ] **A second act with stakes by about 60% of the way through.** Turn the quirky fact into a story with something at risk (V2: the 2023 memory-chip failure fixed from 24 billion km away). Specs alone don't hold to the end.
+- [ ] **Length: aim for 30–40 s.** Go longer only if the second act earns it; the 65 s Titan Short lost viewers after about 40 s, the 28 s Helmet Short held. Cut anything that doesn't escalate.
+- [ ] **Keep the middle moving (about 15–30 s):** a new picture or visible change every 2–3 s, brisk delivery; this is where a static spec list loses people before the payoff.
+- [ ] **End on a loop.** The last line should run straight back into the first one ("…which is wild, considering the last photo you took…"), so a viewer flows into a second watch. A neat "the end" line gives them a clean place to swipe.
+- [ ] **Everyday comparisons for every big number** (a selfie for 69 KB, an 8-track tape, dial-up internet being 100 times faster).
+- [ ] **Cover frame:** pick the frame that shows the hook comparison itself (the phone next to the spacecraft, or the big "69 KB" number), not a generic shot.
 
 ## Grown-up audience (positioning, 21 Nov 2026)
 Our viewer is a curious 16–35-year-old, not a child. A cartoon style is fine; a children's tone is not.
