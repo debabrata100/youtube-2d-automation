@@ -66,7 +66,7 @@ export const Terrain: React.FC<{config: TerrainConfig; theme: Theme; width: numb
 
 export type PropConfig = {ink?: string; item: 'thermometer' | 'pressure-arrows' | 'motion-lines' | 'exclaim' | 'question' | 'check' | 'cross' | 'counter' | 'stamp' | 'vignette' | 'station' | 'helmet' | 'doodle-stars' | 'chamber'
   | 'cliff' | 'geyser' | 'plume' | 'radiation-meter' | 'radiation-belt' | 'battery' | 'airbag' | 'small-moon' | 'ice-cutaway' | 'frost'
-  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb' | 'crescent' | 'orbit-ring' | 'town' | 'lion' | 'zebra' | 'coral' | 'plankton' | 'tide-gauge' | 'tilt-dial' | 'earth-axis' | 'impact' | 'dino' | 'reflector' | 'bed' | 'stir' | 'clock' | 'eclipse' | 'moonbeam' | 'young-earth' | 'bee' | 'flower' | 'tree' | 'tardigrade' | 'vent' | 'shell' | 'snowfall' | 'night-half' | 'mushroom' | 'sparkle'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
+  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb' | 'crescent' | 'orbit-ring' | 'town' | 'lion' | 'zebra' | 'coral' | 'plankton' | 'tide-gauge' | 'tilt-dial' | 'earth-axis' | 'impact' | 'dino' | 'reflector' | 'bed' | 'stir' | 'clock' | 'eclipse' | 'moonbeam' | 'young-earth' | 'bee' | 'flower' | 'tree' | 'tardigrade' | 'vent' | 'shell' | 'snowfall' | 'night-half' | 'mushroom' | 'sparkle' | 'clock-time' | 'rope' | 'pulse' | 'span' | 'sky' | 'streetlight' | 'arrow' | 'ice-layer' | 'city-lights' | 'tide-bulge' | 'caption'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
   values?: Array<{frame: number; value: number; ramp?: boolean}>; text?: string; direction?: 'in' | 'out';
   labels?: string[]; colors?: string[]; highlight?: number; ring?: boolean; belt?: boolean; range?: [number, number]};
 
@@ -508,6 +508,103 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
           <path d={`M ${-s * .09} ${s * .156} l ${s * .06} ${s * .01} m ${-s * .06} ${-s * .01} l ${s * .01} ${-s * .06}`} {...stroke('#bfe6ff', w * 1.1)}/></g>)}</g>
       </g>;
     }
+    case 'clock-time': {
+      // Clock set to a real time: values = seconds after 12:00:00 (ramp to run it). Analog face plus a digital readout; text: caption.
+      const v = counterAt(c.values ?? [], frame), r = s * .4, mn = (v / 60) * 6, hr = (v / 3600) * 30;
+      const hh = 12 + Math.floor(v / 3600), mm = Math.floor((v % 3600) / 60), ss = v % 60, pad = (n: number) => String(n).padStart(2, '0');
+      const label = `${hh > 12 ? hh - 12 : hh}:${pad(mm)}:${pad(ss)}`, bw = s * .78, bh = s * .2, by = r + s * .06;
+      return <g transform={at}>
+        <circle r={r} fill="#ffffff" stroke={ink} strokeWidth={w}/>
+        {Array.from({length: 12}, (_, i) => { const a = i * Math.PI / 6; return <path key={i} d={`M ${Math.sin(a) * r * .85} ${-Math.cos(a) * r * .85} L ${Math.sin(a) * r * .95} ${-Math.cos(a) * r * .95}`} {...stroke('#1b1b1b', w * .6)}/>; })}
+        {mn > 0 && <path d={`M 0 0 L 0 ${-r * .7} A ${r * .7} ${r * .7} 0 ${mn > 180 ? 1 : 0} 1 ${Math.sin(mn * Math.PI / 180) * r * .7} ${-Math.cos(mn * Math.PI / 180) * r * .7} Z`} fill="#ffd25e" opacity=".45"/>}
+        <path d={`M 0 0 L 0 ${-r * .5}`} {...stroke('#1b1b1b', w * 1.4)} transform={`rotate(${hr})`}/>
+        <path d={`M 0 0 L 0 ${-r * .78}`} {...stroke('#c0392b', w)} transform={`rotate(${mn})`}/>
+        <circle r={w} fill="#1b1b1b"/>
+        <rect x={-bw / 2} y={by} width={bw} height={bh} rx={s * .04} fill="#0f1830" stroke={ink} strokeWidth={w * .6}/>
+        <text x={0} y={by + bh * .76} textAnchor="middle" fontFamily="'Courier New', monospace" fontWeight="bold" fontSize={bh * .78} fill="#ffd25e">{label}</text>
+        {c.text && <text x={0} y={by + bh + s * .17} textAnchor="middle" fontFamily={font} fontSize={s * .15} fill={ink}>{c.text}</text>}
+      </g>;
+    }
+    case 'rope': {
+      // A rope along x (size = length, centred). level: a kink travelling from the left end (0) to the right end (1).
+      // direction 'out': snapped at the middle; level = how far the two halves have recoiled (0..1).
+      const lv = levelAt(c.level, frame), L = s, col = c.color ?? '#e8d9b0';
+      if (c.direction === 'out') {
+        const k = Math.min(1, lv), half = L / 2 * (1 - .55 * k), wob = s * .04 * k;
+        const left = `M ${-L / 2} 0 Q ${-L / 2 + half * .5} ${-wob} ${-L / 2 + half} ${wob}`, right = `M ${L / 2} 0 Q ${L / 2 - half * .5} ${wob} ${L / 2 - half} ${-wob}`;
+        return <g transform={at} opacity={1 - .6 * k}><path d={left} {...stroke(col, w * .9)}/><path d={right} {...stroke(col, w * .9)}/></g>;
+      }
+      const kx = -L / 2 + L * lv, show = lv > 0 && lv < 1, kw = s * .06, kh = s * .08;
+      const d = show ? `M ${-L / 2} 0 L ${kx - kw} 0 Q ${kx - kw / 2} ${-kh} ${kx} 0 Q ${kx + kw / 2} ${kh} ${kx + kw} 0 L ${L / 2} 0` : `M ${-L / 2} 0 L ${L / 2} 0`;
+      return <g transform={at}><path d={d} {...stroke(col, w * .9)}/>{show && <circle cx={kx} cy={0} r={w * 1.6} fill="#ffd25e" opacity=".55"/>}</g>;
+    }
+    case 'pulse': {
+      // A faint track along x (size = length, centred) with a glowing dot at level (0 = left end, 1 = right end).
+      const lv = levelAt(c.level, frame), L = s, col = c.color ?? '#fff6c8', x = -L / 2 + L * lv;
+      return <g transform={at}>
+        <path d={`M ${-L / 2} 0 L ${L / 2} 0`} {...stroke(col, w * .35)} opacity=".35" strokeDasharray={`${w * 2} ${w * 2}`}/>
+        {lv > 0 && <path d={`M ${Math.max(-L / 2, x - L * .12)} 0 L ${x} 0`} {...stroke(col, w * .9)} opacity=".7"/>}
+        {lv > 0 && lv <= 1 && <><circle cx={x} cy={0} r={w * 2.6} fill={col} opacity=".3"/><circle cx={x} cy={0} r={w * 1.2} fill={col}/></>}
+      </g>;
+    }
+    case 'span': {
+      // A measured distance: a double-headed line along x (size = length, centred) with end ticks; text above it. level = drawn fraction.
+      const lv = levelAt(c.level, frame), L = s * lv, col = c.color ?? ink, k = s * .025;
+      return <g transform={at}>
+        <path d={`M ${-L / 2} 0 L ${L / 2} 0`} {...stroke(col, w * .5)}/>
+        <path d={`M ${-L / 2} ${-k * 1.6} L ${-L / 2} ${k * 1.6} M ${L / 2} ${-k * 1.6} L ${L / 2} ${k * 1.6}`} {...stroke(col, w * .5)}/>
+        <path d={`M ${-L / 2 + k * 1.8} ${-k} L ${-L / 2} 0 L ${-L / 2 + k * 1.8} ${k} M ${L / 2 - k * 1.8} ${-k} L ${L / 2} 0 L ${L / 2 - k * 1.8} ${k}`} {...stroke(col, w * .5)}/>
+        {c.text && lv > .6 && <text x={0} y={-s * .035} textAnchor="middle" fontFamily={font} fontSize={s * .06} fill={col}>{c.text}</text>}
+      </g>;
+    }
+    case 'sky': {
+      // A daytime sky over the whole frame (centre it; covers 2.6 x size wide, 1.3 x size tall, so camera moves never show an edge). level 1 = bright day, 0 = gone (night shows through).
+      const lv = levelAt(c.level, frame), id = `sky-${Math.round(c.x * 1000)}-${Math.round(c.y * 1000)}`;
+      return <g transform={at} opacity={lv}>
+        <defs><linearGradient id={id} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={c.color ?? '#6fb6ff'}/><stop offset="1" stopColor="#cfe8ff"/></linearGradient></defs>
+        <rect x={-s * 1.3} y={-s * .65} width={s * 2.6} height={s * 1.3} fill={`url(#${id})`}/>
+      </g>;
+    }
+    case 'streetlight': {
+      // A street lamp (size = height, base at y + size/2). Glows when level > .5.
+      const on = levelAt(c.level, frame) > .5, top = -s / 2;
+      return <g transform={at}>
+        <path d={`M 0 ${s / 2} L 0 ${top + s * .05} Q 0 ${top} ${s * .08} ${top}`} {...stroke(ink, w * .7)}/>
+        <path d={`M ${s * .04} ${top + s * .01} L ${s * .14} ${top + s * .01} L ${s * .12} ${top + s * .05} L ${s * .06} ${top + s * .05} Z`} fill={on ? '#ffd86b' : '#3a4566'} stroke={ink} strokeWidth={w * .4}/>
+        {on && <path d={`M ${s * .06} ${top + s * .05} L ${-s * .12} ${s / 2} L ${s * .32} ${s / 2} L ${s * .12} ${top + s * .05} Z`} fill="#ffd86b" opacity=".18"/>}
+      </g>;
+    }
+    case 'arrow': {
+      // A hand-drawn arrow along x (size = length, centred); level = drawn fraction (0..1).
+      const lv = levelAt(c.level, frame), L = s * lv, col = c.color ?? ink, k = s * .14, x1 = -s / 2 + L;
+      if (lv <= 0) return null;
+      return <g transform={at}><path d={`M ${-s / 2} 0 Q ${-s / 2 + L / 2} ${-s * .04} ${x1} 0`} {...stroke(col, w * 1.1)}/>
+        {lv > .3 && <path d={`M ${x1 - k} ${-k * .6} L ${x1} 0 L ${x1 - k} ${k * .6}`} {...stroke(col, w * 1.1)}/>}</g>;
+    }
+    case 'ice-layer': {
+      // A frozen layer on the ground (centred; 2 x size wide). level = thickness (0..1, up to 0.1 x size), with frost crystals on top.
+      const lv = levelAt(c.level, frame), t = s * .1 * lv, random = seededRandom(17);
+      if (lv <= 0) return null;
+      return <g transform={at}>
+        <rect x={-s} y={-t} width={s * 2} height={t + s * .02} fill="#e8f4ff" stroke="#9fd3f0" strokeWidth={w * .4}/>
+        {Array.from({length: 26}, (_, i) => { const x = (random() - .5) * s * 1.9, k = s * (.008 + random() * .01); return <path key={i} d={`M ${x - k} ${-t} L ${x + k} ${-t} M ${x} ${-t - k} L ${x} ${-t + k}`} {...stroke('#ffffff', w * .3)}/>; })}
+      </g>;
+    }
+    case 'city-lights': {
+      // Tiny city lights scattered over the left half of a planet disc (size = diameter; rotate to choose the side). level = brightness.
+      const lv = levelAt(c.level, frame), r = s * .5, random = seededRandom(Math.round(c.x * 97 + c.y * 89) || 3);
+      return <g transform={at} opacity={lv}>{Array.from({length: c.count * 2}, (_, i) => { const a = Math.PI / 2 + random() * Math.PI, d = Math.sqrt(random()) * r * .88;
+        return <circle key={i} cx={Math.cos(a) * d} cy={Math.sin(a) * d} r={s * (.006 + random() * .006)} fill="#ffd86b"/>; })}</g>;
+    }
+    case 'caption': {
+      // A plain hand-lettered caption (size = letter height x 4); for small honest labels like "not to scale".
+      return c.text ? <text transform={at} x={0} y={0} textAnchor="middle" fontFamily={font} fontSize={s * .25} fill={c.color ?? ink}>{c.text}</text> : null;
+    }
+    case 'tide-bulge': {
+      // Ocean bulges around a planet (size = planet diameter), stretched along x. level = bulge size (0 none, 1 big).
+      const lv = levelAt(c.level, frame), r = s * .5;
+      return <g transform={at}><ellipse rx={r * (1 + .45 * lv)} ry={r * (1 + .04 * lv)} fill={c.color ?? '#4f9de8'} fillOpacity=".45" stroke={c.color ?? '#7fc0ff'} strokeWidth={w * .4}/></g>;
+    }
     case 'clock': {
       // Clock face; level sets how fast the hands spin (0 stopped, 1 fast). text: caption below.
       const lv = levelAt(c.level, frame), r = s * .4, hr = frame * lv * 2, mn = frame * lv * 24;
@@ -613,8 +710,8 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
     }
     case 'shell': {
       // An expanding shell of darkness (a missing pulse of sunlight) seen as a dark band around the Sun. level = how far it has travelled
-      // (0 = at the Sun, 1 = at size/2); count = band thickness in 40ths of the full radius (40 = the whole radius).
-      const lv = levelAt(c.level, frame), R = s * .5 * lv, band = s * .5 * c.count / 40, r0 = Math.max(0, R - band), mid = (R + r0) / 2;
+      // (0 = at the Sun, 1 = at size/2, or one frame width with direction 'out'); count = band thickness in 40ths of size/2.
+      const lv = levelAt(c.level, frame), R = (c.direction === 'out' ? width : s * .5) * lv, band = s * .5 * c.count / 40, r0 = Math.max(0, R - band), mid = (R + r0) / 2;
       return <g transform={at}>
         <circle r={mid} fill="none" stroke="#02040c" strokeWidth={Math.max(.5, R - r0)} opacity=".88"/>
         <circle r={R} fill="none" stroke="#7fa3ff" strokeWidth={w * .35} opacity=".5"/>

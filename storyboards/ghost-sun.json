@@ -145,6 +145,22 @@
       "height": 1080,
       "layers": [
         {
+          "id": "sky",
+          "kit": {
+            "type": "prop",
+            "item": "sky",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 1.0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
           "id": "town",
           "kit": {
             "type": "prop",
@@ -155,7 +171,7 @@
             "level": [
               {
                 "frame": 0,
-                "value": 1
+                "value": 0
               }
             ],
             "ink": "#c9d3ea"
@@ -192,9 +208,10 @@
             },
             {
               "frame": {
-                "at": "gone"
+                "at": "gone",
+                "offset": 8
               },
-              "value": 0
+              "value": 0.6
             }
           ]
         },
@@ -205,7 +222,8 @@
             "item": "orbit-ring",
             "x": 0.7,
             "y": 0.32,
-            "size": 0.28,
+            "size": 0.36,
+            "color": "#14213d",
             "ink": "#c9d3ea"
           },
           "opacity": [
@@ -227,6 +245,22 @@
               "value": 1
             }
           ]
+        },
+        {
+          "id": "clock",
+          "kit": {
+            "type": "prop",
+            "item": "clock-time",
+            "x": 0.14,
+            "y": 0.4,
+            "size": 0.24,
+            "values": [
+              {
+                "frame": 0,
+                "value": 0
+              }
+            ]
+          }
         }
       ],
       "annotations": [
@@ -238,7 +272,7 @@
           "size": 64,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#eef1f8",
+          "color": "#14213d",
           "pop": false
         },
         {
@@ -249,7 +283,7 @@
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#14213d",
           "pop": true,
           "opacity": [
             {
@@ -279,6 +313,22 @@
       "width": 1920,
       "height": 1080,
       "layers": [
+        {
+          "id": "sky",
+          "kit": {
+            "type": "prop",
+            "item": "sky",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 1.0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
         {
           "id": "sun",
           "kit": {
@@ -515,7 +565,7 @@
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#14213d",
           "pop": true,
           "opacity": [
             {
@@ -549,9 +599,9 @@
           "id": "sun",
           "kit": {
             "type": "planet",
-            "x": 0.16,
+            "x": 0.22,
             "y": 0.5,
-            "radius": 0.14,
+            "radius": 0.12,
             "base": "#ffcf4a",
             "bands": [
               "#ffe27a",
@@ -567,9 +617,9 @@
           "id": "earth",
           "kit": {
             "type": "planet",
-            "x": 0.84,
-            "y": 0.55,
-            "radius": 0.1,
+            "x": 0.78,
+            "y": 0.5,
+            "radius": 0.08,
             "base": "#5aa9e6",
             "bands": [
               "#7cc576",
@@ -583,15 +633,32 @@
           }
         },
         {
-          "id": "beam",
+          "id": "light",
           "kit": {
             "type": "prop",
-            "item": "signal",
+            "item": "pulse",
             "x": 0.5,
             "y": 0.5,
-            "size": 0.55,
+            "size": 0.99,
             "color": "#fff6c8",
-            "ink": "#c9d3ea"
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "left"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "ago"
+                },
+                "value": 1
+              }
+            ]
           }
         }
       ],
@@ -610,8 +677,8 @@
         {
           "id": "n1",
           "text": "a ghost",
-          "x": 1426,
-          "y": 318,
+          "x": 960,
+          "y": 259,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -641,12 +708,12 @@
         {
           "id": "n2",
           "text": "light left 8 min 20 s ago",
-          "x": 1419,
-          "y": 913,
+          "x": 960,
+          "y": 734,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -655,14 +722,14 @@
             },
             {
               "frame": {
-                "at": "ago",
+                "at": "eight",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "ago",
+                "at": "eight",
                 "offset": 5
               },
               "value": 1
@@ -672,8 +739,8 @@
         {
           "id": "n3",
           "text": "no way of knowing",
-          "x": 830,
-          "y": 920,
+          "x": 960,
+          "y": 842,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -804,24 +871,30 @@
           "id": "clock",
           "kit": {
             "type": "prop",
-            "item": "clock",
-            "x": 0.62,
-            "y": 0.62,
-            "size": 0.3,
-            "level": [
+            "item": "clock-time",
+            "x": 0.68,
+            "y": 0.42,
+            "size": 0.34,
+            "values": [
               {
                 "frame": 0,
                 "value": 0
               },
               {
                 "frame": {
-                  "at": "twenty"
+                  "at": "disappears"
                 },
-                "value": 0.6
+                "value": 0,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "back",
+                  "offset": -2
+                },
+                "value": 500
               }
-            ],
-            "text": "8 min 20 s",
-            "ink": "#c9d3ea"
+            ]
           }
         }
       ],
@@ -840,12 +913,12 @@
         {
           "id": "n1",
           "text": "the experiment",
-          "x": 1410,
-          "y": 325,
+          "x": 576,
+          "y": 238,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -870,9 +943,9 @@
         },
         {
           "id": "n2",
-          "text": "gone for 8:20",
-          "x": 1422,
-          "y": 450,
+          "text": "gone for 8 min 20 s",
+          "x": 576,
+          "y": 864,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -885,14 +958,14 @@
             },
             {
               "frame": {
-                "at": "twenty",
+                "at": "exactly",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "twenty",
+                "at": "exactly",
                 "offset": 5
               },
               "value": 1
@@ -902,12 +975,12 @@
         {
           "id": "n3",
           "text": "then back",
-          "x": 1507,
-          "y": 553,
+          "x": 576,
+          "y": 972,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -941,7 +1014,7 @@
           "id": "earth",
           "kit": {
             "type": "planet",
-            "x": 0.28,
+            "x": 0.26,
             "y": 0.55,
             "radius": 0.17,
             "base": "#5aa9e6",
@@ -957,14 +1030,49 @@
           }
         },
         {
-          "id": "night",
+          "id": "earth-night",
           "kit": {
             "type": "prop",
             "item": "night-half",
-            "x": 0.28,
+            "x": 0.26,
             "y": 0.55,
             "size": 0.34,
             "rotation": 180,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "earth-city",
+          "kit": {
+            "type": "prop",
+            "item": "city-lights",
+            "x": 0.26,
+            "y": 0.55,
+            "size": 0.34,
+            "count": 16,
+            "rotation": 0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.9
+              }
+            ]
+          }
+        },
+        {
+          "id": "earth-day",
+          "kit": {
+            "type": "prop",
+            "item": "night-half",
+            "x": 0.26,
+            "y": 0.55,
+            "size": 0.34,
+            "rotation": 0,
             "level": [
               {
                 "frame": 0,
@@ -972,7 +1080,15 @@
               },
               {
                 "frame": {
-                  "at": "out"
+                  "at": "out",
+                  "offset": -1
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "out",
+                  "offset": 8
                 },
                 "value": 1
               }
@@ -983,9 +1099,9 @@
           "id": "sun",
           "kit": {
             "type": "planet",
-            "x": 0.76,
-            "y": 0.45,
-            "radius": 0.1,
+            "x": 0.84,
+            "y": 0.42,
+            "radius": 0.09,
             "base": "#ffcf4a",
             "bands": [
               "#ffe27a",
@@ -1015,6 +1131,41 @@
               "value": 1
             }
           ]
+        },
+        {
+          "id": "clock",
+          "kit": {
+            "type": "prop",
+            "item": "clock-time",
+            "x": 0.55,
+            "y": 0.4,
+            "size": 0.22,
+            "values": [
+              {
+                "frame": 0,
+                "value": 500
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "out",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "out"
+              },
+              "value": 1
+            }
+          ]
         }
       ],
       "annotations": [
@@ -1032,12 +1183,12 @@
         {
           "id": "n1",
           "text": "the twist",
-          "x": 1416,
-          "y": 325,
+          "x": 1152,
+          "y": 194,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -1062,13 +1213,13 @@
         },
         {
           "id": "n2",
-          "text": "lights out on Earth...",
-          "x": 1415,
-          "y": 673,
+          "text": "lights out on Earth: 12:08:20",
+          "x": 1152,
+          "y": 821,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -1094,8 +1245,8 @@
         {
           "id": "n3",
           "text": "...the Sun is already back",
-          "x": 1422,
-          "y": 798,
+          "x": 1152,
+          "y": 940,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -1389,25 +1540,227 @@
       "height": 1080,
       "layers": [
         {
-          "id": "clock",
+          "id": "town",
           "kit": {
             "type": "prop",
-            "item": "clock",
-            "x": 0.2,
-            "y": 0.5,
-            "size": 0.26,
+            "item": "town",
+            "x": 0.3,
+            "y": 0.88,
+            "size": 0.78,
             "level": [
               {
                 "frame": 0,
-                "value": 0.6
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "darkness"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "darkness",
+                  "offset": 1
+                },
+                "value": 1
               }
             ],
-            "text": "8:20 of dark",
             "ink": "#c9d3ea"
           },
           "opacity": [
             {
               "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "question",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "question"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "lamp1",
+          "kit": {
+            "type": "prop",
+            "item": "streetlight",
+            "x": 0.06,
+            "y": 0.76,
+            "size": 0.3,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "darkness"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "darkness",
+                  "offset": 1
+                },
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "question",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "question"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "lamp2",
+          "kit": {
+            "type": "prop",
+            "item": "streetlight",
+            "x": 0.56,
+            "y": 0.76,
+            "size": 0.3,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "darkness"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "darkness",
+                  "offset": 1
+                },
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "question",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "question"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "clock",
+          "kit": {
+            "type": "prop",
+            "item": "clock-time",
+            "x": 0.76,
+            "y": 0.4,
+            "size": 0.32,
+            "values": [
+              {
+                "frame": 0,
+                "value": 500
+              },
+              {
+                "frame": {
+                  "at": "darkness"
+                },
+                "value": 500,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "question",
+                  "offset": -8
+                },
+                "value": 1000
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "question",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "question"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "ghost",
+          "kit": {
+            "type": "prop",
+            "item": "orbit-ring",
+            "x": 0.72,
+            "y": 0.26,
+            "size": 0.26,
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "question",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "question"
+              },
               "value": 1
             },
             {
@@ -1433,9 +1786,9 @@
           "kit": {
             "type": "prop",
             "item": "question",
-            "x": 0.45,
-            "y": 0.45,
-            "size": 0.22,
+            "x": 0.72,
+            "y": 0.26,
+            "size": 0.13,
             "ink": "#c9d3ea"
           },
           "opacity": [
@@ -1458,17 +1811,14 @@
             },
             {
               "frame": {
-                "at": "sky",
-                "edge": "end",
-                "offset": 8
+                "at": "fall",
+                "offset": -1
               },
               "value": 1
             },
             {
               "frame": {
-                "at": "sky",
-                "edge": "end",
-                "offset": 9
+                "at": "fall"
               },
               "value": 0
             }
@@ -1479,9 +1829,9 @@
           "kit": {
             "type": "prop",
             "item": "snowfall",
-            "x": 0.7,
-            "y": 0.52,
-            "size": 0.6,
+            "x": 0.72,
+            "y": 0.6,
+            "size": 0.55,
             "count": 30,
             "level": [
               {
@@ -1527,29 +1877,43 @@
           ]
         },
         {
-          "id": "frost",
+          "id": "ice",
           "kit": {
             "type": "prop",
-            "item": "frost",
-            "x": 0.7,
-            "y": 0.86,
-            "size": 0.5
+            "item": "ice-layer",
+            "x": 0.72,
+            "y": 0.93,
+            "size": 0.27,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "fall"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "fall",
+                  "offset": 40
+                },
+                "value": 0.7
+              }
+            ]
           },
           "opacity": [
             {
               "frame": 0,
-              "value": 0
+              "value": 1
             },
             {
               "frame": {
-                "at": "fall",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "fall"
+                "at": "sky",
+                "edge": "end",
+                "offset": 7
               },
               "value": 1
             },
@@ -1558,14 +1922,6 @@
                 "at": "sky",
                 "edge": "end",
                 "offset": 8
-              },
-              "value": 1
-            },
-            {
-              "frame": {
-                "at": "sky",
-                "edge": "end",
-                "offset": 9
               },
               "value": 0
             }
@@ -1905,13 +2261,13 @@
       "annotations": [
         {
           "id": "n0",
-          "text": "what if it never came back?",
-          "x": 1424,
-          "y": 661,
+          "text": "still 8 min 20 s of dark",
+          "x": 576,
+          "y": 324,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -1920,31 +2276,28 @@
             },
             {
               "frame": {
-                "at": "question",
+                "at": "still",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "question",
+                "at": "still",
                 "offset": 5
               },
               "value": 1
             },
             {
               "frame": {
-                "at": "sky",
-                "edge": "end",
-                "offset": 7
+                "at": "question",
+                "offset": -1
               },
               "value": 1
             },
             {
               "frame": {
-                "at": "sky",
-                "edge": "end",
-                "offset": 8
+                "at": "question"
               },
               "value": 0
             }
@@ -1952,13 +2305,13 @@
         },
         {
           "id": "n1",
-          "text": "even the air would fall",
-          "x": 1424,
-          "y": 786,
-          "size": 92,
+          "text": "what if it never came back?",
+          "x": 576,
+          "y": 454,
+          "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ff5a4a",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -1967,14 +2320,14 @@
             },
             {
               "frame": {
-                "at": "fall",
+                "at": "question",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "fall",
+                "at": "question",
                 "offset": 5
               },
               "value": 1
@@ -1999,6 +2352,100 @@
         },
         {
           "id": "n2",
+          "text": "even the air would fall",
+          "x": 576,
+          "y": 605,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fall",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fall",
+                "offset": 5
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 7
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 8
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "(millions of years later)",
+          "x": 576,
+          "y": 713,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fall",
+                "offset": 5
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fall",
+                "offset": 11
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 7
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sky",
+                "edge": "end",
+                "offset": 8
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "n4",
           "text": "GAHANARKA",
           "x": 960,
           "y": 648,
@@ -2031,7 +2478,7 @@
           ]
         },
         {
-          "id": "n3",
+          "id": "n5",
           "text": "light in the unfathomable",
           "x": 960,
           "y": 756,
@@ -2074,8 +2521,8 @@
           "id": "sun",
           "kit": {
             "type": "planet",
-            "x": 0.14,
-            "y": 0.55,
+            "x": 0.22,
+            "y": 0.5,
             "radius": 0.12,
             "base": "#ffcf4a",
             "bands": [
@@ -2092,8 +2539,8 @@
           "id": "earth",
           "kit": {
             "type": "planet",
-            "x": 0.86,
-            "y": 0.55,
+            "x": 0.78,
+            "y": 0.5,
             "radius": 0.07,
             "base": "#5aa9e6",
             "bands": [
@@ -2108,15 +2555,64 @@
           }
         },
         {
-          "id": "beam",
+          "id": "dist",
           "kit": {
             "type": "prop",
-            "item": "signal",
+            "item": "span",
             "x": 0.5,
-            "y": 0.55,
-            "size": 0.6,
-            "color": "#fff6c8",
+            "y": 0.64,
+            "size": 0.99,
+            "text": "150,000,000 km",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "hundred",
+                  "offset": -1
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "hundred",
+                  "offset": 20
+                },
+                "value": 1
+              }
+            ],
             "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "light",
+          "kit": {
+            "type": "prop",
+            "item": "pulse",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 0.99,
+            "color": "#fff6c8",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "needs"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "gap"
+                },
+                "value": 1
+              }
+            ]
           }
         }
       ],
@@ -2135,12 +2631,12 @@
         {
           "id": "n1",
           "text": "why the delay?",
-          "x": 1507,
-          "y": 373,
+          "x": 960,
+          "y": 238,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -2165,9 +2661,9 @@
         },
         {
           "id": "n2",
-          "text": "150 million km",
-          "x": 1570,
-          "y": 762,
+          "text": "light: 8 min 20 s",
+          "x": 960,
+          "y": 842,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -2180,14 +2676,14 @@
             },
             {
               "frame": {
-                "at": "kilometers",
+                "at": "eight",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "kilometers",
+                "at": "eight",
                 "offset": 5
               },
               "value": 1
@@ -2196,13 +2692,13 @@
         },
         {
           "id": "n3",
-          "text": "light: 8 min 20 s",
-          "x": 1537,
-          "y": 865,
-          "size": 72,
+          "text": "(sped up)",
+          "x": 960,
+          "y": 950,
+          "size": 66,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#eef1f8",
           "pop": true,
           "opacity": [
             {
@@ -2211,14 +2707,14 @@
             },
             {
               "frame": {
-                "at": "gap",
+                "at": "needs",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "gap",
+                "at": "needs",
                 "offset": 5
               },
               "value": 1
@@ -2353,8 +2849,8 @@
         {
           "id": "n1",
           "text": "gravity is just as slow",
-          "x": 1434,
-          "y": 390,
+          "x": 1421,
+          "y": 324,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -2384,12 +2880,12 @@
         {
           "id": "n2",
           "text": "still circling the empty spot",
-          "x": 1439,
-          "y": 493,
+          "x": 1421,
+          "y": 454,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -2406,6 +2902,68 @@
             {
               "frame": {
                 "at": "spot",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "still moving: ~15,000 km",
+          "x": 1421,
+          "y": 583,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "happened",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "happened",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "text": "in 8 min 20 s",
+          "x": 1421,
+          "y": 670,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "happened",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "happened",
                 "offset": 5
               },
               "value": 1
@@ -2682,8 +3240,8 @@
           "id": "sun",
           "kit": {
             "type": "planet",
-            "x": 0.2,
-            "y": 0.55,
+            "x": 0.22,
+            "y": 0.5,
             "radius": 0.1,
             "base": "#ffcf4a",
             "bands": [
@@ -2716,11 +3274,41 @@
           ]
         },
         {
+          "id": "ghost",
+          "kit": {
+            "type": "prop",
+            "item": "orbit-ring",
+            "x": 0.22,
+            "y": 0.5,
+            "size": 0.2,
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "go",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "go"
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
           "id": "earth",
           "kit": {
             "type": "planet",
-            "x": 0.72,
-            "y": 0.55,
+            "x": 0.78,
+            "y": 0.5,
             "radius": 0.07,
             "base": "#5aa9e6",
             "bands": [
@@ -2735,66 +3323,74 @@
           }
         },
         {
-          "id": "string",
+          "id": "ml",
           "kit": {
             "type": "prop",
-            "item": "signal",
-            "x": 0.46,
-            "y": 0.55,
-            "size": 0.48,
-            "color": "#e8d9b0",
+            "item": "motion-lines",
+            "x": 0.78,
+            "y": 0.62,
+            "size": 0.1,
+            "rotation": 90,
             "ink": "#c9d3ea"
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 1
-            },
-            {
-              "frame": {
-                "at": "first",
-                "offset": -1
-              },
-              "value": 1
-            },
-            {
-              "frame": {
-                "at": "first"
-              },
-              "value": 0
-            }
-          ]
+          }
         },
         {
-          "id": "news",
+          "id": "rope",
           "kit": {
             "type": "prop",
-            "item": "signal",
-            "x": 0.46,
-            "y": 0.55,
-            "size": 0.48,
-            "color": "#ffd25e",
-            "ink": "#c9d3ea"
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "news",
-                "offset": -1
+            "item": "rope",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 0.99,
+            "color": "#e8d9b0",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
               },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "news"
+              {
+                "frame": {
+                  "at": "travel"
+                },
+                "value": 0
               },
-              "value": 1
-            }
-          ]
+              {
+                "frame": {
+                  "at": "light"
+                },
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "light",
+          "kit": {
+            "type": "prop",
+            "item": "pulse",
+            "x": 0.5,
+            "y": 0.36,
+            "size": 0.99,
+            "color": "#fff6c8",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "travel"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "light"
+                },
+                "value": 1
+              }
+            ]
+          }
         }
       ],
       "annotations": [
@@ -2812,12 +3408,12 @@
         {
           "id": "n1",
           "text": "a ball on a string",
-          "x": 1400,
-          "y": 325,
+          "x": 960,
+          "y": 216,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -2842,13 +3438,75 @@
         },
         {
           "id": "n2",
+          "text": "light",
+          "x": 960,
+          "y": 335,
+          "size": 58,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "travel",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "travel",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "the news (gravity)",
+          "x": 960,
+          "y": 616,
+          "size": 58,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "travel",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "travel",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n4",
           "text": "doesn't go slack at once",
-          "x": 1489,
-          "y": 433,
+          "x": 960,
+          "y": 778,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -2872,10 +3530,10 @@
           ]
         },
         {
-          "id": "n3",
-          "text": "news travels ≤ light speed",
-          "x": 1414,
-          "y": 954,
+          "id": "n5",
+          "text": "no faster than light",
+          "x": 960,
+          "y": 918,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -2888,14 +3546,14 @@
             },
             {
               "frame": {
-                "at": "light",
+                "at": "faster",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "light",
+                "at": "faster",
                 "offset": 5
               },
               "value": 1
@@ -2998,7 +3656,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -3239,71 +3897,68 @@
           "id": "g",
           "kit": {
             "type": "prop",
-            "item": "signal",
-            "x": 0.55,
-            "y": 0.4,
-            "size": 0.45,
+            "item": "pulse",
+            "x": 0.57,
+            "y": 0.44,
+            "size": 0.96,
             "color": "#9fb8ff",
-            "ink": "#c9d3ea"
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "ripple",
-                "offset": -1
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
               },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "ripple"
+              {
+                "frame": {
+                  "at": "raced"
+                },
+                "value": 0
               },
-              "value": 1
-            }
-          ]
+              {
+                "frame": {
+                  "at": "arrived"
+                },
+                "value": 1
+              }
+            ]
+          }
         },
         {
           "id": "l",
           "kit": {
             "type": "prop",
-            "item": "signal",
-            "x": 0.55,
-            "y": 0.58,
-            "size": 0.45,
+            "item": "pulse",
+            "x": 0.57,
+            "y": 0.56,
+            "size": 0.96,
             "color": "#fff6c8",
-            "ink": "#c9d3ea"
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "flash",
-                "offset": -1
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
               },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "flash"
+              {
+                "frame": {
+                  "at": "raced"
+                },
+                "value": 0
               },
-              "value": 1
-            }
-          ]
+              {
+                "frame": {
+                  "at": "arrived",
+                  "offset": 2
+                },
+                "value": 1
+              }
+            ]
+          }
         },
         {
           "id": "earth",
           "kit": {
             "type": "planet",
-            "x": 0.86,
+            "x": 0.88,
             "y": 0.5,
-            "radius": 0.07,
+            "radius": 0.06,
             "base": "#5aa9e6",
             "bands": [
               "#7cc576",
@@ -3346,14 +4001,14 @@
             },
             {
               "frame": {
-                "at": "light-years",
+                "at": "hundred",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "light-years",
+                "at": "hundred",
                 "offset": 5
               },
               "value": 1
@@ -3363,8 +4018,8 @@
         {
           "id": "n2",
           "text": "gravity ripple",
-          "x": 1056,
-          "y": 324,
+          "x": 1094,
+          "y": 400,
           "size": 58,
           "anchor": "middle",
           "variant": "ink",
@@ -3377,14 +4032,14 @@
             },
             {
               "frame": {
-                "at": "ripple",
+                "at": "raced",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "ripple",
+                "at": "raced",
                 "offset": 5
               },
               "value": 1
@@ -3394,8 +4049,8 @@
         {
           "id": "n3",
           "text": "flash of light",
-          "x": 1056,
-          "y": 756,
+          "x": 1094,
+          "y": 691,
           "size": 58,
           "anchor": "middle",
           "variant": "ink",
@@ -3408,14 +4063,14 @@
             },
             {
               "frame": {
-                "at": "flash",
+                "at": "raced",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "flash",
+                "at": "raced",
                 "offset": 5
               },
               "value": 1
@@ -3439,14 +4094,14 @@
             },
             {
               "frame": {
-                "at": "apart",
+                "at": "less",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "apart",
+                "at": "less",
                 "offset": 5
               },
               "value": 1
@@ -3523,7 +4178,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -3554,7 +4209,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -3588,7 +4243,7 @@
           "id": "earth",
           "kit": {
             "type": "planet",
-            "x": 0.3,
+            "x": 0.28,
             "y": 0.55,
             "radius": 0.2,
             "base": "#5aa9e6",
@@ -3604,14 +4259,49 @@
           }
         },
         {
-          "id": "night",
+          "id": "earth-night",
           "kit": {
             "type": "prop",
             "item": "night-half",
-            "x": 0.3,
+            "x": 0.28,
             "y": 0.55,
             "size": 0.4,
             "rotation": 180,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "earth-city",
+          "kit": {
+            "type": "prop",
+            "item": "city-lights",
+            "x": 0.28,
+            "y": 0.55,
+            "size": 0.4,
+            "count": 16,
+            "rotation": 0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.9
+              }
+            ]
+          }
+        },
+        {
+          "id": "earth-day",
+          "kit": {
+            "type": "prop",
+            "item": "night-half",
+            "x": 0.28,
+            "y": 0.55,
+            "size": 0.4,
+            "rotation": 0,
             "level": [
               {
                 "frame": 0,
@@ -3626,7 +4316,8 @@
               },
               {
                 "frame": {
-                  "at": "dark"
+                  "at": "dark",
+                  "offset": 8
                 },
                 "value": 1
               }
@@ -3637,9 +4328,9 @@
           "id": "sun",
           "kit": {
             "type": "planet",
-            "x": 0.85,
-            "y": 0.4,
-            "radius": 0.07,
+            "x": 0.88,
+            "y": 0.36,
+            "radius": 0.06,
             "base": "#ffcf4a",
             "bands": [
               "#ffe27a",
@@ -3674,18 +4365,29 @@
           "id": "clock",
           "kit": {
             "type": "prop",
-            "item": "clock",
-            "x": 0.7,
-            "y": 0.72,
-            "size": 0.22,
-            "level": [
+            "item": "clock-time",
+            "x": 0.66,
+            "y": 0.5,
+            "size": 0.28,
+            "values": [
               {
                 "frame": 0,
-                "value": 0.6
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "vanishes"
+                },
+                "value": 0,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "Then"
+                },
+                "value": 500
               }
-            ],
-            "text": "8:20 later",
-            "ink": "#c9d3ea"
+            ]
           }
         }
       ],
@@ -3704,12 +4406,12 @@
         {
           "id": "n1",
           "text": "noon: the Sun vanishes",
-          "x": 1316,
-          "y": 313,
+          "x": 1267,
+          "y": 216,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -3735,12 +4437,12 @@
         {
           "id": "n2",
           "text": "nothing happens...",
-          "x": 1286,
-          "y": 421,
+          "x": 1267,
+          "y": 313,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -3765,9 +4467,9 @@
         },
         {
           "id": "n3",
-          "text": "half of Earth goes dark",
-          "x": 1426,
-          "y": 606,
+          "text": "the whole day side goes dark",
+          "x": 1152,
+          "y": 972,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -3867,29 +4569,10 @@
             "ring": false,
             "shade": 0.2,
             "seed": 3
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "blackout",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "blackout"
-              },
-              "value": 1
-            }
-          ]
+          }
         },
         {
-          "id": "night",
+          "id": "earth-night",
           "kit": {
             "type": "prop",
             "item": "night-half",
@@ -3900,6 +4583,55 @@
             "level": [
               {
                 "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "earth-city",
+          "kit": {
+            "type": "prop",
+            "item": "city-lights",
+            "x": 0.78,
+            "y": 0.52,
+            "size": 0.26,
+            "count": 16,
+            "rotation": 0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.9
+              }
+            ]
+          }
+        },
+        {
+          "id": "earth-day",
+          "kit": {
+            "type": "prop",
+            "item": "night-half",
+            "x": 0.78,
+            "y": 0.52,
+            "size": 0.26,
+            "rotation": 0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "blackout",
+                  "offset": -1
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "blackout",
+                  "offset": 8
+                },
                 "value": 1
               }
             ]
@@ -3951,7 +4683,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -3960,14 +4692,14 @@
             },
             {
               "frame": {
-                "at": "strip",
+                "at": "seven",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "strip",
+                "at": "seven",
                 "offset": 5
               },
               "value": 1
@@ -4013,13 +4745,172 @@
       "height": 1080,
       "layers": [
         {
+          "id": "sky",
+          "kit": {
+            "type": "prop",
+            "item": "sky",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 1.0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.5
+              },
+              {
+                "frame": {
+                  "at": "cool"
+                },
+                "value": 0.5
+              },
+              {
+                "frame": {
+                  "at": "cool",
+                  "offset": 30
+                },
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "id": "town",
+          "kit": {
+            "type": "prop",
+            "item": "town",
+            "x": 0.55,
+            "y": 0.9,
+            "size": 0.7,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "cool",
+                  "offset": 10
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "cool",
+                  "offset": 11
+                },
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "lamp1",
+          "kit": {
+            "type": "prop",
+            "item": "streetlight",
+            "x": 0.3,
+            "y": 0.78,
+            "size": 0.28,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "cool",
+                  "offset": 10
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "cool",
+                  "offset": 11
+                },
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "lamp2",
+          "kit": {
+            "type": "prop",
+            "item": "streetlight",
+            "x": 0.86,
+            "y": 0.78,
+            "size": 0.28,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "cool",
+                  "offset": 10
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "cool",
+                  "offset": 11
+                },
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "venus",
+          "kit": {
+            "type": "planet",
+            "x": 0.78,
+            "y": 0.24,
+            "radius": 0.02,
+            "base": "#fff4c8",
+            "bands": [
+              "#ffffff"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.05,
+            "seed": 3
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "cool",
+                "offset": 23
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "cool",
+                "offset": 24
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
           "id": "th",
           "kit": {
             "type": "prop",
             "item": "thermometer",
-            "x": 0.26,
-            "y": 0.55,
-            "size": 0.5,
+            "x": 0.1,
+            "y": 0.45,
+            "size": 0.4,
             "level": [
               {
                 "frame": 0,
@@ -4041,48 +4932,6 @@
             ],
             "ink": "#c9d3ea"
           }
-        },
-        {
-          "id": "earth",
-          "kit": {
-            "type": "planet",
-            "x": 0.7,
-            "y": 0.55,
-            "radius": 0.13,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
-            ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
-          }
-        },
-        {
-          "id": "night",
-          "kit": {
-            "type": "prop",
-            "item": "night-half",
-            "x": 0.7,
-            "y": 0.55,
-            "size": 0.26,
-            "rotation": 180,
-            "level": [
-              {
-                "frame": 0,
-                "value": 0
-              },
-              {
-                "frame": {
-                  "at": "imagine"
-                },
-                "value": 1
-              }
-            ]
-          }
         }
       ],
       "annotations": [
@@ -4100,8 +4949,8 @@
         {
           "id": "n1",
           "text": "2017 eclipse, USA",
-          "x": 1406,
-          "y": 320,
+          "x": 806,
+          "y": 216,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -4131,8 +4980,8 @@
         {
           "id": "n2",
           "text": "-3 to 4°C in minutes",
-          "x": 1423,
-          "y": 834,
+          "x": 806,
+          "y": 335,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -4145,14 +4994,14 @@
             },
             {
               "frame": {
-                "at": "degrees",
+                "at": "three",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "degrees",
+                "at": "three",
                 "offset": 5
               },
               "value": 1
@@ -4162,12 +5011,12 @@
         {
           "id": "n3",
           "text": "now: half the world",
-          "x": 1423,
-          "y": 937,
+          "x": 806,
+          "y": 454,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -4185,6 +5034,68 @@
               "frame": {
                 "at": "half",
                 "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "text": "Venus",
+          "x": 1498,
+          "y": 324,
+          "size": 58,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "cool",
+                "offset": 23
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "cool",
+                "offset": 29
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n5",
+          "text": "streetlights switch on",
+          "x": 1651,
+          "y": 540,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "cool",
+                "offset": 13
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "cool",
+                "offset": 19
               },
               "value": 1
             }
@@ -4198,24 +5109,90 @@
       "height": 1080,
       "layers": [
         {
+          "id": "sky",
+          "kit": {
+            "type": "prop",
+            "item": "sky",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 1.0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.5
+              },
+              {
+                "frame": {
+                  "at": "disappeared"
+                },
+                "value": 0.5
+              },
+              {
+                "frame": {
+                  "at": "disappeared",
+                  "offset": 10
+                },
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "id": "sun",
+          "kit": {
+            "type": "planet",
+            "x": 0.86,
+            "y": 0.22,
+            "radius": 0.05,
+            "base": "#ffcf4a",
+            "bands": [
+              "#ffe27a",
+              "#ffcf4a"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.05,
+            "seed": 2
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "disappeared",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "disappeared"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
           "id": "fl",
           "kit": {
             "type": "prop",
             "item": "flower",
             "x": 0.3,
-            "y": 0.66,
-            "size": 0.5,
+            "y": 0.64,
+            "size": 0.55,
             "ink": "#c9d3ea"
           }
         },
         {
-          "id": "bee",
+          "id": "b1",
           "kit": {
             "type": "prop",
             "item": "bee",
-            "x": 0.44,
-            "y": 0.42,
-            "size": 0.16,
+            "x": 0.26,
+            "y": 0.5,
+            "size": 0.12,
             "level": [
               {
                 "frame": 0,
@@ -4223,14 +5200,15 @@
               },
               {
                 "frame": {
-                  "at": "silent",
-                  "offset": -1
+                  "at": "disappeared",
+                  "offset": 20
                 },
                 "value": 1
               },
               {
                 "frame": {
-                  "at": "silent"
+                  "at": "disappeared",
+                  "offset": 21
                 },
                 "value": 0
               }
@@ -4240,43 +5218,217 @@
           "x": [
             {
               "frame": 0,
-              "value": 0
+              "value": 300
             },
             {
               "frame": {
-                "at": "silent",
-                "offset": -1
+                "at": "disappeared"
               },
-              "value": 0
+              "value": 300
             },
             {
               "frame": {
-                "at": "silent",
-                "offset": 20
+                "at": "disappeared",
+                "offset": 22
               },
-              "value": -240,
+              "value": 0,
               "ease": "smoothstep"
             }
           ],
           "y": [
             {
               "frame": 0,
-              "value": 0
+              "value": -160
+            },
+            {
+              "frame": {
+                "at": "disappeared"
+              },
+              "value": -160
+            },
+            {
+              "frame": {
+                "at": "disappeared",
+                "offset": 22
+              },
+              "value": 0,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "b2",
+          "kit": {
+            "type": "prop",
+            "item": "bee",
+            "x": 0.34,
+            "y": 0.49,
+            "size": 0.12,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "disappeared",
+                  "offset": 24
+                },
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "disappeared",
+                  "offset": 25
+                },
+                "value": 0
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 420
+            },
+            {
+              "frame": {
+                "at": "disappeared",
+                "offset": 4
+              },
+              "value": 420
+            },
+            {
+              "frame": {
+                "at": "disappeared",
+                "offset": 26
+              },
+              "value": 0,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": -60
+            },
+            {
+              "frame": {
+                "at": "disappeared",
+                "offset": 4
+              },
+              "value": -60
+            },
+            {
+              "frame": {
+                "at": "disappeared",
+                "offset": 26
+              },
+              "value": 0,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "b3",
+          "kit": {
+            "type": "prop",
+            "item": "bee",
+            "x": 0.3,
+            "y": 0.44,
+            "size": 0.12,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "disappeared",
+                  "offset": 28
+                },
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "disappeared",
+                  "offset": 29
+                },
+                "value": 0
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 220
+            },
+            {
+              "frame": {
+                "at": "disappeared",
+                "offset": 8
+              },
+              "value": 220
+            },
+            {
+              "frame": {
+                "at": "disappeared",
+                "offset": 30
+              },
+              "value": 0,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": -260
+            },
+            {
+              "frame": {
+                "at": "disappeared",
+                "offset": 8
+              },
+              "value": -260
+            },
+            {
+              "frame": {
+                "at": "disappeared",
+                "offset": 30
+              },
+              "value": 0,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "buzz",
+          "kit": {
+            "type": "prop",
+            "item": "smell-lines",
+            "x": 0.44,
+            "y": 0.3,
+            "size": 0.14,
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
             },
             {
               "frame": {
                 "at": "silent",
                 "offset": -1
               },
-              "value": 0
+              "value": 1
             },
             {
               "frame": {
-                "at": "silent",
-                "offset": 20
+                "at": "silent"
               },
-              "value": 120,
-              "ease": "smoothstep"
+              "value": 0
             }
           ]
         }
@@ -4296,8 +5448,8 @@
         {
           "id": "n1",
           "text": "microphones in flowers",
-          "x": 1424,
-          "y": 368,
+          "x": 1267,
+          "y": 259,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -4327,8 +5479,8 @@
         {
           "id": "n2",
           "text": "bees went silent",
-          "x": 1417,
-          "y": 486,
+          "x": 1267,
+          "y": 518,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -4358,12 +5510,12 @@
         {
           "id": "n3",
           "text": "stopped flying",
-          "x": 1428,
-          "y": 589,
+          "x": 1267,
+          "y": 626,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -4389,8 +5541,8 @@
         {
           "id": "n4",
           "text": "Galen et al. 2018",
-          "x": 1423,
-          "y": 692,
+          "x": 1267,
+          "y": 734,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -4425,13 +5577,24 @@
       "height": 1080,
       "layers": [
         {
-          "id": "bee",
+          "id": "fl",
+          "kit": {
+            "type": "prop",
+            "item": "flower",
+            "x": 0.66,
+            "y": 0.62,
+            "size": 0.45,
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "b1",
           "kit": {
             "type": "prop",
             "item": "bee",
-            "x": 0.68,
-            "y": 0.55,
-            "size": 0.16,
+            "x": 0.62,
+            "y": 0.5,
+            "size": 0.1,
             "level": [
               {
                 "frame": 0,
@@ -4439,6 +5602,95 @@
               }
             ],
             "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "b2",
+          "kit": {
+            "type": "prop",
+            "item": "bee",
+            "x": 0.69,
+            "y": 0.5,
+            "size": 0.1,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "b3",
+          "kit": {
+            "type": "prop",
+            "item": "bee",
+            "x": 0.66,
+            "y": 0.45,
+            "size": 0.1,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "sign",
+          "kit": {
+            "type": "prop",
+            "item": "sign",
+            "x": 0.84,
+            "y": 0.68,
+            "size": 0.3,
+            "text": "ON STRIKE"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "strike",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "strike"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "strike",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "strike",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1612.8,
+            "y": 756.0
           }
         },
         {
@@ -4655,7 +5907,7 @@
           "id": "n0",
           "text": "bees on strike.",
           "x": 1320,
-          "y": 300,
+          "y": 200,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -4706,6 +5958,58 @@
             "ring": false,
             "shade": 0.2,
             "seed": 3
+          }
+        },
+        {
+          "id": "earth-night",
+          "kit": {
+            "type": "prop",
+            "item": "night-half",
+            "x": 0.3,
+            "y": 0.55,
+            "size": 0.34,
+            "rotation": 180,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "earth-city",
+          "kit": {
+            "type": "prop",
+            "item": "city-lights",
+            "x": 0.3,
+            "y": 0.55,
+            "size": 0.34,
+            "count": 16,
+            "rotation": 0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.9
+              }
+            ]
+          }
+        },
+        {
+          "id": "earth-day",
+          "kit": {
+            "type": "prop",
+            "item": "night-half",
+            "x": 0.3,
+            "y": 0.55,
+            "size": 0.34,
+            "rotation": 0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
           }
         },
         {
@@ -4821,7 +6125,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -4953,7 +6257,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -4993,14 +6297,14 @@
             },
             {
               "frame": {
-                "at": "meters",
+                "at": "seven",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "meters",
+                "at": "seven",
                 "offset": 5
               },
               "value": 1
@@ -5065,7 +6369,7 @@
           }
         },
         {
-          "id": "night",
+          "id": "earth-night",
           "kit": {
             "type": "prop",
             "item": "night-half",
@@ -5073,6 +6377,41 @@
             "y": 0.55,
             "size": 0.3,
             "rotation": 180,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "earth-city",
+          "kit": {
+            "type": "prop",
+            "item": "city-lights",
+            "x": 0.24,
+            "y": 0.55,
+            "size": 0.3,
+            "count": 16,
+            "rotation": 0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.9
+              }
+            ]
+          }
+        },
+        {
+          "id": "earth-day",
+          "kit": {
+            "type": "prop",
+            "item": "night-half",
+            "x": 0.24,
+            "y": 0.55,
+            "size": 0.3,
+            "rotation": 0,
             "level": [
               {
                 "frame": 0,
@@ -5094,6 +6433,41 @@
               }
             ]
           }
+        },
+        {
+          "id": "clock",
+          "kit": {
+            "type": "prop",
+            "item": "clock-time",
+            "x": 0.76,
+            "y": 0.3,
+            "size": 0.22,
+            "values": [
+              {
+                "frame": 0,
+                "value": 1000
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sixteen",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sixteen"
+              },
+              "value": 1
+            }
+          ]
         },
         {
           "id": "moon",
@@ -5130,8 +6504,8 @@
           "kit": {
             "type": "prop",
             "item": "bee",
-            "x": 0.72,
-            "y": 0.55,
+            "x": 0.66,
+            "y": 0.62,
             "size": 0.14,
             "level": [
               {
@@ -5184,8 +6558,8 @@
         {
           "id": "n1",
           "text": "16 min 40 s: light returns",
-          "x": 1419,
-          "y": 762,
+          "x": 1152,
+          "y": 907,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -5198,14 +6572,14 @@
             },
             {
               "frame": {
-                "at": "back",
+                "at": "sixteen",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "back",
+                "at": "sixteen",
                 "offset": 5
               },
               "value": 1
@@ -5215,12 +6589,12 @@
         {
           "id": "n2",
           "text": "the Moon reappears",
-          "x": 1419,
-          "y": 865,
+          "x": 998,
+          "y": 194,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -5246,12 +6620,12 @@
         {
           "id": "n3",
           "text": "bees back to work",
-          "x": 878,
-          "y": 865,
+          "x": 1382,
+          "y": 778,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -5369,7 +6743,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -5542,7 +6916,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -5582,14 +6956,14 @@
             },
             {
               "frame": {
-                "at": "deep",
+                "at": "hundred",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "deep",
+                "at": "hundred",
                 "offset": 5
               },
               "value": 1
@@ -5604,7 +6978,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -5660,47 +7034,180 @@
             "x": 0.04,
             "y": 0.55,
             "size": 1.0,
-            "count": 5,
+            "count": 24,
+            "direction": "out",
             "level": [
               {
                 "frame": 0,
-                "value": 0.05
+                "value": 0.01
               },
               {
                 "frame": {
                   "at": "Mars"
                 },
-                "value": 0.2
+                "value": 0.24
               },
               {
                 "frame": {
                   "at": "Jupiter"
                 },
-                "value": 0.45
+                "value": 0.41
+              },
+              {
+                "frame": {
+                  "at": "Jupiter",
+                  "offset": 25
+                },
+                "value": 0.56
+              },
+              {
+                "frame": {
+                  "at": "Jupiter",
+                  "offset": 50
+                },
+                "value": 0.71
               },
               {
                 "frame": {
                   "at": "Neptune"
                 },
-                "value": 0.95
+                "value": 0.86
               },
               {
                 "frame": {
                   "at": "night"
                 },
-                "value": 1
+                "value": 0.9
               }
             ],
             "rotation": 0
           }
         },
         {
-          "id": "mars",
+          "id": "mer",
           "kit": {
             "type": "planet",
-            "x": 0.2,
+            "x": 0.1,
             "y": 0.55,
-            "radius": 0.03,
+            "radius": 0.02,
+            "base": "#a39a92",
+            "bands": [
+              "#8c847d"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.2,
+            "seed": 3
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 17,
+              "value": 1
+            },
+            {
+              "frame": 22,
+              "value": 0.25
+            },
+            {
+              "frame": 52,
+              "value": 0.25
+            },
+            {
+              "frame": 62,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "ven",
+          "kit": {
+            "type": "planet",
+            "x": 0.15,
+            "y": 0.55,
+            "radius": 0.024,
+            "base": "#e8d49a",
+            "bands": [
+              "#f2e2b0"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.2,
+            "seed": 4
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 36,
+              "value": 1
+            },
+            {
+              "frame": 41,
+              "value": 0.25
+            },
+            {
+              "frame": 71,
+              "value": 0.25
+            },
+            {
+              "frame": 81,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "ear",
+          "kit": {
+            "type": "planet",
+            "x": 0.21,
+            "y": 0.55,
+            "radius": 0.025,
+            "base": "#5aa9e6",
+            "bands": [
+              "#7cc576",
+              "#5aa9e6"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.2,
+            "seed": 5
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 59,
+              "value": 1
+            },
+            {
+              "frame": 64,
+              "value": 0.25
+            },
+            {
+              "frame": 94,
+              "value": 0.25
+            },
+            {
+              "frame": 104,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "mar",
+          "kit": {
+            "type": "planet",
+            "x": 0.28,
+            "y": 0.55,
+            "radius": 0.022,
             "base": "#c4501f",
             "bands": [
               "#d9703f"
@@ -5708,8 +7215,42 @@
             "craters": 0,
             "ring": false,
             "shade": 0.2,
-            "seed": 4
-          }
+            "seed": 6
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Mars",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Mars",
+                "offset": 4
+              },
+              "value": 0.25
+            },
+            {
+              "frame": {
+                "at": "Mars",
+                "offset": 34
+              },
+              "value": 0.25
+            },
+            {
+              "frame": {
+                "at": "Mars",
+                "offset": 44
+              },
+              "value": 1
+            }
+          ]
         },
         {
           "id": "jup",
@@ -5717,7 +7258,7 @@
             "type": "planet",
             "x": 0.45,
             "y": 0.55,
-            "radius": 0.07,
+            "radius": 0.06,
             "base": "#d9a066",
             "bands": [
               "#b5835a",
@@ -5727,16 +7268,153 @@
             "craters": 0,
             "ring": false,
             "shade": 0.2,
-            "seed": 6
-          }
+            "seed": 7
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Jupiter",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Jupiter",
+                "offset": 4
+              },
+              "value": 0.25
+            },
+            {
+              "frame": {
+                "at": "Jupiter",
+                "offset": 34
+              },
+              "value": 0.25
+            },
+            {
+              "frame": {
+                "at": "Jupiter",
+                "offset": 44
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "sat",
+          "kit": {
+            "type": "planet",
+            "x": 0.6,
+            "y": 0.55,
+            "radius": 0.048,
+            "base": "#e3c98f",
+            "bands": [
+              "#cdb27a",
+              "#eedcab"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.2,
+            "seed": 8
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Jupiter",
+                "offset": 24
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Jupiter",
+                "offset": 29
+              },
+              "value": 0.25
+            },
+            {
+              "frame": {
+                "at": "Jupiter",
+                "offset": 59
+              },
+              "value": 0.25
+            },
+            {
+              "frame": {
+                "at": "Jupiter",
+                "offset": 69
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "ura",
+          "kit": {
+            "type": "planet",
+            "x": 0.75,
+            "y": 0.55,
+            "radius": 0.034,
+            "base": "#8fd3e0",
+            "bands": [
+              "#a6e0ea"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.2,
+            "seed": 9
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Jupiter",
+                "offset": 49
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Jupiter",
+                "offset": 54
+              },
+              "value": 0.25
+            },
+            {
+              "frame": {
+                "at": "Jupiter",
+                "offset": 84
+              },
+              "value": 0.25
+            },
+            {
+              "frame": {
+                "at": "Jupiter",
+                "offset": 94
+              },
+              "value": 1
+            }
+          ]
         },
         {
           "id": "nep",
           "kit": {
             "type": "planet",
-            "x": 0.88,
+            "x": 0.9,
             "y": 0.55,
-            "radius": 0.045,
+            "radius": 0.034,
             "base": "#3f6fd6",
             "bands": [
               "#5a8ae8"
@@ -5744,7 +7422,53 @@
             "craters": 0,
             "ring": false,
             "shade": 0.2,
-            "seed": 8
+            "seed": 10
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Neptune",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Neptune",
+                "offset": 4
+              },
+              "value": 0.25
+            },
+            {
+              "frame": {
+                "at": "Neptune",
+                "offset": 34
+              },
+              "value": 0.25
+            },
+            {
+              "frame": {
+                "at": "Neptune",
+                "offset": 44
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "nts",
+          "kit": {
+            "type": "prop",
+            "item": "caption",
+            "x": 0.88,
+            "y": 0.2,
+            "size": 0.16,
+            "text": "not to scale",
+            "color": "#c9d3ea"
           }
         }
       ],
@@ -5762,9 +7486,9 @@
         },
         {
           "id": "n1",
-          "text": "Mars: 13 min",
-          "x": 384,
-          "y": 756,
+          "text": "Mercury 3 · Venus 6 · Earth 8 min",
+          "x": 307,
+          "y": 734,
           "size": 58,
           "anchor": "middle",
           "variant": "ink",
@@ -5776,26 +7500,20 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "Mars",
-                "offset": -1
-              },
+              "frame": 17,
               "value": 0
             },
             {
-              "frame": {
-                "at": "Mars",
-                "offset": 5
-              },
+              "frame": 23,
               "value": 1
             }
           ]
         },
         {
           "id": "n2",
-          "text": "Jupiter: 43 min",
-          "x": 864,
-          "y": 778,
+          "text": "Mars 13 min",
+          "x": 538,
+          "y": 821,
           "size": 58,
           "anchor": "middle",
           "variant": "ink",
@@ -5808,14 +7526,14 @@
             },
             {
               "frame": {
-                "at": "Jupiter",
+                "at": "Mars",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "Jupiter",
+                "at": "Mars",
                 "offset": 5
               },
               "value": 1
@@ -5824,9 +7542,102 @@
         },
         {
           "id": "n3",
-          "text": "Neptune: 4 h",
-          "x": 1690,
-          "y": 756,
+          "text": "Jupiter 43 min",
+          "x": 864,
+          "y": 734,
+          "size": 58,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Jupiter",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Jupiter",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "text": "Saturn 1 h 20",
+          "x": 1152,
+          "y": 821,
+          "size": 58,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Jupiter",
+                "offset": 24
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Jupiter",
+                "offset": 30
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n5",
+          "text": "Uranus 2 h 40",
+          "x": 1440,
+          "y": 734,
+          "size": 58,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Jupiter",
+                "offset": 49
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Jupiter",
+                "offset": 55
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n6",
+          "text": "Neptune 4 h",
+          "x": 1728,
+          "y": 821,
           "size": 58,
           "anchor": "middle",
           "variant": "ink",
@@ -5854,10 +7665,10 @@
           ]
         },
         {
-          "id": "n4",
+          "id": "n7",
           "text": "each gets an 8-minute night",
           "x": 1056,
-          "y": 929,
+          "y": 972,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -5991,7 +7802,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -6022,7 +7833,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -6384,7 +8195,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -6415,7 +8226,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -6503,7 +8314,7 @@
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ff5a4a",
+          "color": "#ffd25e",
           "pop": true,
           "opacity": [
             {
@@ -6553,7 +8364,7 @@
           }
         },
         {
-          "id": "nl",
+          "id": "earth-night",
           "kit": {
             "type": "prop",
             "item": "night-half",
@@ -6564,19 +8375,31 @@
             "level": [
               {
                 "frame": 0,
-                "value": 0
-              },
-              {
-                "frame": {
-                  "at": "out"
-                },
                 "value": 1
               }
             ]
           }
         },
         {
-          "id": "nr",
+          "id": "earth-city",
+          "kit": {
+            "type": "prop",
+            "item": "city-lights",
+            "x": 0.3,
+            "y": 0.55,
+            "size": 0.4,
+            "count": 16,
+            "rotation": 0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.9
+              }
+            ]
+          }
+        },
+        {
+          "id": "earth-day",
           "kit": {
             "type": "prop",
             "item": "night-half",
@@ -6591,9 +8414,49 @@
               },
               {
                 "frame": {
-                  "at": "everywhere"
+                  "at": "out",
+                  "offset": -1
                 },
-                "value": 0.85
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "out",
+                  "offset": 8
+                },
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "earth-city2",
+          "kit": {
+            "type": "prop",
+            "item": "city-lights",
+            "x": 0.3,
+            "y": 0.55,
+            "size": 0.4,
+            "count": 16,
+            "rotation": 180,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "everywhere",
+                  "offset": -1
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "everywhere",
+                  "offset": 20
+                },
+                "value": 0.9
               }
             ]
           }
@@ -6619,7 +8482,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -6681,7 +8544,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -6716,8 +8579,8 @@
           "kit": {
             "type": "prop",
             "item": "crescent",
-            "x": 0.3,
-            "y": 0.4,
+            "x": 0.26,
+            "y": 0.45,
             "size": 0.22,
             "level": [
               {
@@ -6735,42 +8598,12 @@
           }
         },
         {
-          "id": "mars",
-          "kit": {
-            "type": "planet",
-            "x": 0.6,
-            "y": 0.3,
-            "radius": 0.025,
-            "base": "#c4501f",
-            "bands": [
-              "#d9703f"
-            ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 4
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 1
-            },
-            {
-              "frame": {
-                "at": "fade"
-              },
-              "value": 0,
-              "ease": "smoothstep"
-            }
-          ]
-        },
-        {
           "id": "ven",
           "kit": {
             "type": "planet",
-            "x": 0.7,
-            "y": 0.5,
-            "radius": 0.03,
+            "x": 0.56,
+            "y": 0.3,
+            "radius": 0.02,
             "base": "#f2e2b0",
             "bands": [
               "#e8d49a"
@@ -6788,6 +8621,128 @@
             {
               "frame": {
                 "at": "fade"
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "fade",
+                "offset": 10
+              },
+              "value": 0,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "mars",
+          "kit": {
+            "type": "planet",
+            "x": 0.66,
+            "y": 0.5,
+            "radius": 0.02,
+            "base": "#c4501f",
+            "bands": [
+              "#d9703f"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.2,
+            "seed": 4
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "fade",
+                "offset": 14
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "fade",
+                "offset": 24
+              },
+              "value": 0,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "jup",
+          "kit": {
+            "type": "planet",
+            "x": 0.78,
+            "y": 0.32,
+            "radius": 0.03,
+            "base": "#d9a066",
+            "bands": [
+              "#b5835a",
+              "#e8c49a"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.2,
+            "seed": 6
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "fade",
+                "offset": 28
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "fade",
+                "offset": 38
+              },
+              "value": 0,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "sat",
+          "kit": {
+            "type": "planet",
+            "x": 0.88,
+            "y": 0.52,
+            "radius": 0.024,
+            "base": "#e3c98f",
+            "bands": [
+              "#cdb27a"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.2,
+            "seed": 7
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "fade",
+                "offset": 42
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "fade",
+                "offset": 52
               },
               "value": 0,
               "ease": "smoothstep"
@@ -6810,12 +8765,12 @@
         {
           "id": "n1",
           "text": "the Moon stays dark",
-          "x": 1488,
-          "y": 373,
+          "x": 499,
+          "y": 842,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -6840,13 +8795,13 @@
         },
         {
           "id": "n2",
-          "text": "the planets fade",
-          "x": 1420,
-          "y": 649,
+          "text": "the planets fade, one by one",
+          "x": 1382,
+          "y": 756,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -6872,8 +8827,8 @@
         {
           "id": "n3",
           "text": "only the stars",
-          "x": 1415,
-          "y": 774,
+          "x": 1152,
+          "y": 929,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -6908,21 +8863,56 @@
       "height": 1080,
       "layers": [
         {
-          "id": "clock",
+          "id": "frost",
           "kit": {
             "type": "prop",
-            "item": "clock",
-            "x": 0.68,
-            "y": 0.5,
-            "size": 0.24,
+            "item": "frost",
+            "x": 0.3,
+            "y": 0.86,
+            "size": 0.22,
+            "count": 10,
             "level": [
               {
                 "frame": 0,
-                "value": 0.6
+                "value": 0.8
               }
-            ],
-            "text": "8:20?",
-            "ink": "#c9d3ea"
+            ]
+          }
+        },
+        {
+          "id": "clock",
+          "kit": {
+            "type": "prop",
+            "item": "clock-time",
+            "x": 0.68,
+            "y": 0.42,
+            "size": 0.3,
+            "values": [
+              {
+                "frame": 0,
+                "value": 500
+              },
+              {
+                "frame": {
+                  "at": "go"
+                },
+                "value": 500,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "version"
+                },
+                "value": 380
+              },
+              {
+                "frame": {
+                  "at": "version",
+                  "offset": 1
+                },
+                "value": 500
+              }
+            ]
           }
         },
         {
@@ -7139,7 +9129,7 @@
           "id": "n0",
           "text": "back to 8 minutes, please?",
           "x": 1240,
-          "y": 820,
+          "y": 860,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -7182,6 +9172,36 @@
             "y": 0.55,
             "size": 0.6,
             "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "rope",
+          "kit": {
+            "type": "prop",
+            "item": "rope",
+            "x": 0.384375,
+            "y": 0.55,
+            "size": 0.3,
+            "direction": "out",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "snaps"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "snaps",
+                  "offset": 16
+                },
+                "value": 1
+              }
+            ]
           }
         },
         {
@@ -7305,7 +9325,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -7336,7 +9356,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -7345,14 +9365,14 @@
             },
             {
               "frame": {
-                "at": "kilometers",
+                "at": "thirty",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "kilometers",
+                "at": "thirty",
                 "offset": 5
               },
               "value": 1
@@ -7507,7 +9527,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -7627,7 +9647,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -7667,14 +9687,14 @@
             },
             {
               "frame": {
-                "at": "thousand",
+                "at": "forty",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "thousand",
+                "at": "forty",
                 "offset": 5
               },
               "value": 1
@@ -7825,7 +9845,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -7856,7 +9876,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -8178,83 +10198,79 @@
       "height": 1080,
       "layers": [
         {
-          "id": "t1",
+          "id": "ghost",
           "kit": {
             "type": "prop",
-            "item": "tide-gauge",
-            "x": 0.24,
+            "item": "orbit-ring",
+            "x": 0.1,
+            "y": 0.5,
+            "size": 0.12,
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "bulge",
+          "kit": {
+            "type": "prop",
+            "item": "tide-bulge",
+            "x": 0.45,
             "y": 0.55,
-            "size": 0.55,
+            "size": 0.3,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "shrink"
+                },
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "shrink",
+                  "offset": 30
+                },
+                "value": 0.55
+              }
+            ]
+          }
+        },
+        {
+          "id": "earth",
+          "kit": {
+            "type": "planet",
+            "x": 0.45,
+            "y": 0.55,
+            "radius": 0.15,
+            "base": "#5aa9e6",
+            "bands": [
+              "#7cc576",
+              "#5aa9e6",
+              "#7cc576"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.2,
+            "seed": 3
+          }
+        },
+        {
+          "id": "moon",
+          "kit": {
+            "type": "prop",
+            "item": "crescent",
+            "x": 0.8,
+            "y": 0.55,
+            "size": 0.1,
             "level": [
               {
                 "frame": 0,
                 "value": 1
               }
             ],
-            "text": "with Sun",
             "ink": "#c9d3ea"
-          }
-        },
-        {
-          "id": "t2",
-          "kit": {
-            "type": "prop",
-            "item": "tide-gauge",
-            "x": 0.42,
-            "y": 0.55,
-            "size": 0.55,
-            "level": [
-              {
-                "frame": 0,
-                "value": 0.6
-              }
-            ],
-            "text": "without",
-            "ink": "#c9d3ea"
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "shrink",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "shrink"
-              },
-              "value": 1
-            }
-          ],
-          "scale": [
-            {
-              "frame": 0,
-              "value": 0.6
-            },
-            {
-              "frame": {
-                "at": "shrink",
-                "offset": -1
-              },
-              "value": 0.6
-            },
-            {
-              "frame": {
-                "at": "shrink",
-                "offset": 9
-              },
-              "value": 1,
-              "ease": "ease-out-back"
-            }
-          ],
-          "anchor": {
-            "x": 806.4,
-            "y": 594.0
           }
         }
       ],
@@ -8273,12 +10289,12 @@
         {
           "id": "n1",
           "text": "~1/3 of the tide pull: the Sun",
-          "x": 1419,
-          "y": 373,
+          "x": 960,
+          "y": 216,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -8304,8 +10320,8 @@
         {
           "id": "n2",
           "text": "tides shrink",
-          "x": 1424,
-          "y": 498,
+          "x": 960,
+          "y": 886,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -8334,9 +10350,9 @@
         },
         {
           "id": "n3",
-          "text": "no extra-high tides",
-          "x": 1423,
-          "y": 596,
+          "text": "only the Moon tide left",
+          "x": 960,
+          "y": 972,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -8440,7 +10456,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -8595,7 +10611,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -8696,7 +10712,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -8736,14 +10752,14 @@
             },
             {
               "frame": {
-                "at": "million",
+                "at": "two",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "million",
+                "at": "two",
                 "offset": 5
               },
               "value": 1
@@ -9110,7 +11126,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -9184,7 +11200,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -9215,7 +11231,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -9542,13 +11558,162 @@
       "height": 1080,
       "layers": [
         {
+          "id": "sun",
+          "kit": {
+            "type": "planet",
+            "x": 0.1,
+            "y": 0.5,
+            "radius": 0.07,
+            "base": "#ffcf4a",
+            "bands": [
+              "#ffe27a",
+              "#ffcf4a"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.05,
+            "seed": 2
+          }
+        },
+        {
+          "id": "x",
+          "kit": {
+            "type": "prop",
+            "item": "cross",
+            "x": 0.1,
+            "y": 0.5,
+            "size": 0.16,
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sunlight",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sunlight"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "sunlight",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "sunlight",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 192.0,
+            "y": 540.0
+          }
+        },
+        {
+          "id": "a1",
+          "kit": {
+            "type": "prop",
+            "item": "arrow",
+            "x": 0.2,
+            "y": 0.5,
+            "size": 0.1,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": 5,
+                "value": 0
+              },
+              {
+                "frame": 20,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        },
+        {
           "id": "fl",
           "kit": {
             "type": "prop",
             "item": "flower",
-            "x": 0.14,
-            "y": 0.64,
-            "size": 0.36,
+            "x": 0.3,
+            "y": 0.56,
+            "size": 0.34,
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sunlight",
+                "offset": 10
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sunlight",
+                "offset": 20
+              },
+              "value": 0.3
+            }
+          ]
+        },
+        {
+          "id": "a2",
+          "kit": {
+            "type": "prop",
+            "item": "arrow",
+            "x": 0.42,
+            "y": 0.5,
+            "size": 0.1,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "eats",
+                  "offset": -1
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "eats",
+                  "offset": 14
+                },
+                "value": 1
+              }
+            ],
             "ink": "#c9d3ea"
           }
         },
@@ -9557,9 +11722,62 @@
           "kit": {
             "type": "prop",
             "item": "zebra",
-            "x": 0.36,
-            "y": 0.62,
-            "size": 0.36,
+            "x": 0.55,
+            "y": 0.5,
+            "size": 0.28,
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sunlight",
+                "offset": 20
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sunlight",
+                "offset": 30
+              },
+              "value": 0.3
+            }
+          ]
+        },
+        {
+          "id": "a3",
+          "kit": {
+            "type": "prop",
+            "item": "arrow",
+            "x": 0.68,
+            "y": 0.5,
+            "size": 0.1,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "eats",
+                  "n": 2,
+                  "offset": -1
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "eats",
+                  "n": 2,
+                  "offset": 14
+                },
+                "value": 1
+              }
+            ],
             "ink": "#c9d3ea"
           }
         },
@@ -9568,11 +11786,31 @@
           "kit": {
             "type": "prop",
             "item": "lion",
-            "x": 0.62,
-            "y": 0.62,
-            "size": 0.36,
+            "x": 0.8,
+            "y": 0.5,
+            "size": 0.28,
             "ink": "#c9d3ea"
-          }
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sunlight",
+                "offset": 30
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sunlight",
+                "offset": 40
+              },
+              "value": 0.3
+            }
+          ]
         }
       ],
       "annotations": [
@@ -9590,8 +11828,8 @@
         {
           "id": "n1",
           "text": "food chains start with sunlight",
-          "x": 1330,
-          "y": 390,
+          "x": 960,
+          "y": 842,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -9621,12 +11859,12 @@
         {
           "id": "n2",
           "text": "the cold is only starting",
-          "x": 1414,
-          "y": 901,
+          "x": 960,
+          "y": 950,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ff5a4a",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -9722,14 +11960,14 @@
             },
             {
               "frame": {
-                "at": "seventy",
+                "at": "minus",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "seventy",
+                "at": "minus",
                 "offset": 5
               },
               "value": 1
@@ -9744,7 +11982,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -9812,7 +12050,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -9843,7 +12081,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -9973,7 +12211,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -10307,7 +12545,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -10338,7 +12576,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -10476,7 +12714,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -10621,14 +12859,14 @@
             },
             {
               "frame": {
-                "at": "forty",
+                "at": "minus",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "forty",
+                "at": "minus",
                 "offset": 5
               },
               "value": 1
@@ -10643,7 +12881,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -10678,9 +12916,9 @@
           "kit": {
             "type": "prop",
             "item": "snowfall",
-            "x": 0.45,
+            "x": 0.64,
             "y": 0.5,
-            "size": 1.0,
+            "size": 0.7,
             "count": 40,
             "level": [
               {
@@ -10705,33 +12943,33 @@
           }
         },
         {
-          "id": "frost",
+          "id": "ice",
           "kit": {
             "type": "prop",
-            "item": "frost",
-            "x": 0.45,
-            "y": 0.88,
-            "size": 0.9
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "ground"
+            "item": "ice-layer",
+            "x": 0.5,
+            "y": 0.95,
+            "size": 0.9,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
               },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "ground",
-                "offset": 30
+              {
+                "frame": {
+                  "at": "ground"
+                },
+                "value": 0
               },
-              "value": 1
-            }
-          ]
+              {
+                "frame": {
+                  "at": "ground",
+                  "offset": 40
+                },
+                "value": 0.35
+              }
+            ]
+          }
         }
       ],
       "annotations": [
@@ -10749,12 +12987,12 @@
         {
           "id": "n1",
           "text": "the air freezes",
-          "x": 1419,
-          "y": 325,
+          "x": 384,
+          "y": 346,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -10780,12 +13018,12 @@
         {
           "id": "n2",
           "text": "...and falls",
-          "x": 1417,
-          "y": 450,
+          "x": 384,
+          "y": 486,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ff5a4a",
+          "color": "#ffd25e",
           "pop": true,
           "opacity": [
             {
@@ -10811,12 +13049,12 @@
         {
           "id": "n3",
           "text": "nitrogen + oxygen snow",
-          "x": 1426,
-          "y": 553,
+          "x": 384,
+          "y": 626,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -10833,6 +13071,37 @@
             {
               "frame": {
                 "at": "snow",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "text": "a frozen layer",
+          "x": 384,
+          "y": 756,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "layer",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "layer",
                 "offset": 5
               },
               "value": 1
@@ -11117,20 +13386,26 @@
             "type": "prop",
             "item": "doodle-stars",
             "x": 0.5,
-            "y": 0.55,
+            "y": 0.5,
             "size": 0.9,
             "count": 40,
             "ink": "#c9d3ea"
           }
         },
         {
-          "id": "frost",
+          "id": "ice",
           "kit": {
             "type": "prop",
-            "item": "frost",
+            "item": "ice-layer",
             "x": 0.5,
-            "y": 0.9,
-            "size": 0.9
+            "y": 0.95,
+            "size": 0.9,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.35
+              }
+            ]
           }
         }
       ],
@@ -11185,7 +13460,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -11247,7 +13522,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -11341,7 +13616,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -11485,14 +13760,14 @@
             },
             {
               "frame": {
-                "at": "millimeter",
+                "at": "half",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "millimeter",
+                "at": "half",
                 "offset": 5
               },
               "value": 1
@@ -11507,7 +13782,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -11877,7 +14152,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -11908,7 +14183,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -11974,16 +14249,94 @@
           "kit": {
             "type": "prop",
             "item": "vent",
-            "x": 0.28,
-            "y": 0.7,
-            "size": 0.46,
-            "count": 8,
+            "x": 0.16,
+            "y": 0.62,
+            "size": 0.36,
+            "count": 6,
             "level": [
               {
                 "frame": 0,
                 "value": 1
               }
             ],
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "a1",
+          "kit": {
+            "type": "prop",
+            "item": "arrow",
+            "x": 0.3,
+            "y": 0.52,
+            "size": 0.1,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": 5,
+                "value": 0
+              },
+              {
+                "frame": 20,
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "bac",
+          "kit": {
+            "type": "prop",
+            "item": "plankton",
+            "x": 0.42,
+            "y": 0.5,
+            "size": 0.34,
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "a2",
+          "kit": {
+            "type": "prop",
+            "item": "arrow",
+            "x": 0.55,
+            "y": 0.52,
+            "size": 0.1,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "bacteria",
+                  "offset": -1
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "bacteria",
+                  "offset": 14
+                },
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "worm",
+          "kit": {
+            "type": "prop",
+            "item": "coral",
+            "x": 0.7,
+            "y": 0.56,
+            "size": 0.26,
             "ink": "#c9d3ea"
           }
         }
@@ -12003,8 +14356,8 @@
         {
           "id": "n1",
           "text": "no sunlight needed",
-          "x": 1428,
-          "y": 390,
+          "x": 960,
+          "y": 238,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -12033,13 +14386,13 @@
         },
         {
           "id": "n2",
-          "text": "energy from chemicals",
-          "x": 1418,
-          "y": 493,
-          "size": 72,
+          "text": "vent",
+          "x": 307,
+          "y": 907,
+          "size": 58,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#eef1f8",
           "pop": true,
           "opacity": [
             {
@@ -12047,27 +14400,21 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "chemicals",
-                "offset": -1
-              },
+              "frame": 3,
               "value": 0
             },
             {
-              "frame": {
-                "at": "chemicals",
-                "offset": 5
-              },
+              "frame": 9,
               "value": 1
             }
           ]
         },
         {
           "id": "n3",
-          "text": "as long as Earth is warm inside",
-          "x": 1422,
-          "y": 596,
-          "size": 66,
+          "text": "bacteria",
+          "x": 806,
+          "y": 756,
+          "size": 58,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
@@ -12079,14 +14426,14 @@
             },
             {
               "frame": {
-                "at": "inside",
+                "at": "bacteria",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "inside",
+                "at": "bacteria",
                 "offset": 5
               },
               "value": 1
@@ -12095,9 +14442,71 @@
         },
         {
           "id": "n4",
+          "text": "tube worms",
+          "x": 1344,
+          "y": 821,
+          "size": 58,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "chemicals",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "chemicals",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n5",
+          "text": "energy from chemicals",
+          "x": 1613,
+          "y": 432,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#a9d8ff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "chemicals",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "chemicals",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n6",
           "text": "today: Europa's ocean may hide vents like these",
-          "x": 1306,
-          "y": 799,
+          "x": 960,
+          "y": 972,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -12452,7 +14861,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -12483,7 +14892,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -12514,7 +14923,7 @@
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ff5a4a",
+          "color": "#ffd25e",
           "pop": true,
           "opacity": [
             {
@@ -12669,7 +15078,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -12700,7 +15109,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -12709,14 +15118,14 @@
             },
             {
               "frame": {
-                "at": "five",
+                "at": "four",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "five",
+                "at": "four",
                 "offset": 5
               },
               "value": 1
@@ -12800,7 +15209,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -12831,7 +15240,7 @@
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -12840,14 +15249,14 @@
             },
             {
               "frame": {
-                "at": "kilometers",
+                "at": "hundred",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "kilometers",
+                "at": "hundred",
                 "offset": 5
               },
               "value": 1
@@ -13578,7 +15987,7 @@
           "size": 84,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#ffd25e",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -13794,7 +16203,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "ago"
+            "at": "eight"
           },
           "gainDb": -22
         },
@@ -13875,7 +16284,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "twenty"
+            "at": "exactly"
           },
           "gainDb": -22
         },
@@ -14087,6 +16496,13 @@
         {
           "sound": "pop",
           "frame": {
+            "at": "still"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
             "at": "question"
           },
           "gainDb": -22
@@ -14095,6 +16511,14 @@
           "sound": "pop",
           "frame": {
             "at": "fall"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "fall",
+            "offset": 6
           },
           "gainDb": -22
         },
@@ -14195,14 +16619,14 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "kilometers"
+            "at": "eight"
           },
           "gainDb": -22
         },
         {
           "sound": "pop",
           "frame": {
-            "at": "gap"
+            "at": "needs"
           },
           "gainDb": -22
         }
@@ -14277,6 +16701,20 @@
           "sound": "pop",
           "frame": {
             "at": "spot"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "happened"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "happened"
           },
           "gainDb": -22
         }
@@ -14411,7 +16849,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "light"
+            "at": "faster"
           },
           "gainDb": -22
         }
@@ -14552,14 +16990,14 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "light-years"
+            "at": "hundred"
           },
           "gainDb": -22
         },
         {
           "sound": "pop",
           "frame": {
-            "at": "apart"
+            "at": "less"
           },
           "gainDb": -22
         },
@@ -14803,7 +17241,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "strip"
+            "at": "seven"
           },
           "gainDb": -22
         },
@@ -14884,7 +17322,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "degrees"
+            "at": "three"
           },
           "gainDb": -22
         },
@@ -14892,6 +17330,14 @@
           "sound": "pop",
           "frame": {
             "at": "half"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "cool",
+            "offset": 14
           },
           "gainDb": -22
         }
@@ -15188,7 +17634,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "meters"
+            "at": "seven"
           },
           "gainDb": -22
         },
@@ -15262,7 +17708,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "back"
+            "at": "sixteen"
           },
           "gainDb": -22
         },
@@ -15431,7 +17877,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "deep"
+            "at": "hundred"
           },
           "gainDb": -22
         },
@@ -16084,7 +18530,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "kilometers"
+            "at": "thirty"
           },
           "gainDb": -22
         },
@@ -16239,7 +18685,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "thousand"
+            "at": "forty"
           },
           "gainDb": -22
         },
@@ -16691,7 +19137,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "million"
+            "at": "two"
           },
           "gainDb": -22
         }
@@ -17095,7 +19541,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "seventy"
+            "at": "minus"
           },
           "gainDb": -22
         },
@@ -17533,7 +19979,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "forty"
+            "at": "minus"
           },
           "gainDb": -22
         },
@@ -17625,6 +20071,13 @@
           "sound": "pop",
           "frame": {
             "at": "snow"
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "layer"
           },
           "gainDb": -22
         },
@@ -17981,7 +20434,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "millimeter"
+            "at": "half"
           },
           "gainDb": -22
         },
@@ -18211,13 +20664,6 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "inside"
-          },
-          "gainDb": -22
-        },
-        {
-          "sound": "pop",
-          "frame": {
             "at": "going"
           },
           "gainDb": -22
@@ -18434,7 +20880,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "five"
+            "at": "four"
           },
           "gainDb": -22
         }
@@ -18508,7 +20954,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "kilometers"
+            "at": "hundred"
           },
           "gainDb": -22
         },
