@@ -40,3 +40,6 @@ __pycache__/
 /assets/nasa/
 /assets/music/
 /storyboards/scratch/
+
+# Files Claude stages for transfer (sync bundles, copies)
+Claude outputs/
