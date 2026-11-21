@@ -1,0 +1,505 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "ghost-sun-thumbs",
+  "title": "Ep 5 thumbnails",
+  "themeId": "paint-night",
+  "format": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "@sky.top",
+  "accent": "@text.accent",
+  "assets": [],
+  "backdrop": {
+    "group": "backdrop"
+  },
+  "groups": [
+    {
+      "id": "backdrop",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "page",
+          "kit": {
+            "type": "sky",
+            "horizon": 0.9,
+            "stars": 0,
+            "seed": 1
+          }
+        },
+        {
+          "id": "stars",
+          "kit": {
+            "type": "prop",
+            "item": "doodle-stars",
+            "x": 0.37,
+            "y": 0.61,
+            "size": 0.5,
+            "count": 26,
+            "ink": "#c9d3ea"
+          }
+        }
+      ]
+    },
+    {
+      "id": "g-ta",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "town",
+          "kit": {
+            "type": "prop",
+            "item": "town",
+            "x": 0.72,
+            "y": 0.88,
+            "size": 0.5,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "snow",
+          "kit": {
+            "type": "prop",
+            "item": "snowfall",
+            "x": 0.7,
+            "y": 0.5,
+            "size": 0.75,
+            "count": 40,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "snow2",
+          "kit": {
+            "type": "prop",
+            "item": "snowfall",
+            "x": 0.66,
+            "y": 0.62,
+            "size": 0.7,
+            "count": 30,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "ice",
+          "kit": {
+            "type": "prop",
+            "item": "ice-layer",
+            "x": 0.5,
+            "y": 0.97,
+            "size": 1.0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.55
+              }
+            ]
+          }
+        },
+        {
+          "id": "ghost",
+          "kit": {
+            "type": "prop",
+            "item": "orbit-ring",
+            "x": 0.9,
+            "y": 0.17,
+            "size": 0.2,
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.16,
+            "y": 0.93,
+            "height": 0.5,
+            "outfit": "astronaut",
+            "shiver": 1,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "cower"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "scared"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          }
+        },
+        {
+          "id": "frost",
+          "kit": {
+            "type": "prop",
+            "item": "frost",
+            "x": 0.16,
+            "y": 0.93,
+            "size": 0.22,
+            "count": 14,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.9
+              }
+            ]
+          }
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "id": "g-tb",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "earth",
+          "kit": {
+            "type": "planet",
+            "x": 0.27,
+            "y": 0.6,
+            "radius": 0.34,
+            "base": "#5aa9e6",
+            "bands": [
+              "#7cc576",
+              "#5aa9e6",
+              "#7cc576"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.2,
+            "seed": 3
+          }
+        },
+        {
+          "id": "night",
+          "kit": {
+            "type": "prop",
+            "item": "night-half",
+            "x": 0.27,
+            "y": 0.6,
+            "size": 0.68,
+            "rotation": 180,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "city",
+          "kit": {
+            "type": "prop",
+            "item": "city-lights",
+            "x": 0.27,
+            "y": 0.6,
+            "size": 0.68,
+            "count": 30,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.95
+              }
+            ]
+          }
+        },
+        {
+          "id": "day",
+          "kit": {
+            "type": "prop",
+            "item": "night-half",
+            "x": 0.27,
+            "y": 0.6,
+            "size": 0.68,
+            "rotation": 0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.5
+              }
+            ]
+          }
+        },
+        {
+          "id": "ghost",
+          "kit": {
+            "type": "prop",
+            "item": "orbit-ring",
+            "x": 0.1,
+            "y": 0.14,
+            "size": 0.16,
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "clock",
+          "kit": {
+            "type": "prop",
+            "item": "clock-time",
+            "x": 0.76,
+            "y": 0.66,
+            "size": 0.36,
+            "values": [
+              {
+                "frame": 0,
+                "value": 500
+              }
+            ],
+            "ink": "#c9d3ea"
+          }
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "id": "g-tc",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "water",
+          "kit": {
+            "type": "prop",
+            "item": "sky",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 1.0,
+            "rotation": 180,
+            "color": "#06182e",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.92
+              }
+            ]
+          }
+        },
+        {
+          "id": "ice",
+          "kit": {
+            "type": "prop",
+            "item": "ice-layer",
+            "x": 0.5,
+            "y": 0.16,
+            "size": 1.0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "ice2",
+          "kit": {
+            "type": "prop",
+            "item": "ice-layer",
+            "x": 0.5,
+            "y": 0.2,
+            "size": 1.0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.6
+              }
+            ]
+          }
+        },
+        {
+          "id": "glow",
+          "kit": {
+            "type": "prop",
+            "item": "sparkle",
+            "x": 0.74,
+            "y": 0.66,
+            "size": 0.56,
+            "count": 8,
+            "color": "#ff9a4a",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.85
+              }
+            ]
+          }
+        },
+        {
+          "id": "vent",
+          "kit": {
+            "type": "prop",
+            "item": "vent",
+            "x": 0.74,
+            "y": 0.76,
+            "size": 0.52,
+            "count": 10,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "worms",
+          "kit": {
+            "type": "prop",
+            "item": "coral",
+            "x": 0.55,
+            "y": 0.88,
+            "size": 0.24
+          }
+        }
+      ],
+      "annotations": []
+    }
+  ],
+  "scenes": [
+    {
+      "id": "thumb-a",
+      "template": "hero-reveal",
+      "durationFrames": 30,
+      "animationDurationFrames": 30,
+      "caption": {
+        "text": " ",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 9100,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-ta",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      }
+    },
+    {
+      "id": "thumb-b",
+      "template": "hero-reveal",
+      "durationFrames": 30,
+      "animationDurationFrames": 30,
+      "caption": {
+        "text": " ",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 9101,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-tb",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      }
+    },
+    {
+      "id": "thumb-c",
+      "template": "hero-reveal",
+      "durationFrames": 30,
+      "animationDurationFrames": 30,
+      "caption": {
+        "text": " ",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 9102,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-tc",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      }
+    }
+  ]
+}
