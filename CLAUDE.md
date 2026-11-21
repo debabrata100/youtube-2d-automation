@@ -27,7 +27,9 @@ The business goal is to work toward YouTube monetization within six months. This
 
 ## Current project
 
-Read `docs/PROJECT_STATUS.md` (current state) and `docs/YOUTUBE_2D_AUTOMATION_HANDOFF.md` (historical handoff) before planning work.
+**First, read the project doc `claude/status.md`** (in the claude.ai Project "youtube-2d-automation"): the live status, publishing schedule, what's in progress, and which chat owns which workstream. Update it whenever you finish a task. It is newer than the repo docs below; where they differ, it wins.
+
+For background: `docs/PROJECT_STATUS.md` (engineering state) and `docs/YOUTUBE_2D_AUTOMATION_HANDOFF.md` (historical handoff).
 
 Inspect the actual repository to verify the current implementation.
 
