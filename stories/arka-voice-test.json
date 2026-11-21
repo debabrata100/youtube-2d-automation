@@ -1,0 +1,49 @@
+{
+ "schemaVersion": "1.0",
+ "id": "arka-voice-test",
+ "title": "Arka voice blind test",
+ "topic": "Recording only: the same three Arka lines from the M1 draft in each candidate voice for a blind comparison",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 16,
+ "storyboard": "storyboards/moon-shorts-hooks.json",
+ "candidatesReport": "stories/moon-shorts-script.md",
+ "beats": [
+  {
+   "id": "a1",
+   "sceneId": "hk-k1",
+   "intent": "hook",
+   "narration": "Two and a half seconds to the Moon and back. Most of my messages take longer to get a reply.",
+   "phrases": [
+    "Two and a half seconds to the Moon and back.",
+    "Most of my messages take longer to get a reply."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a2",
+   "sceneId": "hk-k2",
+   "intent": "closing",
+   "narration": "Seventeen hours. Same to-do list, seven fewer hours. No, thank you. Wait. So it does come back?",
+   "phrases": [
+    "Seventeen hours.",
+    "Same to-do list,",
+    "seven fewer hours.",
+    "No, thank you.",
+    "Wait.",
+    "So it does come back?"
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  }
+ ]
+}
