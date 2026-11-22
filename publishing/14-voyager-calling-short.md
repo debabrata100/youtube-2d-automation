@@ -1,6 +1,6 @@
 # 14: Voyager Short V7, "Voyager 1 Still Has a Pulse. It Just Stopped Talking."
 
-- **Status:** ready to upload (22 Nov). Schedule **Wed 25 Nov, 9:30 PM IST**. News-pegged: Voyager 1 has sent a carrier signal but no data since 14 Nov (NASA, 18 Nov).
+- **Status:** uploaded 22 Nov as [0VayVwKcAyc](https://youtube.com/shorts/0VayVwKcAyc), scheduled **Wed 25 Nov, 9:30 PM IST**. Details, tags, playlist, English SRT, Related video (S7 for now) all set. News-pegged: Voyager 1 has sent a carrier signal but no data since 14 Nov (NASA, 18 Nov).
 - **Before it goes public:** re-check NASA's Voyager page (science.nasa.gov/mission/voyager) on 25 Nov. If data is flowing again, do NOT publish this version: re-record line c7 only (see stories/voyager-shorts-script.md, V7) and re-render.
 - **File:** `jobs/vy-calling-final-2/output/narrated-animation.mp4` (41 s, 9:16, −16 LUFS), md5 d5def95e…; upload folder `~/Downloads/gahanarka-upload/14-voyager-calling-short/voyager-1-still-has-a-pulse.mp4`.
 - **Captions:** `captions-english.srt` (English, 27 cues; not burned in).
