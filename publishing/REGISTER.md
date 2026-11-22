@@ -34,6 +34,12 @@ Last full check: **20 Nov 2026, 5 PM IST**. Last change: **22 Nov, 22:00 IST** (
 | S8 | Voyager Has Less Memory Than One Photo on Your Phone | [Rh6l0gIQKBo](https://youtube.com/shorts/Rh6l0gIQKBo) | Scheduled **Mon 23 Nov, 9:30 PM** (uploaded 20 Nov) | ✅ → Ep 3 M9o6HqK5zSs (22 Nov) | ✅ English SRT | ⏳ after launch | Could You Survive…? | `12-voyager-memory-short.md` |
 | S9 | Voyager 1 Still Has a Pulse. It Just Stopped Talking. | [0VayVwKcAyc](https://youtube.com/shorts/0VayVwKcAyc) | Scheduled **Wed 25 Nov, 9:30 PM** (uploaded 22 Nov); re-check NASA status before it goes public | ✅ → Ep 3 M9o6HqK5zSs (22 Nov) | ✅ English SRT | ⏳ after launch | Could You Survive…? | `14-voyager-calling-short.md` |
 
+## Community posts
+
+| Date | Type | Text (short) | Links to | Notes |
+|---|---|---|---|---|
+| 22 Nov, 22:10 | Text poll | "We just put an astronaut on every moon… which moon is the deadliest place to stand in a spacesuit?" Europa / Io / Enceladus / Triton | Ep 3 M9o6HqK5zSs | Answer in the episode: Io (line e52). First community post. Checked against the script before posting (a "safest" question was dropped: the episode doesn't name one safest moon). |
+
 ## Settings that are the same on every upload (checked 20 Nov)
 - Video language **English**, title and description language **English** (all 11 uploads).
 - Not made for kids · Science & Technology · no paid promotion · altered or synthetic content as recorded in each sheet.
