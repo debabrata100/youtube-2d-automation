@@ -79,7 +79,7 @@ All three promises are delivered in the first 60 seconds (the claim check is set
 |---|---|---|
 | a27 | Arka | Okay. Earth's getting smaller back there. Now the big one: what if we *were* heading for it? |
 | a28 | Arka | And before you answer, I've seen the maps. Scientists know exactly where it lands. |
-| a29 | Narrator | Half true. Scientists did draw maps like that, back when the odds were real: the strip of Earth it would have crossed *if* it hit. But a map of a what-if isn't a prediction. In March 2021, radar dishes at Goldstone and Green Bank measured Apophis so precisely that the impacts people feared, in 2029, 2036 and 2068, were all ruled out. NASA says there's no risk for at least a hundred years. |
+| a29 | Narrator | Half true. Scientists did draw maps like that, back when the odds were real: the strip of Earth it would have crossed *if* it hit. But a map of a what-if isn't a prediction. Each new measurement crossed a date off: first 2029, then 2036. And in March 2021, radar dishes at Goldstone and Green Bank crossed off the last one, 2068. NASA says there's no risk for at least a hundred years. |
 | a30 | Arka | Then why do some videos say the odds went *up*? |
 | a31 | Narrator | Good question, and that one is half right too. A 2024 study asked: what if a small, unseen rock hits Apophis before 2029 and nudges it? |
 | a32 | Narrator | The answer: about one chance in a million of a nudge that could set up a collision some time after 2029, and about one in a billion of one that sends it into Earth in 2029. And a single look at Apophis in 2027 should settle most of it. |
@@ -100,7 +100,7 @@ All three promises are delivered in the first 60 seconds (the claim check is set
 |---|---|---|
 | a43 | Narrator | We're not alone out here. A date that can't move is a strange thing to build a spacecraft for, but two agencies are racing it. |
 | a44 | Narrator | Europe and Japan's Ramses launches in spring 2028 and catches up with Apophis in February 2029. Its mission manager calls it a mission that literally cannot be late. It rides with us through the flyby, watching the shiver happen. |
-| a44b | Narrator | It carries a radar to look inside the rock, and small companion craft that will drop in close to the surface while Earth's gravity does its work. |
+| a44b | Narrator | And it brings two shoebox-sized helpers: one with a radar to look inside the rock, and one that will try to land on it while Earth's gravity does its work. |
 | a45 | Narrator | And NASA's OSIRIS-REx, the spacecraft that brought a piece of asteroid Bennu home in 2023, now renamed OSIRIS-APEX, arrives just after and stays for about eighteen months. Near the end, it fires its thrusters at the surface, to see what the night with Earth left behind. |
 | a45b | Narrator | Its cameras start watching two weeks before the flyby, while Apophis is still a dot millions of kilometres ahead. |
 | a46 | Arka | So the scariest asteroid of 2004 becomes the most studied asteroid of 2029. |
@@ -132,7 +132,7 @@ All three promises are delivered in the first 60 seconds (the claim check is set
 | a21 | "USGS 2025" |
 | a22 | "Pravec et al. 2014" |
 | a24–a25 | "Royal Obs. Belgium 2024 · NASA" |
-| a29 | "NASA / ESA, March 2021" |
+| a29 | "B612 Foundation path of risk, 2008" then "NASA / ESA, March 2021" |
 | a32 | "Wiegert 2024" |
 | a35 | "Planetary Society" |
 | a37 | "1 km+ for global effects" |
@@ -156,15 +156,15 @@ Tags stay small (bottom corner, light ink with the halo), on screen for at least
 | Dust drifts down for minutes | a11 | **Calculated:** falling 1 m at 3.8 × 10⁻⁵ m/s² takes t = √(2h/g) ≈ 230 s ≈ 4 min. |
 | Dec 2004 odds 1 in 37 (2.7%) for this date; highest Torino rating ever | a12 | ESA: 2.7%, highest ever rating on the Torino scale; Astronomy.com (Dec 2004): 2.7%, odds of 1 in 37, on Friday 13 April 2029. |
 | Earth ≈ 19° across at closest approach ≈ 38 full Moons | a16 | **Calculated:** distance from Earth's centre ≈ 32,000 + 6,371 = 38,371 km; angular diameter = 2·atan(6,371/38,371) ≈ 18.9°; full Moon ≈ 0.5° → ≈ 38. |
-| ISS ~400 km; GPS ~20,000 km; geostationary ~36,000 km; a tenth of the way to the Moon | a18, a19 | USGS fact sheet (2025): ISS 370–460 km; ABC/NASA: ~36,000 km; NASA SVS: about a tenth of the Earth–Moon distance. GPS ~20,200 km: textbook figure, add a source before narration. |
+| ISS ~400 km; GPS ~20,000 km; geostationary ~36,000 km; a tenth of the way to the Moon | a18, a19 | USGS fact sheet (2025): ISS 370–460 km; ABC/NASA: ~36,000 km; NASA SVS: about a tenth of the Earth–Moon distance. GPS: gps.gov, GPS satellites fly at approximately 20,200 km. |
 | Satellite/space-junk collision very unlikely | a20, a21 | USGS fact sheet (2025): not likely to hit geosynchronous satellites; HKU (via ABS-CBN, 2022): probability very low. |
-| Sped up to more than 7 km/s; India north–south in ~7 min | a22 | arXiv 2608.28350 (citing Pravec et al. 2014): accelerated to 7.4 km/s at closest approach. **Calculated:** India's north–south extent ≈ 3,214 km (textbook figure) ÷ 7.4 km/s ≈ 434 s ≈ 7 min. |
+| Sped up to more than 7 km/s; India north–south in ~7 min | a22 | arXiv 2608.28350 (citing Pravec et al. 2014): accelerated to 7.4 km/s at closest approach. **Calculated:** India's north–south extent 3,214 km (Government of India, Know India profile) ÷ 7.4 km/s ≈ 434 s ≈ 7 min. |
 | Not torn apart; surface gravity changes by a few percent | a24 | EPSC 2024 abstract (Royal Observatory of Belgium): changes of about 3% in surface gravity and a few degrees in slopes; somewhat larger for tumbling states. |
 | Spin change; possible landslides/quakes ("a shiver") | a25 | NASA SVS: expected to change how fast it spins and possibly cause quakes or landslides; ESA Ramses page: stretched and squeezed, may trigger landslides; EPSC 2022: rotation changes hours before closest approach. |
-| Impact-corridor maps were drawn when the risk was open; they are what-ifs, not predictions; 2021 radar (Goldstone, Green Bank) ruled out 2029, 2036, 2068; no risk for at least 100 years | a29 | Risk corridors were computed for the 2036 keyhole scenario while it was open (mid-2000s; add a published corridor map as a source before narration). ESA (26 Mar 2021); NASA Apophis facts; NASA analysis (2021). |
+| Impact-corridor maps were drawn when the risk was open; they are what-ifs, not predictions; 2021 radar (Goldstone, Green Bank) ruled out 2029, 2036, 2068; no risk for at least 100 years | a29 | Risk corridor for the 2036 keyhole scenario: B612 Foundation estimate (2006–08), a narrow line from southern Russia across the Pacific and Central America; Discover magazine: a 1-in-45,000 chance along a line from the Pacific near California to Central America; NASA (2009): 2036 odds fell from 1 in 45,000 to about 4 in a million. **Order of ruling out:** 2029 and 2036 were ruled out by earlier observations (2036 effectively by Goldstone radar in 2013); 2068 was ruled out in March 2021 (NASA: "the risk of an impact in 2029 was later ruled out, as was … 2036"). Line a29 now says so; the draft wrongly credited all three to 2021. ESA (26 Mar 2021); NASA Apophis facts; NASA analysis (2021). |
 | Small-rock nudge: ~1 in a million (could set up a post-2029 collision), ~1 in a billion (2029 impact); one look in 2027 retires most risk | a31, a32 | Wiegert (2024), arXiv 2409.06059 and Space.com: odds essentially 1 in a million for a dangerous post-2029 path, 1 in a billion for a 2029 collision; a single 2027 observation retires most of the risk. AAS Nova: most small impacts push it farther away. |
 | Land impact: devastation up to a few hundred km | a35 | The Planetary Society: widespread destruction up to several hundred kilometres from the impact site. "A region the size of a small country" is our paraphrase; NBC (2004) used "flatten Texas or a couple of European countries" with the older, larger size estimate, so we don't quote that. |
-| No global climate disaster; that needs ~1 km+; dinosaur impactor ~10 km | a37 | Universe Today: Apophis wouldn't cause the long-term climate destruction that 1 km and larger asteroids can. Chicxulub ~10 km: textbook, add a source before narration. |
+| No global climate disaster; that needs ~1 km+; dinosaur impactor ~10 km | a37 | Universe Today: Apophis wouldn't cause the long-term climate destruction that 1 km and larger asteroids can. Chicxulub impactor ~10 km: Scientific American (estimate from shrapnel and crater size); Britannica (perhaps 10 km). Some estimates run 7–15 km; "about ten" stays. |
 | Energy estimates range from ~40 to 10,000 megatons; spread due to early size/mass estimates; best estimate roughly a thousand megatons | a38 | Published figures: 40 Mt (J. Melosh, quoted in Centauri Dreams), 880 Mt (NASA estimate via Universe Today), 1,717 Mt (Russian ministry researchers via ABS-CBN, 2022), 10,000 Mt (NBC 2004, when it was thought ~400 m). "Roughly a thousand" covers 880–1,717. |
 | Tens of thousands of Hiroshimas | a38 | **Calculated:** Hiroshima ≈ 15 kilotons = 0.015 Mt; 880 ÷ 0.015 ≈ 59,000; 1,717 ÷ 0.015 ≈ 114,000. "Tens of thousands" is conservative. |
 | Ocean strike: tsunami is the biggest threat; scientists disagree on giant waves; Eltanin impact (~2.1 Myr, off Chile) caused no tsunami per a later study | a39, a40 | Acta Astronautica 188 (2021), hypothetical Apophis deep-ocean impact: the tsunami is the most far-reaching and threatening effect. NBC News (Live Science): H. Jay Melosh says many simulations use unrealistic wave-breaking models; a study found the Eltanin impact off Chile 2.1 Myr ago didn't cause a tsunami. Script attributes it ("one study found") and gives no crater or size. |
@@ -177,10 +177,10 @@ Tags stay small (bottom corner, light ink with the halo), on screen for at least
 | Named after the Egyptian god of chaos | a50 | ESA. |
 | Spotted June 2004 (Kitt Peak), seen two nights, lost; rediscovered by Gordon Garradd (Siding Spring) in December; odds 1 in 300 → 1 in 60 → 1 in 37 | a12b | ESA (discovery 19 June 2004, Kitt Peak); Astronomy.com (Dec 2004): observed for only 2 nights; rediscovered 18 Dec by Gordon Garradd, Siding Spring; odds 1 in 300 (23 Dec) → 1 in 60 (24 Dec) → 1 in 37. |
 | Old (precovery) images ruled out 2029 within days | a12c | Astronomy.com: searching old images reduced the uncertainty and ruled out a 2029 impact; earliest precovery 15 March 2004. "Within days": the 2.7% peak was 27 Dec 2004 and 2029 was ruled out by the end of December. |
-| Ramses carries a radar and companion craft | a44b | Popular Mechanics via Yahoo (2025): low-frequency radar, gravimeter and lander; **confirm the final payload on ESA's Ramses page before narration**. |
+| Ramses carries a radar and companion craft | a44b | ESA (Jul 2026): two CubeSats; Farinella combines a ground-penetrating radar with a dust analyser; Don Quijote, a shoebox-sized craft, is deployed onto Apophis (DLR: planned as a lander). Main spacecraft also carries the RPS plasma spectrometer and MARIE magnetometer (DLR). Line reworded: the radar is on a helper, not the main craft. |
 | APEX cameras start ~2 weeks before the flyby | a45b | NASA/EurekAlert: by 2 April 2029, around two weeks before the close encounter; EPSC abstract: at ~5 million km. |
 
-**Still to source before narration:** GPS altitude (a18), India's north–south extent (a22), Chicxulub impactor size (a37), a published 2036 risk-corridor map (a29); Ramses payload (a44b).
+**Sourcing complete (22 Nov, evening).** Two lines corrected while sourcing: a29 (which observation ruled out which date) and a44b (radar sits on a CubeSat).
 
 ## Credibility audit (final check, 22 Nov 2026)
 
@@ -207,7 +207,7 @@ Each line that makes or corrects a claim, checked against the rules above.
 | Title 1 "Most videos get it wrong" | Bait if not delivered | **OK, carefully.** Seven claims checked in chapters 2–3: four wrong, two half right, one uncertain. "Get it wrong" holds; never escalate to "lie" or "fake" in the title, thumbnail or description. |
 | Title 3 "Rode Apophis" | Promise | **OK.** The ride starts at a7 (about 0:40). |
 
-**Result:** four fixes made during this audit (a29 maps, a32 odds wording, a35 scale, a39 Eltanin wording). After them, no claim in the script goes beyond its source. Before narration: add sources for four textbook/historical items (GPS altitude, India's extent, Chicxulub size, a 2036 corridor map).
+**Result:** four fixes made during this audit (a29 maps, a32 odds wording, a35 scale, a39 Eltanin wording). After them, no claim in the script goes beyond its source. Sourcing pass (22 Nov evening) added sources for GPS, India, Chicxulub, the 2036 corridor and Ramses, and fixed two more lines (a29 dates, a44b radar). Six fixes in total.
 
 ## Shorts from this episode (ideas, Shorts rules)
 1. **"Earth Won't Tear Apophis Apart"**: pocket hook "the ground moves by a few percent"; second act = landslides; loop.

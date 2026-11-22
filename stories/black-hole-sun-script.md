@@ -55,7 +55,7 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 | b16 | Narrator | Let's step outside on that first dark afternoon and look up. Where the Sun was, what do you see? |
 | b17 | Arka | A giant black hole, swallowing the sky? |
 | b18 | Narrator | Nothing. The black hole is about six kilometres across, a hundred and fifty million kilometres away. That's like trying to see a single grain of sand on the far side of a country. |
-| b19 | Narrator | Its gravity still bends the light of stars passing behind it, but by far too little to see without serious telescopes. |
+| b19 | Narrator | Its gravity still bends the light of stars passing behind it. Line one up exactly and the star would smear into a tiny ring. But the whole effect fits in a patch about a twentieth of the Moon's width. You'd need binoculars to notice. |
 | b20 | Narrator | And everything else? The stars come out in the middle of the afternoon. The planets go dark, because they only ever shone with borrowed sunlight. But they're all still there, still circling. |
 | b21 | Narrator | The Moon still orbits Earth. It just stops shining. And the tides keep coming, because the Moon does most of that work, and the Sun's share is still pulling too. |
 | b22 | Arka | So the scariest object in the universe arrives, and the main thing we notice is… the lights went out. |
@@ -129,7 +129,7 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 | Gravity depends only on mass and distance | b11 | NASA JPL (Marc Rayman): the pull of the Sun, a black hole or anything else depends only on its mass and distance. |
 | Ep 5 callback: Sun vanishing removes gravity, Earth flies off | b8, b15 | Ep 5 script (`stories/ghost-sun-script.md`). |
 | "Like a grain of sand on the far side of a country" | b18 | **Calculated:** 6 km at 1.5 × 10⁸ km = 4 × 10⁻⁸ rad. A 0.1 mm grain at that angle sits ~2,500 km away (roughly India's width). Keep "a country". |
-| Lensing of background starlight too small to see by eye | b19 | **Reasoned from b18:** the Einstein radius of a Sun-mass lens at 1 AU for distant stars is ~0.04″ (calculated: θ_E = √(4GM/c²·1/D) ≈ 4 × 10⁻⁸·… ≈ 0.04 arcsec); far below naked-eye resolution (~60″). **Double-check before narration.** |
+| Lensing: a tiny ring, patch ~1/20 of the Moon's width | b19 | **Calculated (re-checked 22 Nov):** Einstein radius θ_E = √(4GM/(c²D)) for a Sun-mass lens at D = 1 AU and a distant star = √(5.9 km / 1.496×10⁸ km) = 1.98×10⁻⁴ rad ≈ **41″** (ring diameter ~82″); full Moon ≈ 1,865″ → about 1/23. Draft 1 said ~0.04″: an arithmetic slip, a thousand times too small. Naked-eye resolution is ~60″, so the ring is at the edge of the eye's limit and only when a star lines up; "binoculars" is honest. |
 | Planets go dark (reflected light); Moon stops shining | b20, b21 | Planets and the Moon shine by reflected sunlight (basic astronomy). |
 | Tides continue: the Moon does most of it; the Sun's share remains (same mass) | b21 | NOAA (Ep 5 fact table): Sun's tidal force ≈ 46% of the Moon's; same mass → same tidal pull. |
 | At the Sun's old surface (~700,000 km), the pull equals today's surface gravity | b24 | Follows from b11 (mass and distance only); Sun radius ≈ 696,000 km (standard). |
@@ -137,12 +137,12 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 | Spaghettification starts ~1,700 km out (for a person) | b28 | **Calculated:** tidal acceleration across a 2 m body Δa = 2GM·L/r³; set Δa ≈ 10 g → r = (2·1.327×10²⁰·2/98)^⅓ ≈ 1,760 km. The threshold is a choice; "about 1,700" with "starts stretching you". |
 | No stable orbit inside ~9 km (ISCO = 3 Schwarzschild radii); event horizon ~3 km | b29 | **Calculated:** ISCO = 6GM/c² = 3 × 2.95 km ≈ 8.9 km (non-spinning black hole, standard GR). |
 | Earth moves at about 30 km/s | b31 | Standard (Earth's orbital speed 29.8 km/s). |
-| Sgr A*: 26,000 light-years; ~4 million solar masses | b32 | Max Planck Society (MPG): 26,000 light-years. Mass ~4 million suns: standard (ESO/GRAVITY); add a source before narration. |
+| Sgr A*: 26,000 light-years; ~4 million solar masses | b32 | Max Planck Society (MPG): 26,000 light-years. Mass: Max Planck Institute for Extraterrestrial Physics (MPE): 4.3 million solar masses (GRAVITY). Script "about four million" is a safe rounding; could say "four point three million". |
 | S2 orbits every 16 years; closest < 20 billion km; tracked since 1992; 2018 closest pass matched Einstein | b33, b35 | ESO blog: 16-year orbit, observing since 1992, closest approach May 2018; MPG: within 20 billion km (120 AU), rosette orbit confirming Einstein; A&A 2018: gravitational redshift detected at the 2018 pericentre. |
 | Sun can't become a black hole; needs ~20× its mass | b38 | NASA: "The Sun would need to be about 20 times more massive to end its life as a black hole." Space.com: around 20 times or more. |
 | Red giant → white dwarf about Earth's size, cooling for trillions of years | b39 | NASA (red giant ~1 billion years, then white dwarf); Space.com/inkl: white dwarf roughly Earth's size; Astronomy.com: won't become a black dwarf for trillions of years; none exist yet because the universe isn't old enough. Script: "longer than the universe has existed so far". |
 
-**Still to source before narration:** Sgr A* mass (b32); double-check the lensing figure (b19).
+**Sourcing complete (22 Nov, evening).** b19 corrected after re-checking the lensing calculation.
 
 ## Credibility audit (22 Nov 2026)
 | Line | Risk | Verdict |
@@ -151,7 +151,7 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 | b10–b11 "Only up close" | Oversimplifying | **OK.** Chapter 3 explains "up close" with numbers. |
 | b15 "freeze, just as it did" | Reusing Ep 5's claims | **OK.** Same physics (no sunlight); the Ep 5 fact table covers it. |
 | b18 analogy | Calculation | **OK.** Shown in the table; "a country" is conservative. |
-| b19 lensing | Calculation not yet double-checked | **Flagged.** The line says "far too little to see without serious telescopes", which holds even if the exact figure shifts; still double-check before narration. |
+| b19 lensing | Calculation | **Fixed.** Re-check found the draft figure a thousand times too small; the old line ("far too little to see without serious telescopes") overstated it. New line: tiny ring, ~1/20 of the Moon's width, binoculars. |
 | b21 tides | Could be read as "unchanged" | **OK.** Says the Moon does most of it and the Sun's share continues; both true with the same mass. |
 | b27 quote | Quote accuracy | **OK.** NASA's wording via IFLScience; under 15 words. |
 | b28 spaghettification distance | Threshold depends on assumptions | **OK with wording:** "starts stretching you", "about". Table shows the assumption (10 g across 2 m). |
