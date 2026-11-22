@@ -1,7 +1,15 @@
 import {spawn} from 'node:child_process';
+import {existsSync} from 'node:fs';
+import path from 'node:path';
 
 /** REMOTION_BROWSER_EXECUTABLE overrides the default (e.g. a local headless Chromium on Linux CI). */
-export const browserExecutable = process.env.REMOTION_BROWSER_EXECUTABLE || (process.platform === 'darwin' ? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' : null);
+// Render browser (22 Nov 2026): prefer Remotion's own headless Chrome in node_modules, which never auto-updates. The everyday
+// Chrome app updates itself in the background, and new render workers then crash on launch ("Library not loaded").
+// Order: REMOTION_BROWSER_EXECUTABLE, the headless shell if present, then the Chrome app (macOS) or Remotion's default.
+const headlessShell = path.resolve('node_modules/.remotion/chrome-headless-shell', `${process.platform === 'darwin' ? 'mac' : 'linux'}-${process.arch === 'arm64' ? 'arm64' : 'x64'}`,
+  `chrome-headless-shell-${process.platform === 'darwin' ? 'mac' : 'linux'}-${process.arch === 'arm64' ? 'arm64' : 'x64'}`, 'chrome-headless-shell');
+export const browserExecutable = process.env.REMOTION_BROWSER_EXECUTABLE || (existsSync(headlessShell) ? headlessShell
+  : process.platform === 'darwin' ? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' : null);
 export const run = (command: string, args: string[], cwd = process.cwd()) => new Promise<void>((resolve, reject) => {
   const child = spawn(command, args, {cwd, stdio: 'inherit'});
   child.on('error', reject);

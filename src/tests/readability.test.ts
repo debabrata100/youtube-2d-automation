@@ -3,7 +3,8 @@ import {haloFor, LIGHT_HALO} from '../engine/style/theme';
 import {holdShortNotes, readabilityIssues, visibleFrames} from '../engine/storyboard/readability';
 
 const rise = (at: number) => [{frame: 0, value: 0}, {frame: at, value: 0}, {frame: at + 8, value: 1}];
-const board = (notes: object[], layers: object[] = [], durationFrames = 300) => ({
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const board = (notes: any[], layers: any[] = [], durationFrames = 300): any => ({
   themeId: 'paint-night-gold',
   scenes: [{id: 's1', durationFrames, config: {primary: {asset: 'g1'}}}],
   groups: [{id: 'g1', layers, annotations: notes}],

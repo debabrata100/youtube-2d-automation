@@ -1,6 +1,6 @@
 # 13: Episode 5, If the Sun Disappeared, Even the Air Would Fall
 
-- **Status (22 Nov 2026):** re-rendered as `jobs/gs-full-2` with the Every Moon look and sound (paint-night-gold with outlined notes, music -17 dB, duck 2, narrator treatment) + frozen-Earth fix at 9:16; all automated checks pass, -16.4 LUFS, 11:56. md5 b8e03b6f…. Upload folder ready (video, captions, 3 thumbnails). Not uploaded; date to confirm (Thu 3 Dec 9:30 PM proposed).
+- **Status (22 Nov 2026):** final render `jobs/gs-full-4` (md5 16499d87…): Every Moon look and sound, light outline behind the dark daytime notes, 31 late notes brought in for 1.5 s by the new readability pass; all checks pass. Upload folder ready (video, captions, thumbnails a / b2 / c). Not uploaded; date to confirm (Thu 3 Dec 9:30 PM proposed).
 - **Upload folder:** `~/Downloads/gahanarka-upload/13-ghost-sun/`: the video as `if-the-sun-disappeared-even-the-air-would-fall.mp4`, `captions-english.srt`, thumbnails.
 - **Length:** 11:56 (716 s, including the 12 s end card).
 - **Script, sources and fact check:** `stories/ghost-sun-script.md` (fact-check table: 30 narration rows + 8 on-screen-only rows). Narration: Gahanarka R1 + Arka (Jessica), requests WeffTfEY7PQQVPgCnp3o and HSRS9PzBAiZdUaVQRB4l, cut with the brand-sting gap (`jobs/gs-narration-sting`, no extra paid requests).
