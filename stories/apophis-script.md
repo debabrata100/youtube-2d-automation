@@ -73,21 +73,23 @@ All three promises are delivered in the first 60 seconds (the claim check is set
 
 ### Chapter 3: "What if we were heading *for* that?" (T plus 10 minutes)
 
+*Earth keeps shrinking behind us through the whole chapter; each claim gets its own shape (middle-stretch rule): a wrong guess, a question about a study, a drawn demo, a rapid-fire round, an honest "we don't know". A small hand-written source tag appears beside each answer (list below the script).*
+
 | # | Speaker | Line |
 |---|---|---|
-| a27 | Arka | Okay. Now the big one. What if we *were* heading for that? |
-| a28 | Narrator | Let's take the claims in order. Claim three: scientists have mapped where it lands. |
+| a27 | Arka | Okay. Earth's getting smaller back there. Now the big one: what if we *were* heading for it? |
+| a28 | Arka | And before you answer, I've seen the maps. Scientists know exactly where it lands. |
 | a29 | Narrator | Half true. Scientists did draw maps like that, back when the odds were real: the strip of Earth it would have crossed *if* it hit. But a map of a what-if isn't a prediction. In March 2021, radar dishes at Goldstone and Green Bank measured Apophis so precisely that the impacts people feared, in 2029, 2036 and 2068, were all ruled out. NASA says there's no risk for at least a hundred years. |
 | a30 | Arka | Then why do some videos say the odds went *up*? |
-| a31 | Narrator | That one is half right, and it's a good question. A 2024 study asked: what if a small, unseen rock hits Apophis before 2029 and nudges it? |
+| a31 | Narrator | Good question, and that one is half right too. A 2024 study asked: what if a small, unseen rock hits Apophis before 2029 and nudges it? |
 | a32 | Narrator | The answer: about one chance in a million of a nudge that could set up a collision some time after 2029, and about one in a billion of one that sends it into Earth in 2029. And a single look at Apophis in 2027 should settle most of it. |
 | a33 | Arka | One in a billion. I'll take those odds. |
-| a34 | Narrator | Now, the real what-if. Suppose, in an imaginary universe, it did hit. Claim four: it would wipe out a continent. |
-| a35 | Narrator | It wouldn't. On land, it would devastate an area a few hundred kilometres across. A terrible regional disaster, across a region the size of a small country. Not a continent. |
-| a36 | Narrator | Claim five: the end of the world. Also no. Global climate disasters need asteroids about a kilometre wide or more. The one that ended the dinosaurs was about ten kilometres. Apophis is less than half a kilometre. |
-| a37 | Arka | And the energy? I've seen numbers from forty megatons to ten thousand. |
-| a38 | Narrator | That spread is real, and it has a simple cause: the early estimates of its size and mass were rough. Today's best estimates put it at roughly a thousand megatons. That's still tens of thousands of times the bomb that destroyed Hiroshima. |
-| a39 | Narrator | Claim six: a wall of water hundreds of metres high. Here, honestly, scientists disagree. An ocean impact would raise tsunamis, and that's the biggest danger of a sea strike. But some impact researchers argue the giant-wall simulations get wave-breaking wrong. And one study found that an asteroid that struck the ocean off Chile, about two million years ago, didn't cause a giant tsunami. |
+| a34 | Narrator | So let's imagine the impossible version. Pretend it did hit. You've heard it would wipe out a continent. Let's draw it. |
+| a35 | Narrator | Here's a continent. And here's the zone it would devastate on land: a few hundred kilometres across. A terrible regional disaster, a region the size of a small country. Now look at the continent again. |
+| a36 | Arka | That's… a lot smaller than the thumbnails. |
+| a37 | Narrator | Quick round. The end of the world? No. Global climate disasters need asteroids about a kilometre wide or more. The dinosaur-killer was about ten. Apophis is less than half a kilometre. |
+| a38 | Narrator | The energy? You'll see anything from forty megatons to ten thousand, because the early size estimates were rough. Today's best estimates: roughly a thousand. Still tens of thousands of times the Hiroshima bomb. |
+| a39 | Narrator | And the wall of water hundreds of metres high? This one gets an honest answer: we don't know. An ocean strike would raise tsunamis, and that's the biggest danger of a sea impact. But some impact researchers argue the giant-wall simulations get wave-breaking wrong, and one study found that an asteroid that struck the ocean off Chile about two million years ago didn't cause a giant tsunami. |
 | a40 | Narrator | So: dangerous coastal waves, yes. A guaranteed skyscraper of water, no one can promise that. |
 | a41 | Arka | So the true version is: bad, regional, and not happening. |
 | a42 | Narrator | That's exactly it. |
@@ -111,13 +113,36 @@ All three promises are delivered in the first 60 seconds (the claim check is set
 | a48 | Narrator | From Earth, Apophis will look like a star, about as bright as the stars of the Little Dipper, crossing the width of the full Moon in about a minute. Europe, Africa and western Asia get the best view. In India, it's brightest at about two in the morning on the fourteenth. Around two billion people could see it with their own eyes. |
 | a49 | Narrator | It's brightest a little over an hour before its closest moment, and then it slips into the Sun's glare. So be outside early, somewhere dark. |
 | a50 | Narrator | The asteroid named after the god of chaos turned out to be proof that careful measuring can turn fear into a date in the calendar. On Friday the thirteenth, go and watch a star that moves. |
-| a51 | Arka | *(next question: written once the next episode's script exists; content-plan rule. Candidate: S2 "Would a black-hole Sun suck us in?")* |
-| a52 | Narrator | *(Good question, Arka. That's our next episode.)* |
+| a51 | Arka | Earth bent a whole asteroid's path just by being nearby. So what about the strongest pull there is? If the Sun turned into a black hole… would it pull *us* in? |
+| a52 | Narrator | Good question, Arka. Most people think they know the answer. They're wrong. That's our next episode. |
 | a53 | Arka | *(subscribe line)* |
 
 *(end card, 12 s)*
 
+**Length estimate:** about 1,320 words (without the ending's placeholder lines) → about 9 minutes at R1's measured pace (~145 words a minute), about 9.5–10 minutes with the sting, end card and the ride's pauses. If it needs to reach 10+, the natural place is the ride (a15–a26: more of the view, no new facts).
+
 **Description/chapters carry the search terms:** "what if Apophis hit Earth", "Apophis 2029", "where would Apophis hit", "Apophis tsunami", "how to see Apophis".
+
+## On-screen source tags (small hand-written labels beside each answer)
+| Line | Tag |
+|---|---|
+| a9 | "ESA mass + size, our maths" |
+| a12 | "ESA · Torino scale, Dec 2004" |
+| a16 | "our maths: 32,000 km" |
+| a21 | "USGS 2025" |
+| a22 | "Pravec et al. 2014" |
+| a24–a25 | "Royal Obs. Belgium 2024 · NASA" |
+| a29 | "NASA / ESA, March 2021" |
+| a32 | "Wiegert 2024" |
+| a35 | "Planetary Society" |
+| a37 | "1 km+ for global effects" |
+| a38 | "NASA est. 880 Mt" |
+| a39 | "Acta Astronautica 2021 · Melosh" |
+| a44 | "ESA" |
+| a45 | "NASA · Univ. of Arizona" |
+| a48 | "JPL · ESA" |
+
+Tags stay small (bottom corner, light ink with the halo), on screen for at least 2 s, and never cover the drawing. Full references go in the description.
 
 ## Fact check (sources consulted 22 Nov 2026)
 
@@ -139,8 +164,8 @@ All three promises are delivered in the first 60 seconds (the claim check is set
 | Impact-corridor maps were drawn when the risk was open; they are what-ifs, not predictions; 2021 radar (Goldstone, Green Bank) ruled out 2029, 2036, 2068; no risk for at least 100 years | a29 | Risk corridors were computed for the 2036 keyhole scenario while it was open (mid-2000s; add a published corridor map as a source before narration). ESA (26 Mar 2021); NASA Apophis facts; NASA analysis (2021). |
 | Small-rock nudge: ~1 in a million (could set up a post-2029 collision), ~1 in a billion (2029 impact); one look in 2027 retires most risk | a31, a32 | Wiegert (2024), arXiv 2409.06059 and Space.com: odds essentially 1 in a million for a dangerous post-2029 path, 1 in a billion for a 2029 collision; a single 2027 observation retires most of the risk. AAS Nova: most small impacts push it farther away. |
 | Land impact: devastation up to a few hundred km | a35 | The Planetary Society: widespread destruction up to several hundred kilometres from the impact site. "A region the size of a small country" is our paraphrase; NBC (2004) used "flatten Texas or a couple of European countries" with the older, larger size estimate, so we don't quote that. |
-| No global climate disaster; that needs ~1 km+; dinosaur impactor ~10 km | a36 | Universe Today: Apophis wouldn't cause the long-term climate destruction that 1 km and larger asteroids can. Chicxulub ~10 km: textbook, add a source before narration. |
-| Energy estimates range from ~40 to 10,000 megatons; spread due to early size/mass estimates; best estimate roughly a thousand megatons | a37, a38 | Published figures: 40 Mt (J. Melosh, quoted in Centauri Dreams), 880 Mt (NASA estimate via Universe Today), 1,717 Mt (Russian ministry researchers via ABS-CBN, 2022), 10,000 Mt (NBC 2004, when it was thought ~400 m). "Roughly a thousand" covers 880–1,717. |
+| No global climate disaster; that needs ~1 km+; dinosaur impactor ~10 km | a37 | Universe Today: Apophis wouldn't cause the long-term climate destruction that 1 km and larger asteroids can. Chicxulub ~10 km: textbook, add a source before narration. |
+| Energy estimates range from ~40 to 10,000 megatons; spread due to early size/mass estimates; best estimate roughly a thousand megatons | a38 | Published figures: 40 Mt (J. Melosh, quoted in Centauri Dreams), 880 Mt (NASA estimate via Universe Today), 1,717 Mt (Russian ministry researchers via ABS-CBN, 2022), 10,000 Mt (NBC 2004, when it was thought ~400 m). "Roughly a thousand" covers 880–1,717. |
 | Tens of thousands of Hiroshimas | a38 | **Calculated:** Hiroshima ≈ 15 kilotons = 0.015 Mt; 880 ÷ 0.015 ≈ 59,000; 1,717 ÷ 0.015 ≈ 114,000. "Tens of thousands" is conservative. |
 | Ocean strike: tsunami is the biggest threat; scientists disagree on giant waves; Eltanin impact (~2.1 Myr, off Chile) caused no tsunami per a later study | a39, a40 | Acta Astronautica 188 (2021), hypothetical Apophis deep-ocean impact: the tsunami is the most far-reaching and threatening effect. NBC News (Live Science): H. Jay Melosh says many simulations use unrealistic wave-breaking models; a study found the Eltanin impact off Chile 2.1 Myr ago didn't cause a tsunami. Script attributes it ("one study found") and gives no crater or size. |
 | Ramses: ESA–JAXA, launch spring 2028, arrive Feb 2029, "literally cannot be late" | a44 | ESA (Jun 2026, Paolo Martino); ESA Ramses page (launch April 2028, arrival February 2029). |
@@ -155,7 +180,7 @@ All three promises are delivered in the first 60 seconds (the claim check is set
 | Ramses carries a radar and companion craft | a44b | Popular Mechanics via Yahoo (2025): low-frequency radar, gravimeter and lander; **confirm the final payload on ESA's Ramses page before narration**. |
 | APEX cameras start ~2 weeks before the flyby | a45b | NASA/EurekAlert: by 2 April 2029, around two weeks before the close encounter; EPSC abstract: at ~5 million km. |
 
-**Still to source before narration:** GPS altitude (a18), India's north–south extent (a22), Chicxulub impactor size (a36), a published 2036 risk-corridor map (a29); Ramses payload (a44b).
+**Still to source before narration:** GPS altitude (a18), India's north–south extent (a22), Chicxulub impactor size (a37), a published 2036 risk-corridor map (a29); Ramses payload (a44b).
 
 ## Credibility audit (final check, 22 Nov 2026)
 
@@ -172,12 +197,13 @@ Each line that makes or corrects a claim, checked against the rules above.
 | a28–a29 "mapped where it lands" | Calling a real thing fake | **Fixed in the audit:** draft said "They haven't", but scientists did map impact corridors while the risk was open. Now: "Half true… a map of a what-if isn't a prediction." Names only the three dates ruled out, plus "for at least a hundred years" (NASA), not "ever". |
 | a31–a32 odds | Misquoting a real study | **Fixed in the audit:** the one-in-a-million figure now matches the study (a nudge that could set up a collision after 2029). Treated as half right, with the study's own conclusion (one 2027 look retires most of the risk). |
 | a35 regional scale | Vague exaggeration | **Fixed in the audit:** "a region the size of a small country", matching "several hundred kilometres". |
-| a36 "about a kilometre wide or more" | Threshold | **OK.** Universe Today's 1 km+ framing; we don't claim a precise cutoff. |
+| a37 "about a kilometre wide or more" | Threshold | **OK.** Universe Today's 1 km+ framing; we don't claim a precise cutoff. |
 | a38 "roughly a thousand megatons" | Picking a number | **OK.** Sits inside the credible modern estimates (880–1,717); explains why older figures differ. "Tens of thousands of Hiroshimas" is the conservative end. |
 | a39–a40 ocean wall | Claiming certainty either way | **Fixed in the audit:** says scientists disagree and keeps "dangerous coastal waves, yes". The Eltanin point is attributed ("one study found") and no longer says "huge crater", which the sources don't support consistently. |
 | a44 quote | Quote accuracy | **OK.** "literally cannot be late" is ESA's published quote (under 15 words). |
 | a48 India time | Calculation | **OK.** From Space.com's 20:35 GMT peak; "about two". |
 | a50 "proof that careful measuring…" | Editorialising | **OK.** Opinion phrased as the story's conclusion; supported by the 2004 → 2021 record. |
+| Ch 3 structure | Repetitive list (middle-stretch risk) | **Fixed:** each claim now has its own shape (Arka's wrong guess, a study question, a drawn demo, a rapid-fire round, an honest "we don't know"); Earth keeps receding behind the ride. |
 | Title 1 "Most videos get it wrong" | Bait if not delivered | **OK, carefully.** Seven claims checked in chapters 2–3: four wrong, two half right, one uncertain. "Get it wrong" holds; never escalate to "lie" or "fake" in the title, thumbnail or description. |
 | Title 3 "Rode Apophis" | Promise | **OK.** The ride starts at a7 (about 0:40). |
 
@@ -190,5 +216,5 @@ Each line that makes or corrects a claim, checked against the rules above.
 
 ## Open decisions for Debabrata
 - Arka voice (D2 or E3).
-- The ending's next question waits for the next script (S2 suggested).
+- Ending a51–a52 teases S2 ("Would a Black-Hole Sun Suck Us In?") through gravity; S2 draft 1 written 22 Nov.
 - Background: dusk-blue page for the Earth-side scenes, deep space for the ride (Every Moon and Ep 5 were both navy).
