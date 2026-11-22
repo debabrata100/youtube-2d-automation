@@ -74,19 +74,29 @@ const InkNote: React.FC<{label: Label; opacity: number; theme?: Theme}> = ({labe
     const a = Math.atan2(c.to.y - c.from.y, c.to.x - c.from.x), k = label.size * .45;
     return `M ${c.to.x - k * Math.cos(a - .45)} ${c.to.y - k * Math.sin(a - .45)} L ${c.to.x} ${c.to.y} L ${c.to.x - k * Math.cos(a + .45)} ${c.to.y - k * Math.sin(a + .45)}`;
   })() : null;
+  // The halo is for contrast, so it takes the opposite brightness of the text: the theme's dark halo behind light text,
+  // a light halo behind dark text (e.g. navy notes on a daytime sky). A dark halo around dark text just smudges it.
+  const halo = theme?.label.halo ? (luminance(color) < .35 ? '#f4f8ff' : theme.label.halo) : undefined;
   const mid = c ? {x: (c.from.x + c.to.x) / 2 + (c.to.y - c.from.y) * .12, y: (c.from.y + c.to.y) / 2 - (c.to.x - c.from.x) * .12} : null;
   return <g opacity={Math.min(1, opacity * 1.5)}>
     {c && mid && <g opacity={Math.max(0, Math.min(1, opacity * 2 - .6))}>
       <path d={`M ${c.from.x} ${c.from.y} Q ${mid.x} ${mid.y} ${c.to.x} ${c.to.y}`} fill="none" stroke={color} strokeWidth={w} strokeLinecap="round"/>
       <path d={head!} fill="none" stroke={color} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round"/>
     </g>}
-    {theme?.label.halo && <text x={label.x} y={label.y} textAnchor={label.anchor} fill={theme.label.halo} fontFamily={font} fontWeight={weight} fontSize={label.size}
-      stroke={theme.label.halo} strokeWidth={label.size * .2} strokeLinejoin="round" opacity=".78"
+    {halo && <text x={label.x} y={label.y} textAnchor={label.anchor} fill={halo} fontFamily={font} fontWeight={weight} fontSize={label.size}
+      stroke={halo} strokeWidth={label.size * .2} strokeLinejoin="round" opacity=".78"
       transform={s !== 1 ? `translate(${label.x} ${cy}) scale(${s}) translate(${-label.x} ${-cy})` : undefined}>{label.text}</text>}
     <text x={label.x} y={label.y} textAnchor={label.anchor} fill={color} fontFamily={font} fontWeight={weight} fontSize={label.size}
       stroke={color} strokeWidth={label.size * .035} strokeLinejoin="round"
       transform={s !== 1 ? `translate(${label.x} ${cy}) scale(${s}) translate(${-label.x} ${-cy})` : undefined}>{label.text}</text>
   </g>;
+};
+/** Relative luminance of a #rrggbb colour (0 = black, 1 = white); anything unparseable counts as light. */
+const luminance = (hex: string) => {
+  const m = /^#([0-9a-f]{6})$/i.exec(hex.trim());
+  if (!m) return 1;
+  const [r, g, b] = [0, 2, 4].map(i => parseInt(m[1].slice(i, i + 2), 16) / 255);
+  return .2126 * r + .7152 * g + .0722 * b;
 };
 const Annotation: React.FC<{label: Label; opacity: number; theme?: Theme}> = ({label, opacity, theme}) => {
   if (label.variant === 'ink') return <InkNote label={label} opacity={opacity} theme={theme}/>;
