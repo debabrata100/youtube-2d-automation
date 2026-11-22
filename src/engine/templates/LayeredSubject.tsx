@@ -80,6 +80,9 @@ const InkNote: React.FC<{label: Label; opacity: number; theme?: Theme}> = ({labe
       <path d={`M ${c.from.x} ${c.from.y} Q ${mid.x} ${mid.y} ${c.to.x} ${c.to.y}`} fill="none" stroke={color} strokeWidth={w} strokeLinecap="round"/>
       <path d={head!} fill="none" stroke={color} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round"/>
     </g>}
+    {theme?.label.halo && <text x={label.x} y={label.y} textAnchor={label.anchor} fill={theme.label.halo} fontFamily={font} fontWeight={weight} fontSize={label.size}
+      stroke={theme.label.halo} strokeWidth={label.size * .2} strokeLinejoin="round" opacity=".78"
+      transform={s !== 1 ? `translate(${label.x} ${cy}) scale(${s}) translate(${-label.x} ${-cy})` : undefined}>{label.text}</text>}
     <text x={label.x} y={label.y} textAnchor={label.anchor} fill={color} fontFamily={font} fontWeight={weight} fontSize={label.size}
       stroke={color} strokeWidth={label.size * .035} strokeLinejoin="round"
       transform={s !== 1 ? `translate(${label.x} ${cy}) scale(${s}) translate(${-label.x} ${-cy})` : undefined}>{label.text}</text>

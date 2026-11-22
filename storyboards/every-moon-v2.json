@@ -51,14 +51,6 @@
       "width": 1920,
       "height": 1080,
       "transparent": true
-    },
-    {
-      "id": "photo-titan",
-      "path": "nasa/inserts/photo-titan.png",
-      "type": "png",
-      "width": 1920,
-      "height": 1080,
-      "transparent": true
     }
   ],
   "backdrop": {
@@ -70,8 +62,8 @@
   },
   "audio": {
     "music": "cues",
-    "musicGainDb": -22,
-    "duckRatio": 8,
+    "musicGainDb": -17,
+    "duckRatio": 2,
     "targetLufs": -16,
     "crossfadeSeconds": 1.5,
     "musicCues": [
@@ -17608,8 +17600,8 @@
         {
           "id": "n0",
           "text": "dig!",
-          "x": 1560,
-          "y": 300,
+          "x": 1600,
+          "y": 220,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
@@ -17639,8 +17631,8 @@
         {
           "id": "n1",
           "text": "a few meters of ice",
-          "x": 1560,
-          "y": 420,
+          "x": 1600,
+          "y": 330,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -19718,65 +19710,741 @@
           ]
         },
         {
-          "id": "photo-titan",
-          "asset": "photo-titan",
+          "id": "haze59",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.45,
+            "rx": 0.9,
+            "ry": 0.6,
+            "tone": "sun"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.45
+            }
+          ]
+        },
+        {
+          "id": "g59",
+          "kit": {
+            "type": "terrain",
+            "top": 0.72,
+            "curve": 0.02,
+            "fill": "#b06a2a",
+            "detail": "#7a4419",
+            "rocks": 9,
+            "bumps": 5,
+            "seed": 12
+          }
+        },
+        {
+          "id": "probe59",
+          "kit": {
+            "type": "prop",
+            "item": "probe",
+            "x": 0.36,
+            "y": 0.68,
+            "size": 0.16,
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "peb0",
+          "kit": {
+            "type": "planet",
+            "x": 0.6,
+            "y": 0.812,
+            "radius": 0.021,
+            "base": "#d9b98c",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          },
           "opacity": [
             {
               "frame": 0,
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "pebbles",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 8,
+              "frame": {
+                "at": "pebbles"
+              },
               "value": 1
             }
           ],
-          "anchor": {
-            "x": 960.0,
-            "y": 540.0
-          },
           "scale": [
             {
               "frame": 0,
-              "value": 1.08
+              "value": 0.6
             },
             {
-              "frame": 3,
-              "value": 1.08
+              "frame": {
+                "at": "pebbles",
+                "offset": -1
+              },
+              "value": 0.6
             },
             {
-              "frame": 10,
-              "value": 1.2,
+              "frame": {
+                "at": "pebbles",
+                "offset": 9
+              },
+              "value": 1,
               "ease": "ease-out-back"
             }
           ],
-          "x": [
+          "anchor": {
+            "x": 1152.0,
+            "y": 876.96
+          }
+        },
+        {
+          "id": "peb1",
+          "kit": {
+            "type": "planet",
+            "x": 0.573,
+            "y": 0.808,
+            "radius": 0.021,
+            "base": "#d9b98c",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          },
+          "opacity": [
             {
               "frame": 0,
-              "value": 0.0
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 2
+              },
+              "value": 1
             }
           ],
-          "y": [
+          "scale": [
             {
               "frame": 0,
-              "value": 43.20000000000004
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 11
+              },
+              "value": 1,
+              "ease": "ease-out-back"
             }
-          ]
+          ],
+          "anchor": {
+            "x": 1100.1599999999999,
+            "y": 872.6400000000001
+          }
+        },
+        {
+          "id": "peb2",
+          "kit": {
+            "type": "planet",
+            "x": 0.832,
+            "y": 0.896,
+            "radius": 0.021,
+            "base": "#d9b98c",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 3
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 4
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 3
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 13
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1597.4399999999998,
+            "y": 967.6800000000001
+          }
+        },
+        {
+          "id": "peb3",
+          "kit": {
+            "type": "planet",
+            "x": 0.595,
+            "y": 0.864,
+            "radius": 0.021,
+            "base": "#d9b98c",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 5
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 6
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 5
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 15
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1142.3999999999999,
+            "y": 933.12
+          }
+        },
+        {
+          "id": "peb4",
+          "kit": {
+            "type": "planet",
+            "x": 0.579,
+            "y": 0.813,
+            "radius": 0.021,
+            "base": "#d9b98c",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 7
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 8
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 7
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 17
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1111.6799999999998,
+            "y": 878.04
+          }
+        },
+        {
+          "id": "peb5",
+          "kit": {
+            "type": "planet",
+            "x": 0.835,
+            "y": 0.899,
+            "radius": 0.021,
+            "base": "#d9b98c",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 9
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 10
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 9
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 19
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1603.1999999999998,
+            "y": 970.9200000000001
+          }
+        },
+        {
+          "id": "peb6",
+          "kit": {
+            "type": "planet",
+            "x": 0.792,
+            "y": 0.823,
+            "radius": 0.021,
+            "base": "#d9b98c",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 11
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 12
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 11
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 21
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1520.64,
+            "y": 888.8399999999999
+          }
+        },
+        {
+          "id": "peb7",
+          "kit": {
+            "type": "planet",
+            "x": 0.733,
+            "y": 0.888,
+            "radius": 0.021,
+            "base": "#d9b98c",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 13
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 14
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 13
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 23
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1407.36,
+            "y": 959.04
+          }
+        },
+        {
+          "id": "peb8",
+          "kit": {
+            "type": "planet",
+            "x": 0.819,
+            "y": 0.81,
+            "radius": 0.021,
+            "base": "#d9b98c",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 15
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 16
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 15
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 25
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1572.48,
+            "y": 874.8000000000001
+          }
+        },
+        {
+          "id": "peb9",
+          "kit": {
+            "type": "planet",
+            "x": 0.748,
+            "y": 0.861,
+            "radius": 0.021,
+            "base": "#d9b98c",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 4
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 17
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 18
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 17
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 27
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1436.16,
+            "y": 929.88
+          }
+        },
+        {
+          "id": "peb10",
+          "kit": {
+            "type": "planet",
+            "x": 0.681,
+            "y": 0.811,
+            "radius": 0.0212,
+            "base": "#d9b98c",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 5
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 19
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 20
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 19
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "pebbles",
+                "offset": 29
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1307.52,
+            "y": 875.8800000000001
+          }
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "pebbles, river channels",
+          "text": "what Huygens saw",
           "x": 960,
-          "y": 960,
-          "size": 66,
+          "y": 200,
+          "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#eef1f8",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 5,
+              "value": 0
+            },
+            {
+              "frame": 11,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "pebbles",
+          "x": 1500,
+          "y": 380,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
           "pop": true,
           "opacity": [
             {
@@ -19793,6 +20461,68 @@
             {
               "frame": {
                 "at": "pebbles",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "river channels",
+          "x": 1500,
+          "y": 480,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "channels",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "channels",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "a flat, damp plain",
+          "x": 1500,
+          "y": 580,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "damp",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "damp",
                 "offset": 5
               },
               "value": 1
@@ -28336,8 +29066,27 @@
         },
         {
           "sound": "pop",
+          "frame": 6,
+          "gainDb": -25
+        },
+        {
+          "sound": "pop",
           "frame": {
             "at": "pebbles"
+          },
+          "gainDb": -25
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "channels"
+          },
+          "gainDb": -25
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "damp"
           },
           "gainDb": -25
         }

@@ -86,7 +86,8 @@
   "label": {
     "fontFamily": "Patrick Hand, Comic Sans MS, sans-serif",
     "fontWeight": 400,
-    "radius": 12
+    "radius": 12,
+    "halo": "#0d1220"
   },
   "caption": {
     "variant": "outline",

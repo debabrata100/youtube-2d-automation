@@ -339,7 +339,7 @@ shot('e49', 'EUROPA', [you(slot='center-left', poses=[(0, 'cower')], faces=[(0, 
      survival('about 1 day', A('Survival'), WARN) + [Note('Europa Clipper keeps its distance', A('Clipper'), 'small', pos=(1350, 820))], sounds=ticks('alarm', 7, 6))
 shot('e50', None, [you(x=.36, fy=.37, h=.28, poses=[(0, 'reach')], faces=[(0, 'neutral'), (A('shield'), 'happy')])],
      [kit(F, 'ice', 'ice-cutaway', .5, .62, .5, w=2.0, h=1.0, level=[{'frame': 0, 'value': 0}, {'frame': A('shield'), 'value': 1}]), kit(F, 'shovel', 'shovel', .44, .3, .12)],
-     [Note('dig!', A('dig'), pos=(1560, 300)), Note('a few meters of ice', A('ice'), 'small', pos=(1560, 420))], color='#0e1d36')
+     [Note('dig!', A('dig'), pos=(1600, 220)), Note('a few meters of ice', A('ice'), 'small', pos=(1600, 330))], color='#0e1d36')
 shot('e51', None, [arka(x=.3, fy=.37, h=.3, poses=[(0, 'shrug'), (A('think'), 'think')], faces=[(0, 'smug')])],
      [kit(F, 'ice', 'ice-cutaway', .5, .62, .5, w=2.0, h=1.0, level=[{'frame': 0, 'value': 0}]), kit(F, 'igloo', 'igloo', .55, .37, .16, **pop_in(A('igloo'), (.55 * W, .37 * H))),
       cross(A('think'), .8, .3, .14)], [], color='#0e1d36')
@@ -364,8 +364,12 @@ shot('e57', None, [], locked(0, .5, .86, .5, .2) , [Note('YOU CAN FLY', 4, 'labe
 shot('e58', None, [], [Prop({'id': 'haze', 'kit': {'type': 'glow', 'x': .5, 'y': .5, 'rx': .9, 'ry': .75, 'tone': 'sun'}, 'opacity': track((0, .55))}),
                        kit(F, 'probe', 'probe', .5, .2, .16, y=track((0, 0), (A('parachuted'), 0), (plus(A('landed'), 10), .5 * H, 'smoothstep')))],
      [Note('Huygens, 2005', A('Huygens'), 'note', pos=(1450, 300)), Note('the farthest landing ever', A('farthest'), 'title', pos=(W / 2, 900))], color='#a85a1c')
-shot('e59', None, [], [bigphoto('photo-titan', 4, x=.5)],
-     [Note('pebbles, river channels', A('pebbles'), 'small', pos=(W / 2, 960))], color='#a85a1c')
+shot('e59', None, [], [Prop({'id': 'haze59', 'kit': {'type': 'glow', 'x': .5, 'y': .45, 'rx': .9, 'ry': .6, 'tone': 'sun'}, 'opacity': track((0, .45))}),
+                       Prop({'id': 'g59', 'kit': {'type': 'terrain', 'top': .72, 'curve': .02, 'fill': '#b06a2a', 'detail': '#7a4419', 'rocks': 9, 'bumps': 5, 'seed': 12}}, Box(0, .72 * H, W, H, 'g59')),
+                       kit(F, 'probe59', 'probe', .36, .68, .16)
+                       ] + [body(f'peb{i}', '#d9b98c', x, y, max(r, .021), **pop_in(plus(A('pebbles'), i * 2), (x * W, y * H))) for i, (x, y, r) in enumerate([(0.6, 0.812, 0.0148), (0.573, 0.808, 0.0148), (0.832, 0.896, 0.0192), (0.595, 0.864, 0.0133), (0.579, 0.813, 0.0126), (0.835, 0.899, 0.0197), (0.792, 0.823, 0.0137), (0.733, 0.888, 0.0203), (0.819, 0.81, 0.0173), (0.748, 0.861, 0.0121), (0.681, 0.811, 0.0212)])],
+     [Note('what Huygens saw', 6, 'note', pos=(W / 2, 200)), Note('pebbles', A('pebbles'), 'title', color=GOLD_T, pos=(1500, 380)),
+      Note('river channels', A('channels'), 'title', color=GOLD_T, pos=(1500, 480)), Note('a flat, damp plain', A('damp'), 'note', pos=(1500, 580))], color='#a85a1c')
 shot('e60', None, [], locked(0, .5, .86, .5, .2, open1=A('Titan')) + [body('ti-rev', '#c9843b', .5, .5, .2, craters=1, glow='#f2a54a', **pop_in(A('Titan'), (.5 * W, .5 * H)))],
      [Note('TITAN', A('Titan'), 'title', pos=(W / 2, 860))], color='#a85a1c', cam='push', sounds=[('pop', A('Titan'), -16)])
 shot('e61', 'TITAN', [you(slot='center-left', idle=None, helmet=[(0, True), (A('need'), False)], poses=[(0, 'stand'), (A('need'), 'cheer')], faces=[(0, 'neutral'), (A('need'), 'grin')])],
@@ -426,7 +430,7 @@ M = 'assets/music/'
 ep.music([('e1', M + '6-space-singularity.mp3', 0), ('e9', M + '1-curious-a-science-montage.mp3', 0), ('e22', M + '2-playful-b-sweet-math.mp3', 0),
           ('e38', M + '3-eerie-b-surface-of-the-moon.mp3', 0), ('e44', M + '4-tense-a-false-vacuum-decay.mp3', 0, -2), ('e57', M + '5-uplifting-a-taking-flight.mp3', 0),
           ('e70', M + '8-space-spaghettification.mp3', 0)],
-         dropouts=[('e14', 0, .8), ('e20', 0, .8), ('e26', 0, .8), ('e31', 0, .8), ('e36', 0, .8), ('e52', 0, 1.2), ('e60', 0, 1.0)], target_lufs=-16)
+         dropouts=[('e14', 0, .8), ('e20', 0, .8), ('e26', 0, .8), ('e31', 0, .8), ('e36', 0, .8), ('e52', 0, 1.2), ('e60', 0, 1.0)], target_lufs=-16, gain_db=-17, duck_ratio=2)
 
 if __name__ == '__main__':
     board = ep.build()
