@@ -274,33 +274,21 @@
                 "at": "hear"
               },
               "value": 1
-            }
-          ],
-          "scale": [
-            {
-              "frame": 0,
-              "value": 0.6
             },
             {
               "frame": {
-                "at": "hear",
+                "at": "word.",
                 "offset": -1
               },
-              "value": 0.6
+              "value": 1
             },
             {
               "frame": {
-                "at": "hear",
-                "offset": 9
+                "at": "word."
               },
-              "value": 1,
-              "ease": "ease-out-back"
+              "value": 0
             }
-          ],
-          "anchor": {
-            "x": 820.8,
-            "y": 844.8
-          }
+          ]
         },
         {
           "id": "mute",
@@ -360,9 +348,34 @@
       "annotations": [
         {
           "id": "n0",
-          "text": "still a pulse",
+          "text": "STILL ALIVE.",
           "x": 540,
-          "y": 1100,
+          "y": 1250,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": -1,
+              "value": 0
+            },
+            {
+              "frame": 5,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "NOT TALKING.",
+          "x": 540,
+          "y": 1390,
           "size": 78,
           "anchor": "middle",
           "variant": "ink",
@@ -375,38 +388,25 @@
             },
             {
               "frame": {
-                "at": "pulse.",
+                "at": "But",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "pulse.",
+                "at": "But",
                 "offset": 5
               },
               "value": 1
-            },
-            {
-              "frame": {
-                "at": "word.",
-                "offset": -1
-              },
-              "value": 1
-            },
-            {
-              "frame": {
-                "at": "word."
-              },
-              "value": 0
             }
           ]
         },
         {
-          "id": "n1",
+          "id": "n2",
           "text": "since 14 Nov",
-          "x": 204,
-          "y": 1106,
+          "x": 260,
+          "y": 900,
           "size": 56,
           "anchor": "middle",
           "variant": "ink",
@@ -427,37 +427,6 @@
             {
               "frame": {
                 "at": "November",
-                "offset": 5
-              },
-              "value": 1
-            }
-          ]
-        },
-        {
-          "id": "n2",
-          "text": "0 words",
-          "x": 540,
-          "y": 1100,
-          "size": 78,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#ffd25e",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "word.",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "word.",
                 "offset": 5
               },
               "value": 1
@@ -832,33 +801,21 @@
                 "at": "itself."
               },
               "value": 1
-            }
-          ],
-          "scale": [
-            {
-              "frame": 0,
-              "value": 0.6
             },
             {
               "frame": {
-                "at": "itself.",
+                "at": "hasn't.",
                 "offset": -1
               },
-              "value": 0.6
+              "value": 1
             },
             {
               "frame": {
-                "at": "itself.",
-                "offset": 9
+                "at": "hasn't."
               },
-              "value": 1,
-              "ease": "ease-out-back"
+              "value": 0
             }
-          ],
-          "anchor": {
-            "x": 820.8,
-            "y": 844.8
-          }
+          ]
         },
         {
           "id": "notyet",
@@ -1323,8 +1280,8 @@
     {
       "id": "vyc-c1",
       "template": "hero-reveal",
-      "durationFrames": 240,
-      "animationDurationFrames": 240,
+      "durationFrames": 234,
+      "animationDurationFrames": 234,
       "caption": {
         "text": "vyc-c1",
         "preset": "body"
@@ -1375,8 +1332,13 @@
       "sounds": [
         {
           "sound": "pop",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
           "frame": {
-            "at": "pulse."
+            "at": "But"
           },
           "gainDb": -24
         },
@@ -1384,13 +1346,6 @@
           "sound": "pop",
           "frame": {
             "at": "November"
-          },
-          "gainDb": -24
-        },
-        {
-          "sound": "pop",
-          "frame": {
-            "at": "word."
           },
           "gainDb": -24
         },
@@ -1406,8 +1361,8 @@
     {
       "id": "vyc-c2",
       "template": "hero-reveal",
-      "durationFrames": 216,
-      "animationDurationFrames": 216,
+      "durationFrames": 210,
+      "animationDurationFrames": 210,
       "caption": {
         "text": "vyc-c2",
         "preset": "body"
@@ -1487,8 +1442,8 @@
     {
       "id": "vyc-c3",
       "template": "hero-reveal",
-      "durationFrames": 180,
-      "animationDurationFrames": 180,
+      "durationFrames": 175,
+      "animationDurationFrames": 175,
       "caption": {
         "text": "vyc-c3",
         "preset": "body"
@@ -1561,8 +1516,8 @@
     {
       "id": "vyc-c4",
       "template": "hero-reveal",
-      "durationFrames": 180,
-      "animationDurationFrames": 180,
+      "durationFrames": 175,
+      "animationDurationFrames": 175,
       "caption": {
         "text": "vyc-c4",
         "preset": "body"
@@ -1642,8 +1597,8 @@
     {
       "id": "vyc-c5",
       "template": "hero-reveal",
-      "durationFrames": 60,
-      "animationDurationFrames": 60,
+      "durationFrames": 58,
+      "animationDurationFrames": 58,
       "caption": {
         "text": "vyc-c5",
         "preset": "body"
@@ -1696,8 +1651,8 @@
     {
       "id": "vyc-c6",
       "template": "hero-reveal",
-      "durationFrames": 192,
-      "animationDurationFrames": 192,
+      "durationFrames": 187,
+      "animationDurationFrames": 187,
       "caption": {
         "text": "vyc-c6",
         "preset": "body"
@@ -1770,8 +1725,8 @@
     {
       "id": "vyc-c7",
       "template": "hero-reveal",
-      "durationFrames": 192,
-      "animationDurationFrames": 192,
+      "durationFrames": 191,
+      "animationDurationFrames": 191,
       "caption": {
         "text": "vyc-c7",
         "preset": "body"

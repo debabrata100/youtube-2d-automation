@@ -5,7 +5,7 @@
  "topic": "Voyager 1 has sent a carrier signal but no science or engineering data since 14 Nov 2026 (NASA, 18 Nov 2026), the same week it reached one light-day from Earth; in October it went silent for about 48 hours and recovered on its own",
  "language": "en-US",
  "targetAudience": "English-speaking science-curious viewers aged 16-35",
- "durationSeconds": 42,
+ "durationSeconds": 41,
  "storyboard": "storyboards/voyager-calling.json",
  "candidatesReport": "stories/voyager-shorts-script.md",
  "beats": [

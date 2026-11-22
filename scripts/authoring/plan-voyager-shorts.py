@@ -177,9 +177,9 @@ elif NAME == 'calling':
     QUIET = '#7fc0ff'
     # c1 the pulse is there, the words are not
     ep.scene('c1', explain([], [probe(.66, .26, .26), signal(.45, .5, .32, 120, color=QUIET), boxed('day14', 'calendar', .24, .4, .16, A('November'), text='14'),
-                                icon('hear', 'check', .76, .44, .12, A('hear')), icon('mute', 'cross', .76, .44, .12, A('word.'))],
-                           [Note('still a pulse', A('pulse.'), 'title', pos=(540, 1100), until=A('word.')), Note('since 14 Nov', A('November'), 'small', near='day14'),
-                            Note('0 words', A('word.'), 'title', pos=(540, 1100))], sounds=[('tick', A('word.'), -22)]))
+                                Prop(prop('hear', 'check', 0.76, 0.44, 0.12, opacity=track((0, 0), (plus(A('hear'), -1), 0), (A('hear'), 1), (plus(A('word.'), -1), 1), (A('word.'), 0)))), icon('mute', 'cross', .76, .44, .12, A('word.'))],
+                           [Note('STILL ALIVE.', 0, 'title', pos=(540, 1250)), Note('NOT TALKING.', A('But'), 'title', pos=(540, 1390)),
+                            Note('since 14 Nov', A('November'), 'small', pos=(260, 900))], sounds=[('tick', A('word.'), -22)]))
     # c2 the same week as one light-day
     ep.scene('c2', explain([], [probe(.5, .4, .42), signal(.38, .53, .26, 120, color=QUIET)],
                            [Note('18 Nov 2026', A('same'), 'small', pos=(540, 260)), Note('1 light-day', A('light-day'), 'title', pos=(540, 1300)),
@@ -189,7 +189,7 @@ elif NAME == 'calling':
                            [Note('a day there', A('there,'), 'note', pos=(540, 1420)), Note('a day back', A('back.'), 'title', pos=(540, 1560))]))
     # c4 October fixed itself; this time it hasn't (the stakes)
     ep.scene('c4', explain([], [probe(.66, .26, .26), boxed('oct', 'calendar', .24, .4, .16, A('month,'), text='Oct'),
-                                icon('fixed', 'check', .76, .44, .14, A('itself.')), icon('notyet', 'cross', .76, .44, .16, A("hasn't."))],
+                                Prop(prop('fixed', 'check', 0.76, 0.44, 0.14, opacity=track((0, 0), (plus(A('itself.'), -1), 0), (A('itself.'), 1), (plus(A("hasn't."), -1), 1), (A("hasn't."), 0)))), icon('notyet', 'cross', .76, .44, .16, A("hasn't."))],
                            [Note('Oct: 2 days, fixed itself', A('fixed'), 'small', pos=(540, 1300)), Note('this time: no', A("hasn't."), 'title', pos=(540, 1480))],
                            sounds=[('tick', A("hasn't."), -20)]))
     # c5 Arka, on Earth, pleading
