@@ -78,3 +78,12 @@ export const contrastRatio = (a: string, b: string) => {
   const [hi, lo] = [lum(a), lum(b)].sort((x, y) => y - x);
   return (hi + .05) / (lo + .05);
 };
+
+/** The outline drawn behind a hand-written note. It exists for contrast, so it takes the opposite brightness of the text:
+ * the theme's dark halo behind light text, a light halo behind dark text (navy notes on a daytime sky). None if the theme has no halo. */
+export const LIGHT_HALO = '#f4f8ff';
+export const haloFor = (text: string, themeHalo?: string): string | undefined => {
+  if (!themeHalo) return undefined;
+  if (!/^#[0-9a-f]{6}$/i.test(text.trim())) return themeHalo;
+  return contrastRatio(text, themeHalo) >= contrastRatio(text, LIGHT_HALO) ? themeHalo : LIGHT_HALO;
+};

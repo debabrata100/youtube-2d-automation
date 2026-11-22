@@ -60,3 +60,11 @@ Related: `docs/SCRIPT_CRAFT_CHECKLIST.md` (the words), `docs/EPISODE_VISUAL_LESS
 - [ ] **Thumbnails promise a real idea or question** (a number, a striking consequence), not just a cute character.
 - [ ] **Sound:** no children's music or toy sound effects; the music stays from our licensed library list.
 - [ ] **After launch:** when Studio shows age data, check the audience age split; if under-18 viewers grow unusually, review tone and thumbnails.
+
+## 9. Readability gate (automatic, 22 Nov 2026)
+Prepare (`story:render-cached`) and `preview-stills` now run a readability pass on every hand-written note:
+- **Late notes come in earlier** so each is readable for at least 1.5 s before its shot ends (never before a nearby note it replaces has gone).
+- **Contrast:** text against its outline (the outline now takes the opposite brightness of the text: dark behind light text, light behind dark text) and against the page or daytime sky under it.
+- **Errors block the render** (nothing is prepared); pass `--allow-readability-errors` only after looking at those frames. `node --import tsx scripts/audit-readability.ts <job|storyboard.json>` runs the check on its own.
+- After any change to a shared style (theme, outline, colours): re-check every storyboard still to be rendered, day and night shots, at full size.
+- Before a long render: a 30–60 s sample with full sound of the risky parts (`scripts/render-sample.sh`), reviewed by Debabrata, then one full render.

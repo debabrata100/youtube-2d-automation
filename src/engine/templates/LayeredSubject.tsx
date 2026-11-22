@@ -7,7 +7,7 @@ import {layerAssetIds} from '../storyboard/layers';
 import {flowPositionAt, layerStateAt, maskSequenceAt, trackAt, wipeRectAt} from '../motion/layers';
 import type {Storyboard, SubjectConfig} from '../storyboard/schema';
 import {KitElement} from '../kit/KitElement';
-import {getTheme, type Theme} from '../style/theme';
+import {getTheme, haloFor, type Theme} from '../style/theme';
 import {easeMotion} from '../motion/primitives/schema';
 import {ensureFont} from '../style/fonts';
 import {NOISE_TILES, boilTile} from '../style/ink';
@@ -76,7 +76,7 @@ const InkNote: React.FC<{label: Label; opacity: number; theme?: Theme}> = ({labe
   })() : null;
   // The halo is for contrast, so it takes the opposite brightness of the text: the theme's dark halo behind light text,
   // a light halo behind dark text (e.g. navy notes on a daytime sky). A dark halo around dark text just smudges it.
-  const halo = theme?.label.halo ? (luminance(color) < .35 ? '#f4f8ff' : theme.label.halo) : undefined;
+  const halo = haloFor(color, theme?.label.halo);
   const mid = c ? {x: (c.from.x + c.to.x) / 2 + (c.to.y - c.from.y) * .12, y: (c.from.y + c.to.y) / 2 - (c.to.x - c.from.x) * .12} : null;
   return <g opacity={Math.min(1, opacity * 1.5)}>
     {c && mid && <g opacity={Math.max(0, Math.min(1, opacity * 2 - .6))}>
@@ -90,13 +90,6 @@ const InkNote: React.FC<{label: Label; opacity: number; theme?: Theme}> = ({labe
       stroke={color} strokeWidth={label.size * .035} strokeLinejoin="round"
       transform={s !== 1 ? `translate(${label.x} ${cy}) scale(${s}) translate(${-label.x} ${-cy})` : undefined}>{label.text}</text>
   </g>;
-};
-/** Relative luminance of a #rrggbb colour (0 = black, 1 = white); anything unparseable counts as light. */
-const luminance = (hex: string) => {
-  const m = /^#([0-9a-f]{6})$/i.exec(hex.trim());
-  if (!m) return 1;
-  const [r, g, b] = [0, 2, 4].map(i => parseInt(m[1].slice(i, i + 2), 16) / 255);
-  return .2126 * r + .7152 * g + .0722 * b;
 };
 const Annotation: React.FC<{label: Label; opacity: number; theme?: Theme}> = ({label, opacity, theme}) => {
   if (label.variant === 'ink') return <InkNote label={label} opacity={opacity} theme={theme}/>;

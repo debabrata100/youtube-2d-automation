@@ -17,6 +17,7 @@ import {browserExecutable} from './media-tools';
 import {estimateAlignment} from '../src/storytelling/timing/estimate';
 import {encodeWav} from '../src/audio/synth';
 import {densityGaps, infoCoverage} from '../src/engine/storyboard/density';
+import {holdShortNotes, readabilityIssues} from '../src/engine/storyboard/readability';
 
 const {values: o} = parseArgs({options: {
   script: {type: 'string'}, storyboard: {type: 'string'}, metadata: {type: 'string'}, audio: {type: 'string'},
@@ -40,6 +41,9 @@ if (o.script) {
   const mapping = captionsFromProviderTiming(story, alignment, spoken, source.format.fps);
   const anchors = resolveWordAnchors(raw, mapping), schedule = anchors.schedule;
   storyboard = schedule.storyboard;
+  // Same readability pass as prepare (render-cached-story): late notes come in earlier, then contrast + time on screen are checked.
+  const held = holdShortNotes(storyboard as never, storyboard.format.fps), readability = readabilityIssues(storyboard as never, storyboard.format.fps);
+  console.error(JSON.stringify({notesBroughtEarlier: held.length, readability: readability.length ? readability.map(i => `${i.level} ${i.check} ${i.startSeconds}s ${i.scene} "${i.note}": ${i.detail}`) : 'ok'}));
   if (anchors.resolutions.length) console.error(JSON.stringify({anchors: anchors.resolutions.length, warnings: anchors.warnings}));
   const gaps = densityGaps(storyboard);
   console.error(JSON.stringify({visualDensity: gaps.length ? {gapsOver6s: gaps} : 'ok: a new visual at least every 6 s'}));

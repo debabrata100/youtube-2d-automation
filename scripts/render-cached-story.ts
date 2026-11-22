@@ -16,8 +16,9 @@ import {measureAudio} from '../src/audio/metadata';
 import {validateAssetFiles} from './storyboard-assets';
 import {browserExecutable,run} from './media-tools';
 import {muxAudio,prepareMix} from './lib/mix-audio';
+import {holdShortNotes,readabilityIssues} from '../src/engine/storyboard/readability';
 const main=async()=>{
- const {values:o}=parseArgs({options:{script:{type:'string'},storyboard:{type:'string'},'show-ai-disclosure-banner':{type:'boolean',default:false},audio:{type:'string'},metadata:{type:'string'},output:{type:'string'},'caption-style':{type:'string'},'prepare-only':{type:'boolean',default:false},music:{type:'string'}}});
+ const {values:o}=parseArgs({options:{script:{type:'string'},storyboard:{type:'string'},'show-ai-disclosure-banner':{type:'boolean',default:false},audio:{type:'string'},metadata:{type:'string'},output:{type:'string'},'caption-style':{type:'string'},'prepare-only':{type:'boolean',default:false},'allow-readability-errors':{type:'boolean',default:false},music:{type:'string'}}});
  if(!o.script||!o.audio||!o.metadata)throw Error('Usage: render-cached-story --script <json> --audio <wav> --metadata <cached-metadata-json> [--output <new-job>] [--caption-style <json>]');
  const storyInput=storyScriptSchema.parse(JSON.parse(await readFile(o.script,'utf8'))),rawBoard=JSON.parse(await readFile(o.storyboard??storyInput.storyboard,'utf8')),timedBoard=parseAnchoredStoryboard(rawBoard),story=validateStory({...storyInput,storyboard:o.storyboard??storyInput.storyboard},timedBoard);
  const metadata=JSON.parse(await readFile(o.metadata,'utf8')),bytes=await readFile(o.audio),sha256=createHash('sha256').update(bytes).digest('hex');
@@ -26,6 +27,11 @@ const main=async()=>{
  if(measured.codec!=='pcm_s16le'||measured.sampleRate!==24000||measured.channels!==1||measured.durationSeconds>seconds-.2)throw Error('Unsupported or overlong approved audio; never stretch or truncate');
  await validateAssetFiles(timedBoard.assets);
  const mapping=captionsFromProviderTiming(story,metadata.alignment,measured.durationSeconds,timedBoard.format.fps),anchors=resolveWordAnchors(rawBoard,mapping),sourceBoard=anchors.source,schedule=anchors.schedule,board=schedule.storyboard,style=captionStyleSchema.parse(o['caption-style']?JSON.parse(await readFile(o['caption-style'],'utf8')):sourceBoard.themeId?getTheme(sourceBoard.themeId).caption:{});
+ // Readability (22 Nov 2026): late notes come in earlier so each is readable for 1.5 s; then contrast and time on screen are
+ // checked, and errors block the render (override with --allow-readability-errors after looking at the frames).
+ const held=holdShortNotes(board as never,board.format.fps),readability=readabilityIssues(board as never,board.format.fps),readErrors=readability.filter(i=>i.level==='error');
+ if(readability.length||held.length)console.error(JSON.stringify({notesBroughtEarlier:held.length,readability:readability.map(i=>`${i.level} ${i.check} ${i.startSeconds}s ${i.scene} "${i.note}": ${i.detail}`)}));
+ if(readErrors.length&&!o['allow-readability-errors'])throw Error(`Readability check failed (${readErrors.length} error(s) above): fix the storyboard, or pass --allow-readability-errors after checking those frames. Nothing was rendered.`);
  const narration=narrationOverlaySchema.parse({audioSrc:'narration/narration.wav',captionsEnabled:style.enabled!==false,syntheticTestAudio:false,showAiDisclosureBanner:o['show-ai-disclosure-banner'],cues:mapping.cues,style});
  const job=path.resolve(o.output??`jobs/${story.id}-cached-${new Date().toISOString().replace(/[:.]/g,'-')}`);await mkdir(path.dirname(job),{recursive:true});await mkdir(job);
  for(const dir of ['audio','story','captions','reports','output','previews','public'])await mkdir(path.join(job,dir));
