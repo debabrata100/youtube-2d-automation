@@ -56,7 +56,7 @@ Narration uses AI voices.
 ## Pinned comment (post after launch; ask first)
 
 ```
-Which moon would YOU move to? 🌕 Arka has signed the lease on one already... 👇
+Which moon surprised you the most, and which one would YOU move to? 🌕 Arka has already signed a lease... 👇
 ```
 
 ## Tags

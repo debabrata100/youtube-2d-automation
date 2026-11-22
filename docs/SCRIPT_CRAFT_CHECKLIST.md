@@ -50,3 +50,8 @@ Our viewer is a curious 16–35-year-old, not a child. A cartoon style is fine; 
 - [ ] **Normal adult vocabulary;** never "kids", "boys and girls", "let's learn", or explaining as if to a child. Explain clearly, don't talk down.
 - [ ] **No children's songs, nursery rhymes or sing-along** moments; no toy-like sound effects (boings, squeaks) as gags.
 - [ ] **Titles, descriptions and tags written for adults** and honest (no fear-mongering, no "for kids"); audience setting "No, it's not made for kids".
+
+## Long episodes: the middle stretch (from YouTube's review of Every Moon v2, 22 Nov 2026)
+- [ ] **No repeated section opener.** In a list format (moon by moon, scenario by scenario), never open three sections in a row the same way. Every Moon v2 opens six moons in a row (1:55–6:14) with "who visited and when"; YouTube's review flagged 4:00–7:00 as the likely drop-off. Rotate openers: a question, a shocking number, an Arka moment, a cold open on the danger, a wrong guess to correct.
+- [ ] **Change the picture pattern too:** alternate diagrams, close-ups on the astronaut's face, cards and real photos, so the middle never looks the same for more than about 45 s.
+- [ ] **Check the retention graph 48 h after launch** and note where the dip sits, so the next script fixes the real weak spot.
