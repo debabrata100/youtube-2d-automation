@@ -10,15 +10,19 @@
 
 **If the Sun Disappeared, Even the Air Would Fall** (47 characters; chosen by Debabrata 20 Nov 2026)
 
-## Thumbnails (3 for Test & compare; planned 20 Nov, to make)
-1. Frozen Earth with the air snowing down
-2. Half-dark Earth (the day side going black)
-3. The last survivor (tube worms at a vent, or a tardigrade)
+## Thumbnails (3 for Test & compare, in `13-ghost-sun/`)
+1. `thumb-a-the-air-falls.png`: "NO SUN. / THE AIR FALLS." (strongest at phone size)
+2. `thumb-b2-8-minutes-of-darkness.png`: "8 MINUTES / OF DARKNESS" (22 Nov; replaces `thumb-b-we-see-it-later.png`, whose 9-word second line was unreadable on a phone). Spec `thumbnails/ghost-sun/b2.json`; art = frame 45 of `storyboards/ghost-sun-thumbs.json`.
+3. `thumb-c-last-life.png`: "THE LAST LIFE / ON EARTH?"
+
+## After launch (from YouTube's guidance, 22 Nov)
+- 48–72 h after launch: check CTR and impressions. If CTR is below 4% after 500+ impressions, swap the weakest thumbnail or try a sharper title (long videos can be revived this way; Shorts can't).
+- Related video of every Ep 5 Short → Ep 5. End screen → next long episode, so viewers binge.
 
 ## Description (paste as is)
 
 ```
-It's twelve o'clock, noon, and the Sun is already gone: the light on your face left it 8 minutes and 20 seconds ago. So we try an experiment. The Sun disappears for exactly 8 minutes and 20 seconds, then comes back. By the time the lights go out on Earth, the Sun is already back. Then we ask the bigger question: what if it never came back? In the end, even the air would freeze and fall out of the sky.
+What would actually happen if the Sun disappeared? It's twelve o'clock, noon, and the Sun is already gone: the light on your face left it 8 minutes and 20 seconds ago. So we try an experiment. The Sun disappears for exactly 8 minutes and 20 seconds, then comes back. By the time the lights go out on Earth, the Sun is already back. Then we ask the bigger question: what if it never came back? In the end, even the air would freeze and fall out of the sky.
 
 What do you think would survive longest? Tell us in the comments.
 
