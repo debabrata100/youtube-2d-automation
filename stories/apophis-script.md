@@ -215,9 +215,10 @@ Each line that makes or corrects a claim, checked against the rules above.
 3. **"The Odds Went UP the More We Looked"**: Christmas 2004, 1 in 300 → 1 in 37, then old photos saved us.
 
 ## Decisions
+- **Arka voice (Debabrata, 22 Nov, blind test):** Arka E3. **Arka's take is already recorded**: `jobs/e7-avt-e3/audio/takes/arka.*` (858 characters). For E7's real narration, copy `arka.wav` + `arka.json` into the new job's `audio/takes/` and run with `--resume`: only the narrator is paid. Valid only while all 15 Arka lines stay word for word the same.
 - **Title (Debabrata, 22 Nov):** variant 1 "What If Apophis Hit? Most Videos Get It Wrong" + MYTH | REALITY thumbnail goes live first; variants 2 and 3 run in YouTube's thumbnail test.
 
 ## Open decisions for Debabrata
-- Arka voice (D2 or E3): blind test on this episode's 15 Arka lines (`stories/e7-arka-voice-test.json`, 858 characters per voice, approved 22 Nov).
+- (none open for narration)
 - Ending a51–a52 teases S2 ("Would a Black-Hole Sun Suck Us In?") through gravity; S2 draft 1 written 22 Nov.
 - Background: dusk-blue page for the Earth-side scenes, deep space for the ride (Every Moon and Ep 5 were both navy).
