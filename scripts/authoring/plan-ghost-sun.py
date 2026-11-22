@@ -88,7 +88,7 @@ END_CARD = 12
 write_story(DURATION)
 ep = Episode(str(STORY), 'wide'); F = ep.F; W, H = F['W'], F['H']
 ep.story['durationSeconds'] = DURATION - END_CARD
-ep.theme = 'paint-night'
+ep.theme = 'paint-night-gold'  # 22 Nov: gold accents + outlined notes (same look as Every Moon v2)
 ep.backdrop(stars=26)
 SUN = '#ffcf4a'
 
@@ -407,9 +407,11 @@ shot('s52', T7, [], [earth('earth', .3, .55, .18), disc('core', .3, .55, .05, '#
      [Note('millions of years', A('millions'), 'note'), Note('only heat from inside', A('inside'), 'title')])
 shot('s53', T7, [], [thermo('th', .24, .55, .55, lv((0, .15), (A('forty'), .02)), color=ICE), kit(F, 'pluto', 'small-moon', .5, .5, .14, opacity=show_from(A('Pluto')))],
      [Note('-240°C', A('minus'), 'title'), Note('colder than Pluto', A('Pluto'), 'note')])
-shot('s54', T7, [], [Prop(prop('snow', 'snowfall', .64, .5, .7, count=40, level=lv((0, 0), (A('falls', -2), 0), (plus(A('falls'), 20), 1)))),
+shot('s54', T7, [], [disc('frozen', .64, .5, .2, '#b9c9dc', ('#d7e2ee', '#9fb3cb', '#d7e2ee'), shade=.25,  # frozen Earth fills the opening beat, then gives way to the snow
+                          opacity=track((0, 1), (plus(A('falls'), -1), 1), (plus(A('falls'), 18), 0))),
+                     Prop(prop('snow', 'snowfall', .64, .5, .7, count=40, level=lv((0, 0), (A('falls', -2), 0), (plus(A('falls'), 20), 1)))),
                      Prop(prop('ice', 'ice-layer', .5, .95, .9, level=lv((0, 0), (A('ground'), 0), (plus(A('ground'), 40), .35))))],
-     [Note('the air freezes', A('freezes'), 'note', pos=(.2 * W, .32 * H)), Note('...and falls', A('falls'), 'title', pos=(.2 * W, .45 * H)),
+     [Note('something eerie...', A('eerie'), 'note', pos=(.2 * W, .32 * H), until=A('freezes')), Note('the air freezes', A('freezes'), 'note', pos=(.2 * W, .32 * H)), Note('...and falls', A('falls'), 'title', pos=(.2 * W, .45 * H)),
       Note('nitrogen + oxygen snow', A('snow'), 'note', pos=(.2 * W, .58 * H)), Note('a frozen layer', A('layer'), 'small', pos=(.2 * W, .7 * H))], cam='push',
      sounds=[('whoosh', A('falls'), -22)])
 shot('s55', None, [arka(x=.3, poses=[(0, 'cower')], faces=[(0, 'shocked')])], [Prop(prop('snow', 'snowfall', .66, .45, .6, count=24, level=lv((0, 1))))],
@@ -470,7 +472,9 @@ ep.music([('s1', 'assets/music/8-space-spaghettification.mp3', 0), ('s8', 'asset
           ('s30', 'assets/music/3-eerie-b-surface-of-the-moon.mp3', 0), ('s39', 'assets/music/1-curious-b-frame-dragging.mp3', 0),
           ('s47', 'assets/music/3-eerie-a-lake-jupiter.mp3', 0), ('s52', 'assets/music/8-space-laniakea.mp3', 0),
           ('s57', 'assets/music/2-playful-a-quirk-n-twerk.mp3', 0), ('s65', 'assets/music/5-uplifting-a-taking-flight.mp3', 0)],
-         dropouts=[('s1', 0, 1.2), ('s15', 0, 1.0), ('s29', 0, 1.0), ('s54', 0, 1.0)], target_lufs=-16)
+         dropouts=[('s1', 0, 1.2), ('s15', 0, 1.0), ('s29', 0, 1.0), ('s54', 0, 1.0)], target_lufs=-16,
+         # 22 Nov: louder music and the narrator treatment from Every Moon v2 (Debabrata: voice too close, music too quiet)
+         gain_db=-17, duck_ratio=2, voice={'highpassHz': 95, 'lowMidDb': -4, 'presenceDb': 2, 'room': .08})
 
 if __name__ == '__main__':
     board = ep.build()

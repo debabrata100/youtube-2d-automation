@@ -2,7 +2,7 @@
   "schemaVersion": "2.1",
   "projectId": "ghost-sun",
   "title": "If the Sun Disappeared, Even the Air Would Fall",
-  "themeId": "paint-night",
+  "themeId": "paint-night-gold",
   "format": {
     "width": 1920,
     "height": 1080,
@@ -30,8 +30,8 @@
   },
   "audio": {
     "music": "cues",
-    "musicGainDb": -22,
-    "duckRatio": 8,
+    "musicGainDb": -17,
+    "duckRatio": 2,
     "targetLufs": -16,
     "crossfadeSeconds": 1.5,
     "musicCues": [
@@ -108,7 +108,13 @@
         "frame": 0,
         "seconds": 1.0
       }
-    ]
+    ],
+    "voice": {
+      "highpassHz": 95,
+      "lowMidDb": -4,
+      "presenceDb": 2,
+      "room": 0.08
+    }
   },
   "groups": [
     {
@@ -12912,6 +12918,45 @@
       "height": 1080,
       "layers": [
         {
+          "id": "frozen",
+          "kit": {
+            "type": "planet",
+            "x": 0.64,
+            "y": 0.5,
+            "radius": 0.2,
+            "base": "#b9c9dc",
+            "bands": [
+              "#d7e2ee",
+              "#9fb3cb",
+              "#d7e2ee"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 3
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "falls",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "falls",
+                "offset": 18
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
           "id": "snow",
           "kit": {
             "type": "prop",
@@ -12986,6 +13031,50 @@
         },
         {
           "id": "n1",
+          "text": "something eerie...",
+          "x": 384,
+          "y": 346,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#a9d8ff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "eerie",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "eerie",
+                "offset": 5
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "freezes",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "freezes"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "n2",
           "text": "the air freezes",
           "x": 384,
           "y": 346,
@@ -13016,7 +13105,7 @@
           ]
         },
         {
-          "id": "n2",
+          "id": "n3",
           "text": "...and falls",
           "x": 384,
           "y": 486,
@@ -13047,7 +13136,7 @@
           ]
         },
         {
-          "id": "n3",
+          "id": "n4",
           "text": "nitrogen + oxygen snow",
           "x": 384,
           "y": 626,
@@ -13078,7 +13167,7 @@
           ]
         },
         {
-          "id": "n4",
+          "id": "n5",
           "text": "a frozen layer",
           "x": 384,
           "y": 756,
@@ -20052,6 +20141,13 @@
           "sound": "whoosh",
           "frame": 0,
           "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "eerie"
+          },
+          "gainDb": -22
         },
         {
           "sound": "pop",
