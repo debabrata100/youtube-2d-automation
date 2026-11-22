@@ -1,7 +1,7 @@
 # 13: Episode 5, If the Sun Disappeared, Even the Air Would Fall
 
-- **Status (21 Nov 2026):** visual pass 2 approved from the 4-minute sample; full render running (`jobs/gs-v2`). Not uploaded.
-- **Upload folder:** `~/Downloads/gahanarka-upload/13-ghost-sun/` (to create): the video as `if-the-sun-disappeared-even-the-air-would-fall.mp4`, `captions-english.srt`, thumbnails.
+- **Status (22 Nov 2026):** re-rendered as `jobs/gs-full-2` with the Every Moon look and sound (paint-night-gold with outlined notes, music -17 dB, duck 2, narrator treatment) + frozen-Earth fix at 9:16; all automated checks pass, -16.4 LUFS, 11:56. md5 b8e03b6f…. Upload folder ready (video, captions, 3 thumbnails). Not uploaded; date to confirm (Thu 3 Dec 9:30 PM proposed).
+- **Upload folder:** `~/Downloads/gahanarka-upload/13-ghost-sun/`: the video as `if-the-sun-disappeared-even-the-air-would-fall.mp4`, `captions-english.srt`, thumbnails.
 - **Length:** 11:56 (716 s, including the 12 s end card).
 - **Script, sources and fact check:** `stories/ghost-sun-script.md` (fact-check table: 30 narration rows + 8 on-screen-only rows). Narration: Gahanarka R1 + Arka (Jessica), requests WeffTfEY7PQQVPgCnp3o and HSRS9PzBAiZdUaVQRB4l, cut with the brand-sting gap (`jobs/gs-narration-sting`, no extra paid requests).
 - **Before publishing:** the M1 script ("Why is the Moon leaving us?") must be drafted, because Ep 5's ending teases it as the next episode (content plan rule).
