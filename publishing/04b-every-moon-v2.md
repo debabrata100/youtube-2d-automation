@@ -2,8 +2,9 @@
 
 Replaces the first upload (MnfXbn6mD8I, scheduled Sun 22 Nov 9:30 PM), which spoiled its own mysteries. New script (draft 5), new narration (R1 + Arka D2), new storyboard.
 
-- **Upload folder:** `~/Downloads/gahanarka-upload/4-every-moon-v2/`: `how-you-would-die-on-every-moon.mp4` (render `jobs/em2-full-2`, 10:58, 1920×1080, 30 fps, all verification checks pass, 0 paid requests in the render), `captions-english.srt` (335 cues, from `scripts/export-captions.ts`), thumbnails `thumb-a1.png` (IO / TRITON), `thumb-b1.png` (12-MINUTE FALL), `thumb-c1.png` (THE ONLY MOON YOU CAN FLY), reused from the first upload (no red text).
-- **When:** Sun 22 Nov, 9:30 PM IST (schedule it). Before it goes public, set the old copy MnfXbn6mD8I to Private (ask Debabrata first) so two videos with the same title never compete.
+- **Upload folder:** `~/Downloads/gahanarka-upload/4-every-moon-v2/`: `how-you-would-die-on-every-moon.mp4` (render `jobs/em2-full-4` (22 Nov 12:07: bigger photos, drawn lunar hay fever and Huygens shots, outlined notes, louder music, treated narrator voice), 10:58, 1920×1080, 30 fps, all verification checks pass, 0 paid requests in the render), `captions-english.srt` (335 cues, from `scripts/export-captions.ts`), thumbnails `thumb-a1.png` (IO / TRITON), `thumb-b1.png` (12-MINUTE FALL), `thumb-c1.png` (THE ONLY MOON YOU CAN FLY), reused from the first upload (no red text).
+- **Status:** uploaded 22 Nov 12:15 and scheduled for **Sun 22 Nov, 9:30 PM IST**: https://youtu.be/M9o6HqK5zSs. Checks: no issues. Thumbnail test c1, b1, a1. Subtitles, end screen (Ep 2 + subscribe from 10:46) and cards (2:42 → Ep 2, 9:40 → Ep 1, after the Titan reveal) set. Old copy MnfXbn6mD8I set to Private. Ep 4's description link updated. Still to do: Miranda/Voyager Related videos (only after it's public: tonight's scheduled check-in), pinned comment (ask), switch the end screen to Ep 4 on Thu 26 Nov.
+- **When:** Sun 22 Nov, 9:30 PM IST. Before it goes public, set the old copy MnfXbn6mD8I to Private (ask Debabrata first) so two videos with the same title never compete.
 - **Script, sources and fact check:** `stories/every-moon-v2-script.md`.
 
 ## Title
