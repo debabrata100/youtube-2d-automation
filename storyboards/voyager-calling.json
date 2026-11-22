@@ -68,11 +68,11 @@
             "x": 0.5,
             "y": 1.12,
             "radius": 0.5,
-            "base": "#5aa9e6",
+            "base": "#41709a",
             "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
+              "#5a8a5c",
+              "#41709a",
+              "#5a8a5c"
             ],
             "shade": 0.22,
             "seed": 3
@@ -80,7 +80,7 @@
           "opacity": [
             {
               "frame": 0,
-              "value": 1
+              "value": 0.6
             },
             {
               "frame": {
@@ -88,14 +88,14 @@
                 "beat": "c3",
                 "offset": -1
               },
-              "value": 1
+              "value": 0.6
             },
             {
               "frame": {
                 "at": "So",
                 "beat": "c3"
               },
-              "value": 0
+              "value": 0.0
             },
             {
               "frame": {
@@ -103,14 +103,14 @@
                 "beat": "c4",
                 "offset": -1
               },
-              "value": 0
+              "value": 0.0
             },
             {
               "frame": {
                 "at": "Last",
                 "beat": "c4"
               },
-              "value": 1
+              "value": 0.6
             },
             {
               "frame": {
@@ -118,14 +118,14 @@
                 "beat": "c6",
                 "offset": -1
               },
-              "value": 1
+              "value": 0.6
             },
             {
               "frame": {
                 "at": "There's",
                 "beat": "c6"
               },
-              "value": 0
+              "value": 0.0
             },
             {
               "frame": {
@@ -133,14 +133,14 @@
                 "beat": "c7",
                 "offset": -1
               },
-              "value": 0
+              "value": 0.0
             },
             {
               "frame": {
                 "at": "So",
                 "beat": "c7"
               },
-              "value": 1
+              "value": 0.6
             }
           ]
         }
@@ -190,7 +190,7 @@
             "y": 0.5,
             "size": 0.32,
             "rotation": 120,
-            "color": "#7fc0ff"
+            "color": "#6b7790"
           }
         },
         {
@@ -460,7 +460,7 @@
             "y": 0.53,
             "size": 0.26,
             "rotation": 120,
-            "color": "#7fc0ff"
+            "color": "#6b7790"
           }
         }
       ],
@@ -1093,7 +1093,7 @@
             "y": 0.6,
             "size": 0.22,
             "rotation": -60,
-            "color": "#7fc0ff"
+            "color": "#6b7790"
           },
           "opacity": [
             {
@@ -1206,7 +1206,7 @@
             "y": 0.53,
             "size": 0.26,
             "rotation": 120,
-            "color": "#7fc0ff"
+            "color": "#6b7790"
           }
         }
       ],

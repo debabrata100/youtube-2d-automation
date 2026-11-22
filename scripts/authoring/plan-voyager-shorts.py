@@ -174,7 +174,12 @@ if NAME == 'memory':
 elif NAME == 'calling':
     ep.backdrop(stars=30, earth={'r': .5, 'hidden': [(A('So', beat='c3'), A('Last', beat='c4')), (A("There's", beat='c6'), A('So', beat='c7'))]})
     ep.music([('c1', 'assets/music/6-space-event-horizon.mp3', 0)], target_lufs=-16)
-    QUIET = '#7fc0ff'
+    # Own mood inside the series look: a quieter, lonelier page. Dim grey carrier arcs (a pulse, no words) and a muted, faded Earth.
+    QUIET = '#6b7790'
+    for layer in ep._backdrop['layers']:
+        if layer['id'] == 'earth':
+            layer['kit'].update(base='#41709a', bands=['#5a8a5c', '#41709a', '#5a8a5c'])
+            for key in layer.get('opacity', []): key['value'] *= .6
     # c1 the pulse is there, the words are not
     ep.scene('c1', explain([], [probe(.66, .26, .26), signal(.45, .5, .32, 120, color=QUIET), boxed('day14', 'calendar', .24, .4, .16, A('November'), text='14'),
                                 Prop(prop('hear', 'check', 0.76, 0.44, 0.12, opacity=track((0, 0), (plus(A('hear'), -1), 0), (A('hear'), 1), (plus(A('word.'), -1), 1), (A('word.'), 0)))), icon('mute', 'cross', .76, .44, .12, A('word.'))],
