@@ -52,6 +52,7 @@ Related: `docs/SCRIPT_CRAFT_CHECKLIST.md` (the words), `docs/EPISODE_VISUAL_LESS
 - [ ] **Sound-off test:** looking at the stills alone, would a viewer understand what each shot is saying? If not, the shot needs more action or a clearer label.
 - [ ] **Check stills at the key words** (numbers, "disappears", "snaps", "falls") rather than at evenly spaced frames, so the moments that matter are seen.
 - [ ] **Sample render of the first few minutes** before the full render (`scripts/render-sample.sh`).
+- [ ] **Whole-timeline sweep: one frame every 3 s, start to end** (`preview-stills --frames 45,135,…` at scale 0.25, ~5 min), read as contact sheets before every full render. Key-word stills alone miss empty stretches. (Added 22 Nov after Every Moon v2: two photos were tiny and late, so "Apollo 17, 1972" and the sneezing beat looked empty; map cards held 6–9 s; notes covered the planets.) Look for: any frame with nothing new for 3+ s, photos under ~35% of the frame width, text over a planet, figure or another note, captions you can't read on a dark page.
 
 ## 9. Grown-up audience signals (positioning, 21 Nov 2026)
 - [ ] **Editorial, not toddler:** the hand-drawn notebook or night style with measured colour; no all-primary, bouncy toy-box palettes or cartoon chaos.

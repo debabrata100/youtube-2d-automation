@@ -99,7 +99,17 @@ def arka(**k):
     return Char('arka', 'arka', **k)
 
 
+def bigphoto(name, at, x=.5, y=.54, s=1.2):
+    hw = .155 * s; hh = hw * W / H * .95
+    y = max(y, .5)
+    return photo(ep, F, name, f'nasa/inserts/{name}.png', at, x=x, y=y, scale=s, box=(.5 - hw, .5 - hh, .5 + hw, .5 + hh))
+
+
+NAMED = {}
+
+
 def shot(bid, name, chars=(), props=(), notes=(), cam='settle', sky=True, ground=True, sounds=(), color=None, extra=()):
+    NAMED[bid] = bool(name and sky)
     world_props, header = world(F, name, sky=sky, ground=ground) if name else ([], None)
     bg = [page(color or PAGE.get(name, '#0b0d16'), .72 if name else .5)] if (name or color) else []
     ep.scene(bid, dict(chars=list(chars), props=bg + world_props + list(props) + list(extra), notes=([header] if header else []) + list(notes), camera=cam,
@@ -126,7 +136,7 @@ def lock_notes(at1=0, at2=0, y=.82, x1=.32, x2=.68):
     return [Note('DEADLIEST', at1, 'label', color=GOLD_T, pos=(x1 * W, y * H)), Note('YOU CAN FLY', at2, 'label', color=GOLD_T, pos=(x2 * W, y * H))]
 
 
-def survival(text, at, color, pos=(760, 250)):
+def survival(text, at, color, pos=(900, 235)):
     return [Note('SURVIVAL TIME', at, 'small', color=SOFT, pos=(pos[0], pos[1] - 70)), Note(text, at, 'title', color=color, pos=pos)]
 
 
@@ -158,8 +168,8 @@ belt = lambda x, y, s: kit(F, 'belt', 'radiation-belt', x, y, s, w=2.1, h=.8)
 ticks = lambda word, n, gap: [('tick', A(word, k * gap), -22) for k in range(n)]
 
 # ------------------------------------------------------------------ cold open: silhouettes only, no names, no planets
-c = cliff(F, .5, .34, .56)
-shot('e1', None, [you(x=.47, fy=.34, h=.26, idle=None, poses=[(0, 'stand'), (A('step'), 'tumble')], faces=[(0, 'happy'), (A('step'), 'scream')],
+c = cliff(F, .46, .34, 1.0)
+shot('e1', None, [you(x=.43, fy=.34, h=.3, idle=None, poses=[(0, 'stand'), (A('step'), 'tumble')], faces=[(0, 'happy'), (A('step'), 'scream')],
                     layer={'y': fall(A('fall', 2), .5, 80), 'x': track((0, 0), (A('step'), 0), (A('step', 20), 60, 'ease-out-cubic'))})],
      [c], [Note('MOON ?', 0, 'header', pos=(W / 2, 92)), Note('12 minutes', A('twelve'), 'title', color=GOLD_T, pos=(1500, 640))], color='#3a4a5c', cam='push',
      sounds=[('whoosh', A('fall'), -22)])
@@ -175,8 +185,8 @@ shot('e3', None, [you(slot='center', idle=None, helmet=[(0, True), (A('off'), Fa
      [Note('MOON ?', 0, 'header', pos=(W / 2, 92)), Note('no spacesuit?!', A('off', 4), pos=(1480, 420))], color='#a85a1c', cam='push')
 shot('e4', 'THE MOON', [you(slot='center-left', poses=[(0, 'stand'), (A('suit', n=2), 'hands-on-hips')], faces=[(0, 'puffed'), (A('suit', n=2), 'smug')],
                           helmet=[(0, False), (A('suit', n=2), True)])],
-     [gauge(.78, .55, .28, [(0, 0), (A('eight', -1), 0), (A('eight', 8), 1)])],
-     [Note('no suit: ~15 seconds', A('fifteen'), 'note'), Note('8 hours of air', A('eight'), 'title', near='gauge')])
+     [gauge(.78, .55, .28, [(0, .15), (A('eight', -1), .15), (A('eight', 8), 1)], text='AIR')],
+     [Note('no suit: ~15 seconds', A('fifteen'), 'note'), Note('8 hours of air', A('eight'), 'title', pos=(1500, 760))])
 row = [('#8e8376'), ('#e9c94b'), ('#f1e8d8'), ('#c9843b'), ('#cfcfca'), ('#f4f8fb'), ('#6e5d4c'), ('#ecdcd8')]
 shot('e5', None, [], [Prop(planet(f'moon{i}', .1 + i * .114, .5, .05, '#2b2f3d', (), craters=0, shade=.35, seed=i + 2, **pop_in(i * 3, ((.1 + i * .114) * W, .5 * H))),
                            Box((.1 + i * .114) * W - 60, .5 * H - 60, (.1 + i * .114) * W + 60, .5 * H + 60, f'moon{i}')) for i in range(8)]
@@ -195,8 +205,8 @@ shot('e8', None, [arka(slot='center-left', poses=[(0, 'hands-on-hips')], faces=[
 # ------------------------------------------------------------------ chapter 1: close to home
 shot('e9', None, [], locked(0, .7, .86, .55, .1), [Note('12 moons', A('Twelve'), 'note', pos=(420, 330)), Note('1 suit', A('suit'), 'note', pos=(420, 460)),
                                                Note('2 locked cards', A('locked'), 'note', pos=(420, 590))] + lock_notes(A('locked'), A('locked'), .72, .7, .86))
-shot('e10', 'THE MOON', [], where(F, 'earth', 'The Moon', until=A('Ours')) + [photo(ep, F, 'photo-apollo17-cernan', 'nasa/inserts/photo-apollo17-cernan.png', A('Ours'), x=.5, y=.47, scale=.66, box=(.3, .14, .7, .84))],
-     [Note('Apollo 17, 1972', A('Ours', 8), 'small', pos=(W / 2, 960))], ground=False)
+shot('e10', 'THE MOON', [], where(F, 'earth', 'The Moon', until=60) + [bigphoto('photo-apollo17-cernan', 54, x=.4)],
+     [Note('Apollo 17, 1972', 60, 'title', color=GOLD_T, pos=(1450, 560)), Note('the last time anyone walked there', A('Ours', 10), 'small', pos=(1450, 700))], ground=False)
 shot('e11', 'THE MOON', [you(slot='center-left', poses=[(0, 'stand'), (A('shadow'), 'cower'), (A('dust'), 'stand')], faces=[(0, 'neutral'), (A('sunlight'), 'pain'), (A('shadow'), 'scared'), (A('handles'), 'smug'), (A('dust'), 'shocked')])],
      [thermo(.78, .55, [(0, .5), (A('hundred'), .5), (A('sunlight'), .95), (A('below'), .95), (A('shadow'), .08), (A('handles'), .5)]),
       Prop(prop('dust', 'frost', .33, .84, .16, count=40, color='#8c8c88', level=[{'frame': 0, 'value': 0}, {'frame': A('dust'), 'value': 1}]))],
@@ -204,16 +214,16 @@ shot('e11', 'THE MOON', [you(slot='center-left', poses=[(0, 'stand'), (A('shadow
 shot('e12', 'THE MOON', [], [kit(F, 'lens', 'magnifier', .4, .5, .45, w=1.2, h=1.2),
                             Prop(prop('grains', 'frost', .4, .5, .17, count=30, color='#6e6e6a', level=[{'frame': 0, 'value': 1}]))],
      [Note('no wind, no water', A('wind'), 'small'), Note('sharp, like crushed glass', A('sharp')), Note('ate through boots', A('boots'), 'small')], ground=False)
-shot('e13', 'THE MOON', [], [photo(ep, F, 'photo-apollo17-schmitt', 'nasa/inserts/photo-apollo17-schmitt.png', A('Schmitt'), x=.36, y=.47, scale=.62, box=(.3, .14, .7, .84))],
-     [Note('Harrison Schmitt', A('Schmitt', 6), 'small', pos=(.36 * W, 960)), Note('sneezing...', A('sneezing'), 'note', pos=(1500, 380)),
+shot('e13', 'THE MOON', [], [bigphoto('photo-apollo17-schmitt', 4, x=.36)],
+     [Note('Harrison Schmitt', 8, 'small', pos=(.36 * W, 1000)), Note('sneezing...', A('sneezing'), 'note', pos=(1500, 380)),
       Note('"lunar hay fever"', A('lunar'), 'title', color=GOLD_T, pos=(1500, 560))], ground=False)
 shot('e14', 'THE MOON', [arka(slot='center-left', h=.5, poses=[(0, 'shrug')], faces=[(0, 'smug')])], [kit(F, 'smell', 'smell-lines', .3, .36, .16), cross(A('holiday'))], [])
 shot('e15', 'THE MOON', [you(slot='center-left', poses=[(0, 'stand'), (A('down'), 'panic')], faces=[(0, 'neutral'), (A('wears'), 'scared')])],
      [gauge(.78, .45, .22, [(0, .9), (A('wears'), .9), (A('down'), .2)], text='SUIT')],
-     survival('a few moonwalks', A('Survival'), SAFE, pos=(330, 330)) + [Note('still a top worry', A('worries'), 'small', pos=(1500, 760))])
+     survival('a few moonwalks', A('Survival'), SAFE) + [Note('still a top worry', A('worries'), 'small', pos=(1500, 760))])
 
 # ------------------------------------------------------------------ Callisto
-shot('e16', None, [], where(F, 'jupiter', 'Callisto') + [kit(F, 'cal', 'calendar', .86, .62, .18, text='1610', **pop_in(A('1610'), (.86 * W, .62 * H)))],
+shot('e16', None, [], where(F, 'jupiter', 'Callisto', until=60) + [body('cal-big', '#6e5d4c', .4, .55, .22, craters=9, **pop_in(60, (.4 * W, .55 * H))), kit(F, 'cal', 'calendar', .86, .62, .18, text='1610', **pop_in(A('1610'), (.86 * W, .62 * H)))],
      [Note('Galileo, 1610', A('Galileo'), 'small', pos=(1640, 420))])
 shot('e17', 'CALLISTO', [], [meter(.3, .55, .3, [(0, .05)], 'CALLISTO', pid='m-cal'), meter(.7, .55, .3, [(0, .05), (A('lower', -6), .3)], 'SPACE STATION', pid='m-iss')],
      [Note('safest big moon out here', A('safest'), 'small'), Note('less radiation than the ISS', A('lower'))])
@@ -228,7 +238,7 @@ shot('e21', None, [], locked(0, .72, .88, .5, .09) + [body('d1', '#c4c4c0', .14,
      [Note('slow: dust, boredom', A('slow'), 'note', pos=(W * .2, 300)), Note('next: much faster', A('faster'), 'title', pos=(W / 2, 820))] + lock_notes(0, 0, .66, .72, .88), cam='push')
 
 # ------------------------------------------------------------------ Phobos and Deimos
-shot('e22', None, [], where(F, 'mars', 'Phobos'), [Note('Asaph Hall, 1877', A('1877'), 'small', pos=(1640, 420)), Note('2 tiny moons', A('two'), 'small', pos=(1640, 560))])
+shot('e22', None, [], where(F, 'mars', 'Phobos', until=60) + [body('mars-big', 'mars', .4, .55, .22, **pop_in(60, (.4 * W, .55 * H))), body('pho-s', '#857a6f', .62, .42, .03, **pop_in(A('two'), (.62 * W, .42 * H))), body('dei-s', '#9a8d80', .2, .7, .022, **pop_in(A('two'), (.2 * W, .7 * H)))], [Note('Asaph Hall, 1877', A('1877'), 'small', pos=(1640, 420)), Note('2 tiny moons', A('two'), 'small', pos=(1640, 560))])
 shot('e23', 'PHOBOS', [you(slot='left', poses=[(0, 'point-right'), (A('small'), 'stand')], faces=[(0, 'happy'), (A('small'), 'shocked')])],
      [kit(F, 'grav', 'pressure-arrows', .2, .72, .2, count=3, opacity=show_from(A('gravity')))],
      [Note('Mars fills the sky', A('huge'), 'note', pos=(1250, 640)), Note('gravity: almost zero', A('gravity'), 'small', pos=(1250, 780))])
@@ -238,30 +248,30 @@ shot('e24', 'PHOBOS', [you(slot='center-left', idle=None, poses=[(0, 'walk'), (A
      [Note('...bye, ground', A('away'), 'small', pos=(1450, 760))])
 shot('e25', 'DEIMOS', [you(x=.4, fy=.62, h=.24, idle=None, poses=[(0, 'run'), (A('jump'), 'cheer'), (A('drift'), 'float')], faces=[(0, 'happy'), (A('jump'), 'grin'), (A('drift'), 'sad')],
                          layer={'y': rise(A('jump'), -.3, 140, 'smoothstep'), 'rotate': track((0, 0), (A('drift'), 0), (plus(A('drift'), 200), 40))})],
-     [gauge(.82, .62, .18, [(0, .8), (A('drift'), .8), (A('runs'), .05)])], survival('one step too many', A('Survival'), WARN, pos=(380, 300)), ground=False, cam='push')
+     [gauge(.82, .62, .18, [(0, .8), (A('drift'), .8), (A('runs'), .05)])], survival('one step too many', A('Survival'), WARN), ground=False, cam='push')
 shot('e26', 'PHOBOS', [arka(slot='center-left', h=.5, poses=[(0, 'reach'), (A('Terrible'), 'shrug')], faces=[(0, 'grin'), (A('Terrible'), 'smug')])], [cross(A('Crossed'))], [])
 
 # ------------------------------------------------------------------ Miranda
-shot('e27', 'MIRANDA', [], where(F, 'uranus', 'Miranda', until=A('Miranda')) + [photo(ep, F, 'photo-miranda', 'nasa/inserts/photo-miranda.png', A('Miranda'), x=.42, y=.5, scale=.66, box=(.3, .14, .7, .86))],
+shot('e27', 'MIRANDA', [], where(F, 'uranus', 'Miranda', until=60) + [bigphoto('photo-miranda', 54, x=.38)],
      [Note('Voyager 2, 1986', A('1986'), 'small', pos=(1560, 420)), Note('no one since', A('since'), 'note', pos=(1560, 560))], ground=False)
-shot('e28', 'MIRANDA', [], [cliff(F, .36, .2, .66, text='20 km'), kit(F, 'ev', 'sign', .76, .82, .2, text='Everest x2')], [Note('tallest cliff?', A('tallest'), 'title', pos=(1450, 330))], ground=False)
-c = cliff(F, .34, .3, .6, text='20 km')
-shot('e29', 'MIRANDA', [you(x=.31, fy=.3, h=.28, idle=None, poses=[(0, 'stand'), (A('edge'), 'tumble'), (A('silent'), 'lie')], faces=[(0, 'neutral'), (A('edge'), 'shocked'), (A('silent'), 'asleep')],
+shot('e28', 'MIRANDA', [], [cliff(F, .4, .22, .76, text='20 km'), kit(F, 'ev', 'sign', .76, .82, .2, text='Everest x2')], [Note('tallest cliff?', A('tallest'), 'title', pos=(1480, 560))], ground=False)
+c = cliff(F, .38, .26, .72, text='20 km')
+shot('e29', 'MIRANDA', [you(x=.35, fy=.26, h=.28, idle=None, poses=[(0, 'stand'), (A('edge'), 'tumble'), (A('silent'), 'lie')], faces=[(0, 'neutral'), (A('edge'), 'shocked'), (A('silent'), 'asleep')],
                           layer={'y': fall(A('edge', 2), .55, 140), 'x': track((0, 0), (A('edge'), 0), (A('edge', 24), 90, 'ease-out-cubic'))})],
      [c, kit(F, 'ml', 'motion-lines', .44, .2, .14, rotation=-90, opacity=show_from(A('silent')))], [Note('12 minutes', A('twelve'), 'title', pos=(1500, 600)), Note('...still falling', A('silent'), 'small', pos=(1500, 760))], ground=False)
 shot('e30', 'MIRANDA', [you(slot='center-left', fy=.78, idle=None, poses=[(0, 'tumble'), (A('airbags'), 'lie')], faces=[(0, 'scream'), (A('save'), 'grin')], layer={'y': track((0, -260), (A('bottom'), 0))})],
      [kit(F, 'speed', 'speedometer', .82, .3, .2, level=[{'frame': 0, 'value': .2}, {'frame': A('hundred'), 'value': .95}], text='200 km/h'),
       kit(F, 'bag', 'airbag', .33, .74, .3, level=[{'frame': 0, 'value': 0}, {'frame': A('airbags', -4), 'value': 0}, {'frame': A('airbags', 6), 'value': 1}])],
-     survival('12 minutes', A('Survival'), WARN, pos=(380, 300)) + [Note('...or airbags', A('airbags'), 'note', pos=(1450, 640))], sounds=[('pop', A('airbags'), -18)])
+     survival('12 minutes', A('Survival'), WARN) + [Note('...or airbags', A('airbags'), 'note', pos=(1450, 640))], sounds=[('pop', A('airbags'), -18)])
 shot('e31', 'MIRANDA', [arka(slot='center-left', h=.5, poses=[(0, 'hands-on-hips')], faces=[(0, 'smug')])], [kit(F, 'bus', 'race-car', .66, .72, .18), cross(A('commute'), .78, .42)], [])
 
 # ------------------------------------------------------------------ Enceladus
-shot('e32', 'ENCELADUS', [], where(F, 'saturn', 'Enceladus', until=A('breathing')) + [jet(F, 'plume', .62, .86, .5, [(0, 0), (A('breathing', -2), 0), (A('breathing', 20), .8)], color='#cfe6f7')],
+shot('e32', 'ENCELADUS', [], where(F, 'saturn', 'Enceladus', until=60) + [jet(F, 'plume', .62, .86, .5, [(0, 0), (60, 0), (80, .3), (A('breathing', -2), .3), (A('breathing', 20), .8)], color='#cfe6f7')],
      [Note('Cassini, 2005', A('2005'), 'small', pos=(1640, 420)), Note('breathing out?!', A('breathing'), 'title', pos=(1450, 330))])
-shot('e33', 'ENCELADUS', [], [photo(ep, F, 'photo-enceladus', 'nasa/inserts/photo-enceladus.png', A('pole'), x=.4, y=.47, scale=.66, box=(.3, .16, .7, .82)),
+shot('e33', 'ENCELADUS', [], [bigphoto('photo-enceladus', 4, x=.36),
                              kit(F, 'probe', 'probe', .8, .78, .14, x=track((0, 0), (A('straight'), 0), (plus(A('straight'), 80), -500, 'smoothstep')))],
-     [Note('tiger stripes', A('stripes'), 'small', pos=(1500, 300)), Note('1,000+ km/h', A('thousand'), 'title', pos=(1500, 440)),
-      Note('faster than a jet airliner', A('airliner'), 'small', pos=(1500, 560)), Note('flew through: 7 times', A('seven'), 'note', pos=(1500, 680))], ground=False)
+     [Note('tiger stripes', A('stripes'), 'small', pos=(1500, 450)), Note('1,000+ km/h', A('thousand'), 'title', pos=(1500, 570)),
+      Note('faster than a jet airliner', A('airliner'), 'small', pos=(1500, 690)), Note('flew through: 7 times', A('seven'), 'note', pos=(1500, 800))], ground=False)
 shot('e34', 'ENCELADUS', [you(x=.5, h=.34, idle=None, poses=[(0, 'stand'), (A('throw'), 'tumble'), (A('miss'), 'panic')], faces=[(0, 'happy'), (A('throw'), 'scream')],
                             layer={'y': track((0, 0), (A('throw', -1), 0), (plus(A('throw'), 40), -.35 * H, 'ease-out-cubic'), (A('miss'), -.35 * H), (plus(A('miss'), 60), .1 * H, 'smoothstep'))})],
      [jet(F, 'geyser', .5, .86, .62, [(0, 0), (A('throw', -3), 0), (A('throw', 6), 1), (A('long'), 1), (plus(A('long'), 20), 0)])],
@@ -278,14 +288,14 @@ shot('e37', None, [arka(slot='left', h=.42, poses=[(0, 'point-right')], faces=[(
 
 # ------------------------------------------------------------------ the cold ones
 shot('e38', 'TRITON', [you(slot='center-left', poses=[(0, 'stand'), (A('Minus'), 'cower')], faces=[(0, 'neutral'), (A('Minus'), 'scared')])],
-     where(F, 'neptune', 'Triton', until=A('Minus')) + [thermo(.78, .55, [(0, .4), (A('Minus'), .04)], color=ICE)],
+     where(F, 'neptune', 'Triton', until=60) + [thermo(.78, .55, [(0, .4), (A('Minus'), .04)], color=ICE)],
      [Note('Voyager 2, 1989', A('1989'), 'small', pos=(1640, 420)), Note('-235 °C', A('Minus'), 'title', color=ICE)])
 shot('e39', 'TRITON', [], [jet(F, 'geyser', .36, .86, .6, [(0, 0), (A('geysers', -2), 0), (A('geysers', 14), .9)], color='#4a423c'),
                           jet(F, 'geyser', .62, .86, .5, [(0, 0), (A('dark'), 0), (A('dark', 14), .8)], pid='geyser2', color='#4a423c'),
                           kit(F, 'arr', 'arrow', .82, .5, .18, rotation=180, level=[{'frame': 0, 'value': 0}, {'frame': A('backwards'), 'value': 1}])],
      [Note('orbits backwards!', A('backwards'), 'small', pos=(1500, 300)), Note('8 km plumes', A('eight'), 'title', pos=(1500, 440))])
 shot('e40', 'CHARON', [arka(slot='center-left', h=.45, idle='breathe', poses=[(0, 'stand'), (A('never'), 'hands-on-hips')], faces=[(0, 'neutral'), (A('never'), 'asleep')])],
-     where(F, 'pluto', 'Charon', until=A('Charon', n=2)), [Note('New Horizons, 2015', A('2015'), 'small', pos=(1640, 420)), Note('same spot, forever', A('forever'), 'note', pos=(1300, 640)),
+     where(F, 'pluto', 'Charon', until=60), [Note('New Horizons, 2015', A('2015'), 'small', pos=(1640, 420)), Note('same spot, forever', A('forever'), 'note', pos=(1300, 640)),
                                                         Note('never rises, never sets', A('never'), 'small', pos=(1300, 780))], cam='drift')
 shot('e41', 'CHARON', [you(slot='center-left', poses=[(0, 'stand'), (A('step'), 'walk')], faces=[(0, 'neutral'), (A('heat'), 'scared')])],
      [kit(F, 'thermos', 'thermos', .66, .5, .26, **pop_in(A('thermos'), (.66 * W, .5 * H))), kit(F, 'chill', 'pressure-arrows', .33, .86, .2, count=5, color=ICE, opacity=show_from(A('heat'))),
@@ -306,13 +316,13 @@ shot('e45', None, [you(x=.16, fy=.86, h=.3, poses=[(0, 'shrug'), (A('alarm'), 'p
      [body('jupiter', 'jupiter', .5, .45, .2), belt(.5, .45, .4), meter(.84, .7, .22, [(0, 0), (A('alarm'), 0), (A('alarm', 10), .2), (A('closer'), .3), (A('clicks'), .6)], 'RADIATION')],
      [Note("Jupiter's radiation belts", A('belts'), 'title', pos=(W / 2, 900)), Note("can't see it, can't feel it", A('feel'), 'small', pos=(W / 2, 1000))],
      color='#07080f', cam='push', sounds=ticks('closer', 6, 8))
-shot('e46', None, [], where(F, 'jupiter', 'Ganymede', until=A('Mercury')) + [body('gan', '#8e8376', .32, .55, .2, craters=6, glow='#7ec8f0'), body('mercury', '#9c8f86', .7, .55, .18, craters=8, opacity=show_from(A('Mercury')))],
+shot('e46', None, [], where(F, 'jupiter', 'Ganymede', until=60) + [body('gan', '#8e8376', .32, .55, .2, craters=6, glow='#7ec8f0'), body('mercury', '#9c8f86', .7, .55, .18, craters=8, opacity=show_from(A('Mercury')))],
      [Note('Ganymede 5,268 km', A('biggest'), 'small', near='gan'), Note('Mercury 4,879 km', A('Mercury'), 'small', near='mercury'), Note('magnetic shield', A('field'), 'title', pos=(W / 2, 920))], sounds=ticks('field', 3, 12))
 shot('e47', 'GANYMEDE', [you(slot='center-left', poses=[(0, 'think')], faces=[(0, 'neutral')])],
-     [meter(.62, .3, .2, [(0, .3), (A('deadly'), .45)]), kit(F, 'probe', 'probe', .82, .62, .14, **pop_in(A('JUICE'), (.82 * W, .62 * H)))],
+     [meter(.62, .62, .2, [(0, .3), (A('deadly'), .45)]), kit(F, 'probe', 'probe', .82, .62, .14, **pop_in(A('JUICE'), (.82 * W, .62 * H)))],
      survival('about 2 months', A('Survival'), SAFE) + [Note('JUICE, 2034', A('JUICE'), 'note', pos=(1450, 760)), Note('first to orbit another moon', A('first'), 'small', pos=(1450, 880))],
      sounds=ticks('Survival', 4, 10))
-shot('e48', None, [], where(F, 'jupiter', 'Europa', until=A('Smooth')) + [kit(F, 'ice', 'ice-cutaway', .5, .62, .5, w=2.0, h=1.0, level=[{'frame': 0, 'value': 0}]),
+shot('e48', None, [], where(F, 'jupiter', 'Europa', until=60) + [kit(F, 'ice', 'ice-cutaway', .5, .62, .5, w=2.0, h=1.0, level=[{'frame': 0, 'value': 0}]),
                      kit(F, 'drop1', 'drop', .8, .3, .1, opacity=show_from(A('twice'))), kit(F, 'drop2', 'drop', .87, .3, .1, opacity=show_from(A('twice')))],
      [Note('EUROPA', 0, 'header', pos=(W / 2, 92)), Note("2x Earth's oceans?", A('twice'), pos=(1450, 260)), Note('life?', A('life'), 'note', pos=(500, 260))], color='#0e1d36', sounds=ticks('Smooth', 5, 8))
 shot('e49', 'EUROPA', [you(slot='center-left', poses=[(0, 'cower')], faces=[(0, 'scared')])],
@@ -324,10 +334,10 @@ shot('e50', None, [you(x=.36, fy=.37, h=.28, poses=[(0, 'reach')], faces=[(0, 'n
 shot('e51', None, [arka(x=.3, fy=.37, h=.3, poses=[(0, 'shrug'), (A('think'), 'think')], faces=[(0, 'smug')])],
      [kit(F, 'ice', 'ice-cutaway', .5, .62, .5, w=2.0, h=1.0, level=[{'frame': 0, 'value': 0}]), kit(F, 'igloo', 'igloo', .55, .37, .16, **pop_in(A('igloo'), (.55 * W, .37 * H))),
       cross(A('think'), .8, .3, .14)], [], color='#0e1d36')
-shot('e52', None, [], locked(0, .5, .86, .5, .2, open1=A('Io')) + [body('io-rev', '#e9c94b', .5, .5, .2, craters=4, **pop_in(A('Io'), (.5 * W, .5 * H))), meter(.86, .72, .2, [(0, .9), (A('Io'), 1)])],
+shot('e52', None, [], locked(0, .5, .86, .5, .2, open1=A('Io')) + [body('io-rev', '#e9c94b', .5, .5, .2, craters=4, **pop_in(A('Io'), (.5 * W, .5 * H))), meter(.14, .78, .18, [(0, .9), (A('Io'), 1)])],
      [Note('THE DEADLIEST', A('deadliest'), 'title', color=GOLD_T, pos=(W / 2, 200)), Note('IO', A('Io'), 'title', pos=(W / 2, 860))], color='#120c06', cam='push',
      sounds=ticks('first', 7, 4) + [('pop', A('Io'), -16)])
-shot('e53', 'IO', [], where(F, 'jupiter', 'Io', until=A('volcanic')) + [photo(ep, F, 'photo-io', 'nasa/inserts/photo-io.png', A('volcanic'), x=.4, y=.47, scale=1.05, box=(.33, .2, .67, .8)),
+shot('e53', 'IO', [], where(F, 'jupiter', 'Io', until=60) + [bigphoto('photo-io', 54, x=.36, s=1.3),
                    kit(F, 'probe', 'probe', .86, .3, .12, **pop_in(A('Juno'), (.86 * W, .3 * H)))],
      [Note('~400 volcanoes', A('volcanoes'), 'small', pos=(1500, 600)), Note('Juno, 2023: 1,500 km above', A('Juno'), 'small', pos=(1500, 760)), Note('(London to Rome)', A('Rome'), 'small', pos=(1500, 860))], ground=False)
 shot('e54', 'IO', [], [jet(F, 'plume', .3, .86, .55, [(0, .3), (A('volcanoes'), .7)], pid='p1'), body('jupiter', 'jupiter', .74, .34, .18), belt(.74, .34, .34),
@@ -345,7 +355,7 @@ shot('e57', None, [], locked(0, .5, .86, .5, .2) , [Note('YOU CAN FLY', 4, 'labe
 shot('e58', None, [], [Prop({'id': 'haze', 'kit': {'type': 'glow', 'x': .5, 'y': .5, 'rx': .9, 'ry': .75, 'tone': 'sun'}, 'opacity': track((0, .55))}),
                        kit(F, 'probe', 'probe', .5, .2, .16, y=track((0, 0), (A('parachuted'), 0), (plus(A('landed'), 10), .5 * H, 'smoothstep')))],
      [Note('Huygens, 2005', A('Huygens'), 'note', pos=(1450, 300)), Note('the farthest landing ever', A('farthest'), 'title', pos=(W / 2, 900))], color='#a85a1c')
-shot('e59', None, [], [photo(ep, F, 'photo-titan', 'nasa/inserts/photo-titan.png', A('pictures'), x=.5, y=.47, scale=.66, box=(.3, .16, .7, .82))],
+shot('e59', None, [], [bigphoto('photo-titan', 4, x=.5)],
      [Note('pebbles, river channels', A('pebbles'), 'small', pos=(W / 2, 960))], color='#a85a1c')
 shot('e60', None, [], locked(0, .5, .86, .5, .2, open1=A('Titan')) + [body('ti-rev', '#c9843b', .5, .5, .2, craters=1, glow='#f2a54a', **pop_in(A('Titan'), (.5 * W, .5 * H)))],
      [Note('TITAN', A('Titan'), 'title', pos=(W / 2, 860))], color='#a85a1c', cam='push', sounds=[('pop', A('Titan'), -16)])
@@ -359,9 +369,9 @@ shot('e62', 'TITAN', [you(slot='center-left', helmet=[(0, False)], poses=[(0, 's
      [Note('-179 °C', A('minus'), 'title', color=ICE, pos=(1500, 300)), Note('methane rain', A('rain'), 'note', pos=(1500, 760))])
 shot('e63', 'TITAN', [you(slot='center-left', idle=None, helmet=[(0, False)], poses=[(0, 'stand'), (A('wings'), 'cheer'), (A('fly'), 'flap')], faces=[(0, 'happy'), (A('fly'), 'grin')],
                          accessories=[('mask', 0), ('coat', 0), ('wings', A('wings'))], layer={'y': rise(A('fly'), -.28, 60, 'smoothstep')})],
-     [kit(F, 'lift-g', 'bar', .74, .52, .4, w=1.0, h=.3, level=[{'frame': 0, 'value': .14}], color='#2f7fd0', text='gravity: 1/7'),
-      kit(F, 'lift-a', 'bar', .74, .68, .4, w=1.0, h=.3, level=[{'frame': 0, 'value': 1}], color='#c9843b', text='air: 4x denser')],
-     [Note('FLY!', A('fly'), 'title', pos=(1250, 330))] + survival('as long as coat + oxygen', A('Survival'), SAFE, pos=(1250, 480)), cam='push')
+     [kit(F, 'lift-g', 'bar', .74, .7, .4, w=1.0, h=.3, level=[{'frame': 0, 'value': .14}], color='#2f7fd0', text='gravity: 1/7'),
+      kit(F, 'lift-a', 'bar', .74, .84, .4, w=1.0, h=.3, level=[{'frame': 0, 'value': 1}], color='#c9843b', text='air: 4x denser')],
+     [Note('FLY!', A('fly'), 'title', pos=(1250, 330))] + survival('as long as coat + oxygen', A('Survival'), SAFE, pos=(1250, 520)), cam='push')
 shot('e64', 'TITAN', [arka(slot='center-left', h=.5, idle=None, poses=[(0, 'flap'), (A('sign'), 'cheer')], faces=[(0, 'grin')], accessories=[('wings', 0)], layer={'y': track((0, -20), (60, 20), (120, -20))})],
      [kit(F, 'pen', 'sign', .7, .7, .24, w=1.6, h=1.0, text='SIGN HERE', **pop_in(A('sign'), (.7 * W, .7 * H)))], [Note('this one.', A('This'), 'title', pos=(1450, 260))])
 shot('e65', 'TITAN', [], [kit(F, 'drone', 'probe', .5, .5, .18, y=track((0, 20), (60, -20), (120, 20), (180, -20)), x=track((0, -300), (240, 300)))],
@@ -385,12 +395,20 @@ shot('e70', None, [arka(slot='center-left', h=.5, poses=[(0, 'hands-on-hips'), (
 shot('e71', None, [arka(slot='center-left', h=.5, poses=[(0, 'cheer')], faces=[(0, 'grin')])], [kit(F, 'q', 'question', .74, .3, .12, color=GOLD_T)], [Note('next episode', A('next'), 'title', pos=(1400, 760))], color='#0b1020')
 shot('e72', None, [arka(slot='center-left', h=.5, poses=[(0, 'wave')], faces=[(0, 'happy')])], [], [Note('subscribe', A('Subscribe'), 'title', color=GOLD_T, pos=(1400, 560))], color='#0b1020')
 
+# ------------------------------------------------------------------ keep explicit notes clear of the parent body (top right)
+for bid, pl in ep.plans.items():
+    if not NAMED.get(bid): continue
+    for n in pl['notes']:
+        pos = getattr(n, 'pos', None)
+        if pos and pos[0] > 1250 and 120 < pos[1] < 400 and n.kind not in ('header', 'skylabel'):
+            n.pos = (pos[0], pos[1] + 300)
+
 # ------------------------------------------------------------------ style passes (no red text; light ink on dark pages)
 for pl in ep.plans.values():
     for n in pl['notes']:
         if n.color in ('#ff5a4a', '#e0473a'): n.color = GOLD_T
 LIGHT_INK = {'doodle-stars', 'counter', 'bar', 'bulb', 'question', 'thermometer', 'fish', 'crescent', 'orbit-ring', 'town', 'clock', 'pressure-arrows', 'cross', 'ruler',
-             'check', 'small-moon', 'probe', 'signal', 'calendar', 'motion-lines', 'magnifier', 'mushroom', 'ice-cutaway', 'impact', 'geyser', 'arrow', 'smell-lines', 'tumbleweed', 'shovel', 'thermos'}
+             'check', 'small-moon', 'probe', 'signal', 'calendar', 'motion-lines', 'magnifier', 'mushroom', 'ice-cutaway', 'impact', 'geyser', 'arrow', 'smell-lines', 'tumbleweed', 'shovel', 'thermos', 'battery', 'radiation-meter', 'speedometer'}
 for layer in [pr.layer for pl in ep.plans.values() for pr in pl['props']] + ep._backdrop['layers']:
     k = layer.get('kit', {})
     if k.get('type') == 'prop' and k.get('item') in LIGHT_INK: k.setdefault('ink', '#c9d3ea')

@@ -208,18 +208,18 @@
           "kit": {
             "type": "prop",
             "item": "cliff",
-            "x": 0.5,
+            "x": 0.46,
             "y": 0.34,
-            "size": 0.56
+            "size": 1.0
           }
         },
         {
           "id": "you",
           "kit": {
             "type": "figure",
-            "x": 0.47,
+            "x": 0.43,
             "y": 0.34,
-            "height": 0.26,
+            "height": 0.3,
             "outfit": "astronaut",
             "shiver": 0,
             "seed": 4,
@@ -398,7 +398,8 @@
                 },
                 "value": 0.85
               }
-            ]
+            ],
+            "ink": "#c9d3ea"
           }
         },
         {
@@ -798,14 +799,14 @@
             "level": [
               {
                 "frame": 0,
-                "value": 0
+                "value": 0.15
               },
               {
                 "frame": {
                   "at": "eight",
                   "offset": -1
                 },
-                "value": 0
+                "value": 0.15
               },
               {
                 "frame": {
@@ -814,7 +815,8 @@
                 },
                 "value": 1
               }
-            ]
+            ],
+            "ink": "#c9d3ea"
           }
         },
         {
@@ -1108,8 +1110,8 @@
         {
           "id": "n3",
           "text": "8 hours of air",
-          "x": 1502,
-          "y": 810,
+          "x": 1500,
+          "y": 760,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -3532,17 +3534,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "Ours",
-                "offset": -1
-              },
+              "frame": 53,
               "value": 0
             },
             {
-              "frame": {
-                "at": "Ours",
-                "offset": 4
-              },
+              "frame": 58,
               "value": 1
             }
           ],
@@ -3553,34 +3549,28 @@
           "scale": [
             {
               "frame": 0,
-              "value": 0.5940000000000001
+              "value": 1.08
             },
             {
-              "frame": {
-                "at": "Ours",
-                "offset": -1
-              },
-              "value": 0.5940000000000001
+              "frame": 53,
+              "value": 1.08
             },
             {
-              "frame": {
-                "at": "Ours",
-                "offset": 6
-              },
-              "value": 0.66,
+              "frame": 60,
+              "value": 1.2,
               "ease": "ease-out-back"
             }
           ],
           "x": [
             {
               "frame": 0,
-              "value": 0.0
+              "value": -191.99999999999994
             }
           ],
           "y": [
             {
               "frame": 0,
-              "value": -32.40000000000003
+              "value": 43.20000000000004
             }
           ]
         },
@@ -3610,16 +3600,11 @@
               "value": 1
             },
             {
-              "frame": {
-                "at": "Ours",
-                "offset": -6
-              },
+              "frame": 54,
               "value": 1
             },
             {
-              "frame": {
-                "at": "Ours"
-              },
+              "frame": 60,
               "value": 0
             }
           ]
@@ -3640,16 +3625,11 @@
               "value": 1
             },
             {
-              "frame": {
-                "at": "Ours",
-                "offset": -6
-              },
+              "frame": 54,
               "value": 1
             },
             {
-              "frame": {
-                "at": "Ours"
-              },
+              "frame": 60,
               "value": 0
             }
           ]
@@ -3683,17 +3663,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "Ours",
-                "offset": -1
-              },
+              "frame": 59,
               "value": 0
             },
             {
-              "frame": {
-                "at": "Ours",
-                "offset": 4
-              },
+              "frame": 64,
               "value": 1
             }
           ]
@@ -3701,8 +3675,33 @@
         {
           "id": "n2",
           "text": "Apollo 17, 1972",
-          "x": 960,
-          "y": 960,
+          "x": 1450,
+          "y": 560,
+          "size": 92,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 59,
+              "value": 0
+            },
+            {
+              "frame": 65,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "text": "the last time anyone walked there",
+          "x": 1450,
+          "y": 700,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -3716,14 +3715,14 @@
             {
               "frame": {
                 "at": "Ours",
-                "offset": 7
+                "offset": 9
               },
               "value": 0
             },
             {
               "frame": {
                 "at": "Ours",
-                "offset": 13
+                "offset": 15
               },
               "value": 1
             }
@@ -4468,17 +4467,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "Schmitt",
-                "offset": -1
-              },
+              "frame": 3,
               "value": 0
             },
             {
-              "frame": {
-                "at": "Schmitt",
-                "offset": 4
-              },
+              "frame": 8,
               "value": 1
             }
           ],
@@ -4489,21 +4482,15 @@
           "scale": [
             {
               "frame": 0,
-              "value": 0.558
+              "value": 1.08
             },
             {
-              "frame": {
-                "at": "Schmitt",
-                "offset": -1
-              },
-              "value": 0.558
+              "frame": 3,
+              "value": 1.08
             },
             {
-              "frame": {
-                "at": "Schmitt",
-                "offset": 6
-              },
-              "value": 0.62,
+              "frame": 10,
+              "value": 1.2,
               "ease": "ease-out-back"
             }
           ],
@@ -4516,7 +4503,7 @@
           "y": [
             {
               "frame": 0,
-              "value": -32.40000000000003
+              "value": 43.20000000000004
             }
           ]
         }
@@ -4548,7 +4535,7 @@
           "id": "n2",
           "text": "Harrison Schmitt",
           "x": 691,
-          "y": 960,
+          "y": 1000,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -4560,17 +4547,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "Schmitt",
-                "offset": 5
-              },
+              "frame": 7,
               "value": 0
             },
             {
-              "frame": {
-                "at": "Schmitt",
-                "offset": 11
-              },
+              "frame": 13,
               "value": 1
             }
           ]
@@ -4579,7 +4560,7 @@
           "id": "n3",
           "text": "sneezing...",
           "x": 1500,
-          "y": 380,
+          "y": 680,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
@@ -5077,7 +5058,8 @@
                 },
                 "value": 0.2
               }
-            ]
+            ],
+            "ink": "#c9d3ea"
           }
         },
         {
@@ -5331,8 +5313,8 @@
         {
           "id": "n2",
           "text": "SURVIVAL TIME",
-          "x": 330,
-          "y": 260,
+          "x": 900,
+          "y": 165,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -5362,8 +5344,8 @@
         {
           "id": "n3",
           "text": "a few moonwalks",
-          "x": 330,
-          "y": 330,
+          "x": 900,
+          "y": 235,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -5428,6 +5410,54 @@
       "width": 1920,
       "height": 1080,
       "layers": [
+        {
+          "id": "cal-big",
+          "kit": {
+            "type": "planet",
+            "x": 0.4,
+            "y": 0.55,
+            "radius": 0.22,
+            "base": "#6e5d4c",
+            "bands": [],
+            "craters": 9,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 7
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 59,
+              "value": 0
+            },
+            {
+              "frame": 60,
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": 59,
+              "value": 0.6
+            },
+            {
+              "frame": 69,
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 768.0,
+            "y": 594.0
+          }
+        },
         {
           "id": "cal",
           "kit": {
@@ -5509,7 +5539,21 @@
             "ring": false,
             "belt": true,
             "text": "Jupiter"
-          }
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 54,
+              "value": 1
+            },
+            {
+              "frame": 60,
+              "value": 0
+            }
+          ]
         },
         {
           "id": "solar-strip",
@@ -5520,7 +5564,21 @@
             "y": 0.17,
             "size": 0.56,
             "highlight": 4
-          }
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 54,
+              "value": 1
+            },
+            {
+              "frame": 60,
+              "value": 0
+            }
+          ]
         }
       ],
       "annotations": [
@@ -5629,7 +5687,8 @@
                 "value": 0.05
               }
             ],
-            "text": "CALLISTO"
+            "text": "CALLISTO",
+            "ink": "#c9d3ea"
           }
         },
         {
@@ -5653,7 +5712,8 @@
                 "value": 0.3
               }
             ],
-            "text": "SPACE STATION"
+            "text": "SPACE STATION",
+            "ink": "#c9d3ea"
           }
         }
       ],
@@ -6105,7 +6165,7 @@
           "id": "n2",
           "text": "what's the catch?",
           "x": 1450,
-          "y": 300,
+          "y": 600,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
@@ -6266,7 +6326,8 @@
                 },
                 "value": 0.05
               }
-            ]
+            ],
+            "ink": "#c9d3ea"
           }
         },
         {
@@ -7196,6 +7257,175 @@
       "height": 1080,
       "layers": [
         {
+          "id": "mars-big",
+          "kit": {
+            "type": "planet",
+            "x": 0.4,
+            "y": 0.55,
+            "radius": 0.22,
+            "base": "#c4501f",
+            "bands": [
+              "#d9703f",
+              "#b2441a"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 8
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 59,
+              "value": 0
+            },
+            {
+              "frame": 60,
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": 59,
+              "value": 0.6
+            },
+            {
+              "frame": 69,
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 768.0,
+            "y": 594.0
+          }
+        },
+        {
+          "id": "pho-s",
+          "kit": {
+            "type": "planet",
+            "x": 0.62,
+            "y": 0.42,
+            "radius": 0.03,
+            "base": "#857a6f",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 5
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "two",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "two"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "two",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "two",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1190.4,
+            "y": 453.59999999999997
+          }
+        },
+        {
+          "id": "dei-s",
+          "kit": {
+            "type": "planet",
+            "x": 0.2,
+            "y": 0.7,
+            "radius": 0.022,
+            "base": "#9a8d80",
+            "bands": [],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 5
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "two",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "two"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "two",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "two",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 384.0,
+            "y": 756.0
+          }
+        },
+        {
           "id": "map-mars",
           "kit": {
             "type": "prop",
@@ -7216,7 +7446,21 @@
             "ring": false,
             "belt": false,
             "text": "Mars"
-          }
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 54,
+              "value": 1
+            },
+            {
+              "frame": 60,
+              "value": 0
+            }
+          ]
         },
         {
           "id": "solar-strip",
@@ -7227,7 +7471,21 @@
             "y": 0.17,
             "size": 0.56,
             "highlight": 3
-          }
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 54,
+              "value": 1
+            },
+            {
+              "frame": 60,
+              "value": 0
+            }
+          ]
         }
       ],
       "annotations": [
@@ -7768,7 +8026,8 @@
                 "value": 0.55
               }
             ],
-            "text": "5 km/h"
+            "text": "5 km/h",
+            "ink": "#c9d3ea"
           }
         },
         {
@@ -7990,7 +8249,8 @@
                 },
                 "value": 0.05
               }
-            ]
+            ],
+            "ink": "#c9d3ea"
           }
         },
         {
@@ -8118,8 +8378,8 @@
         {
           "id": "n2",
           "text": "SURVIVAL TIME",
-          "x": 380,
-          "y": 230,
+          "x": 900,
+          "y": 165,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -8149,8 +8409,8 @@
         {
           "id": "n3",
           "text": "one step too many",
-          "x": 380,
-          "y": 300,
+          "x": 900,
+          "y": 235,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -8585,17 +8845,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "Miranda",
-                "offset": -1
-              },
+              "frame": 53,
               "value": 0
             },
             {
-              "frame": {
-                "at": "Miranda",
-                "offset": 4
-              },
+              "frame": 58,
               "value": 1
             }
           ],
@@ -8606,34 +8860,28 @@
           "scale": [
             {
               "frame": 0,
-              "value": 0.5940000000000001
+              "value": 1.08
             },
             {
-              "frame": {
-                "at": "Miranda",
-                "offset": -1
-              },
-              "value": 0.5940000000000001
+              "frame": 53,
+              "value": 1.08
             },
             {
-              "frame": {
-                "at": "Miranda",
-                "offset": 6
-              },
-              "value": 0.66,
+              "frame": 60,
+              "value": 1.2,
               "ease": "ease-out-back"
             }
           ],
           "x": [
             {
               "frame": 0,
-              "value": -153.60000000000002
+              "value": -230.39999999999998
             }
           ],
           "y": [
             {
               "frame": 0,
-              "value": 0.0
+              "value": 43.20000000000004
             }
           ]
         },
@@ -8671,16 +8919,11 @@
               "value": 1
             },
             {
-              "frame": {
-                "at": "Miranda",
-                "offset": -6
-              },
+              "frame": 54,
               "value": 1
             },
             {
-              "frame": {
-                "at": "Miranda"
-              },
+              "frame": 60,
               "value": 0
             }
           ]
@@ -8701,16 +8944,11 @@
               "value": 1
             },
             {
-              "frame": {
-                "at": "Miranda",
-                "offset": -6
-              },
+              "frame": 54,
               "value": 1
             },
             {
-              "frame": {
-                "at": "Miranda"
-              },
+              "frame": 60,
               "value": 0
             }
           ]
@@ -8744,17 +8982,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "Miranda",
-                "offset": -1
-              },
+              "frame": 59,
               "value": 0
             },
             {
-              "frame": {
-                "at": "Miranda",
-                "offset": 4
-              },
+              "frame": 64,
               "value": 1
             }
           ]
@@ -8869,9 +9101,9 @@
           "kit": {
             "type": "prop",
             "item": "cliff",
-            "x": 0.36,
-            "y": 0.2,
-            "size": 0.66,
+            "x": 0.4,
+            "y": 0.22,
+            "size": 0.76,
             "text": "20 km"
           }
         },
@@ -8913,8 +9145,8 @@
         {
           "id": "n2",
           "text": "tallest cliff?",
-          "x": 1450,
-          "y": 330,
+          "x": 1480,
+          "y": 560,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -8989,9 +9221,9 @@
           "kit": {
             "type": "prop",
             "item": "cliff",
-            "x": 0.34,
-            "y": 0.3,
-            "size": 0.6,
+            "x": 0.38,
+            "y": 0.26,
+            "size": 0.72,
             "text": "20 km"
           }
         },
@@ -9030,8 +9262,8 @@
           "id": "you",
           "kit": {
             "type": "figure",
-            "x": 0.31,
-            "y": 0.3,
+            "x": 0.35,
+            "y": 0.26,
             "height": 0.28,
             "outfit": "astronaut",
             "shiver": 0,
@@ -9283,7 +9515,8 @@
                 "value": 0.95
               }
             ],
-            "text": "200 km/h"
+            "text": "200 km/h",
+            "ink": "#c9d3ea"
           }
         },
         {
@@ -9397,8 +9630,8 @@
         {
           "id": "n2",
           "text": "SURVIVAL TIME",
-          "x": 380,
-          "y": 230,
+          "x": 900,
+          "y": 165,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -9428,8 +9661,8 @@
         {
           "id": "n3",
           "text": "12 minutes",
-          "x": 380,
-          "y": 300,
+          "x": 900,
+          "y": 235,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -9912,11 +10145,19 @@
                 "value": 0
               },
               {
+                "frame": 60,
+                "value": 0
+              },
+              {
+                "frame": 80,
+                "value": 0.3
+              },
+              {
                 "frame": {
                   "at": "breathing",
                   "offset": -2
                 },
-                "value": 0
+                "value": 0.3
               },
               {
                 "frame": {
@@ -9963,16 +10204,11 @@
               "value": 1
             },
             {
-              "frame": {
-                "at": "breathing",
-                "offset": -6
-              },
+              "frame": 54,
               "value": 1
             },
             {
-              "frame": {
-                "at": "breathing"
-              },
+              "frame": 60,
               "value": 0
             }
           ]
@@ -9993,16 +10229,11 @@
               "value": 1
             },
             {
-              "frame": {
-                "at": "breathing",
-                "offset": -6
-              },
+              "frame": 54,
               "value": 1
             },
             {
-              "frame": {
-                "at": "breathing"
-              },
+              "frame": 60,
               "value": 0
             }
           ]
@@ -10036,17 +10267,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "breathing",
-                "offset": -1
-              },
+              "frame": 59,
               "value": 0
             },
             {
-              "frame": {
-                "at": "breathing",
-                "offset": 4
-              },
+              "frame": 64,
               "value": 1
             }
           ]
@@ -10086,7 +10311,7 @@
           "id": "n3",
           "text": "breathing out?!",
           "x": 1450,
-          "y": 330,
+          "y": 630,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -10167,17 +10392,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "pole",
-                "offset": -1
-              },
+              "frame": 3,
               "value": 0
             },
             {
-              "frame": {
-                "at": "pole",
-                "offset": 4
-              },
+              "frame": 8,
               "value": 1
             }
           ],
@@ -10188,34 +10407,28 @@
           "scale": [
             {
               "frame": 0,
-              "value": 0.5940000000000001
+              "value": 1.08
             },
             {
-              "frame": {
-                "at": "pole",
-                "offset": -1
-              },
-              "value": 0.5940000000000001
+              "frame": 3,
+              "value": 1.08
             },
             {
-              "frame": {
-                "at": "pole",
-                "offset": 6
-              },
-              "value": 0.66,
+              "frame": 10,
+              "value": 1.2,
               "ease": "ease-out-back"
             }
           ],
           "x": [
             {
               "frame": 0,
-              "value": -191.99999999999994
+              "value": -268.8
             }
           ],
           "y": [
             {
               "frame": 0,
-              "value": -32.40000000000003
+              "value": 43.20000000000004
             }
           ]
         },
@@ -10278,7 +10491,7 @@
           "id": "n2",
           "text": "tiger stripes",
           "x": 1500,
-          "y": 300,
+          "y": 450,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -10309,7 +10522,7 @@
           "id": "n3",
           "text": "1,000+ km/h",
           "x": 1500,
-          "y": 440,
+          "y": 570,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -10340,7 +10553,7 @@
           "id": "n4",
           "text": "faster than a jet airliner",
           "x": 1500,
-          "y": 560,
+          "y": 690,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -10371,7 +10584,7 @@
           "id": "n5",
           "text": "flew through: 7 times",
           "x": 1500,
-          "y": 680,
+          "y": 800,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
@@ -11012,8 +11225,8 @@
         {
           "id": "n2",
           "text": "SURVIVAL TIME",
-          "x": 760,
-          "y": 180,
+          "x": 900,
+          "y": 165,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -11043,8 +11256,8 @@
         {
           "id": "n3",
           "text": "one wrong step",
-          "x": 760,
-          "y": 250,
+          "x": 900,
+          "y": 235,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -12690,16 +12903,11 @@
               "value": 1
             },
             {
-              "frame": {
-                "at": "Minus",
-                "offset": -6
-              },
+              "frame": 54,
               "value": 1
             },
             {
-              "frame": {
-                "at": "Minus"
-              },
+              "frame": 60,
               "value": 0
             }
           ]
@@ -12720,16 +12928,11 @@
               "value": 1
             },
             {
-              "frame": {
-                "at": "Minus",
-                "offset": -6
-              },
+              "frame": 54,
               "value": 1
             },
             {
-              "frame": {
-                "at": "Minus"
-              },
+              "frame": 60,
               "value": 0
             }
           ]
@@ -12763,17 +12966,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "Minus",
-                "offset": -1
-              },
+              "frame": 59,
               "value": 0
             },
             {
-              "frame": {
-                "at": "Minus",
-                "offset": 4
-              },
+              "frame": 64,
               "value": 1
             }
           ]
@@ -13012,7 +13209,7 @@
           "id": "n2",
           "text": "orbits backwards!",
           "x": 1500,
-          "y": 300,
+          "y": 600,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -13380,18 +13577,11 @@
               "value": 1
             },
             {
-              "frame": {
-                "at": "Charon",
-                "n": 2,
-                "offset": -6
-              },
+              "frame": 54,
               "value": 1
             },
             {
-              "frame": {
-                "at": "Charon",
-                "n": 2
-              },
+              "frame": 60,
               "value": 0
             }
           ]
@@ -13412,18 +13602,11 @@
               "value": 1
             },
             {
-              "frame": {
-                "at": "Charon",
-                "n": 2,
-                "offset": -6
-              },
+              "frame": 54,
               "value": 1
             },
             {
-              "frame": {
-                "at": "Charon",
-                "n": 2
-              },
+              "frame": 60,
               "value": 0
             }
           ]
@@ -13457,19 +13640,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "Charon",
-                "n": 2,
-                "offset": -1
-              },
+              "frame": 59,
               "value": 0
             },
             {
-              "frame": {
-                "at": "Charon",
-                "n": 2,
-                "offset": 4
-              },
+              "frame": 64,
               "value": 1
             }
           ]
@@ -13736,7 +13911,8 @@
                 },
                 "value": 0.35
               }
-            ]
+            ],
+            "ink": "#c9d3ea"
           }
         },
         {
@@ -14125,7 +14301,8 @@
                 },
                 "value": 0
               }
-            ]
+            ],
+            "ink": "#c9d3ea"
           }
         },
         {
@@ -14220,8 +14397,8 @@
         {
           "id": "n2",
           "text": "SURVIVAL TIME",
-          "x": 760,
-          "y": 180,
+          "x": 900,
+          "y": 165,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -14251,8 +14428,8 @@
         {
           "id": "n3",
           "text": "until the battery dies",
-          "x": 760,
-          "y": 250,
+          "x": 900,
+          "y": 235,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -14379,7 +14556,8 @@
                 "frame": 0,
                 "value": 1
               }
-            ]
+            ],
+            "ink": "#c9d3ea"
           },
           "opacity": [
             {
@@ -14980,7 +15158,8 @@
                 "value": 0.6
               }
             ],
-            "text": "RADIATION"
+            "text": "RADIATION",
+            "ink": "#c9d3ea"
           }
         },
         {
@@ -15360,16 +15539,11 @@
               "value": 1
             },
             {
-              "frame": {
-                "at": "Mercury",
-                "offset": -6
-              },
+              "frame": 54,
               "value": 1
             },
             {
-              "frame": {
-                "at": "Mercury"
-              },
+              "frame": 60,
               "value": 0
             }
           ]
@@ -15390,16 +15564,11 @@
               "value": 1
             },
             {
-              "frame": {
-                "at": "Mercury",
-                "offset": -6
-              },
+              "frame": 54,
               "value": 1
             },
             {
-              "frame": {
-                "at": "Mercury"
-              },
+              "frame": 60,
               "value": 0
             }
           ]
@@ -15565,7 +15734,7 @@
             "type": "prop",
             "item": "radiation-meter",
             "x": 0.62,
-            "y": 0.3,
+            "y": 0.62,
             "size": 0.2,
             "level": [
               {
@@ -15578,7 +15747,8 @@
                 },
                 "value": 0.45
               }
-            ]
+            ],
+            "ink": "#c9d3ea"
           }
         },
         {
@@ -15875,8 +16045,8 @@
         {
           "id": "n2",
           "text": "SURVIVAL TIME",
-          "x": 760,
-          "y": 180,
+          "x": 900,
+          "y": 165,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -15906,8 +16076,8 @@
         {
           "id": "n3",
           "text": "about 2 months",
-          "x": 760,
-          "y": 250,
+          "x": 900,
+          "y": 235,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -16129,16 +16299,11 @@
               "value": 1
             },
             {
-              "frame": {
-                "at": "Smooth",
-                "offset": -6
-              },
+              "frame": 54,
               "value": 1
             },
             {
-              "frame": {
-                "at": "Smooth"
-              },
+              "frame": 60,
               "value": 0
             }
           ]
@@ -16159,16 +16324,11 @@
               "value": 1
             },
             {
-              "frame": {
-                "at": "Smooth",
-                "offset": -6
-              },
+              "frame": 54,
               "value": 1
             },
             {
-              "frame": {
-                "at": "Smooth"
-              },
+              "frame": 60,
               "value": 0
             }
           ]
@@ -16328,7 +16488,8 @@
                 "value": 0.82
               }
             ],
-            "text": "RADIATION"
+            "text": "RADIATION",
+            "ink": "#c9d3ea"
           }
         },
         {
@@ -16601,8 +16762,8 @@
         {
           "id": "n2",
           "text": "SURVIVAL TIME",
-          "x": 760,
-          "y": 180,
+          "x": 900,
+          "y": 165,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -16632,8 +16793,8 @@
         {
           "id": "n3",
           "text": "about 1 day",
-          "x": 760,
-          "y": 250,
+          "x": 900,
+          "y": 235,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -17563,9 +17724,9 @@
           "kit": {
             "type": "prop",
             "item": "radiation-meter",
-            "x": 0.86,
-            "y": 0.72,
-            "size": 0.2,
+            "x": 0.14,
+            "y": 0.78,
+            "size": 0.18,
             "level": [
               {
                 "frame": 0,
@@ -17577,7 +17738,8 @@
                 },
                 "value": 1
               }
-            ]
+            ],
+            "ink": "#c9d3ea"
           }
         }
       ],
@@ -17700,17 +17862,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "volcanic",
-                "offset": -1
-              },
+              "frame": 53,
               "value": 0
             },
             {
-              "frame": {
-                "at": "volcanic",
-                "offset": 4
-              },
+              "frame": 58,
               "value": 1
             }
           ],
@@ -17721,34 +17877,28 @@
           "scale": [
             {
               "frame": 0,
-              "value": 0.9450000000000001
+              "value": 1.1700000000000002
             },
             {
-              "frame": {
-                "at": "volcanic",
-                "offset": -1
-              },
-              "value": 0.9450000000000001
+              "frame": 53,
+              "value": 1.1700000000000002
             },
             {
-              "frame": {
-                "at": "volcanic",
-                "offset": 6
-              },
-              "value": 1.05,
+              "frame": 60,
+              "value": 1.3,
               "ease": "ease-out-back"
             }
           ],
           "x": [
             {
               "frame": 0,
-              "value": -191.99999999999994
+              "value": -268.8
             }
           ],
           "y": [
             {
               "frame": 0,
-              "value": -32.40000000000003
+              "value": 43.20000000000004
             }
           ]
         },
@@ -17839,16 +17989,11 @@
               "value": 1
             },
             {
-              "frame": {
-                "at": "volcanic",
-                "offset": -6
-              },
+              "frame": 54,
               "value": 1
             },
             {
-              "frame": {
-                "at": "volcanic"
-              },
+              "frame": 60,
               "value": 0
             }
           ]
@@ -17869,16 +18014,11 @@
               "value": 1
             },
             {
-              "frame": {
-                "at": "volcanic",
-                "offset": -6
-              },
+              "frame": 54,
               "value": 1
             },
             {
-              "frame": {
-                "at": "volcanic"
-              },
+              "frame": 60,
               "value": 0
             }
           ]
@@ -17912,17 +18052,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "volcanic",
-                "offset": -1
-              },
+              "frame": 59,
               "value": 0
             },
             {
-              "frame": {
-                "at": "volcanic",
-                "offset": 4
-              },
+              "frame": 64,
               "value": 1
             }
           ]
@@ -18131,7 +18265,8 @@
                 },
                 "value": 1
               }
-            ]
+            ],
+            "ink": "#c9d3ea"
           }
         }
       ],
@@ -18283,7 +18418,8 @@
                 "frame": 0,
                 "value": 0.95
               }
-            ]
+            ],
+            "ink": "#c9d3ea"
           }
         },
         {
@@ -18565,8 +18701,8 @@
         {
           "id": "n2",
           "text": "SURVIVAL TIME",
-          "x": 760,
-          "y": 180,
+          "x": 900,
+          "y": 165,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -18596,8 +18732,8 @@
         {
           "id": "n3",
           "text": "about 3 hours",
-          "x": 760,
-          "y": 250,
+          "x": 900,
+          "y": 235,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -19117,17 +19253,11 @@
               "value": 0
             },
             {
-              "frame": {
-                "at": "pictures",
-                "offset": -1
-              },
+              "frame": 3,
               "value": 0
             },
             {
-              "frame": {
-                "at": "pictures",
-                "offset": 4
-              },
+              "frame": 8,
               "value": 1
             }
           ],
@@ -19138,21 +19268,15 @@
           "scale": [
             {
               "frame": 0,
-              "value": 0.5940000000000001
+              "value": 1.08
             },
             {
-              "frame": {
-                "at": "pictures",
-                "offset": -1
-              },
-              "value": 0.5940000000000001
+              "frame": 3,
+              "value": 1.08
             },
             {
-              "frame": {
-                "at": "pictures",
-                "offset": 6
-              },
-              "value": 0.66,
+              "frame": 10,
+              "value": 1.2,
               "ease": "ease-out-back"
             }
           ],
@@ -19165,7 +19289,7 @@
           "y": [
             {
               "frame": 0,
-              "value": -32.40000000000003
+              "value": 43.20000000000004
             }
           ]
         }
@@ -19583,7 +19707,7 @@
           "id": "n2",
           "text": "no pressure suit!",
           "x": 1382,
-          "y": 250,
+          "y": 550,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
@@ -20049,7 +20173,7 @@
           "id": "n2",
           "text": "-179 °C",
           "x": 1500,
-          "y": 300,
+          "y": 600,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -20188,7 +20312,7 @@
             "type": "prop",
             "item": "bar",
             "x": 0.74,
-            "y": 0.52,
+            "y": 0.7,
             "size": 0.4,
             "level": [
               {
@@ -20207,7 +20331,7 @@
             "type": "prop",
             "item": "bar",
             "x": 0.74,
-            "y": 0.68,
+            "y": 0.84,
             "size": 0.4,
             "level": [
               {
@@ -20362,7 +20486,7 @@
           "id": "n3",
           "text": "SURVIVAL TIME",
           "x": 1250,
-          "y": 410,
+          "y": 450,
           "size": 66,
           "anchor": "middle",
           "variant": "ink",
@@ -20393,7 +20517,7 @@
           "id": "n4",
           "text": "as long as coat + oxygen",
           "x": 1250,
-          "y": 480,
+          "y": 520,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -20629,7 +20753,7 @@
           "id": "n2",
           "text": "this one.",
           "x": 1450,
-          "y": 260,
+          "y": 560,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -21569,7 +21693,7 @@
           "id": "n2",
           "text": "...and one lets you fly",
           "x": 1450,
-          "y": 300,
+          "y": 600,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -23136,8 +23260,8 @@
               "edge": "end"
             },
             "focus": {
-              "x": 0.498,
-              "y": 0.4793
+              "x": 0.4954,
+              "y": 0.4778
             },
             "zoom": 1.07,
             "easing": "smoothstep"
@@ -23823,9 +23947,14 @@
         },
         {
           "sound": "pop",
+          "frame": 60,
+          "gainDb": -25
+        },
+        {
+          "sound": "pop",
           "frame": {
             "at": "Ours",
-            "offset": 8
+            "offset": 10
           },
           "gainDb": -25
         }
@@ -24053,10 +24182,7 @@
         },
         {
           "sound": "pop",
-          "frame": {
-            "at": "Schmitt",
-            "offset": 6
-          },
+          "frame": 8,
           "gainDb": -25
         },
         {
@@ -25120,8 +25246,8 @@
           {
             "frame": 0,
             "focus": {
-              "x": 0.491,
-              "y": 0.4825
+              "x": 0.4929,
+              "y": 0.4806
             },
             "zoom": 1.05,
             "easing": "smoothstep"
