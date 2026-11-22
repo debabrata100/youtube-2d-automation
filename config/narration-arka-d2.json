@@ -1,0 +1,46 @@
+{
+  "mock": {
+    "provider": "mock",
+    "model": "pcm-test-v1",
+    "voice": "test-pulse",
+    "language": "en-US",
+    "speakingRate": 1,
+    "wordsPerMinute": 145,
+    "format": "wav",
+    "instructions": "Deterministic synthetic test tones. Not spoken narration."
+  },
+  "openai": {
+    "provider": "openai",
+    "model": "gpt-4o-mini-tts-2025-12-15",
+    "voice": "marin",
+    "language": "en-US",
+    "speakingRate": 1,
+    "format": "wav",
+    "instructions": "Speak in conversational American English as a clear, curious science narrator. Calm confidence, natural phrasing, light emphasis, no theatrical acting. Aim for approximately 145 words per minute without rushing. Read the supplied words exactly."
+  },
+  "elevenlabs": {
+    "provider": "elevenlabs",
+    "model": "eleven_multilingual_v2",
+    "voice": "q80kpsDmnu4IR4Zm7jWZ",
+    "language": "en-US",
+    "speakingRate": 1,
+    "format": "wav",
+    "instructions": "",
+    "outputFormat": "pcm_24000",
+    "voiceSettings": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": 0,
+      "use_speaker_boost": true,
+      "speed": 1
+    },
+    "seed": 232,
+    "applyTextNormalization": "auto"
+  },
+  "speakers": {
+    "_note": "Voice-test config: identical to config/narration.json except speakers.arka.voice = Arka D2. Used by stories/e7-arka-voice-test.json.",
+    "arka": {
+      "voice": "TL9f5lGrdeX5wHMushRC"
+    }
+  }
+}

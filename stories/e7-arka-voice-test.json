@@ -2,7 +2,7 @@
  "schemaVersion": "1.0",
  "id": "e7-arka-voice-test",
  "title": "Arka voice test: E3 vs D2 (E7 lines)",
- "topic": "Recording only: every Arka line from the E7 Apophis draft, read by each candidate voice for a blind comparison",
+ "topic": "Recording only: every Arka line from the E7 Apophis draft as speaker 'arka', one take per candidate voice. The winning take is reused in E7's real narration (copy audio/takes/arka.* into the E7 job, run with --resume) as long as Arka's lines stay word-for-word the same.",
  "language": "en-US",
  "targetAudience": "English-speaking science-curious viewers aged 16-35",
  "durationSeconds": 16,
@@ -25,14 +25,14 @@
     "Okay. Earth's getting smaller back there. Now the big one: what if we were heading for it?"
    ],
    "phraseSpeakers": [
-    "narrator",
-    "narrator",
-    "narrator",
-    "narrator",
-    "narrator",
-    "narrator",
-    "narrator",
-    "narrator"
+    "arka",
+    "arka",
+    "arka",
+    "arka",
+    "arka",
+    "arka",
+    "arka",
+    "arka"
    ]
   },
   {
@@ -52,15 +52,15 @@
     "If the Sun turned into a black hole… would it pull us in?"
    ],
    "phraseSpeakers": [
-    "narrator",
-    "narrator",
-    "narrator",
-    "narrator",
-    "narrator",
-    "narrator",
-    "narrator",
-    "narrator",
-    "narrator"
+    "arka",
+    "arka",
+    "arka",
+    "arka",
+    "arka",
+    "arka",
+    "arka",
+    "arka",
+    "arka"
    ]
   }
  ]
