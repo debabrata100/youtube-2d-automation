@@ -99,10 +99,10 @@ def arka(**k):
     return Char('arka', 'arka', **k)
 
 
-def bigphoto(name, at, x=.5, y=.54, s=1.2):
+def bigphoto(name, at, x=.5, y=.54, s=1.2, until=None):
     hw = .155 * s; hh = hw * W / H * .95
     y = max(y, .5)
-    return photo(ep, F, name, f'nasa/inserts/{name}.png', at, x=x, y=y, scale=s, box=(.5 - hw, .5 - hh, .5 + hw, .5 + hh))
+    return photo(ep, F, name, f'nasa/inserts/{name}.png', at, until=until, x=x, y=y, scale=s, box=(.5 - hw, .5 - hh, .5 + hw, .5 + hh))
 
 
 NAMED = {}
@@ -214,9 +214,18 @@ shot('e11', 'THE MOON', [you(slot='center-left', poses=[(0, 'stand'), (A('shadow
 shot('e12', 'THE MOON', [], [kit(F, 'lens', 'magnifier', .4, .5, .45, w=1.2, h=1.2),
                             Prop(prop('grains', 'frost', .4, .5, .17, count=30, color='#6e6e6a', level=[{'frame': 0, 'value': 1}]))],
      [Note('no wind, no water', A('wind'), 'small'), Note('sharp, like crushed glass', A('sharp')), Note('ate through boots', A('boots'), 'small')], ground=False)
-shot('e13', 'THE MOON', [], [bigphoto('photo-apollo17-schmitt', 4, x=.36)],
-     [Note('Harrison Schmitt', 8, 'small', pos=(.36 * W, 1000)), Note('sneezing...', A('sneezing'), 'note', pos=(1500, 380)),
-      Note('"lunar hay fever"', A('lunar'), 'title', color=GOLD_T, pos=(1500, 560))], ground=False)
+L13 = A('lander')
+dust13 = Prop(prop('dust13', 'frost', .36, .5, .2, count=26, color='#9c9c96', level=[{'frame': 0, 'value': 0}, {'frame': plus(L13, 4), 'value': 0}, {'frame': A('sneezing'), 'value': .5}, {'frame': A('sneezing', 6), 'value': 1}]))
+tears = [kit(F, f'tear{i}', 'drop', .325 + i * .03, .37, .022, color='#7cc4f2', opacity=show_from(A('watered')),
+             y=track((0, 0), (A('watered', -1), 0), (A('watered', 40), 70, 'smoothstep'), (A('watered', 41), 0), (A('watered', 80), 70, 'smoothstep'))) for i in range(2)]
+shot('e13', 'THE MOON', [you(slot='center-left', h=.52, helmet=[(0, False)], idle=None, poses=[(0, 'stand'), (A('sneezing'), 'cower'), (A('itched'), 'reach'), (A('lunar'), 'shrug')],
+                           faces=[(0, 'neutral'), (A('started'), 'puffed'), (A('sneezing'), 'scream'), (A('watered'), 'sad'), (A('itched'), 'pain'), (A('lunar'), 'smug')],
+                           layer={'opacity': show_from(L13)})],
+     [bigphoto('photo-apollo17-schmitt', 4, x=.36, until=L13),
+      Prop({'id': 'floor13', 'kit': {'type': 'terrain', 'top': .88, 'curve': 0, 'fill': '#4a5566', 'detail': '#3a4352', 'rocks': 0, 'bumps': 1, 'seed': 3}, 'opacity': show_from(L13)}, Box(0, .88 * H, W, H, 'floor13')), kit(F, 'helm13', 'helmet', .5, .83, .12, opacity=show_from(L13)), dust13, kit(F, 'achoo', 'impact', .3, .34, .14, color=GOLD_T, opacity=track((0, 0), (A('sneezing', -1), 0), (A('sneezing', 2), 1), (A('sneezing', 26), 1), (A('sneezing', 30), 0)))] + tears,
+     [Note('Harrison Schmitt, Apollo 17', 8, 'note', pos=(1450, 560), until=L13), Note('inside the lander, helmet off', L13, 'small', pos=(1560, 420)),
+      Note('ACHOO!', A('sneezing'), 'title', color=GOLD_T, pos=(1560, 530)), Note('watery eyes', A('watered'), 'note', pos=(1560, 640)), Note('itchy throat', A('itched'), 'note', pos=(1560, 740), arrow='you'),
+      Note('"lunar hay fever"', A('lunar'), 'title', color=GOLD_T, pos=(1560, 870))], ground=False, sky=False, color='#2a3340')
 shot('e14', 'THE MOON', [arka(slot='center-left', h=.5, poses=[(0, 'shrug')], faces=[(0, 'smug')])], [kit(F, 'smell', 'smell-lines', .3, .36, .16), cross(A('holiday'))], [])
 shot('e15', 'THE MOON', [you(slot='center-left', poses=[(0, 'stand'), (A('down'), 'panic')], faces=[(0, 'neutral'), (A('wears'), 'scared')])],
      [gauge(.78, .45, .22, [(0, .9), (A('wears'), .9), (A('down'), .2)], text='SUIT')],

@@ -4426,8 +4426,8 @@
             "type": "terrain",
             "top": 0,
             "curve": 0,
-            "fill": "#121a2c",
-            "detail": "#121a2c",
+            "fill": "#2a3340",
+            "detail": "#2a3340",
             "rocks": 0,
             "bumps": 1,
             "seed": 1
@@ -4438,25 +4438,6 @@
               "value": 0.72
             }
           ]
-        },
-        {
-          "id": "sky-body",
-          "kit": {
-            "type": "planet",
-            "x": 0.84,
-            "y": 0.24,
-            "radius": 0.07,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
-            ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.25,
-            "seed": 5
-          }
         },
         {
           "id": "photo-apollo17-schmitt",
@@ -4473,6 +4454,19 @@
             {
               "frame": 8,
               "value": 1
+            },
+            {
+              "frame": {
+                "at": "lander",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "lander"
+              },
+              "value": 0
             }
           ],
           "anchor": {
@@ -4506,6 +4500,380 @@
               "value": 43.20000000000004
             }
           ]
+        },
+        {
+          "id": "floor13",
+          "kit": {
+            "type": "terrain",
+            "top": 0.88,
+            "curve": 0,
+            "fill": "#4a5566",
+            "detail": "#3a4352",
+            "rocks": 0,
+            "bumps": 1,
+            "seed": 3
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lander",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lander"
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "helm13",
+          "kit": {
+            "type": "prop",
+            "item": "helmet",
+            "x": 0.5,
+            "y": 0.83,
+            "size": 0.12
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lander",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lander"
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "dust13",
+          "kit": {
+            "type": "prop",
+            "item": "frost",
+            "x": 0.36,
+            "y": 0.5,
+            "size": 0.2,
+            "count": 26,
+            "color": "#9c9c96",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "lander",
+                  "offset": 4
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "sneezing"
+                },
+                "value": 0.5
+              },
+              {
+                "frame": {
+                  "at": "sneezing",
+                  "offset": 6
+                },
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "achoo",
+          "kit": {
+            "type": "prop",
+            "item": "impact",
+            "x": 0.3,
+            "y": 0.34,
+            "size": 0.14,
+            "color": "#ffd25e",
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sneezing",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "sneezing",
+                "offset": 2
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sneezing",
+                "offset": 26
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "sneezing",
+                "offset": 30
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "tear0",
+          "kit": {
+            "type": "prop",
+            "item": "drop",
+            "x": 0.325,
+            "y": 0.37,
+            "size": 0.022,
+            "color": "#7cc4f2"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "watered",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "watered"
+              },
+              "value": 1
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "watered",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "watered",
+                "offset": 40
+              },
+              "value": 70,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": {
+                "at": "watered",
+                "offset": 41
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "watered",
+                "offset": 80
+              },
+              "value": 70,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "tear1",
+          "kit": {
+            "type": "prop",
+            "item": "drop",
+            "x": 0.355,
+            "y": 0.37,
+            "size": 0.022,
+            "color": "#7cc4f2"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "watered",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "watered"
+              },
+              "value": 1
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "watered",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "watered",
+                "offset": 40
+              },
+              "value": 70,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": {
+                "at": "watered",
+                "offset": 41
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "watered",
+                "offset": 80
+              },
+              "value": 70,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "you",
+          "kit": {
+            "type": "figure",
+            "x": 0.33,
+            "y": 0.86,
+            "height": 0.52,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": {
+                  "at": "sneezing"
+                },
+                "pose": "cower"
+              },
+              {
+                "frame": {
+                  "at": "itched"
+                },
+                "pose": "reach"
+              },
+              {
+                "frame": {
+                  "at": "lunar"
+                },
+                "pose": "shrug"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "started"
+                },
+                "face": "puffed"
+              },
+              {
+                "frame": {
+                  "at": "sneezing"
+                },
+                "face": "scream"
+              },
+              {
+                "frame": {
+                  "at": "watered"
+                },
+                "face": "sad"
+              },
+              {
+                "frame": {
+                  "at": "itched"
+                },
+                "face": "pain"
+              },
+              {
+                "frame": {
+                  "at": "lunar"
+                },
+                "face": "smug"
+              }
+            ],
+            "helmet": [
+              {
+                "frame": 0,
+                "on": false
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lander",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lander"
+              },
+              "value": 1
+            }
+          ]
         }
       ],
       "annotations": [
@@ -4522,24 +4890,13 @@
         },
         {
           "id": "n1",
-          "text": "Earth",
-          "x": 1463,
-          "y": 273,
-          "size": 46,
+          "text": "Harrison Schmitt, Apollo 17",
+          "x": 1450,
+          "y": 560,
+          "size": 72,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#eef1f8",
-          "pop": false
-        },
-        {
-          "id": "n2",
-          "text": "Harrison Schmitt",
-          "x": 691,
-          "y": 1000,
-          "size": 66,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#eef1f8",
+          "color": "#ffd25e",
           "pop": true,
           "opacity": [
             {
@@ -4553,15 +4910,59 @@
             {
               "frame": 13,
               "value": 1
+            },
+            {
+              "frame": {
+                "at": "lander",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "lander"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "inside the lander, helmet off",
+          "x": 1560,
+          "y": 420,
+          "size": 66,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lander",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lander",
+                "offset": 5
+              },
+              "value": 1
             }
           ]
         },
         {
           "id": "n3",
-          "text": "sneezing...",
-          "x": 1500,
-          "y": 680,
-          "size": 72,
+          "text": "ACHOO!",
+          "x": 1560,
+          "y": 530,
+          "size": 92,
           "anchor": "middle",
           "variant": "ink",
           "color": "#ffd25e",
@@ -4589,9 +4990,81 @@
         },
         {
           "id": "n4",
+          "text": "watery eyes",
+          "x": 1560,
+          "y": 640,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "watered",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "watered",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n5",
+          "text": "itchy throat",
+          "x": 1560,
+          "y": 740,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "itched",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "itched",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ],
+          "connector": {
+            "from": {
+              "x": 1409.37152,
+              "y": 678.8
+            },
+            "to": {
+              "x": 700.992,
+              "y": 468.288
+            }
+          }
+        },
+        {
+          "id": "n6",
           "text": "\"lunar hay fever\"",
-          "x": 1500,
-          "y": 560,
+          "x": 1560,
+          "y": 870,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -24138,8 +24611,8 @@
           {
             "frame": 0,
             "focus": {
-              "x": 0.5,
-              "y": 0.5
+              "x": 0.4919,
+              "y": 0.5023
             },
             "zoom": 1.05,
             "easing": "smoothstep"
@@ -24188,7 +24661,28 @@
         {
           "sound": "pop",
           "frame": {
+            "at": "lander"
+          },
+          "gainDb": -25
+        },
+        {
+          "sound": "pop",
+          "frame": {
             "at": "sneezing"
+          },
+          "gainDb": -25
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "watered"
+          },
+          "gainDb": -25
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "itched"
           },
           "gainDb": -25
         },
