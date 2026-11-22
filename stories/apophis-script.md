@@ -1,184 +1,194 @@
-# E7 "Apophis 2029": script draft 1
+# E7 Apophis: script draft 2 ("A inside B")
 
-Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka: D2 or E3 (Debabrata's choice, decided later; lines are written for the warm, curious, grown-up Arka).
+Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka: D2 or E3 (Debabrata's choice; lines written for the warm, curious, grown-up Arka). Draft 1 (story of a number, viewed from Earth) is in git history (3d349ea).
 
-**Title options (≤ 50 characters, honest, no fear-mongering):**
-1. **The Night an Asteroid Passes Inside Our Satellites** (50) ← recommended: a scene, a real date-free promise, and the surprise in one line.
-2. **An Asteroid Will Pass Inside Our Satellites in 2029** (49): plainer, carries the year for search.
-3. **The Most Dangerous Asteroid Ever Found Will Miss Us** (49): myth-to-reality shape (our positioning test from 22 Nov).
+**Decision (Debabrata, 22 Nov):** the outside promise is the **honest what-if** (B): "What if Apophis hit? Most videos get it wrong." The way we tell it is the **ride** (A): you stand on Apophis as it passes Earth, and from there we check the popular claims one by one.
 
-**Thumbnail idea:** Earth in the lower corner with the thin ring of geostationary satellites drawn around it; a glowing rock passing *inside* the ring; text **"INSIDE THE RING"** or **"FRIDAY 13TH, 2029"**. No fire, no explosion: the honest surprise is how close, not a crash.
+**Why (competitor check, 22 Nov, YouTube search):** "what if Apophis hit" is the biggest demand (Tracer Project 5.7M in a month; The Scale Room 718K in 2 weeks; cognatura 372K and 392K; OzGeology 450K) and very crowded. A myth-busting take is already working ("What If Apophis Hit the Ocean? (It's Not a 150-Metre Wall)", 51K in 3 days). No Apophis video uses the "most videos get it wrong" shape. The "it will miss / passes inside our satellites" angle gets almost nothing (24–72 views), and one tiny video does the stand-on-Apophis idea (78 views in 9 days). Search traffic suits a 4-subscriber channel better than browse.
 
-**Pays off E1's ending:** Arka asked "Does anything ever change our sky in one night?" and the narrator answered "Actually, yes." This episode is that night.
+## Title and thumbnail: YouTube "title and thumbnail" test, 3 variants
+| # | Title (≤ 50) | Thumbnail |
+|---|---|---|
+| 1 | **What If Apophis Hit? Most Videos Get It Wrong** (45) | MYTH \| REALITY split (Ep 4 layout). Left: Earth cracking under a falling rock, "WHAT THEY SHOW". Right: a calm Earth with one circle a few hundred km wide, "WHAT'S REAL". Gold and white text, no red. |
+| 2 | **What If Apophis Hit Earth? The Honest Answer** (44) | "1 IN 37 → 0" big and hand-drawn, beside the rock passing inside the satellite ring. |
+| 3 | **What If You Rode Apophis Past Earth?** (36) | Arka standing on the asteroid, Earth filling the sky behind her, satellites overhead. "I'M ON IT." |
 
-**Angle (crowded-topic rule):** Apophis videos are popular (one got 5.7M views in 30 days), and most are "god of chaos" scare videos or a bare list of facts. Ours is **the story of a number**: an asteroid that went from 1 in 37 to zero, and what the night itself will look like, with the "what if it did hit?" answered honestly at the end. The thought experiment lives inside the story: *where would you stand, what would you see, and what would Earth do to it?*
+All three promises are delivered in the first 60 seconds (the claim check is set up at a4–a6, the ride starts at a7), so none of them is bait.
 
-**Structure device (repetition rule 13):** **the altitude ladder**: a tall, thin strip on the left of the screen running up from Earth's surface: the ISS (about 400 km), GPS satellites (about 20,000 km), the geostationary ring (about 36,000 km), and the Moon far off the top. Apophis's marker slides down it over the episode, reaching *below* the geostationary ring in chapter 4. Ep 4 used a forward timeline, Ep 5 a thermometer, M1 a rewind counter, E1 the 25th-hour bar.
+## Credibility rules for this script (checked line by line, see the audit at the end)
+1. **Never name or mock another channel.** We correct *claims* ("you may have heard…"), each one taken from real video titles or articles, never a strawman.
+2. **Every correction has a source in the fact table**; where scientists genuinely disagree (ocean waves), we say so instead of picking the comforting answer.
+3. **Calculated numbers are labelled as ours** in the fact table, with the inputs; rounded conservatively.
+4. **No new fear either:** we don't swap "end of the world" for "nothing to see"; a hit would be a real regional disaster.
+5. **Words like "never", "impossible", "zero" only where the source says so** (impact ruled out "for at least 100 years", not "ever").
 
-**Middle-stretch rule (22 Nov):** no two chapters open the same way. Openers, in order: a scene (cold open), a phone call at Christmas (ch 1), a detective clue (ch 2), Arka's question (ch 3), a wrong guess corrected (ch 4), a race against a date (ch 5), the honest what-if (ch 6).
-
-**Arka (22 Nov positioning):** warm, curious, gently amused; a smart friend asking the obvious question. No sarcasm, no anger, no kid jokes.
+**Structure device (repetition rule 13):** **the ride clock**: a small handwritten countdown in the corner, "T minus …" to closest approach, then "T plus …". Plus the altitude ladder from draft 1 in chapter 2. Middle-stretch rule: each chapter opens differently (a claim, a footstep, a view, a question, a race, a balcony).
 
 ## Script
 
-### Cold open: a star that moves
+### Cold open: the claims, and the ride
 
 | # | Speaker | Line |
 |---|---|---|
-| a1 | Narrator | On the evening of Friday the thirteenth of April, 2029, a new star will appear in the sky. And then it will start to move. |
-| a2 | Narrator | It isn't a star. It's a rock about as wide as the Eiffel Tower is tall, passing closer to us than the satellites that carry our TV signals. |
-| a3 | Arka | Friday the thirteenth. Of course it is. |
-| a4 | Narrator | Twenty years ago, this asteroid had the highest danger rating ever given. One chance in thirty-seven of hitting us, on that exact date. |
-| a5 | Narrator | So how did it go from one in thirty-seven to zero? Where will you need to stand to see it? And what will that night do to the asteroid? |
+| a1 | Narrator | On Friday the thirteenth of April, 2029, an asteroid the size of a skyscraper will pass closer to Earth than the satellites that carry our TV signals. |
+| a2 | Narrator | You may have heard what happens next. It wipes out a continent. It ends the world. A wall of water hundreds of metres high. Scientists have even mapped where it lands. |
+| a3 | Arka | Please tell me most of that is wrong. |
+| a4 | Narrator | Most of it is. Some of it is half right. And one part is more interesting than any of the scary versions. |
+| a5 | Narrator | So let's check every claim properly. And to do it, we're not going to watch from Earth. |
+| a6 | Narrator | We're going to ride it. |
 
 *(brand sting, about 2.5 s)*
 
-| # | Speaker | Line |
-|---|---|---|
-| a6 | Narrator | Its name is Apophis. And its story starts with a rock that got lost. |
-
-### Chapter 1: Found, lost, found again (2004)
+### Chapter 1: Standing on Apophis (T minus 24 hours)
 
 | # | Speaker | Line |
 |---|---|---|
-| a7 | Narrator | June 2004, Arizona. Three astronomers at Kitt Peak spot a faint dot that moves against the stars: Roy Tucker, David Tholen and Fabrizio Bernardi. |
-| a8 | Narrator | They see it for two nights. Then it slips out of view, and nobody can say where it's going. |
-| a9 | Narrator | Six months later, on the eighteenth of December, Gordon Garradd finds it again from Siding Spring in Australia. Now there's enough to work out its orbit. |
-| a10 | Narrator | And over Christmas, the numbers do something strange. Usually, more observations make a scary number smaller. This time it climbed: one in three hundred, then one in sixty, then one in thirty-seven. |
-| a11 | Arka | Wait. The more they looked, the worse it got? |
-| a12 | Narrator | For three days, yes. On the twenty-seventh of December, it reached level four on the Torino scale, the highest any asteroid had ever scored. It was named after the Egyptian god of chaos. |
-| a13 | Arka | That's a lot of pressure for a rock that just wanted to orbit the Sun. |
+| a7 | Narrator | Here we are. Apophis: a lumpy grey rock, about four hundred and fifty metres long, slowly tumbling. Earth is a bright blue dot ahead of us. |
+| a8 | Arka | Okay. First step. |
+| a9 | Narrator | Careful. The gravity here is about a quarter of a millionth of Earth's. A gentle hop, faster than about twelve centimetres a second, and you leave Apophis forever. |
+| a10 | Arka | Twelve centimetres a second? I walk to the kitchen faster than that. |
+| a11 | Narrator | So everything is slow motion. Dropped dust drifts down for minutes. That's why we're clipped to a cable. |
+| a12 | Narrator | And twenty-five years ago, the people tracking this rock were genuinely worried. In December 2004, the odds that it would hit Earth on this exact date reached one in thirty-seven. The highest danger rating any asteroid had ever been given. |
+| a12b | Narrator | It was a strange Christmas. The rock had been spotted in Arizona that June, seen for two nights, then lost. Gordon Garradd found it again from Australia in December, and with every new observation the odds got worse: one in three hundred, one in sixty, one in thirty-seven. |
+| a12c | Narrator | What saved the day was old photographs. Astronomers found Apophis hiding in images taken months earlier, and with that longer trail, 2029 was ruled out within days. |
+| a13 | Arka | So that's where the scary videos come from. |
+| a14 | Narrator | Partly. Hold that thought. We'll come back to the odds. |
 
-### Chapter 2: How the danger disappeared
-
-| # | Speaker | Line |
-|---|---|---|
-| a14 | Narrator | The rescue came from old photographs. Astronomers went back through images taken months earlier and found Apophis hiding in them, unnoticed, since March 2004. |
-| a15 | Narrator | A longer trail meant a sharper orbit. By the end of December, an impact in 2029 was ruled out. |
-| a16 | Narrator | But a new worry took its place. Earth's gravity would bend Apophis's path in 2029. If it passed through one tiny region of space, a gravitational keyhole less than a kilometre wide, it would come back and hit us seven years later. |
-| a17 | Arka | So the problem wasn't 2029. It was the door 2029 might open. |
-| a18 | Narrator | Exactly. And there was a second, subtler problem. Sunlight warms one side of an asteroid, the heat leaks away, and that gives it a gentle push. Over decades, that push moves it by kilometres. |
-| a19 | Narrator | Then, in March 2021, Apophis passed by at a safe distance, and two giant radio dishes, Goldstone in California and Green Bank in West Virginia, bounced radar off it. |
-| a20 | Narrator | The uncertainty in where it would be in 2029 collapsed from hundreds of kilometres to just a handful. No keyhole. No impact. Not in 2029, not in 2036, not in 2068. Nothing for at least a hundred years. |
-| a21 | Arka | Seventeen years on the risk list, and it's sorted by measuring very, very carefully. |
-| a22 | Narrator | That's planetary defence most of the time. Not missiles. Patience. |
-
-### Chapter 3: The night itself
+### Chapter 2: Through the satellite ring (T minus 1 hour to closest approach)
 
 | # | Speaker | Line |
 |---|---|---|
-| a23 | Arka | Okay. It's safe. So what will I actually see? |
-| a24 | Narrator | Let's go up the ladder. The space station orbits about four hundred kilometres up. GPS satellites, about twenty thousand. And the ring of geostationary satellites, the ones that hang over one spot carrying TV and weather data, about thirty-six thousand. |
-| a25 | Narrator | On the thirteenth of April, Apophis will pass less than thirty-two thousand kilometres above the surface. Inside that ring. About a tenth of the way to the Moon. |
-| a26 | Narrator | Nothing that big has ever been seen coming this close, years in advance. |
-| a27 | Narrator | To you, it will look like a star, about as bright as the stars of the Little Dipper. But at its fastest, it will cross the width of the full Moon in about a minute. Watch for a while, and you'll see it move. |
-| a28 | Narrator | Where you'll see it depends on where night is. Europe, Africa and western Asia get the best view. In India, the brightest moment comes at about two in the morning on the fourteenth. In all, around two billion people could see it with nothing but their eyes. |
-| a28b | Narrator | Here's an odd detail: it will be at its brightest a little over an hour before its closest moment. Then it heads towards the glare of the Sun, and within hours it's gone from the night sky. So the show is short. Be outside early. |
-| a29 | Arka | So the best telescope for this is… a clear sky and an alarm clock. |
-| a30 | Narrator | And somewhere dark. City lights will be its only real enemy. |
-| a30b | Arka | One more. It's passing inside the satellite ring. Will it hit any satellites? |
-| a30c | Narrator | Very unlikely. Space is far emptier than the drawings suggest, and the satellites' orbits are known precisely. The people who track them will be watching, but the chance of a collision is tiny. |
-| a30d | Narrator | And it will be fast. At its closest, Earth's pull will speed it up to more than seven kilometres every second. At that speed you'd cross India from north to south in about seven minutes. |
+| a15 | Narrator | One hour out, and Earth has stopped being a dot. Watch it grow. |
+| a16 | Narrator | At closest approach, we'll be less than thirty-two thousand kilometres above the surface. From here, Earth will look about nineteen degrees across. Roughly thirty-eight full Moons, side by side. |
+| a17 | Arka | It's filling the whole sky. |
+| a18 | Narrator | Now look up the altitude ladder. The space station orbits about four hundred kilometres up. GPS satellites, about twenty thousand. And the ring of geostationary satellites, the ones carrying TV and weather data, about thirty-six thousand. |
+| a19 | Narrator | We're passing *inside* that ring. About a tenth of the way to the Moon. |
+| a20 | Arka | Are we going to hit one? |
+| a21 | Narrator | First claim checked. You may have heard Apophis could smash into satellites or space junk. It's very unlikely. Space is far emptier than the drawings, and satellite orbits are known precisely. Operators will be watching anyway. |
+| a22 | Narrator | And we're fast now. Earth's pull has sped us up to more than seven kilometres every second. At this speed you'd cross India, north to south, in about seven minutes. |
+| a23 | Arka | The ground just moved. Did you feel that? |
+| a24 | Narrator | Second claim. You may have heard Earth will tear Apophis apart. It won't. Earth pulls harder on the near end than the far end, and modelling suggests the gravity you'd feel here changes by only a few percent. |
+| a25 | Narrator | But on loose slopes, that can be enough. Scientists expect the tumbling to change, and there may be small landslides and quakes. Not destruction. A shiver. |
+| a26 | Narrator | Closest approach. Earth is enormous. And then, slowly, it starts to shrink behind us. |
 
-### Chapter 4: What Earth does to Apophis
-
-| # | Speaker | Line |
-|---|---|---|
-| a31 | Narrator | You might think the danger runs one way. Big rock, small planet, so the rock is the threat. But that night, it's Earth that does the damage. |
-| a32 | Narrator | Earth's gravity will pull harder on the near end of Apophis than the far end. The asteroid will be stretched and squeezed. Scientists expect its tumbling spin to change, and there may be landslides, even small quakes, across its surface. |
-| a33 | Narrator | It will also change its year. Right now Apophis goes around the Sun in about three hundred and twenty-four days, a little faster than us. After the flyby, its orbit will be wider, and its year longer than ours. |
-| a34 | Arka | Imagine getting a new birthday because you walked past someone. |
-| a35 | Narrator | And after that close pass, Apophis stays far away from us. The 2029 visit is the one close pass in its future that we know of. |
-
-### Chapter 5: Two spacecraft, one deadline
+### Chapter 3: "What if we were heading *for* that?" (T plus 10 minutes)
 
 | # | Speaker | Line |
 |---|---|---|
-| a36 | Narrator | A date that cannot move is a strange thing to build a spacecraft for. But that's exactly what two space agencies are doing. |
-| a37 | Narrator | Europe and Japan are building Ramses. It has to launch in spring 2028, reach Apophis in February 2029, and ride alongside it through the flyby. Its mission manager calls it a mission that literally cannot be late. |
-| a37b | Narrator | It carries a radar to look inside the asteroid, and small companion craft that will fly down close to the surface while Earth's gravity does its work. |
-| a38 | Narrator | NASA is sending a spacecraft that has done this before. OSIRIS-REx brought a sample of asteroid Bennu back to Earth in 2023. Renamed OSIRIS-APEX, it will arrive just after the flyby and study Apophis for about eighteen months. |
-| a38b | Narrator | Its cameras start watching about two weeks before the flyby, while Apophis is still just a dot millions of kilometres ahead. |
-| a39 | Narrator | Near the end, it will fire its thrusters close to the surface to blow away the dust, and see what the night with Earth left behind. |
-| a40 | Arka | So we get the before, the during, and the after. Of one rock. On one night. |
-| a41 | Narrator | Which is why scientists call it a once-in-a-thousand-years experiment. |
+| a27 | Arka | Okay. Now the big one. What if we *were* heading for that? |
+| a28 | Narrator | Let's take the claims in order. Claim three: scientists have mapped where it lands. |
+| a29 | Narrator | Half true. Scientists did draw maps like that, back when the odds were real: the strip of Earth it would have crossed *if* it hit. But a map of a what-if isn't a prediction. In March 2021, radar dishes at Goldstone and Green Bank measured Apophis so precisely that the impacts people feared, in 2029, 2036 and 2068, were all ruled out. NASA says there's no risk for at least a hundred years. |
+| a30 | Arka | Then why do some videos say the odds went *up*? |
+| a31 | Narrator | That one is half right, and it's a good question. A 2024 study asked: what if a small, unseen rock hits Apophis before 2029 and nudges it? |
+| a32 | Narrator | The answer: about one chance in a million of a nudge that could set up a collision some time after 2029, and about one in a billion of one that sends it into Earth in 2029. And a single look at Apophis in 2027 should settle most of it. |
+| a33 | Arka | One in a billion. I'll take those odds. |
+| a34 | Narrator | Now, the real what-if. Suppose, in an imaginary universe, it did hit. Claim four: it would wipe out a continent. |
+| a35 | Narrator | It wouldn't. On land, it would devastate an area a few hundred kilometres across. A terrible regional disaster, across a region the size of a small country. Not a continent. |
+| a36 | Narrator | Claim five: the end of the world. Also no. Global climate disasters need asteroids about a kilometre wide or more. The one that ended the dinosaurs was about ten kilometres. Apophis is less than half a kilometre. |
+| a37 | Arka | And the energy? I've seen numbers from forty megatons to ten thousand. |
+| a38 | Narrator | That spread is real, and it has a simple cause: the early estimates of its size and mass were rough. Today's best estimates put it at roughly a thousand megatons. That's still tens of thousands of times the bomb that destroyed Hiroshima. |
+| a39 | Narrator | Claim six: a wall of water hundreds of metres high. Here, honestly, scientists disagree. An ocean impact would raise tsunamis, and that's the biggest danger of a sea strike. But some impact researchers argue the giant-wall simulations get wave-breaking wrong. And one study found that an asteroid that struck the ocean off Chile, about two million years ago, didn't cause a giant tsunami. |
+| a40 | Narrator | So: dangerous coastal waves, yes. A guaranteed skyscraper of water, no one can promise that. |
+| a41 | Arka | So the true version is: bad, regional, and not happening. |
+| a42 | Narrator | That's exactly it. |
 
-### Chapter 6: The honest what-if
-
-| # | Speaker | Line |
-|---|---|---|
-| a42 | Arka | I have to ask. What if it did hit? |
-| a43 | Narrator | Fair question, and it deserves a straight answer. It would be a regional disaster, not the end of the world. |
-| a44 | Narrator | On land, it would devastate an area a few hundred kilometres across. In the ocean, it would raise tsunamis. But it's far too small to change the climate the way the dinosaur-killer did. That rock was about ten kilometres wide. Apophis is about a third of a kilometre. |
-| a45 | Narrator | Impacts of this size happen, on average, every few thousand years. That's why people search the sky for them, and why the most important thing about Apophis is that we found it twenty-five years early. |
-| a46 | Arka | Twenty-five years of warning. That's more notice than I get for most of my deadlines. |
-
-### Ending
+### Chapter 4: Who's flying with us
 
 | # | Speaker | Line |
 |---|---|---|
-| a47 | Narrator | So, the asteroid named after the god of chaos turned out to be the opposite: proof that careful measuring can turn fear into a date in the calendar. |
-| a48 | Narrator | On the thirteenth of April, 2029, if your sky is clear, go outside, find somewhere dark, and watch a star that moves. You'll be watching something no one in history ever saw coming. |
-| a49 | Arka | *(next question: to be written once the next episode's script is drafted; content-plan rule "only tease what's really next". Candidate: S2 "Would a black-hole Sun suck us in?")* |
-| a50 | Narrator | *(Good question, Arka. That's our next episode.)* |
-| a51 | Arka | *(subscribe line)* |
+| a43 | Narrator | We're not alone out here. A date that can't move is a strange thing to build a spacecraft for, but two agencies are racing it. |
+| a44 | Narrator | Europe and Japan's Ramses launches in spring 2028 and catches up with Apophis in February 2029. Its mission manager calls it a mission that literally cannot be late. It rides with us through the flyby, watching the shiver happen. |
+| a44b | Narrator | It carries a radar to look inside the rock, and small companion craft that will drop in close to the surface while Earth's gravity does its work. |
+| a45 | Narrator | And NASA's OSIRIS-REx, the spacecraft that brought a piece of asteroid Bennu home in 2023, now renamed OSIRIS-APEX, arrives just after and stays for about eighteen months. Near the end, it fires its thrusters at the surface, to see what the night with Earth left behind. |
+| a45b | Narrator | Its cameras start watching two weeks before the flyby, while Apophis is still a dot millions of kilometres ahead. |
+| a46 | Arka | So the scariest asteroid of 2004 becomes the most studied asteroid of 2029. |
+
+### Ending: from your balcony
+
+| # | Speaker | Line |
+|---|---|---|
+| a47 | Narrator | And here's the part no scary video mentions. You don't have to ride it to see it. |
+| a48 | Narrator | From Earth, Apophis will look like a star, about as bright as the stars of the Little Dipper, crossing the width of the full Moon in about a minute. Europe, Africa and western Asia get the best view. In India, it's brightest at about two in the morning on the fourteenth. Around two billion people could see it with their own eyes. |
+| a49 | Narrator | It's brightest a little over an hour before its closest moment, and then it slips into the Sun's glare. So be outside early, somewhere dark. |
+| a50 | Narrator | The asteroid named after the god of chaos turned out to be proof that careful measuring can turn fear into a date in the calendar. On Friday the thirteenth, go and watch a star that moves. |
+| a51 | Arka | *(next question: written once the next episode's script exists; content-plan rule. Candidate: S2 "Would a black-hole Sun suck us in?")* |
+| a52 | Narrator | *(Good question, Arka. That's our next episode.)* |
+| a53 | Arka | *(subscribe line)* |
 
 *(end card, 12 s)*
 
-**Length estimate:** about 1,370 narration and Arka words (without the ending's placeholder lines) → about 9.5 minutes at R1's measured pace (Ep 5: ~145 words a minute), about 10 minutes with the sting and end card. The final Arka question and sign-off add a few seconds.
+**Description/chapters carry the search terms:** "what if Apophis hit Earth", "Apophis 2029", "where would Apophis hit", "Apophis tsunami", "how to see Apophis".
 
 ## Fact check (sources consulted 22 Nov 2026)
 
 | Claim | Line(s) | Basis |
 |---|---|---|
-| Friday 13 April 2029; passes less than 32,000 km from Earth's surface | a1, a25 | ESA Apophis page: on 13 April 2029 Apophis will pass less than 32,000 km from Earth's surface. 13 April 2029 is a Friday (ESA: "Friday, 13 April 2029"). |
-| "Evening", appears and moves; peak brightness about magnitude 3.1 | a1, a27 | Space.com (Sahara viewing, 2026): peak brightness 20:35 GMT, magnitude ~3.1. The Planetary Society: visible from Europe, Africa and western Asia, like a somewhat bright star (magnitude 3.1) moving rapidly. |
-| About as wide as the Eiffel Tower is tall | a2 | WorldAtlas: "wider than the Eiffel Tower is tall"; Planetary Society: 450 m on its longest axis (Eiffel Tower 330 m). ESA: about 375 m wide on average. |
-| Closer than geostationary (TV/communication) satellites; geostationary about 36,000 km | a2, a24, a25 | NASA via ABC News (Apr 2026): 32,000 km, closer than satellites in geosynchronous orbit (~36,000 km altitude). ESA: closer than telecommunications satellites in geostationary orbit. |
-| Highest danger rating ever; 2.7% (1 in 37) for 2029 | a4, a10, a12 | ESA: risk of impact in 2029 rose as high as 2.7%, the highest ever rating on the Torino scale. Astronomy.com (Dec 2004): 2.7%, odds of 1 in 37, on Friday 13 April 2029. |
-| Discovered 19 June 2004 at Kitt Peak by Tucker, Tholen and Bernardi; seen for two nights | a7, a8 | ESA (discovery 19 June 2004, Kitt Peak); Space.com (the three discoverers); Astronomy.com: observed for only 2 nights. |
-| Rediscovered 18 Dec 2004 by Gordon Garradd, Siding Spring | a9 | IAU WGNEO statement (R. Binzel, 30 Dec 2004); Astronomy.com. |
-| Odds rose with more data: 1 in 300 → 1 in 60 → 1 in 37 | a10 | Astronomy.com (Dec 2004): from 1 in 300 (23 Dec) to 1 in 60 (24 Dec) to 1 in 37. |
-| Torino level 4 on 27 Dec 2004 | a12 | EPFL graph search / Wikipedia summary: level 4 on 27 Dec 2004, record highest; also arXiv 2604.24566 (Torino 4 "for a few days in late 2004"). |
-| Named after the Egyptian god of chaos | a12, a47 | ESA: named by its discoverers after the Egyptian god of chaos and destruction. |
-| Old images (precovery) refined the orbit and ruled out 2029 | a14, a15 | Astronomy.com: searching old images reduced the uncertainty and ruled out 2029; Wikipedia: earliest precovery 15 March 2004. |
-| Keyhole for a 2036 impact, less than 1 km wide | a16 | EPFL/Wikipedia summary: possible passage through a keyhole setting up an impact seven years later; by 2008 the keyhole was found to be less than 1 km wide. |
-| Sunlight push (Yarkovsky effect) moves it over decades | a18 | JPL/CNEOS paper (Apophis_published.pdf): absorption of solar radiation could change the trajectory measurably by 2036. Wording kept general. |
-| March 2021 radar from Goldstone and Green Bank; uncertainty collapsed from hundreds of km to a handful; no impact for at least 100 years | a19, a20 | ESA (26 Mar 2021, quoting NASA CNEOS's Davide Farnocchia); NASA Apophis facts. 2029 and 2036 ruled out earlier; 2068 ruled out in 2021 (NASA). |
-| Seventeen years on the risk list | a21 | ESA: on the Risk List for almost 17 years; removed 26 March 2021. |
-| ISS ~400 km; GPS ~20,000 km | a24 | USGS fact sheet (2025): ISS 370–460 km. GPS at about 20,200 km (standard; add a source before narration). |
-| About a tenth of the way to the Moon | a25 | NASA SVS: about a tenth of the distance between the Earth and the Moon. |
-| Nothing that big known this close in advance | a26 | NASA Apophis facts: the closest approach by an asteroid of this size known in advance. EarthSky: the first naked-eye passage known about for years in advance. |
-| As bright as the Little Dipper's stars; crosses the full Moon's width in about a minute | a27 | JPL (2019): more than the width of the full Moon within a minute; as bright as the stars in the Little Dipper. |
-| Best views from Europe, Africa, western Asia; about 2 billion people | a28 | Planetary Society (Europe, Africa, western Asia); ESA via Gulf News: around two billion people. (Live Science's "90% of the population" counts the whole pass at any brightness; we use the conservative figure.) |
-| India: brightest at about 2 a.m. on the 14th | a28 | Calculated: peak brightness 20:35 GMT on 13 April (Space.com) = 02:05 IST on 14 April. EarthSky: southern Asia among the front-row regions. |
-| Tidal stretching; spin change; possible landslides or quakes | a32 | NASA SVS orbit visualizations: expected to alter its orbit, change its spin, possibly cause quakes or landslides; ESA Ramses: stretched and squeezed by tidal forces. Tumbling spin: arXiv 2604.24566. |
-| Year now ~324 days; orbit widened (Aten → Apollo), year longer than Earth's | a33 | Wikipedia/EarthSky: 323.6 days; ESA: becomes an Apollo, orbit wider than Earth's. |
-| The one close pass we know of; afterwards stays far away | a35 | The Weather Network (citing NASA): the 2029 pass is the only close one; afterwards at least 2.5 million km away for the foreseeable future. Script says "that we know of". |
-| Ramses: ESA–JAXA, launch spring 2028, arrive Feb 2029, "literally cannot be late" | a37 | ESA (Jun 2026): "a mission that literally cannot be late" (Paolo Martino); ESA: launch April 2028, arrival February 2029; JAXA launch on H3. |
-| OSIRIS-REx Bennu sample 2023; renamed OSIRIS-APEX; arrives just after the flyby; ~18 months | a38 | NASA (OSIRIS-APEX renamed; arrival shortly after closest approach); University of Arizona (18 months). NTRS abstract gives detailed study from 5 June 2029; "just after" covers both. |
-| Thrusters fired near the surface to stir the dust | a39 | University of Arizona LPL: after 15 months orbiting, APEX will use its thrusters to dig into the surface. |
-| "Once-in-a-thousand-years experiment" | a41 | Live Science: "once-in-a-millennium" planetary experiment. |
-| Regional devastation (a few hundred km); tsunamis at sea; no global climate effect like 1 km+ impactors | a43, a44 | The Planetary Society: widespread destruction up to several hundred kilometres; Universe Today: flatten thousands of km², devastating tsunamis at sea, no long-term climate destruction like 1 km+ asteroids. |
-| Dinosaur impactor about 10 km | a44 | Standard (Chicxulub impactor ~10 km); add a source before narration. |
-| Impacts of this size every few thousand years | a45 | USGS fact sheet (2025): impacts of ~340 m or larger are rare, every few thousand years or so. |
-| Found 25 years early | a45, a46 | Discovered June 2004; flyby April 2029 (24 years 10 months). "Twenty-five years" rounded; a46 is Arka's joke. |
-| Brightest a little over an hour before closest approach; closest at 21:45 UTC | a28b | The Weather Network: closest pass 21:45 UTC on the 13th; a little over an hour before that it reaches peak brightness. |
-| Heads into the Sun's glare within hours | a28b | EPSC-DPS 2025 abstract (OSIRIS-APEX team): observing conditions degrade just hours after closest approach as the asteroid passes within 20° of the Sun. |
-| Satellite collision very unlikely | a30b–a30c | USGS fact sheet (2025): Apophis is not likely to hit geosynchronous satellites; HKU (via ABS-CBN, 2022): probability of hitting a satellite in 2029 very low. |
-| Speeds up to 7.4 km/s at closest; cross India (~3,200 km north–south) in ~7 min | a30d | arXiv 2608.28350 (citing Pravec et al. 2014): accelerated to 7.4 km/s at closest approach. Calculated: 3,214 km ÷ 7.4 km/s ≈ 434 s ≈ 7 min (India's north–south extent ~3,214 km, standard figure). |
-| Ramses carries a radar and companion craft (lander/CubeSats) | a37b | Yahoo/Popular Mechanics (2025): Ramses suite includes a low-frequency radar, gravimeter and lander. Check the final payload list against ESA before narration. |
-| APEX cameras start imaging ~2 weeks before | a38b | NASA/EurekAlert: by 2 April 2029, around two weeks before the close encounter, OSIRIS-APEX's cameras begin imaging; EPSC abstract: at a distance of 5 million km. |
+| Friday 13 April 2029; passes less than 32,000 km above the surface; closer than geostationary (TV/communication) satellites | a1, a16, a19 | ESA Apophis page (less than 32,000 km from Earth's surface; Friday 13 April 2029); NASA via ABC News (Apr 2026): closer than satellites in geosynchronous orbit (~36,000 km altitude). |
+| "Size of a skyscraper"; ~450 m long | a1, a7 | The Planetary Society: radar shows 450 m along its longest axis, taller than the Empire State Building; ESA: about 375 m wide on average; Live Science: "skyscraper-size". |
+| Claims the video corrects come from real titles/articles | a2 | YouTube titles, 22 Nov 2026: "…Flyby That Can Destroy Entire Continents" (Bright Side Global); "The END Is Coming, The Asteroid APOPHIS Signals TROUBLE" (Tim Pool); "Scientists Mapped Where It Lands" (Tracer Project); ocean-wave height claims (the myth-bust video "It's Not a 150-Metre Wall" exists because the claim circulates); "Could Smack Space Junk" (Territory); "Odds… Higher Than We Thought" (Space Aquarius). **Not named on screen.** |
+| Slowly tumbling | a7 | arXiv 2604.24566 (Apophis's tumbling spin state); Wikipedia summary (tumbling, ~30.4 h synodic period). |
+| Gravity about a quarter of a millionth of Earth's; escape speed about 12 cm/s | a9, a10 | **Calculated (ours):** mass ≈ 2 × 10¹⁰ kg (ESA: "approximately 20 million tons"), mean radius ≈ 187 m (ESA: ~375 m wide). g = GM/r² ≈ 3.8 × 10⁻⁵ m/s² ≈ 1/260,000 of Earth's; v_esc = √(2GM/r) ≈ 0.12 m/s. Shape is irregular, so local values differ; script says "about". |
+| Dust drifts down for minutes | a11 | **Calculated:** falling 1 m at 3.8 × 10⁻⁵ m/s² takes t = √(2h/g) ≈ 230 s ≈ 4 min. |
+| Dec 2004 odds 1 in 37 (2.7%) for this date; highest Torino rating ever | a12 | ESA: 2.7%, highest ever rating on the Torino scale; Astronomy.com (Dec 2004): 2.7%, odds of 1 in 37, on Friday 13 April 2029. |
+| Earth ≈ 19° across at closest approach ≈ 38 full Moons | a16 | **Calculated:** distance from Earth's centre ≈ 32,000 + 6,371 = 38,371 km; angular diameter = 2·atan(6,371/38,371) ≈ 18.9°; full Moon ≈ 0.5° → ≈ 38. |
+| ISS ~400 km; GPS ~20,000 km; geostationary ~36,000 km; a tenth of the way to the Moon | a18, a19 | USGS fact sheet (2025): ISS 370–460 km; ABC/NASA: ~36,000 km; NASA SVS: about a tenth of the Earth–Moon distance. GPS ~20,200 km: textbook figure, add a source before narration. |
+| Satellite/space-junk collision very unlikely | a20, a21 | USGS fact sheet (2025): not likely to hit geosynchronous satellites; HKU (via ABS-CBN, 2022): probability very low. |
+| Sped up to more than 7 km/s; India north–south in ~7 min | a22 | arXiv 2608.28350 (citing Pravec et al. 2014): accelerated to 7.4 km/s at closest approach. **Calculated:** India's north–south extent ≈ 3,214 km (textbook figure) ÷ 7.4 km/s ≈ 434 s ≈ 7 min. |
+| Not torn apart; surface gravity changes by a few percent | a24 | EPSC 2024 abstract (Royal Observatory of Belgium): changes of about 3% in surface gravity and a few degrees in slopes; somewhat larger for tumbling states. |
+| Spin change; possible landslides/quakes ("a shiver") | a25 | NASA SVS: expected to change how fast it spins and possibly cause quakes or landslides; ESA Ramses page: stretched and squeezed, may trigger landslides; EPSC 2022: rotation changes hours before closest approach. |
+| Impact-corridor maps were drawn when the risk was open; they are what-ifs, not predictions; 2021 radar (Goldstone, Green Bank) ruled out 2029, 2036, 2068; no risk for at least 100 years | a29 | Risk corridors were computed for the 2036 keyhole scenario while it was open (mid-2000s; add a published corridor map as a source before narration). ESA (26 Mar 2021); NASA Apophis facts; NASA analysis (2021). |
+| Small-rock nudge: ~1 in a million (could set up a post-2029 collision), ~1 in a billion (2029 impact); one look in 2027 retires most risk | a31, a32 | Wiegert (2024), arXiv 2409.06059 and Space.com: odds essentially 1 in a million for a dangerous post-2029 path, 1 in a billion for a 2029 collision; a single 2027 observation retires most of the risk. AAS Nova: most small impacts push it farther away. |
+| Land impact: devastation up to a few hundred km | a35 | The Planetary Society: widespread destruction up to several hundred kilometres from the impact site. "A region the size of a small country" is our paraphrase; NBC (2004) used "flatten Texas or a couple of European countries" with the older, larger size estimate, so we don't quote that. |
+| No global climate disaster; that needs ~1 km+; dinosaur impactor ~10 km | a36 | Universe Today: Apophis wouldn't cause the long-term climate destruction that 1 km and larger asteroids can. Chicxulub ~10 km: textbook, add a source before narration. |
+| Energy estimates range from ~40 to 10,000 megatons; spread due to early size/mass estimates; best estimate roughly a thousand megatons | a37, a38 | Published figures: 40 Mt (J. Melosh, quoted in Centauri Dreams), 880 Mt (NASA estimate via Universe Today), 1,717 Mt (Russian ministry researchers via ABS-CBN, 2022), 10,000 Mt (NBC 2004, when it was thought ~400 m). "Roughly a thousand" covers 880–1,717. |
+| Tens of thousands of Hiroshimas | a38 | **Calculated:** Hiroshima ≈ 15 kilotons = 0.015 Mt; 880 ÷ 0.015 ≈ 59,000; 1,717 ÷ 0.015 ≈ 114,000. "Tens of thousands" is conservative. |
+| Ocean strike: tsunami is the biggest threat; scientists disagree on giant waves; Eltanin impact (~2.1 Myr, off Chile) caused no tsunami per a later study | a39, a40 | Acta Astronautica 188 (2021), hypothetical Apophis deep-ocean impact: the tsunami is the most far-reaching and threatening effect. NBC News (Live Science): H. Jay Melosh says many simulations use unrealistic wave-breaking models; a study found the Eltanin impact off Chile 2.1 Myr ago didn't cause a tsunami. Script attributes it ("one study found") and gives no crater or size. |
+| Ramses: ESA–JAXA, launch spring 2028, arrive Feb 2029, "literally cannot be late" | a44 | ESA (Jun 2026, Paolo Martino); ESA Ramses page (launch April 2028, arrival February 2029). |
+| OSIRIS-REx → OSIRIS-APEX; Bennu sample 2023; arrives just after; ~18 months; thrusters at the surface | a45 | NASA (renamed; arrives shortly after the closest approach); University of Arizona (18 months); UA LPL (after 15 months, uses its thrusters to dig into the surface). |
+| Like a Little Dipper star; full Moon's width in about a minute | a48 | JPL (2019). |
+| Best views Europe, Africa, western Asia; ~2 billion people | a48 | The Planetary Society; ESA via Gulf News. |
+| India: brightest ~2 a.m. on the 14th | a48 | **Calculated:** peak brightness 20:35 GMT on 13 April (Space.com) = 02:05 IST on 14 April. |
+| Brightest a little over an hour before closest; then into the Sun's glare | a49 | The Weather Network (closest 21:45 UTC; peak brightness a little over an hour before); EPSC-DPS 2025 (within 20° of the Sun hours after closest approach). |
+| Named after the Egyptian god of chaos | a50 | ESA. |
+| Spotted June 2004 (Kitt Peak), seen two nights, lost; rediscovered by Gordon Garradd (Siding Spring) in December; odds 1 in 300 → 1 in 60 → 1 in 37 | a12b | ESA (discovery 19 June 2004, Kitt Peak); Astronomy.com (Dec 2004): observed for only 2 nights; rediscovered 18 Dec by Gordon Garradd, Siding Spring; odds 1 in 300 (23 Dec) → 1 in 60 (24 Dec) → 1 in 37. |
+| Old (precovery) images ruled out 2029 within days | a12c | Astronomy.com: searching old images reduced the uncertainty and ruled out a 2029 impact; earliest precovery 15 March 2004. "Within days": the 2.7% peak was 27 Dec 2004 and 2029 was ruled out by the end of December. |
+| Ramses carries a radar and companion craft | a44b | Popular Mechanics via Yahoo (2025): low-frequency radar, gravimeter and lander; **confirm the final payload on ESA's Ramses page before narration**. |
+| APEX cameras start ~2 weeks before the flyby | a45b | NASA/EurekAlert: by 2 April 2029, around two weeks before the close encounter; EPSC abstract: at ~5 million km. |
 
-**Still to source before narration:** GPS altitude (a24), dinosaur impactor size (a44), India's north–south extent (a30d): textbook figures; Ramses payload (a37b): confirm with ESA's current page.
+**Still to source before narration:** GPS altitude (a18), India's north–south extent (a22), Chicxulub impactor size (a36), a published 2036 risk-corridor map (a29); Ramses payload (a44b).
+
+## Credibility audit (final check, 22 Nov 2026)
+
+Each line that makes or corrects a claim, checked against the rules above.
+
+| Line | Risk | Verdict / fix applied |
+|---|---|---|
+| a2 | Strawmanning ("scary videos") | **OK.** Every listed claim appears in a real 2026 title or article (fact table). Channels are not named on screen or in the description. |
+| a4 "Most of it is. Some of it is half right." | Overclaiming that others are wrong | **OK.** Seven claims checked: four wrong (satellites smashed, torn apart, continent, end of world), two half right (impact maps exist but are what-ifs; the odds "went up" only in a narrow 2024 study), one genuinely uncertain (ocean wall). The line matches that. |
+| a9–a10 escape speed, a11 dust | Our own calculation presented as fact | **OK with care.** Calculated from ESA's mass and size; shape varies, so "about". Fact table labels it as calculated. |
+| a16 "38 full Moons" | Calculation | **OK.** Simple geometry, shown in the table. |
+| a21 satellites | Saying "won't" | **Fixed:** "very unlikely", following USGS. Not "impossible". |
+| a24 "It won't" (tear apart) | Absolute | **OK.** A few percent change in surface gravity (EPSC 2024) is nowhere near break-up; no source suggests disruption. |
+| a28–a29 "mapped where it lands" | Calling a real thing fake | **Fixed in the audit:** draft said "They haven't", but scientists did map impact corridors while the risk was open. Now: "Half true… a map of a what-if isn't a prediction." Names only the three dates ruled out, plus "for at least a hundred years" (NASA), not "ever". |
+| a31–a32 odds | Misquoting a real study | **Fixed in the audit:** the one-in-a-million figure now matches the study (a nudge that could set up a collision after 2029). Treated as half right, with the study's own conclusion (one 2027 look retires most of the risk). |
+| a35 regional scale | Vague exaggeration | **Fixed in the audit:** "a region the size of a small country", matching "several hundred kilometres". |
+| a36 "about a kilometre wide or more" | Threshold | **OK.** Universe Today's 1 km+ framing; we don't claim a precise cutoff. |
+| a38 "roughly a thousand megatons" | Picking a number | **OK.** Sits inside the credible modern estimates (880–1,717); explains why older figures differ. "Tens of thousands of Hiroshimas" is the conservative end. |
+| a39–a40 ocean wall | Claiming certainty either way | **Fixed in the audit:** says scientists disagree and keeps "dangerous coastal waves, yes". The Eltanin point is attributed ("one study found") and no longer says "huge crater", which the sources don't support consistently. |
+| a44 quote | Quote accuracy | **OK.** "literally cannot be late" is ESA's published quote (under 15 words). |
+| a48 India time | Calculation | **OK.** From Space.com's 20:35 GMT peak; "about two". |
+| a50 "proof that careful measuring…" | Editorialising | **OK.** Opinion phrased as the story's conclusion; supported by the 2004 → 2021 record. |
+| Title 1 "Most videos get it wrong" | Bait if not delivered | **OK, carefully.** Seven claims checked in chapters 2–3: four wrong, two half right, one uncertain. "Get it wrong" holds; never escalate to "lie" or "fake" in the title, thumbnail or description. |
+| Title 3 "Rode Apophis" | Promise | **OK.** The ride starts at a7 (about 0:40). |
+
+**Result:** four fixes made during this audit (a29 maps, a32 odds wording, a35 scale, a39 Eltanin wording). After them, no claim in the script goes beyond its source. Before narration: add sources for four textbook/historical items (GPS altitude, India's extent, Chicxulub size, a 2036 corridor map).
 
 ## Shorts from this episode (ideas, Shorts rules)
-1. **"It Got Worse the More We Looked"** (Christmas 2004: 1 in 300 → 1 in 60 → 1 in 37, then saved by old photos). Hook = the rising odds; second act = the rescue; loop.
-2. **"An Asteroid Will Pass Inside Our Satellites"** (the altitude ladder; Apophis sliding below the geostationary ring). Pocket hook: "closer than the satellite your TV uses".
-3. **"Earth Will Give This Asteroid a New Birthday"** (the flyby changes its year).
+1. **"Earth Won't Tear Apophis Apart"**: pocket hook "the ground moves by a few percent"; second act = landslides; loop.
+2. **"You Could Jump Off Apophis"**: 12 cm/s, slower than walking to the kitchen; Arka floats away; loop.
+3. **"The Odds Went UP the More We Looked"**: Christmas 2004, 1 in 300 → 1 in 37, then old photos saved us.
 
 ## Open decisions for Debabrata
-- Title (option 1 recommended).
 - Arka voice (D2 or E3).
 - The ending's next question waits for the next script (S2 suggested).
-- Background colour: deep-space navy fits chapter 3; the content plan rule says no more than two uploads in a row on the same page colour, and Every Moon and Ep 5 were navy. Suggest a dusk-blue "evening sky" page for this one.
+- Background: dusk-blue page for the Earth-side scenes, deep space for the ride (Every Moon and Ep 5 were both navy).
