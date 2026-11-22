@@ -175,7 +175,7 @@ elif NAME == 'calling':
     ep.backdrop(stars=30, earth={'r': .5, 'hidden': [(A('So', beat='c3'), A('Last', beat='c4')), (A("There's", beat='c6'), A('So', beat='c7'))]})
     ep.music([('c1', 'assets/music/6-space-event-horizon.mp3', 0)], target_lufs=-16)
     # Own mood inside the series look: a quieter, lonelier page. Dim grey carrier arcs (a pulse, no words) and a muted, faded Earth.
-    QUIET = '#6b7790'
+    QUIET = '#93a0bc'
     for layer in ep._backdrop['layers']:
         if layer['id'] == 'earth':
             layer['kit'].update(base='#41709a', bands=['#5a8a5c', '#41709a', '#5a8a5c'])
@@ -191,19 +191,19 @@ elif NAME == 'calling':
                             Note('first ever', A('first'), 'note', pos=(540, 1440))]))
     # c3 a day there, a day back
     ep.scene('c3', explain([], [probe(.72, .3, .26), boxed('clock', 'clock', .3, .56, .3, A('message'), level=[{'frame': 0, 'value': .6}], text='24 h each way')],
-                           [Note('a day there', A('there,'), 'note', pos=(540, 1420)), Note('a day back', A('back.'), 'title', pos=(540, 1560))]))
+                           [Note('a day there', A('there,'), 'note', pos=(540, 1420)), Note('a day back', A('and'), 'title', pos=(540, 1560))]))
     # c4 October fixed itself; this time it hasn't (the stakes)
     ep.scene('c4', explain([], [probe(.66, .26, .26), boxed('oct', 'calendar', .24, .4, .16, A('month,'), text='Oct'),
-                                Prop(prop('fixed', 'check', 0.76, 0.44, 0.14, opacity=track((0, 0), (plus(A('itself.'), -1), 0), (A('itself.'), 1), (plus(A("hasn't."), -1), 1), (A("hasn't."), 0)))), icon('notyet', 'cross', .76, .44, .16, A("hasn't."))],
-                           [Note('Oct: 2 days, fixed itself', A('fixed'), 'small', pos=(540, 1300)), Note('this time: no', A("hasn't."), 'title', pos=(540, 1480))],
-                           sounds=[('tick', A("hasn't."), -20)]))
+                                Prop(prop('fixed', 'check', 0.76, 0.44, 0.14, opacity=track((0, 0), (plus(A('itself.'), -1), 0), (A('itself.'), 1), (plus(A('This'), -1), 1), (A('This'), 0)))), icon('notyet', 'cross', .76, .44, .16, A('This'))],
+                           [Note('Oct: 2 days, fixed itself', A('fixed'), 'small', pos=(540, 1300)), Note('this time: no', A('This'), 'title', pos=(540, 1480))],
+                           sounds=[('tick', A('This'), -20)]))
     # c5 Arka, on Earth, pleading
     arka = Char('arka', 'arka', x=.5, fy=.74, h=.24, idle=None, poses=[(0, 'shrug')], faces=[(0, 'shocked')])
     ep.scene('c5', explain([arka], [probe(.7, .2, .2)], [Note('say something!', A('something.'), 'title', pos=(540, 560))]))
     # c6 no copy to practise on: every fix goes to the real probe
     ep.scene('c6', explain([], [probe(.5, .36, .36), icon('nocopy', 'cross', .5, .62, .12, A('copy')),
                                 signal(.24, .6, .22, -60, pid='uplink', color=QUIET, opacity=show_from(A('straight')))],
-                           [Note('no copy to practise on', A('copy'), 'note', pos=(540, 1320)), Note('real thing only', A('real'), 'title', pos=(540, 1500))]))
+                           [Note('no copy to practise on', A('copy'), 'note', pos=(540, 1320)), Note('real thing only', A('Every'), 'title', pos=(540, 1500))]))
     # c7 send, wait two days; still calling (soft brand chime under the last line; loops into c1)
     ep.scene('c7', explain([], [probe(.5, .4, .42), signal(.38, .53, .26, 120, color=QUIET)],
                            [Note('wait 2 days', A('waits'), 'title', pos=(540, 1300)), Note('still calling', A('calling'), 'note', pos=(540, 1440))],

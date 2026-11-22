@@ -190,7 +190,7 @@
             "y": 0.5,
             "size": 0.32,
             "rotation": 120,
-            "color": "#6b7790"
+            "color": "#93a0bc"
           }
         },
         {
@@ -460,7 +460,7 @@
             "y": 0.53,
             "size": 0.26,
             "rotation": 120,
-            "color": "#6b7790"
+            "color": "#93a0bc"
           }
         }
       ],
@@ -688,14 +688,14 @@
             },
             {
               "frame": {
-                "at": "back.",
+                "at": "and",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "back.",
+                "at": "and",
                 "offset": 5
               },
               "value": 1
@@ -804,14 +804,14 @@
             },
             {
               "frame": {
-                "at": "hasn't.",
+                "at": "This",
                 "offset": -1
               },
               "value": 1
             },
             {
               "frame": {
-                "at": "hasn't."
+                "at": "This"
               },
               "value": 0
             }
@@ -833,14 +833,14 @@
             },
             {
               "frame": {
-                "at": "hasn't.",
+                "at": "This",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "hasn't."
+                "at": "This"
               },
               "value": 1
             }
@@ -852,14 +852,14 @@
             },
             {
               "frame": {
-                "at": "hasn't.",
+                "at": "This",
                 "offset": -1
               },
               "value": 0.6
             },
             {
               "frame": {
-                "at": "hasn't.",
+                "at": "This",
                 "offset": 9
               },
               "value": 1,
@@ -921,14 +921,14 @@
             },
             {
               "frame": {
-                "at": "hasn't.",
+                "at": "This",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "hasn't.",
+                "at": "This",
                 "offset": 5
               },
               "value": 1
@@ -1093,7 +1093,7 @@
             "y": 0.6,
             "size": 0.22,
             "rotation": -60,
-            "color": "#6b7790"
+            "color": "#93a0bc"
           },
           "opacity": [
             {
@@ -1165,14 +1165,14 @@
             },
             {
               "frame": {
-                "at": "real",
+                "at": "Every",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "real",
+                "at": "Every",
                 "offset": 5
               },
               "value": 1
@@ -1206,7 +1206,7 @@
             "y": 0.53,
             "size": 0.26,
             "rotation": 120,
-            "color": "#6b7790"
+            "color": "#93a0bc"
           }
         }
       ],
@@ -1507,7 +1507,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "back."
+            "at": "and"
           },
           "gainDb": -24
         }
@@ -1581,14 +1581,14 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "hasn't."
+            "at": "This"
           },
           "gainDb": -24
         },
         {
           "sound": "tick",
           "frame": {
-            "at": "hasn't."
+            "at": "This"
           },
           "gainDb": -20
         }
@@ -1716,7 +1716,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "real"
+            "at": "Every"
           },
           "gainDb": -24
         }
