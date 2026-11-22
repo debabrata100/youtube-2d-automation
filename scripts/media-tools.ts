@@ -8,7 +8,9 @@ import path from 'node:path';
 // Order: REMOTION_BROWSER_EXECUTABLE, the headless shell if present, then the Chrome app (macOS) or Remotion's default.
 const headlessShell = path.resolve('node_modules/.remotion/chrome-headless-shell', `${process.platform === 'darwin' ? 'mac' : 'linux'}-${process.arch === 'arm64' ? 'arm64' : 'x64'}`,
   `chrome-headless-shell-${process.platform === 'darwin' ? 'mac' : 'linux'}-${process.arch === 'arm64' ? 'arm64' : 'x64'}`, 'chrome-headless-shell');
-export const browserExecutable = process.env.REMOTION_BROWSER_EXECUTABLE || (existsSync(headlessShell) ? headlessShell
+// The headless shell crashed on this Mac when loading a page ("browser has disconnected", 22 Nov), so it is opt-in until fixed:
+// RENDER_WITH_HEADLESS_SHELL=1 uses it. Default stays the Chrome app (keep it relaunched after updates).
+export const browserExecutable = process.env.REMOTION_BROWSER_EXECUTABLE || (process.env.RENDER_WITH_HEADLESS_SHELL === '1' && existsSync(headlessShell) ? headlessShell
   : process.platform === 'darwin' ? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' : null);
 export const run = (command: string, args: string[], cwd = process.cwd()) => new Promise<void>((resolve, reject) => {
   const child = spawn(command, args, {cwd, stdio: 'inherit'});
