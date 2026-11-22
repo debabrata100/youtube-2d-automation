@@ -1,6 +1,6 @@
 # 13: Episode 5, If the Sun Disappeared, Even the Air Would Fall
 
-- **Status (22 Nov 2026):** final render `jobs/gs-full-4` (md5 16499d87…): Every Moon look and sound, light outline behind the dark daytime notes, 31 late notes brought in for 1.5 s by the new readability pass; all checks pass. Upload folder ready (video, captions, thumbnails a / b2 / c). Not uploaded; date to confirm (Thu 3 Dec 9:30 PM proposed).
+- **Status (22 Nov 2026):** uploaded and scheduled for **Thu 3 Dec 2026, 9:30 PM IST**: https://youtu.be/Rtcxj2-wTuo (render `gs-full-4`, md5 16499d87…). Set: title, description (search-first line; "More from" links Ep 4 + Every Moon), tags, playlist What If…?, not for kids, no altered content, Science & Technology, English SRT, end screen 11:40–11:56 (Ep 4 + subscribe), thumbnail test a / b2 / c (starts at launch). Still to do after launch: pinned comment (ask), switch Ep 4's end screen to Ep 5, CTR check 48–72 h.
 - **Upload folder:** `~/Downloads/gahanarka-upload/13-ghost-sun/`: the video as `if-the-sun-disappeared-even-the-air-would-fall.mp4`, `captions-english.srt`, thumbnails.
 - **Length:** 11:56 (716 s, including the 12 s end card).
 - **Script, sources and fact check:** `stories/ghost-sun-script.md` (fact-check table: 30 narration rows + 8 on-screen-only rows). Narration: Gahanarka R1 + Arka (Jessica), requests WeffTfEY7PQQVPgCnp3o and HSRS9PzBAiZdUaVQRB4l, cut with the brand-sting gap (`jobs/gs-narration-sting`, no extra paid requests).
