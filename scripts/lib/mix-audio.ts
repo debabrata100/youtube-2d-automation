@@ -24,6 +24,7 @@ export const mixPlanSchema = z.object({
   ]),
   musicGainDb: z.number().min(-40).max(0),
   duckRatio: z.number().min(1).max(20),
+  voice: z.object({highpassHz: z.number(), lowMidDb: z.number(), presenceDb: z.number(), room: z.number()}).strict().optional(),
   sfx: z.array(z.object({sound: z.enum(SFX_IDS), startSeconds: z.number().min(0), gainDb: z.number().min(-30).max(6)}).strict()).max(400), // long anthology episodes carry hundreds of cues
   speech: z.array(z.tuple([z.number(), z.number()])),
   targetLufs: z.number().min(-24).max(-9),
@@ -80,6 +81,11 @@ const rmsDb = (pcm: Buffer, from: number, to: number, rate: number) => {
   return count ? 10 * Math.log10(sum / count + 1e-12) : -120;
 };
 
+/** ffmpeg filter for the optional narrator treatment (also applied to the reference in verification). */
+export const voiceFilter = (v: {highpassHz: number; lowMidDb: number; presenceDb: number; room: number}) =>
+  `highpass=f=${v.highpassHz},equalizer=f=240:t=q:w=1:g=${v.lowMidDb},equalizer=f=3200:t=q:w=1.2:g=${v.presenceDb}` +
+  (v.room > 0 ? `,aecho=1:1:23|41|67:${v.room.toFixed(3)}|${(v.room * .7).toFixed(3)}|${(v.room * .45).toFixed(3)}` : '');
+
 export const muxAudio = async (job: string, video: string, output: string, seconds: number, narration: string) => {
   const planFile = path.join(job, 'audio/mix-plan.json');
   if (!existsSync(planFile)) {
@@ -90,7 +96,8 @@ export const muxAudio = async (job: string, video: string, output: string, secon
   const plan = mixPlanSchema.parse(JSON.parse(await readFile(planFile, 'utf8')));
   const dir = path.join(job, 'audio'), stems = path.join(dir, 'stems');
   await mkdir(stems, {recursive: true});
-  const inputs = ['-i', narration], graph: string[] = ['[0:a]aresample=48000,aformat=channel_layouts=mono,apad,asplit=2[nar][sc]'];
+  const voiceChain = plan.voice ? voiceFilter(plan.voice) + ',' : '';
+  const inputs = ['-i', narration], graph: string[] = [`[0:a]aresample=48000,aformat=channel_layouts=mono,${voiceChain}apad,asplit=2[nar][sc]`];
   const mixLabels = ['[nar]'];
   let index = 1;
   if (plan.music.kind === 'cues') {

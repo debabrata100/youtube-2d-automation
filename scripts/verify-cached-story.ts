@@ -12,15 +12,16 @@ import {scheduleNarratedScenes} from '../src/storytelling/timing/scene-scheduler
 import {parseStoryboard} from '../src/engine/storyboard/schema';
 import {capture,run} from './media-tools';
 import {existsSync} from 'node:fs';
-import {measureLoudness} from './lib/mix-audio';
+import {measureLoudness, voiceFilter} from './lib/mix-audio';
 const job=path.resolve(process.argv[2]??'');if(!process.argv[2])throw Error('Usage: verify-cached-story <job>');
 const read=async(file:string)=>JSON.parse(await readFile(path.join(job,file),'utf8'));
 const video=path.join(job,'output/narrated-animation.mp4'),source=path.join(job,'audio/narration.wav'),metadata=await read('audio/narration-metadata.json'),story=storyScriptSchema.parse(await read('story/selected-script.json')),captions=narrationOverlaySchema.parse(await read('captions/captions.json'));
 // Timeline length and frame rate come from the rendered storyboard (no episode-specific constants).
 const renderedBoard=parseStoryboard(await read('storyboard.json')),FPS=renderedBoard.format.fps,FRAMES=renderedBoard.scenes.reduce((n,sc)=>n+sc.durationFrames,0),SECONDS=FRAMES/FPS;
 const info=JSON.parse(await capture('ffprobe',['-v','error','-show_streams','-show_format','-of','json',video])),v=info.streams.find((s:any)=>s.codec_type==='video'),a=info.streams.find((s:any)=>s.codec_type==='audio'),measured=await measureAudio(source),expected=captionsFromProviderTiming(story,metadata.alignment,measured.durationSeconds,FPS);
-const decode=(file:string)=>execFileSync('ffmpeg',['-v','error','-i',file,'-vn','-ac','1','-ar','24000','-f','s16le','pipe:1'],{maxBuffer:256*1024*1024}); // about 90 min of 24 kHz mono; long episodes overflowed the old 4 MB buffer
-const original=decode(source),encoded=decode(video);let cross=0,sourcePower=0,encodedPower=0,errorPower=0;
+const mixPlanned=existsSync(path.join(job,'audio/mix-report.json'))?(await read('audio/mix-report.json')).planned:null,voiceAf=mixPlanned?.voice?voiceFilter(mixPlanned.voice):'';
+const decode=(file:string,af='')=>execFileSync('ffmpeg',['-v','error','-i',file,'-vn',...(af?['-af',af]:[]),'-ac','1','-ar','24000','-f','s16le','pipe:1'],{maxBuffer:256*1024*1024}); // about 90 min of 24 kHz mono; long episodes overflowed the old 4 MB buffer
+const original=decode(source,voiceAf),encoded=decode(video);let cross=0,sourcePower=0,encodedPower=0,errorPower=0;
 for(let i=0;i<original.length;i+=2){const x=original.readInt16LE(i),y=encoded.readInt16LE(i);cross+=x*y;sourcePower+=x*x;encodedPower+=y*y;errorPower+=(x-y)**2;}
 const correlation=cross/Math.sqrt(sourcePower*encodedPower),snr=10*Math.log10(sourcePower/errorPower);
 let tailPower=0,tailCount=0;for(let i=original.length+2400;i+1<Math.min(encoded.length,SECONDS*24000*2);i+=2){tailPower+=encoded.readInt16LE(i)**2;tailCount++;}
@@ -30,7 +31,7 @@ const mix=existsSync(path.join(job,'audio/mix-report.json'))?await read('audio/m
 let endPower=0,endCount=0;for(let i=Math.max(0,encoded.length-Math.round(.15*24000)*2);i+1<encoded.length;i+=2){endPower+=encoded.readInt16LE(i)**2;endCount++;}
 const endRMS=endCount?Math.sqrt(endPower/endCount):Infinity;
 // Narration clarity in the mix: per-phrase correlation in the speech band (200 Hz-4 kHz), where masking matters for intelligibility.
-const band=(file:string)=>execFileSync('ffmpeg',['-v','error','-i',file,'-vn','-af','highpass=f=200,lowpass=f=4000','-ac','1','-ar','24000','-f','s16le','pipe:1'],{maxBuffer:256*1024*1024}); // about 90 min of 24 kHz mono; long episodes overflowed the old 4 MB buffer
+const band=(file:string)=>execFileSync('ffmpeg',['-v','error','-i',file,'-vn','-af',(file===source&&voiceAf?voiceAf+',':'')+'highpass=f=200,lowpass=f=4000','-ac','1','-ar','24000','-f','s16le','pipe:1'],{maxBuffer:256*1024*1024}); // about 90 min of 24 kHz mono; long episodes overflowed the old 4 MB buffer
 // Full-band narration correlation restricted to speech: effects and music between or after phrases are intentional.
 const speechCorrelation=mix?(()=>{let c=0,px=0,py=0;for(const p of expected.phraseTimings)for(let i=Math.floor(p.startSeconds*24000)*2;i+1<Math.min(original.length,encoded.length,Math.ceil(p.endSeconds*24000)*2);i+=2){const u=original.readInt16LE(i),w=encoded.readInt16LE(i);c+=u*w;px+=u*u;py+=w*w;}return c/Math.sqrt(px*py);})():null;
 const phraseClarity=mix?(()=>{const x=band(source),y=band(video);return expected.phraseTimings.map(p=>{let c=0,px=0,py=0;for(let i=Math.floor(p.startSeconds*24000)*2;i+1<Math.min(x.length,Math.ceil(p.endSeconds*24000)*2);i+=2){const u=x.readInt16LE(i),w=y.readInt16LE(i);c+=u*w;px+=u*u;py+=w*w;}return {beatId:p.beatId,correlation:+(c/Math.sqrt(px*py)).toFixed(4)};});})():null;

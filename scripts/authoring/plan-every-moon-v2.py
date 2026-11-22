@@ -430,7 +430,7 @@ M = 'assets/music/'
 ep.music([('e1', M + '6-space-singularity.mp3', 0), ('e9', M + '1-curious-a-science-montage.mp3', 0), ('e22', M + '2-playful-b-sweet-math.mp3', 0),
           ('e38', M + '3-eerie-b-surface-of-the-moon.mp3', 0), ('e44', M + '4-tense-a-false-vacuum-decay.mp3', 0, -2), ('e57', M + '5-uplifting-a-taking-flight.mp3', 0),
           ('e70', M + '8-space-spaghettification.mp3', 0)],
-         dropouts=[('e14', 0, .8), ('e20', 0, .8), ('e26', 0, .8), ('e31', 0, .8), ('e36', 0, .8), ('e52', 0, 1.2), ('e60', 0, 1.0)], target_lufs=-16, gain_db=-17, duck_ratio=2)
+         dropouts=[('e14', 0, .8), ('e20', 0, .8), ('e26', 0, .8), ('e31', 0, .8), ('e36', 0, .8), ('e52', 0, 1.2), ('e60', 0, 1.0)], target_lufs=-16, gain_db=-17, duck_ratio=2, voice={'highpassHz': 95, 'lowMidDb': -4, 'presenceDb': 2, 'room': .08})
 
 if __name__ == '__main__':
     board = ep.build()

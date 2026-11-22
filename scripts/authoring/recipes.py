@@ -366,12 +366,13 @@ class Episode:
         self.pop_db, self.deviation_tolerance = -22, .2
         self.theme = 'paint-notebook'
 
-    def music(self, cues, dropouts=(), gain_db=-22, crossfade=1.5, target_lufs=-14, duck_ratio=8):
+    def music(self, cues, dropouts=(), gain_db=-22, crossfade=1.5, target_lufs=-14, duck_ratio=8, voice=None):
         """Licensed music per section: cues [(beat_id, 'assets/music/x.mp3', offset_seconds)], dropouts [(beat_id, frame, seconds)]."""
         sid = {b['id']: b['sceneId'] for b in self.story['beats']}
         self._audio = {'music': 'cues', 'musicGainDb': gain_db, 'duckRatio': duck_ratio, 'targetLufs': target_lufs, 'crossfadeSeconds': crossfade,
                        'musicCues': [{'source': c[1], 'scene': sid[c[0]], 'offsetSeconds': c[2], **({'gainDb': c[3]} if len(c) > 3 else {})} for c in cues],
                        'musicDropouts': [{'scene': sid[b], 'frame': f, 'seconds': sec} for b, f, sec in dropouts]}
+        if voice: self._audio['voice'] = voice
 
     def asset(self, aid, rel_path, width, height):
         """Register a PNG under assets/ (e.g. a prepared NASA photo insert) once; returns its id."""

@@ -44,7 +44,7 @@ const main=async()=>{
   cues:(board.audio.musicCues??[]).map((c,i,all)=>({source:path.resolve(c.source),startSeconds:sceneStart(c.scene),endSeconds:i<all.length-1?sceneStart(all[i+1].scene):seconds,offsetSeconds:c.offsetSeconds,loop:c.loop,gainDb:c.gainDb,levelDb:0})),
   dropouts:(board.audio.musicDropouts??[]).map(d=>{const i=board.scenes.findIndex(s=>s.id===d.scene),a=(scheduled[i].startFrame+Math.min(d.frame,board.scenes[i].durationFrames-1))/board.format.fps;return [a,a+d.seconds] as [number,number];})}:null;
  const music=o.music?{kind:'file' as const,source:path.resolve(o.music)}:cueMusic??(board.audio?.music==='generated-pad'?{kind:'generated' as const,seed:1}:{kind:'none' as const});
- if(sfx.length||music.kind!=='none')await prepareMix(job,{durationSeconds:seconds,narration:path.join(job,'audio/narration.wav'),music,musicGainDb:board.audio?.musicGainDb??-16,duckRatio:board.audio?.duckRatio??8,sfx,speech:mapping.phraseTimings.map(p=>[p.startSeconds,p.endSeconds] as [number,number]),targetLufs:board.audio?.targetLufs??-14,truePeakDb:-1.5});
+ if(sfx.length||music.kind!=='none')await prepareMix(job,{durationSeconds:seconds,narration:path.join(job,'audio/narration.wav'),music,musicGainDb:board.audio?.musicGainDb??-16,duckRatio:board.audio?.duckRatio??8,...(board.audio?.voice?{voice:board.audio.voice}:{}),sfx,speech:mapping.phraseTimings.map(p=>[p.startSeconds,p.endSeconds] as [number,number]),targetLufs:board.audio?.targetLufs??-14,truePeakDb:-1.5});
  if(o['prepare-only']){
   // Chunked/resumable path: bundle once into the job; render-job-frames.ts renders ranges; assemble-job.ts muxes and verifies.
   await bundle({entryPoint:path.resolve('src/storyboard-index.ts'),publicDir,outDir:path.join(job,'bundle')});

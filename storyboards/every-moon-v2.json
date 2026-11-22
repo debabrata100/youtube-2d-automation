@@ -140,7 +140,13 @@
         "frame": 0,
         "seconds": 1.0
       }
-    ]
+    ],
+    "voice": {
+      "highpassHz": 95,
+      "lowMidDb": -4,
+      "presenceDb": 2,
+      "room": 0.08
+    }
   },
   "groups": [
     {

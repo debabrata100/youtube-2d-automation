@@ -50,6 +50,8 @@ export const storyboardSchema = z.object({
   themeId: z.string().optional(),
   /** Mix settings: optional generated music bed (a licensed file can replace it with --music), ducking and loudness target. */
   audio: z.object({music: z.enum(['none', 'generated-pad', 'cues']).default('none'), musicGainDb: z.number().min(-40).max(0).default(-16), duckRatio: z.number().min(1).max(20).default(8), targetLufs: z.number().min(-24).max(-9).default(-14),
+    /** Optional narrator treatment in the mix: high-pass, cut the low-mid boom, lift presence, a little room. Off when absent. */
+    voice: z.object({highpassHz: z.number().min(20).max(200).default(90), lowMidDb: z.number().min(-12).max(0).default(-4), presenceDb: z.number().min(0).max(6).default(2), room: z.number().min(0).max(.3).default(.08)}).strict().optional(),
     /** music 'cues': one licensed track per section, starting with a scene and cross-fading into the next cue (paths relative to the project root). */
     musicCues: z.array(z.object({source: z.string().min(1), scene: z.string().min(1), offsetSeconds: z.number().min(0).default(0), gainDb: z.number().min(-12).max(12).default(0), loop: z.boolean().default(true)}).strict()).max(20).optional(),
     /** Short music drop-outs (before punchlines and reveals), anchored to a scene frame. */
