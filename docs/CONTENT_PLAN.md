@@ -82,9 +82,26 @@ Legend: **Debabrata** = Debabrata's idea, **Claude** = Claude's addition. Facts 
 
 **News rule:** for big space news, publish a Short on the day (catches the wave), and a deeper long video with an evergreen title later (keeps earning). Astrum's Voyager video did both in one: news in the first 3 minutes, an evergreen title ("What Voyager 1 Found…").
 
+## Track 5: "Arka Investigates" (new series, agreed 22 Nov 2026)
+
+Real space mysteries told as detective cases. Arka is the detective; the narrator is the case file. Each episode: the crime scene, the suspects (each real scientific explanation), the evidence for and against each, and an honest verdict, including "case still open" when science hasn't settled it. Builds Arka as a character people come back for (CLAUDE.md: science-fiction mysteries with recurring characters). Titles say "case"/"who"/"what", never claim a solution science doesn't have.
+
+| # | Working title | From | Angle / suspects | Notes |
+|---|---|---|---|---|
+| AI1 | **Who Knocked Uranus Over?** | Claude (series idea), Debabrata (approved) | Crime scene: Uranus spins on its side (about 98°). Suspects: (1) one giant impact (problem: the moons would orbit the wrong way, per Scientific American's double-impact work); (2) two smaller impacts; (3) a lost moon that slowly pulled the planet over by resonance, then crashed into it (Saillenfest et al. 2022; still discussed at EPSC 2026). Verdict: case open; the evidence a future Uranus mission would need. | Topic is covered (Astrum ~244K, BBC Earth, Space.com, Bright Side) but as plain explainers; the suspect-lineup format is our edge. Check competitors again before scripting. Series opener. |
+| AI2 | The planet that vanished (Theia) | Claude | The planet that hit young Earth and became the Moon; where are its remains? (Possibly deep inside Earth.) | |
+| AI3 | Where did Mars's ocean go? | Claude | Suspects: escaped to space, locked underground, frozen at the poles. | |
+| AI4 | Why does Venus spin backwards? | Claude | Suspects: impact, its thick atmosphere's tides, slow flip. | |
+
+## Other series ideas (22 Nov 2026, parked)
+- **Gravity vs Time** (single episode, planned right after S2; Debabrata's idea): round 1 gravity slows time (GPS corrects for it); round 2 near a black hole time appears to stop; final round time wins: black holes evaporate (Hawking radiation; ~10^67 years for a Sun-mass one, *check*). Could pilot a "Forces Fight" series (light vs gravity, heat vs cold, life vs entropy). No "gravity vs time" titled video found in a quick search (22 Nov); Hawking-evaporation explainers exist (PBS Space Time, Physics Girl).
+- **Earth, Back Then** (time-travel tourist): opener *Under the giant Moon* (Debabrata's "second big Moon" idea, made real: the young Moon looked several times bigger, days were a few hours, tides huge; ties to E1 and M1). Then snowball Earth; the day oxygen arrived.
+- **One Number Changed**: speed of light 50 km/h; gravity 10% stronger; Earth spins once a week. Strong Shorts.
+- **Arka's Impossible Jobs**: weather presenter on Venus, estate agent selling planets, lifeguard on Titan, postal worker to Mars. Lighter; Shorts or side series.
+
 ---
 
-## Suggested order (updated 21 Nov 2026)
+## Suggested order (updated 22 Nov 2026)
 
 1. **S1 / Ep 5** If the Sun Disappeared, Even the Air Would Fall (final render done; proposed Thu 3 Dec; needs thumbnails + M1 draft).
 2. **V2, V3** Voyager Shorts (V3 published 20 Nov, V2 scheduled 23 Nov).
@@ -92,6 +109,7 @@ Legend: **Debabrata** = Debabrata's idea, **Claude** = Claude's addition. Facts 
 4. **E1** When will a day be 25 hours long? (teases E7.) Script draft 1 done 21 Nov.
 5. **E7** Apophis 2029 (strongest demand; researched carefully).
 6. **S2** Would a black-hole Sun suck us in?
+6b. **Gravity vs Time** (S2's ending question can tease it; continues the black-hole thread). Then decide: continue the space what-ifs or open **Arka Investigates** with AI1 Who Knocked Uranus Over? (Debabrata, 22 Nov).
 7. **V5, V6** two more Voyager Shorts (after the Every Moon rework; Fri 27 Nov and Wed 2 Dec proposed).
 8. **V4** Voyager 50th anniversary episode (target: published mid-August 2027; consider making it earlier since Voyager performs best).
 
