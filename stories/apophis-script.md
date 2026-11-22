@@ -214,7 +214,10 @@ Each line that makes or corrects a claim, checked against the rules above.
 2. **"You Could Jump Off Apophis"**: 12 cm/s, slower than walking to the kitchen; Arka floats away; loop.
 3. **"The Odds Went UP the More We Looked"**: Christmas 2004, 1 in 300 → 1 in 37, then old photos saved us.
 
+## Decisions
+- **Title (Debabrata, 22 Nov):** variant 1 "What If Apophis Hit? Most Videos Get It Wrong" + MYTH | REALITY thumbnail goes live first; variants 2 and 3 run in YouTube's thumbnail test.
+
 ## Open decisions for Debabrata
-- Arka voice (D2 or E3).
+- Arka voice (D2 or E3): blind test on this episode's 15 Arka lines (`stories/e7-arka-voice-test.json`, 858 characters per voice, approved 22 Nov).
 - Ending a51–a52 teases S2 ("Would a Black-Hole Sun Suck Us In?") through gravity; S2 draft 1 written 22 Nov.
 - Background: dusk-blue page for the Earth-side scenes, deep space for the ride (Every Moon and Ep 5 were both navy).

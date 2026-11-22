@@ -1,0 +1,67 @@
+{
+ "schemaVersion": "1.0",
+ "id": "e7-arka-voice-test",
+ "title": "Arka voice test: E3 vs D2 (E7 lines)",
+ "topic": "Recording only: every Arka line from the E7 Apophis draft, read by each candidate voice for a blind comparison",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 16,
+ "storyboard": "storyboards/moon-shorts-hooks.json",
+ "candidatesReport": "stories/apophis-script.md",
+ "beats": [
+  {
+   "id": "v1",
+   "sceneId": "hk-k1",
+   "intent": "hook",
+   "narration": "Please tell me most of that is wrong. Okay. First step. Twelve centimetres a second? I walk to the kitchen faster than that. So that's where the scary videos come from. It's filling the whole sky. Are we going to hit one? The ground just moved. Did you feel that? Okay. Earth's getting smaller back there. Now the big one: what if we were heading for it?",
+   "phrases": [
+    "Please tell me most of that is wrong.",
+    "Okay. First step.",
+    "Twelve centimetres a second? I walk to the kitchen faster than that.",
+    "So that's where the scary videos come from.",
+    "It's filling the whole sky.",
+    "Are we going to hit one?",
+    "The ground just moved. Did you feel that?",
+    "Okay. Earth's getting smaller back there. Now the big one: what if we were heading for it?"
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "v2",
+   "sceneId": "hk-k2",
+   "intent": "closing",
+   "narration": "And before you answer, I've seen the maps. Scientists know exactly where it lands. Then why do some videos say the odds went up? One in a billion. I'll take those odds. That's… a lot smaller than the thumbnails. So the true version is: bad, regional, and not happening. So the scariest asteroid of 2004 becomes the most studied asteroid of 2029. Earth bent a whole asteroid's path just by being nearby. So what about the strongest pull there is? If the Sun turned into a black hole… would it pull us in?",
+   "phrases": [
+    "And before you answer, I've seen the maps. Scientists know exactly where it lands.",
+    "Then why do some videos say the odds went up?",
+    "One in a billion. I'll take those odds.",
+    "That's… a lot smaller than the thumbnails.",
+    "So the true version is: bad, regional, and not happening.",
+    "So the scariest asteroid of 2004 becomes the most studied asteroid of 2029.",
+    "Earth bent a whole asteroid's path just by being nearby.",
+    "So what about the strongest pull there is?",
+    "If the Sun turned into a black hole… would it pull us in?"
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  }
+ ]
+}

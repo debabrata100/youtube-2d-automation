@@ -5,7 +5,7 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 **Pays off E7's ending:** after watching Earth bend an asteroid's path, Arka asks what the strongest pull there is would do: "If the Sun became a black hole, would it pull us in?"
 
 **Title options (≤ 50, honest what-if, myth-bust shape like E7):**
-1. **Would a Black-Hole Sun Suck Us In? (No, But…)** (45) ← recommended
+1. **Would a Black-Hole Sun Suck Us In? (No, But…)** (45) ← **chosen (Debabrata, 22 Nov)**
 2. **If the Sun Became a Black Hole, Would We Fall In?** (49)
 3. **Black Holes Don't Suck. Here's the Proof.** (40)
 
@@ -165,5 +165,5 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 3. **"A Star Orbits Our Galaxy's Black Hole Every 16 Years"**: S2's looping orbit; the proof.
 
 ## Open decisions for Debabrata
-- Title (option 1 recommended); Arka voice; ending's next question (waits for the next script).
+- Arka voice (decided by the E7 blind test); ending's next question (Debabrata: decide later; candidates: rogue black hole through the Solar System, Earth squeezed into a black hole, M1 Moon).
 - Background: deep space for the black-hole chapters; dusk then night over a town for chapter 1 (avoid three navy uploads in a row).
