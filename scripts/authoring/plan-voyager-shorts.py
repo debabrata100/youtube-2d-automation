@@ -1,10 +1,10 @@
-"""Voyager Shorts V2 (69 KB memory) and V3 (the 48-hour silence), 9:16. Script and facts: stories/voyager-shorts-script.md.
+"""Voyager Shorts V2 (69 KB memory), V3 (the 48-hour silence) and V7 (still calling: the November data outage), 9:16. Script and facts: stories/voyager-shorts-script.md.
 
 One source for each Short's story script (stories/voyager-<name>.json) and storyboard (storyboards/voyager-<name>.json).
 Brand in Shorts (no end sting, Shorts loop): a small GAHANARKA corner tag throughout, Arka, and a soft chime under the last line.
 
-Usage: python3 scripts/authoring/plan-voyager-shorts.py memory|silent [duration_seconds] [output_storyboard]
-       python3 scripts/authoring/plan-voyager-shorts.py memory|silent --script-only
+Usage: python3 scripts/authoring/plan-voyager-shorts.py memory|silent|calling [duration_seconds] [output_storyboard]
+       python3 scripts/authoring/plan-voyager-shorts.py memory|silent|calling --script-only
 """
 import json, pathlib, re, sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
@@ -14,7 +14,7 @@ LIGHT = '#eef1f8'  # night page: small labels and line-art props are drawn in li
 recipes.INK = LIGHT
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-NAME = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1] in ('memory', 'silent') else sys.exit(__doc__)
+NAME = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1] in ('memory', 'silent', 'calling') else sys.exit(__doc__)
 STORY = ROOT / f'stories/voyager-{NAME}.json'
 N, K = 'narrator', 'arka'
 SHOTS = []  # (beat id, intent, [(speaker, text)])
@@ -36,6 +36,18 @@ if NAME == 'memory':
     line('m5', (N, 'An old dial-up modem was more than a hundred times faster.'))
     line('m6', (N, 'In 2023, one memory chip failed. With almost no room to spare, engineers squeezed a fix into the gaps, from twenty-four billion kilometers away.'), intent='payoff')
     line('m7', (N, 'It took five months. And it worked. Nearly fifty years later, Voyager is still talking to us.'), intent='closing')
+elif NAME == 'calling':
+    # Draft 1, 22 Nov 2026. Sequel to V3 (S7). Facts: stories/voyager-shorts-script.md, section V7.
+    TITLE = 'Voyager 1 Still Has a Pulse. It Just Stopped Talking.'
+    TOPIC = ('Voyager 1 has sent a carrier signal but no science or engineering data since 14 Nov 2026 (NASA, 18 Nov 2026), '
+             'the same week it reached one light-day from Earth; in October it went silent for about 48 hours and recovered on its own')
+    line('c1', (N, "Voyager 1 still has a pulse. NASA can hear it. But since November fourteenth, it hasn't said a single word."), intent='hook')
+    line('c2', (N, 'It went quiet the same week it became the first object ever to reach one light-day from Earth.'), intent='hook')
+    line('c3', (N, 'So every message takes a day to get there, and a day to come back.'))
+    line('c4', (N, "Last month, it went silent for two days and fixed itself. This time, it hasn't."), intent='payoff')
+    line('c5', (K, 'Come on, Voyager. Say something.'))
+    line('c6', (N, "There's no copy on Earth to practise on. Every fix goes straight to the real thing."))
+    line('c7', (N, 'So NASA sends a message, and waits two days. Because Voyager 1 is still calling us.'), intent='closing')
 else:
     TITLE = 'NASA Lost Voyager 1 for 48 Hours'
     TOPIC = ('Voyager 1 went silent on 18-19 Oct 2026 and came back on 20 Oct before any command was sent, having switched to backup thrusters on its own '
@@ -159,6 +171,38 @@ if NAME == 'memory':
     ep.scene('m7', explain([arka], [probe(.5, .44, .42), boxed('cal', 'calendar', .8, .72, .16, A('five'), text='5 mo'), signal(.3, .5, .2, 120, color='#7fc0ff', opacity=show_from(A('talking')))],
                            [Note('it worked!', A('worked.'), 'title', pos=(540, 1250)), Note('still talking to us', A('still'), 'note', pos=(540, 1580))],
                            sounds=[('chime', A('talking'), -26)]))
+elif NAME == 'calling':
+    ep.backdrop(stars=30, earth={'r': .5, 'hidden': [(A('So', beat='c3'), A('Last', beat='c4')), (A("There's", beat='c6'), A('So', beat='c7'))]})
+    ep.music([('c1', 'assets/music/6-space-event-horizon.mp3', 0)], target_lufs=-16)
+    QUIET = '#7fc0ff'
+    # c1 the pulse is there, the words are not
+    ep.scene('c1', explain([], [probe(.66, .26, .26), signal(.45, .5, .32, 120, color=QUIET), boxed('day14', 'calendar', .24, .4, .16, A('November'), text='14'),
+                                icon('hear', 'check', .76, .44, .12, A('hear')), icon('mute', 'cross', .76, .44, .12, A('word.'))],
+                           [Note('still a pulse', A('pulse.'), 'title', pos=(540, 1100), until=A('word.')), Note('since 14 Nov', A('November'), 'small', near='day14'),
+                            Note('0 words', A('word.'), 'title', pos=(540, 1100))], sounds=[('tick', A('word.'), -22)]))
+    # c2 the same week as one light-day
+    ep.scene('c2', explain([], [probe(.5, .4, .42), signal(.38, .53, .26, 120, color=QUIET)],
+                           [Note('18 Nov 2026', A('same'), 'small', pos=(540, 260)), Note('1 light-day', A('light-day'), 'title', pos=(540, 1300)),
+                            Note('first ever', A('first'), 'note', pos=(540, 1440))]))
+    # c3 a day there, a day back
+    ep.scene('c3', explain([], [probe(.72, .3, .26), boxed('clock', 'clock', .3, .56, .3, A('message'), level=[{'frame': 0, 'value': .6}], text='24 h each way')],
+                           [Note('a day there', A('there,'), 'note', pos=(540, 1420)), Note('a day back', A('back.'), 'title', pos=(540, 1560))]))
+    # c4 October fixed itself; this time it hasn't (the stakes)
+    ep.scene('c4', explain([], [probe(.66, .26, .26), boxed('oct', 'calendar', .24, .4, .16, A('month,'), text='Oct'),
+                                icon('fixed', 'check', .76, .44, .14, A('itself.')), icon('notyet', 'cross', .76, .44, .16, A("hasn't."))],
+                           [Note('Oct: 2 days, fixed itself', A('fixed'), 'small', pos=(540, 1300)), Note('this time: no', A("hasn't."), 'title', pos=(540, 1480))],
+                           sounds=[('tick', A("hasn't."), -20)]))
+    # c5 Arka, on Earth, pleading
+    arka = Char('arka', 'arka', x=.5, fy=.74, h=.24, idle=None, poses=[(0, 'shrug')], faces=[(0, 'shocked')])
+    ep.scene('c5', explain([arka], [probe(.7, .2, .2)], [Note('say something!', A('something.'), 'title', pos=(540, 560))]))
+    # c6 no copy to practise on: every fix goes to the real probe
+    ep.scene('c6', explain([], [probe(.5, .36, .36), icon('nocopy', 'cross', .5, .62, .12, A('copy')),
+                                signal(.24, .6, .22, -60, pid='uplink', color=QUIET, opacity=show_from(A('straight')))],
+                           [Note('no copy to practise on', A('copy'), 'note', pos=(540, 1320)), Note('real thing only', A('real'), 'title', pos=(540, 1500))]))
+    # c7 send, wait two days; still calling (soft brand chime under the last line; loops into c1)
+    ep.scene('c7', explain([], [probe(.5, .4, .42), signal(.38, .53, .26, 120, color=QUIET)],
+                           [Note('wait 2 days', A('waits'), 'title', pos=(540, 1300)), Note('still calling', A('calling'), 'note', pos=(540, 1440))],
+                           sounds=[('chime', A('calling'), -26)]))
 else:
     ep.backdrop(stars=30, earth={'r': .5, 'hidden': [(A('Voyager', beat='l4'), A('Then', beat='l5')), (A('group', beat='l6'), A('Almost', beat='l7'))]})
     ep.music([('l1', 'assets/music/6-space-event-horizon.mp3', 0)], target_lufs=-16)

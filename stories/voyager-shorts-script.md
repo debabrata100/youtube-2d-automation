@@ -51,3 +51,36 @@ Title options (≤50): **NASA Lost Voyager 1 for 48 Hours** (32) · Voyager 1 We
 - Paid narration (after approval): ≈ 1,250 characters total (V2 ≈ 590, V3 ≈ 660), two requests per Short or one batch; dry run first.
 - Visuals: reuse the `probe`, `signal`, `clock`, `calendar`, `counter` props; new: a phone photo card vs a tiny "69 KB" chip, an 8-track tape, a dish antenna calling into silence.
 - Related video: V2 → V1 (`tZx2ERI-4ec`); V3 → V1. Pinned comments point to each other once both are live.
+
+---
+
+# V7 — Voyager 1 Still Has a Pulse. It Just Stopped Talking. (draft 1, 22 Nov 2026)
+
+Replaces V5 (instrument switch-offs, no news hook until 2027) and V6 (alignment, no news hook). Sequel to V3/S7. ~36 s, 9:16.
+Related video: S7 "NASA Lost Voyager 1 for 48 Hours" (`-FTg1FvhxKI`), or Ep 3 per the channel linking decision. Proposed release Wed 25 Nov.
+
+| # | Speaker | Line |
+|---|---|---|
+| c1 | Narrator | Voyager 1 still has a pulse. NASA can hear it. But since November fourteenth, it hasn't said a single word. |
+| c2 | Narrator | It went quiet the same week it became the first object ever to reach one light-day from Earth. |
+| c3 | Narrator | So every message takes a day to get there, and a day to come back. |
+| c4 | Narrator | Last month, it went silent for two days and fixed itself. This time, it hasn't. |
+| c5 | Arka | Come on, Voyager. Say something. |
+| c6 | Narrator | There's no copy on Earth to practise on. Every fix goes straight to the real thing. |
+| c7 | Narrator | So NASA sends a message, and waits two days. Because Voyager 1 is still calling us. |
+
+The 2023–24 five-month memory fix was cut from this Short: S8 (memory, Mon 23 Nov) already uses it as its payoff.
+
+## Fact check (sources consulted 22 Nov 2026)
+
+| Claim | Line | Basis |
+|---|---|---|
+| Carrier signal but no science or engineering data since 14 Nov | c1 | NASA Voyager blog, 18 Nov 2026 ("Voyager 1 Engineers Analyze Data Issue, Ready to Confirm Light-day"): DSN Canberra locked on and received a carrier signal; the carrier means the attitude computer keeps it pointed at Earth and the antenna and transmitter work. "Pulse" = carrier. |
+| Still unresolved | c1, c4 | Live Science: as of 19 Nov the team had not resolved it; NASA page has no later update (checked 22 Nov). Re-check on release day. |
+| First object at one light-day, 18 Nov 2026, same week | c2 | NASA/JPL news; Live Science and IFLScience link the outage and the milestone. |
+| About 24 h each way | c3, c7 | NASA blog: signals take about 24 hours each way; diagnosis may take weeks or longer. |
+| October: silent ~48 h, recovered on its own | c4 | NASA blog (18 Nov): contact lost for about 48 hours in October, spacecraft resumed communication on its own; NASA JPL 29 Oct 2026 (our V3 sources). |
+| No simulator / no copy to test on | c6 | Hackaday (Feb 2024): no simulator to test changes, most original engineers gone. Script says "no copy on Earth to practise on", which matches "no simulator"; re-confirm with a 2026 source if one appears. |
+
+## If NASA restores data before release
+Replace c7 with: "On November [date], after [N] days of silence... Voyager 1 answered." Re-run narration for the changed line only (cut-narration.py), ~70 characters.

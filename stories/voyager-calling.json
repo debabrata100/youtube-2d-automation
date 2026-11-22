@@ -1,0 +1,137 @@
+{
+ "schemaVersion": "1.0",
+ "id": "voyager-calling",
+ "title": "Voyager 1 Still Has a Pulse. It Just Stopped Talking.",
+ "topic": "Voyager 1 has sent a carrier signal but no science or engineering data since 14 Nov 2026 (NASA, 18 Nov 2026), the same week it reached one light-day from Earth; in October it went silent for about 48 hours and recovered on its own",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 42,
+ "storyboard": "storyboards/voyager-calling.json",
+ "candidatesReport": "stories/voyager-shorts-script.md",
+ "beats": [
+  {
+   "id": "c1",
+   "sceneId": "vyc-c1",
+   "intent": "hook",
+   "narration": "Voyager 1 still has a pulse. NASA can hear it. But since November fourteenth, it hasn't said a single word.",
+   "phrases": [
+    "Voyager 1 still has a",
+    "pulse.",
+    "NASA can hear it.",
+    "But since November",
+    "fourteenth, it hasn't said",
+    "a single word."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "c2",
+   "sceneId": "vyc-c2",
+   "intent": "hook",
+   "narration": "It went quiet the same week it became the first object ever to reach one light-day from Earth.",
+   "phrases": [
+    "It went quiet the same",
+    "week it became the first",
+    "object ever to reach one",
+    "light-day from Earth."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "c3",
+   "sceneId": "vyc-c3",
+   "intent": "explanation",
+   "narration": "So every message takes a day to get there, and a day to come back.",
+   "phrases": [
+    "So every message takes a",
+    "day to get there, and a",
+    "day to come back."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "c4",
+   "sceneId": "vyc-c4",
+   "intent": "payoff",
+   "narration": "Last month, it went silent for two days and fixed itself. This time, it hasn't.",
+   "phrases": [
+    "Last month, it went silent",
+    "for two days and fixed",
+    "itself.",
+    "This time, it hasn't."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "c5",
+   "sceneId": "vyc-c5",
+   "intent": "explanation",
+   "narration": "Come on, Voyager. Say something.",
+   "phrases": [
+    "Come on, Voyager.",
+    "Say something."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "c6",
+   "sceneId": "vyc-c6",
+   "intent": "explanation",
+   "narration": "There's no copy on Earth to practise on. Every fix goes straight to the real thing.",
+   "phrases": [
+    "There's no copy on Earth",
+    "to practise on.",
+    "Every fix goes straight to",
+    "the real thing."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "c7",
+   "sceneId": "vyc-c7",
+   "intent": "closing",
+   "narration": "So NASA sends a message, and waits two days. Because Voyager 1 is still calling us.",
+   "phrases": [
+    "So NASA sends a message,",
+    "and waits two days.",
+    "Because Voyager 1 is still",
+    "calling us."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  }
+ ]
+}
