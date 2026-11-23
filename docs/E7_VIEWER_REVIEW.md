@@ -133,3 +133,22 @@ workspace, no paid requests: `E7-sample-1-cold-open.mp4` (0:00–0:48) and `E7-s
 | Not yet reworked, 48–332 s (for comparison) | 33 | 9.6 s | 53 | 0 |
 
 **Runtime:** 610 s (10:10) with the pauses so far; the full rework adds more pauses (~10:40).
+
+## Full rework done (23 Nov 2026, night)
+Debabrata: "finish E7, then we decide". All 60 shots reworked per the plan above (some simplified, noted below).
+- **Pauses (free, 18 in total):** a1 1.2 s, a2 3.6, a3 1.6, a6 4.8, a9 2.0 (Arka floats away), a15 2.4 (Earth fills the sky),
+  a20 2.4 (satellites stream past), a23 1.6 (the ground moves), a26 2.4 (the slingshot), a34 1.4, "Here's a continent." 4.6
+  (the impact), a35 1.2, a39 2.6 (the wave), a49b 2.2 (quiet moment for Roy Tucker), a51 2.2 (the Sun becomes a black hole).
+  Narration job `jobs/e7-narration-beats2` (609.4 s, 0 paid requests); storyboard 625 s (10:25).
+- **New kit props:** `observatory`, `photo-plate`, `corkboard`, `dish` (radio telescope), `moon-row` (38 full Moons), `xmas-tree`.
+- **Real objects now drawn:** observatory and Christmas tree (2004), old photo plates, a corkboard of viral cards, 38 Moons across
+  Earth, the altitude ladder with the ISS and satellites, satellites streaming past, a real map of India (no borders) crossed in
+  7 minutes, the Goldstone and Green Bank dishes, calendar pages torn off, a world map with the risk stripe, a 10 km rock dwarfing
+  Apophis, a wave over a city that breaks, a real map of Chile's coast, two rockets launching, OSIRIS-APEX's thruster blast,
+  probes circling like paparazzi, a night city with a moving star, Earth lit where the flyby is visible, the Sun collapsing into
+  a black hole with Earth still orbiting.
+- **Simplified vs the plan:** no lottery machine (signs instead); no real NASA photos yet (drawn dishes and probe instead).
+- **Attraction report (0–609 s, end card excluded):** longest still 4.0 s (was 10.4), 61 picture changes a minute (was ~33),
+  0 locked-camera shots, 18 action-beat pauses (was 1), 27 sound cues a minute. On-screen words: 53 a minute (target 40;
+  the viral cards and source tags carry most of it).
+- tsc clean, 432 tests pass. Prepared with `--allow-readability-errors` (one a6 title flag, as before).

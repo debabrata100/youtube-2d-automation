@@ -67,7 +67,7 @@ export const Terrain: React.FC<{config: TerrainConfig; theme: Theme; width: numb
 
 export type PropConfig = {ink?: string; item: 'thermometer' | 'pressure-arrows' | 'motion-lines' | 'exclaim' | 'question' | 'check' | 'cross' | 'counter' | 'stamp' | 'vignette' | 'station' | 'helmet' | 'doodle-stars' | 'chamber'
   | 'cliff' | 'geyser' | 'plume' | 'radiation-meter' | 'radiation-belt' | 'battery' | 'airbag' | 'small-moon' | 'asteroid' | 'ice-cutaway' | 'frost'
-  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb' | 'crescent' | 'orbit-ring' | 'town' | 'lion' | 'zebra' | 'coral' | 'plankton' | 'tide-gauge' | 'tilt-dial' | 'earth-axis' | 'impact' | 'dino' | 'reflector' | 'bed' | 'stir' | 'clock' | 'eclipse' | 'moonbeam' | 'young-earth' | 'bee' | 'flower' | 'tree' | 'tardigrade' | 'vent' | 'shell' | 'snowfall' | 'night-half' | 'mushroom' | 'sparkle' | 'clock-time' | 'rope' | 'pulse' | 'span' | 'sky' | 'streetlight' | 'arrow' | 'ice-layer' | 'city-lights' | 'tide-bulge' | 'caption' | 'globe' | 'map' | 'skyline' | 'wave' | 'shockwave' | 'debris' | 'flash' | 'dust-cloud' | 'headline' | 'rewind' | 'scribble' | 'streak' | 'pen' | 'satellite'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
+  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb' | 'crescent' | 'orbit-ring' | 'town' | 'lion' | 'zebra' | 'coral' | 'plankton' | 'tide-gauge' | 'tilt-dial' | 'earth-axis' | 'impact' | 'dino' | 'reflector' | 'bed' | 'stir' | 'clock' | 'eclipse' | 'moonbeam' | 'young-earth' | 'bee' | 'flower' | 'tree' | 'tardigrade' | 'vent' | 'shell' | 'snowfall' | 'night-half' | 'mushroom' | 'sparkle' | 'clock-time' | 'rope' | 'pulse' | 'span' | 'sky' | 'streetlight' | 'arrow' | 'ice-layer' | 'city-lights' | 'tide-bulge' | 'caption' | 'globe' | 'map' | 'skyline' | 'wave' | 'shockwave' | 'debris' | 'flash' | 'dust-cloud' | 'headline' | 'rewind' | 'scribble' | 'streak' | 'pen' | 'satellite' | 'observatory' | 'photo-plate' | 'corkboard' | 'dish' | 'moon-row' | 'xmas-tree'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
   values?: Array<{frame: number; value: number; ramp?: boolean}>; text?: string; direction?: 'in' | 'out';
   labels?: string[]; colors?: string[]; highlight?: number; ring?: boolean; belt?: boolean; range?: [number, number];
   center?: [number, number]; spin?: number; bbox?: [number, number, number, number]; mark?: {lon: number; lat: number; km: number}; zoom?: number; level2?: Array<{frame: number; value: number}>};
@@ -1178,6 +1178,73 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
         <path d={`M ${-s * .12} ${-s * .04} L ${s * .12} ${-s * .04} M ${-s * .12} ${s * .05} L ${s * .12} ${s * .05}`} stroke="#a67c14" strokeWidth={w * .4}/>
         <path d={`M 0 ${s * .12} L 0 ${s * .2}`} {...stroke(ink, w * .6)}/>
         <path d={`M ${-s * .13} ${s * .2} Q 0 ${s * .36} ${s * .13} ${s * .2} Z`} fill="#f2f2ee" stroke={ink} strokeWidth={w * .6}/>
+      </g>;
+    }
+    case 'observatory': {
+      // An observatory at night: a domed building whose slit opens with level (0 shut, 1 open) and a telescope that pokes out
+      // and tilts up. size = height.
+      const lv = levelAt(c.level, frame), r = s * .32, slit = r * .35 * lv, ang = -35 - 15 * lv;
+      return <g transform={at}>
+        <rect x={-s * .36} y={-s * .05} width={s * .72} height={s * .4} fill="#2b3657" stroke={ink} strokeWidth={w * .6}/>
+        <rect x={-s * .07} y={s * .15} width={s * .14} height={s * .2} rx={s * .02} fill="#ffd86b" opacity=".85"/>
+        <g transform={`translate(${s * .05} ${-s * .05}) rotate(${ang})`}><rect x={0} y={-s * .04} width={s * .45 * (.4 + .6 * lv)} height={s * .08} rx={s * .02} fill="#d9dde8" stroke={ink} strokeWidth={w * .5}/></g>
+        <path d={`M ${-r * 1.1} ${-s * .05} A ${r * 1.1} ${r * 1.1} 0 0 1 ${r * 1.1} ${-s * .05} Z`} fill="#c9d0e0" stroke={ink} strokeWidth={w * .6}/>
+        <rect x={-slit / 2} y={-s * .05 - r * 1.1} width={slit} height={r * 1.1} fill="#0e1428"/>
+        <path d={`M ${-r * .7} ${-s * .2} A ${r * .7} ${r * .7} 0 0 1 ${-r * .2} ${-s * .05 - r * .95}`} {...stroke('#ffffff', w * .4)} opacity=".5"/>
+      </g>;
+    }
+    case 'photo-plate': {
+      // An old glass photographic plate: a dark square of stars with a faint dot that gets circled as level rises. size = width.
+      const lv = levelAt(c.level, frame), random = seededRandom(Math.round(c.x * 211 + c.y * 97) || 3), hw = s * .5;
+      return <g transform={at}>
+        <rect x={-hw - s * .03} y={-hw - s * .03} width={s * 1.06} height={s * 1.06} fill="#e9e2cf" stroke={ink} strokeWidth={w * .5}/>
+        <rect x={-hw} y={-hw} width={s} height={s} fill="#1c1c22"/>
+        {Array.from({length: 28}, (_, i) => <circle key={i} cx={(random() - .5) * s * .92} cy={(random() - .5) * s * .92} r={s * (.004 + random() * .01)} fill="#f4f4f4" opacity={.5 + random() * .5}/>)}
+        <circle cx={s * .12} cy={-s * .08} r={s * .012} fill="#ffe9a6"/>
+        {lv > 0 && <circle cx={s * .12} cy={-s * .08} r={s * .09} fill="none" stroke={c.color ?? '#ff5a4a'} strokeWidth={w * .8} pathLength={1} strokeDasharray={`${lv} 1`}/>}
+        <text x={-hw + s * .04} y={hw - s * .05} fontFamily={font} fontSize={s * .09} fill="#cfc8b4">{c.text ?? ''}</text>
+      </g>;
+    }
+    case 'corkboard': {
+      // A cork pin board (size = height; width 1.6 x size) to pin cards onto.
+      const bw = s * 1.6, random = seededRandom(41);
+      return <g transform={at}>
+        <rect x={-bw / 2 - s * .04} y={-s / 2 - s * .04} width={bw + s * .08} height={s * 1.08} rx={s * .02} fill="#8a5a33" stroke={ink} strokeWidth={w * .6}/>
+        <rect x={-bw / 2} y={-s / 2} width={bw} height={s} fill="#c99a62"/>
+        {Array.from({length: 60}, (_, i) => <circle key={i} cx={(random() - .5) * bw * .96} cy={(random() - .5) * s * .94} r={s * .006} fill="#9c7243" opacity=".6"/>)}
+      </g>;
+    }
+    case 'dish': {
+      // A big radio-telescope dish (Goldstone style) on its mount, beaming radar pulses up-right while level > 0. size = height.
+      const lv = levelAt(c.level, frame), period = 30;
+      return <g transform={at}>
+        <path d={`M ${-s * .22} ${s * .45} L 0 ${s * .05} L ${s * .22} ${s * .45}`} {...stroke(ink, w * .8)}/>
+        <path d={`M ${-s * .3} ${s * .45} L ${s * .3} ${s * .45}`} {...stroke(ink, w)}/>
+        <g transform={`rotate(-35)`}>
+          <path d={`M ${-s * .42} ${-s * .05} Q 0 ${s * .28} ${s * .42} ${-s * .05} Z`} fill="#eef0f4" stroke={ink} strokeWidth={w * .8}/>
+          <path d={`M ${-s * .3} ${-s * .02} L 0 ${-s * .32} L ${s * .3} ${-s * .02}`} {...stroke(ink, w * .5)}/>
+          <circle cx={0} cy={-s * .33} r={s * .025} fill={ink}/>
+          {lv > 0 && Array.from({length: 3}, (_, i) => { const t = ((frame + i * period / 3) % period) / period, r = s * (.15 + .6 * t);
+            return <path key={i} d={`M ${-r * .5} ${-s * .35 - r * .6} A ${r} ${r * .5} 0 0 1 ${r * .5} ${-s * .35 - r * .6}`} {...stroke(c.color ?? '#a9d8ff', w * .8)} opacity={(1 - t) * lv}/>; })}
+        </g>
+      </g>;
+    }
+    case 'moon-row': {
+      // A row of `count` full Moons side by side across `size` (width); level = how many have appeared (0..1, one by one).
+      const lv = levelAt(c.level, frame), n = c.count, d = s / n, shown = Math.round(n * lv);
+      return <g transform={at}>{Array.from({length: shown}, (_, i) => <g key={i}>
+        <circle cx={-s / 2 + d * (i + .5)} cy={0} r={d * .46} fill={c.color ?? '#d8d3c4'} stroke={ink} strokeWidth={Math.max(1, w * .25)}/>
+        <circle cx={-s / 2 + d * (i + .42)} cy={-d * .1} r={d * .1} fill="#000000" opacity=".15"/></g>)}</g>;
+    }
+    case 'xmas-tree': {
+      // A Christmas tree: three green tiers, a trunk, a gold star and twinkling lights. size = height.
+      const random = seededRandom(19);
+      return <g transform={at}>
+        <rect x={-s * .05} y={s * .32} width={s * .1} height={s * .14} fill="#7a5a3a" stroke={ink} strokeWidth={w * .4}/>
+        {[[.32, .42], [.08, .34], [-.16, .25]].map(([y, hw], i) => <path key={i} d={`M ${-s * hw} ${s * y} L 0 ${s * (y - .3)} L ${s * hw} ${s * y} Z`} fill="#2f7d45" stroke={ink} strokeWidth={w * .5} strokeLinejoin="round"/>)}
+        <path d={Array.from({length: 10}, (_, i) => { const a = -Math.PI / 2 + i * Math.PI / 5, r = i % 2 ? s * .03 : s * .07; return `${i ? 'L' : 'M'} ${Math.cos(a) * r} ${-s * .46 + Math.sin(a) * r}`; }).join(' ') + ' Z'} fill="#ffd25e" stroke={ink} strokeWidth={w * .3}/>
+        {Array.from({length: 14}, (_, i) => { const y = -s * .3 + random() * s * .6, hw = (y + s * .46) / (s * .78) * s * .36, x = (random() - .5) * 2 * hw * .8;
+          return <circle key={i} cx={x} cy={y} r={s * .018} fill={['#ffd25e', '#ff7a6a', '#a9d8ff'][i % 3]} opacity={.5 + .5 * Math.max(0, Math.sin(frame / 5 + i))}/>; })}
       </g>;
     }
     case 'helmet': {
