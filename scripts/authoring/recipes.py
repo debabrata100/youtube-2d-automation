@@ -56,10 +56,11 @@ class Char:
     """A figure on stage. who: 'you' (white astronaut, helmet off by default), 'arka' (gold mascot), 'stick'."""
 
     def __init__(self, cid, who='you', slot='center', x=None, h=None, fy=None, poses=((0, 'float'),), faces=((0, 'neutral'),),
-                 helmet=None, flush=None, facing=None, idle='float', enter=None, react=(), layer=None, accessories=(), top=False):
+                 helmet=None, flush=None, facing=None, idle='float', enter=None, react=(), layer=None, accessories=(), top=False, coat=None):
         self.cid, self.who, self.slot, self.x, self.h, self.fy = cid, who, slot, x, h, fy
         self.poses, self.faces, self.helmet, self.flush, self.facing = list(poses), list(faces), helmet, flush, facing
         self.idle, self.enter, self.react, self.extra, self.accessories, self.top = idle, enter, list(react), dict(layer or {}), list(accessories), top
+        self.coat = coat  # coat colour for the 'coat' accessory (a light coat keeps a stick figure visible on the night page)
 
     def resolve(self, F):
         self.fx = self.x if self.x is not None else F['slots'][self.slot]
@@ -79,7 +80,7 @@ class Char:
 
     def layer(self, F):
         W, H = F['W'], F['H']
-        kw = dict(outfit='stick' if self.who == 'stick' else 'astronaut', seed=11 if self.who == 'arka' else 4, facing=self.facing, flush=self.flush)
+        kw = dict(outfit='stick' if self.who == 'stick' else 'astronaut', seed=11 if self.who == 'arka' else 4, facing=self.facing, flush=self.flush, coat=self.coat)
         if self.who == 'arka': kw.update(suit=GOLD, visor=GOLD_VISOR)
         if self.who == 'you': kw['helmet'] = self.helmet if self.helmet is not None else [(0, False)]
         elif self.helmet is not None: kw['helmet'] = self.helmet
@@ -327,7 +328,8 @@ def jet(F, item, x, base_y, size, level, pid=None, color=None, spread=.55):
 
 # --------------------------------------------------------------------------------------------- recipes
 def explain(chars=(), props=(), notes=(), camera_preset='settle', focus=None, sounds=(), stamps=()):
-    """The workhorse: characters + props + auto-placed notes. stamps: [(note index, anchor)] MYTH stamps."""
+    """The workhorse: characters + props + auto-placed notes. stamps: [(note index, anchor)] MYTH stamps, or
+    [(note index, anchor, label)] for another verdict (e.g. 'half true', 'true'); the stamp widens with its label."""
     return dict(chars=list(chars), props=list(props), notes=list(notes), camera=camera_preset, focus=focus, sounds=list(sounds), stamps=list(stamps))
 
 
@@ -421,8 +423,9 @@ class Episode:
         """Greedy placement: each note takes the free spot nearest its target (or reading order), never overlapping."""
         F = self.F; W, H = F['W'], F['H']; nx0, ny0, nx1, ny1 = F['notes']
         k = F['scale']; placed = []; taken = list(obstacles) + [Box(*r, 'reserved') for r in F['reserved']]
-        stamp_of = {ni: at for ni, at in stamps}; self._stamps = []; last_y = None
+        stamp_of = {st[0]: (st[1], st[2] if len(st) > 2 else 'myth') for st in stamps}; self._stamps = []; last_y = None
         ss = (.15 if F['W'] > F['H'] else .13) * min(W, H)  # stamp size in px
+        half = lambda label: ss * (.093 * len(label) + .21)  # half the stamp's width (Paint.tsx: label length x font + border)
         for i, n in enumerate(notes):
             size = round(n.size * k); width = text_width(n.text, size); asc, desc = size * .85, size * .3
             target = next((o.centre() for o in obstacles if o.owner == (n.near or n.arrow)), None)
@@ -439,15 +442,15 @@ class Episode:
                 else: cost = abs(y - F['prefer'][1] * H) * .6 + abs(x - F['prefer'][0] * W) * .5  # right-side reading column by default
                 if last_y is not None and y < last_y and not n.pos: continue  # reading order (pinned notes keep their place)
                 if i in stamp_of:  # the claim's stamp must fit too
-                    sx, sy = min(b.x1, W * .97) - 40, b.y1 + 18
-                    if any(Box(sx - ss * .58, sy - ss * .32, sx + ss * .58, sy + ss * .32).hits(o) for o in taken): continue
+                    hw = half(stamp_of[i][1]); sx, sy = min(b.x1, W * .97 - hw + 40) - 40, b.y1 + 18
+                    if any(Box(sx - hw, sy - ss * .32, sx + hw, sy + ss * .32).hits(o) for o in taken): continue
                 if best is None or cost < best[0]: best = (cost, x, y, b)
             if best is None: raise ValueError(f'{beat_id}: no free space for note "{n.text}"')
             _, x, y, b = best; taken.append(b); placed.append((n, x, y, b))
             if not (n.near or n.arrow): last_y = y
             if i in stamp_of:
-                sx, sy = min(b.x1, W * .97) - 40, b.y1 + 18
-                taken.append(Box(sx - ss * .58, sy - ss * .32, sx + ss * .58, sy + ss * .32, 'stamp')); self._stamps.append((sx, sy, ss / min(W, H), stamp_of[i]))
+                at, label = stamp_of[i]; hw = half(label); sx, sy = min(b.x1, W * .97 - hw + 40) - 40, b.y1 + 18
+                taken.append(Box(sx - hw, sy - ss * .32, sx + hw, sy + ss * .32, 'stamp')); self._stamps.append((sx, sy, ss / min(W, H), at, label))
         return placed
 
     def build(self):
@@ -490,8 +493,8 @@ class Episode:
                     a['opacity'] = track((0, 0), (plus(n.at, -1), 0), (plus(n.at, 5), 1), (plus(n.until, -1), 1), (n.until, 0))
                 annotations.append(a)
                 if n.kind not in ('label', 'header', 'skylabel') and not quiet: sounds.append(('pop', n.at, self.pop_db))  # name labels appear silently (they often land on dialogue)
-            for k_, (sx, sy, s, at) in enumerate(self._stamps):
-                layers.append(prop(f'stamp{k_}', 'stamp', sx / W, sy / H, s, text='myth', **pop_in(at, (sx, sy))))
+            for k_, (sx, sy, s, at, label) in enumerate(self._stamps):
+                layers.append(prop(f'stamp{k_}', 'stamp', sx / W, sy / H, s, text=label, **pop_in(at, (sx, sy))))
                 sounds.append(('boom', at, -27))
             sounds += plan['sounds']
             fc = next((c for c in chars if c.cid == plan.get('focus')), chars[0] if chars else None)

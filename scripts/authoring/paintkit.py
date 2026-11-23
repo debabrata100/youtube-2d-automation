@@ -46,10 +46,10 @@ def pop_in(at, anchor=None):
     return d
 
 
-def figure(fid, fx, fy, h, poses, faces, accessories=(), outfit='stick', shiver=0, seed=3, facing=None, suit=None, visor=None, helmet=None, flush=None, **layer):
+def figure(fid, fx, fy, h, poses, faces, accessories=(), outfit='stick', shiver=0, seed=3, facing=None, suit=None, visor=None, helmet=None, flush=None, coat=None, **layer):
     kit = {'type': 'figure', 'x': fx, 'y': fy, 'height': h, 'outfit': outfit, 'shiver': shiver, 'seed': seed,
            'poses': [{'frame': f, 'pose': p} for f, p in poses], 'faces': [{'frame': f, 'face': c} for f, c in faces]}
-    for k, v in (('facing', facing), ('suit', suit), ('visor', visor)):
+    for k, v in (('facing', facing), ('suit', suit), ('visor', visor), ('coat', coat)):
         if v: kit[k] = v
     if helmet: kit['helmet'] = [{'frame': f, 'on': on} for f, on in helmet]
     if flush: kit['flush'] = [{'frame': f, 'value': v} for f, v in flush]

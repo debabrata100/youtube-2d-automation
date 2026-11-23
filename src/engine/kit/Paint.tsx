@@ -65,7 +65,7 @@ export const Terrain: React.FC<{config: TerrainConfig; theme: Theme; width: numb
 };
 
 export type PropConfig = {ink?: string; item: 'thermometer' | 'pressure-arrows' | 'motion-lines' | 'exclaim' | 'question' | 'check' | 'cross' | 'counter' | 'stamp' | 'vignette' | 'station' | 'helmet' | 'doodle-stars' | 'chamber'
-  | 'cliff' | 'geyser' | 'plume' | 'radiation-meter' | 'radiation-belt' | 'battery' | 'airbag' | 'small-moon' | 'ice-cutaway' | 'frost'
+  | 'cliff' | 'geyser' | 'plume' | 'radiation-meter' | 'radiation-belt' | 'battery' | 'airbag' | 'small-moon' | 'asteroid' | 'ice-cutaway' | 'frost'
   | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb' | 'crescent' | 'orbit-ring' | 'town' | 'lion' | 'zebra' | 'coral' | 'plankton' | 'tide-gauge' | 'tilt-dial' | 'earth-axis' | 'impact' | 'dino' | 'reflector' | 'bed' | 'stir' | 'clock' | 'eclipse' | 'moonbeam' | 'young-earth' | 'bee' | 'flower' | 'tree' | 'tardigrade' | 'vent' | 'shell' | 'snowfall' | 'night-half' | 'mushroom' | 'sparkle' | 'clock-time' | 'rope' | 'pulse' | 'span' | 'sky' | 'streetlight' | 'arrow' | 'ice-layer' | 'city-lights' | 'tide-bulge' | 'caption'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
   values?: Array<{frame: number; value: number; ramp?: boolean}>; text?: string; direction?: 'in' | 'out';
   labels?: string[]; colors?: string[]; highlight?: number; ring?: boolean; belt?: boolean; range?: [number, number]};
@@ -274,6 +274,31 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
       return <g transform={at}>
         <path d={d + ' Z'} fill={col} stroke={ink} strokeWidth={w}/>
         {Array.from({length: 4}, (_, i) => <ellipse key={i} cx={(random() - .5) * s * .7} cy={(random() - .5) * s * .4} rx={s * (.05 + random() * .05)} ry={s * .035} fill="#000000" opacity=".16"/>)}
+      </g>;
+    }
+    case 'asteroid': {
+      // A rubble-pile asteroid (Apophis, Bennu...): elongated two-lobed "peanut" outline with seeded lumps and boulders,
+      // shaded on one side, craters with lit rims. Width ~1.7x height at size s. Tumble it with the layer's rotate track.
+      const random = seededRandom(Math.round(c.x * 431 + c.y * 719 + s) || 7), n = 28, col = c.color ?? '#9a948a', id = `ast-${Math.round(c.x * 1e4)}-${Math.round(c.y * 1e4)}-${Math.round(s)}`;
+      const pts = Array.from({length: n}, (_, i) => {
+        const a = i / n * Math.PI * 2, ca = Math.cos(a), sa = Math.sin(a);
+        const waist = 1 - .2 * Math.pow(Math.abs(sa), 1.5) * Math.pow(Math.max(0, 1 - Math.abs(ca) * 1.6), 2);  // pinched middle (two lobes)
+        const lump = .9 + random() * .16 + (random() < .2 ? .07 : 0);                                              // rough edge + a few boulders
+        const rr = s * .5 * lump * waist;
+        return [ca * rr * 1.7, sa * rr];
+      });
+      const d = pts.map(([x, y], i) => { const [nx, ny] = pts[(i + 1) % n]; return `${i ? '' : `M ${(x + pts[n - 1][0]) / 2} ${(y + pts[n - 1][1]) / 2} `}Q ${x} ${y} ${(x + nx) / 2} ${(y + ny) / 2}`; }).join(' ') + ' Z';
+      const craters = Array.from({length: 7}, () => ({cx: (random() - .5) * s * 1.2, cy: (random() - .5) * s * .55, r: s * (.035 + random() * .06)}));
+      return <g transform={at}>
+        <defs><clipPath id={id}><path d={d}/></clipPath></defs>
+        <path d={d} fill={col}/>
+        <g clipPath={`url(#${id})`}>
+          <ellipse cx={s * .35} cy={s * .3} rx={s * 1.05} ry={s * .55} fill="#000000" opacity=".22"/>
+          {craters.map((k, i) => <g key={i}><ellipse cx={k.cx} cy={k.cy} rx={k.r} ry={k.r * .7} fill="#000000" opacity=".2"/>
+            <path d={`M ${k.cx - k.r} ${k.cy} A ${k.r} ${k.r * .7} 0 0 0 ${k.cx + k.r} ${k.cy}`} fill="none" stroke="#ffffff" strokeWidth={w * .45} opacity=".35"/></g>)}
+          {Array.from({length: 9}, (_, i) => <circle key={`b${i}`} cx={(random() - .5) * s * 1.5} cy={(random() - .5) * s * .7} r={s * (.012 + random() * .018)} fill="#5f5a52" opacity=".55"/>)}
+        </g>
+        <path d={d} fill="none" stroke={ink} strokeWidth={w}/>
       </g>;
     }
     case 'ice-cutaway': {
