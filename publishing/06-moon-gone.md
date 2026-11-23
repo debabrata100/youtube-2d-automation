@@ -47,7 +47,7 @@ More from Gahanarka:
 
 Images: NASA (Apollo 11, AS11-40-5952); NASA/Aubrey Gemignani (2017 total solar eclipse, Madras, Oregon); NASA ISS crew photo (Great Barrier Reef, ISS045-E-56257). NASA images are public domain. All drawings are made for this video.
 Music from the YouTube Audio Library: Event Horizon, Frame-Dragging, Laniakea and Singularity (The Grey Room / Density & Time), Defying Gravity (Density & Time), Quirk n Twerk (The Soundlings), Lake Jupiter (John Patitucci), Standoff.
-Narration voiced with AI (ElevenLabs).
+How this video was made: research and script by Debabrata, with AI assistance; every fact checked against the sources above. Animation made with our own drawing and animation code. Narration voiced with AI (ElevenLabs).
 
 #Moon #Space #WhatIf
 ```

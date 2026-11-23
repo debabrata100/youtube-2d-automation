@@ -58,7 +58,7 @@ More from Gahanarka:
 
 Images: NASA/Aubrey Gemignani (2017 total solar eclipse). NASA images are public domain. All drawings and animation are original.
 Music from the YouTube Audio Library: Spaghettification, Frame-Dragging, False Vacuum Decay, Event Horizon and Laniakea (The Grey Room / Density & Time), Science Montage (Jeremy Blake), Surface of the Moon and Lake Jupiter (John Patitucci), Quirk n Twerk (The Soundlings), Taking Flight (Blue Deer Studio).
-Narration voiced with AI (ElevenLabs).
+How this video was made: research and script by Debabrata, with AI assistance; every fact checked against the sources above. Animation made with our own drawing and animation code. Narration voiced with AI (ElevenLabs).
 
 #Sun #Space #WhatIf
 ```

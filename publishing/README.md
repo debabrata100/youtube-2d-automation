@@ -90,3 +90,14 @@ All six are uploaded and scheduled (private until their time):
   - Section: Single playlist "Could You Survive…?". It is currently at the bottom; the drag to reorder didn't work from automation, so move it up by hand in Studio.
 - **Watermark:** the channel logo was already set for the entire video. An Arka alternative is in `docs/brand/arka-watermark.png` (script: `scripts/brand/arka-watermark.tsx`) if we want it later.
 - **In the videos:** each long episode ends with Arka's in-character subscribe line and names the next episode.
+
+## Description footer and channel wording (changed 23 Nov 2026)
+Every description ends with this line (also set in Studio → Settings → Upload defaults, so new uploads get it automatically):
+
+> How this video was made: research and script by Debabrata, with AI assistance; every fact checked against the sources above. Animation made with our own drawing and animation code. Narration voiced with AI (ElevenLabs).
+
+Never write "drawn by hand" or "hand-drawn stories": say "in a hand-drawn style". The channel description (About) was rewritten the
+same day with a "How we make it" paragraph and the new cadence ("a new, carefully researched episode every week or two").
+Updated in Studio on 23 Nov: the channel description, the upload defaults and all 18 published, scheduled and unlisted videos
+(the private first version of Ep 3, MnfXbn6mD8I, left as it was). The channel trailer's links now point to the reworked Ep 3 and
+Ep 4's current title.

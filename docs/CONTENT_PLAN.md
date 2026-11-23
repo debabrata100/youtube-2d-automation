@@ -8,7 +8,7 @@ Started 19 Nov 2026. These are ideas to revisit, not commitments. Before any top
 
 **The viewer:** a curious 16–35-year-old who watches Kurzgesagt, Astrum or Vsauce and wants to *feel* a space idea, with real numbers behind it. A grown-up audience: never children's content.
 
-**The promise:** "What would really happen if…? Space thought experiments, drawn by hand and checked against real science."
+**The promise:** "What would really happen if…? Space thought experiments in a hand-drawn style, made with our own animation tools and checked against real science." (Wording changed 23 Nov 2026: our visuals come from our own code, so we never say "drawn by hand".)
 
 **Rules that follow from it**
 1. **Every long episode is a space thought experiment.** The title doesn't have to start with "What if": a "Could…", "When…" or "Why…" question works when the episode turns it into an experiment (for example, rewinding the Moon).

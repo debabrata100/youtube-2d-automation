@@ -50,9 +50,8 @@ More from Gahanarka:
 ▶ If the Sun Disappeared, Even the Air Would Fall: https://youtu.be/Rtcxj2-wTuo
 ▶ What Actually Happens If the Moon Disappears? https://youtu.be/ZbEeo3Xx0Iw
 
-All drawings and animation are original.
 Music from the YouTube Audio Library: False Vacuum Decay, Frame-Dragging, Event Horizon, Laniakea and Singularity (The Grey Room / Density & Time), Science Montage (Jeremy Blake), Surface of the Moon (John Patitucci), Sweet Math (Mini Vandals), Taking Flight (Blue Deer Studio).
-Narration voiced with AI (ElevenLabs).
+How this video was made: research and script by Debabrata, with AI assistance; every fact checked against the sources above. Animation made with our own drawing and animation code. Narration voiced with AI (ElevenLabs).
 
 #Apophis #Asteroid #Space
 ```
