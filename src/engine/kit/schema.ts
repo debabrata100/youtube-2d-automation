@@ -82,7 +82,7 @@ export const kitSchema = z.discriminatedUnion('type', [
     type: z.literal('prop'), item: z.enum(['thermometer', 'pressure-arrows', 'motion-lines', 'exclaim', 'question', 'check', 'cross', 'counter', 'stamp', 'vignette', 'station', 'helmet', 'doodle-stars', 'chamber',
       'cliff', 'geyser', 'plume', 'radiation-meter', 'radiation-belt', 'battery', 'airbag', 'small-moon', 'asteroid', 'ice-cutaway', 'frost',
       'flag', 'speedometer', 'race-car', 'sunglasses', 'mug', 'calendar', 'sign', 'igloo', 'rocket', 'fish', 'drop', 'tumbleweed', 'thermos', 'shovel', 'magnifier', 'smell-lines', 'bar', 'ruler', 'moon-map', 'system-map', 'solar-strip', 'probe', 'signal', 'bulb', 'crescent', 'orbit-ring', 'town', 'lion', 'zebra', 'coral', 'plankton', 'tide-gauge', 'tilt-dial', 'earth-axis', 'impact', 'dino', 'reflector', 'bed', 'stir', 'clock', 'eclipse', 'moonbeam', 'young-earth', 'bee', 'flower', 'tree', 'tardigrade', 'vent', 'shell', 'snowfall', 'night-half', 'mushroom', 'sparkle', 'clock-time', 'rope', 'pulse', 'span', 'sky', 'streetlight', 'arrow', 'ice-layer', 'city-lights', 'tide-bulge', 'caption',
-      'globe', 'map', 'skyline', 'wave', 'shockwave', 'debris', 'flash', 'dust-cloud', 'headline', 'rewind', 'scribble', 'streak', 'pen', 'satellite', 'observatory', 'photo-plate', 'corkboard', 'dish', 'moon-row', 'xmas-tree']),
+      'globe', 'map', 'skyline', 'wave', 'shockwave', 'debris', 'flash', 'dust-cloud', 'headline', 'rewind', 'scribble', 'streak', 'pen', 'satellite', 'observatory', 'photo-plate', 'corkboard', 'dish', 'moon-row', 'xmas-tree', 'geocorona', 'orion', 'magnetotail', 'rust-spots', 'free-return', 'bigword']),
     x: n, y: n, size: size(.01, 1), rotation: z.number().min(-360).max(360).default(0), color: hex.optional(), ink: hex.optional(), count: z.number().int().min(1).max(40).default(6),
     level: z.array(z.object({frame: keyFrame, value: z.number().min(0).max(1)}).strict()).min(1).max(12).refine(increasing, 'Level frames must strictly increase').default([{frame: 0, value: .6}]),
     /** Counter numbers: each key holds until the next, or counts down/up to it in whole steps when ramp is set. */
@@ -101,7 +101,9 @@ export const kitSchema = z.discriminatedUnion('type', [
     bbox: z.tuple([z.number().min(-180).max(180), z.number().min(-90).max(90), z.number().min(-180).max(180), z.number().min(-90).max(90)]).optional(),
     mark: z.object({lon: z.number().min(-180).max(180), lat: z.number().min(-90).max(90), km: z.number().min(1).max(5000)}).strict().optional(),
     zoom: z.number().min(1).max(40).optional(),
-    /** A second animated level (globe cracks, map zone), 0-1. */
+    /** Drawing variant of a prop (satellite: comms | soho | chandrayaan-1). */
+    variant: z.enum(['comms', 'soho', 'chandrayaan-1']).optional(),
+    /** A second animated level (globe cracks, map zone, magnetotail solar wind), 0-1. */
     level2: z.array(z.object({frame: keyFrame, value: z.number().min(0).max(1)}).strict()).min(1).max(12).refine(increasing, 'Level frames must strictly increase').optional(),
   }).strict(),
   /** Hand-drawn ground: outlined horizon with bumps, optional planet curvature, speckles and horizon rocks. */

@@ -1,0 +1,153 @@
+{
+ "schemaVersion": "1.0",
+ "id": "earth-atmosphere-moon",
+ "title": "Why the Moon Is Inside Earth's Atmosphere",
+ "topic": "Earth's geocorona, a thin hydrogen cloud, reaches about 630,000 km (ESA/NASA SOHO, 2019), almost twice the Moon's distance, so the Moon moves inside it; Apollo 16 photographed it from the Moon in 1972; Artemis II (April 2026, 406,771 km) stayed inside it",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 54,
+ "storyboard": "storyboards/earth-atmosphere-moon.json",
+ "candidatesReport": "stories/earth-reach-shorts-script.md",
+ "beats": [
+  {
+   "id": "g1",
+   "sceneId": "gr-g1",
+   "intent": "hook",
+   "narration": "No human has ever left Earth's atmosphere. Not even the astronauts who flew around the Moon this year.",
+   "phrases": [
+    "No human has ever left",
+    "Earth's atmosphere.",
+    "Not even the astronauts",
+    "who flew around the Moon",
+    "this year."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "g2",
+   "sceneId": "gr-g2",
+   "intent": "hook",
+   "narration": "Wait. The Moon is in space!",
+   "phrases": [
+    "Wait.",
+    "The Moon is in space!"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "g3",
+   "sceneId": "gr-g3",
+   "intent": "explanation",
+   "narration": "We say space starts a hundred kilometers up. But Earth's air doesn't just stop. It fades into a thin cloud of hydrogen.",
+   "phrases": [
+    "We say space starts a",
+    "hundred kilometers up.",
+    "But Earth's air doesn't",
+    "just stop.",
+    "It fades into a thin cloud",
+    "of hydrogen."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "g4",
+   "sceneId": "gr-g4",
+   "intent": "payoff",
+   "narration": "Old data from the SOHO spacecraft showed that cloud reaches six hundred and thirty thousand kilometers. Almost twice as far as the Moon.",
+   "phrases": [
+    "Old data from the SOHO",
+    "spacecraft showed that",
+    "cloud reaches six hundred",
+    "and thirty thousand",
+    "kilometers.",
+    "Almost twice as far as the",
+    "Moon."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "g5",
+   "sceneId": "gr-g5",
+   "intent": "payoff",
+   "narration": "So the Moon flies through Earth's atmosphere. Apollo 16 astronauts photographed its glow from the Moon, never knowing they were inside it.",
+   "phrases": [
+    "So the Moon flies through",
+    "Earth's atmosphere.",
+    "Apollo 16 astronauts",
+    "photographed its glow from",
+    "the Moon, never knowing",
+    "they were inside it."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "g6",
+   "sceneId": "gr-g6",
+   "intent": "payoff",
+   "narration": "In April, Artemis 2 flew humans farther than ever. Over four hundred thousand kilometers. Still inside.",
+   "phrases": [
+    "In April, Artemis 2 flew",
+    "humans farther than ever.",
+    "Over four hundred thousand",
+    "kilometers.",
+    "Still inside."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "g8",
+   "sceneId": "gr-g8",
+   "intent": "closing",
+   "narration": "Out there it's so thin, we'd call it a vacuum. But where it touches the Moon, it's leaving a mark.",
+   "phrases": [
+    "Out there it's so thin,",
+    "we'd call it a vacuum.",
+    "But where it touches the",
+    "Moon, it's leaving a mark."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  }
+ ]
+}

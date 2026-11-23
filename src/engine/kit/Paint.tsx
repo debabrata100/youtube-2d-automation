@@ -67,10 +67,10 @@ export const Terrain: React.FC<{config: TerrainConfig; theme: Theme; width: numb
 
 export type PropConfig = {ink?: string; item: 'thermometer' | 'pressure-arrows' | 'motion-lines' | 'exclaim' | 'question' | 'check' | 'cross' | 'counter' | 'stamp' | 'vignette' | 'station' | 'helmet' | 'doodle-stars' | 'chamber'
   | 'cliff' | 'geyser' | 'plume' | 'radiation-meter' | 'radiation-belt' | 'battery' | 'airbag' | 'small-moon' | 'asteroid' | 'ice-cutaway' | 'frost'
-  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb' | 'crescent' | 'orbit-ring' | 'town' | 'lion' | 'zebra' | 'coral' | 'plankton' | 'tide-gauge' | 'tilt-dial' | 'earth-axis' | 'impact' | 'dino' | 'reflector' | 'bed' | 'stir' | 'clock' | 'eclipse' | 'moonbeam' | 'young-earth' | 'bee' | 'flower' | 'tree' | 'tardigrade' | 'vent' | 'shell' | 'snowfall' | 'night-half' | 'mushroom' | 'sparkle' | 'clock-time' | 'rope' | 'pulse' | 'span' | 'sky' | 'streetlight' | 'arrow' | 'ice-layer' | 'city-lights' | 'tide-bulge' | 'caption' | 'globe' | 'map' | 'skyline' | 'wave' | 'shockwave' | 'debris' | 'flash' | 'dust-cloud' | 'headline' | 'rewind' | 'scribble' | 'streak' | 'pen' | 'satellite' | 'observatory' | 'photo-plate' | 'corkboard' | 'dish' | 'moon-row' | 'xmas-tree'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
+  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb' | 'crescent' | 'orbit-ring' | 'town' | 'lion' | 'zebra' | 'coral' | 'plankton' | 'tide-gauge' | 'tilt-dial' | 'earth-axis' | 'impact' | 'dino' | 'reflector' | 'bed' | 'stir' | 'clock' | 'eclipse' | 'moonbeam' | 'young-earth' | 'bee' | 'flower' | 'tree' | 'tardigrade' | 'vent' | 'shell' | 'snowfall' | 'night-half' | 'mushroom' | 'sparkle' | 'clock-time' | 'rope' | 'pulse' | 'span' | 'sky' | 'streetlight' | 'arrow' | 'ice-layer' | 'city-lights' | 'tide-bulge' | 'caption' | 'globe' | 'map' | 'skyline' | 'wave' | 'shockwave' | 'debris' | 'flash' | 'dust-cloud' | 'headline' | 'rewind' | 'scribble' | 'streak' | 'pen' | 'satellite' | 'observatory' | 'photo-plate' | 'corkboard' | 'dish' | 'moon-row' | 'xmas-tree' | 'geocorona' | 'orion' | 'magnetotail' | 'rust-spots' | 'free-return' | 'bigword'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
   values?: Array<{frame: number; value: number; ramp?: boolean}>; text?: string; direction?: 'in' | 'out';
   labels?: string[]; colors?: string[]; highlight?: number; ring?: boolean; belt?: boolean; range?: [number, number];
-  center?: [number, number]; spin?: number; bbox?: [number, number, number, number]; mark?: {lon: number; lat: number; km: number}; zoom?: number; level2?: Array<{frame: number; value: number}>};
+  center?: [number, number]; spin?: number; bbox?: [number, number, number, number]; mark?: {lon: number; lat: number; km: number}; zoom?: number; level2?: Array<{frame: number; value: number}>; variant?: 'comms' | 'soho' | 'chandrayaan-1'};
 
 /** Counter value: keys hold, or step in whole numbers towards the next key when `ramp` is set (a real-time countdown). */
 export const counterAt = (keys: NonNullable<PropConfig['values']>, frame: number) => {
@@ -1166,7 +1166,26 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
     }
     case 'satellite': {
       // A TV/communications satellite: gold-foil box, two long solar wings and a dish antenna. Slowly rocks.
+      // variant 'soho': ESA/NASA SOHO, a tall white-and-gold body with two wide wings; 'chandrayaan-1': ISRO's orbiter,
+      // a gold cube with one solar panel on a single arm and a small dish.
       const sway = Math.sin(frame / 40) * 3;
+      if (c.variant === 'soho') return <g transform={`${at} rotate(${sway})`}>
+        {[-1, 1].map(k => <g key={k}><rect x={k > 0 ? s * .16 : -s * .56} y={-s * .07} width={s * .4} height={s * .14} fill="#2f4f8f" stroke={ink} strokeWidth={w * .5}/>
+          {[1, 2, 3].map(j => <path key={j} d={`M ${(k > 0 ? s * .16 : -s * .56) + j * s * .1} ${-s * .07} l 0 ${s * .14}`} stroke="#9fc0ff" strokeWidth={w * .3}/>)}</g>)}
+        <rect x={-s * .16} y={-s * .26} width={s * .32} height={s * .24} fill="#f1f1ec" stroke={ink} strokeWidth={w * .6}/>
+        <rect x={-s * .16} y={-s * .02} width={s * .32} height={s * .2} fill="#d9a628" stroke={ink} strokeWidth={w * .6}/>
+        <circle cx={-s * .06} cy={-s * .26} r={s * .035} fill="#2a3550"/>
+      </g>;
+      if (c.variant === 'chandrayaan-1') return <g transform={`${at} rotate(${sway})`}>
+        <path d={`M ${s * .13} 0 L ${s * .26} 0`} {...stroke(ink, w * .6)}/>
+        <rect x={s * .26} y={-s * .12} width={s * .3} height={s * .24} fill="#2f4f8f" stroke={ink} strokeWidth={w * .5}/>
+        {[1, 2].map(j => <path key={j} d={`M ${s * .26 + j * s * .1} ${-s * .12} l 0 ${s * .24}`} stroke="#9fc0ff" strokeWidth={w * .3}/>)}
+        <rect x={-s * .13} y={-s * .13} width={s * .26} height={s * .26} rx={s * .015} fill="#d9a628" stroke={ink} strokeWidth={w * .6}/>
+        <path d={`M ${-s * .13} ${s * .02} L ${s * .13} ${s * .02}`} stroke="#a67c14" strokeWidth={w * .4}/>
+        <path d={`M ${-s * .13} ${-s * .05} L ${-s * .22} ${-s * .14}`} {...stroke(ink, w * .5)}/>
+        <path d={`M ${-s * .3} ${-s * .08} Q ${-s * .26} ${-s * .24} ${-s * .14} ${-s * .22} Z`} fill="#f2f2ee" stroke={ink} strokeWidth={w * .5}/>
+        <rect x={-s * .05} y={s * .13} width={s * .1} height={s * .06} fill="#555" stroke={ink} strokeWidth={w * .3}/>
+      </g>;
       return <g transform={`${at} rotate(${sway})`}>
         {[-1, 1].map(k => <g key={k}>
           <path d={`M ${k * s * .12} 0 L ${k * s * .2} 0`} {...stroke(ink, w * .7)}/>
@@ -1246,6 +1265,78 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
         {Array.from({length: 14}, (_, i) => { const y = -s * .3 + random() * s * .6, hw = (y + s * .46) / (s * .78) * s * .36, x = (random() - .5) * 2 * hw * .8;
           return <circle key={i} cx={x} cy={y} r={s * .018} fill={['#ffd25e', '#ff7a6a', '#a9d8ff'][i % 3]} opacity={.5 + .5 * Math.max(0, Math.sin(frame / 5 + i))}/>; })}
       </g>;
+    }
+    case 'geocorona': {
+      // Earth's geocorona: the outermost atmosphere, a thin hydrogen cloud. Drawn as a soft pale-blue glow speckled with
+      // sparse dots (atoms), densest near the centre (Earth) and fading to nothing at the edge. size = diameter at level 1;
+      // level grows it outward from the centre. Not visible to the eye: it is seen in ultraviolet light.
+      const lv = levelAt(c.level, frame); if (lv <= 0) return null;
+      const R = s * .5 * lv, col = c.color ?? '#9fc8ff', gid = `gc-${Math.round(c.x * 1e4)}-${Math.round(c.y * 1e4)}-${Math.round(s)}`, random = seededRandom(Math.round(s) || 5);
+      const dots = Array.from({length: 140}, () => { const t = Math.pow(random(), .7), a = random() * Math.PI * 2; return {x: Math.cos(a) * t, y: Math.sin(a) * t, r: .5 + random(), ph: random() * 6}; });
+      return <g transform={at}>
+        <defs><radialGradient id={gid}><stop offset="0" stopColor={col} stopOpacity=".42"/><stop offset=".35" stopColor={col} stopOpacity=".2"/><stop offset="1" stopColor={col} stopOpacity="0"/></radialGradient></defs>
+        <circle r={R} fill={`url(#${gid})`}/>
+        {dots.map((d, i) => <circle key={i} cx={d.x * R} cy={d.y * R} r={Math.max(1.5, s * .0035) * d.r} fill={col} opacity={(1 - Math.hypot(d.x, d.y)) * (.55 + .35 * Math.sin(frame / 12 + d.ph))}/>)}
+      </g>;
+    }
+    case 'orion': {
+      // NASA's Orion: a grey-white cone crew module on top of the European Service Module (a short cylinder) with four
+      // long solar-array wings in an X, and the main engine bell. size = wingspan. Points up (rotate to aim).
+      const sway = Math.sin(frame / 45) * 2, cm = s * .16, sm = s * .14;
+      return <g transform={`${at} rotate(${sway})`}>
+        {[45, 135, 225, 315].map(a => <g key={a} transform={`rotate(${a})`}>
+          <path d={`M ${sm * .5} 0 L ${s * .12} 0`} {...stroke(ink, w * .5)}/>
+          <rect x={s * .12} y={-s * .045} width={s * .36} height={s * .09} fill="#2c4f8c" stroke={ink} strokeWidth={w * .45}/>
+          {[1, 2, 3].map(j => <path key={j} d={`M ${s * .12 + j * s * .09} ${-s * .045} l 0 ${s * .09}`} stroke="#9fc0ff" strokeWidth={w * .25}/>)}
+        </g>)}
+        <rect x={-sm * .5} y={-sm * .35} width={sm} height={sm * .85} rx={sm * .06} fill="#e8e8e4" stroke={ink} strokeWidth={w * .55}/>
+        <path d={`M ${-sm * .5} ${-sm * .05} L ${sm * .5} ${-sm * .05}`} stroke="#b9b9b2" strokeWidth={w * .35}/>
+        <path d={`M ${-sm * .22} ${sm * .5} L ${-sm * .3} ${sm * .78} L ${sm * .3} ${sm * .78} L ${sm * .22} ${sm * .5} Z`} fill="#6f6f6f" stroke={ink} strokeWidth={w * .4}/>
+        <path d={`M ${-cm * .55} ${-sm * .35} L ${-cm * .2} ${-sm * .35 - cm * .9} L ${cm * .2} ${-sm * .35 - cm * .9} L ${cm * .55} ${-sm * .35} Z`} fill="#f4f4f0" stroke={ink} strokeWidth={w * .55} strokeLinejoin="round"/>
+        <rect x={-cm * .14} y={-sm * .35 - cm * .62} width={cm * .1} height={cm * .1} fill="#2a3550"/><rect x={cm * .05} y={-sm * .35 - cm * .62} width={cm * .1} height={cm * .1} fill="#2a3550"/>
+      </g>;
+    }
+    case 'magnetotail': {
+      // Earth's magnetosphere seen from the side, Sun to the left: field lines squashed on the day side and stretched into
+      // a long tail to the right. Earth sits at (x, y) (draw a globe on top); size = tail length. level grows the tail;
+      // level2 brings in the solar wind (streaks from the left that bend around the field). count > 0 sends oxygen dots
+      // drifting along the tail.
+      const lv = levelAt(c.level, frame), wind = levelAt(c.level2 ?? [{frame: 0, value: 0}], frame), col = c.color ?? '#8fd0ff', L = s * Math.max(.05, lv), r0 = s * .05;
+      const lines = [1, 1.7, 2.5, 3.4].map((k, i) => {
+        const day = r0 * k * .8, h = r0 * k;
+        return `M ${0} ${-h * .55} C ${-day} ${-h * 1.1} ${-day * 1.2} ${h * 1.1} 0 ${h * .55} M ${0} ${-h * .55} C ${L * .15} ${-h * 1.6} ${L * (.55 + i * .1)} ${-h * 1.2} ${L} ${-h * .9} M ${0} ${h * .55} C ${L * .15} ${h * 1.6} ${L * (.55 + i * .1)} ${h * 1.2} ${L} ${h * .9}`;
+      });
+      const random = seededRandom(17);
+      const streaks = Array.from({length: 9}, (_, i) => ({y: (i - 4) * r0 * 1.25, ph: random()}));
+      const dots = Array.from({length: c.count && c.count > 6 ? c.count : 0}, (_, i) => ({ph: i / (c.count ?? 1), off: (random() - .5) * r0 * 1.6}));
+      return <g transform={at}>
+        <path d={`M ${r0 * 3.2} ${-r0 * 3.6} C ${L * .5} ${-r0 * 4.4} ${L * .8} ${-r0 * 3.4} ${L} ${-r0 * 3.1} L ${L} ${r0 * 3.1} C ${L * .8} ${r0 * 3.4} ${L * .5} ${r0 * 4.4} ${r0 * 3.2} ${r0 * 3.6} C ${-r0 * 3.2} ${r0 * 3.4} ${-r0 * 3.2} ${-r0 * 3.4} ${r0 * 3.2} ${-r0 * 3.6} Z`} fill={col} opacity=".1"/>
+        {lines.map((d, i) => <path key={i} d={d} {...stroke(col, w * .35)} opacity={.75 - i * .12} strokeDasharray={i % 2 ? `${w * 1.4} ${w}` : undefined}/>)}
+        {wind > 0 && streaks.map((k, i) => { const t = ((frame / 70 + k.ph) % 1), x = -s * .45 + t * s * .5, bend = Math.abs(k.y) < r0 * 3.4 && x > -r0 * 4 ? Math.sign(k.y || 1) * (x + r0 * 4) * .6 : 0;
+          return <path key={i} d={`M ${x - s * .08} ${k.y} Q ${x - s * .02} ${k.y} ${x} ${k.y + bend}`} {...stroke('#fff3c4', w * .45)} opacity={wind * (1 - t) * .9}/>; })}
+        {dots.map((d, i) => { const t = (frame / 160 + d.ph) % 1; return <circle key={i} cx={r0 * 2 + t * (L - r0 * 2)} cy={d.off * (1 + t)} r={w * .55} fill="#ff9e6a" opacity={(1 - t * .5) * Math.min(1, lv * 2)}/>; })}
+      </g>;
+    }
+    case 'rust-spots': {
+      // Red-brown hematite patches on a grey surface (the Moon). size = area diameter; level = how many have appeared.
+      const lv = levelAt(c.level, frame), random = seededRandom(Math.round(c.x * 331 + c.y * 557) || 9), n = c.count ?? 6;
+      const spots = Array.from({length: n * 3}, () => { const a = random() * Math.PI * 2, t = Math.sqrt(random()) * .5; return {x: Math.cos(a) * t * s, y: Math.sin(a) * t * s * .6, r: s * (.03 + random() * .05), k: random()}; });
+      return <g transform={at}>{spots.slice(0, Math.round(spots.length * lv)).map((p, i) =>
+        <ellipse key={i} cx={p.x} cy={p.y} rx={p.r} ry={p.r * (.6 + p.k * .3)} fill={i % 3 ? '#a9502c' : '#c2683a'} opacity={.65 + p.k * .3} transform={`rotate(${p.k * 90} ${p.x} ${p.y})`}/>)}</g>;
+    }
+    case 'free-return': {
+      // Artemis II's free-return path: from Earth at (x, y) out to the Moon at distance size along +x, around behind it
+      // and home again (a long figure eight). level draws the path.
+      const lv = levelAt(c.level, frame), D = s, m = D * .07;
+      const d = `M 0 0 C ${D * .35} ${-D * .12} ${D * .8} ${-D * .1} ${D + m} ${-m * .2} C ${D + m * 2.2} ${m * .6} ${D + m * .6} ${m * 1.9} ${D - m * .2} ${m * .8} C ${D * .75} ${-m * .3} ${D * .35} ${D * .11} 0 ${m * .1}`;
+      return <g transform={at}>
+        {lv > 0 && <path d={d} {...stroke(c.color ?? '#ffd25e', w * .55)} pathLength={1} strokeDasharray={`${lv} 1`}/>}
+      </g>;
+    }
+    case 'bigword': {
+      // A huge word for a key beat (their "LARGEST"): heavy letters with a dark outline. size = letter height; color fills.
+      return <g transform={at}><text textAnchor="middle" dominantBaseline="middle" fontFamily={font} fontWeight={700} fontSize={s} fill={c.color ?? '#ffd25e'}
+        stroke="#0b1430" strokeWidth={s * .09} paintOrder="stroke" letterSpacing={s * .02}>{c.text ?? ''}</text></g>;
     }
     case 'helmet': {
       const r = s * .5, visor = c.color ?? theme.palette.water.light;

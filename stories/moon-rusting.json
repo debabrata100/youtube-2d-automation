@@ -1,0 +1,153 @@
+{
+ "schemaVersion": "1.0",
+ "id": "moon-rusting",
+ "title": "Why the Moon Is Rusting",
+ "topic": "Hematite (rust) near the Moon's poles in Chandrayaan-1 M3 data (Li et al., Science Advances 2020); oxygen from Earth's upper atmosphere reaches the Moon along Earth's magnetotail around full Moon, when the tail also blocks over 99% of the solar wind; more hematite on the near side",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 42,
+ "storyboard": "storyboards/moon-rusting.json",
+ "candidatesReport": "stories/earth-reach-shorts-script.md",
+ "beats": [
+  {
+   "id": "r1",
+   "sceneId": "rr-r1",
+   "intent": "hook",
+   "narration": "The Moon is rusting. And it's Earth's fault.",
+   "phrases": [
+    "The Moon is rusting.",
+    "And it's Earth's fault."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "r2",
+   "sceneId": "rr-r2",
+   "intent": "hook",
+   "narration": "Rust? There's no air up there!",
+   "phrases": [
+    "Rust?",
+    "There's no air up there!"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "r3",
+   "sceneId": "rr-r3",
+   "intent": "explanation",
+   "narration": "Then scientists studied data from India's Chandrayaan-1, and found hematite near the Moon's poles. Rust.",
+   "phrases": [
+    "Then scientists studied",
+    "data from India's",
+    "Chandrayaan-1, and found",
+    "hematite near the Moon's",
+    "poles.",
+    "Rust."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "r4",
+   "sceneId": "rr-r4",
+   "intent": "payoff",
+   "narration": "Rust needs oxygen. So where does the Moon get it? From us.",
+   "phrases": [
+    "Rust needs oxygen.",
+    "So where does the Moon get",
+    "it?",
+    "From us."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "r5",
+   "sceneId": "rr-r5",
+   "intent": "payoff",
+   "narration": "Earth's magnetic field trails a long tail. Around every full Moon, the Moon passes through it, and oxygen from our air drifts along to the Moon.",
+   "phrases": [
+    "Earth's magnetic field",
+    "trails a long tail.",
+    "Around every full Moon,",
+    "the Moon passes through",
+    "it, and oxygen from our",
+    "air drifts along to the",
+    "Moon."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "r6",
+   "sceneId": "rr-r6",
+   "intent": "explanation",
+   "narration": "The tail also blocks the solar wind, which normally stops rust from forming.",
+   "phrases": [
+    "The tail also blocks the",
+    "solar wind, which normally",
+    "stops rust from forming."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "r7",
+   "sceneId": "rr-r7",
+   "intent": "payoff",
+   "narration": "The clue? There's more rust on the side that faces Earth.",
+   "phrases": [
+    "The clue?",
+    "There's more rust on the",
+    "side that faces Earth."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "r9",
+   "sceneId": "rr-r9",
+   "intent": "closing",
+   "narration": "A little of Earth's sky, turning to rust on the Moon.",
+   "phrases": [
+    "A little of Earth's sky,",
+    "turning to rust on the",
+    "Moon."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  }
+ ]
+}
