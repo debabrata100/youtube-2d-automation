@@ -28427,7 +28427,9 @@
         {
           "sound": "splash",
           "frame": {
-            "at": "high"
+            "at": "high",
+            "edge": "end",
+            "offset": 3
           },
           "gainDb": -10
         },
@@ -28839,16 +28841,18 @@
         {
           "sound": "whoosh",
           "frame": {
-            "at": "going"
+            "at": "it",
+            "edge": "end",
+            "offset": 1
           },
-          "gainDb": -16
+          "gainDb": -18
         },
         {
           "sound": "pop",
           "frame": {
             "at": "it",
             "edge": "end",
-            "offset": 2
+            "offset": 3
           },
           "gainDb": -18
         },
@@ -29289,14 +29293,7 @@
           "frame": {
             "at": "Dropped"
           },
-          "gainDb": -20
-        },
-        {
-          "sound": "pop",
-          "frame": {
-            "at": "cable"
-          },
-          "gainDb": -14
+          "gainDb": -22
         }
       ]
     },
@@ -29418,7 +29415,9 @@
         {
           "sound": "riser",
           "frame": {
-            "at": "highest"
+            "at": "rating",
+            "edge": "end",
+            "offset": 2
           },
           "gainDb": -18
         }
@@ -30579,7 +30578,9 @@
         {
           "sound": "ding",
           "frame": {
-            "at": "minutes"
+            "at": "minutes",
+            "edge": "end",
+            "offset": 3
           },
           "gainDb": -16
         }
@@ -30959,9 +30960,11 @@
         {
           "sound": "riser",
           "frame": {
-            "at": "Closest"
+            "at": "approach",
+            "edge": "end",
+            "offset": 2
           },
-          "gainDb": -14
+          "gainDb": -16
         },
         {
           "sound": "whoosh",
@@ -32594,9 +32597,11 @@
         {
           "sound": "ding",
           "frame": {
-            "at": "exactly"
+            "at": "exactly",
+            "edge": "end",
+            "offset": 6
           },
-          "gainDb": -14
+          "gainDb": -16
         }
       ]
     },
@@ -33213,9 +33218,12 @@
         {
           "sound": "ding",
           "frame": {
-            "at": "see"
+            "at": "it",
+            "n": 2,
+            "edge": "end",
+            "offset": 3
           },
-          "gainDb": -16
+          "gainDb": -18
         }
       ]
     },

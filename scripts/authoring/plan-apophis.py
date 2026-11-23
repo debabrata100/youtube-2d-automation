@@ -337,7 +337,7 @@ shot('a2', None, [], [
 ], [], cam=[kf(0, 1.0), kf(plus(A('wipes'), -1), 1.0), kf(plus(A('wipes'), 2), 1.1, (.36, .48)), kf(plus(A('wall'), -1), 1.12, (.36, .48)), kf(plus(A('wall'), 2), 1.0),
             kf(plus(A('mapped'), 0), 1.06, (.36, .5)), kf(plus(END2, 8), 1.0)],
      shake=[(HIT, 24, .012), (A('world'), 30, .01), (plus(END2, 46), 20, .014)],
-     sounds=[('boom', HIT, -10), ('crack', A('ends'), -10), ('rumble', A('world'), -12), ('splash', A('high'), -10), ('whoosh', A('mapped'), -16),
+     sounds=[('boom', HIT, -10), ('crack', A('ends'), -10), ('rumble', A('world'), -12), ('splash', plus(A('high', edge='end'), 3), -10), ('whoosh', A('mapped'), -16),
              ('slam', plus(END2, 10), -12), ('slam', plus(END2, 19), -12), ('slam', plus(END2, 28), -12), ('slam', plus(END2, 37), -12), ('boom', plus(END2, 46), -12)])
 
 # Arka hides behind the pile; then the whole trailer rewinds (the pause) into a row of four to inspect.
@@ -389,7 +389,7 @@ shot('a6', None, [arka(x=.26, h=.4, poses=[(0, 'point-right'), (plus(END6, 2), '
      [Note("we're going to ride it", 4, 'title', pos=(.5 * W, .2 * H), until=plus(END6, 20))] + sting_notes,
      cam=[kf(0, 1.0, (.5, .5)), kf(plus(END6, 2), 1.0, (.5, .5)), kf(LAND_ON, 1.1, (.6, .45)), kf(plus(LAND_ON, 30), 1.0, (.5, .5))],
      shake=[(LAND_ON, 10, .006)],
-     sounds=[('whoosh', A('going'), -16), ('pop', plus(END6, 2), -18), ('slam', LAND_ON, -16), ('whoosh', plus(LAND_ON, 8), -10)] + sting_sounds)
+     sounds=[('whoosh', plus(END6, 1), -18), ('pop', plus(END6, 3), -18), ('slam', LAND_ON, -16), ('whoosh', plus(LAND_ON, 8), -10)] + sting_sounds)
 
 # ------------------------------------------------------------------ chapter 1: standing on Apophis (T minus 24 hours)
 def surf(**layer):
@@ -433,7 +433,7 @@ shot('a11', T1, [arka(x=.3, h=.46, poses=[(0, 'stand'), (plus(DROP, -6), 'reach'
       kit(F, 'kick', 'debris', .34, .82, .3, count=6, color='#b8b2a6', level=lv((0, 0), (DROP, 0), (plus(DROP, 200), .6))),
       kit(F, 'cable', 'rope', .5, .7, .5, color='#e8d9b0', opacity=show_from(A('cable')))],
      [Note('slow motion', A('slow'), 'title', pos=(.7 * W, .3 * H)), Note('clipped to a cable', A('cable'), 'note')],
-     sounds=[('wind', DROP, -20), ('pop', A('cable'), -14)])
+     sounds=[('wind', DROP, -22)])
 
 # ------------------------------------------------------------------ the 2004 scare (people first): a change of place, the observatory
 shot('a12', T2, [], [kit(F, 'obs', 'observatory', .2, .58, .46, level=lv((0, 0), (A('people'), 0), (plus(A('people'), 30), 1))),
@@ -443,7 +443,7 @@ shot('a12', T2, [], [kit(F, 'obs', 'observatory', .2, .58, .46, level=lv((0, 0),
      [Note('1 in 37', A('thirty-seven'), 'title', pos=(.52 * W, .86 * H)), Note('highest danger rating ever', A('highest'), 'note', pos=(.78 * W, .2 * H)),
       src('ESA · Torino scale, Dec 2004', A('rating'))],
      cam=[kf(0, 1.06, (.2, .55)), kf(A('December'), 1.0), kf(A('highest'), 1.08, (.8, .55))],
-     sounds=[('tick', plus(A('reached'), 8), -16), ('tick', plus(A('reached'), 14), -16), ('heartbeat', A('thirty-seven'), -12), ('riser', A('highest'), -18)])
+     sounds=[('tick', plus(A('reached'), 8), -16), ('tick', plus(A('reached'), 14), -16), ('heartbeat', A('thirty-seven'), -12), ('riser', plus(A('rating', edge='end'), 2), -18)])
 shot('a12b', T2, [person('tucker', .12, h=.4, poses=[(0, 'point-right')], faces=[(0, 'happy'), (A('lost'), 'shocked')], enter=('pop', A('Roy'))),
                   person('tholen', .22, h=.38, poses=[(0, 'stand'), (A('lost'), 'shrug')], faces=[(0, 'happy'), (A('lost'), 'sad')], enter=('pop', A('David'))),
                   person('bernardi', .32, h=.4, poses=[(0, 'stand'), (A('lost'), 'think')], faces=[(0, 'neutral')], enter=('pop', A('Fabrizio'))),
@@ -537,7 +537,7 @@ shot('a22', T3, [], [kit(F, 'india', 'map', .38, .52, .82, bbox=IND, opacity=sho
                          x=tk(0, A('north'), (int(2.4 * FPS), (SX - NX) * W, 'linear')), y=tk(0, A('north'), (int(2.4 * FPS), (SY - NY) * H, 'linear'))),
                      kit(F, 'clock', 'clock', .8, .62, .2, text='7 min (sped up)', level=lv((0, 0), (A('north'), 0), (plus(A('north'), 2), 1), (plus(A('north'), int(2.4 * FPS)), 1), (plus(A('north'), int(2.4 * FPS) + 1), 0)), opacity=show_from(A('north')))],
      [Note('7+ km every second', A('seven'), 'title', pos=(.78 * W, .3 * H)), src('Pravec et al. 2014', A('pull'))],
-     sounds=[('whoosh', A('north'), -14), ('ding', A('minutes'), -16)])
+     sounds=[('whoosh', A('north'), -14), ('ding', plus(A('minutes', edge='end'), 3), -16)])
 MOVED = A('moved', edge='end')
 shot('a23', None, [arka(x=.36, h=.5, poses=[(0, 'stand'), (MOVED, 'panic')], faces=[(0, 'neutral'), (MOVED, 'scared')])],
      [surf(), globe('earth', .74, .3, .5, center=(30, 15), spin=.03), kit(F, 'pebbles', 'debris', .5, .86, .5, count=10, color='#8a8278', level=lv((0, 0), (MOVED, 0), (plus(MOVED, 40), 1)))],
@@ -559,7 +559,7 @@ shot('a26', T3, [arka(x=.22, h=.38, poses=[(0, 'stand'), (A('enormous'), 'cower'
                     scale=track((0, 1), (A('slowly'), 1), (plus(END26, 60), .12, 'smoothstep')), anchor={'x': .62 * W, 'y': .3 * H})],
      [Note('closest approach', A('approach'), 'title', pos=(.5 * W, .9 * H), until=A('slowly'))],
      cam=[kf(0, 1.0), kf(A('enormous'), 1.08, (.6, .3)), kf(A('slowly'), 1.0, (.5, .5), x=.05), kf(plus(END26, 20), 1.0, (.5, .5), x=-.05), kf(plus(END26, 60), 1.0)],
-     sounds=[('riser', A('Closest'), -14), ('whoosh', A('slowly'), -10), ('wind', END26, -18)])
+     sounds=[('riser', plus(A('approach', edge='end'), 2), -16), ('whoosh', A('slowly'), -10), ('wind', END26, -18)])
 
 # ------------------------------------------------------------------ chapter 3: what if we were heading for that?
 WORLD = [-180, -60, 180, 80]
@@ -705,7 +705,7 @@ shot('a40', T5, [], [kit(F, 'sea', 'wave', .22, .9, .2, level=lv((0, .45))), kit
 shot('a41', None, [arka(x=.3, poses=[(0, 'point-right')], faces=[(0, 'smug')])],
      [kit(F, f'tick{i}', 'check', .52, y, .08, **pop_in(a, (.52 * W, y * H))) for i, (y, a) in enumerate([(.32, A('bad')), (.46, A('regional')), (.6, A('happening'))])],
      [Note('bad', A('bad'), 'title', pos=(.68 * W, .32 * H)), Note('regional', A('regional'), 'title', pos=(.68 * W, .46 * H)), Note('not happening', A('happening'), 'title', pos=(.68 * W, .6 * H))])
-shot('a42', None, [], [kit(F, 'ok', 'check', .5, .45, .24, **pop_in(A('exactly'), (.5 * W, .45 * H)))], [], stamps=[], sounds=[('ding', A('exactly'), -14)])
+shot('a42', None, [], [kit(F, 'ok', 'check', .5, .45, .24, **pop_in(A('exactly'), (.5 * W, .45 * H)))], [], stamps=[], sounds=[('ding', plus(A('exactly', edge='end'), 6), -16)])
 
 # ------------------------------------------------------------------ chapter 4: who's flying with us
 shot('a43', T6, [arka(x=.2, h=.4, poses=[(0, 'point-right'), (A('racing'), 'cheer')], faces=[(0, 'happy')])],
@@ -743,7 +743,7 @@ shot('a46', None, [arka(x=.24, poses=[(0, 'cheer')], faces=[(0, 'grin')])],
 # ------------------------------------------------------------------ ending: from your balcony (a warm city at night)
 shot('a47', TE, [person('you', .14, h=.42, poses=[(0, 'stand'), (A('see', n=1), 'point-right')], faces=[(0, 'happy')])],
      [kit(F, 'city', 'skyline', .58, .95, .5, count=7, highlight=4, level=lv((0, 1)))] + star('star', .6, .25, opacity=show_from(A('see', n=1))),
-     [Note("you don't have to ride it", A('ride'), 'title', pos=(.6 * W, .14 * H))], cam='push', sounds=[('ding', A('see', n=1), -16)])
+     [Note("you don't have to ride it", A('ride'), 'title', pos=(.6 * W, .14 * H))], cam='push', sounds=[('ding', plus(A('it', n=2, edge='end'), 3), -18)])
 shot('a48', TE, [person('you', .1, h=.38, poses=[(0, 'point-right')], faces=[(0, 'happy')], layer={'opacity': show_until(A('Europe'))})],
      [kit(F, 'city', 'skyline', .34, .95, .42, count=7, highlight=4, level=lv((0, 1)), opacity=show_until(A('Europe'))), moon_disc('moon', .5, .25, .03, opacity=show_until(A('Europe'))),
       ] + star('star', .3, .3, x=track((0, 0), (A('crossing'), 0), (A('minute'), 260, 'linear')), opacity=show_until(A('Europe'))) + [
