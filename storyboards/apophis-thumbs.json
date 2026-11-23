@@ -1,0 +1,487 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "apophis-thumbs",
+  "title": "E7 thumbnails",
+  "themeId": "paint-night-gold",
+  "format": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "@sky.top",
+  "accent": "@text.accent",
+  "assets": [],
+  "backdrop": {
+    "group": "backdrop"
+  },
+  "groups": [
+    {
+      "id": "backdrop",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "page",
+          "kit": {
+            "type": "sky",
+            "horizon": 0.9,
+            "stars": 0,
+            "seed": 1
+          }
+        },
+        {
+          "id": "stars",
+          "kit": {
+            "type": "prop",
+            "item": "doodle-stars",
+            "x": 0.37,
+            "y": 0.61,
+            "size": 0.5,
+            "count": 26,
+            "ink": "#c9d3ea"
+          }
+        }
+      ]
+    },
+    {
+      "id": "g-ta",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "earth-myth",
+          "kit": {
+            "type": "planet",
+            "x": 0.24,
+            "y": 0.62,
+            "radius": 0.24,
+            "base": "#5aa9e6",
+            "bands": [
+              "#7cc576",
+              "#5aa9e6",
+              "#7cc576"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.2,
+            "seed": 3
+          }
+        },
+        {
+          "id": "boom",
+          "kit": {
+            "type": "prop",
+            "item": "impact",
+            "x": 0.28,
+            "y": 0.52,
+            "size": 0.5,
+            "count": 14,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "fire",
+          "kit": {
+            "type": "prop",
+            "item": "sparkle",
+            "x": 0.28,
+            "y": 0.52,
+            "size": 0.4,
+            "count": 10,
+            "color": "#ff9a4a",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.9
+              }
+            ]
+          }
+        },
+        {
+          "id": "rock-myth",
+          "kit": {
+            "type": "prop",
+            "item": "asteroid",
+            "x": 0.2,
+            "y": 0.32,
+            "size": 0.14,
+            "color": "#9a948a",
+            "rotation": -20
+          }
+        },
+        {
+          "id": "earth-real",
+          "kit": {
+            "type": "planet",
+            "x": 0.86,
+            "y": 0.56,
+            "radius": 0.17,
+            "base": "#5aa9e6",
+            "bands": [
+              "#7cc576",
+              "#5aa9e6",
+              "#7cc576"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.2,
+            "seed": 3
+          }
+        },
+        {
+          "id": "apo",
+          "kit": {
+            "type": "prop",
+            "item": "asteroid",
+            "x": 0.64,
+            "y": 0.78,
+            "size": 0.2,
+            "color": "#9a948a",
+            "rotation": -8
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.64,
+            "y": 0.69,
+            "height": 0.24,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "facing": "right",
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "cheer"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "grin"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          }
+        },
+        {
+          "id": "ml",
+          "kit": {
+            "type": "prop",
+            "item": "motion-lines",
+            "x": 0.78,
+            "y": 0.78,
+            "size": 0.14,
+            "rotation": 180,
+            "ink": "#c9d3ea"
+          }
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "id": "g-tb",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "earth",
+          "kit": {
+            "type": "planet",
+            "x": 0.3,
+            "y": 0.6,
+            "radius": 0.3,
+            "base": "#5aa9e6",
+            "bands": [
+              "#7cc576",
+              "#5aa9e6",
+              "#7cc576"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.2,
+            "seed": 3
+          }
+        },
+        {
+          "id": "geo",
+          "kit": {
+            "type": "prop",
+            "item": "orbit-ring",
+            "x": 0.3,
+            "y": 0.6,
+            "size": 0.9,
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "sat1",
+          "kit": {
+            "type": "prop",
+            "item": "station",
+            "x": 0.55,
+            "y": 0.24,
+            "size": 0.08,
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "sat2",
+          "kit": {
+            "type": "prop",
+            "item": "probe",
+            "x": 0.06,
+            "y": 0.3,
+            "size": 0.07,
+            "ink": "#c9d3ea"
+          }
+        },
+        {
+          "id": "apo",
+          "kit": {
+            "type": "prop",
+            "item": "asteroid",
+            "x": 0.72,
+            "y": 0.78,
+            "size": 0.24,
+            "color": "#9a948a",
+            "rotation": -6
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.72,
+            "y": 0.7,
+            "height": 0.24,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "facing": "left",
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "point-left"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "shocked"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          }
+        },
+        {
+          "id": "ml",
+          "kit": {
+            "type": "prop",
+            "item": "motion-lines",
+            "x": 0.88,
+            "y": 0.78,
+            "size": 0.18,
+            "ink": "#c9d3ea"
+          }
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "id": "g-tc",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "earth",
+          "kit": {
+            "type": "planet",
+            "x": 0.66,
+            "y": 0.34,
+            "radius": 0.36,
+            "base": "#5aa9e6",
+            "bands": [
+              "#7cc576",
+              "#5aa9e6",
+              "#7cc576"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.2,
+            "seed": 3
+          }
+        },
+        {
+          "id": "ground",
+          "kit": {
+            "type": "prop",
+            "item": "asteroid",
+            "x": 0.5,
+            "y": 1.27,
+            "size": 1.0,
+            "color": "#9a948a",
+            "rotation": 0
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.26,
+            "y": 0.87,
+            "height": 0.36,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "facing": "right",
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "cheer"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "grin"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          }
+        }
+      ],
+      "annotations": []
+    }
+  ],
+  "scenes": [
+    {
+      "id": "thumb-a",
+      "template": "hero-reveal",
+      "durationFrames": 30,
+      "animationDurationFrames": 30,
+      "caption": {
+        "text": " ",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 9200,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-ta",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      }
+    },
+    {
+      "id": "thumb-b",
+      "template": "hero-reveal",
+      "durationFrames": 30,
+      "animationDurationFrames": 30,
+      "caption": {
+        "text": " ",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 9201,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-tb",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      }
+    },
+    {
+      "id": "thumb-c",
+      "template": "hero-reveal",
+      "durationFrames": 30,
+      "animationDurationFrames": 30,
+      "caption": {
+        "text": " ",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 9202,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-tc",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      }
+    }
+  ]
+}

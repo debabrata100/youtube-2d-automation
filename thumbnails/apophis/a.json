@@ -1,0 +1,3 @@
+{"overlay": {"focusY": 0.5, "lines": [
+  {"text": "MYTH", "x": 70, "y": 36, "size": 150, "color": "#ffd25e", "border": 12},
+  {"text": "REALITY", "x": 700, "y": 36, "size": 150, "color": "#ffffff", "border": 12}]}}
