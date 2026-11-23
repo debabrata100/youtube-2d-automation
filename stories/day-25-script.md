@@ -1,6 +1,6 @@
 # E1 "When Will a Day Be 25 Hours Long?": script draft 1
 
-Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka: **Arka D2** (grown-up voice, from M1 on).
+Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka: **Arka E3** (warm, curious, grown-up; chosen 22 Nov 2026).
 
 **Title (Debabrata's idea, content plan E1):** **When Will a Day Be 25 Hours Long?** (32 characters). A "When…" shape after "Could…" (M1).
 
@@ -56,7 +56,7 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 |---|---|---|
 | d19 | Narrator | Since 1972, the world's official time has come from atomic clocks, which tick at exactly the same rate forever. Earth doesn't. Its day has been running a millisecond or two longer than the atomic one. |
 | d20 | Narrator | A millisecond a day doesn't sound like much. But after a year or two, it adds up to a whole second. So every time Earth falls almost a second behind, timekeepers add one extra second to the world's clocks. A leap second. |
-| d21 | Narrator | It happens at the end of a day, usually the 31st of December or the 30th of June. The clock reads 23:59:59... then 23:59:60... and only then midnight. |
+| d21 | Narrator | It happens at the end of a day, usually the 31st of December or the 30th of June. The clock ticks past fifty-nine seconds to a sixtieth second, twenty-three fifty-nine and sixty, and only then reaches midnight. |
 | d22 | Arka | So the planet runs late, and the entire world politely waits for it. |
 | d23 | Narrator | Twenty-seven times since 1972. The last one was on the 31st of December, 2016. |
 | d24 | Narrator | And computers hate it. A minute with sixty-one seconds has crashed servers and confused flight-booking systems. So in 2022, the world's timekeepers voted to stop adding leap seconds by 2035, and let the clocks drift away from the Sun, slowly, by up to about a minute a century. |
@@ -74,7 +74,7 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 | d31 | Narrator | On the 5th of July, 2024, Earth finished its turn one point six six milliseconds early. The shortest day since atomic clocks began measuring. And in the summer of 2025, several days came close to beating it. |
 | d32 | Arka | The planet had a coffee. |
 | d33 | Narrator | The main suspect is deep underground. Earth's liquid outer core swirls, and it trades spin with the solid planet around it. For about fifty years, the core has been slowing down, and the rest of Earth has been speeding up to make up for it. Why the core changed, nobody knows yet. |
-| d34 | Narrator | If this keeps up, the clocks will need something that has never been done: a negative leap second. One second removed. The clock would go from 23:59:58 straight to midnight. |
+| d34 | Narrator | If this keeps up, the clocks will need something that has never been done: a negative leap second. One second removed. The clock would jump from fifty-eight seconds to midnight, skipping a second entirely. |
 | d35 | Narrator | And that's a problem. As geophysicist Duncan Agnew points out, plenty of software can add a second, but "few if any allow for removing a second." Nobody has ever tried it on the real world's clocks. |
 | d36 | Arka | So we built a global system that can only ever run late. That feels very human. |
 | d37 | Narrator | In 2024, Agnew worked out when that missing second would be needed. His answer surprised everyone, because something was already slowing Earth back down. Us. |
@@ -114,7 +114,9 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 | d56 | Narrator | Actually, yes. And you won't need to wait two hundred million years. That's our next episode. |
 | d57 | Arka | Subscribe. It's a lot sooner than the 25th hour. |
 
-*(thought bubble during d49: a bright dot streaking past Earth inside the ring of satellites; end card 12 s)*
+*(thought bubble during d55: a bright dot streaking past Earth inside the ring of satellites; end card 12 s)*
+
+*(On screen, not spoken: the clock faces in d21 and d34 show 23:59:60 and 23:59:58 → 00:00:00; the narration spells the times out so the voice reads them naturally, 23 Nov.)*
 
 ## Fact check
 
@@ -170,6 +172,7 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 - [x] **Arka's humour in every chapter, all new:** d3, d11, d17, d22, d26, d32, d36, d43, d50.
 - [x] **Ending:** payoff (d53), warm personal line (d54), Arka's next question (d55), d55–d57 under about 10 s.
 - [x] **Length:** ≈ 10.4 min narrated, about 11 with cards.
+- [x] **Re-audit 23 Nov (people and impact):** named people carry each chapter (Agnew, Kiani Shahvandi, Czeisler, the Spirit/Opportunity team with two watches); the viewer's own body clock (24 h 11 min) and tonight's day (d54) make it personal; clock times in d21 and d34 now spelled out for narration.
 
 ## Grown-up audience check
 
@@ -194,6 +197,6 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 - **Reusable:** Earth, Moon, tidal bulge diagram (M1), clock-time prop, sky, town, Mars, Arka.
 - **Photo inserts (public domain, NASA/JPL):** Spirit/Opportunity mission control (2004) if a public-domain photo exists; a Mars rover image. Avoid any people photos without a clear licence.
 - **Length:** 57 lines, 1,511 narrated words ≈ 10.4 min at ~145 wpm; about 11 min with chapter cards and hold beats.
-- **Narration estimate:** about 8,450 characters (Arka ≈ 790); two paid requests (narrator, Arka D2). Exact count from the free `--dry-run` after approval.
+- **Narration estimate:** about 8,450 characters (Arka ≈ 790); two paid requests (narrator, Arka E3). Exact count from the free `--dry-run` after approval.
 - **Shorts from this narration (no extra paid audio):** (1) "The minute with 61 seconds" d19–d24; (2) "The planet had a coffee" d28–d36 (record short day, negative leap second); (3) "We're slowing the Earth" d38–d43.
 - **Thumbnails (A/B/C):** (a) a clock face with a squeezed-in "25", Arka holding her list, "THE 25TH HOUR"; (b) a digital clock reading 23:59:60, "THE MINUTE WITH 61 SECONDS"; (c) Earth with melting poles and a skater's arms out, "WE'RE SLOWING EARTH".

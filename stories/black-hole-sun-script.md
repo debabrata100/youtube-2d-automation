@@ -1,6 +1,6 @@
 # S2 "Would a Black-Hole Sun Suck Us In?": script draft 1
 
-Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka: D2 or E3 (Debabrata's choice; written for the warm, curious, grown-up Arka).
+Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka: **Arka E3** (chosen 22 Nov 2026).
 
 **Pays off E7's ending:** after watching Earth bend an asteroid's path, Arka asks what the strongest pull there is would do: "If the Sun became a black hole, would it pull us in?"
 
@@ -47,6 +47,7 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 | b13 | Narrator | Then, at eight minutes and twenty seconds, the light meter drops to zero. |
 | b14 | Arka | So we keep going around the Sun… without a Sun. |
 | b15 | Narrator | Exactly. Earth would freeze, just as it did in our last thought experiment, but slowly, safely, on schedule, circling something it can no longer see. |
+| b15b | Narrator | And the sky above it would look stranger than you think. |
 
 ### Chapter 2: Look around
 
@@ -71,17 +72,21 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 | b27 | Narrator | Partly. NASA puts it plainly: a black hole is not a cosmic vacuum cleaner. It only takes what comes very close. |
 | b28 | Narrator | How close? About seventeen hundred kilometres out, the difference between the pull on your head and your feet starts stretching you. Scientists really do call it spaghettification. |
 | b29 | Narrator | At about nine kilometres from the centre, there's no safe orbit left. And at about three, the event horizon: the point where not even light can climb back out. |
+| b29b | Narrator | That three-kilometre figure was first worked out in a hospital bed. At the end of 1915, a German astronomer named Karl Schwarzschild was serving in the army near the Russian front. Sick, within earshot of the guns, he solved Einstein's brand-new equations for a single round star, and posted the answer to Einstein. |
+| b29c | Narrator | Einstein wrote back that he hadn't expected anyone could find an exact solution so simply. Schwarzschild died a few months later, in May 1916. He never knew his maths described something real. |
+| b29d | Arka | He worked out a black hole from a hospital bed, near a war. And never got to see one. |
 | b30 | Arka | Three kilometres. So to get sucked in, Earth would have to come from a hundred and fifty million kilometres away to basically on top of it. |
 | b31 | Narrator | And Earth isn't going anywhere. It's moving sideways at about thirty kilometres a second. That's what an orbit is: falling, and missing, forever. |
+| b31b | Narrator | Still, that's maths on paper. Is there anywhere we can actually watch it happen? There is. |
 
 ### Chapter 4: Proof, from a real black hole
 
 | # | Speaker | Line |
 |---|---|---|
 | b32 | Narrator | This isn't only theory. Twenty-six thousand light-years away, at the centre of our galaxy, there's a real black hole, about four million times the mass of the Sun. |
-| b33 | Narrator | And stars orbit it. One of them, a star called S2, goes around it every sixteen years, swinging in to less than twenty billion kilometres. Astronomers have tracked it since 1992. |
+| b33 | Narrator | And stars orbit it. One of them, a star called S2, goes around it every sixteen years, swinging in to less than twenty billion kilometres. Two teams have tracked it since the early nineteen-nineties: one led by Reinhard Genzel in Germany, one by Andrea Ghez in California. Ghez's first proposal to watch these stars was turned down. |
 | b34 | Arka | So a star just… circles a black hole. Like we circle the Sun. |
-| b35 | Narrator | On a stretched, looping path, and fast. But yes. It orbits, misses, comes back, every sixteen years. And when it swung closest in 2018, it behaved exactly as Einstein's theory said it would. |
+| b35 | Narrator | On a stretched, looping path, and fast. But yes. It orbits, misses, comes back, every sixteen years. And when it swung closest in 2018, it behaved exactly as Einstein's theory said it would. In 2020, Genzel and Ghez shared the Nobel Prize for proving the black hole is there. A hundred and five years after a sick soldier worked out what it would be like. |
 | b36 | Narrator | If a star can orbit a black hole four million times heavier than the Sun, Earth can orbit one that weighs exactly the same. |
 
 ### Chapter 5: Will the Sun ever do it?
@@ -167,3 +172,17 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 ## Open decisions for Debabrata
 - Arka voice: E3 (E7 blind test, 22 Nov). Still open: ending's next question (Debabrata: decide later; candidates: rogue black hole through the Solar System, Earth squeezed into a black hole, M1 Moon).
 - Background: deep space for the black-hole chapters; dusk then night over a town for chapter 1 (avoid three navy uploads in a row).
+
+## Rework 23 Nov: people and impact (checklist re-audit)
+
+- **New people thread:** Karl Schwarzschild (b29b–b29d) works out the "three-kilometre" answer in 1915 near the Russian front and dies in May 1916; Genzel and Ghez (b33, b35) prove a real black hole exists and win the 2020 Nobel, "a hundred and five years after a sick soldier worked out what it would be like". That gives the episode a human arc from start to finish, not just facts.
+- **Bridges added:** b15b (Ch 1 → Ch 2) and b31b (Ch 3 → Ch 4); every chapter now ends with a bridge.
+- **Still open:** b44–b46 ending lines wait for the next episode's script (content-plan rule).
+
+| Claim | Line | Source |
+|---|---|---|
+| Schwarzschild found the first exact solution in 1915 while serving near the Russian front, ill (pemphigus); wrote to Einstein 22 Dec 1915; died 11 May 1916 | b29b–b29c | Physics Today (2018); arXiv 1503.02172 ("born in hospital… not far from the Russian front, enduring the distant gunfire"); Einstein Papers Project vol. 6 doc. 33 notes |
+| Einstein's reply: hadn't expected the exact solution could be formulated so simply | b29c | Einstein to Schwarzschild, 9 Jan 1916 (Eisenstaedt 1989, quoted by Kyoto Univ. history-of-science archive). Paraphrased, not quoted. |
+| "Never knew his maths described something real" | b29c | The term "black hole" dates from the 1960s; first black-hole evidence (Cygnus X-1) 1971–72, decades after 1916. |
+| Genzel (Germany, MPE/ESO) and Ghez (UCLA) teams tracking S2 since the early 1990s; Ghez's first proposal was turned down | b33 | ESO press release eso2017; NobelPrize.org Ghez profile ("initially turned down") |
+| 2020 Nobel Prize to Genzel and Ghez; S2 closest approach May 2018; 1915 → 2020 = 105 years | b35 | NobelPrize.org press release (6 Oct 2020); ESO |

@@ -1,6 +1,6 @@
 # M1 "Could the Moon Ever Come Back?": script draft 1
 
-Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka: **Arka D2** (new grown-up designed voice, chosen by Debabrata in a blind test on 21 Nov 2026; replaces Jessica from this episode on).
+Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka: **Arka E3** (warm, curious, grown-up; chosen by Debabrata in a blind test on 22 Nov 2026, replacing D2).
 
 **Title (chosen by Debabrata, 21 Nov 2026):** **Could the Moon Ever Come Back?** (30 characters). A "Could…" shape after two "If/What if" titles.
 **Thumbnail idea (Debabrata, 21 Nov):** the second title option becomes the thumbnail promise: a giant Moon over the young Earth, Arka tiny below it, text **"IT USED TO BE THIS CLOSE"**.
@@ -63,7 +63,7 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 
 | # | Speaker | Line |
 |---|---|---|
-| r23 | Narrator | Stop two: Babylon, the fifteenth of April, 136 BC. In the morning, the Sun goes completely dark. Astronomers press the details into a clay tablet. |
+| r23 | Narrator | Stop two: Babylon, the fifteenth of April, 136 BC. In the morning, the Sun goes completely dark. Venus and Mercury come out, then the stars. The city's astronomers press it all into a clay tablet. |
 | r24 | Narrator | Today we can run the solar system backwards like a film. And that eclipse should never have been total in Babylon. The shadow should have crossed the Mediterranean, far to the west. |
 | r25 | Narrator | Unless Earth spun a little faster back then. A sliver of a second each day, added up over two thousand years, slides the shadow all the way to Babylon. |
 | r26 | Narrator | The astronomer Richard Stephenson spent about forty years gathering records like this, from Babylon, China, the Arab world and medieval Europe. He even learned Chinese characters to read them. |
@@ -165,7 +165,7 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 | Tidal mechanism: bulge dragged ahead → Moon pushed out, Earth's spin braked | r14–r16 | Scientific American (Plait); Ohio State Astronomy 161 lecture notes; arXiv 1405.1025. |
 | Rewinding today's rate puts the Moon touching Earth ~1.5 billion years ago; Moon is ~4.5 billion years old | r18–r19 | Lantink & Davies (The Conversation, republished by Astronomy/Britannica, 2022): projecting the current rate back gives a collision about 1.5 billion years ago, but the Moon formed ~4.5 billion years ago. |
 | Today's rate is unusually high; North Atlantic near tidal resonance | r21 | Live Science ("How did the Moon end up where it is?", Mattias Green): today's tides are abnormally large because the North Atlantic is the right width and depth to resonate with the tide. Eos: we're in a period of high-speed recession. |
-| Babylon total solar eclipse, 15 April 136 BC, in the morning; recorded on a tablet; computed path without slowing would be over the western Mediterranean | r23–r24 | Stephenson, *Historical Eclipses and Earth's Rotation* (Cambridge, 1997), ch. on Babylonian texts: the only known total eclipse observed at Babylon (136 BC). Irish Times (summary): began about 8:45 a.m.; run backwards without slowing, totality "should have passed over the western waters of the Mediterranean". Script says "far to the west". |
+| Babylon total solar eclipse, 15 April 136 BC, in the morning; Venus, Mercury and the "Normal Stars" visible; recorded on a tablet; computed path without slowing would be over the western Mediterranean | r23–r24 | Stephenson, *Historical Eclipses and Earth's Rotation* (Cambridge, 1997), ch. on Babylonian texts: the only known total eclipse observed at Babylon (136 BC). Tablet translation (SE 175, month XII, day 29; quoted in Journal for Occultation Astronomy 2023/2, IOTA-ES): "at 24 deg. after sunrise, solar eclipse… [Ven]us, Mercury and the Normal Stars were visible"; dated by Stephenson & Steele (2006). Irish Times (summary): began about 8:45 a.m.; run backwards without slowing, totality "should have passed over the western waters of the Mediterranean". Script says "far to the west". |
 | Stephenson: ~40 years of records; Babylonian, Chinese, Arab, medieval European; learned Chinese characters (1,500) to read them | r26 | Archaeology magazine / LA Times (Dec 2016): began the project 40 years ago; memorised 1,500 Chinese characters; Chinese histories, Arab and medieval European records. Nature Physics commentary: Arab astronomers Ibn Yunus, al-Battani, al-Biruni. |
 | 2016 result: day lengthens ≈ 1.8 ms per century | r27 | Stephenson, Morrison & Hohenkerk, *Proc. R. Soc. A* 472 (2016), "Measurement of the Earth's rotation: 720 BC to AD 2015"; CS Monitor: 1.8 ms per century. Ep 4 used 1.75 (rounded); consistent. |
 | An atomic clock started in 700 BC would read ~7 p.m. at local noon | r29 | Toronto Star / LA Times (Dec 2016) explaining the study: "today that clock would read 7 p.m. when the sun is directly overhead". Live Science (Morrison): discrepancy ~7 hours in 720 BC. |
@@ -196,7 +196,7 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 ## Honesty notes
 
 - **"Twenty times wider"** uses the 20,000 km estimate; with 25,000 km it's about 15 times. The line says "about", and r50 says "perhaps".
-- **The clay tablet:** we describe the record (total eclipse at Babylon in the morning), not its wording, since we haven't read a translation of the tablet itself. Before narration, check Stephenson (1997) for the exact contents; don't add stars or details that aren't in it.
+- **The clay tablet (checked 23 Nov):** a published translation says the eclipse began 24 time-degrees (about an hour and a half) after sunrise and that Venus, Mercury and the Normal Stars were visible. r23 now says exactly that, no more.
 - **The billion-year stall** is a recent, debated result. Narration says "seems to" and "may have"; no on-screen note should state it as settled.
 - **The Moon returning** is textbook physics but needs an undisturbed Earth–Moon system for tens of billions of years; we frame it as "in theory" and say plainly it won't happen.
 - **Phobos's end:** crash or ring; we say "or, more likely, break apart", the view of the 2015 studies.
@@ -217,6 +217,7 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 - [x] **Arka's humour in every chapter, all new lines:** r12, r17, r20, r28, r36, r44, r47, r54, r59, r65, r69, r73.
 - [x] **Ending:** payoff (r75), warm personal line (r76), Arka's next question (r77), under about 10 s for r77–r79.
 - [x] **Length:** ≈ 11.3 min narrated, about 12 with cards.
+- [x] **Re-audit 23 Nov (people and impact):** every stop is a real person with a real object (Aldrin's mirror, the Babylonian astronomers' tablet, Stephenson's 40 years, Wells's hand lens, Lantink's cliff); the viewer is addressed directly at the start (pea, fist) and the end (a metre since you were born); r23 now carries the tablet's own detail (Venus, Mercury, the stars).
 
 ## Grown-up audience check
 
@@ -241,6 +242,6 @@ Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka
 - **New props to draw:** retroreflector panel with prisms; laser beam and returning photons; tidal bulge diagram (Earth, bulges ahead of the Moon, arrows); clay tablet; eclipse shadow sliding across a map; coral with daily ridges and yearly bands (zoom); banded iron cliff; wobbling axis (precession cone); air tide on the day side; giant Moon over a molten Earth; two-faced locked Earth with a fixed Moon; Roche ring; Phobos with grooves rising in the west; Mars ring.
 - **Reusable:** Earth, Moon, Mars, Sun, clock-time, Arka, ice/ocean layers, ring (orbit-ring), town.
 - **Photo inserts (public domain, NASA):** Aldrin beside the Apollo 11 reflector (AS11-40-5952 area); Phobos from MRO HiRISE (NASA/JPL/UArizona; check licence); the Joffre Gorge cliff only if a CC-licensed photo exists (otherwise draw it).
-- **Narration estimate:** about 8,990 characters of line text (Arka ≈ 1,090); two paid requests (narrator, Arka). Exact count from the free `--dry-run` after approval. Arka's voice: D2 (`TL9f5lGrdeX5wHMushRC`, set in `config/narration.json`); check the dry run's speaker voices before the paid run.
+- **Narration estimate:** about 8,990 characters of line text (Arka ≈ 1,090); two paid requests (narrator, Arka). Exact count from the free `--dry-run` after approval. Arka's voice: E3 (`cZLjGmrtLimQNbJ9cosF`, set in `config/narration.json`); check the dry run's speaker voices before the paid run.
 - **Shorts from this narration (no extra paid audio):** (1) "The eclipse in the wrong place" r23–r30; (2) "Five extra Mondays" r32–r38 (the coral calendar); (3) "The moon that's falling" r67–r73.
 - **Thumbnails (A/B/C):** (a) giant Moon over a molten young Earth, tiny Arka, "IT USED TO BE THIS CLOSE"; (b) a clock reading 17:00 as the end of the day, "DAYS WERE 17 HOURS"; (c) Phobos cracking into a ring above Mars, "THIS MOON IS FALLING".

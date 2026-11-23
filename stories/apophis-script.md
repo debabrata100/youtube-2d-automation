@@ -1,6 +1,6 @@
 # E7 Apophis: script draft 2 ("A inside B")
 
-Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka: D2 or E3 (Debabrata's choice; lines written for the warm, curious, grown-up Arka). Draft 1 (story of a number, viewed from Earth) is in git history (3d349ea).
+Long episode, 16:9, target **10–12 minutes**. Narrator: **Gahanarka R1**. Arka: **Arka E3** (chosen 22 Nov 2026; the 15 Arka lines are already recorded in `jobs/e7-avt-e3/audio/takes/arka.*`). Draft 1 (story of a number, viewed from Earth) is in git history (3d349ea).
 
 **Decision (Debabrata, 22 Nov):** the outside promise is the **honest what-if** (B): "What if Apophis hit? Most videos get it wrong." The way we tell it is the **ride** (A): you stand on Apophis as it passes Earth, and from there we check the popular claims one by one.
 
@@ -49,7 +49,7 @@ All three promises are delivered in the first 60 seconds (the claim check is set
 | a10 | Arka | Twelve centimetres a second? I walk to the kitchen faster than that. |
 | a11 | Narrator | So everything is slow motion. Dropped dust drifts down for minutes. That's why we're clipped to a cable. |
 | a12 | Narrator | And twenty-five years ago, the people tracking this rock were genuinely worried. In December 2004, the odds that it would hit Earth on this exact date reached one in thirty-seven. The highest danger rating any asteroid had ever been given. |
-| a12b | Narrator | It was a strange Christmas. The rock had been spotted in Arizona that June, seen for two nights, then lost. Gordon Garradd found it again from Australia in December, and with every new observation the odds got worse: one in three hundred, one in sixty, one in thirty-seven. |
+| a12b | Narrator | It was a strange Christmas. Three astronomers, Roy Tucker, David Tholen and Fabrizio Bernardi, had spotted the rock in Arizona that June, seen it for two nights, then lost it. Gordon Garradd found it again from Australia in December, and with every new observation the odds got worse: one in three hundred, one in sixty, one in thirty-seven. |
 | a12c | Narrator | What saved the day was old photographs. Astronomers found Apophis hiding in images taken months earlier, and with that longer trail, 2029 was ruled out within days. |
 | a13 | Arka | So that's where the scary videos come from. |
 | a14 | Narrator | Partly. Hold that thought. We'll come back to the odds. |
@@ -112,10 +112,11 @@ All three promises are delivered in the first 60 seconds (the claim check is set
 | a47 | Narrator | And here's the part no scary video mentions. You don't have to ride it to see it. |
 | a48 | Narrator | From Earth, Apophis will look like a star, about as bright as the stars of the Little Dipper, crossing the width of the full Moon in about a minute. Europe, Africa and western Asia get the best view. In India, it's brightest at about two in the morning on the fourteenth. Around two billion people could see it with their own eyes. |
 | a49 | Narrator | It's brightest a little over an hour before its closest moment, and then it slips into the Sun's glare. So be outside early, somewhere dark. |
+| a49b | Narrator | Roy Tucker, one of the three who found it, died in 2021. He won't see that night. But about two billion people will be able to see what he found. |
 | a50 | Narrator | The asteroid named after the god of chaos turned out to be proof that careful measuring can turn fear into a date in the calendar. On Friday the thirteenth, go and watch a star that moves. |
 | a51 | Arka | Earth bent a whole asteroid's path just by being nearby. So what about the strongest pull there is? If the Sun turned into a black hole… would it pull *us* in? |
 | a52 | Narrator | Good question, Arka. Most people think they know the answer. They're wrong. That's our next episode. |
-| a53 | Arka | *(subscribe line)* |
+| a53 | Narrator | Subscribe, and come along for the ride. |
 
 *(end card, 12 s)*
 
@@ -222,3 +223,13 @@ Each line that makes or corrects a claim, checked against the rules above.
 - (none open for narration)
 - Ending a51–a52 teases S2 ("Would a Black-Hole Sun Suck Us In?") through gravity; S2 draft 1 written 22 Nov.
 - Background: dusk-blue page for the Earth-side scenes, deep space for the ride (Every Moon and Ep 5 were both navy).
+
+## Rework 23 Nov: people and impact (checklist re-audit)
+
+- **Named discoverers:** a12b now names Roy Tucker, David Tholen and Fabrizio Bernardi; a49b closes the human loop: Tucker died in 2021 and won't see the night, but about two billion people can see what he found. Arka's 15 lines are unchanged word for word (reusable E3 take).
+- **a53:** the subscribe line is now the narrator's ("Subscribe, and come along for the ride."), so no new paid Arka audio is needed.
+
+| Claim | Line | Source |
+|---|---|---|
+| Discovered 19 June 2004 by Roy Tucker, David Tholen and Fabrizio Bernardi at Kitt Peak, Arizona; observed for two days | a12b | NASA "Apophis Facts" (science.nasa.gov) |
+| Roy Tucker (1951–2021) | a49b | NASA "Apophis Facts": "Roy Tucker (1951–2021)" |
