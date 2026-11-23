@@ -443,7 +443,7 @@ shot('a12', T2, [], [kit(F, 'obs', 'observatory', .2, .58, .46, level=lv((0, 0),
      [Note('1 in 37', A('thirty-seven'), 'title', pos=(.52 * W, .86 * H)), Note('highest danger rating ever', A('highest'), 'note', pos=(.78 * W, .2 * H)),
       src('ESA · Torino scale, Dec 2004', A('rating'))],
      cam=[kf(0, 1.06, (.2, .55)), kf(A('December'), 1.0), kf(A('highest'), 1.08, (.8, .55))],
-     sounds=[('tick', plus(A('reached'), 8), -16), ('tick', plus(A('reached'), 14), -16), ('heartbeat', A('thirty-seven'), -12), ('riser', plus(A('rating', edge='end'), 2), -18)])
+     sounds=[('tick', plus(A('reached'), 8), -16), ('tick', plus(A('reached'), 14), -16), ('heartbeat', A('thirty-seven'), -12), ('riser', plus(A('given', edge='end'), 2), -20)])
 shot('a12b', T2, [person('tucker', .12, h=.4, poses=[(0, 'point-right')], faces=[(0, 'happy'), (A('lost'), 'shocked')], enter=('pop', A('Roy'))),
                   person('tholen', .22, h=.38, poses=[(0, 'stand'), (A('lost'), 'shrug')], faces=[(0, 'happy'), (A('lost'), 'sad')], enter=('pop', A('David'))),
                   person('bernardi', .32, h=.4, poses=[(0, 'stand'), (A('lost'), 'think')], faces=[(0, 'neutral')], enter=('pop', A('Fabrizio'))),
@@ -559,7 +559,7 @@ shot('a26', T3, [arka(x=.22, h=.38, poses=[(0, 'stand'), (A('enormous'), 'cower'
                     scale=track((0, 1), (A('slowly'), 1), (plus(END26, 60), .12, 'smoothstep')), anchor={'x': .62 * W, 'y': .3 * H})],
      [Note('closest approach', A('approach'), 'title', pos=(.5 * W, .9 * H), until=A('slowly'))],
      cam=[kf(0, 1.0), kf(A('enormous'), 1.08, (.6, .3)), kf(A('slowly'), 1.0, (.5, .5), x=.05), kf(plus(END26, 20), 1.0, (.5, .5), x=-.05), kf(plus(END26, 60), 1.0)],
-     sounds=[('riser', plus(A('approach', edge='end'), 2), -16), ('whoosh', A('slowly'), -10), ('wind', END26, -18)])
+     sounds=[('whoosh', A('slowly'), -14), ('wind', END26, -18)])
 
 # ------------------------------------------------------------------ chapter 3: what if we were heading for that?
 WORLD = [-180, -60, 180, 80]

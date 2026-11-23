@@ -29415,11 +29415,11 @@
         {
           "sound": "riser",
           "frame": {
-            "at": "rating",
+            "at": "given",
             "edge": "end",
             "offset": 2
           },
-          "gainDb": -18
+          "gainDb": -20
         }
       ]
     },
@@ -30958,20 +30958,11 @@
           "gainDb": -22
         },
         {
-          "sound": "riser",
-          "frame": {
-            "at": "approach",
-            "edge": "end",
-            "offset": 2
-          },
-          "gainDb": -16
-        },
-        {
           "sound": "whoosh",
           "frame": {
             "at": "slowly"
           },
-          "gainDb": -10
+          "gainDb": -14
         },
         {
           "sound": "wind",
