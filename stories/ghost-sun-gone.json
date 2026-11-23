@@ -1,0 +1,139 @@
+{
+ "schemaVersion": "1.0",
+ "id": "ghost-sun-gone",
+ "title": "What If the Sun Vanished for Exactly 8 Minutes?",
+ "topic": "Sunlight takes 8 min 20 s to reach Earth; if the Sun vanished for exactly 8 min 20 s, Earth would go dark at the moment the Sun was already back. Cut from Ep 5 (If the Sun Disappeared, Even the Air Would Fall).",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 42,
+ "storyboard": "storyboards/ghost-sun-gone.json",
+ "candidatesReport": "stories/ghost-sun-script.md",
+ "beats": [
+  {
+   "id": "g1",
+   "sceneId": "gg-g1",
+   "intent": "hook",
+   "narration": "It's twelve o'clock, noon. The Sun is shining. And it's already gone.",
+   "phrases": [
+    "It's twelve o'clock, noon.",
+    "The Sun is shining.",
+    "And it's already gone."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "g2",
+   "sceneId": "gg-g2",
+   "intent": "setup",
+   "narration": "it's right there. I can see it. I'm literally getting a tan.",
+   "phrases": [
+    "it's right there.",
+    "I can see it.",
+    "I'm literally getting a",
+    "tan."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "g3",
+   "sceneId": "gg-g3",
+   "intent": "explanation",
+   "narration": "What you're seeing is a ghost. The light hitting your face left the Sun eight minutes and twenty seconds ago.",
+   "phrases": [
+    "What you're seeing is a",
+    "ghost.",
+    "The light hitting your",
+    "face left the Sun eight",
+    "minutes and twenty seconds",
+    "ago."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "g4",
+   "sceneId": "gg-g4",
+   "intent": "explanation",
+   "narration": "So let's try an experiment. The Sun disappears for exactly eight minutes and twenty seconds. Then it comes back.",
+   "phrases": [
+    "So let's try an",
+    "experiment.",
+    "The Sun disappears for",
+    "exactly eight minutes and",
+    "twenty seconds.",
+    "Then it comes back."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "g5",
+   "sceneId": "gg-g5",
+   "intent": "payoff",
+   "narration": "And here's the twist. At the very moment the lights go out on Earth, the Sun is already back. We just can't see it yet.",
+   "phrases": [
+    "And here's the twist.",
+    "At the very moment the",
+    "lights go out on Earth,",
+    "the Sun is already back.",
+    "We just can't see it yet."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "g6",
+   "sceneId": "gg-g6",
+   "intent": "explanation",
+   "narration": "So by the time we notice it's gone... it's not gone anymore?",
+   "phrases": [
+    "So by the time we notice",
+    "it's gone...",
+    "it's not gone anymore?"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "g7",
+   "sceneId": "gg-g7",
+   "intent": "closing",
+   "narration": "Exactly.",
+   "phrases": [
+    "Exactly."
+   ],
+   "phraseSpeakers": [
+    "narrator"
+   ]
+  }
+ ]
+}

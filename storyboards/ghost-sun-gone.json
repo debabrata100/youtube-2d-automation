@@ -1,0 +1,1619 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "ghost-sun-gone",
+  "title": "What If the Sun Vanished for Exactly 8 Minutes?",
+  "themeId": "paint-night-gold",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "@sky.top",
+  "accent": "@text.accent",
+  "assets": [],
+  "backdrop": {
+    "group": "backdrop"
+  },
+  "narrationTiming": {
+    "minimumSceneFrames": 30,
+    "maximumDeviationSeconds": 0.3
+  },
+  "audio": {
+    "music": "cues",
+    "musicGainDb": -17,
+    "duckRatio": 2,
+    "targetLufs": -16,
+    "crossfadeSeconds": 1.5,
+    "musicCues": [
+      {
+        "source": "assets/music/8-space-spaghettification.mp3",
+        "scene": "gg-g1",
+        "offsetSeconds": 0
+      }
+    ],
+    "musicDropouts": [],
+    "voice": {
+      "highpassHz": 95,
+      "lowMidDb": -4,
+      "presenceDb": 2,
+      "room": 0.08
+    }
+  },
+  "groups": [
+    {
+      "id": "backdrop",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "page",
+          "kit": {
+            "type": "sky",
+            "horizon": 0.9,
+            "stars": 0,
+            "seed": 1
+          }
+        },
+        {
+          "id": "stars",
+          "kit": {
+            "type": "prop",
+            "item": "doodle-stars",
+            "x": 0.37,
+            "y": 0.61,
+            "size": 0.5,
+            "count": 26,
+            "ink": "#eef1f8"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "brand-tag",
+          "text": "GAHANARKA",
+          "x": 200,
+          "y": 250,
+          "size": 44,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": false,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-g1",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "sky",
+          "kit": {
+            "type": "prop",
+            "item": "sky",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 1.0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "sun",
+          "kit": {
+            "type": "planet",
+            "x": 0.5,
+            "y": 0.36,
+            "radius": 0.1,
+            "base": "#ffcf4a",
+            "bands": [
+              "#ffe27a",
+              "#ffcf4a"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.05,
+            "seed": 2
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "gone",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "gone",
+                "offset": 8
+              },
+              "value": 0.55
+            }
+          ]
+        },
+        {
+          "id": "ghost",
+          "kit": {
+            "type": "prop",
+            "item": "orbit-ring",
+            "x": 0.5,
+            "y": 0.36,
+            "size": 0.3,
+            "color": "#14213d"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "gone",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "gone"
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "clock",
+          "kit": {
+            "type": "prop",
+            "item": "clock-time",
+            "x": 0.2,
+            "y": 0.4,
+            "size": 0.16,
+            "values": [
+              {
+                "frame": 0,
+                "value": 0
+              }
+            ]
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "THE SUN IS",
+          "x": 540,
+          "y": 1250,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#14213d",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": -1,
+              "value": 0
+            },
+            {
+              "frame": 5,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "ALREADY GONE.",
+          "x": 540,
+          "y": 1370,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#14213d",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": -1,
+              "value": 0
+            },
+            {
+              "frame": 5,
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-g2",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "sky",
+          "kit": {
+            "type": "prop",
+            "item": "sky",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 1.0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "sun",
+          "kit": {
+            "type": "planet",
+            "x": 0.74,
+            "y": 0.32,
+            "radius": 0.09,
+            "base": "#ffcf4a",
+            "bands": [
+              "#ffe27a",
+              "#ffcf4a"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.05,
+            "seed": 2
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.4,
+            "y": 0.74,
+            "height": 0.24,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "point-right"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "grin"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "getting a tan!",
+          "x": 540,
+          "y": 560,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#14213d",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tan",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tan",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-g3",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "sun",
+          "kit": {
+            "type": "planet",
+            "x": 0.5,
+            "y": 0.24,
+            "radius": 0.08,
+            "base": "#ffcf4a",
+            "bands": [
+              "#ffe27a",
+              "#ffcf4a"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.05,
+            "seed": 2
+          }
+        },
+        {
+          "id": "earth",
+          "kit": {
+            "type": "planet",
+            "x": 0.5,
+            "y": 0.5,
+            "radius": 0.05,
+            "base": "#5aa9e6",
+            "bands": [
+              "#7cc576",
+              "#5aa9e6",
+              "#7cc576"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.2,
+            "seed": 3
+          }
+        },
+        {
+          "id": "light",
+          "kit": {
+            "type": "prop",
+            "item": "pulse",
+            "x": 0.5,
+            "y": 0.37,
+            "size": 0.3,
+            "color": "#fff6c8",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "left"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "ago"
+                },
+                "value": 1
+              }
+            ],
+            "rotation": 90
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "a ghost",
+          "x": 540,
+          "y": 1250,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "ghost",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "ghost",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "light left 8 min 20 s ago",
+          "x": 540,
+          "y": 1390,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#a9d8ff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "eight",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "eight",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-g4",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "sun",
+          "kit": {
+            "type": "planet",
+            "x": 0.36,
+            "y": 0.32,
+            "radius": 0.11,
+            "base": "#ffcf4a",
+            "bands": [
+              "#ffe27a",
+              "#ffcf4a"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.05,
+            "seed": 2
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "disappears",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "disappears"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "back",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "back"
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "ghost",
+          "kit": {
+            "type": "prop",
+            "item": "orbit-ring",
+            "x": 0.36,
+            "y": 0.32,
+            "size": 0.26
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "disappears",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "disappears"
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "back",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "back"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "clock",
+          "kit": {
+            "type": "prop",
+            "item": "clock-time",
+            "x": 0.74,
+            "y": 0.44,
+            "size": 0.18,
+            "values": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "disappears"
+                },
+                "value": 0,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "back",
+                  "offset": -2
+                },
+                "value": 500
+              }
+            ]
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "the experiment",
+          "x": 540,
+          "y": 1250,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#a9d8ff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "experiment",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "experiment",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "gone 8 min 20 s",
+          "x": 540,
+          "y": 1380,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "exactly",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "exactly",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "then back",
+          "x": 540,
+          "y": 1500,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#a9d8ff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "back",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "back",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-g5",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "earth",
+          "kit": {
+            "type": "planet",
+            "x": 0.5,
+            "y": 0.4,
+            "radius": 0.12,
+            "base": "#5aa9e6",
+            "bands": [
+              "#7cc576",
+              "#5aa9e6",
+              "#7cc576"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.2,
+            "seed": 3
+          }
+        },
+        {
+          "id": "earth-night",
+          "kit": {
+            "type": "prop",
+            "item": "night-half",
+            "x": 0.5,
+            "y": 0.4,
+            "size": 0.24,
+            "rotation": 180,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "earth-city",
+          "kit": {
+            "type": "prop",
+            "item": "city-lights",
+            "x": 0.5,
+            "y": 0.4,
+            "size": 0.24,
+            "count": 16,
+            "rotation": 0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.9
+              }
+            ]
+          }
+        },
+        {
+          "id": "earth-day",
+          "kit": {
+            "type": "prop",
+            "item": "night-half",
+            "x": 0.5,
+            "y": 0.4,
+            "size": 0.24,
+            "rotation": 0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "out",
+                  "offset": -1
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "out",
+                  "offset": 8
+                },
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "sun",
+          "kit": {
+            "type": "planet",
+            "x": 0.8,
+            "y": 0.2,
+            "radius": 0.06,
+            "base": "#ffcf4a",
+            "bands": [
+              "#ffe27a",
+              "#ffcf4a"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.05,
+            "seed": 2
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "back",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "back"
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "clock",
+          "kit": {
+            "type": "prop",
+            "item": "clock-time",
+            "x": 0.2,
+            "y": 0.2,
+            "size": 0.14,
+            "values": [
+              {
+                "frame": 0,
+                "value": 500
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "out",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "out"
+              },
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "the twist",
+          "x": 540,
+          "y": 1250,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#a9d8ff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "twist",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "twist",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "the Sun is already back",
+          "x": 540,
+          "y": 1380,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "back",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "back",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "we just can't see it yet",
+          "x": 540,
+          "y": 1500,
+          "size": 56,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "see",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "see",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-g6",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "q",
+          "kit": {
+            "type": "prop",
+            "item": "question",
+            "x": 0.72,
+            "y": 0.4,
+            "size": 0.14
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.5,
+            "y": 0.74,
+            "height": 0.24,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "think"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "shocked"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "not gone anymore?",
+          "x": 540,
+          "y": 560,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "anymore",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "anymore",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-g7",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "sky",
+          "kit": {
+            "type": "prop",
+            "item": "sky",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 1.0,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "sun",
+          "kit": {
+            "type": "planet",
+            "x": 0.5,
+            "y": 0.36,
+            "radius": 0.1,
+            "base": "#ffcf4a",
+            "bands": [
+              "#ffe27a",
+              "#ffcf4a"
+            ],
+            "craters": 0,
+            "ring": false,
+            "shade": 0.05,
+            "seed": 2
+          }
+        },
+        {
+          "id": "clock",
+          "kit": {
+            "type": "prop",
+            "item": "clock-time",
+            "x": 0.2,
+            "y": 0.4,
+            "size": 0.16,
+            "values": [
+              {
+                "frame": 0,
+                "value": 1000
+              }
+            ]
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "exactly.",
+          "x": 540,
+          "y": 1250,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#14213d",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": -1,
+              "value": 0
+            },
+            {
+              "frame": 5,
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "gg-g1",
+      "template": "hero-reveal",
+      "durationFrames": 145,
+      "animationDurationFrames": 145,
+      "caption": {
+        "text": "gg-g1",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "gone",
+              "edge": "end"
+            },
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.07,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-g1",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "g1",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "pop",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": 0,
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "gg-g2",
+      "template": "hero-reveal",
+      "durationFrames": 145,
+      "animationDurationFrames": 145,
+      "caption": {
+        "text": "gg-g2",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.4952,
+              "y": 0.5046
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-g2",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "g2",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": []
+    },
+    {
+      "id": "gg-g3",
+      "template": "hero-reveal",
+      "durationFrames": 243,
+      "animationDurationFrames": 243,
+      "caption": {
+        "text": "gg-g3",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-g3",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "g3",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "ghost"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "eight"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "gg-g4",
+      "template": "hero-reveal",
+      "durationFrames": 231,
+      "animationDurationFrames": 231,
+      "caption": {
+        "text": "gg-g4",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-g4",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "g4",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "experiment"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "exactly"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "back"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "gg-g5",
+      "template": "hero-reveal",
+      "durationFrames": 304,
+      "animationDurationFrames": 304,
+      "caption": {
+        "text": "gg-g5",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "yet",
+              "edge": "end"
+            },
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.07,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-g5",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "g5",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "twist"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "back"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "see"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "gg-g6",
+      "template": "hero-reveal",
+      "durationFrames": 145,
+      "animationDurationFrames": 145,
+      "caption": {
+        "text": "gg-g6",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5046
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-g6",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "g6",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": []
+    },
+    {
+      "id": "gg-g7",
+      "template": "hero-reveal",
+      "durationFrames": 47,
+      "animationDurationFrames": 47,
+      "caption": {
+        "text": "gg-g7",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop",
+        "keyframes": [
+          {
+            "frame": 0,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.05,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": 24,
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ]
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-g7",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "g7",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "chime",
+          "frame": 4,
+          "gainDb": -26
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+ "id": "ghost-sun-gone",
+ "segments": [
+  {
+   "source": "jobs/gs-narration-sting",
+   "text": "It's twelve o'clock, noon. The Sun is shining. And it's already gone."
+  },
+  {
+   "source": "jobs/gs-narration-sting",
+   "text": "it's right there. I can see it. I'm literally getting a tan."
+  },
+  {
+   "source": "jobs/gs-narration-sting",
+   "text": "What you're seeing is a ghost. The light hitting your face left the Sun eight minutes and twenty seconds ago."
+  },
+  {
+   "source": "jobs/gs-narration-sting",
+   "text": "So let's try an experiment. The Sun disappears for exactly eight minutes and twenty seconds. Then it comes back."
+  },
+  {
+   "source": "jobs/gs-narration-sting",
+   "text": "And here's the twist. At the very moment the lights go out on Earth, the Sun is already back. We just can't see it yet."
+  },
+  {
+   "source": "jobs/gs-narration-sting",
+   "text": "So by the time we notice it's gone... it's not gone anymore?"
+  },
+  {
+   "source": "jobs/gs-narration-sting",
+   "text": "Exactly."
+  }
+ ]
+}

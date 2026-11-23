@@ -1,0 +1,33 @@
+{
+ "id": "ghost-sun-air",
+ "segments": [
+  {
+   "source": "jobs/gs-narration-sting",
+   "text": "The air itself freezes, and falls."
+  },
+  {
+   "source": "jobs/gs-narration-sting",
+   "text": "Twelve o'clock, noon: the Sun vanishes."
+  },
+  {
+   "source": "jobs/gs-narration-sting",
+   "text": "A year later, the average temperature on Earth's surface would be around minus seventy degrees Celsius."
+  },
+  {
+   "source": "jobs/gs-narration-sting",
+   "text": "It settles at around minus two hundred and forty degrees. That's colder than Pluto is today."
+  },
+  {
+   "source": "jobs/gs-narration-sting",
+   "text": "Nitrogen and oxygen drift down as snow and frost, and lie on the ground in a thin, frozen layer."
+  },
+  {
+   "source": "jobs/gs-narration-sting",
+   "text": "The air... falls down? So there's no sky anymore?"
+  },
+  {
+   "source": "jobs/gs-narration-sting",
+   "text": "No sky. No wind. Just stars, all the way down to the ground."
+  }
+ ]
+}

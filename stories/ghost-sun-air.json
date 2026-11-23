@@ -1,0 +1,133 @@
+{
+ "schemaVersion": "1.0",
+ "id": "ghost-sun-air",
+ "title": "If the Sun Vanished, the Air Would Snow Down",
+ "topic": "If the Sun vanished for good, Earth would cool to about -70 C within a year and settle near -240 C over millions of years; nitrogen and oxygen would freeze and fall as snow and frost. Cut from Ep 5.",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 41,
+ "storyboard": "storyboards/ghost-sun-air.json",
+ "candidatesReport": "stories/ghost-sun-script.md",
+ "beats": [
+  {
+   "id": "a1",
+   "sceneId": "ga-a1",
+   "intent": "hook",
+   "narration": "The air itself freezes, and falls.",
+   "phrases": [
+    "The air itself freezes,",
+    "and falls."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a2",
+   "sceneId": "ga-a2",
+   "intent": "setup",
+   "narration": "Twelve o'clock, noon: the Sun vanishes.",
+   "phrases": [
+    "Twelve o'clock, noon:",
+    "the Sun vanishes."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a3",
+   "sceneId": "ga-a3",
+   "intent": "explanation",
+   "narration": "A year later, the average temperature on Earth's surface would be around minus seventy degrees Celsius.",
+   "phrases": [
+    "A year later, the average",
+    "temperature on Earth's",
+    "surface would be around",
+    "minus seventy degrees",
+    "Celsius."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a4",
+   "sceneId": "ga-a4",
+   "intent": "explanation",
+   "narration": "It settles at around minus two hundred and forty degrees. That's colder than Pluto is today.",
+   "phrases": [
+    "It settles at around minus",
+    "two hundred and forty",
+    "degrees.",
+    "That's colder than Pluto",
+    "is today."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a5",
+   "sceneId": "ga-a5",
+   "intent": "payoff",
+   "narration": "Nitrogen and oxygen drift down as snow and frost, and lie on the ground in a thin, frozen layer.",
+   "phrases": [
+    "Nitrogen and oxygen drift",
+    "down as snow and frost,",
+    "and lie on the ground in a",
+    "thin, frozen layer."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a6",
+   "sceneId": "ga-a6",
+   "intent": "explanation",
+   "narration": "The air... falls down? So there's no sky anymore?",
+   "phrases": [
+    "The air...",
+    "falls down?",
+    "So there's no sky anymore?"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "a7",
+   "sceneId": "ga-a7",
+   "intent": "closing",
+   "narration": "No sky. No wind. Just stars, all the way down to the ground.",
+   "phrases": [
+    "No sky.",
+    "No wind.",
+    "Just stars, all the way",
+    "down to the ground."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  }
+ ]
+}

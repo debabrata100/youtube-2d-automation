@@ -1,0 +1,133 @@
+{
+ "schemaVersion": "1.0",
+ "id": "ghost-sun-voyager",
+ "title": "If the Sun Vanished, Voyager Would Find Out Last",
+ "topic": "The missing light of a vanished Sun travels outward as a shell of darkness: Mars after ~13 min, Jupiter ~43 min, Neptune ~4 h, Voyager 1 (one light-day away) a day later. Cut from Ep 5.",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 43,
+ "storyboard": "storyboards/ghost-sun-voyager.json",
+ "candidatesReport": "stories/ghost-sun-script.md",
+ "beats": [
+  {
+   "id": "v1",
+   "sceneId": "gv-v1",
+   "intent": "hook",
+   "narration": "Twelve o'clock, noon: the Sun vanishes.",
+   "phrases": [
+    "Twelve o'clock, noon:",
+    "the Sun vanishes."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "v2",
+   "sceneId": "gv-v2",
+   "intent": "setup",
+   "narration": "Then the whole daytime side of Earth goes dark at once.",
+   "phrases": [
+    "Then the whole daytime",
+    "side of Earth goes dark at",
+    "once."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "v3",
+   "sceneId": "gv-v3",
+   "intent": "explanation",
+   "narration": "But the darkness doesn't stop at Earth.",
+   "phrases": [
+    "But the darkness doesn't",
+    "stop at Earth."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "v4",
+   "sceneId": "gv-v4",
+   "intent": "explanation",
+   "narration": "About thirteen minutes after the Sun vanishes, the darkness reaches Mars. After forty-three minutes, Jupiter. After four hours, Neptune.",
+   "phrases": [
+    "About thirteen minutes",
+    "after the Sun vanishes,",
+    "the darkness reaches Mars.",
+    "After forty-three minutes,",
+    "Jupiter.",
+    "After four hours, Neptune."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "v5",
+   "sceneId": "gv-v5",
+   "intent": "payoff",
+   "narration": "And a full day later, it reaches the farthest thing humans have ever built. Voyager 1 is now one light-day from Earth.",
+   "phrases": [
+    "And a full day later, it",
+    "reaches the farthest thing",
+    "humans have ever built.",
+    "Voyager 1 is now one",
+    "light-day from Earth."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "v6",
+   "sceneId": "gv-v6",
+   "intent": "explanation",
+   "narration": "Out there, the Sun is just a bright star, and for eight minutes, it would go missing.",
+   "phrases": [
+    "Out there, the Sun is just",
+    "a bright star, and for",
+    "eight minutes, it would go",
+    "missing."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "v7",
+   "sceneId": "gv-v7",
+   "intent": "closing",
+   "narration": "So Voyager would be the last one to find out. Classic.",
+   "phrases": [
+    "So Voyager would be the",
+    "last one to find out.",
+    "Classic."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka"
+   ]
+  }
+ ]
+}
