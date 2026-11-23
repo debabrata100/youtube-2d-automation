@@ -6,7 +6,7 @@ tags and pinned-comment text for each upload live in its sheet (`publishing/NN-*
 **Rule:** update this file every time something changes in Studio (upload, schedule, thumbnail test, subtitles, Related video,
 pinned comment, end screen, playlist). Copy video IDs from Studio or the address bar, never from a screenshot.
 
-Last full check: **20 Nov 2026, 5 PM IST**. Last change: **23 Nov, 10:00 IST** (Ep 5 Shorts S10–S12 uploaded and scheduled 4, 8, 11 Dec)
+Last full check: **20 Nov 2026, 5 PM IST**. Last change: **23 Nov, 13:45 IST** (Scorecard section added)
 
 ## Long videos (16:9)
 
@@ -36,6 +36,32 @@ Last full check: **20 Nov 2026, 5 PM IST**. Last change: **23 Nov, 10:00 IST** (
 | S10 | What If the Sun Disappeared for 8 Minutes? (Ep 5 Short A) | [15MGyj6Gy2A](https://youtube.com/shorts/15MGyj6Gy2A) | Scheduled **Fri 4 Dec, 9:30 PM** (uploaded 23 Nov) | ⏳ → Ep 5 once it's public (3 Dec check-in) | ✅ English SRT | ⏳ after launch | What If…? | `15-ghost-sun-gone-short.md` |
 | S11 | If the Sun Disappeared, Who'd Notice Last? (Ep 5 Short C) | [9yJUqWaao8I](https://youtube.com/shorts/9yJUqWaao8I) | Scheduled **Tue 8 Dec, 9:30 PM** (uploaded 23 Nov) | ⏳ → Ep 5 (3 Dec check-in) | ✅ English SRT | ⏳ after launch | What If…? | `17-ghost-sun-voyager-short.md` |
 | S12 | Without the Sun, the Air Would Snow Down (Ep 5 Short B) | [0iKH5kqpgYY](https://youtube.com/shorts/0iKH5kqpgYY) | Scheduled **Fri 11 Dec, 9:30 PM** (uploaded 23 Nov) | ⏳ → Ep 5 (3 Dec check-in) | ✅ English SRT | ⏳ after launch | What If…? | `16-ghost-sun-air-short.md` |
+
+## Scorecard: what each upload teaches us (added 23 Nov)
+
+Every upload is an experiment. The question we're answering: **do the topic and packaging bring viewers in, and do the story and the pictures keep them?**
+Fill a row 7 days after a video goes public (and again at 28 days for long videos). Numbers come from Studio → the video → Analytics
+(Reach: impressions, impressions click-through rate; Engagement: average percentage viewed; for Shorts "stayed to watch"; Audience: subscribers gained).
+Judge a long video's click rate only after **500+ impressions**, and its retention only after **100+ views**. Before that, write "too early".
+
+| Video | Tests | Public since | Day | Impressions | Click rate | Views | Avg % viewed / stayed to watch | 30 s hold | Subs gained | Biggest drop (time → scene) | Verdict |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Ep 1 Titan | baseline: survival topic, first look | 16 Nov | ~7 | 316 | 3.8% | — | — | — | — | — | reach too low to judge (20 Nov data) |
+| Ep 2 Helmet | survival myth-bust | 19 Nov | ~4 | 26 | — | — | — | — | — | — | too early |
+| Ep 3 Every Moon (v2) | reworked script + visuals; thumbnail test | 22 Nov | 1 | | | | | | | | due 29 Nov |
+| Ep 4 Moon Gone | "What actually happens if…" search title; MYTH \| REALITY thumbnail | 26 Nov | | | | | | | | | due 3 Dec |
+| Ep 5 Ghost Sun | thumbnail test a / b2 / c; 3 Shorts feed it | 3 Dec | | | | | | | | | due 10 Dec |
+| S1 Titan Short | survival hook | 17 Nov | ~6 | | | | 17.1% stayed | | | | weak opening: lost viewers in the first seconds |
+| S2 One Light-Day | real-world fact (Voyager) | 18 Nov | ~5 | | | | 46.7% stayed | | | | strong |
+| S3 15 Seconds | survival countdown | 21 Nov | ~2 | | | ~250 | 41.6% stayed | | | | good hold, stalled reach |
+| S7 NASA Lost Voyager | real news + real people | 20 Nov | ~3 | | | 1,082 (+31/day) | not entered yet | | | | best performer so far |
+
+**What the next uploads test** (fill their rows the same way):
+- **E7 Apophis:** myth-bust title people already search for + the people-centred script (named discoverers, Roy Tucker). Compare its avg % viewed and 30 s hold with Ep 3–5: if it holds better, the story rework is working.
+- **Shorts S4–S6, S8–S12:** real-world hooks (S8, S9) vs pure thought experiments (S4–S6, S10–S12). Compare "stayed to watch" and how many viewers click through to the episode.
+- **Animation:** for every long video, note where the retention graph drops and which scene is on screen. If drops land on static or confusing scenes, spend animation effort there, and nowhere else.
+
+**Decision point: about 4 Jan 2027** (4–6 weeks of rows). Expected outcomes: if click rate is the weak number → work on topics, titles and thumbnails; if % viewed is weak → story; if drops cluster on certain scene types → animation.
 
 ## Community posts
 
