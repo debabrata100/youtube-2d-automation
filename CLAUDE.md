@@ -84,6 +84,31 @@ After completing a milestone, provide:
 
 **Approval required:** Stop and wait for my decision.
 
+## Production cycle: one quality episode every 1–2 weeks (agreed 23 Nov 2026)
+
+Debabrata's decision after The Paint Explainer's demonetization (13 Nov 2026) and E7's first render: fewer videos, each deeply
+researched and clearly made by us. Quality beats schedule: if an episode isn't good enough by its slot, it waits.
+
+| Days | Step | Who |
+|---|---|---|
+| 1–3 | **Research:** pick the topic; check no big channel already owns our angle; read the primary sources (papers, NASA/ESA, interviews); find the people behind the story and one surprising fact. | Claude researches, Debabrata chooses |
+| 4–5 | **Script:** draft, fact-check table (a source for every number), Debabrata's edits; lock only when he'd happily read it aloud (`docs/SCRIPT_CRAFT_CHECKLIST.md`). | Debabrata decides |
+| 6 | **Storyboard on paper:** every line, every named object drawn as itself, the action-beat pauses, the five "wow" moments (`docs/VISUAL_CHECKLIST.md` §10). Approved before anything is built. | Debabrata approves |
+| 7 | **Narration:** one paid take, cost quoted first. | Debabrata runs it |
+| 8–10 | **Animation:** new kit pieces for the topic, whole-timeline sweep, attraction report, a 60–90 s sample. | Claude builds, Debabrata reviews |
+| 11 | **Full render**, real-frame checks, captions, thumbnails. | Debabrata renders |
+| 12 | **Debabrata's review on camera** (phone recording of him watching and judging the cut), then fixes. Kept in `publishing/proof/<NN>/`. | Debabrata |
+| 13–14 | **Publish:** upload, community post, reply to comments; choose the next topic. | Together |
+
+Shorts come only from the current episode, at most 2 a week, each with its own angle and title shape.
+
+**What makes our videos hard to copy** (copying can't be prevented; we make the copy obviously worse than the original):
+1. **Our engine:** custom kit pieces (globe, maps, Arka...) that grow every episode; each episode adds at least one new visual idea only our engine can make.
+2. **Arka, and Debabrata's own voice** where possible: a character with a personality, and a human voice nobody can clone.
+3. **Real research:** named people, sourced numbers, myths checked against papers.
+4. **Proof that we came first:** the proof folder, git history and phone recordings; once in the Partner Program, YouTube's copyright match tool for re-uploads and takedowns for direct copies.
+5. **Recognisable packaging:** the same title voice, Arka on every thumbnail, the night-gold look.
+
 ## YouTube compliance (keep the channel monetizable)
 
 Before any video is scheduled, validate it against `docs/YOUTUBE_COMPLIANCE_CHECKLIST.md` and report the result. It covers:

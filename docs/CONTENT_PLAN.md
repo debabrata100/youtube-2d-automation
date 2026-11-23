@@ -31,6 +31,11 @@ Legend: **Debabrata** = Debabrata's idea, **Claude** = Claude's addition. Facts 
 
 ---
 
+## Cadence (decided 23 Nov 2026)
+One deeply researched long episode every 1–2 weeks, made with the production cycle in `CLAUDE.md` ("Production cycle"), plus at most
+2 Shorts a week from the current episode. The track order below is a menu, not a schedule: each topic must pass the research step
+(our angle not already owned by a big channel; primary sources; people; one surprising fact) before it gets a slot.
+
 ## Track 1: the Moon (follows Ep 4, "What If the Moon Disappeared Tonight?")
 
 | # | Working title | From | Angle / surprise | Notes |
