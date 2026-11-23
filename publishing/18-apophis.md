@@ -1,6 +1,6 @@
 # 18: Episode 7, What If Apophis Hit? Most Videos Get It Wrong
 
-- **Status (23 Nov 2026):** rendered on the Mac (`jobs/e7-full/output/narrated-animation.mp4`, 9:57 = 597 s incl. the 12 s end card, 1920×1080, −16.2 LUFS). Verification: every picture, timing, loudness, peak, ducking and narration check passed. One caption-coverage flag: three captions end on "a" and that word starts on the caption's last frame (1/30 s); captions are a separate subtitle file, so viewers see no difference. Not uploaded yet.
+- **Status (23 Nov 2026, night):** reworked in the new visual style (docs/E7_VIEWER_REVIEW.md) and re-rendered on the Mac: `jobs/e7-full-v4/output/narrated-animation.mp4`, 10:25 = 625 s incl. the 12 s end card, 1920×1080, −16.3 LUFS, peak −1.7 dB. Every check passed (narration clear under every sound cue) except the known caption-coverage flag (a caption-file rounding detail viewers don't see). Debabrata watched it: "far better, like a researched article". Not uploaded yet.
 - **Upload folder:** `~/Downloads/gahanarka-upload/18-apophis/`: the video as `what-if-apophis-hit.mp4`, `captions-english.srt`, thumbnails.
 - **Script, sources and fact check:** `stories/apophis-script.md` (fact-check table + credibility audit). Narration: Gahanarka R1 (request `Dg6fCHzAJMSijzvLDY1g`, 7,067 characters) + Arka E3 (take from the 22 Nov voice test, reused at no cost), cut with a free 3.4 s brand-sting gap (`jobs/e7-narration-sting`).
 - **Storyboard:** `scripts/authoring/plan-apophis.py` → `storyboards/apophis.json` (60 shots). Thumbnail art: `scripts/authoring/plan-apophis-thumbs.py`; lettering `thumbnails/apophis/{a,b,c}.json`.
@@ -23,13 +23,13 @@ What would really happen if asteroid Apophis hit Earth? On Friday the 13th of Ap
 Where will you be on 13 April 2029? Tell us in the comments.
 
 0:00 The claims
-0:41 Standing on Apophis
-1:17 The 2004 scare
-2:19 Through the satellite ring
-4:10 What if it hit?
-5:52 Quick round: the end of the world?
-7:04 Who's flying with us
-8:17 Watch it from your balcony
+0:47 Standing on Apophis
+1:25 The 2004 scare
+2:27 Through the satellite ring
+4:25 What if it hit?
+6:13 Quick round: the end of the world?
+7:28 Who's flying with us
+8:41 Watch it from your balcony
 
 Sources and notes:
 Apophis will not hit Earth in 2029, 2036 or 2068; the impact part is a thought experiment. Numbers are rounded; drawings are not to scale. Lines marked "our maths" are our own calculations from the published figures.
@@ -68,7 +68,7 @@ On Friday 13 April 2029, about two billion people could watch Apophis cross the 
 apophis, asteroid apophis, apophis 2029, what if apophis hit earth, apophis asteroid 2029, friday the 13th asteroid, asteroid flyby, will apophis hit earth, apophis myths, osiris-apex, ramses mission, asteroid impact, space what if, gahanarka
 
 ## Settings
-- End screen: the last 12 s (9:45 to 9:57). One video element: Ep 5 (Rtcxj2-wTuo, the Sun episode; the ending's question is about the Sun) + subscribe. When S2 goes live, switch the video element to S2.
+- End screen: the last 12 s (10:13 to 10:25). One video element: Ep 5 (Rtcxj2-wTuo, the Sun episode; the ending's question is about the Sun) + subscribe. When S2 goes live, switch the video element to S2.
 - Playlist: "What If…?"
 - Not made for kids · Science & Technology · English (video, title and description)
 - Altered or synthetic content: No (drawn animation and AI narrators for a cartoon; no realistic AI footage, no imitation of a real person)
