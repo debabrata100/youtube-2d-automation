@@ -183,7 +183,7 @@ if NAME == 'geo':
     plate_earth = item('plate-earth', 'globe', .5, .55, .12, A('photographed'), center=[0, 0])
     plate_glow = item('plate-glow', 'geocorona', .5, .55, .4, A('photographed'), level=[{'frame': 0, 'value': 1}], color='#c9b8ff')
     ep.scene('g5', explain([], world(v5) + [plate, plate_glow, plate_earth],
-                           [label('Moon', 0, (760, 820)), Note('inside it', A('never'), 'title', pos=(540, 1330)), NOT_TO_SCALE()],
+                           [label('Moon', 0, (760, 820)), Note('inside it', A('never'), 'title', pos=(540, 1395)), NOT_TO_SCALE()],
                            camera_preset=None, sounds=[('tick', A('photographed'), -22)]))
     # g6 Artemis II's free-return path: farther than any humans, 406,771 km. STILL INSIDE.
     v6 = cam([(0, 1.0, (540, 1060))])
@@ -196,7 +196,7 @@ if NAME == 'geo':
     v8 = cam([(0, 1.0, (540, 1060)), (A('touches'), 2.2, moon_c), (A('mark.', edge='end'), 3.0, moon_c)])
     mark = [{'frame': 0, 'value': 0}, {'frame': A('leaving'), 'value': 0}, {'frame': A('mark.', edge='end'), 'value': 1}]
     ep.scene('g8', explain([], world(v8, corona_opacity=track((0, 1), (A('thin,'), .5), (A('But'), .5), (A('touches'), 1)), rust=mark),
-                           [Note('≈ vacuum', A('vacuum.'), 'note', pos=(540, 1380 - 30), until=A('But'), color=SKY), Note('Part 2 →', A('mark.'), 'title', pos=(540, 1380 - 30))],
+                           [Note('≈ vacuum', A('thin,'), 'note', pos=(540, 1230), color=SKY), Note('Part 2 →', A('mark.'), 'title', pos=(540, 1380 - 30))],
                            camera_preset=None, sounds=[('chime', A('mark.'), -26)]))
 else:
     ep.backdrop(stars=34)
@@ -245,7 +245,7 @@ else:
     v7 = cam([(0, 1.3, (540, 1060)), (A('more'), 2.2, ((E[0] + M[0]) / 2, (E[1] + M[1]) / 2))])
     near = wl(prop('near-rust', 'rust-spots', (M[0] - MOON_R * MS * .35) / W, (M[1] + MOON_R * MS * .3) / H, MOON_R * 1.1, level=rust_all, count=7), v7)
     ep.scene('r7', explain([], world(v7, corona=.0, orbit=False, rust=rust_all) + [near, big('more', 'MORE RUST', A('more'), y=.25, color=RUST, size=.1)],
-                           [label('faces Earth', A('faces'), (560, 1300)), Note('the clue', A('clue?'), 'note', pos=(540, 1390 - 20), until=A('more'), color=SKY)],
+                           [label('faces Earth', A('faces'), (560, 1300)), Note('the clue', A('clue?'), 'note', pos=(330, 780), color=SKY)],
                            camera_preset=None, sounds=[('tick', A('more'), -22)]))
     # r9 a little of Earth's sky (the haze from Part 1 reaching the Moon) turning to rust; back on the red spot to loop.
     v9 = cam([(0, 1.3, (540, 1060)), (A('turning'), 3.0, moon_c)])

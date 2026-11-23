@@ -2159,8 +2159,8 @@
         {
           "id": "n1",
           "text": "the clue",
-          "x": 540,
-          "y": 1370,
+          "x": 330,
+          "y": 780,
           "size": 61,
           "anchor": "middle",
           "variant": "ink",
@@ -2184,19 +2184,6 @@
                 "offset": 5
               },
               "value": 1
-            },
-            {
-              "frame": {
-                "at": "more",
-                "offset": -1
-              },
-              "value": 1
-            },
-            {
-              "frame": {
-                "at": "more"
-              },
-              "value": 0
             }
           ]
         }
@@ -2506,8 +2493,8 @@
     {
       "id": "rr-r1",
       "template": "hero-reveal",
-      "durationFrames": 98,
-      "animationDurationFrames": 98,
+      "durationFrames": 103,
+      "animationDurationFrames": 103,
       "caption": {
         "text": "rr-r1",
         "preset": "body"
@@ -2556,8 +2543,8 @@
     {
       "id": "rr-r2",
       "template": "hero-reveal",
-      "durationFrames": 74,
-      "animationDurationFrames": 74,
+      "durationFrames": 77,
+      "animationDurationFrames": 77,
       "caption": {
         "text": "rr-r2",
         "preset": "body"
@@ -2610,8 +2597,8 @@
     {
       "id": "rr-r3",
       "template": "hero-reveal",
-      "durationFrames": 185,
-      "animationDurationFrames": 185,
+      "durationFrames": 194,
+      "animationDurationFrames": 194,
       "caption": {
         "text": "rr-r3",
         "preset": "body"
@@ -2664,8 +2651,8 @@
     {
       "id": "rr-r4",
       "template": "hero-reveal",
-      "durationFrames": 148,
-      "animationDurationFrames": 148,
+      "durationFrames": 155,
+      "animationDurationFrames": 155,
       "caption": {
         "text": "rr-r4",
         "preset": "body"
@@ -2718,8 +2705,8 @@
     {
       "id": "rr-r5",
       "template": "hero-reveal",
-      "durationFrames": 321,
-      "animationDurationFrames": 321,
+      "durationFrames": 336,
+      "animationDurationFrames": 336,
       "caption": {
         "text": "rr-r5",
         "preset": "body"
@@ -2772,8 +2759,8 @@
     {
       "id": "rr-r6",
       "template": "hero-reveal",
-      "durationFrames": 160,
-      "animationDurationFrames": 160,
+      "durationFrames": 168,
+      "animationDurationFrames": 168,
       "caption": {
         "text": "rr-r6",
         "preset": "body"
@@ -2819,8 +2806,8 @@
     {
       "id": "rr-r7",
       "template": "hero-reveal",
-      "durationFrames": 135,
-      "animationDurationFrames": 135,
+      "durationFrames": 142,
+      "animationDurationFrames": 142,
       "caption": {
         "text": "rr-r7",
         "preset": "body"
@@ -2873,8 +2860,8 @@
     {
       "id": "rr-r9",
       "template": "hero-reveal",
-      "durationFrames": 139,
-      "animationDurationFrames": 139,
+      "durationFrames": 145,
+      "animationDurationFrames": 145,
       "caption": {
         "text": "rr-r9",
         "preset": "body"

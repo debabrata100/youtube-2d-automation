@@ -2167,7 +2167,7 @@
           "id": "n1",
           "text": "inside it",
           "x": 540,
-          "y": 1330,
+          "y": 1395,
           "size": 78,
           "anchor": "middle",
           "variant": "ink",
@@ -3058,7 +3058,7 @@
           "id": "n0",
           "text": "≈ vacuum",
           "x": 540,
-          "y": 1350,
+          "y": 1230,
           "size": 61,
           "anchor": "middle",
           "variant": "ink",
@@ -3071,30 +3071,17 @@
             },
             {
               "frame": {
-                "at": "vacuum.",
+                "at": "thin,",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "vacuum.",
+                "at": "thin,",
                 "offset": 5
               },
               "value": 1
-            },
-            {
-              "frame": {
-                "at": "But",
-                "offset": -1
-              },
-              "value": 1
-            },
-            {
-              "frame": {
-                "at": "But"
-              },
-              "value": 0
             }
           ]
         },
@@ -3136,8 +3123,8 @@
     {
       "id": "gr-g1",
       "template": "hero-reveal",
-      "durationFrames": 229,
-      "animationDurationFrames": 229,
+      "durationFrames": 221,
+      "animationDurationFrames": 221,
       "caption": {
         "text": "gr-g1",
         "preset": "body"
@@ -3179,8 +3166,8 @@
     {
       "id": "gr-g2",
       "template": "hero-reveal",
-      "durationFrames": 76,
-      "animationDurationFrames": 76,
+      "durationFrames": 73,
+      "animationDurationFrames": 73,
       "caption": {
         "text": "gr-g2",
         "preset": "body"
@@ -3233,8 +3220,8 @@
     {
       "id": "gr-g3",
       "template": "hero-reveal",
-      "durationFrames": 280,
-      "animationDurationFrames": 280,
+      "durationFrames": 270,
+      "animationDurationFrames": 270,
       "caption": {
         "text": "gr-g3",
         "preset": "body"
@@ -3287,8 +3274,8 @@
     {
       "id": "gr-g4",
       "template": "hero-reveal",
-      "durationFrames": 293,
-      "animationDurationFrames": 293,
+      "durationFrames": 282,
+      "animationDurationFrames": 282,
       "caption": {
         "text": "gr-g4",
         "preset": "body"
@@ -3341,8 +3328,8 @@
     {
       "id": "gr-g5",
       "template": "hero-reveal",
-      "durationFrames": 280,
-      "animationDurationFrames": 280,
+      "durationFrames": 270,
+      "animationDurationFrames": 270,
       "caption": {
         "text": "gr-g5",
         "preset": "body"
@@ -3395,8 +3382,8 @@
     {
       "id": "gr-g6",
       "template": "hero-reveal",
-      "durationFrames": 204,
-      "animationDurationFrames": 204,
+      "durationFrames": 196,
+      "animationDurationFrames": 196,
       "caption": {
         "text": "gr-g6",
         "preset": "body"
@@ -3456,8 +3443,8 @@
     {
       "id": "gr-g8",
       "template": "hero-reveal",
-      "durationFrames": 258,
-      "animationDurationFrames": 258,
+      "durationFrames": 248,
+      "animationDurationFrames": 248,
       "caption": {
         "text": "gr-g8",
         "preset": "body"
@@ -3494,7 +3481,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "vacuum."
+            "at": "thin,"
           },
           "gainDb": -24
         },
