@@ -10,7 +10,7 @@ Lessons applied from our own Shorts:
 - S1 lost viewers in the first seconds. S2 and S7 (real facts, real dates) held 45–50%.
 - So both open with a line that contradicts what the viewer is sure of, and the first picture shows that contradiction.
 
-## G1 — "Why the Moon Is Inside Earth's Atmosphere 🌍🤯 Geocorona" (≈55 s)
+## G1 — "Why the Moon Is Inside Earth's Atmosphere 🌍🤯 Geocorona" (≈53 s)
 
 Title (GeoGlobeTales format, "Why…" + emoji + keyword tail; chosen 23 Nov): **Why the Moon Is Inside Earth's Atmosphere 🌍🤯 Geocorona**
 Backup: You've Never Left Earth's Atmosphere. Nobody Has.
@@ -23,12 +23,22 @@ Backup: You've Never Left Earth's Atmosphere. Nobody Has.
 | g4 | Narrator | Old data from the SOHO spacecraft showed that cloud reaches six hundred and thirty thousand kilometers. Almost twice as far as the Moon. | The SOHO spacecraft (real shape) → zoom out: Earth, the Moon's orbit as a dotted circle, the haze passing far beyond it. Ruler: "630,000 km". |
 | g5 | Narrator | So the Moon flies through Earth's atmosphere. Apollo 16 astronauts photographed its glow from the Moon, never knowing they were inside it. | Moon sliding along its orbit inside the haze → photo plate: Earth with a glowing ring (UV camera on its tripod beside the lunar module). |
 | g6 | Narrator | In April, Artemis 2 flew humans farther than ever. Over four hundred thousand kilometers. Still inside. | Orion's figure-eight path drawn on the map; counter rolls to 406,771 km; the haze edge sits well beyond it. |
-| g7 | Arka | So no astronaut ever really left home? | Arka in a spacesuit with a "HOME" doormat under his boots. |
 | g8 | Narrator | Out there it's so thin, we'd call it a vacuum. But where it touches the Moon, it's leaving a mark. | Haze thins to a few dots; one dot lands on the Moon and leaves a small red-brown spot. Card: "Part 2". |
 
 Loop: the last frame (a dot landing on the Moon) leads back into g1's Orion-in-haze frame.
 
-## R1 — "Why the Moon Is Rusting 🌕🤯 Earth's Oxygen" (≈45 s)
+**Camera (one continuous world, no scene cuts):** everything happens in a single Earth–Moon space; the camera only moves.
+- g1: start tight on Orion behind the Moon, inside the haze.
+- g2: pan down to Arka on a crater.
+- g3: pull back to Earth with the 100 km line, and the haze grows.
+- g4: keep pulling back past the Moon's orbit to the 630,000 km edge; SOHO is a small inset in the corner.
+- g5: glide in to the Moon; a photo plate rises from the surface.
+- g6: Orion's path is drawn across the same view.
+- g8: push in on the Moon; one dot lands → hard loop to g1.
+
+**Big words:** "SPACE STARTS?" (g3), "630,000 km" (g4), "STILL INSIDE" (g1, g6).
+
+## R1 — "Why the Moon Is Rusting 🌕🤯 Earth's Oxygen" (≈41 s)
 
 Title (chosen 23 Nov): **Why the Moon Is Rusting 🌕🤯 Earth's Oxygen**
 Backup: Earth Is Rusting the Moon
@@ -42,10 +52,20 @@ Backup: Earth Is Rusting the Moon
 | r5 | Narrator | Earth's magnetic field trails a long tail. Around every full Moon, the Moon passes through it, and oxygen from our air drifts along to the Moon. | Earth with field lines swept into a long tail away from the Sun; the Moon slides into the tail at full Moon; small "O" dots drift along it. |
 | r6 | Narrator | The tail also blocks the solar wind, which normally stops rust from forming. | Sun's wind as streaks hitting a shield where the tail is; on-screen "blocks 99%+". |
 | r7 | Narrator | The clue? There's more rust on the side that faces Earth. | Moon split view: near side with more red dots, far side with fewer. |
-| r8 | Arka | So we're rusting the Moon without ever touching it. | Arka at a tiny Earth, holding a watering can, shrugging. |
 | r9 | Narrator | A little of Earth's sky, turning to rust on the Moon. | Pull back: the faint haze from G1 reaching the Moon; one red spot glows. |
 
 Loop: r9's red spot matches r1's opening close-up.
+
+**Camera (one continuous world):** the same Earth–Moon space as G1, so the two Shorts look like one series.
+- r1: start tight on a red patch near the lunar pole.
+- r2: Arka beside it.
+- r3: pull up to orbit height as Chandrayaan-1 passes over.
+- r4–r5: pull back until Earth enters the frame, and the magnetotail sweeps out behind it and over the full Moon.
+- r6: solar-wind streaks hit the tail and bend away.
+- r7: orbit around the Moon to compare the near side and the far side.
+- r9: push back in to the red spot → loop.
+
+**Big words:** "RUST" (r1, r3), "FROM US" (r4), "99%" (r6), "MORE RUST →" pointing at Earth (r7).
 
 ## Descriptions (draft; story paragraph full of searchable words, like GeoGlobeTales)
 
@@ -87,6 +107,14 @@ Sources: NASA/JPL, ISRO, Science Advances.
 
 (The channel's default footer, with the AI-narration line, is added under each automatically.)
 
+## Production decisions (23 Nov, after the frame-by-frame look at GeoGlobeTales)
+- **Burned-in captions on** for both, using the existing `config/caption-styles/shorts-paint.json` (per-word highlight). Most Shorts are watched on mute. The SRT is still uploaded.
+- **One Arka line each:** g7 and r8 were cut. Arka voices only the viewer's objection (g2, r2), with no extra interruptions.
+- **One continuous camera per Short:** no scene cuts (see the Camera notes above). One exception, borrowed from their Hawaii Short: one flat side-view diagram for the mechanism. In R1 that is the magnetotail at r5–r6, drawn as Sun → Earth → tail → Moon. Then the camera returns to the Moon.
+- **"NOT TO SCALE" tag** in a small corner on any diagram (their Hawaii hotspot cut-away does this). G1 needs it twice: the geocorona isn't a visible blue haze, and the 630,000 km view squeezes Earth and the Moon. R1 needs it on the magnetotail.
+- **Place labels on every object** (Earth, Moon, Orion, SOHO, Chandrayaan-1, Apollo 16 site), like their labels for "Ecuador", "Peru" and "Hawaiian Archipelago". Labels are small and white and stay on screen as long as the object is in view.
+- **Wind as moving streaks:** their El Niño Short shows trade winds as white streaks over the ocean. R1's solar wind (r6) uses the same idea: streaks from the Sun bend around the tail.
+
 ## Fact check (sources consulted 23 Nov 2026)
 
 | Claim | Line | Basis |
@@ -105,6 +133,6 @@ Sources: NASA/JPL, ISRO, Science Advances.
 Not claimed: how long the rusting has been going on, or how the water gets there. Li's leading idea is dust impacts freeing water, but it is unconfirmed, so the script leaves it out.
 
 ## Production notes
-- **Paid narration (needs approval):** 1,378 characters total (G1 761, R1 617). ElevenLabs charges about 1 credit per character, so about 1,400 credits. At our measured pace (~13.7 characters a second), G1 runs about 55 s and R1 about 45 s. One request per Short, no automatic retries. Check the remaining balance first: Arka's voice is waiting on December credits.
+- **Paid narration (needs approval):** 1,289 characters total. ElevenLabs charges about 1 credit per character. At our measured pace (~13.7 characters a second), G1 runs about 53 s and R1 about 41 s. One request per Short, no automatic retries. Check the remaining balance first: Arka's voice is waiting on December credits.
 - **New props likely:** Orion capsule, SOHO, Chandrayaan-1 orbiter, a magnetotail field shape, a UV camera photo plate, a haze/glow layer, a "HOME" doormat. Reuse: globe, moon, probe, counter, stamp, photo-plate.
 - **Sounds:** a soft whoosh when the haze grows; a ding on "Still inside"; a crack when rust flakes. All off-word, at −16 dB or quieter.
