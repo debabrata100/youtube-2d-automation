@@ -1,4 +1,4 @@
-# 15: Ghost Sun Short A, "What If the Sun Vanished for Exactly 8 Minutes?"
+# 15: Ghost Sun Short A, "What If the Sun Disappeared for 8 Minutes?"
 
 - **Status:** rendered 23 Nov (`jobs/gss-gone-final`), checked (frames every 3 s, -16.6 LUFS, peaks −2.3 dB). **Uploaded 23 Nov as [15MGyj6Gy2A](https://youtube.com/shorts/15MGyj6Gy2A), scheduled Fri 4 Dec, 9:30 PM IST.** Set: title, description, tags, playlist, English SRT, settings. Still to do: Related video → Ep 5 (3 Dec check-in, once Ep 5 is public); pinned comment after launch (ask). Proposed: **Fri 4 Dec, 9:30 PM IST** (the day after Ep 5 goes public, so the Related video can point to it at once).
 - **File:** `~/Downloads/gahanarka-upload/15-ghost-sun-gone-short/what-if-the-sun-vanished-for-8-minutes.mp4` (42 s, 1080×1920), md5 88a4e59a…; captions `captions-english.srt` (28 cues, not burned in).
@@ -7,8 +7,10 @@
 - **Look:** Ep 5's look (paint-night-gold); bright noon page for the hook and the last line, so the loop is seamless. Hook text from frame 0: "THE SUN IS ALREADY GONE."
 - **Idea from:** YouTube Studio's AI suggestion (23 Nov): a Short on the opening paradox.
 
+- **Titles changed 23 Nov (Debabrata approved):** Shorts can't be A/B tested, the phone feed cuts titles at ~40 characters, and linked videos should use the episode's wording ("Disappeared", the phrase people search). Old title kept in git history.
+
 ## Title
-**What If the Sun Vanished for Exactly 8 Minutes?** (47 characters)
+**What If the Sun Disappeared for 8 Minutes?** (42 characters)
 
 ## Description (paste as is)
 

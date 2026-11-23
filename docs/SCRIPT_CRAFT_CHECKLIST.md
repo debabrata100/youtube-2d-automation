@@ -43,6 +43,12 @@ and in the description and pinned comment, rather than re-recording.
 - [ ] **Everyday comparisons for every big number** (a selfie for 69 KB, an 8-track tape, dial-up internet being 100 times faster).
 - [ ] **Cover frame:** pick the frame that shows the hook comparison itself (the phone next to the spacecraft, or the big "69 KB" number), not a generic shot.
 
+## Shorts: titles (23 Nov 2026)
+- Keep a Short's title **at or under ~40 characters**: the phone feed cuts it off there, so the payoff word must fit.
+- Use the **same wording as the episode it links to and as people search** ("What if the Sun disappeared", not "vanished").
+- In the swipe feed the first second decides; the title works mainly in search, the channel page and the Related-video link. Shorts can't be A/B tested, so judge titles after launch by search traffic and "stayed to watch %".
+- Don't repeat the episode's own title; tease a different angle or ask a question the Short answers ("Who'd Notice Last?").
+
 ## Grown-up audience (positioning, 21 Nov 2026)
 Our viewer is a curious 16–35-year-old, not a child. A cartoon style is fine; a children's tone is not.
 - [ ] **Stakes and topics for adults:** real science, real numbers and sources, consequences that matter to grown-ups (energy, work, cities, extinction), told calmly. Dark themes stay non-graphic.

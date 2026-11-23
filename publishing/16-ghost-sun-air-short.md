@@ -1,4 +1,4 @@
-# 16: Ghost Sun Short B, "If the Sun Vanished, the Air Would Snow Down"
+# 16: Ghost Sun Short B, "Without the Sun, the Air Would Snow Down"
 
 - **Status:** rendered 23 Nov (`jobs/gss-air-final`), checked (frames every 3 s, -16.4 LUFS, peaks −2.3 dB). **Uploaded 23 Nov as [0iKH5kqpgYY](https://youtube.com/shorts/0iKH5kqpgYY), scheduled Fri 11 Dec, 9:30 PM IST.** Set: title, description, tags, playlist, English SRT, settings. Still to do: Related video → Ep 5 (3 Dec check-in, once Ep 5 is public); pinned comment after launch (ask). Proposed: **Fri 11 Dec, 9:30 PM IST**.
 - **File:** `~/Downloads/gahanarka-upload/16-ghost-sun-air-short/the-air-would-snow-down.mp4` (41 s, 1080×1920), md5 979f0950…; captions `captions-english.srt` (25 cues, not burned in).
@@ -6,8 +6,10 @@
 - **Build:** `scripts/authoring/plan-ghost-sun-shorts.py air 41` → `storyboards/ghost-sun-air.json` (41 s). Readability gate: no issues. Contact sheet checked 23 Nov.
 - **Hook:** opens on the strangest line, "The air itself freezes, and falls.", with "THE AIR FALLS." on screen from frame 0; the last line ("Just stars, all the way down to the ground.") loops back into it.
 
+- **Titles changed 23 Nov (Debabrata approved):** Shorts can't be A/B tested, the phone feed cuts titles at ~40 characters, and linked videos should use the episode's wording ("Disappeared", the phrase people search). Old title kept in git history.
+
 ## Title
-**If the Sun Vanished, the Air Would Snow Down** (44 characters)
+**Without the Sun, the Air Would Snow Down** (40 characters)
 
 ## Description (paste as is)
 

@@ -1,8 +1,8 @@
 """Ghost Sun Shorts (9:16), cut from Ep 5's approved narration (jobs/gs-narration-sting): no paid audio.
 
-  gone     "What If the Sun Vanished for Exactly 8 Minutes?"   the opening paradox (s1-s6)        -> Related video: Ep 5
-  air      "If the Sun Vanished, the Air Would Snow Down"      minus 70, minus 240, air snow (s44-s56) -> Ep 5
-  voyager  "If the Sun Vanished, Voyager Would Find Out Last"  the shell of darkness (s15-s27)    -> Ep 5 (also in the Voyager playlist)
+  gone     "What If the Sun Disappeared for 8 Minutes?"   the opening paradox (s1-s6)        -> Related video: Ep 5
+  air      "Without the Sun, the Air Would Snow Down"      minus 70, minus 240, air snow (s44-s56) -> Ep 5
+  voyager  "If the Sun Disappeared, Who'd Notice Last?"  the shell of darkness (s15-s27)    -> Ep 5 (also in the Voyager playlist)
 
 Every line is copied exactly from stories/ghost-sun-script.md (the approved Ep 5 script); cut-narration.py checks each one
 against the cached narration's text. Each Short shows its hook as text from frame 0 (pocket hook), ends on a line that
@@ -23,7 +23,7 @@ N, K = 'narrator', 'arka'
 EP5 = 'jobs/gs-narration-sting'
 
 SHORTS = {
-    'gone': dict(id='ghost-sun-gone', title='What If the Sun Vanished for Exactly 8 Minutes?', prefix='gg',
+    'gone': dict(id='ghost-sun-gone', title='What If the Sun Disappeared for 8 Minutes?', prefix='gg',
                  topic=("Sunlight takes 8 min 20 s to reach Earth; if the Sun vanished for exactly 8 min 20 s, Earth would go dark at the "
                         "moment the Sun was already back. Cut from Ep 5 (If the Sun Disappeared, Even the Air Would Fall)."),
                  beats=[('g1', 'hook', [(N, "It's twelve o'clock, noon. The Sun is shining. And it's already gone.")]),
@@ -33,7 +33,7 @@ SHORTS = {
                         ('g5', 'payoff', [(N, "And here's the twist. At the very moment the lights go out on Earth, the Sun is already back. We just can't see it yet.")]),
                         ('g6', 'explanation', [(K, "So by the time we notice it's gone... it's not gone anymore?")]),
                         ('g7', 'closing', [(N, 'Exactly.')])]),
-    'air': dict(id='ghost-sun-air', title='If the Sun Vanished, the Air Would Snow Down', prefix='ga',
+    'air': dict(id='ghost-sun-air', title='Without the Sun, the Air Would Snow Down', prefix='ga',
                 topic=("If the Sun vanished for good, Earth would cool to about -70 C within a year and settle near -240 C over millions of years; "
                        "nitrogen and oxygen would freeze and fall as snow and frost. Cut from Ep 5."),
                 beats=[('a1', 'hook', [(N, 'The air itself freezes, and falls.')]),
@@ -43,7 +43,7 @@ SHORTS = {
                        ('a5', 'payoff', [(N, 'Nitrogen and oxygen drift down as snow and frost, and lie on the ground in a thin, frozen layer.')]),
                        ('a6', 'explanation', [(K, "The air... falls down? So there's no sky anymore?")]),
                        ('a7', 'closing', [(N, 'No sky. No wind. Just stars, all the way down to the ground.')])]),
-    'voyager': dict(id='ghost-sun-voyager', title='If the Sun Vanished, Voyager Would Find Out Last', prefix='gv',
+    'voyager': dict(id='ghost-sun-voyager', title='If the Sun Disappeared, Who'd Notice Last?', prefix='gv',
                     topic=("The missing light of a vanished Sun travels outward as a shell of darkness: Mars after ~13 min, Jupiter ~43 min, "
                            "Neptune ~4 h, Voyager 1 (one light-day away) a day later. Cut from Ep 5."),
                     beats=[('v1', 'hook', [(N, "Twelve o'clock, noon: the Sun vanishes.")]),

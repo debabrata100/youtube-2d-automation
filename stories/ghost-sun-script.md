@@ -143,7 +143,7 @@ Long episode, 16:9, target **10–12 minutes** (1702 narrated words ≈ 11.7 min
 
 ## Shorts from the same narration (no extra paid audio)
 
-**Built 23 Nov 2026** (`scripts/authoring/plan-ghost-sun-shorts.py`, sheets `publishing/15`–`17`): A "What If the Sun Vanished for Exactly 8 Minutes?" (s1–s6, YouTube Studio's suggestion), B "If the Sun Vanished, the Air Would Snow Down" (s44–s56), C "If the Sun Vanished, Voyager Would Find Out Last" (s15–s27). The blackout (1) stays in reserve: it overlaps A.
+**Built 23 Nov 2026** (`scripts/authoring/plan-ghost-sun-shorts.py`, sheets `publishing/15`–`17`): A "What If the Sun Disappeared for 8 Minutes?" (s1–s6, YouTube Studio's suggestion), B "Without the Sun, the Air Would Snow Down" (s44–s56), C "If the Sun Disappeared, Who'd Notice Last?" (s15–s27). The blackout (1) stays in reserve: it overlaps A.
 
 1. **"The great blackout"**: s15–s22 (longer than any eclipse; silent bees; the Moon vanishes). Strongest hook.
 2. **"The air would snow down"**: s52–s56 (strange, visual, myth-free).
