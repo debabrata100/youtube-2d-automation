@@ -6,7 +6,7 @@ tags and pinned-comment text for each upload live in its sheet (`publishing/NN-*
 **Rule:** update this file every time something changes in Studio (upload, schedule, thumbnail test, subtitles, Related video,
 pinned comment, end screen, playlist). Copy video IDs from Studio or the address bar, never from a screenshot.
 
-Last full check: **20 Nov 2026, 5 PM IST**. Last change: **23 Nov, 13:45 IST** (Scorecard section added)
+Last full check: **20 Nov 2026, 5 PM IST**. Last change: **23 Nov, 15:35 IST** (Ep 5 moved to Sun 29 Nov)
 
 ## Long videos (16:9)
 
@@ -17,7 +17,7 @@ Last full check: **20 Nov 2026, 5 PM IST**. Last change: **23 Nov, 13:45 IST** (
 | Ep 3 | How You'd Die on Every Moon in the Solar System (**reworked**: new script, R1 + Arka D2 narration, new visuals) | [M9o6HqK5zSs](https://youtu.be/M9o6HqK5zSs) | Public since **Sun 22 Nov, 9:30 PM** (uploaded 22 Nov 12:15) | Running: 1 c1 THE ONLY MOON YOU CAN FLY, 2 b1 12-MINUTE FALL, 3 a1 IO/TRITON | ✅ English SRT | ✅ posted and pinned 22 Nov 21:55 ("Which moon surprised you the most…") | ✅ 10:46–10:58: Ep 2 + subscribe (switch to Ep 4 on Thu 26 Nov) · cards 2:42 → Ep 2, 9:40 → Ep 1 | Could You Survive…? | `04b-every-moon-v2.md` |
 | Ep 3 (old) | How You'd Die on Every Moon in the Solar System (first version) | [MnfXbn6mD8I](https://youtu.be/MnfXbn6mD8I) | **Private** since 22 Nov 12:40 (replaced by M9o6HqK5zSs; kept, not deleted) | — | — | — | — | — | `04-every-moon.md` |
 | Ep 4 | What Actually Happens If the Moon Disappears? (was "What If the Moon Disappeared Tonight?" until 22 Nov) | [ZbEeo3Xx0Iw](https://youtu.be/ZbEeo3Xx0Iw) | Scheduled **Thu 26 Nov, 9:30 PM** | Set (22 Nov, 00:40): 1 "MYTH \| REALITY" (gold MYTH), 2 "WE SURVIVE?", 3 "EARTH TIPS OVER?" (gold text); files `myth-vs-reality-gold.png`, `we-survive.png`, `earth-tips-over-gold.png`; replaced c, e, b; test starts when public | ✅ English SRT | ⏳ after launch | ⏳ last 12 s left empty: add Ep 3 + subscribe | What If…? | `06-moon-gone.md` |
-| Ep 5 | If the Sun Disappeared, Even the Air Would Fall | [Rtcxj2-wTuo](https://youtu.be/Rtcxj2-wTuo) | Scheduled **Thu 3 Dec, 9:30 PM** (uploaded 22 Nov, render `gs-full-4`) | Set: 1 NO SUN / THE AIR FALLS, 2 8 MINUTES OF DARKNESS, 3 THE LAST LIFE ON EARTH? (starts at launch) | ✅ English SRT | ⏳ after launch (sheet 13) | ✅ 11:40–11:56: Ep 4 + subscribe | What If…? | `13-ghost-sun.md` |
+| Ep 5 | If the Sun Disappeared, Even the Air Would Fall | [Rtcxj2-wTuo](https://youtu.be/Rtcxj2-wTuo) | Scheduled **Sun 29 Nov, 9:30 PM** (moved from Thu 3 Dec on 23 Nov; uploaded 22 Nov, render `gs-full-4`) | Set: 1 NO SUN / THE AIR FALLS, 2 8 MINUTES OF DARKNESS, 3 THE LAST LIFE ON EARTH? (starts at launch) | ✅ English SRT | ⏳ after launch (sheet 13) | ✅ 11:40–11:56: Ep 4 + subscribe | What If…? | `13-ghost-sun.md` |
 | — | Channel trailer, "This is Gahanarka" | [AanxfhmzenM](https://youtu.be/AanxfhmzenM) | Unlisted since 19 Nov | — | ⚠️ **auto-captions only, no SRT** | — | — | — | `07-channel-trailer.md` |
 
 ## Shorts (9:16)
@@ -33,9 +33,9 @@ Last full check: **20 Nov 2026, 5 PM IST**. Last change: **23 Nov, 13:45 IST** (
 | S7 | NASA Lost Voyager 1 for 48 Hours | [-FTg1FvhxKI](https://youtube.com/shorts/-FTg1FvhxKI) | Public since **Fri 20 Nov, 10:20 PM** | ✅ → Ep 3 M9o6HqK5zSs (22 Nov) | ✅ English SRT | ✅ posted and pinned 20 Nov ("…What should NASA name its next interstellar probe?") | Could You Survive…? | `11-voyager-silent-short.md` |
 | S8 | Voyager Has Less Memory Than One Photo on Your Phone | [Rh6l0gIQKBo](https://youtube.com/shorts/Rh6l0gIQKBo) | Scheduled **Mon 23 Nov, 9:30 PM** (uploaded 20 Nov) | ✅ → Ep 3 M9o6HqK5zSs (22 Nov) | ✅ English SRT | ⏳ after launch | Could You Survive…? | `12-voyager-memory-short.md` |
 | S9 | Voyager 1 Still Has a Pulse. It Just Stopped Talking. | [0VayVwKcAyc](https://youtube.com/shorts/0VayVwKcAyc) | Scheduled **Wed 25 Nov, 9:30 PM** (uploaded 22 Nov); re-check NASA status before it goes public | ✅ → Ep 3 M9o6HqK5zSs (22 Nov) | ✅ English SRT | ⏳ after launch | Could You Survive…? | `14-voyager-calling-short.md` |
-| S10 | What If the Sun Disappeared for 8 Minutes? (Ep 5 Short A) | [15MGyj6Gy2A](https://youtube.com/shorts/15MGyj6Gy2A) | Scheduled **Fri 4 Dec, 9:30 PM** (uploaded 23 Nov) | ⏳ → Ep 5 once it's public (3 Dec check-in) | ✅ English SRT | ⏳ after launch | What If…? | `15-ghost-sun-gone-short.md` |
-| S11 | If the Sun Disappeared, Who'd Notice Last? (Ep 5 Short C) | [9yJUqWaao8I](https://youtube.com/shorts/9yJUqWaao8I) | Scheduled **Tue 8 Dec, 9:30 PM** (uploaded 23 Nov) | ⏳ → Ep 5 (3 Dec check-in) | ✅ English SRT | ⏳ after launch | What If…? | `17-ghost-sun-voyager-short.md` |
-| S12 | Without the Sun, the Air Would Snow Down (Ep 5 Short B) | [0iKH5kqpgYY](https://youtube.com/shorts/0iKH5kqpgYY) | Scheduled **Fri 11 Dec, 9:30 PM** (uploaded 23 Nov) | ⏳ → Ep 5 (3 Dec check-in) | ✅ English SRT | ⏳ after launch | What If…? | `16-ghost-sun-air-short.md` |
+| S10 | What If the Sun Disappeared for 8 Minutes? (Ep 5 Short A) | [15MGyj6Gy2A](https://youtube.com/shorts/15MGyj6Gy2A) | Scheduled **Fri 4 Dec, 9:30 PM** (uploaded 23 Nov) | ⏳ → Ep 5 once it's public (29 Nov check-in) | ✅ English SRT | ⏳ after launch | What If…? | `15-ghost-sun-gone-short.md` |
+| S11 | If the Sun Disappeared, Who'd Notice Last? (Ep 5 Short C) | [9yJUqWaao8I](https://youtube.com/shorts/9yJUqWaao8I) | Scheduled **Tue 8 Dec, 9:30 PM** (uploaded 23 Nov) | ⏳ → Ep 5 (29 Nov check-in) | ✅ English SRT | ⏳ after launch | What If…? | `17-ghost-sun-voyager-short.md` |
+| S12 | Without the Sun, the Air Would Snow Down (Ep 5 Short B) | [0iKH5kqpgYY](https://youtube.com/shorts/0iKH5kqpgYY) | Scheduled **Fri 11 Dec, 9:30 PM** (uploaded 23 Nov) | ⏳ → Ep 5 (29 Nov check-in) | ✅ English SRT | ⏳ after launch | What If…? | `16-ghost-sun-air-short.md` |
 
 ## Scorecard: what each upload teaches us (added 23 Nov)
 
@@ -50,7 +50,7 @@ Judge a long video's click rate only after **500+ impressions**, and its retenti
 | Ep 2 Helmet | survival myth-bust | 19 Nov | ~4 | 26 | — | — | — | — | — | — | too early |
 | Ep 3 Every Moon (v2) | reworked script + visuals; thumbnail test | 22 Nov | 1 | | | | | | | | due 29 Nov |
 | Ep 4 Moon Gone | "What actually happens if…" search title; MYTH \| REALITY thumbnail | 26 Nov | | | | | | | | | due 3 Dec |
-| Ep 5 Ghost Sun | thumbnail test a / b2 / c; 3 Shorts feed it | 3 Dec | | | | | | | | | due 10 Dec |
+| Ep 5 Ghost Sun | thumbnail test a / b2 / c; 3 Shorts feed it | 29 Nov | | | | | | | | | due 6 Dec |
 | S1 Titan Short | survival hook | 17 Nov | ~6 | | | | 17.1% stayed | | | | weak opening: lost viewers in the first seconds |
 | S2 One Light-Day | real-world fact (Voyager) | 18 Nov | ~5 | | | | 46.7% stayed | | | | strong |
 | S3 15 Seconds | survival countdown | 21 Nov | ~2 | | | ~250 | 41.6% stayed | | | | good hold, stalled reach |

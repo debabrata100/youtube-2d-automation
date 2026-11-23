@@ -79,7 +79,8 @@ All three promises are delivered in the first 60 seconds (the claim check is set
 |---|---|---|
 | a27 | Arka | Okay. Earth's getting smaller back there. Now the big one: what if we *were* heading for it? |
 | a28 | Arka | And before you answer, I've seen the maps. Scientists know exactly where it lands. |
-| a29 | Narrator | Half true. Scientists did draw maps like that, back when the odds were real: the strip of Earth it would have crossed *if* it hit. But a map of a what-if isn't a prediction. Each new measurement crossed a date off: first 2029, then 2036. And in March 2021, radar dishes at Goldstone and Green Bank crossed off the last one, 2068. NASA says there's no risk for at least a hundred years. |
+| a29 | Narrator | Half true. Scientists did draw maps like that, back when the odds were real: the strip of Earth it would have crossed *if* it hit. But a map of a what-if isn't a prediction. |
+| a29b | Narrator | Each new measurement crossed a date off: first 2029, then 2036. And in March 2021, radar dishes at Goldstone and Green Bank crossed off the last one, 2068. NASA says there's no risk for at least a hundred years. |
 | a30 | Arka | Then why do some videos say the odds went *up*? |
 | a31 | Narrator | Good question, and that one is half right too. A 2024 study asked: what if a small, unseen rock hits Apophis before 2029 and nudges it? |
 | a32 | Narrator | The answer: about one chance in a million of a nudge that could set up a collision some time after 2029, and about one in a billion of one that sends it into Earth in 2029. And a single look at Apophis in 2027 should settle most of it. |
@@ -89,7 +90,8 @@ All three promises are delivered in the first 60 seconds (the claim check is set
 | a36 | Arka | That's… a lot smaller than the thumbnails. |
 | a37 | Narrator | Quick round. The end of the world? No. Global climate disasters need asteroids about a kilometre wide or more. The dinosaur-killer was about ten. Apophis is less than half a kilometre. |
 | a38 | Narrator | The energy? You'll see anything from forty megatons to ten thousand, because the early size estimates were rough. Today's best estimates: roughly a thousand. Still tens of thousands of times the Hiroshima bomb. |
-| a39 | Narrator | And the wall of water hundreds of metres high? This one gets an honest answer: we don't know. An ocean strike would raise tsunamis, and that's the biggest danger of a sea impact. But some impact researchers argue the giant-wall simulations get wave-breaking wrong, and one study found that an asteroid that struck the ocean off Chile about two million years ago didn't cause a giant tsunami. |
+| a39 | Narrator | And the wall of water hundreds of metres high? This one gets an honest answer: we don't know. An ocean strike would raise tsunamis, and that's the biggest danger of a sea impact. |
+| a39b | Narrator | But some impact researchers argue the giant-wall simulations get wave-breaking wrong, and one study found that an asteroid that struck the ocean off Chile about two million years ago didn't cause a giant tsunami. |
 | a40 | Narrator | So: dangerous coastal waves, yes. A guaranteed skyscraper of water, no one can promise that. |
 | a41 | Arka | So the true version is: bad, regional, and not happening. |
 | a42 | Narrator | That's exactly it. |
@@ -133,12 +135,13 @@ All three promises are delivered in the first 60 seconds (the claim check is set
 | a21 | "USGS 2025" |
 | a22 | "Pravec et al. 2014" |
 | a24–a25 | "Royal Obs. Belgium 2024 · NASA" |
-| a29 | "B612 Foundation path of risk, 2008" then "NASA / ESA, March 2021" |
+| a29 | "B612 Foundation path of risk, 2008" |
+| a29b | "NASA / ESA, March 2021" |
 | a32 | "Wiegert 2024" |
 | a35 | "Planetary Society" |
 | a37 | "1 km+ for global effects" |
 | a38 | "NASA est. 880 Mt" |
-| a39 | "Acta Astronautica 2021 · Melosh" |
+| a39b | "Acta Astronautica 2021 · Melosh" |
 | a44 | "ESA" |
 | a45 | "NASA · Univ. of Arizona" |
 | a48 | "JPL · ESA" |
@@ -227,6 +230,7 @@ Each line that makes or corrects a claim, checked against the rules above.
 ## Rework 23 Nov: people and impact (checklist re-audit)
 
 - **Named discoverers:** a12b now names Roy Tucker, David Tholen and Fabrizio Bernardi; a49b closes the human loop: Tucker died in 2021 and won't see the night, but about two billion people can see what he found. Arka's 15 lines are unchanged word for word (reusable E3 take).
+- **a29 and a39 split** into a29/a29b and a39/a39b (each carried two ideas; one shot per idea, and a shot holds at most 12 caption phrases). Wording unchanged; source tags moved with their sentences.
 - **a53:** the subscribe line is now the narrator's ("Subscribe, and come along for the ride."), so no new paid Arka audio is needed.
 
 | Claim | Line | Source |

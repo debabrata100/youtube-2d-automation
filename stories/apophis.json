@@ -1,0 +1,1241 @@
+{
+ "schemaVersion": "1.0",
+ "id": "apophis",
+ "title": "What If Apophis Hit? Most Videos Get It Wrong",
+ "topic": "Myth-busting ride on asteroid 99942 Apophis during its 13 April 2029 flyby: the scary claims, low gravity, the 2004 scare and its discoverers, passing inside the geostationary ring, tidal shivers, what a hit would really do (regional, not global), the honest unknown about tsunamis, OSIRIS-APEX and RAMSES, two billion people watching",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious viewers aged 16-35",
+ "durationSeconds": 660,
+ "storyboard": "storyboards/apophis.json",
+ "candidatesReport": "stories/apophis-script.md",
+ "beats": [
+  {
+   "id": "a1",
+   "sceneId": "ap-a1",
+   "intent": "hook",
+   "narration": "On Friday the thirteenth of April, 2029, an asteroid the size of a skyscraper will pass closer to Earth than the satellites that carry our TV signals.",
+   "phrases": [
+    "On Friday the thirteenth of April,",
+    "2029, an asteroid the size of a",
+    "skyscraper will pass closer to",
+    "Earth than the satellites that",
+    "carry our TV signals."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a2",
+   "sceneId": "ap-a2",
+   "intent": "hook",
+   "narration": "You may have heard what happens next. It wipes out a continent. It ends the world. A wall of water hundreds of metres high. Scientists have even mapped where it lands.",
+   "phrases": [
+    "You may have heard what happens",
+    "next.",
+    "It wipes out a continent.",
+    "It ends the world.",
+    "A wall of water hundreds of metres",
+    "high.",
+    "Scientists have even mapped where",
+    "it lands."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a3",
+   "sceneId": "ap-a3",
+   "intent": "hook",
+   "narration": "Please tell me most of that is wrong.",
+   "phrases": [
+    "Please tell me most of that is",
+    "wrong."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "a4",
+   "sceneId": "ap-a4",
+   "intent": "hook",
+   "narration": "Most of it is. Some of it is half right. And one part is more interesting than any of the scary versions.",
+   "phrases": [
+    "Most of it is.",
+    "Some of it is half right.",
+    "And one part is more interesting",
+    "than any of the scary versions."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a5",
+   "sceneId": "ap-a5",
+   "intent": "hook",
+   "narration": "So let's check every claim properly. And to do it, we're not going to watch from Earth.",
+   "phrases": [
+    "So let's check every claim",
+    "properly.",
+    "And to do it, we're not going to",
+    "watch from Earth."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a6",
+   "sceneId": "ap-a6",
+   "intent": "hook",
+   "narration": "We're going to ride it.",
+   "phrases": [
+    "We're going to ride it."
+   ],
+   "phraseSpeakers": [
+    "narrator"
+   ]
+  },
+  {
+   "id": "a7",
+   "sceneId": "ap-a7",
+   "intent": "explanation",
+   "narration": "Here we are. Apophis: a lumpy grey rock, about four hundred and fifty metres long, slowly tumbling. Earth is a bright blue dot ahead of us.",
+   "phrases": [
+    "Here we are.",
+    "Apophis: a lumpy grey rock, about",
+    "four hundred and fifty metres",
+    "long, slowly tumbling.",
+    "Earth is a bright blue dot ahead",
+    "of us."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a8",
+   "sceneId": "ap-a8",
+   "intent": "explanation",
+   "narration": "Okay. First step.",
+   "phrases": [
+    "Okay.",
+    "First step."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "a9",
+   "sceneId": "ap-a9",
+   "intent": "explanation",
+   "narration": "Careful. The gravity here is about a quarter of a millionth of Earth's. A gentle hop, faster than about twelve centimetres a second, and you leave Apophis forever.",
+   "phrases": [
+    "Careful.",
+    "The gravity here is about a",
+    "quarter of a millionth of Earth's.",
+    "A gentle hop, faster than about",
+    "twelve centimetres a second, and",
+    "you leave Apophis forever."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a10",
+   "sceneId": "ap-a10",
+   "intent": "explanation",
+   "narration": "Twelve centimetres a second? I walk to the kitchen faster than that.",
+   "phrases": [
+    "Twelve centimetres a second?",
+    "I walk to the kitchen faster than",
+    "that."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "a11",
+   "sceneId": "ap-a11",
+   "intent": "explanation",
+   "narration": "So everything is slow motion. Dropped dust drifts down for minutes. That's why we're clipped to a cable.",
+   "phrases": [
+    "So everything is slow motion.",
+    "Dropped dust drifts down for",
+    "minutes.",
+    "That's why we're clipped to a",
+    "cable."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a12",
+   "sceneId": "ap-a12",
+   "intent": "explanation",
+   "narration": "And twenty-five years ago, the people tracking this rock were genuinely worried. In December 2004, the odds that it would hit Earth on this exact date reached one in thirty-seven. The highest danger rating any asteroid had ever been given.",
+   "phrases": [
+    "And twenty-five years ago, the",
+    "people tracking this rock were",
+    "genuinely worried.",
+    "In December 2004, the odds that it",
+    "would hit Earth on this exact date",
+    "reached one in thirty-seven.",
+    "The highest danger rating any",
+    "asteroid had ever been given."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a12b",
+   "sceneId": "ap-a12b",
+   "intent": "explanation",
+   "narration": "It was a strange Christmas. Three astronomers, Roy Tucker, David Tholen and Fabrizio Bernardi, had spotted the rock in Arizona that June, seen it for two nights, then lost it. Gordon Garradd found it again from Australia in December, and with every new observation the odds got worse: one in three hundred, one in sixty, one in thirty-seven.",
+   "phrases": [
+    "It was a strange Christmas.",
+    "Three astronomers, Roy Tucker,",
+    "David Tholen and Fabrizio",
+    "Bernardi, had spotted the rock in",
+    "Arizona that June, seen it for two",
+    "nights, then lost it.",
+    "Gordon Garradd found it again from",
+    "Australia in December, and with",
+    "every new observation the odds got",
+    "worse: one in three hundred, one",
+    "in sixty, one in thirty-seven."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a12c",
+   "sceneId": "ap-a12c",
+   "intent": "explanation",
+   "narration": "What saved the day was old photographs. Astronomers found Apophis hiding in images taken months earlier, and with that longer trail, 2029 was ruled out within days.",
+   "phrases": [
+    "What saved the day was old",
+    "photographs.",
+    "Astronomers found Apophis hiding",
+    "in images taken months earlier,",
+    "and with that longer trail, 2029",
+    "was ruled out within days."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a13",
+   "sceneId": "ap-a13",
+   "intent": "explanation",
+   "narration": "So that's where the scary videos come from.",
+   "phrases": [
+    "So that's where the scary videos",
+    "come from."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "a14",
+   "sceneId": "ap-a14",
+   "intent": "explanation",
+   "narration": "Partly. Hold that thought. We'll come back to the odds.",
+   "phrases": [
+    "Partly.",
+    "Hold that thought.",
+    "We'll come back to the odds."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a15",
+   "sceneId": "ap-a15",
+   "intent": "explanation",
+   "narration": "One hour out, and Earth has stopped being a dot. Watch it grow.",
+   "phrases": [
+    "One hour out, and Earth has",
+    "stopped being a dot.",
+    "Watch it grow."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a16",
+   "sceneId": "ap-a16",
+   "intent": "explanation",
+   "narration": "At closest approach, we'll be less than thirty-two thousand kilometres above the surface. From here, Earth will look about nineteen degrees across. Roughly thirty-eight full Moons, side by side.",
+   "phrases": [
+    "At closest approach, we'll be less",
+    "than thirty-two thousand",
+    "kilometres above the surface.",
+    "From here, Earth will look about",
+    "nineteen degrees across.",
+    "Roughly thirty-eight full Moons,",
+    "side by side."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a17",
+   "sceneId": "ap-a17",
+   "intent": "explanation",
+   "narration": "It's filling the whole sky.",
+   "phrases": [
+    "It's filling the whole sky."
+   ],
+   "phraseSpeakers": [
+    "arka"
+   ]
+  },
+  {
+   "id": "a18",
+   "sceneId": "ap-a18",
+   "intent": "explanation",
+   "narration": "Now look up the altitude ladder. The space station orbits about four hundred kilometres up. GPS satellites, about twenty thousand. And the ring of geostationary satellites, the ones carrying TV and weather data, about thirty-six thousand.",
+   "phrases": [
+    "Now look up the altitude ladder.",
+    "The space station orbits about",
+    "four hundred kilometres up.",
+    "GPS satellites, about twenty",
+    "thousand.",
+    "And the ring of geostationary",
+    "satellites, the ones carrying TV",
+    "and weather data, about thirty-six",
+    "thousand."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a19",
+   "sceneId": "ap-a19",
+   "intent": "explanation",
+   "narration": "We're passing inside that ring. About a tenth of the way to the Moon.",
+   "phrases": [
+    "We're passing inside that ring.",
+    "About a tenth of the way to the",
+    "Moon."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a20",
+   "sceneId": "ap-a20",
+   "intent": "explanation",
+   "narration": "Are we going to hit one?",
+   "phrases": [
+    "Are we going to hit one?"
+   ],
+   "phraseSpeakers": [
+    "arka"
+   ]
+  },
+  {
+   "id": "a21",
+   "sceneId": "ap-a21",
+   "intent": "explanation",
+   "narration": "First claim checked. You may have heard Apophis could smash into satellites or space junk. It's very unlikely. Space is far emptier than the drawings, and satellite orbits are known precisely. Operators will be watching anyway.",
+   "phrases": [
+    "First claim checked.",
+    "You may have heard Apophis could",
+    "smash into satellites or space",
+    "junk.",
+    "It's very unlikely.",
+    "Space is far emptier than the",
+    "drawings, and satellite orbits are",
+    "known precisely.",
+    "Operators will be watching anyway."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a22",
+   "sceneId": "ap-a22",
+   "intent": "explanation",
+   "narration": "And we're fast now. Earth's pull has sped us up to more than seven kilometres every second. At this speed you'd cross India, north to south, in about seven minutes.",
+   "phrases": [
+    "And we're fast now.",
+    "Earth's pull has sped us up to",
+    "more than seven kilometres every",
+    "second.",
+    "At this speed you'd cross India,",
+    "north to south, in about seven",
+    "minutes."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a23",
+   "sceneId": "ap-a23",
+   "intent": "explanation",
+   "narration": "The ground just moved. Did you feel that?",
+   "phrases": [
+    "The ground just moved.",
+    "Did you feel that?"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "a24",
+   "sceneId": "ap-a24",
+   "intent": "explanation",
+   "narration": "Second claim. You may have heard Earth will tear Apophis apart. It won't. Earth pulls harder on the near end than the far end, and modelling suggests the gravity you'd feel here changes by only a few percent.",
+   "phrases": [
+    "Second claim.",
+    "You may have heard Earth will tear",
+    "Apophis apart.",
+    "It won't.",
+    "Earth pulls harder on the near end",
+    "than the far end, and modelling",
+    "suggests the gravity you'd feel",
+    "here changes by only a few",
+    "percent."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a25",
+   "sceneId": "ap-a25",
+   "intent": "explanation",
+   "narration": "But on loose slopes, that can be enough. Scientists expect the tumbling to change, and there may be small landslides and quakes. Not destruction. A shiver.",
+   "phrases": [
+    "But on loose slopes, that can be",
+    "enough.",
+    "Scientists expect the tumbling to",
+    "change, and there may be small",
+    "landslides and quakes.",
+    "Not destruction.",
+    "A shiver."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a26",
+   "sceneId": "ap-a26",
+   "intent": "explanation",
+   "narration": "Closest approach. Earth is enormous. And then, slowly, it starts to shrink behind us.",
+   "phrases": [
+    "Closest approach.",
+    "Earth is enormous.",
+    "And then, slowly, it starts to",
+    "shrink behind us."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a27",
+   "sceneId": "ap-a27",
+   "intent": "explanation",
+   "narration": "Okay. Earth's getting smaller back there. Now the big one: what if we were heading for it?",
+   "phrases": [
+    "Okay.",
+    "Earth's getting smaller back",
+    "there.",
+    "Now the big one: what if we were",
+    "heading for it?"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "a28",
+   "sceneId": "ap-a28",
+   "intent": "explanation",
+   "narration": "And before you answer, I've seen the maps. Scientists know exactly where it lands.",
+   "phrases": [
+    "And before you answer, I've seen",
+    "the maps.",
+    "Scientists know exactly where it",
+    "lands."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "a29",
+   "sceneId": "ap-a29",
+   "intent": "explanation",
+   "narration": "Half true. Scientists did draw maps like that, back when the odds were real: the strip of Earth it would have crossed if it hit. But a map of a what-if isn't a prediction.",
+   "phrases": [
+    "Half true.",
+    "Scientists did draw maps like",
+    "that, back when the odds were",
+    "real: the strip of Earth it would",
+    "have crossed if it hit.",
+    "But a map of a what-if isn't a",
+    "prediction."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a29b",
+   "sceneId": "ap-a29b",
+   "intent": "explanation",
+   "narration": "Each new measurement crossed a date off: first 2029, then 2036. And in March 2021, radar dishes at Goldstone and Green Bank crossed off the last one, 2068. NASA says there's no risk for at least a hundred years.",
+   "phrases": [
+    "Each new measurement crossed a",
+    "date off: first 2029, then 2036.",
+    "And in March 2021, radar dishes at",
+    "Goldstone and Green Bank crossed",
+    "off the last one, 2068.",
+    "NASA says there's no risk for at",
+    "least a hundred years."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a30",
+   "sceneId": "ap-a30",
+   "intent": "explanation",
+   "narration": "Then why do some videos say the odds went up?",
+   "phrases": [
+    "Then why do some videos say the",
+    "odds went up?"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "a31",
+   "sceneId": "ap-a31",
+   "intent": "explanation",
+   "narration": "Good question, and that one is half right too. A 2024 study asked: what if a small, unseen rock hits Apophis before 2029 and nudges it?",
+   "phrases": [
+    "Good question, and that one is",
+    "half right too.",
+    "A 2024 study asked: what if a",
+    "small, unseen rock hits Apophis",
+    "before 2029 and nudges it?"
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a32",
+   "sceneId": "ap-a32",
+   "intent": "explanation",
+   "narration": "The answer: about one chance in a million of a nudge that could set up a collision some time after 2029, and about one in a billion of one that sends it into Earth in 2029. And a single look at Apophis in 2027 should settle most of it.",
+   "phrases": [
+    "The answer: about one chance in a",
+    "million of a nudge that could set",
+    "up a collision some time after",
+    "2029, and about one in a billion",
+    "of one that sends it into Earth in",
+    "2029.",
+    "And a single look at Apophis in",
+    "2027 should settle most of it."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a33",
+   "sceneId": "ap-a33",
+   "intent": "explanation",
+   "narration": "One in a billion. I'll take those odds.",
+   "phrases": [
+    "One in a billion.",
+    "I'll take those odds."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "a34",
+   "sceneId": "ap-a34",
+   "intent": "explanation",
+   "narration": "So let's imagine the impossible version. Pretend it did hit. You've heard it would wipe out a continent. Let's draw it.",
+   "phrases": [
+    "So let's imagine the impossible",
+    "version.",
+    "Pretend it did hit.",
+    "You've heard it would wipe out a",
+    "continent.",
+    "Let's draw it."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a35",
+   "sceneId": "ap-a35",
+   "intent": "explanation",
+   "narration": "Here's a continent. And here's the zone it would devastate on land: a few hundred kilometres across. A terrible regional disaster, a region the size of a small country. Now look at the continent again.",
+   "phrases": [
+    "Here's a continent.",
+    "And here's the zone it would",
+    "devastate on land: a few hundred",
+    "kilometres across.",
+    "A terrible regional disaster, a",
+    "region the size of a small",
+    "country.",
+    "Now look at the continent again."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a36",
+   "sceneId": "ap-a36",
+   "intent": "explanation",
+   "narration": "That's… a lot smaller than the thumbnails.",
+   "phrases": [
+    "That's…",
+    "a lot smaller than the thumbnails."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "a37",
+   "sceneId": "ap-a37",
+   "intent": "explanation",
+   "narration": "Quick round. The end of the world? No. Global climate disasters need asteroids about a kilometre wide or more. The dinosaur-killer was about ten. Apophis is less than half a kilometre.",
+   "phrases": [
+    "Quick round.",
+    "The end of the world?",
+    "No.",
+    "Global climate disasters need",
+    "asteroids about a kilometre wide",
+    "or more.",
+    "The dinosaur-killer was about ten.",
+    "Apophis is less than half a",
+    "kilometre."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a38",
+   "sceneId": "ap-a38",
+   "intent": "explanation",
+   "narration": "The energy? You'll see anything from forty megatons to ten thousand, because the early size estimates were rough. Today's best estimates: roughly a thousand. Still tens of thousands of times the Hiroshima bomb.",
+   "phrases": [
+    "The energy?",
+    "You'll see anything from forty",
+    "megatons to ten thousand, because",
+    "the early size estimates were",
+    "rough.",
+    "Today's best estimates: roughly a",
+    "thousand.",
+    "Still tens of thousands of times",
+    "the Hiroshima bomb."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a39",
+   "sceneId": "ap-a39",
+   "intent": "explanation",
+   "narration": "And the wall of water hundreds of metres high? This one gets an honest answer: we don't know. An ocean strike would raise tsunamis, and that's the biggest danger of a sea impact.",
+   "phrases": [
+    "And the wall of water hundreds of",
+    "metres high?",
+    "This one gets an honest answer: we",
+    "don't know.",
+    "An ocean strike would raise",
+    "tsunamis, and that's the biggest",
+    "danger of a sea impact."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a39b",
+   "sceneId": "ap-a39b",
+   "intent": "explanation",
+   "narration": "But some impact researchers argue the giant-wall simulations get wave-breaking wrong, and one study found that an asteroid that struck the ocean off Chile about two million years ago didn't cause a giant tsunami.",
+   "phrases": [
+    "But some impact researchers argue",
+    "the giant-wall simulations get",
+    "wave-breaking wrong, and one study",
+    "found that an asteroid that struck",
+    "the ocean off Chile about two",
+    "million years ago didn't cause a",
+    "giant tsunami."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a40",
+   "sceneId": "ap-a40",
+   "intent": "explanation",
+   "narration": "So: dangerous coastal waves, yes. A guaranteed skyscraper of water, no one can promise that.",
+   "phrases": [
+    "So: dangerous coastal waves, yes.",
+    "A guaranteed skyscraper of water,",
+    "no one can promise that."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a41",
+   "sceneId": "ap-a41",
+   "intent": "explanation",
+   "narration": "So the true version is: bad, regional, and not happening.",
+   "phrases": [
+    "So the true version is: bad,",
+    "regional, and not happening."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "a42",
+   "sceneId": "ap-a42",
+   "intent": "explanation",
+   "narration": "That's exactly it.",
+   "phrases": [
+    "That's exactly it."
+   ],
+   "phraseSpeakers": [
+    "narrator"
+   ]
+  },
+  {
+   "id": "a43",
+   "sceneId": "ap-a43",
+   "intent": "explanation",
+   "narration": "We're not alone out here. A date that can't move is a strange thing to build a spacecraft for, but two agencies are racing it.",
+   "phrases": [
+    "We're not alone out here.",
+    "A date that can't move is a",
+    "strange thing to build a",
+    "spacecraft for, but two agencies",
+    "are racing it."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a44",
+   "sceneId": "ap-a44",
+   "intent": "explanation",
+   "narration": "Europe and Japan's Ramses launches in spring 2028 and catches up with Apophis in February 2029. Its mission manager calls it a mission that literally cannot be late. It rides with us through the flyby, watching the shiver happen.",
+   "phrases": [
+    "Europe and Japan's Ramses launches",
+    "in spring 2028 and catches up with",
+    "Apophis in February 2029.",
+    "Its mission manager calls it a",
+    "mission that literally cannot be",
+    "late.",
+    "It rides with us through the",
+    "flyby, watching the shiver happen."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a44b",
+   "sceneId": "ap-a44b",
+   "intent": "explanation",
+   "narration": "And it brings two shoebox-sized helpers: one with a radar to look inside the rock, and one that will try to land on it while Earth's gravity does its work.",
+   "phrases": [
+    "And it brings two shoebox-sized",
+    "helpers: one with a radar to look",
+    "inside the rock, and one that will",
+    "try to land on it while Earth's",
+    "gravity does its work."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a45",
+   "sceneId": "ap-a45",
+   "intent": "explanation",
+   "narration": "And NASA's OSIRIS-REx, the spacecraft that brought a piece of asteroid Bennu home in 2023, now renamed OSIRIS-APEX, arrives just after and stays for about eighteen months. Near the end, it fires its thrusters at the surface, to see what the night with Earth left behind.",
+   "phrases": [
+    "And NASA's OSIRIS-REx, the",
+    "spacecraft that brought a piece of",
+    "asteroid Bennu home in 2023, now",
+    "renamed OSIRIS-APEX, arrives just",
+    "after and stays for about eighteen",
+    "months.",
+    "Near the end, it fires its",
+    "thrusters at the surface, to see",
+    "what the night with Earth left",
+    "behind."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a45b",
+   "sceneId": "ap-a45b",
+   "intent": "explanation",
+   "narration": "Its cameras start watching two weeks before the flyby, while Apophis is still a dot millions of kilometres ahead.",
+   "phrases": [
+    "Its cameras start watching two",
+    "weeks before the flyby, while",
+    "Apophis is still a dot millions of",
+    "kilometres ahead."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a46",
+   "sceneId": "ap-a46",
+   "intent": "explanation",
+   "narration": "So the scariest asteroid of 2004 becomes the most studied asteroid of 2029.",
+   "phrases": [
+    "So the scariest asteroid of 2004",
+    "becomes the most studied asteroid",
+    "of 2029."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "a47",
+   "sceneId": "ap-a47",
+   "intent": "payoff",
+   "narration": "And here's the part no scary video mentions. You don't have to ride it to see it.",
+   "phrases": [
+    "And here's the part no scary video",
+    "mentions.",
+    "You don't have to ride it to see",
+    "it."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a48",
+   "sceneId": "ap-a48",
+   "intent": "payoff",
+   "narration": "From Earth, Apophis will look like a star, about as bright as the stars of the Little Dipper, crossing the width of the full Moon in about a minute. Europe, Africa and western Asia get the best view. In India, it's brightest at about two in the morning on the fourteenth. Around two billion people could see it with their own eyes.",
+   "phrases": [
+    "From Earth, Apophis will look like",
+    "a star, about as bright as the",
+    "stars of the Little Dipper,",
+    "crossing the width of the full",
+    "Moon in about a minute.",
+    "Europe, Africa and western Asia",
+    "get the best view.",
+    "In India, it's brightest at about",
+    "two in the morning on the",
+    "fourteenth.",
+    "Around two billion people could",
+    "see it with their own eyes."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a49",
+   "sceneId": "ap-a49",
+   "intent": "payoff",
+   "narration": "It's brightest a little over an hour before its closest moment, and then it slips into the Sun's glare. So be outside early, somewhere dark.",
+   "phrases": [
+    "It's brightest a little over an",
+    "hour before its closest moment,",
+    "and then it slips into the Sun's",
+    "glare.",
+    "So be outside early, somewhere",
+    "dark."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a49b",
+   "sceneId": "ap-a49b",
+   "intent": "payoff",
+   "narration": "Roy Tucker, one of the three who found it, died in 2021. He won't see that night. But about two billion people will be able to see what he found.",
+   "phrases": [
+    "Roy Tucker, one of the three who",
+    "found it, died in 2021.",
+    "He won't see that night.",
+    "But about two billion people will",
+    "be able to see what he found."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a50",
+   "sceneId": "ap-a50",
+   "intent": "payoff",
+   "narration": "The asteroid named after the god of chaos turned out to be proof that careful measuring can turn fear into a date in the calendar. On Friday the thirteenth, go and watch a star that moves.",
+   "phrases": [
+    "The asteroid named after the god",
+    "of chaos turned out to be proof",
+    "that careful measuring can turn",
+    "fear into a date in the calendar.",
+    "On Friday the thirteenth, go and",
+    "watch a star that moves."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a51",
+   "sceneId": "ap-a51",
+   "intent": "payoff",
+   "narration": "Earth bent a whole asteroid's path just by being nearby. So what about the strongest pull there is? If the Sun turned into a black hole… would it pull us in?",
+   "phrases": [
+    "Earth bent a whole asteroid's path",
+    "just by being nearby.",
+    "So what about the strongest pull",
+    "there is?",
+    "If the Sun turned into a black",
+    "hole…",
+    "would it pull us in?"
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka",
+    "arka",
+    "arka",
+    "arka",
+    "arka",
+    "arka"
+   ]
+  },
+  {
+   "id": "a52",
+   "sceneId": "ap-a52",
+   "intent": "closing",
+   "narration": "Good question, Arka. Most people think they know the answer. They're wrong. That's our next episode.",
+   "phrases": [
+    "Good question, Arka.",
+    "Most people think they know the",
+    "answer.",
+    "They're wrong.",
+    "That's our next episode."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a53",
+   "sceneId": "ap-a53",
+   "intent": "closing",
+   "narration": "Subscribe, and come along for the ride.",
+   "phrases": [
+    "Subscribe, and come along for the",
+    "ride."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  }
+ ]
+}
