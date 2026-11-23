@@ -68,3 +68,35 @@ Prepare (`story:render-cached`) and `preview-stills` now run a readability pass 
 - **Errors block the render** (nothing is prepared); pass `--allow-readability-errors` only after looking at those frames. `node --import tsx scripts/audit-readability.ts <job|storyboard.json>` runs the check on its own.
 - After any change to a shared style (theme, outline, colours): re-check every storyboard still to be rendered, day and night shots, at full size.
 - Before a long render: a 30–60 s sample with full sound of the risky parts (`scripts/render-sample.sh`), reviewed by Debabrata, then one full render.
+
+## 10. Viewer attraction: deliver every promise (Debabrata, 23 Nov 2026)
+From Debabrata's watch of E7 Apophis: "very educational, but no visual attraction; it will only keep viewers who want knowledge."
+Measured on that render: 17 text notes and 64 on-screen words a minute on top of the narration, 8 shots holding the same picture for
+6–10 s, all 60 shots on the same night page, and the promised "ride" and destruction never shown. Our edge over 3D channels is that
+2D can show *anything the narrator says*, cheaply and with jokes: use it. Ask every shot: **"would someone with no interest in the
+science keep watching this?"**
+- [ ] **Deliver every promise on screen.** Whatever the title, thumbnail, hook or narrator promises (a ride, a destruction, a wall of
+      water) is shown as a full-screen animated sequence, not a label or diagram. If we say "it wipes out a continent", the viewer sees
+      the wipe-out (then sees it corrected).
+- [ ] **Everything the narrator says is acted out by animation:** every noun that can be drawn is drawn, every verb moves
+      (falls, tumbles, shakes, races, freezes). A text note is a last resort, not the picture.
+- [ ] **Action beats: the narrator pauses and the picture plays with sound.** At each set piece, cut a 2–5 s gap into the approved
+      narration (free: `scripts/cut-narration.py`, `gapAfter`) and let the action run with sound effects (rumble, boom, whoosh, riser)
+      and the music swelling. At least one per chapter; the destruction claims and the flyby get the biggest.
+- [ ] **Something new every ≤4 s,** and at least one thing *moving* in every frame (a character, a prop, the camera). No still
+      stretch over 4 s anywhere in the timeline (the sweep reports it).
+- [ ] **The camera works in every shot:** push in on the key word, shake on impacts, drift during calm, swoop or whip between
+      places. Never a locked camera for a whole shot.
+- [ ] **Arka acts through the narrator's lines too,** not only her own: reacting, doing the thing being described (bouncing in low
+      gravity, catching floating dust, ducking satellites), with a visual gag in every chapter.
+- [ ] **Fewer words on screen:** about 40 on-screen words a minute at most. Keep numbers, names of real people and verdict stamps;
+      drop notes that repeat the narration.
+- [ ] **Variety of place, light and colour:** change the setting with the story (observatory, newsroom headlines, paper map, sunlit
+      rock, warm balcony); no more than three shots in a row on the same page.
+- [ ] **"Wow" moments full-screen and big:** at least five per long episode (scale reveals, close-ups, the moment of impact), each
+      with its own sound.
+- [ ] **Real images as proof** where they exist (public-domain NASA/ESA radar images, dishes, spacecraft), framed big.
+- [ ] **Keep interest to the end:** the last third gets its own set pieces and a payoff, not a run of labels; the ending's tease is
+      animated, not just said.
+- [ ] **Attraction report before every sample render:** the sweep's numbers (picture changes a minute, longest still stretch,
+      on-screen words a minute, shots without camera motion, action beats per chapter) are checked against these targets.
