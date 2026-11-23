@@ -1274,9 +1274,10 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
       const R = s * .5 * lv, col = c.color ?? '#9fc8ff', gid = `gc-${Math.round(c.x * 1e4)}-${Math.round(c.y * 1e4)}-${Math.round(s)}`, random = seededRandom(Math.round(s) || 5);
       const dots = Array.from({length: 140}, () => { const t = Math.pow(random(), .7), a = random() * Math.PI * 2; return {x: Math.cos(a) * t, y: Math.sin(a) * t, r: .5 + random(), ph: random() * 6}; });
       return <g transform={at}>
-        <defs><radialGradient id={gid}><stop offset="0" stopColor={col} stopOpacity=".42"/><stop offset=".35" stopColor={col} stopOpacity=".2"/><stop offset="1" stopColor={col} stopOpacity="0"/></radialGradient></defs>
+        <defs><radialGradient id={gid}><stop offset="0" stopColor={col} stopOpacity=".7"/><stop offset=".3" stopColor={col} stopOpacity=".38"/><stop offset=".75" stopColor={col} stopOpacity=".16"/><stop offset="1" stopColor={col} stopOpacity=".04"/></radialGradient></defs>
         <circle r={R} fill={`url(#${gid})`}/>
-        {dots.map((d, i) => <circle key={i} cx={d.x * R} cy={d.y * R} r={Math.max(1.5, s * .0035) * d.r} fill={col} opacity={(1 - Math.hypot(d.x, d.y)) * (.55 + .35 * Math.sin(frame / 12 + d.ph))}/>)}
+        <circle r={R} fill="none" stroke={col} strokeWidth={Math.max(2, s * .004)} strokeDasharray={`${s * .012} ${s * .016}`} opacity=".55"/>
+        {dots.map((d, i) => <circle key={i} cx={d.x * R} cy={d.y * R} r={Math.max(2, s * .005) * d.r} fill="#dcecff" opacity={(1 - Math.hypot(d.x, d.y) * .7) * (.6 + .35 * Math.sin(frame / 12 + d.ph))}/>)}
       </g>;
     }
     case 'orion': {
@@ -1313,8 +1314,8 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
         <path d={`M ${r0 * 3.2} ${-r0 * 3.6} C ${L * .5} ${-r0 * 4.4} ${L * .8} ${-r0 * 3.4} ${L} ${-r0 * 3.1} L ${L} ${r0 * 3.1} C ${L * .8} ${r0 * 3.4} ${L * .5} ${r0 * 4.4} ${r0 * 3.2} ${r0 * 3.6} C ${-r0 * 3.2} ${r0 * 3.4} ${-r0 * 3.2} ${-r0 * 3.4} ${r0 * 3.2} ${-r0 * 3.6} Z`} fill={col} opacity=".1"/>
         {lines.map((d, i) => <path key={i} d={d} {...stroke(col, w * .35)} opacity={.75 - i * .12} strokeDasharray={i % 2 ? `${w * 1.4} ${w}` : undefined}/>)}
         {wind > 0 && streaks.map((k, i) => { const t = ((frame / 70 + k.ph) % 1), x = -s * .45 + t * s * .5, bend = Math.abs(k.y) < r0 * 3.4 && x > -r0 * 4 ? Math.sign(k.y || 1) * (x + r0 * 4) * .6 : 0;
-          return <path key={i} d={`M ${x - s * .08} ${k.y} Q ${x - s * .02} ${k.y} ${x} ${k.y + bend}`} {...stroke('#fff3c4', w * .45)} opacity={wind * (1 - t) * .9}/>; })}
-        {dots.map((d, i) => { const t = (frame / 160 + d.ph) % 1; return <circle key={i} cx={r0 * 2 + t * (L - r0 * 2)} cy={d.off * (1 + t)} r={w * .55} fill="#ff9e6a" opacity={(1 - t * .5) * Math.min(1, lv * 2)}/>; })}
+          return <path key={i} d={`M ${x - s * .14} ${k.y} Q ${x - s * .03} ${k.y} ${x} ${k.y + bend}`} {...stroke('#fff3c4', w * .8)} opacity={wind * (1 - t * .6)}/>; })}
+        {dots.map((d, i) => { const t = (frame / 160 + d.ph) % 1; return <circle key={i} cx={r0 * 2 + t * (L - r0 * 2)} cy={d.off * (1 + t)} r={w * .4} fill="#ff9e6a" opacity={(1 - t * .5) * Math.min(1, lv * 2)}/>; })}
       </g>;
     }
     case 'rust-spots': {
@@ -1330,7 +1331,7 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
       const lv = levelAt(c.level, frame), D = s, m = D * .07;
       const d = `M 0 0 C ${D * .35} ${-D * .12} ${D * .8} ${-D * .1} ${D + m} ${-m * .2} C ${D + m * 2.2} ${m * .6} ${D + m * .6} ${m * 1.9} ${D - m * .2} ${m * .8} C ${D * .75} ${-m * .3} ${D * .35} ${D * .11} 0 ${m * .1}`;
       return <g transform={at}>
-        {lv > 0 && <path d={d} {...stroke(c.color ?? '#ffd25e', w * .55)} pathLength={1} strokeDasharray={`${lv} 1`}/>}
+        {lv > 0 && <path d={d} {...stroke(c.color ?? '#ffd25e', Math.max(6, w * .9))} pathLength={1} strokeDasharray={`${lv} 1`}/>}
       </g>;
     }
     case 'bigword': {
