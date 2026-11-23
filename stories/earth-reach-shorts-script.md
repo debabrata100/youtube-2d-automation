@@ -10,9 +10,10 @@ Lessons applied from our own Shorts:
 - S1 lost viewers in the first seconds. S2 and S7 (real facts, real dates) held 45–50%.
 - So both open with a line that contradicts what the viewer is sure of, and the first picture shows that contradiction.
 
-## G1 — "You've Never Left Earth's Atmosphere. Nobody Has." (≈50 s)
+## G1 — "Why the Moon Is Inside Earth's Atmosphere 🌍🤯 Geocorona" (≈55 s)
 
-Title options (≤50): **You've Never Left Earth's Atmosphere. Nobody Has.** · The Moon Is Inside Earth's Atmosphere · Every Astronaut Is Still Inside Earth's Air
+Title (GeoGlobeTales format, "Why…" + emoji + keyword tail; chosen 23 Nov): **Why the Moon Is Inside Earth's Atmosphere 🌍🤯 Geocorona**
+Backup: You've Never Left Earth's Atmosphere. Nobody Has.
 
 | # | Speaker | Line | Picture (drawn as itself) |
 |---|---|---|---|
@@ -27,9 +28,10 @@ Title options (≤50): **You've Never Left Earth's Atmosphere. Nobody Has.** · 
 
 Loop: the last frame (a dot landing on the Moon) leads back into g1's Orion-in-haze frame.
 
-## R1 — "Earth Is Rusting the Moon" (≈44 s)
+## R1 — "Why the Moon Is Rusting 🌕🤯 Earth's Oxygen" (≈45 s)
 
-Title options (≤50): **Earth Is Rusting the Moon** · The Moon Is Rusting. It's Our Fault.
+Title (chosen 23 Nov): **Why the Moon Is Rusting 🌕🤯 Earth's Oxygen**
+Backup: Earth Is Rusting the Moon
 
 | # | Speaker | Line | Picture |
 |---|---|---|---|
@@ -44,6 +46,46 @@ Title options (≤50): **Earth Is Rusting the Moon** · The Moon Is Rusting. It'
 | r9 | Narrator | A little of Earth's sky, turning to rust on the Moon. | Pull back: the faint haze from G1 reaching the Moon; one red spot glows. |
 
 Loop: r9's red spot matches r1's opening close-up.
+
+## Descriptions (draft; story paragraph full of searchable words, like GeoGlobeTales)
+
+G1:
+```
+Is the Moon inside Earth's atmosphere? 🌍🌕 Most people say space begins 100 kilometers up, at the Kármán line. But Earth's air doesn't simply stop there. It fades into a thin cloud of hydrogen called the geocorona.
+
+In 2019, scientists re-examined old data from the ESA/NASA SOHO spacecraft and found that the geocorona reaches about 630,000 km from Earth, 50 times our planet's width and almost twice the distance to the Moon. So the Moon flies through Earth's atmosphere. Apollo 16 astronauts photographed the geocorona's glow from the Moon in 1972 without knowing they were standing inside it.
+
+In April 2026, NASA's Artemis II crew flew farther than any humans before, 406,771 km from Earth. Still inside the geocorona. Out there it is so thin we'd call it a vacuum, but it reaches the Moon, and it leaves a mark there (Part 2).
+
+Facts:
+• Geocorona extent: about 630,000 km (SOHO/SWAN, 2019)
+• Moon's distance: about 384,400 km
+• Artemis II record: 406,771 km (April 2026)
+
+Sources: ESA, NASA, SOHO (Baliukin et al. 2019), AP.
+
+#Moon #Space #ArtemisII #Shorts
+```
+
+R1:
+```
+Why is the Moon rusting? 🌕🤯 Rust (hematite) needs iron, water and oxygen, and the Moon has almost no air. Yet scientists studying data from India's Chandrayaan-1 orbiter, using NASA's Moon Mineralogy Mapper, found hematite near the Moon's poles.
+
+The oxygen comes from Earth. Earth's magnetic field trails a long magnetotail. Around every full Moon, the Moon passes through it, and oxygen from our upper atmosphere travels along the tail to the lunar surface. The tail also blocks over 99% of the solar wind, whose hydrogen normally stops rust from forming. The clue: there is more rust on the Moon's near side, the side that always faces Earth.
+
+A little of Earth's sky, turning to rust on the Moon. Part 1: why the Moon is inside Earth's atmosphere.
+
+Facts:
+• Discovered in Chandrayaan-1 M3 data (Li et al., Science Advances, 2020)
+• Magnetotail blocks over 99% of the solar wind at full Moon
+• More hematite on the Earth-facing side
+
+Sources: NASA/JPL, ISRO, Science Advances.
+
+#Moon #Chandrayaan #ISRO #Shorts
+```
+
+(The channel's default footer, with the AI-narration line, is added under each automatically.)
 
 ## Fact check (sources consulted 23 Nov 2026)
 
