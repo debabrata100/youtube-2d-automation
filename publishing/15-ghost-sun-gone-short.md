@@ -1,6 +1,7 @@
 # 15: Ghost Sun Short A, "What If the Sun Vanished for Exactly 8 Minutes?"
 
-- **Status:** storyboard and audio cut ready (23 Nov); render on the Mac, then upload. Proposed: **Fri 4 Dec, 9:30 PM IST** (the day after Ep 5 goes public, so the Related video can point to it at once).
+- **Status:** rendered 23 Nov (`jobs/gss-gone-final`), checked (frames every 3 s, -16.6 LUFS, peaks −2.3 dB). Ready to upload. Proposed: **Fri 4 Dec, 9:30 PM IST** (the day after Ep 5 goes public, so the Related video can point to it at once).
+- **File:** `~/Downloads/gahanarka-upload/15-ghost-sun-gone-short/what-if-the-sun-vanished-for-8-minutes.mp4` (42 s, 1080×1920), md5 88a4e59a…; captions `captions-english.srt` (28 cues, not burned in).
 - **Narration:** cut from Ep 5's approved narration (`jobs/gs-narration-sting`) with `scripts/cut-narration.py`: `jobs/gss-gone-narration`, 38.6 s, **0 paid requests**. Lines s1–s6 + "Exactly." of `stories/ghost-sun-script.md` (facts checked there).
 - **Build:** `scripts/authoring/plan-ghost-sun-shorts.py gone 42` → `storyboards/ghost-sun-gone.json` (42 s, 9:16). Readability gate: no issues. Contact sheet checked 23 Nov.
 - **Look:** Ep 5's look (paint-night-gold); bright noon page for the hook and the last line, so the loop is seamless. Hook text from frame 0: "THE SUN IS ALREADY GONE."
