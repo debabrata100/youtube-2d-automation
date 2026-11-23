@@ -6,7 +6,7 @@ tags and pinned-comment text for each upload live in its sheet (`publishing/NN-*
 **Rule:** update this file every time something changes in Studio (upload, schedule, thumbnail test, subtitles, Related video,
 pinned comment, end screen, playlist). Copy video IDs from Studio or the address bar, never from a screenshot.
 
-Last full check: **20 Nov 2026, 5 PM IST**. Last change: **22 Nov, 22:00 IST** (Ep 3 public, thumbnail test running; pinned comments on Ep 3 and S3; Related video of S2, S4, S7, S8, S9 → Ep 3)
+Last full check: **20 Nov 2026, 5 PM IST**. Last change: **23 Nov, 10:00 IST** (Ep 5 Shorts S10–S12 uploaded and scheduled 4, 8, 11 Dec)
 
 ## Long videos (16:9)
 
@@ -33,6 +33,9 @@ Last full check: **20 Nov 2026, 5 PM IST**. Last change: **22 Nov, 22:00 IST** (
 | S7 | NASA Lost Voyager 1 for 48 Hours | [-FTg1FvhxKI](https://youtube.com/shorts/-FTg1FvhxKI) | Public since **Fri 20 Nov, 10:20 PM** | ✅ → Ep 3 M9o6HqK5zSs (22 Nov) | ✅ English SRT | ✅ posted and pinned 20 Nov ("…What should NASA name its next interstellar probe?") | Could You Survive…? | `11-voyager-silent-short.md` |
 | S8 | Voyager Has Less Memory Than One Photo on Your Phone | [Rh6l0gIQKBo](https://youtube.com/shorts/Rh6l0gIQKBo) | Scheduled **Mon 23 Nov, 9:30 PM** (uploaded 20 Nov) | ✅ → Ep 3 M9o6HqK5zSs (22 Nov) | ✅ English SRT | ⏳ after launch | Could You Survive…? | `12-voyager-memory-short.md` |
 | S9 | Voyager 1 Still Has a Pulse. It Just Stopped Talking. | [0VayVwKcAyc](https://youtube.com/shorts/0VayVwKcAyc) | Scheduled **Wed 25 Nov, 9:30 PM** (uploaded 22 Nov); re-check NASA status before it goes public | ✅ → Ep 3 M9o6HqK5zSs (22 Nov) | ✅ English SRT | ⏳ after launch | Could You Survive…? | `14-voyager-calling-short.md` |
+| S10 | What If the Sun Vanished for Exactly 8 Minutes? (Ep 5 Short A) | [15MGyj6Gy2A](https://youtube.com/shorts/15MGyj6Gy2A) | Scheduled **Fri 4 Dec, 9:30 PM** (uploaded 23 Nov) | ⏳ → Ep 5 once it's public (3 Dec check-in) | ✅ English SRT | ⏳ after launch | What If…? | `15-ghost-sun-gone-short.md` |
+| S11 | If the Sun Vanished, Voyager Would Find Out Last (Ep 5 Short C) | [9yJUqWaao8I](https://youtube.com/shorts/9yJUqWaao8I) | Scheduled **Tue 8 Dec, 9:30 PM** (uploaded 23 Nov) | ⏳ → Ep 5 (3 Dec check-in) | ✅ English SRT | ⏳ after launch | What If…? | `17-ghost-sun-voyager-short.md` |
+| S12 | If the Sun Vanished, the Air Would Snow Down (Ep 5 Short B) | [0iKH5kqpgYY](https://youtube.com/shorts/0iKH5kqpgYY) | Scheduled **Fri 11 Dec, 9:30 PM** (uploaded 23 Nov) | ⏳ → Ep 5 (3 Dec check-in) | ✅ English SRT | ⏳ after launch | What If…? | `16-ghost-sun-air-short.md` |
 
 ## Community posts
 
