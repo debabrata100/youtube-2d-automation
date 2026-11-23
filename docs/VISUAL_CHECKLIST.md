@@ -80,6 +80,11 @@ science keep watching this?"**
       the wipe-out (then sees it corrected).
 - [ ] **Everything the narrator says is acted out by animation:** every noun that can be drawn is drawn, every verb moves
       (falls, tumbles, shakes, races, freezes). A text note is a last resort, not the picture.
+- [ ] **Draw every named object as itself, in its real shape** (Debabrata, 23 Nov): "continent" is a real continent outline,
+      never a green ball; Earth has its real continents (kit `globe`, Natural Earth outlines), a map is a real map (kit `map`), a
+      skyscraper is a skyscraper, TV satellites are satellites (kit `satellite`), a wall of water is a wave over a city (kit `wave`),
+      the scary videos are video cards (kit `headline`). Before a sample, list the nouns in each line and check each one is drawn
+      recognisably; a stand-in shape (a disc, a dot, a sign) counts as a miss. No political borders on maps or globes.
 - [ ] **Action beats: the narrator pauses and the picture plays with sound.** At each set piece, cut a 2–5 s gap into the approved
       narration (free: `scripts/cut-narration.py`, `gapAfter`) and let the action run with sound effects (rumble, boom, whoosh, riser)
       and the music swelling. At least one per chapter; the destruction claims and the flyby get the biggest.

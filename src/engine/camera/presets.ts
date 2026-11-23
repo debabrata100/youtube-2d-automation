@@ -12,11 +12,29 @@ export const cameraSchema = z.object({
   offsetY: z.number().min(-.2).max(.2).default(0),
   keyframes:cameraKeyframesSchema.optional(),boundaryMode:z.enum(['cover','backdrop']).optional(),
   from: endpoint.optional(), to: endpoint.optional(), holdFrames: z.number().int().min(0).max(900).optional(),
+  /** Camera shakes (impacts, quakes): from `frame` for `frames`, decaying jitter of up to `amount` x width. Deterministic. */
+  shake: z.array(z.object({frame: z.number().int().min(0).max(18000), frames: z.number().int().min(2).max(300), amount: z.number().min(0).max(.05)}).strict()).max(8).optional(),
 }).strict().refine(config => Boolean(config.from) === Boolean(config.to), 'Provide both camera endpoints').refine(config=>!config.keyframes||!config.from,'Choose keyframes or legacy endpoints, not both');
 export type CameraConfig = z.infer<typeof cameraSchema>;
 
 /** Same neutral pose and zero velocity at either edge, independent of scene duration. */
-export const cameraPresetAt = (config: CameraConfig, frame: number, duration: number, width: number, height: number) => {
+/** Sum of active shakes: two incommensurate sines per axis, decaying linearly over each shake's window. */
+export const shakeOffset = (shakes: CameraConfig['shake'], frame: number, width: number) => {
+  let x = 0, y = 0;
+  for (const k of shakes ?? []) {
+    const t = frame - k.frame; if (t < 0 || t >= k.frames) continue;
+    const a = k.amount * width * (1 - t / k.frames);
+    x += a * (Math.sin(t * 2.1 + k.frame) * .6 + Math.sin(t * 3.7) * .4); y += a * (Math.sin(t * 2.9 + 1.3) * .6 + Math.sin(t * 1.7 + k.frame) * .4);
+  }
+  return {x, y};
+};
+
+export type CameraPose2D = {focus: {x: number; y: number}; zoom: number; rotation: number};
+export const cameraPresetAt = (config: CameraConfig, frame: number, duration: number, width: number, height: number): CameraPose2D => {
+  if (config.shake?.length) {
+    const pose = cameraPresetAt({...config, shake: undefined}, frame, duration, width, height), o = shakeOffset(config.shake, frame, width);
+    return {...pose, focus: {x: pose.focus.x + o.x, y: pose.focus.y + o.y}};
+  }
   if(config.keyframes)return keyframeCameraAt(config.keyframes,frame,width,height,config.boundaryMode??'cover');
   if (config.from && config.to) {
     const end = Math.max(1, duration - 1 - (config.holdFrames ?? 0)), t = smoothstep(frame / end);

@@ -90,7 +90,7 @@ if __name__ == '__main__' and '--script-only' in sys.argv:
 
 
 # ------------------------------------------------------------------ storyboard (16:9, night sky), on the measured R1 + Arka E3 narration timing
-# Narration: jobs/e7-narration-sting (the paid take cut with a 3.4 s brand-sting gap after a6; stories/apophis-sting-cut.json, 0 paid requests).
+# Narration: jobs/e7-narration-beats (the paid take cut with action-beat pauses, PAUSES below; stories/apophis-beats-cut.json, 0 paid requests).
 # Applies docs/EPISODE_VISUAL_LESSONS.md and the 23 Nov lessons: people first (named people get a figure and a name label),
 # one verdict stamp per claim (MYTH / HALF TRUE / TRUE / WE DON'T KNOW), a source tag beside every number, a new picture every few seconds.
 from recipes import *  # noqa: E402,F401,F403
@@ -98,7 +98,11 @@ import recipes  # noqa: E402
 YELLOW, WARN = '#ffd25e', '#ff5a4a'
 recipes.RED = YELLOW
 recipes.INK = '#eef1f8'
-DURATION = int(sys.argv[1]) if len(sys.argv) > 1 else 597  # narration 582.2 s (with the 3.4 s sting gap) + 2.6 s tail + 12 s end card
+# Action beats (docs/VISUAL_CHECKLIST.md §10): silent pauses cut into the approved take (free) so the animation plays with sound.
+# (beat, text the pause follows or None for the line's end, seconds). Narration job: jobs/e7-narration-beats.
+PAUSES = [('a1', None, 1.2), ('a2', None, 3.6), ('a3', None, 1.6), ('a6', None, 4.8),
+          ('a34', None, 1.4), ('a35', "Here's a continent.", 4.6), ('a35', None, 1.2)]
+DURATION = int(sys.argv[1]) if len(sys.argv) > 1 else 610  # narration 594.9 s with 18.4 s of pauses + 3.1 s tail + 12 s end card
 END_CARD = 12
 write_story(DURATION)
 ep = Episode(str(STORY), 'wide'); F = ep.F; W, H = F['W'], F['H']
@@ -180,36 +184,152 @@ def cal(pid, px, py, size, text, at=0, **k):
     return kit(F, pid, 'sign', px, py, size * .9, w=1.8, h=1.0, text=text, **pop, **k)
 
 
-def shot(bid, chapter, chars=(), props=(), notes=(), cam='settle', sounds=(), stamps=()):
+def shot(bid, chapter, chars=(), props=(), notes=(), cam='settle', sounds=(), stamps=(), shake=()):
     """stamps: [(note index, anchor[, label])], counted among `notes` (the header is added in front automatically)."""
     off = 1 if chapter else 0
-    ep.scene(bid, explain(list(chars), list(props), ([head(chapter)] if chapter else []) + list(notes), camera_preset=cam, sounds=list(sounds),
+    ep.scene(bid, explain(list(chars), list(props), ([head(chapter)] if chapter else []) + list(notes), camera_preset=cam, sounds=list(sounds), shake=list(shake),
                           stamps=[(st[0] + off,) + tuple(st[1:]) for st in stamps]))
 
 
 T0, T1, T2, T3 = 'FRIDAY 13 APRIL 2029', 'ON APOPHIS · ONE DAY OUT', 'THE 2004 SCARE', 'THROUGH THE SATELLITE RING'
 T4, T5, T6, TE = 'WHAT IF IT HIT?', 'QUICK ROUND', "WHO'S FLYING WITH US", 'FROM YOUR BALCONY'
 
-# ------------------------------------------------------------------ cold open: the claims, and the ride
-shot('a1', T0, [], [earth('earth', .3, .58, .2), kit(F, 'geo', 'orbit-ring', .3, .58, .62, color=SRC),
-                    kit(F, 'sat', 'station', .52, .3, .07),
-                    apophis('apo', .86, .3, .035, x=track((0, 0), (A('pass'), 0), (A('signals', edge='end'), -380, 'smoothstep')), y=track((0, 0), (A('pass'), 0), (A('signals', edge='end'), 170, 'smoothstep')))],
-     [Note('a skyscraper-sized rock', A('skyscraper'), 'title', pos=(1440, 760)), Note('closer than our TV satellites', A('closer'), 'note', pos=(1440, 870))], cam='push')
-shot('a2', None, [], [earth('earth', .28, .55, .2), kit(F, 'boom', 'impact', .34, .45, .3, count=10, level=lv((0, .8)), **pop_in(A('wipes'), (.34 * W, .45 * H))),
-                      kit(F, 'map', 'arrow', .28, .55, .44, rotation=-20, color=WARN, opacity=show_from(A('mapped')))],
-     [Note('wipes out a continent?', A('wipes'), 'note', color=CLAIM), Note('ends the world?', A('ends'), 'note', color=CLAIM),
-      Note('a wall of water?', A('wall'), 'note', color=CLAIM), Note('mapped where it lands?', A('mapped'), 'note', color=CLAIM)])
-shot('a3', None, [arka(x=.4, poses=[(0, 'cower')], faces=[(0, 'scared')])], [kit(F, 'q', 'question', .68, .42, .2)], [])
-shot('a4', None, [], [kit(F, 'x1', 'cross', .24, .36, .14, **pop_in(4, (.24 * W, .36 * H))), kit(F, 'x2', 'cross', .4, .36, .14, **pop_in(4, (.4 * W, .36 * H))),
-                      kit(F, 'half', 'check', .24, .64, .14, **pop_in(A('half'), (.24 * W, .64 * H))), kit(F, 'star', 'exclaim', .4, .64, .14, **pop_in(A('interesting'), (.4 * W, .64 * H)))],
-     [Note('mostly wrong', 4, 'title'), Note('some half right', A('half'), 'note'), Note('one part: better than the scary version', A('interesting'), 'note')])
-shot('a5', None, [], [kit(F, 'mag', 'magnifier', .3, .5, .3), earth('earth', .3, .5, .08)],
-     [Note('check every claim', A('check'), 'title'), Note('not from Earth...', A('watch'), 'note')], cam='push')
-STING = plus(A('it', edge='end'), 24)  # 0.8 s after the line, inside the 3.4 s gap (anchors map onto the real timing; plain frames would stretch)
+# ------------------------------------------------------------------ cold open: the promise (docs/E7_VIEWER_REVIEW.md, VISUAL_CHECKLIST §10)
+# Every object the narrator names is drawn as itself: a real skyline and skyscraper, Earth with its real continents, TV satellites
+# on the geostationary ring, a real map of a continent, a wave over a city, the viral headlines as video cards.
+def tk(v0, at, *keys):
+    """A track that holds v0 until `at`, then runs keys (frames after `at`, value[, easing])."""
+    return track((0, v0), (plus(at, -1), v0), *[(plus(at, k[0]),) + tuple(k[1:]) for k in keys])
+
+
+def window(a, b, fade=6):
+    """Visible from anchor a to anchor b (quick fades)."""
+    return track((0, 0), (plus(a, -1), 0), (plus(a, fade), 1), (plus(b, -fade), 1), (b, 0))
+
+
+def popw(a, b, x, y):
+    """Pop in at anchor a (scale bounce about x, y in group fractions), fade out at anchor b."""
+    d = pop_in(a, (x * W, y * H)); d['opacity'] = window(a, b, 3); return d
+
+
+def globe(pid, px, py, size, center=(20, 12), **layer):
+    return kit(F, pid, 'globe', px, py, size, center=list(center), **layer)
+
+
+def card(pid, px, py, size, text, **layer):
+    return kit(F, pid, 'headline', px, py, size, w=1.6, text=text, **layer)
+
+
+def rock(pid, px, py, size, rot=0, **layer):
+    """Apophis at a given rotation (an upright rock is 'a skyscraper'); size = its height across its short axis."""
+    layer.setdefault('anchor', {'x': px * W, 'y': py * H})
+    if 'rotate' not in layer: layer['rotate'] = track((0, rot - 4), (1800, rot + 4, 'linear'))
+    return kit(F, pid, 'asteroid', px, py, size, w=1.7, h=1.0, color=ROCK, **layer)
+
+
+SKY_OUT = plus(A('pass'), 18)
+H1 = 'FRIDAY 13 APRIL 2029'
+shot('a1', None, [], [
+    # the city, then the camera tilts up into space on "pass"
+    kit(F, 'city', 'skyline', .42, .93, .5, count=7, highlight=3, level=lv((0, 1)), opacity=show_until(SKY_OUT), y=tk(0, A('pass'), (18, 760, 'ease-in-back'))),
+    rock('tower-rock', .66, .735, .23, rot=90, opacity=window(A('asteroid'), SKY_OUT),
+         y=track((0, -900), (plus(A('asteroid'), -1), -900), (A('skyscraper'), 0, 'smoothstep'), (plus(A('pass'), -1), 0), (SKY_OUT, 760, 'ease-in-back'))),
+    # space: Earth (real continents) inside the ring of TV satellites
+    globe('earth', .3, .55, .5, center=(10, 20), spin=.05, opacity=show_from(A('pass')), y=tk(-700, A('pass'), (20, 0, 'ease-out-cubic'))),
+    kit(F, 'geo', 'orbit-ring', .3, .55, .95, color=SRC, opacity=show_from(A('pass')), y=tk(-700, A('pass'), (20, 0, 'ease-out-cubic'))),
+    *[kit(F, f'sat{i}', 'satellite', x, y, .15, opacity=show_from(A('pass')), y=tk(-700, A('pass'), (20 + 3 * i, 0, 'ease-out-cubic'))) for i, (x, y) in enumerate([(.3, .11), (.56, .73), (.06, .78)])],
+    *[kit(F, f'tv{i}', 'signal', x, y, .1, rotation=r, opacity=show_from(A('TV'))) for i, (x, y, r) in enumerate([(.33, .2, 110), (.54, .66, 200)])],
+    # Apophis threads between Earth and the ring, then is gone (in the pause)
+    rock('apo', .92, .18, .06, x=tk(0, A('closer'), (int(1.2 * FPS), -560, 'smoothstep'), (int(4.2 * FPS), -1700, 'ease-in-back')),
+         y=tk(0, A('closer'), (int(1.2 * FPS), 230, 'smoothstep'), (int(4.2 * FPS), 520, 'ease-in-back')), opacity=show_from(A('closer'))),
+], [Note(H1, A('Friday'), 'title', size=100, pos=(W / 2, .2 * H), until=A('pass')),
+    Note('closer than the TV satellites', A('satellites'), 'note', pos=(.74 * W, .86 * H))],
+     shake=[(A('skyscraper'), 14, .008)],
+     cam=[kf(0, 1.06, (.5, .6)), kf(plus(A('pass'), -1), 1.0, (.5, .6)), kf(plus(A('pass'), 20), 1.08, (.4, .5)), kf(plus(A('signals', edge='end'), 30), 1.0, (.4, .5))],
+     sounds=[('slam', A('Friday'), -12), ('whoosh', A('asteroid'), -16), ('slam', A('skyscraper'), -12), ('whoosh', A('pass'), -14), ('whoosh', plus(A('signals', edge='end'), 4), -12)])
+
+# The myths, played like a disaster trailer: each claim shown as it is said, each with its viral headline card; then the pile-up.
+C1, C2, C3, C4 = 'ASTEROID WIPES OUT A CONTINENT?!', 'THE END OF THE WORLD?!', 'A WALL OF WATER 100s OF METRES HIGH', 'SCIENTISTS MAPPED WHERE IT HITS'
+END2 = A('lands', edge='end')
+HIT = plus(A('continent'), 4)
+shot('a2', None, [], [
+    card('c0', .5, .5, .34, 'WHAT HAPPENS WHEN APOPHIS HITS?', **popw(A('heard'), A('wipes'), .5, .5)),
+    # 1: a continent wiped out (the myth version, exaggerated on purpose)
+    globe('g1', .34, .52, .66, center=(18, 8), opacity=window(A('wipes'), A('ends'), 3)),
+    kit(F, 'trail1', 'streak', .38, .44, .5, rotation=150, level=lv((0, 0), (plus(A('wipes'), 0), 0), (HIT, 1), (plus(HIT, 4), 0))),
+    kit(F, 'fl1', 'flash', .5, .5, .5, level=lv((0, 0), (HIT, 0), (plus(HIT, 2), .85), (plus(HIT, 12), 0))),
+    kit(F, 'sw1', 'shockwave', .38, .46, .5, color=WARN, level=lv((0, 0), (HIT, 0), (plus(HIT, 30), 1))),
+    # 2: the world cracks open
+    globe('g2', .34, .52, .66, center=(18, 8), level2=lv((0, 0), (A('ends'), 0), (A('world', edge='end'), 1)), opacity=window(A('ends'), A('wall'), 3),
+          x=tk(0, A('world'), (2, -10), (4, 10), (6, -8), (8, 8), (10, -4), (12, 0))),
+    # 3: a wall of water over a city
+    kit(F, 'city3', 'skyline', .5, .93, .5, count=7, highlight=3, level=lv((0, 1)), opacity=window(A('wall'), A('Scientists'), 3)),
+    kit(F, 'wave3', 'wave', .3, .93, .56, level=lv((0, 0), (A('wall'), 0), (A('high'), .6)), opacity=window(A('wall'), A('Scientists'), 3)),
+    # 4: the "impact map": a red risk stripe drawn across the globe
+    globe('g4', .34, .52, .66, center=(-60, 10), opacity=window(A('Scientists'), plus(END2, 6), 3)),
+    kit(F, 'stripe', 'arrow', .34, .52, .62, rotation=-18, color=WARN, level=lv((0, 0), (A('mapped'), 0), (A('lands', edge='end'), 1)), opacity=window(A('mapped'), plus(END2, 6), 3)),
+    # each claim's card, top right while it plays
+    *[card(f'c{i}', .78, .3, .27, txt, opacity=window(a, b, 3)) for i, (txt, a, b) in enumerate([(C1, A('wipes'), A('ends')), (C2, A('ends'), A('wall')), (C3, A('wall'), A('Scientists')), (C4, A('Scientists'), plus(END2, 6))], 1)],
+    # the pause: the trailer's finale - the four cards slam into a pile, flash, shake
+    *[card(f'p{i}', x, y, .3, txt, rotate=lv((0, r)), **pop_in(plus(END2, 10 + 9 * i), (x * W, y * H)))
+      for i, (txt, x, y, r) in enumerate([(C1, .3, .32, -6), (C2, .7, .34, 5), (C3, .32, .68, 4), (C4, .68, .68, -5)])],
+    kit(F, 'fl2', 'flash', .5, .5, .5, level=lv((0, 0), (plus(END2, 46), 0), (plus(END2, 48), .7), (plus(END2, 60), 0))),
+], [], cam=[kf(0, 1.0), kf(plus(A('wipes'), -1), 1.0), kf(plus(A('wipes'), 2), 1.1, (.36, .48)), kf(plus(A('wall'), -1), 1.12, (.36, .48)), kf(plus(A('wall'), 2), 1.0),
+            kf(plus(A('mapped'), 0), 1.06, (.36, .5)), kf(plus(END2, 8), 1.0)],
+     shake=[(HIT, 24, .012), (A('world'), 30, .01), (plus(END2, 46), 20, .014)],
+     sounds=[('boom', HIT, -10), ('crack', A('ends'), -10), ('rumble', A('world'), -12), ('splash', A('high'), -10), ('whoosh', A('mapped'), -16),
+             ('slam', plus(END2, 10), -12), ('slam', plus(END2, 19), -12), ('slam', plus(END2, 28), -12), ('slam', plus(END2, 37), -12), ('boom', plus(END2, 46), -12)])
+
+# Arka hides behind the pile; then the whole trailer rewinds (the pause) into a row of four to inspect.
+PILE = [(C1, .36, .4, -6), (C2, .64, .42, 5), (C3, .36, .74, 4), (C4, .64, .74, -5)]
+ROW = [(.25, .32), (.75, .32), (.25, .72), (.75, .72)]
+END3 = A('wrong', edge='end')
+shot('a3', None, [arka(x=.5, fy=.62, h=.36, poses=[(0, 'cower')], faces=[(0, 'scared')], layer={'y': tk(0, A('tell'), (8, -270, 'ease-out-back')), 'opacity': show_until(plus(END3, 6))})],
+     [*[card(f'p{i}', x, y, .3, txt, anchor={'x': x * W, 'y': y * H}, rotate=tk(r, plus(END3, 6), (30, 0, 'smoothstep')),
+             x=tk(0, plus(END3, 6), (30, (ROW[i][0] - x) * W, 'smoothstep')), y=tk(0, plus(END3, 6), (30, (ROW[i][1] - y) * H, 'smoothstep')))
+       for i, (txt, x, y, r) in enumerate(PILE)],
+      kit(F, 'rw', 'rewind', .08, .1, .16, level=lv((0, 0), (plus(END3, 4), 0), (plus(END3, 8), 1), (plus(END3, 38), 1), (plus(END3, 44), 0)))],
+     [], cam='settle', sounds=[('rewind', plus(END3, 4), -12)])
+
+# Verdicts on the four cards: two scribbled out, one HALF TRUE, one "we'll see"; and the more interesting part sparkles.
+shot('a4', None, [], [
+    *[card(f'r{i}', x, y, .3, txt) for i, ((txt, _, _, _), (x, y)) in enumerate(zip(PILE, ROW))],
+    kit(F, 'pen', 'pen', .25, .32, .14, x=tk(0, A('Most', n=1, edge='end'), (4, 0), (14, 180), (18, 520), (28, 680)), y=tk(0, A('Most', n=1, edge='end'), (14, 0), (18, 0)),
+        opacity=window(plus(A('Most', n=1, edge='end'), 0), plus(A('Most', n=1, edge='end'), 32), 3)),
+    kit(F, 'sx1', 'scribble', .25, .32, .17, level=lv((0, 0), (plus(A('Most', n=1, edge='end'), 2), 0), (plus(A('Most', n=1, edge='end'), 14), 1))),
+    kit(F, 'sx2', 'scribble', .75, .32, .17, level=lv((0, 0), (plus(A('Most', n=1, edge='end'), 18), 0), (plus(A('Most', n=1, edge='end'), 30), 1))),
+    kit(F, 'half', 'stamp', .75, .84, .17, text='half true', **pop_in(A('half'), (.75 * W, .82 * H))),
+    kit(F, 'q3', 'question', .25, .72, .16, **pop_in(A('half'), (.25 * W, .72 * H))),
+    kit(F, 'spark', 'sparkle', .5, .52, .3, count=8, level=lv((0, 0), (A('interesting'), 0), (plus(A('interesting'), 10), 1))),
+    rock('star-rock', .5, .52, .07, **pop_in(A('interesting'), (.5 * W, .52 * H))),
+], [], cam='settle', sounds=[('tear', A('Most', n=1, edge='end'), -14), ('tear', plus(A('Most', n=1, edge='end'), 18), -14), ('boom', A('half'), -20), ('ding', A('interesting'), -12)])
+
+# "check every claim" - a magnifier sweeps the cards; "not from Earth" - a stargazer on Earth, crossed out.
+shot('a5', None, [person('gazer', .5, fy=.5, h=.16, poses=[(0, 'point-right')], faces=[(0, 'happy')], layer={'opacity': show_from(A('watch'))})], [
+    *[card(f'k{i}', x, y, .3, txt, opacity=show_until(A('And')), x=tk(0, A('And'), (12, (x - .5) * W * 1.6, 'ease-in-back'))) for i, ((txt, _, _, _), (x, y)) in enumerate(zip(PILE, ROW))],
+    kit(F, 'mag', 'magnifier', .2, .32, .22, x=tk(0, A('check'), (40, 1100, 'smoothstep')), y=tk(0, A('check'), (20, 330, 'smoothstep'), (40, 0, 'smoothstep')), opacity=show_until(A('And'))),
+    globe('home', .5, .72, .46, center=(78, 20), opacity=show_from(A('And')), scale=tk(.6, A('And'), (12, 1, 'ease-out-back')), anchor={'x': .5 * W, 'y': .72 * H}),
+    kit(F, 'nope', 'cross', .5, .3, .2, **pop_in(A('not'), (.5 * W, .3 * H))),
+], [], cam='settle', sounds=[('whoosh', A('And'), -16), ('boom', A('not'), -22)])
+
+# "We're going to ride it." - Arka leaps onto the tumbling rock and rides it out of frame (the pause), then the brand sting.
+END6 = A('it', edge='end')
+LAND_ON = plus(END6, 22)
+STING = plus(END6, 62)  # inside the 4.8 s pause
 sting_chars, sting_props, sting_notes, sting_sounds = brand_sting(STING, W, H)
-shot('a6', None, [arka(x=.3, poses=[(0, 'point-right')], faces=[(0, 'grin')], layer={'opacity': show_until(STING)})] + sting_chars,
-     [apophis('apo', .68, .45, .16, opacity=show_until(STING))] + sting_props,
-     [Note("we're going to ride it", 4, 'title', pos=(.68 * W, .82 * H), until=STING)] + sting_notes, sounds=sting_sounds)
+RIDE_X = tk(0, plus(LAND_ON, 6), (34, 1500, 'ease-in-back'))
+RIDE_Y = tk(0, plus(LAND_ON, 6), (34, -620, 'ease-in-back'))
+shot('a6', None, [arka(x=.26, h=.4, poses=[(0, 'point-right'), (plus(END6, 2), 'reach'), (LAND_ON, 'cheer')], faces=[(0, 'grin'), (LAND_ON, 'grin')],
+                       layer={'opacity': show_until(STING), 'x': track((0, 0), (plus(END6, 2), 0), (LAND_ON, 640, 'smoothstep'), (plus(LAND_ON, 6), 640), (plus(LAND_ON, 40), 2140, 'ease-in-back')),
+                              'y': track((0, 0), (plus(END6, 2), 0), (plus(END6, 12), -300, 'ease-out-cubic'), (LAND_ON, -250, 'smoothstep'), (plus(LAND_ON, 6), -250), (plus(LAND_ON, 40), -870, 'ease-in-back'))})] + sting_chars,
+     [rock('apo', .62, .62, .2, x=track((0, 900), (plus(A('going'), -1), 900), (plus(A('going'), 16), 0, 'ease-out-cubic'), (plus(LAND_ON, 6), 0), (plus(LAND_ON, 40), 1500, 'ease-in-back')),
+           y=track((0, 0), (plus(LAND_ON, 6), 0), (plus(LAND_ON, 40), -620, 'ease-in-back'))),
+      kit(F, 'ride-trail', 'streak', .62, .62, .5, rotation=-22, level=lv((0, 0), (plus(LAND_ON, 8), 0), (plus(LAND_ON, 20), 1), (plus(LAND_ON, 40), 1), (plus(LAND_ON, 44), 0)),
+          x=RIDE_X, y=RIDE_Y)] + sting_props,
+     [Note("we're going to ride it", A('going'), 'title', pos=(.5 * W, .2 * H), until=plus(END6, 4))] + sting_notes,
+     cam=[kf(0, 1.0, (.5, .5)), kf(plus(END6, 2), 1.0, (.5, .5)), kf(LAND_ON, 1.1, (.6, .45)), kf(plus(LAND_ON, 30), 1.0, (.5, .5))],
+     shake=[(LAND_ON, 10, .006)],
+     sounds=[('whoosh', A('going'), -16), ('pop', plus(END6, 2), -18), ('slam', LAND_ON, -16), ('whoosh', plus(LAND_ON, 8), -10)] + sting_sounds)
 
 # ------------------------------------------------------------------ chapter 1: standing on Apophis (T minus 24 hours)
 shot('a7', T1, [arka(x=.3, h=.46, poses=[(0, 'float')], faces=[(0, 'happy')], enter=('pop', 4))],
@@ -304,16 +424,72 @@ shot('a32', T4, [], [kit(F, 'o1', 'sign', .26, .42, .22, w=1.8, h=1.0, text='1 I
      [Note('after 2029', A('after'), 'label', pos=(.26 * W, .62 * H)), Note('in 2029', A('Earth'), 'label', pos=(.62 * W, .62 * H)),
       Note('one look in 2027 settles most of it', A('2027'), 'note', pos=(.44 * W, .78 * H)), src('Wiegert 2024', A('million'))])
 shot('a33', None, [arka(x=.36, poses=[(0, 'cheer')], faces=[(0, 'grin')])], [kit(F, 'o2', 'sign', .66, .42, .2, w=1.8, h=1.0, text='1 IN 1,000,000,000')], [])
-shot('a34', T4, [], [earth('earth', .3, .5, .2), kit(F, 'pen', 'arrow', .62, .5, .2)],
-     [Note('pretend it did hit', A('Pretend'), 'title'), Note('"wipes out a continent"', A('continent'), 'note', color=CLAIM), Note("let's draw it", A('draw'), 'note')])
-CONT = '#7cc576'
-shot('a35', T4, [], [disc('land', .36, .52, .3, CONT, ('#6db267', CONT), shade=.05, seed=41),
-                     kit(F, 'zone', 'orbit-ring', .36, .52, .14, color=WARN, opacity=show_from(A('zone'))),
-                     kit(F, 'boom', 'impact', .36, .52, .08, count=8, level=lv((0, .7)), **pop_in(A('zone'), (.36 * W, .52 * H)))],
-     [Note('a continent', A('continent'), 'label', pos=(.36 * W, .17 * H)), Note('devastation: a few hundred km', A('few'), 'note'),
-      Note('a small country', A('country'), 'title'), src('Planetary Society', A('zone'))])
-shot('a36', None, [arka(x=.3, poses=[(0, 'shrug')], faces=[(0, 'shocked')])],
-     [disc('land', .66, .5, .22, CONT, ('#6db267', CONT), shade=.05, seed=41), kit(F, 'zone', 'orbit-ring', .66, .5, .07, color=WARN)], [])
+# ------------------------------------------------------------------ the impact, shown honestly (a34-a36)
+# A real map of Africa (Natural Earth); the zone is drawn to scale: ~150 km radius ("a few hundred kilometres across").
+MAP_X, MAP_Y, MAP_S, BBOX, MARK, ZOOM = .4, .52, .82, [-20, -36, 55, 38], {'lon': -14, 'lat': 21, 'km': 150}, 12
+
+
+def map_point(lon, lat):
+    """Group fractions of a lon/lat on the map (same maths as the 'map' prop)."""
+    import math
+    k = MAP_S * min(W, H) / (BBOX[3] - BBOX[1]); cm = math.cos(math.radians((BBOX[1] + BBOX[3]) / 2))
+    return MAP_X + (lon - (BBOX[0] + BBOX[2]) / 2) * cm * k / W, MAP_Y - (lat - (BBOX[1] + BBOX[3]) / 2) * k / H
+
+
+MX, MY = map_point(MARK['lon'], MARK['lat'])  # the mark when the whole map shows; zoomed in it sits at the map's centre
+ZX, ZY = MAP_X, MAP_Y
+ZONE_D = 2 * MARK['km'] / 111 * MAP_S * min(W, H) / (BBOX[3] - BBOX[1]) * ZOOM / min(W, H)  # zone diameter when zoomed in (fraction of 1080)
+
+
+def africa(pid, level, level2=None, **layer):
+    return kit(F, pid, 'map', MAP_X, MAP_Y, MAP_S, w=.98, bbox=BBOX, mark=MARK, zoom=ZOOM, level=level, **({'level2': level2} if level2 else {}), **layer)
+
+
+END34 = A('draw', edge='end')
+shot('a34', T4, [], [
+    globe('g', .3, .55, .5, center=(30, 10), opacity=show_until(A('draw'))),
+    rock('fall', .78, .2, .06, x=tk(0, A('Pretend'), (30, -380, 'smoothstep')), y=tk(0, A('Pretend'), (30, 170, 'smoothstep')), opacity=show_until(A('draw'))),
+    kit(F, 'ftrail', 'streak', .78, .2, .3, rotation=-24, level=lv((0, 0), (A('Pretend'), 0), (plus(A('Pretend'), 10), 1)),
+        x=tk(0, A('Pretend'), (30, -380, 'smoothstep')), y=tk(0, A('Pretend'), (30, 170, 'smoothstep')), opacity=show_until(A('draw'))),
+    kit(F, 'pause', 'sign', .62, .3, .2, w=1.8, text='WHAT IF?', **popw(plus(A('Pretend'), 30), A('heard'), .62, .3)),
+    card('myth', .74, .6, .26, C1, **popw(A('heard'), A('draw'), .74, .6)),
+    # "Let's draw it": the pen sweeps and the continent appears
+    africa('map', lv((0, 1)), opacity=track((0, 0), (plus(A('draw'), -1), 0), (plus(END34, 36), 1))),
+    kit(F, 'pen', 'pen', .2, .2, .16, x=tk(0, A('draw'), (14, 200), (24, 600), (36, 760), (44, 960)), y=tk(0, A('draw'), (14, 420), (24, 160), (36, 640), (44, 300)),
+        opacity=window(A('draw'), plus(END34, 40), 3)),
+], [], cam='settle', sounds=[('whoosh', A('Pretend'), -14), ('pop', A('heard'), -18), ('tear', A('draw'), -16), ('tear', plus(A('draw'), 22), -16)])
+
+CONT = A('continent', edge='end')  # "Here's a continent." then the pause: zoom in, the rock falls, impact
+ZIN, IMP = plus(CONT, 26), plus(CONT, 48)
+shot('a35', T4, [], [
+    africa('map', lv((0, 1), (plus(CONT, 2), 1), (ZIN, 0), (plus(A('look'), 0), 0), (plus(A('look'), 40), 1)),
+           level2=lv((0, 0), (A('zone'), 0), (plus(A('zone'), 20), 1))),
+    rock('fall', ZX + .3, ZY - .42, .05, x=tk(0, ZIN, (22, -.3 * W, 'smoothstep')), y=tk(0, ZIN, (22, .42 * H, 'smoothstep')), opacity=window(ZIN, IMP, 2)),
+    kit(F, 'ftrail', 'streak', ZX + .3, ZY - .42, .35, rotation=-54, level=lv((0, 0), (ZIN, 0), (plus(ZIN, 6), 1), (IMP, 1), (plus(IMP, 1), 0)),
+        x=tk(0, ZIN, (22, -.3 * W, 'smoothstep')), y=tk(0, ZIN, (22, .42 * H, 'smoothstep'))),
+    kit(F, 'flash', 'flash', .5, .5, .5, level=lv((0, 0), (IMP, 0), (plus(IMP, 2), .9), (plus(IMP, 14), 0))),
+    kit(F, 'sw', 'shockwave', ZX, ZY, ZONE_D, level=lv((0, 0), (IMP, 0), (plus(IMP, 45), 1))),
+    kit(F, 'deb', 'debris', ZX, ZY, .5, count=12, level=lv((0, 0), (IMP, 0), (plus(IMP, 40), 1))),
+    kit(F, 'dust', 'dust-cloud', ZX, ZY, ZONE_D * 1.1, level=lv((0, 0), (plus(IMP, 4), 0), (plus(IMP, 60), 1)), opacity=show_until(A('zone'))),
+    # what "a terrible regional disaster" means: the towns inside the zone go dark
+    *[kit(F, f'town{i}', 'town', ZX + dx, ZY + dy, .08, level=lv((0, 1), (plus(A('terrible'), 6 * i), 1), (plus(A('terrible'), 6 * i + 1), 0)), opacity=window(A('zone'), A('look')))
+      for i, (dx, dy) in enumerate([(-.05, -.04), (.04, .02), (-.01, .08)])],
+    kit(F, 'smoke', 'snowfall', ZX, ZY, ZONE_D * 1.2, count=10, color='#8a7f72', level=lv((0, 0), (A('regional'), 0), (plus(A('regional'), 20), 1)), opacity=window(A('regional'), A('look'))),
+    kit(F, 'km', 'span', ZX, ZY + ZONE_D * .62, ZONE_D * .9, text='~300 km', level=lv((0, 0), (A('few'), 0), (plus(A('few'), 15), 1)), opacity=window(A('few'), A('look'))),
+], [Note('a continent', A('continent'), 'title', pos=(.82 * W, .3 * H), until=ZIN),
+    Note('a small country', A('country'), 'title', pos=(.8 * W, .78 * H), until=A('look')),
+    Note('the same continent', plus(A('look'), 30), 'title', pos=(.82 * W, .3 * H))],
+     cam=[kf(0, 1.0), kf(IMP, 1.0), kf(plus(IMP, 4), 1.08, (ZX, ZY)), kf(plus(IMP, 50), 1.0, (ZX, ZY)), kf(A('look'), 1.0), kf(plus(A('look'), 40), 1.0)],
+     shake=[(IMP, 45, .016)],
+     sounds=[('pop', A('continent'), -18), ('whoosh', plus(CONT, 2), -14), ('riser', plus(ZIN, -10), -16), ('boom', IMP, -6), ('rumble', plus(IMP, 6), -10),
+             ('pop', A('zone'), -16), ('rumble', A('terrible'), -16), ('whoosh', A('look'), -14)])
+
+shot('a36', None, [arka(x=.18, h=.42, poses=[(0, 'point-right'), (A('smaller'), 'shrug')], faces=[(0, 'shocked'), (A('smaller'), 'smug')])], [
+    kit(F, 'map', 'map', .62, .5, .7, bbox=BBOX, mark=MARK, level2=lv((0, 1))),
+    card('myth', .32, .3, .22, C1, rotate=lv((0, -5)), anchor={'x': .32 * W, 'y': .3 * H}),
+    kit(F, 'sx', 'scribble', .32, .3, .14, level=lv((0, 0), (A('smaller'), 0), (plus(A('smaller'), 12), 1))),
+    kit(F, 'myth-stamp', 'stamp', .34, .45, .13, text='myth', **pop_in(A('thumbnails'), (.34 * W, .45 * H))),
+], [], cam='settle', sounds=[('tear', A('smaller'), -14), ('boom', A('thumbnails'), -20)])
 
 # ------------------------------------------------------------------ quick round
 shot('a37', T5, [], [kit(F, 'dino', 'dino', .2, .66, .3), apophis('kpg', .2, .3, .1, opacity=show_from(A('dinosaur-killer'))),
@@ -407,6 +583,7 @@ ep.music([('a1', 'assets/music/4-tense-a-false-vacuum-decay.mp3', 0), ('a7', 'as
          gain_db=-17, duck_ratio=2, voice={'highpassHz': 95, 'lowMidDb': -4, 'presenceDb': 2, 'room': .08})
 
 if __name__ == '__main__':
+    pause_cut(json.loads(STORY.read_text()), 'jobs/e7-narration', PAUSES, 'apophis-beats', str(ROOT / 'stories/apophis-beats-cut.json'))
     board = ep.build()
     board['scenes'][-1]['durationFrames'] += END_CARD * FPS
     path = ROOT / 'storyboards/apophis.json'

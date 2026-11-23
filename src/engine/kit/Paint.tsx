@@ -2,6 +2,7 @@
 import React from 'react';
 import {seededRandom} from '../../motion/particles';
 import type {Theme} from '../style/theme';
+import {LAND} from './land';
 
 export type PlanetConfig = {x: number; y: number; radius: number; base: string; bands: string[]; craters: number; ring: boolean; shade: number; spin: number; seed: number; glow?: string};
 export type TerrainConfig = {top: number; curve: number; fill: string; detail: string; rocks: number; bumps: number; seed: number};
@@ -66,9 +67,10 @@ export const Terrain: React.FC<{config: TerrainConfig; theme: Theme; width: numb
 
 export type PropConfig = {ink?: string; item: 'thermometer' | 'pressure-arrows' | 'motion-lines' | 'exclaim' | 'question' | 'check' | 'cross' | 'counter' | 'stamp' | 'vignette' | 'station' | 'helmet' | 'doodle-stars' | 'chamber'
   | 'cliff' | 'geyser' | 'plume' | 'radiation-meter' | 'radiation-belt' | 'battery' | 'airbag' | 'small-moon' | 'asteroid' | 'ice-cutaway' | 'frost'
-  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb' | 'crescent' | 'orbit-ring' | 'town' | 'lion' | 'zebra' | 'coral' | 'plankton' | 'tide-gauge' | 'tilt-dial' | 'earth-axis' | 'impact' | 'dino' | 'reflector' | 'bed' | 'stir' | 'clock' | 'eclipse' | 'moonbeam' | 'young-earth' | 'bee' | 'flower' | 'tree' | 'tardigrade' | 'vent' | 'shell' | 'snowfall' | 'night-half' | 'mushroom' | 'sparkle' | 'clock-time' | 'rope' | 'pulse' | 'span' | 'sky' | 'streetlight' | 'arrow' | 'ice-layer' | 'city-lights' | 'tide-bulge' | 'caption'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
+  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb' | 'crescent' | 'orbit-ring' | 'town' | 'lion' | 'zebra' | 'coral' | 'plankton' | 'tide-gauge' | 'tilt-dial' | 'earth-axis' | 'impact' | 'dino' | 'reflector' | 'bed' | 'stir' | 'clock' | 'eclipse' | 'moonbeam' | 'young-earth' | 'bee' | 'flower' | 'tree' | 'tardigrade' | 'vent' | 'shell' | 'snowfall' | 'night-half' | 'mushroom' | 'sparkle' | 'clock-time' | 'rope' | 'pulse' | 'span' | 'sky' | 'streetlight' | 'arrow' | 'ice-layer' | 'city-lights' | 'tide-bulge' | 'caption' | 'globe' | 'map' | 'skyline' | 'wave' | 'shockwave' | 'debris' | 'flash' | 'dust-cloud' | 'headline' | 'rewind' | 'scribble' | 'streak' | 'pen' | 'satellite'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
   values?: Array<{frame: number; value: number; ramp?: boolean}>; text?: string; direction?: 'in' | 'out';
-  labels?: string[]; colors?: string[]; highlight?: number; ring?: boolean; belt?: boolean; range?: [number, number]};
+  labels?: string[]; colors?: string[]; highlight?: number; ring?: boolean; belt?: boolean; range?: [number, number];
+  center?: [number, number]; spin?: number; bbox?: [number, number, number, number]; mark?: {lon: number; lat: number; km: number}; zoom?: number; level2?: Array<{frame: number; value: number}>};
 
 /** Counter value: keys hold, or step in whole numbers towards the next key when `ramp` is set (a real-time countdown). */
 export const counterAt = (keys: NonNullable<PropConfig['values']>, frame: number) => {
@@ -971,6 +973,211 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
             {i === hl && <circle cx={x} cy={y} r={r + s * .03} fill="none" stroke={hot} strokeWidth={lw * 2}/>}
             <text x={x} y={y + r + s * .07} textAnchor="middle" fontFamily={font} fontSize={s * (i === hl ? .075 : .055)} fill={i === hl ? hot : ink} opacity={i === hl ? 1 : .75}>{nm}</text>
           </g>; })}
+      </g>;
+    }
+    case 'globe': {
+      // Earth as it really looks: real continents (Natural Earth outlines) on an orthographic globe centred on `center`
+      // [lon, lat] (default Africa/Europe), slowly turning with `spin` (degrees of longitude a frame), soft clouds and shading.
+      // size = diameter. level2 (optional) cracks the planet open with glowing fissures (the "ends the world" myth).
+      const R = s * .5, [lon0d, lat0d] = c.center ?? [20, 12], id = `gl-${Math.round(c.x * 1e4)}-${Math.round(c.y * 1e4)}-${Math.round(s)}`;
+      const D = Math.PI / 180, lon0 = (lon0d + (c.spin ?? 0) * frame) * D, lat0 = lat0d * D, sl0 = Math.sin(lat0), cl0 = Math.cos(lat0);
+      const proj = (lon: number, lat: number) => {
+        const la = lat * D, dl = lon * D - lon0, cosc = sl0 * Math.sin(la) + cl0 * Math.cos(la) * Math.cos(dl);
+        let x = Math.cos(la) * Math.sin(dl), y = cl0 * Math.sin(la) - sl0 * Math.cos(la) * Math.cos(dl);
+        if (cosc < 0) { const m = Math.hypot(x, y) || 1; x /= m; y /= m; }
+        return [x * R, -y * R, cosc] as const;
+      };
+      const land = LAND.map(ring => { const p = ring.map(([lo, la]) => proj(lo, la)); return p.some(q => q[2] > 0) ? 'M ' + p.map(q => `${q[0].toFixed(1)} ${q[1].toFixed(1)}`).join(' L ') + ' Z' : ''; }).filter(Boolean);
+      const random = seededRandom(9), cracks = levelAt(c.level2 ?? [{frame: 0, value: 0}], frame);
+      const fissures = cracks > 0 ? Array.from({length: 6}, (_, i) => { let x = (random() - .5) * R * .3, y = (random() - .5) * R * .3; const a0 = i * Math.PI / 3 + random() * .6, pts = [[x, y]];
+        for (let k = 0; k < 7; k++) { const a = a0 + (random() - .5) * .9, st = R * .16; x += Math.cos(a) * st; y += Math.sin(a) * st; if (Math.hypot(x, y) > R * .97) break; pts.push([x, y]); }
+        const n = Math.max(1, Math.round(pts.length * cracks)); return 'M ' + pts.slice(0, n + 1).map(p => `${p[0].toFixed(1)} ${p[1].toFixed(1)}`).join(' L '); }) : [];
+      return <g transform={at}>
+        <defs><clipPath id={id}><circle r={R}/></clipPath>
+          <radialGradient id={`${id}-sh`} cx=".34" cy=".3" r=".85"><stop offset=".5" stopColor="#000" stopOpacity="0"/><stop offset="1" stopColor="#000" stopOpacity=".55"/></radialGradient>
+          <radialGradient id={`${id}-at`}><stop offset=".86" stopColor="#9fd3ff" stopOpacity="0"/><stop offset=".93" stopColor="#9fd3ff" stopOpacity=".45"/><stop offset="1" stopColor="#9fd3ff" stopOpacity="0"/></radialGradient></defs>
+        <circle r={R * 1.08} fill={`url(#${id}-at)`}/>
+        <g clipPath={`url(#${id})`}>
+          <circle r={R} fill={c.color ?? '#3f8fd8'}/>
+          {land.map((d, i) => <path key={i} d={d} fill="#74c066" stroke="#3f7a3a" strokeWidth={Math.max(1, w * .25)} strokeLinejoin="round"/>)}
+          <ellipse cx={0} cy={-R * .97} rx={R * .5} ry={R * .1} fill="#f4f8ff" opacity=".9"/>
+          {[[-.3, -.42, .34], [.25, .1, .28], [-.05, .5, .3], [.42, -.25, .22]].map(([cx, cy, cw], i) => { const dx = ((frame * .4 + i * 50) % (R * 2.6)) - R * 1.3;
+            return <path key={i} d={`M ${cx * R + dx - cw * R} ${cy * R} q ${cw * R * .5} ${-cw * R * .25} ${cw * R} 0 t ${cw * R} 0`} fill="none" stroke="#ffffff" strokeWidth={R * .05} strokeLinecap="round" opacity=".55"/>; })}
+          {fissures.map((d, i) => <g key={i}><path d={d} {...stroke('#ffb347', w * 1.1)} opacity={.7 * cracks}/><path d={d} {...stroke('#3a1208', w * .4)}/></g>)}
+          {cracks > 0 && <circle r={R} fill="#ff6a2a" opacity={cracks * .18}/>}
+          <circle r={R} fill={`url(#${id}-sh)`}/>
+          <path d={`M ${-R * .62} ${-R * .35} A ${R * .72} ${R * .72} 0 0 1 ${-R * .1} ${-R * .72}`} {...stroke('#ffffff', w * 1.3)} opacity=".45"/>
+        </g>
+        <circle r={R} fill="none" stroke={ink} strokeWidth={Math.max(3, w * .35)}/>
+      </g>;
+    }
+    case 'map': {
+      // A real map (Natural Earth land) of `bbox` [west, south, east, north], equirectangular with cos(mid-latitude) scaling.
+      // size = map height; width follows the region's true proportions. mark {lon, lat, km} draws a devastation zone of that
+      // radius to scale; level2 = zone drawn (0..1). zoom (>1): level runs the pull-back, 0 = zoomed in `zoom` times about the
+      // mark (the mark moves to the map's centre), 1 = the whole map.
+      const [w0, s0, e0, n0] = c.bbox ?? [-20, -36, 55, 38], Hm = s, k = Hm / (n0 - s0), cm = Math.cos((s0 + n0) / 2 * Math.PI / 180), Wm = (e0 - w0) * cm * k;
+      const cx = (w0 + e0) / 2, cy = (s0 + n0) / 2, id = `mp-${Math.round(c.x * 1e4)}-${Math.round(c.y * 1e4)}`;
+      const Z = c.zoom ? Math.pow(c.zoom, 1 - levelAt(c.level, frame)) : 1, mk = c.mark;
+      const nat = (lo: number, la: number) => [(lo - cx) * cm * k, -(la - cy) * k];
+      const [mx, my] = mk ? nat(mk.lon, mk.lat) : [0, 0];
+      // zoomed in, the mark moves to the map's centre; at Z = 1 everything is in its natural place
+      const t = c.zoom && c.zoom > 1 ? (Z - 1) / (c.zoom - 1) : 0, ox = mx * (1 - t), oy = my * (1 - t);
+      const P = (lo: number, la: number) => { const [x, y] = nat(lo, la); return [ox + (x - mx) * Z, oy + (y - my) * Z]; };
+      const land = LAND.map(ring => 'M ' + ring.map(([lo, la]) => { const [x, y] = P(lo, la); return `${x.toFixed(1)} ${y.toFixed(1)}`; }).join(' L ') + ' Z');
+      const zone = levelAt(c.level2 ?? [{frame: 0, value: 0}], frame), zr = mk ? mk.km / 111 * k * Z : 0;
+      return <g transform={at}>
+        <defs><clipPath id={id}><rect x={-Wm / 2} y={-Hm / 2} width={Wm} height={Hm} rx={s * .02}/></clipPath></defs>
+        <g clipPath={`url(#${id})`}>
+          <rect x={-Wm / 2} y={-Hm / 2} width={Wm} height={Hm} fill={c.color ?? '#2c5d93'}/>
+          {Array.from({length: 9}, (_, i) => <path key={i} d={`M ${-Wm / 2} ${-Hm / 2 + Hm * (i + 1) / 10} L ${Wm / 2} ${-Hm / 2 + Hm * (i + 1) / 10}`} stroke="#ffffff" strokeWidth={1.5} opacity=".07"/>)}
+          {land.map((d, i) => <path key={i} d={d} fill="#7cc576" stroke="#2f5f2c" strokeWidth={Math.max(1.5, w * .35)} strokeLinejoin="round"/>)}
+          {mk && zone > 0 && <g transform={`translate(${ox} ${oy})`}>
+            <circle r={zr} fill="#ff5a4a" opacity={.38 * zone}/>
+            <circle r={zr} fill="none" stroke="#ff5a4a" strokeWidth={Math.max(3, w * .6)} pathLength={1} strokeDasharray={`${zone} 1`} transform="rotate(-90)"/>
+          </g>}
+        </g>
+        <rect x={-Wm / 2} y={-Hm / 2} width={Wm} height={Hm} rx={s * .02} fill="none" stroke={ink} strokeWidth={Math.max(3, w * .3)}/>
+      </g>;
+    }
+    case 'skyline': {
+      // A night city of skyscrapers (size = width/1.6); windows glow while level > .5. `highlight` picks one tower to be the
+      // tallest (with an antenna): "a skyscraper-sized rock".
+      const random = seededRandom(Math.round(c.x * 113 + c.y * 71) || 5), n = Math.max(5, c.count), lit = levelAt(c.level, frame) > .5, hl = c.highlight ?? -1;
+      const bw = s * 1.6 / n;
+      return <g transform={at}>{Array.from({length: n}, (_, i) => {
+        const tall = i === hl, h = tall ? s * .78 : s * (.18 + random() * .38), x = -s * .8 + i * bw + bw * .06, wd = bw * (.78 + random() * .1), rows = Math.floor(h / (s * .055)), cols = Math.max(2, Math.floor(wd / (s * .045)));
+        return <g key={i}>
+          <rect x={x} y={-h} width={wd} height={h} fill={tall ? (c.color ?? '#2a3a66') : '#1b2747'} stroke={ink} strokeWidth={w * .5}/>
+          {tall && <path d={`M ${x + wd / 2} ${-h} L ${x + wd / 2} ${-h - s * .12}`} {...stroke(ink, w * .6)}/>}
+          {tall && <circle cx={x + wd / 2} cy={-h - s * .12} r={s * .012} fill="#ff5a4a" opacity={Math.floor(frame / 15) % 2 ? 1 : .3}/>}
+          {Array.from({length: rows * cols}, (_, j) => { const r = Math.floor(j / cols), q = j % cols, on = lit && random() > .45;
+            return <rect key={j} x={x + wd * (q + .3) / cols} y={-h + s * .03 + r * s * .055} width={wd * .4 / cols} height={s * .025} fill={on ? '#ffd86b' : '#0f1830'}/>; })}
+        </g>; })}
+        <path d={`M ${-s * .85} 0 L ${s * .85} 0`} {...stroke(ink, w * .8)}/>
+      </g>;
+    }
+    case 'wave': {
+      // A tsunami wall (size = height at full rise; width 2 x size). level: 0 calm sea, .6 a towering curling wall, then it
+      // breaks and collapses into foam towards 1 (the honest "the wall breaks before the coast").
+      const L = levelAt(c.level, frame), rise = Math.min(1, L / .6), brk = Math.max(0, (L - .6) / .4), h = s * (.05 + .95 * rise) * (1 - .78 * brk), lip = s * .25 * rise * (1 - brk);
+      const crest = s * .25, face = `M ${-s} ${s * .3} L ${-s} 0 Q ${-s * .3} ${-h * .1} ${crest - s * .3} ${-h * .85} Q ${crest} ${-h * 1.05} ${crest + lip} ${-h + lip * .6}`
+        + ` Q ${crest + lip * .2} ${-h * .6} ${crest + s * .12} ${-h * .4} Q ${crest + s * .22} ${-h * .1} ${s} 0 L ${s} ${s * .3} Z`;
+      const random = seededRandom(19);
+      return <g transform={at}>
+        <path d={face} fill={c.color ?? '#3d7fc4'} stroke={ink} strokeWidth={w * .8} strokeLinejoin="round"/>
+        <path d={`M ${-s * .7} ${-h * .12} Q ${-s * .1} ${-h * .3} ${crest - s * .12} ${-h * .75}`} {...stroke('#8cc4f0', w * 1.4)} opacity=".7"/>
+        {Array.from({length: 18}, (_, i) => { const t = random(), fx = crest - s * .25 + t * s * .5 + (random() - .5) * brk * s * .9, fy = -h + (random() - .2) * s * .12 + brk * random() * s * .35;
+          return <circle key={i} cx={fx} cy={fy} r={s * (.02 + random() * .03) * (.4 + rise)} fill="#f4f8ff" opacity={.4 + .6 * Math.max(rise * (1 - brk), brk)}/>; })}
+      </g>;
+    }
+    case 'shockwave': {
+      // An expanding blast ring seen from above (size = final diameter); level = progress 0..1 (flash, ring, then fade).
+      const p = levelAt(c.level, frame); if (p <= 0) return null;
+      const e = 1 - Math.pow(1 - p, 2.2), R = s * .5 * e, fadeOut = Math.max(0, 1 - Math.pow(p, 3));
+      return <g transform={at} opacity={fadeOut}>
+        <defs><radialGradient id={`sw-${Math.round(c.x * 1e4)}-${Math.round(c.y * 1e4)}`}><stop offset="0" stopColor="#fff6d8" stopOpacity={.9 * (1 - p)}/><stop offset=".6" stopColor={c.color ?? '#ffb347'} stopOpacity={.35 * (1 - p)}/><stop offset="1" stopColor={c.color ?? '#ffb347'} stopOpacity={.6 * (1 - p * .5)}/></radialGradient></defs>
+        <circle r={R} fill={`url(#sw-${Math.round(c.x * 1e4)}-${Math.round(c.y * 1e4)})`}/>
+        <circle r={R} fill="none" stroke="#fff4d6" strokeWidth={Math.max(2, s * .018 * (1 - p * .7))}/>
+        <circle r={R * 1.04} fill="none" stroke="#c98a4a" strokeWidth={Math.max(2, s * .03 * (1 - p))} opacity=".55"/>
+      </g>;
+    }
+    case 'debris': {
+      // Rock chunks thrown outward and falling (size = spread); level = time 0..1; count chunks.
+      const p = levelAt(c.level, frame); if (p <= 0) return null;
+      const random = seededRandom(Math.round(c.x * 997 + c.y * 31) || 11);
+      return <g transform={at} opacity={Math.min(1, (1 - p) * 4)}>{Array.from({length: c.count * 2}, (_, i) => {
+        const a = -Math.PI * (.1 + random() * .8), v = .3 + random() * .7, x = Math.cos(a) * v * p * s * .5, y = Math.sin(a) * v * p * s * .5 + p * p * s * .35, r = s * (.012 + random() * .02), rot = frame * (random() * 12 - 6);
+        return <rect key={i} x={-r} y={-r * .7} width={r * 2} height={r * 1.4} rx={r * .3} transform={`translate(${x} ${y}) rotate(${rot})`} fill={c.color ?? '#8a7f72'} stroke={ink} strokeWidth={w * .3}/>; })}</g>;
+    }
+    case 'flash': {
+      // A full-frame flash of light; level = opacity. Position and size are ignored.
+      const lv = levelAt(c.level, frame); if (lv <= 0) return null;
+      return <rect x={-width} y={-height} width={width * 3} height={height * 3} fill={c.color ?? '#fff6d8'} opacity={lv}/>;
+    }
+    case 'dust-cloud': {
+      // Seen from above (on a map): a crater with a ring of billowing dust rolling outward (size = final diameter); level = growth 0..1.
+      const p = levelAt(c.level, frame); if (p <= 0) return null;
+      const random = seededRandom(27), col = c.color ?? '#b39a80', R = s * .5 * Math.sqrt(p);
+      return <g transform={at} opacity={Math.min(1, 1.8 - p)}>
+        {Array.from({length: 16}, (_, i) => { const a = i / 16 * Math.PI * 2 + random() * .3, d = R * (.75 + random() * .3);
+          return <circle key={i} cx={Math.cos(a) * d} cy={Math.sin(a) * d} r={s * (.05 + random() * .04) * (.4 + p)} fill={col} stroke={ink} strokeWidth={w * .3} opacity=".9"/>; })}
+        <circle r={R * .7} fill={col} opacity=".55"/>
+        <circle r={s * .07} fill="#5a4636" stroke={ink} strokeWidth={w * .4}/>
+        <circle r={s * .045} fill="#3a2a20"/>
+      </g>;
+    }
+    case 'headline': {
+      // A viral-video card (the scary headlines): a dramatic thumbnail, the headline in two lines, a fake view count.
+      // size = card height; width 1.6 x size. color tints the thumbnail.
+      const cw = s * 1.6, ch = s, words = (c.text ?? '').split(' '), half = Math.ceil(words.length / 2), l1 = words.slice(0, half).join(' '), l2 = words.slice(half).join(' ');
+      const fs = Math.min(s * .13, cw * .9 / Math.max(1, Math.max(l1.length, l2.length) * .5)), tint = c.color ?? '#c0392b';
+      return <g transform={at}>
+        <rect x={-cw / 2 + s * .02} y={-ch / 2 + s * .03} width={cw} height={ch} rx={s * .05} fill="#000000" opacity=".35"/>
+        <rect x={-cw / 2} y={-ch / 2} width={cw} height={ch} rx={s * .05} fill="#ffffff" stroke={ink} strokeWidth={w * .6}/>
+        <rect x={-cw / 2 + s * .04} y={-ch / 2 + s * .04} width={cw - s * .08} height={ch * .52} rx={s * .03} fill={tint}/>
+        <polygon points={Array.from({length: 16}, (_, i) => { const a = i * Math.PI / 8, rr = i % 2 ? s * .09 : s * .2; return `${-cw * .22 + Math.cos(a) * rr},${-ch * .2 + Math.sin(a) * rr}`; }).join(' ')} fill="#ffd25e" stroke="#7a1a10" strokeWidth={w * .4}/>
+        <circle cx={cw * .2} cy={-ch * .2} r={s * .13} fill="#ffffff" opacity=".9"/>
+        <polygon points={`${cw * .2 - s * .04},${-ch * .2 - s * .06} ${cw * .2 - s * .04},${-ch * .2 + s * .06} ${cw * .2 + s * .065},${-ch * .2}`} fill={tint}/>
+        <rect x={-cw / 2 + s * .06} y={-ch / 2 + s * .06} width={s * .42} height={s * .11} rx={s * .02} fill="#ffffff"/>
+        <text x={-cw / 2 + s * .27} y={-ch / 2 + s * .145} textAnchor="middle" fontFamily={font} fontSize={s * .08} fill={tint}>BREAKING</text>
+        <text x={-cw / 2 + s * .06} y={ch * .16} fontFamily={font} fontSize={fs} fill="#111111">{l1}</text>
+        <text x={-cw / 2 + s * .06} y={ch * .16 + fs * 1.05} fontFamily={font} fontSize={fs} fill="#111111">{l2}</text>
+        <text x={-cw / 2 + s * .06} y={ch / 2 - s * .04} fontFamily={font} fontSize={s * .065} fill="#777777">4.2M views · 2 days ago</text>
+      </g>;
+    }
+    case 'rewind': {
+      // A tape-rewind overlay: jittering tracking lines across the frame and a big ⏪ with REWIND; level = intensity.
+      const lv = levelAt(c.level, frame); if (lv <= 0) return null;
+      const random = seededRandom(frame * 7 + 3);
+      return <g opacity={lv}>
+        {Array.from({length: 14}, (_, i) => { const y = random() * height, hh = 2 + random() * 10; return <rect key={i} x={0} y={y} width={width} height={hh} fill="#ffffff" opacity={.1 + random() * .25}/>; })}
+        <g transform={at}>
+          {[0, 1].map(k => <polygon key={k} points={`${-k * s * .3},${-s * .2} ${-k * s * .3},${s * .2} ${-k * s * .3 - s * .3},0`} fill="#ffffff"/>)}
+          <text x={s * .1} y={s * .1} fontFamily={font} fontSize={s * .3} fill="#ffffff">REWIND</text>
+        </g>
+      </g>;
+    }
+    case 'scribble': {
+      // A pen scribbling out what is under it (size = width/1.6); level = drawn fraction.
+      const lv = levelAt(c.level, frame); if (lv <= 0) return null;
+      const random = seededRandom(13), n = 9, d = Array.from({length: n}, (_, i) => `${i ? 'L' : 'M'} ${(-.8 + 1.6 * i / (n - 1)) * s} ${(i % 2 ? -.18 : .18) * s + (random() - .5) * s * .06}`).join(' ');
+      return <g transform={at}><path d={d} {...stroke(c.color ?? '#ff5a4a', w * 2.4)} pathLength={1} strokeDasharray={`${lv} 1`}/></g>;
+    }
+    case 'streak': {
+      // A fiery entry trail behind a falling body: the head is at (x, y), the tail runs back along -x (rotate to aim).
+      // size = trail length at level 1; level = length/brightness.
+      const lv = levelAt(c.level, frame); if (lv <= 0) return null;
+      const L = s * lv, gid = `st-${Math.round(c.x * 1e4)}-${Math.round(c.y * 1e4)}`;
+      return <g transform={at}>
+        <defs><linearGradient id={gid} x1="1" x2="0"><stop offset="0" stopColor="#fff6c8"/><stop offset=".25" stopColor="#ffb347"/><stop offset="1" stopColor="#ff5a2a" stopOpacity="0"/></linearGradient></defs>
+        <path d={`M 0 ${-s * .045} Q ${-L * .5} ${-s * .03} ${-L} 0 Q ${-L * .5} ${s * .03} 0 ${s * .045} Z`} fill={`url(#${gid})`}/>
+        <circle r={s * .05} fill="#fff6c8" opacity=".9"/>
+      </g>;
+    }
+    case 'pen': {
+      // A felt pen; the tip is at (x, y), the body runs up and to the right.
+      return <g transform={`${at} rotate(-35)`}>
+        <path d={`M 0 0 L ${s * .08} ${-s * .03} L ${s * .08} ${s * .03} Z`} fill={ink}/>
+        <rect x={s * .08} y={-s * .045} width={s * .12} height={s * .09} fill="#d8d8d8" stroke={ink} strokeWidth={w * .5}/>
+        <rect x={s * .2} y={-s * .06} width={s * .6} height={s * .12} rx={s * .03} fill={c.color ?? '#ff5a4a'} stroke={ink} strokeWidth={w * .6}/>
+        <rect x={s * .78} y={-s * .065} width={s * .14} height={s * .13} rx={s * .03} fill="#333333" stroke={ink} strokeWidth={w * .6}/>
+      </g>;
+    }
+    case 'satellite': {
+      // A TV/communications satellite: gold-foil box, two long solar wings and a dish antenna. Slowly rocks.
+      const sway = Math.sin(frame / 40) * 3;
+      return <g transform={`${at} rotate(${sway})`}>
+        {[-1, 1].map(k => <g key={k}>
+          <path d={`M ${k * s * .12} 0 L ${k * s * .2} 0`} {...stroke(ink, w * .7)}/>
+          <rect x={k > 0 ? s * .2 : -s * .62} y={-s * .09} width={s * .42} height={s * .18} fill="#2f4f8f" stroke={ink} strokeWidth={w * .6}/>
+          {[1, 2, 3].map(j => <path key={j} d={`M ${(k > 0 ? s * .2 : -s * .62) + j * s * .105} ${-s * .09} l 0 ${s * .18}`} stroke="#9fc0ff" strokeWidth={w * .3}/>)}
+          <path d={`M ${k > 0 ? s * .2 : -s * .62} 0 l ${s * .42} 0`} stroke="#9fc0ff" strokeWidth={w * .3}/>
+        </g>)}
+        <rect x={-s * .12} y={-s * .12} width={s * .24} height={s * .24} rx={s * .02} fill="#d9a628" stroke={ink} strokeWidth={w * .7}/>
+        <path d={`M ${-s * .12} ${-s * .04} L ${s * .12} ${-s * .04} M ${-s * .12} ${s * .05} L ${s * .12} ${s * .05}`} stroke="#a67c14" strokeWidth={w * .4}/>
+        <path d={`M 0 ${s * .12} L 0 ${s * .2}`} {...stroke(ink, w * .6)}/>
+        <path d={`M ${-s * .13} ${s * .2} Q 0 ${s * .36} ${s * .13} ${s * .2} Z`} fill="#f2f2ee" stroke={ink} strokeWidth={w * .6}/>
       </g>;
     }
     case 'helmet': {

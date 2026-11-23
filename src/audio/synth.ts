@@ -71,6 +71,36 @@ export const synthSfx = (id: SfxId): Float32Array => {
         b[i] = v; }
       return normalize(lowpass(b, 7000), .55);
     }
+    case 'crack': { // rock splitting: a sharp broadband snap with a few crackles and a low groan
+      const b = buffer(1.2), x = highpass(white(b.length, 31), 900), g = lowpass(brown(b.length, 32), 140), r = seededRandom(33), hits = [0, .05, .11, .2, .32].map(t => t + r() * .02);
+      for (let i = 0; i < b.length; i++) { const t = i / SAMPLE_RATE; let v = 0; for (const h of hits) if (t >= h) v += x[i] * Math.exp(-(t - h) * 70) * (h ? .55 : 1); b[i] = v + g[i] * 2.2 * Math.exp(-t * 2.5) * Math.min(1, t / .02); }
+      return normalize(b, .85);
+    }
+    case 'splash': { // big water: a noisy crash that settles into a hiss
+      const n = buffer(2).length, x = lowpass(highpass(pink(n, 41), 180), t => 5000 * Math.exp(-t * 1.6) + 600);
+      return normalize(envelope(x, (t, d) => Math.min(1, t / .015) * Math.exp(-t * 1.8) * Math.min(1, (d - t) / .3)), .8);
+    }
+    case 'tear': { // paper tearing: rough fibrous noise
+      const n = buffer(.55).length, x = highpass(white(n, 51), 1500), r = seededRandom(52);
+      return normalize(envelope(x, (t, d) => Math.sin(Math.PI * t / d) * (.4 + .6 * r())), .5);
+    }
+    case 'wind': { // a gust: slowly swept band of noise
+      const n = buffer(2.6).length, x = lowpass(highpass(pink(n, 61), 200), t => 500 + 900 * Math.sin(Math.PI * t / 2.6));
+      return normalize(envelope(x, fade(.8, 1.2)), .45);
+    }
+    case 'ding': { // a small bright bell: one ring
+      const b = buffer(1.2); for (let i = 0; i < b.length; i++) { const t = i / SAMPLE_RATE, e = Math.exp(-t * 3.5) * Math.min(1, t / .003); b[i] = e * (Math.sin(2 * Math.PI * 1568 * t) + .4 * Math.sin(2 * Math.PI * 1568 * 2.76 * t) * Math.exp(-t * 8)); }
+      return normalize(b, .5);
+    }
+    case 'rewind': { // tape rewinding: a fast falling-then-rising warble with hiss
+      const b = buffer(1.1), x = highpass(white(b.length, 71), 3000);
+      for (let i = 0; i < b.length; i++) { const t = i / SAMPLE_RATE, f = 900 + 1400 * Math.sin(2 * Math.PI * 3 * t) ** 2; b[i] = (Math.sin(2 * Math.PI * f * t) * .5 + x[i] * .3) * Math.min(1, t / .05) * Math.min(1, (1.1 - t) / .08); }
+      return normalize(b, .45);
+    }
+    case 'slam': { // a heavy title slam: short low thud with a bright click on top
+      const b = buffer(.7); for (let i = 0; i < b.length; i++) { const t = i / SAMPLE_RATE, f = 60 + 90 * Math.exp(-t * 25); b[i] = Math.sin(2 * Math.PI * f * t) * Math.exp(-t * 7) * Math.min(1, t / .002) + (t < .01 ? (Math.sin(2 * Math.PI * 3000 * t) * (1 - t / .01)) * .4 : 0); }
+      return normalize(b, .9);
+    }
     case 'riser': { // pitch rise into the payoff
       const b = buffer(1.4); for (let i = 0; i < b.length; i++) { const t = i / SAMPLE_RATE, ph = 2 * Math.PI * (110 * t + 160 * t * t); b[i] = (Math.sin(ph) + .35 * Math.sin(2 * ph) + .15 * Math.sin(3 * ph)) * Math.min(1, t / 1.1) * Math.min(1, (1.4 - t) / .08); }
       return normalize(lowpass(b, 2400), .5);

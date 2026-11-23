@@ -136,75 +136,40 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
-          "kit": {
-            "type": "planet",
-            "x": 0.3,
-            "y": 0.58,
-            "radius": 0.2,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
-            ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
-          }
-        },
-        {
-          "id": "geo",
+          "id": "city",
           "kit": {
             "type": "prop",
-            "item": "orbit-ring",
-            "x": 0.3,
-            "y": 0.58,
-            "size": 0.62,
-            "color": "#c9d3ea",
-            "ink": "#c9d3ea"
-          }
-        },
-        {
-          "id": "sat",
-          "kit": {
-            "type": "prop",
-            "item": "station",
-            "x": 0.52,
-            "y": 0.3,
-            "size": 0.07,
-            "ink": "#c9d3ea"
-          }
-        },
-        {
-          "id": "apo",
-          "kit": {
-            "type": "prop",
-            "item": "asteroid",
-            "x": 0.86,
-            "y": 0.3,
-            "size": 0.07,
-            "color": "#9a948a"
+            "item": "skyline",
+            "x": 0.42,
+            "y": 0.93,
+            "size": 0.5,
+            "count": 7,
+            "highlight": 3,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
           },
-          "x": [
+          "opacity": [
             {
               "frame": 0,
-              "value": 0
+              "value": 1
             },
             {
               "frame": {
-                "at": "pass"
+                "at": "pass",
+                "offset": 17
               },
-              "value": 0
+              "value": 1
             },
             {
               "frame": {
-                "at": "signals",
-                "edge": "end"
+                "at": "pass",
+                "offset": 18
               },
-              "value": -380,
-              "ease": "smoothstep"
+              "value": 0
             }
           ],
           "y": [
@@ -214,34 +179,537 @@
             },
             {
               "frame": {
-                "at": "pass"
+                "at": "pass",
+                "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "signals",
-                "edge": "end"
+                "at": "pass",
+                "offset": 18
               },
-              "value": 170,
-              "ease": "smoothstep"
+              "value": 760,
+              "ease": "ease-in-back"
             }
-          ],
-          "rotate": [
+          ]
+        },
+        {
+          "id": "tower-rock",
+          "kit": {
+            "type": "prop",
+            "item": "asteroid",
+            "x": 0.66,
+            "y": 0.735,
+            "size": 0.23,
+            "color": "#9a948a"
+          },
+          "opacity": [
             {
               "frame": 0,
-              "value": -5.0
+              "value": 0
             },
             {
-              "frame": 1800,
-              "value": 5.0,
-              "ease": "linear"
+              "frame": {
+                "at": "asteroid",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "asteroid",
+                "offset": 6
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": 12
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": 18
+              },
+              "value": 0
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": -900
+            },
+            {
+              "frame": {
+                "at": "asteroid",
+                "offset": -1
+              },
+              "value": -900
+            },
+            {
+              "frame": {
+                "at": "skyscraper"
+              },
+              "value": 0,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": 18
+              },
+              "value": 760,
+              "ease": "ease-in-back"
             }
           ],
           "anchor": {
-            "x": 1651.2,
-            "y": 324.0
-          }
+            "x": 1267.2,
+            "y": 793.8
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": 86
+            },
+            {
+              "frame": 1800,
+              "value": 94,
+              "ease": "linear"
+            }
+          ]
+        },
+        {
+          "id": "earth",
+          "kit": {
+            "type": "prop",
+            "item": "globe",
+            "x": 0.3,
+            "y": 0.55,
+            "size": 0.5,
+            "center": [
+              10,
+              20
+            ],
+            "spin": 0.05
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pass"
+              },
+              "value": 1
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": -700
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": -1
+              },
+              "value": -700
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": 20
+              },
+              "value": 0,
+              "ease": "ease-out-cubic"
+            }
+          ]
+        },
+        {
+          "id": "geo",
+          "kit": {
+            "type": "prop",
+            "item": "orbit-ring",
+            "x": 0.3,
+            "y": 0.55,
+            "size": 0.95,
+            "color": "#c9d3ea",
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pass"
+              },
+              "value": 1
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": -700
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": -1
+              },
+              "value": -700
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": 20
+              },
+              "value": 0,
+              "ease": "ease-out-cubic"
+            }
+          ]
+        },
+        {
+          "id": "sat0",
+          "kit": {
+            "type": "prop",
+            "item": "satellite",
+            "x": 0.3,
+            "y": 0.11,
+            "size": 0.15
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pass"
+              },
+              "value": 1
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": -700
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": -1
+              },
+              "value": -700
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": 20
+              },
+              "value": 0,
+              "ease": "ease-out-cubic"
+            }
+          ]
+        },
+        {
+          "id": "sat1",
+          "kit": {
+            "type": "prop",
+            "item": "satellite",
+            "x": 0.56,
+            "y": 0.73,
+            "size": 0.15
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pass"
+              },
+              "value": 1
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": -700
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": -1
+              },
+              "value": -700
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": 23
+              },
+              "value": 0,
+              "ease": "ease-out-cubic"
+            }
+          ]
+        },
+        {
+          "id": "sat2",
+          "kit": {
+            "type": "prop",
+            "item": "satellite",
+            "x": 0.06,
+            "y": 0.78,
+            "size": 0.15
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pass"
+              },
+              "value": 1
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": -700
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": -1
+              },
+              "value": -700
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": 26
+              },
+              "value": 0,
+              "ease": "ease-out-cubic"
+            }
+          ]
+        },
+        {
+          "id": "tv0",
+          "kit": {
+            "type": "prop",
+            "item": "signal",
+            "x": 0.33,
+            "y": 0.2,
+            "size": 0.1,
+            "rotation": 110,
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "TV",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "TV"
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "tv1",
+          "kit": {
+            "type": "prop",
+            "item": "signal",
+            "x": 0.54,
+            "y": 0.66,
+            "size": 0.1,
+            "rotation": 200,
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "TV",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "TV"
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "apo",
+          "kit": {
+            "type": "prop",
+            "item": "asteroid",
+            "x": 0.92,
+            "y": 0.18,
+            "size": 0.06,
+            "color": "#9a948a"
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "closer",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "closer",
+                "offset": 36
+              },
+              "value": -560,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": {
+                "at": "closer",
+                "offset": 126
+              },
+              "value": -1700,
+              "ease": "ease-in-back"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "closer",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "closer",
+                "offset": 36
+              },
+              "value": 230,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": {
+                "at": "closer",
+                "offset": 126
+              },
+              "value": 520,
+              "ease": "ease-in-back"
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "closer",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "closer"
+              },
+              "value": 1
+            }
+          ],
+          "anchor": {
+            "x": 1766.4,
+            "y": 194.4
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": -4
+            },
+            {
+              "frame": 1800,
+              "value": 4,
+              "ease": "linear"
+            }
+          ]
         }
       ],
       "annotations": [
@@ -249,19 +717,8 @@
           "id": "n0",
           "text": "FRIDAY 13 APRIL 2029",
           "x": 960,
-          "y": 92,
-          "size": 64,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#eef1f8",
-          "pop": false
-        },
-        {
-          "id": "n1",
-          "text": "a skyscraper-sized rock",
-          "x": 1440,
-          "y": 760,
-          "size": 92,
+          "y": 216,
+          "size": 100,
           "anchor": "middle",
           "variant": "ink",
           "color": "#ffd25e",
@@ -273,25 +730,38 @@
             },
             {
               "frame": {
-                "at": "skyscraper",
+                "at": "Friday",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "skyscraper",
+                "at": "Friday",
                 "offset": 5
               },
               "value": 1
+            },
+            {
+              "frame": {
+                "at": "pass",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "pass"
+              },
+              "value": 0
             }
           ]
         },
         {
-          "id": "n2",
-          "text": "closer than our TV satellites",
-          "x": 1440,
-          "y": 870,
+          "id": "n1",
+          "text": "closer than the TV satellites",
+          "x": 1421,
+          "y": 929,
           "size": 72,
           "anchor": "middle",
           "variant": "ink",
@@ -304,14 +774,14 @@
             },
             {
               "frame": {
-                "at": "closer",
+                "at": "satellites",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "closer",
+                "at": "satellites",
                 "offset": 5
               },
               "value": 1
@@ -326,37 +796,430 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
-          "kit": {
-            "type": "planet",
-            "x": 0.28,
-            "y": 0.55,
-            "radius": 0.2,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
-            ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
-          }
-        },
-        {
-          "id": "boom",
+          "id": "g1",
           "kit": {
             "type": "prop",
-            "item": "impact",
+            "item": "globe",
             "x": 0.34,
-            "y": 0.45,
-            "size": 0.3,
-            "count": 10,
+            "y": 0.52,
+            "size": 0.66,
+            "center": [
+              18,
+              8
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wipes",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wipes",
+                "offset": 3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "ends",
+                "offset": -3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "ends"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "trail1",
+          "kit": {
+            "type": "prop",
+            "item": "streak",
+            "x": 0.38,
+            "y": 0.44,
+            "size": 0.5,
+            "rotation": 150,
             "level": [
               {
                 "frame": 0,
-                "value": 0.8
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "wipes"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "offset": 4
+                },
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "offset": 8
+                },
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "id": "sw1",
+          "kit": {
+            "type": "prop",
+            "item": "shockwave",
+            "x": 0.38,
+            "y": 0.46,
+            "size": 0.5,
+            "color": "#ff5a4a",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "offset": 4
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "offset": 34
+                },
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "g2",
+          "kit": {
+            "type": "prop",
+            "item": "globe",
+            "x": 0.34,
+            "y": 0.52,
+            "size": 0.66,
+            "center": [
+              18,
+              8
+            ],
+            "level2": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "ends"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "world",
+                  "edge": "end"
+                },
+                "value": 1
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "ends",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "ends",
+                "offset": 3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "wall",
+                "offset": -3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "wall"
+              },
+              "value": 0
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "world",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "world",
+                "offset": 2
+              },
+              "value": -10
+            },
+            {
+              "frame": {
+                "at": "world",
+                "offset": 4
+              },
+              "value": 10
+            },
+            {
+              "frame": {
+                "at": "world",
+                "offset": 6
+              },
+              "value": -8
+            },
+            {
+              "frame": {
+                "at": "world",
+                "offset": 8
+              },
+              "value": 8
+            },
+            {
+              "frame": {
+                "at": "world",
+                "offset": 10
+              },
+              "value": -4
+            },
+            {
+              "frame": {
+                "at": "world",
+                "offset": 12
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "city3",
+          "kit": {
+            "type": "prop",
+            "item": "skyline",
+            "x": 0.5,
+            "y": 0.93,
+            "size": 0.5,
+            "count": 7,
+            "highlight": 3,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wall",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wall",
+                "offset": 3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Scientists",
+                "offset": -3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Scientists"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "wave3",
+          "kit": {
+            "type": "prop",
+            "item": "wave",
+            "x": 0.3,
+            "y": 0.93,
+            "size": 0.56,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "wall"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "high"
+                },
+                "value": 0.6
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wall",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wall",
+                "offset": 3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Scientists",
+                "offset": -3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Scientists"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "g4",
+          "kit": {
+            "type": "prop",
+            "item": "globe",
+            "x": 0.34,
+            "y": 0.52,
+            "size": 0.66,
+            "center": [
+              -60,
+              10
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Scientists",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Scientists",
+                "offset": 3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "lands",
+                "edge": "end",
+                "offset": 3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "lands",
+                "edge": "end",
+                "offset": 6
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "stripe",
+          "kit": {
+            "type": "prop",
+            "item": "arrow",
+            "x": 0.34,
+            "y": 0.52,
+            "size": 0.62,
+            "rotation": -18,
+            "color": "#ff5a4a",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "mapped"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "lands",
+                  "edge": "end"
+                },
+                "value": 1
               }
             ],
             "ink": "#c9d3ea"
@@ -368,6 +1231,159 @@
             },
             {
               "frame": {
+                "at": "mapped",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "mapped",
+                "offset": 3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "lands",
+                "edge": "end",
+                "offset": 3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "lands",
+                "edge": "end",
+                "offset": 6
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "c0",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 0.34,
+            "text": "WHAT HAPPENS WHEN APOPHIS HITS?"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "heard",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "heard",
+                "offset": 3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "wipes",
+                "offset": -3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "wipes"
+              },
+              "value": 0
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "heard",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "heard",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 960.0,
+            "y": 540.0
+          }
+        },
+        {
+          "id": "fl1",
+          "kit": {
+            "type": "prop",
+            "item": "flash",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 0.5,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "offset": 4
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "offset": 6
+                },
+                "value": 0.85
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "offset": 16
+                },
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "id": "c1",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.78,
+            "y": 0.3,
+            "size": 0.27,
+            "text": "ASTEROID WIPES OUT A CONTINENT?!"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
                 "at": "wipes",
                 "offset": -1
               },
@@ -375,7 +1391,195 @@
             },
             {
               "frame": {
-                "at": "wipes"
+                "at": "wipes",
+                "offset": 3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "ends",
+                "offset": -3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "ends"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.78,
+            "y": 0.3,
+            "size": 0.27,
+            "text": "THE END OF THE WORLD?!"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "ends",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "ends",
+                "offset": 3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "wall",
+                "offset": -3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "wall"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.78,
+            "y": 0.3,
+            "size": 0.27,
+            "text": "A WALL OF WATER 100s OF METRES HIGH"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wall",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wall",
+                "offset": 3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Scientists",
+                "offset": -3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Scientists"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.78,
+            "y": 0.3,
+            "size": 0.27,
+            "text": "SCIENTISTS MAPPED WHERE IT HITS"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Scientists",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Scientists",
+                "offset": 3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "lands",
+                "edge": "end",
+                "offset": 3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "lands",
+                "edge": "end",
+                "offset": 6
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "p0",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.3,
+            "y": 0.32,
+            "size": 0.3,
+            "text": "ASTEROID WIPES OUT A CONTINENT?!"
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": -6
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lands",
+                "edge": "end",
+                "offset": 9
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lands",
+                "edge": "end",
+                "offset": 10
               },
               "value": 1
             }
@@ -387,37 +1591,43 @@
             },
             {
               "frame": {
-                "at": "wipes",
-                "offset": -1
+                "at": "lands",
+                "edge": "end",
+                "offset": 9
               },
               "value": 0.6
             },
             {
               "frame": {
-                "at": "wipes",
-                "offset": 9
+                "at": "lands",
+                "edge": "end",
+                "offset": 19
               },
               "value": 1,
               "ease": "ease-out-back"
             }
           ],
           "anchor": {
-            "x": 652.8000000000001,
-            "y": 486.0
+            "x": 576.0,
+            "y": 345.6
           }
         },
         {
-          "id": "map",
+          "id": "p1",
           "kit": {
             "type": "prop",
-            "item": "arrow",
-            "x": 0.28,
-            "y": 0.55,
-            "size": 0.44,
-            "rotation": -20,
-            "color": "#ff5a4a",
-            "ink": "#c9d3ea"
+            "item": "headline",
+            "x": 0.7,
+            "y": 0.34,
+            "size": 0.3,
+            "text": "THE END OF THE WORLD?!"
           },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": 5
+            }
+          ],
           "opacity": [
             {
               "frame": 0,
@@ -425,146 +1635,223 @@
             },
             {
               "frame": {
-                "at": "mapped",
-                "offset": -1
+                "at": "lands",
+                "edge": "end",
+                "offset": 18
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "mapped"
+                "at": "lands",
+                "edge": "end",
+                "offset": 19
               },
               "value": 1
             }
-          ]
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "lands",
+                "edge": "end",
+                "offset": 18
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "lands",
+                "edge": "end",
+                "offset": 28
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1344.0,
+            "y": 367.20000000000005
+          }
+        },
+        {
+          "id": "p2",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.32,
+            "y": 0.68,
+            "size": 0.3,
+            "text": "A WALL OF WATER 100s OF METRES HIGH"
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": 4
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lands",
+                "edge": "end",
+                "offset": 27
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lands",
+                "edge": "end",
+                "offset": 28
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "lands",
+                "edge": "end",
+                "offset": 27
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "lands",
+                "edge": "end",
+                "offset": 37
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 614.4,
+            "y": 734.4000000000001
+          }
+        },
+        {
+          "id": "p3",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.68,
+            "y": 0.68,
+            "size": 0.3,
+            "text": "SCIENTISTS MAPPED WHERE IT HITS"
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": -5
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lands",
+                "edge": "end",
+                "offset": 36
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lands",
+                "edge": "end",
+                "offset": 37
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "lands",
+                "edge": "end",
+                "offset": 36
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "lands",
+                "edge": "end",
+                "offset": 46
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1305.6000000000001,
+            "y": 734.4000000000001
+          }
+        },
+        {
+          "id": "fl2",
+          "kit": {
+            "type": "prop",
+            "item": "flash",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 0.5,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "lands",
+                  "edge": "end",
+                  "offset": 46
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "lands",
+                  "edge": "end",
+                  "offset": 48
+                },
+                "value": 0.7
+              },
+              {
+                "frame": {
+                  "at": "lands",
+                  "edge": "end",
+                  "offset": 60
+                },
+                "value": 0
+              }
+            ]
+          }
         }
       ],
-      "annotations": [
-        {
-          "id": "n0",
-          "text": "wipes out a continent?",
-          "x": 1420,
-          "y": 373,
-          "size": 72,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#eef1f8",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "wipes",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "wipes",
-                "offset": 5
-              },
-              "value": 1
-            }
-          ]
-        },
-        {
-          "id": "n1",
-          "text": "ends the world?",
-          "x": 1425,
-          "y": 481,
-          "size": 72,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#eef1f8",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "ends",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "ends",
-                "offset": 5
-              },
-              "value": 1
-            }
-          ]
-        },
-        {
-          "id": "n2",
-          "text": "a wall of water?",
-          "x": 1427,
-          "y": 589,
-          "size": 72,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#eef1f8",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "wall",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "wall",
-                "offset": 5
-              },
-              "value": 1
-            }
-          ]
-        },
-        {
-          "id": "n3",
-          "text": "mapped where it lands?",
-          "x": 1417,
-          "y": 697,
-          "size": 72,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#eef1f8",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "mapped",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "mapped",
-                "offset": 5
-              },
-              "value": 1
-            }
-          ]
-        }
-      ]
+      "annotations": []
     },
     {
       "id": "g-a3",
@@ -572,23 +1859,12 @@
       "height": 1080,
       "layers": [
         {
-          "id": "q",
-          "kit": {
-            "type": "prop",
-            "item": "question",
-            "x": 0.68,
-            "y": 0.42,
-            "size": 0.2,
-            "ink": "#c9d3ea"
-          }
-        },
-        {
           "id": "arka",
           "kit": {
             "type": "figure",
-            "x": 0.4,
-            "y": 0.86,
-            "height": 0.5,
+            "x": 0.5,
+            "y": 0.62,
+            "height": 0.36,
             "outfit": "astronaut",
             "shiver": 0,
             "seed": 11,
@@ -610,185 +1886,430 @@
           "y": [
             {
               "frame": 0,
-              "value": -10,
-              "ease": "smoothstep"
+              "value": 0
             },
             {
-              "frame": 40,
-              "value": 10,
-              "ease": "smoothstep"
+              "frame": {
+                "at": "tell",
+                "offset": -1
+              },
+              "value": 0
             },
             {
-              "frame": 80,
-              "value": -10,
-              "ease": "smoothstep"
+              "frame": {
+                "at": "tell",
+                "offset": 8
+              },
+              "value": -270,
+              "ease": "ease-out-back"
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
             },
             {
-              "frame": 120,
-              "value": 10,
-              "ease": "smoothstep"
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 5
+              },
+              "value": 1
             },
             {
-              "frame": 160,
-              "value": -10,
-              "ease": "smoothstep"
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 6
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "p0",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.36,
+            "y": 0.4,
+            "size": 0.3,
+            "text": "ASTEROID WIPES OUT A CONTINENT?!"
+          },
+          "anchor": {
+            "x": 691.1999999999999,
+            "y": 432.0
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": -6
             },
             {
-              "frame": 200,
-              "value": 10,
-              "ease": "smoothstep"
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 5
+              },
+              "value": -6
             },
             {
-              "frame": 240,
-              "value": -10,
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 36
+              },
+              "value": 0,
               "ease": "smoothstep"
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
             },
             {
-              "frame": 280,
-              "value": 10,
-              "ease": "smoothstep"
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 5
+              },
+              "value": 0
             },
             {
-              "frame": 320,
-              "value": -10,
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 36
+              },
+              "value": -211.2,
               "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
             },
             {
-              "frame": 360,
-              "value": 10,
-              "ease": "smoothstep"
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 5
+              },
+              "value": 0
             },
             {
-              "frame": 400,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 440,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 480,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 520,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 560,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 600,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 640,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 680,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 720,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 760,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 800,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 840,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 880,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 920,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 960,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1000,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1040,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1080,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1120,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1160,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1200,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1240,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1280,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1320,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1360,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1400,
-              "value": 10,
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 36
+              },
+              "value": -86.40000000000002,
               "ease": "smoothstep"
             }
           ]
+        },
+        {
+          "id": "p1",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.64,
+            "y": 0.42,
+            "size": 0.3,
+            "text": "THE END OF THE WORLD?!"
+          },
+          "anchor": {
+            "x": 1228.8,
+            "y": 453.59999999999997
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": 5
+            },
+            {
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 5
+              },
+              "value": 5
+            },
+            {
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 36
+              },
+              "value": 0,
+              "ease": "smoothstep"
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 5
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 36
+              },
+              "value": 211.2,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 5
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 36
+              },
+              "value": -107.99999999999997,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "p2",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.36,
+            "y": 0.74,
+            "size": 0.3,
+            "text": "A WALL OF WATER 100s OF METRES HIGH"
+          },
+          "anchor": {
+            "x": 691.1999999999999,
+            "y": 799.2
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": 4
+            },
+            {
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 5
+              },
+              "value": 4
+            },
+            {
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 36
+              },
+              "value": 0,
+              "ease": "smoothstep"
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 5
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 36
+              },
+              "value": -211.2,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 5
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 36
+              },
+              "value": -21.60000000000002,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "p3",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.64,
+            "y": 0.74,
+            "size": 0.3,
+            "text": "SCIENTISTS MAPPED WHERE IT HITS"
+          },
+          "anchor": {
+            "x": 1228.8,
+            "y": 799.2
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": -5
+            },
+            {
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 5
+              },
+              "value": -5
+            },
+            {
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 36
+              },
+              "value": 0,
+              "ease": "smoothstep"
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 5
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 36
+              },
+              "value": 211.2,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 5
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wrong",
+                "edge": "end",
+                "offset": 36
+              },
+              "value": -21.60000000000002,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "rw",
+          "kit": {
+            "type": "prop",
+            "item": "rewind",
+            "x": 0.08,
+            "y": 0.1,
+            "size": 0.16,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "wrong",
+                  "edge": "end",
+                  "offset": 4
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "wrong",
+                  "edge": "end",
+                  "offset": 8
+                },
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "wrong",
+                  "edge": "end",
+                  "offset": 38
+                },
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "wrong",
+                  "edge": "end",
+                  "offset": 44
+                },
+                "value": 0
+              }
+            ]
+          }
         }
       ],
       "annotations": []
@@ -799,58 +2320,45 @@
       "height": 1080,
       "layers": [
         {
-          "id": "x1",
+          "id": "spark",
           "kit": {
             "type": "prop",
-            "item": "cross",
-            "x": 0.24,
-            "y": 0.36,
-            "size": 0.14,
+            "item": "sparkle",
+            "x": 0.5,
+            "y": 0.52,
+            "size": 0.3,
+            "count": 8,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "interesting"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "interesting",
+                  "offset": 10
+                },
+                "value": 1
+              }
+            ],
             "ink": "#c9d3ea"
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": 3,
-              "value": 0
-            },
-            {
-              "frame": 4,
-              "value": 1
-            }
-          ],
-          "scale": [
-            {
-              "frame": 0,
-              "value": 0.6
-            },
-            {
-              "frame": 3,
-              "value": 0.6
-            },
-            {
-              "frame": 13,
-              "value": 1,
-              "ease": "ease-out-back"
-            }
-          ],
-          "anchor": {
-            "x": 460.79999999999995,
-            "y": 388.8
           }
         },
         {
-          "id": "x2",
+          "id": "star-rock",
           "kit": {
             "type": "prop",
-            "item": "cross",
-            "x": 0.4,
-            "y": 0.36,
-            "size": 0.14,
-            "ink": "#c9d3ea"
+            "item": "asteroid",
+            "x": 0.5,
+            "y": 0.52,
+            "size": 0.07,
+            "color": "#9a948a"
           },
           "opacity": [
             {
@@ -858,11 +2366,16 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "interesting",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 4,
+              "frame": {
+                "at": "interesting"
+              },
               "value": 1
             }
           ],
@@ -872,28 +2385,332 @@
               "value": 0.6
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "interesting",
+                "offset": -1
+              },
               "value": 0.6
             },
             {
-              "frame": 13,
+              "frame": {
+                "at": "interesting",
+                "offset": 9
+              },
               "value": 1,
               "ease": "ease-out-back"
             }
           ],
           "anchor": {
-            "x": 768.0,
-            "y": 388.8
+            "x": 960.0,
+            "y": 561.6
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": -4
+            },
+            {
+              "frame": 1800,
+              "value": 4,
+              "ease": "linear"
+            }
+          ]
+        },
+        {
+          "id": "r0",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.25,
+            "y": 0.32,
+            "size": 0.3,
+            "text": "ASTEROID WIPES OUT A CONTINENT?!"
+          }
+        },
+        {
+          "id": "r1",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.75,
+            "y": 0.32,
+            "size": 0.3,
+            "text": "THE END OF THE WORLD?!"
+          }
+        },
+        {
+          "id": "r2",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.25,
+            "y": 0.72,
+            "size": 0.3,
+            "text": "A WALL OF WATER 100s OF METRES HIGH"
+          }
+        },
+        {
+          "id": "r3",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.75,
+            "y": 0.72,
+            "size": 0.3,
+            "text": "SCIENTISTS MAPPED WHERE IT HITS"
+          }
+        },
+        {
+          "id": "pen",
+          "kit": {
+            "type": "prop",
+            "item": "pen",
+            "x": 0.25,
+            "y": 0.32,
+            "size": 0.14
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Most",
+                "edge": "end",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Most",
+                "edge": "end",
+                "offset": 4
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Most",
+                "edge": "end",
+                "offset": 14
+              },
+              "value": 180
+            },
+            {
+              "frame": {
+                "at": "Most",
+                "edge": "end",
+                "offset": 18
+              },
+              "value": 520
+            },
+            {
+              "frame": {
+                "at": "Most",
+                "edge": "end",
+                "offset": 28
+              },
+              "value": 680
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Most",
+                "edge": "end",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Most",
+                "edge": "end",
+                "offset": 14
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Most",
+                "edge": "end",
+                "offset": 18
+              },
+              "value": 0
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Most",
+                "edge": "end",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Most",
+                "edge": "end",
+                "offset": 3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Most",
+                "edge": "end",
+                "offset": 29
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Most",
+                "edge": "end",
+                "offset": 32
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "sx1",
+          "kit": {
+            "type": "prop",
+            "item": "scribble",
+            "x": 0.25,
+            "y": 0.32,
+            "size": 0.17,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "Most",
+                  "edge": "end",
+                  "offset": 2
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "Most",
+                  "edge": "end",
+                  "offset": 14
+                },
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "sx2",
+          "kit": {
+            "type": "prop",
+            "item": "scribble",
+            "x": 0.75,
+            "y": 0.32,
+            "size": 0.17,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "Most",
+                  "edge": "end",
+                  "offset": 18
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "Most",
+                  "edge": "end",
+                  "offset": 30
+                },
+                "value": 1
+              }
+            ]
           }
         },
         {
           "id": "half",
           "kit": {
             "type": "prop",
-            "item": "check",
-            "x": 0.24,
-            "y": 0.64,
-            "size": 0.14,
+            "item": "stamp",
+            "x": 0.75,
+            "y": 0.84,
+            "size": 0.17,
+            "text": "half true"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "half",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "half"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "half",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "half",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1440.0,
+            "y": 885.5999999999999
+          }
+        },
+        {
+          "id": "q3",
+          "kit": {
+            "type": "prop",
+            "item": "question",
+            "x": 0.25,
+            "y": 0.72,
+            "size": 0.16,
             "ink": "#c9d3ea"
           },
           "opacity": [
@@ -937,155 +2754,12 @@
             }
           ],
           "anchor": {
-            "x": 460.79999999999995,
-            "y": 691.2
-          }
-        },
-        {
-          "id": "star",
-          "kit": {
-            "type": "prop",
-            "item": "exclaim",
-            "x": 0.4,
-            "y": 0.64,
-            "size": 0.14,
-            "ink": "#c9d3ea"
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "interesting",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "interesting"
-              },
-              "value": 1
-            }
-          ],
-          "scale": [
-            {
-              "frame": 0,
-              "value": 0.6
-            },
-            {
-              "frame": {
-                "at": "interesting",
-                "offset": -1
-              },
-              "value": 0.6
-            },
-            {
-              "frame": {
-                "at": "interesting",
-                "offset": 9
-              },
-              "value": 1,
-              "ease": "ease-out-back"
-            }
-          ],
-          "anchor": {
-            "x": 768.0,
-            "y": 691.2
+            "x": 480.0,
+            "y": 777.6
           }
         }
       ],
-      "annotations": [
-        {
-          "id": "n0",
-          "text": "mostly wrong",
-          "x": 1390,
-          "y": 318,
-          "size": 92,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#ffd25e",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": 3,
-              "value": 0
-            },
-            {
-              "frame": 9,
-              "value": 1
-            }
-          ]
-        },
-        {
-          "id": "n1",
-          "text": "some half right",
-          "x": 1427,
-          "y": 421,
-          "size": 72,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#a9d8ff",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "half",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "half",
-                "offset": 5
-              },
-              "value": 1
-            }
-          ]
-        },
-        {
-          "id": "n2",
-          "text": "one part: better than the scary version",
-          "x": 1345,
-          "y": 541,
-          "size": 72,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#a9d8ff",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "interesting",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "interesting",
-                "offset": 5
-              },
-              "value": 1
-            }
-          ]
-        }
-      ]
+      "annotations": []
     },
     {
       "id": "g-a5",
@@ -1097,96 +2771,635 @@
           "kit": {
             "type": "prop",
             "item": "magnifier",
-            "x": 0.3,
-            "y": 0.5,
-            "size": 0.3,
+            "x": 0.2,
+            "y": 0.32,
+            "size": 0.22,
             "ink": "#c9d3ea"
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "check",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "check",
+                "offset": 40
+              },
+              "value": 1100,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "check",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "check",
+                "offset": 20
+              },
+              "value": 330,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": {
+                "at": "check",
+                "offset": 40
+              },
+              "value": 0,
+              "ease": "smoothstep"
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "And",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "And"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "home",
+          "kit": {
+            "type": "prop",
+            "item": "globe",
+            "x": 0.5,
+            "y": 0.72,
+            "size": 0.46,
+            "center": [
+              78,
+              20
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "And",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "And"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "And",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "And",
+                "offset": 12
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 960.0,
+            "y": 777.6
           }
         },
         {
-          "id": "earth",
+          "id": "nope",
           "kit": {
-            "type": "planet",
-            "x": 0.3,
-            "y": 0.5,
-            "radius": 0.08,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
-            ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
+            "type": "prop",
+            "item": "cross",
+            "x": 0.5,
+            "y": 0.3,
+            "size": 0.2,
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "not",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "not"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "not",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "not",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 960.0,
+            "y": 324.0
           }
+        },
+        {
+          "id": "gazer",
+          "kit": {
+            "type": "figure",
+            "x": 0.5,
+            "y": 0.5,
+            "height": 0.16,
+            "outfit": "stick",
+            "shiver": 0,
+            "seed": 4,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "point-right"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "happy"
+              }
+            ],
+            "coat": "#a9d8ff",
+            "accessories": [
+              {
+                "item": "coat"
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "watch",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "watch"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 45,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 90,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 135,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 180,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 225,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 270,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 315,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 405,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 450,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 495,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 540,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 585,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 630,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 675,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 765,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 810,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 855,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 900,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 945,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 990,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1035,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1125,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1170,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1215,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1260,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1305,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1350,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1395,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1440,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1485,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1530,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1575,
+              "value": 1.012,
+              "ease": "smoothstep"
+            }
+          ],
+          "anchor": {
+            "x": 960.0,
+            "y": 540.0
+          }
+        },
+        {
+          "id": "k0",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.25,
+            "y": 0.32,
+            "size": 0.3,
+            "text": "ASTEROID WIPES OUT A CONTINENT?!"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "And",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "And"
+              },
+              "value": 0
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "And",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "And",
+                "offset": 12
+              },
+              "value": -768.0,
+              "ease": "ease-in-back"
+            }
+          ]
+        },
+        {
+          "id": "k1",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.75,
+            "y": 0.32,
+            "size": 0.3,
+            "text": "THE END OF THE WORLD?!"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "And",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "And"
+              },
+              "value": 0
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "And",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "And",
+                "offset": 12
+              },
+              "value": 768.0,
+              "ease": "ease-in-back"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.25,
+            "y": 0.72,
+            "size": 0.3,
+            "text": "A WALL OF WATER 100s OF METRES HIGH"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "And",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "And"
+              },
+              "value": 0
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "And",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "And",
+                "offset": 12
+              },
+              "value": -768.0,
+              "ease": "ease-in-back"
+            }
+          ]
+        },
+        {
+          "id": "k3",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.75,
+            "y": 0.72,
+            "size": 0.3,
+            "text": "SCIENTISTS MAPPED WHERE IT HITS"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "And",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "And"
+              },
+              "value": 0
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "And",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "And",
+                "offset": 12
+              },
+              "value": 768.0,
+              "ease": "ease-in-back"
+            }
+          ]
         }
       ],
-      "annotations": [
-        {
-          "id": "n0",
-          "text": "check every claim",
-          "x": 1416,
-          "y": 390,
-          "size": 92,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#ffd25e",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "check",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "check",
-                "offset": 5
-              },
-              "value": 1
-            }
-          ]
-        },
-        {
-          "id": "n1",
-          "text": "not from Earth...",
-          "x": 1415,
-          "y": 493,
-          "size": 72,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#a9d8ff",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "watch",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "watch",
-                "offset": 5
-              },
-              "value": 1
-            }
-          ]
-        }
-      ]
+      "annotations": []
     },
     {
       "id": "g-a6",
@@ -1198,48 +3411,182 @@
           "kit": {
             "type": "prop",
             "item": "asteroid",
-            "x": 0.68,
-            "y": 0.45,
-            "size": 0.32,
+            "x": 0.62,
+            "y": 0.62,
+            "size": 0.2,
             "color": "#9a948a"
           },
-          "opacity": [
+          "x": [
             {
               "frame": 0,
-              "value": 1
+              "value": 900
             },
             {
               "frame": {
-                "at": "it",
-                "edge": "end",
-                "offset": 23
+                "at": "going",
+                "offset": -1
               },
-              "value": 1
+              "value": 900
+            },
+            {
+              "frame": {
+                "at": "going",
+                "offset": 16
+              },
+              "value": 0,
+              "ease": "ease-out-cubic"
             },
             {
               "frame": {
                 "at": "it",
                 "edge": "end",
-                "offset": 24
+                "offset": 28
               },
               "value": 0
-            }
-          ],
-          "rotate": [
-            {
-              "frame": 0,
-              "value": -5.0
             },
             {
-              "frame": 1800,
-              "value": 5.0,
-              "ease": "linear"
+              "frame": {
+                "at": "it",
+                "edge": "end",
+                "offset": 62
+              },
+              "value": 1500,
+              "ease": "ease-in-back"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "it",
+                "edge": "end",
+                "offset": 28
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "it",
+                "edge": "end",
+                "offset": 62
+              },
+              "value": -620,
+              "ease": "ease-in-back"
             }
           ],
           "anchor": {
-            "x": 1305.6000000000001,
-            "y": 486.0
-          }
+            "x": 1190.4,
+            "y": 669.6
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": -4
+            },
+            {
+              "frame": 1800,
+              "value": 4,
+              "ease": "linear"
+            }
+          ]
+        },
+        {
+          "id": "ride-trail",
+          "kit": {
+            "type": "prop",
+            "item": "streak",
+            "x": 0.62,
+            "y": 0.62,
+            "size": 0.5,
+            "rotation": -22,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "it",
+                  "edge": "end",
+                  "offset": 30
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "it",
+                  "edge": "end",
+                  "offset": 42
+                },
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "it",
+                  "edge": "end",
+                  "offset": 62
+                },
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "it",
+                  "edge": "end",
+                  "offset": 66
+                },
+                "value": 0
+              }
+            ]
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "it",
+                "edge": "end",
+                "offset": 27
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "it",
+                "edge": "end",
+                "offset": 62
+              },
+              "value": 1500,
+              "ease": "ease-in-back"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "it",
+                "edge": "end",
+                "offset": 27
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "it",
+                "edge": "end",
+                "offset": 62
+              },
+              "value": -620,
+              "ease": "ease-in-back"
+            }
+          ]
         },
         {
           "id": "sting-glow",
@@ -1259,7 +3606,7 @@
                 "frame": {
                   "at": "it",
                   "edge": "end",
-                  "offset": 24
+                  "offset": 62
                 },
                 "value": 0
               },
@@ -1267,7 +3614,7 @@
                 "frame": {
                   "at": "it",
                   "edge": "end",
-                  "offset": 34
+                  "offset": 72
                 },
                 "value": 1
               }
@@ -1301,7 +3648,7 @@
               "frame": {
                 "at": "it",
                 "edge": "end",
-                "offset": 23
+                "offset": 61
               },
               "value": 0
             },
@@ -1309,7 +3656,7 @@
               "frame": {
                 "at": "it",
                 "edge": "end",
-                "offset": 24
+                "offset": 62
               },
               "value": 1
             }
@@ -1323,7 +3670,7 @@
               "frame": {
                 "at": "it",
                 "edge": "end",
-                "offset": 23
+                "offset": 61
               },
               "value": 0.6
             },
@@ -1331,7 +3678,7 @@
               "frame": {
                 "at": "it",
                 "edge": "end",
-                "offset": 33
+                "offset": 71
               },
               "value": 1,
               "ease": "ease-out-back"
@@ -1346,9 +3693,9 @@
           "id": "arka",
           "kit": {
             "type": "figure",
-            "x": 0.3,
+            "x": 0.26,
             "y": 0.86,
-            "height": 0.5,
+            "height": 0.4,
             "outfit": "astronaut",
             "shiver": 0,
             "seed": 11,
@@ -1356,11 +3703,35 @@
               {
                 "frame": 0,
                 "pose": "point-right"
+              },
+              {
+                "frame": {
+                  "at": "it",
+                  "edge": "end",
+                  "offset": 2
+                },
+                "pose": "reach"
+              },
+              {
+                "frame": {
+                  "at": "it",
+                  "edge": "end",
+                  "offset": 22
+                },
+                "pose": "cheer"
               }
             ],
             "faces": [
               {
                 "frame": 0,
+                "face": "grin"
+              },
+              {
+                "frame": {
+                  "at": "it",
+                  "edge": "end",
+                  "offset": 22
+                },
                 "face": "grin"
               }
             ],
@@ -1376,7 +3747,7 @@
               "frame": {
                 "at": "it",
                 "edge": "end",
-                "offset": 23
+                "offset": 61
               },
               "value": 1
             },
@@ -1384,191 +3755,98 @@
               "frame": {
                 "at": "it",
                 "edge": "end",
-                "offset": 24
+                "offset": 62
               },
               "value": 0
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "it",
+                "edge": "end",
+                "offset": 2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "it",
+                "edge": "end",
+                "offset": 22
+              },
+              "value": 640,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": {
+                "at": "it",
+                "edge": "end",
+                "offset": 28
+              },
+              "value": 640
+            },
+            {
+              "frame": {
+                "at": "it",
+                "edge": "end",
+                "offset": 62
+              },
+              "value": 2140,
+              "ease": "ease-in-back"
             }
           ],
           "y": [
             {
               "frame": 0,
-              "value": -10,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "it",
+                "edge": "end",
+                "offset": 2
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "it",
+                "edge": "end",
+                "offset": 12
+              },
+              "value": -300,
+              "ease": "ease-out-cubic"
+            },
+            {
+              "frame": {
+                "at": "it",
+                "edge": "end",
+                "offset": 22
+              },
+              "value": -250,
               "ease": "smoothstep"
             },
             {
-              "frame": 40,
-              "value": 10,
-              "ease": "smoothstep"
+              "frame": {
+                "at": "it",
+                "edge": "end",
+                "offset": 28
+              },
+              "value": -250
             },
             {
-              "frame": 80,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 120,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 160,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 200,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 240,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 280,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 320,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 360,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 400,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 440,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 480,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 520,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 560,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 600,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 640,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 680,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 720,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 760,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 800,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 840,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 880,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 920,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 960,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1000,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1040,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1080,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1120,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1160,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1200,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1240,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1280,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1320,
-              "value": 10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1360,
-              "value": -10,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": 1400,
-              "value": 10,
-              "ease": "smoothstep"
+              "frame": {
+                "at": "it",
+                "edge": "end",
+                "offset": 62
+              },
+              "value": -870,
+              "ease": "ease-in-back"
             }
           ]
         },
@@ -1606,7 +3884,7 @@
               "frame": {
                 "at": "it",
                 "edge": "end",
-                "offset": 33
+                "offset": 71
               },
               "value": 0
             },
@@ -1614,7 +3892,7 @@
               "frame": {
                 "at": "it",
                 "edge": "end",
-                "offset": 34
+                "offset": 72
               },
               "value": 1
             }
@@ -1807,8 +4085,8 @@
         {
           "id": "n0",
           "text": "we're going to ride it",
-          "x": 1306,
-          "y": 886,
+          "x": 960,
+          "y": 216,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -1820,18 +4098,16 @@
               "value": 0
             },
             {
-              "frame": 3,
+              "frame": {
+                "at": "going",
+                "offset": -1
+              },
               "value": 0
             },
             {
-              "frame": 9,
-              "value": 1
-            },
-            {
               "frame": {
-                "at": "it",
-                "edge": "end",
-                "offset": 23
+                "at": "going",
+                "offset": 5
               },
               "value": 1
             },
@@ -1839,7 +4115,15 @@
               "frame": {
                 "at": "it",
                 "edge": "end",
-                "offset": 24
+                "offset": 3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "it",
+                "edge": "end",
+                "offset": 4
               },
               "value": 0
             }
@@ -1864,7 +4148,7 @@
               "frame": {
                 "at": "it",
                 "edge": "end",
-                "offset": 28
+                "offset": 66
               },
               "value": 0
             },
@@ -1872,7 +4156,7 @@
               "frame": {
                 "at": "it",
                 "edge": "end",
-                "offset": 34
+                "offset": 72
               },
               "value": 1
             }
@@ -1897,7 +4181,7 @@
               "frame": {
                 "at": "it",
                 "edge": "end",
-                "offset": 39
+                "offset": 77
               },
               "value": 0
             },
@@ -1905,7 +4189,7 @@
               "frame": {
                 "at": "it",
                 "edge": "end",
-                "offset": 45
+                "offset": 83
               },
               "value": 1
             }
@@ -3541,49 +5825,6 @@
       "height": 1080,
       "layers": [
         {
-          "id": "q",
-          "kit": {
-            "type": "prop",
-            "item": "question",
-            "x": 0.22,
-            "y": 0.38,
-            "size": 0.1,
-            "ink": "#c9d3ea"
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "lost",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "lost"
-              },
-              "value": 1
-            },
-            {
-              "frame": {
-                "at": "Gordon",
-                "offset": -1
-              },
-              "value": 1
-            },
-            {
-              "frame": {
-                "at": "Gordon"
-              },
-              "value": 0
-            }
-          ]
-        },
-        {
           "id": "tucker",
           "kit": {
             "type": "figure",
@@ -3888,6 +6129,49 @@
                 "at": "Gordon"
               },
               "value": 1
+            }
+          ]
+        },
+        {
+          "id": "q",
+          "kit": {
+            "type": "prop",
+            "item": "question",
+            "x": 0.22,
+            "y": 0.38,
+            "size": 0.1,
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lost",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "lost"
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Gordon",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "Gordon"
+              },
+              "value": 0
             }
           ]
         },
@@ -9680,34 +11964,530 @@
       "height": 1080,
       "layers": [
         {
-          "id": "earth",
+          "id": "g",
           "kit": {
-            "type": "planet",
+            "type": "prop",
+            "item": "globe",
             "x": 0.3,
-            "y": 0.5,
-            "radius": 0.2,
-            "base": "#5aa9e6",
-            "bands": [
-              "#7cc576",
-              "#5aa9e6",
-              "#7cc576"
+            "y": 0.55,
+            "size": 0.5,
+            "center": [
+              30,
+              10
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "draw"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "fall",
+          "kit": {
+            "type": "prop",
+            "item": "asteroid",
+            "x": 0.78,
+            "y": 0.2,
+            "size": 0.06,
+            "color": "#9a948a"
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Pretend",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Pretend",
+                "offset": 30
+              },
+              "value": -380,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Pretend",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Pretend",
+                "offset": 30
+              },
+              "value": 170,
+              "ease": "smoothstep"
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "draw"
+              },
+              "value": 0
+            }
+          ],
+          "anchor": {
+            "x": 1497.6000000000001,
+            "y": 216.0
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": -4
+            },
+            {
+              "frame": 1800,
+              "value": 4,
+              "ease": "linear"
+            }
+          ]
+        },
+        {
+          "id": "ftrail",
+          "kit": {
+            "type": "prop",
+            "item": "streak",
+            "x": 0.78,
+            "y": 0.2,
+            "size": 0.3,
+            "rotation": -24,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "Pretend"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "Pretend",
+                  "offset": 10
+                },
+                "value": 1
+              }
+            ]
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Pretend",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Pretend",
+                "offset": 30
+              },
+              "value": -380,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Pretend",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Pretend",
+                "offset": 30
+              },
+              "value": 170,
+              "ease": "smoothstep"
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "draw"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "pause",
+          "kit": {
+            "type": "prop",
+            "item": "sign",
+            "x": 0.62,
+            "y": 0.3,
+            "size": 0.2,
+            "text": "WHAT IF?"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Pretend",
+                "offset": 29
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Pretend",
+                "offset": 33
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "heard",
+                "offset": -3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "heard"
+              },
+              "value": 0
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "Pretend",
+                "offset": 29
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "Pretend",
+                "offset": 39
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1190.4,
+            "y": 324.0
+          }
+        },
+        {
+          "id": "map",
+          "kit": {
+            "type": "prop",
+            "item": "map",
+            "x": 0.4,
+            "y": 0.52,
+            "size": 0.82,
+            "bbox": [
+              -20,
+              -36,
+              55,
+              38
             ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.2,
-            "seed": 3
+            "mark": {
+              "lon": -14,
+              "lat": 21,
+              "km": 150
+            },
+            "zoom": 12,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "edge": "end",
+                "offset": 36
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "myth",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.74,
+            "y": 0.6,
+            "size": 0.26,
+            "text": "ASTEROID WIPES OUT A CONTINENT?!"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "heard",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "heard",
+                "offset": 3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "offset": -3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "draw"
+              },
+              "value": 0
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "heard",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "heard",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 1420.8,
+            "y": 648.0
           }
         },
         {
           "id": "pen",
           "kit": {
             "type": "prop",
-            "item": "arrow",
-            "x": 0.62,
-            "y": 0.5,
-            "size": 0.2,
-            "ink": "#c9d3ea"
-          }
+            "item": "pen",
+            "x": 0.2,
+            "y": 0.2,
+            "size": 0.16
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "offset": 14
+              },
+              "value": 200
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "offset": 24
+              },
+              "value": 600
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "offset": 36
+              },
+              "value": 760
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "offset": 44
+              },
+              "value": 960
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "offset": 14
+              },
+              "value": 420
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "offset": 24
+              },
+              "value": 160
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "offset": 36
+              },
+              "value": 640
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "offset": 44
+              },
+              "value": 300
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "offset": 3
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "edge": "end",
+                "offset": 37
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "draw",
+                "edge": "end",
+                "offset": 40
+              },
+              "value": 0
+            }
+          ]
         }
       ],
       "annotations": [
@@ -9721,99 +12501,6 @@
           "variant": "ink",
           "color": "#eef1f8",
           "pop": false
-        },
-        {
-          "id": "n1",
-          "text": "pretend it did hit",
-          "x": 1414,
-          "y": 390,
-          "size": 92,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#ffd25e",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "Pretend",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "Pretend",
-                "offset": 5
-              },
-              "value": 1
-            }
-          ]
-        },
-        {
-          "id": "n2",
-          "text": "\"wipes out a continent\"",
-          "x": 1413,
-          "y": 733,
-          "size": 72,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#eef1f8",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "continent",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "continent",
-                "offset": 5
-              },
-              "value": 1
-            }
-          ]
-        },
-        {
-          "id": "n3",
-          "text": "let's draw it",
-          "x": 1424,
-          "y": 841,
-          "size": 72,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#a9d8ff",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "draw",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "draw",
-                "offset": 5
-              },
-              "value": 1
-            }
-          ]
         }
       ]
     },
@@ -9823,34 +12510,137 @@
       "height": 1080,
       "layers": [
         {
-          "id": "land",
+          "id": "map",
           "kit": {
-            "type": "planet",
-            "x": 0.36,
+            "type": "prop",
+            "item": "map",
+            "x": 0.4,
             "y": 0.52,
-            "radius": 0.3,
-            "base": "#7cc576",
-            "bands": [
-              "#6db267",
-              "#7cc576"
+            "size": 0.82,
+            "bbox": [
+              -20,
+              -36,
+              55,
+              38
             ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.05,
-            "seed": 41
+            "mark": {
+              "lon": -14,
+              "lat": 21,
+              "km": 150
+            },
+            "zoom": 12,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "edge": "end",
+                  "offset": 2
+                },
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "edge": "end",
+                  "offset": 26
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "look"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "look",
+                  "offset": 40
+                },
+                "value": 1
+              }
+            ],
+            "level2": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "zone"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "zone",
+                  "offset": 20
+                },
+                "value": 1
+              }
+            ]
           }
         },
         {
-          "id": "zone",
+          "id": "fall",
           "kit": {
             "type": "prop",
-            "item": "orbit-ring",
-            "x": 0.36,
-            "y": 0.52,
-            "size": 0.14,
-            "color": "#ff5a4a",
-            "ink": "#c9d3ea"
+            "item": "asteroid",
+            "x": 0.7,
+            "y": 0.10000000000000003,
+            "size": 0.05,
+            "color": "#9a948a"
           },
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "continent",
+                "edge": "end",
+                "offset": 25
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "continent",
+                "edge": "end",
+                "offset": 48
+              },
+              "value": -576.0,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "continent",
+                "edge": "end",
+                "offset": 25
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "continent",
+                "edge": "end",
+                "offset": 48
+              },
+              "value": 453.59999999999997,
+              "ease": "smoothstep"
+            }
+          ],
           "opacity": [
             {
               "frame": 0,
@@ -9858,32 +12648,289 @@
             },
             {
               "frame": {
-                "at": "zone",
-                "offset": -1
+                "at": "continent",
+                "edge": "end",
+                "offset": 25
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "zone"
+                "at": "continent",
+                "edge": "end",
+                "offset": 28
               },
               "value": 1
+            },
+            {
+              "frame": {
+                "at": "continent",
+                "edge": "end",
+                "offset": 46
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "continent",
+                "edge": "end",
+                "offset": 48
+              },
+              "value": 0
+            }
+          ],
+          "anchor": {
+            "x": 1344.0,
+            "y": 108.00000000000004
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": -4
+            },
+            {
+              "frame": 1800,
+              "value": 4,
+              "ease": "linear"
             }
           ]
         },
         {
-          "id": "boom",
+          "id": "ftrail",
           "kit": {
             "type": "prop",
-            "item": "impact",
-            "x": 0.36,
-            "y": 0.52,
-            "size": 0.08,
-            "count": 8,
+            "item": "streak",
+            "x": 0.7,
+            "y": 0.10000000000000003,
+            "size": 0.35,
+            "rotation": -54,
             "level": [
               {
                 "frame": 0,
-                "value": 0.7
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "edge": "end",
+                  "offset": 26
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "edge": "end",
+                  "offset": 32
+                },
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "edge": "end",
+                  "offset": 48
+                },
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "edge": "end",
+                  "offset": 49
+                },
+                "value": 0
+              }
+            ]
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "continent",
+                "edge": "end",
+                "offset": 25
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "continent",
+                "edge": "end",
+                "offset": 48
+              },
+              "value": -576.0,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "continent",
+                "edge": "end",
+                "offset": 25
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "continent",
+                "edge": "end",
+                "offset": 48
+              },
+              "value": 453.59999999999997,
+              "ease": "smoothstep"
+            }
+          ]
+        },
+        {
+          "id": "sw",
+          "kit": {
+            "type": "prop",
+            "item": "shockwave",
+            "x": 0.4,
+            "y": 0.52,
+            "size": 0.3593864134404675,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "edge": "end",
+                  "offset": 48
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "edge": "end",
+                  "offset": 93
+                },
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "deb",
+          "kit": {
+            "type": "prop",
+            "item": "debris",
+            "x": 0.4,
+            "y": 0.52,
+            "size": 0.5,
+            "count": 12,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "edge": "end",
+                  "offset": 48
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "edge": "end",
+                  "offset": 88
+                },
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "dust",
+          "kit": {
+            "type": "prop",
+            "item": "dust-cloud",
+            "x": 0.4,
+            "y": 0.52,
+            "size": 0.3953250547845143,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "edge": "end",
+                  "offset": 52
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "edge": "end",
+                  "offset": 108
+                },
+                "value": 1
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "zone",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "zone"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "town0",
+          "kit": {
+            "type": "prop",
+            "item": "town",
+            "x": 0.35000000000000003,
+            "y": 0.48000000000000004,
+            "size": 0.08,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "terrible"
+                },
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "terrible",
+                  "offset": 1
+                },
+                "value": 0
               }
             ],
             "ink": "#c9d3ea"
@@ -9902,35 +12949,320 @@
             },
             {
               "frame": {
-                "at": "zone"
+                "at": "zone",
+                "offset": 6
               },
               "value": 1
+            },
+            {
+              "frame": {
+                "at": "look",
+                "offset": -6
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "look"
+              },
+              "value": 0
             }
-          ],
-          "scale": [
+          ]
+        },
+        {
+          "id": "town1",
+          "kit": {
+            "type": "prop",
+            "item": "town",
+            "x": 0.44,
+            "y": 0.54,
+            "size": 0.08,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "terrible",
+                  "offset": 6
+                },
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "terrible",
+                  "offset": 7
+                },
+                "value": 0
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
             {
               "frame": 0,
-              "value": 0.6
+              "value": 0
             },
             {
               "frame": {
                 "at": "zone",
                 "offset": -1
               },
-              "value": 0.6
+              "value": 0
             },
             {
               "frame": {
                 "at": "zone",
-                "offset": 9
+                "offset": 6
               },
-              "value": 1,
-              "ease": "ease-out-back"
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "look",
+                "offset": -6
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "look"
+              },
+              "value": 0
             }
-          ],
-          "anchor": {
-            "x": 691.1999999999999,
-            "y": 561.6
+          ]
+        },
+        {
+          "id": "town2",
+          "kit": {
+            "type": "prop",
+            "item": "town",
+            "x": 0.39,
+            "y": 0.6,
+            "size": 0.08,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "terrible",
+                  "offset": 12
+                },
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "terrible",
+                  "offset": 13
+                },
+                "value": 0
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "zone",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "zone",
+                "offset": 6
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "look",
+                "offset": -6
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "look"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "smoke",
+          "kit": {
+            "type": "prop",
+            "item": "snowfall",
+            "x": 0.4,
+            "y": 0.52,
+            "size": 0.431263696128561,
+            "count": 10,
+            "color": "#8a7f72",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "regional"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "regional",
+                  "offset": 20
+                },
+                "value": 1
+              }
+            ]
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "regional",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "regional",
+                "offset": 6
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "look",
+                "offset": -6
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "look"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "km",
+          "kit": {
+            "type": "prop",
+            "item": "span",
+            "x": 0.4,
+            "y": 0.7428195763330898,
+            "size": 0.3234477720964208,
+            "text": "~300 km",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "few"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "few",
+                  "offset": 15
+                },
+                "value": 1
+              }
+            ],
+            "ink": "#c9d3ea"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "few",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "few",
+                "offset": 6
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "look",
+                "offset": -6
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "look"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "flash",
+          "kit": {
+            "type": "prop",
+            "item": "flash",
+            "x": 0.5,
+            "y": 0.5,
+            "size": 0.5,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "edge": "end",
+                  "offset": 48
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "edge": "end",
+                  "offset": 50
+                },
+                "value": 0.9
+              },
+              {
+                "frame": {
+                  "at": "continent",
+                  "edge": "end",
+                  "offset": 62
+                },
+                "value": 0
+              }
+            ]
           }
         }
       ],
@@ -9949,12 +13281,12 @@
         {
           "id": "n1",
           "text": "a continent",
-          "x": 691,
-          "y": 184,
-          "size": 58,
+          "x": 1574,
+          "y": 324,
+          "size": 92,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#eef1f8",
+          "color": "#ffd25e",
           "pop": true,
           "opacity": [
             {
@@ -9974,45 +13306,30 @@
                 "offset": 5
               },
               "value": 1
+            },
+            {
+              "frame": {
+                "at": "continent",
+                "edge": "end",
+                "offset": 25
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "continent",
+                "edge": "end",
+                "offset": 26
+              },
+              "value": 0
             }
           ]
         },
         {
           "id": "n2",
-          "text": "devastation: a few hundred km",
-          "x": 1447,
-          "y": 373,
-          "size": 72,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#a9d8ff",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "few",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "few",
-                "offset": 5
-              },
-              "value": 1
-            }
-          ]
-        },
-        {
-          "id": "n3",
           "text": "a small country",
-          "x": 1426,
-          "y": 498,
+          "x": 1536,
+          "y": 842,
           "size": 92,
           "anchor": "middle",
           "variant": "ink",
@@ -10036,18 +13353,31 @@
                 "offset": 5
               },
               "value": 1
+            },
+            {
+              "frame": {
+                "at": "look",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "look"
+              },
+              "value": 0
             }
           ]
         },
         {
-          "id": "n4",
-          "text": "Planetary Society",
-          "x": 1536,
-          "y": 1026,
-          "size": 44,
+          "id": "n3",
+          "text": "the same continent",
+          "x": 1574,
+          "y": 324,
+          "size": 92,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#c9d3ea",
+          "color": "#ffd25e",
           "pop": true,
           "opacity": [
             {
@@ -10056,15 +13386,15 @@
             },
             {
               "frame": {
-                "at": "zone",
-                "offset": -1
+                "at": "look",
+                "offset": 29
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "zone",
-                "offset": 5
+                "at": "look",
+                "offset": 35
               },
               "value": 1
             }
@@ -10078,48 +13408,51 @@
       "height": 1080,
       "layers": [
         {
-          "id": "land",
-          "kit": {
-            "type": "planet",
-            "x": 0.66,
-            "y": 0.5,
-            "radius": 0.22,
-            "base": "#7cc576",
-            "bands": [
-              "#6db267",
-              "#7cc576"
-            ],
-            "craters": 0,
-            "ring": false,
-            "shade": 0.05,
-            "seed": 41
-          }
-        },
-        {
-          "id": "zone",
+          "id": "map",
           "kit": {
             "type": "prop",
-            "item": "orbit-ring",
-            "x": 0.66,
+            "item": "map",
+            "x": 0.62,
             "y": 0.5,
-            "size": 0.07,
-            "color": "#ff5a4a",
-            "ink": "#c9d3ea"
+            "size": 0.7,
+            "bbox": [
+              -20,
+              -36,
+              55,
+              38
+            ],
+            "mark": {
+              "lon": -14,
+              "lat": 21,
+              "km": 150
+            },
+            "level2": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ]
           }
         },
         {
           "id": "arka",
           "kit": {
             "type": "figure",
-            "x": 0.3,
+            "x": 0.18,
             "y": 0.86,
-            "height": 0.5,
+            "height": 0.42,
             "outfit": "astronaut",
             "shiver": 0,
             "seed": 11,
             "poses": [
               {
                 "frame": 0,
+                "pose": "point-right"
+              },
+              {
+                "frame": {
+                  "at": "smaller"
+                },
                 "pose": "shrug"
               }
             ],
@@ -10127,6 +13460,12 @@
               {
                 "frame": 0,
                 "face": "shocked"
+              },
+              {
+                "frame": {
+                  "at": "smaller"
+                },
+                "face": "smug"
               }
             ],
             "suit": "#e8b84a",
@@ -10314,6 +13653,111 @@
               "ease": "smoothstep"
             }
           ]
+        },
+        {
+          "id": "myth",
+          "kit": {
+            "type": "prop",
+            "item": "headline",
+            "x": 0.32,
+            "y": 0.3,
+            "size": 0.22,
+            "text": "ASTEROID WIPES OUT A CONTINENT?!"
+          },
+          "rotate": [
+            {
+              "frame": 0,
+              "value": -5
+            }
+          ],
+          "anchor": {
+            "x": 614.4,
+            "y": 324.0
+          }
+        },
+        {
+          "id": "sx",
+          "kit": {
+            "type": "prop",
+            "item": "scribble",
+            "x": 0.32,
+            "y": 0.3,
+            "size": 0.14,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "smaller"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "smaller",
+                  "offset": 12
+                },
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "myth-stamp",
+          "kit": {
+            "type": "prop",
+            "item": "stamp",
+            "x": 0.34,
+            "y": 0.45,
+            "size": 0.13,
+            "text": "myth"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "thumbnails",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "thumbnails"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "thumbnails",
+                "offset": -1
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "thumbnails",
+                "offset": 9
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 652.8000000000001,
+            "y": 486.0
+          }
         }
       ],
       "annotations": []
@@ -16328,8 +19772,8 @@
     {
       "id": "ap-a1",
       "template": "hero-reveal",
-      "durationFrames": 335,
-      "animationDurationFrames": 335,
+      "durationFrames": 343,
+      "animationDurationFrames": 343,
       "caption": {
         "text": "ap-a1",
         "preset": "body"
@@ -16342,6 +19786,18 @@
             "frame": 0,
             "focus": {
               "x": 0.5,
+              "y": 0.5057
+            },
+            "zoom": 1.06,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "pass",
+              "offset": -1
+            },
+            "focus": {
+              "x": 0.5,
               "y": 0.5
             },
             "zoom": 1.0,
@@ -16349,15 +19805,37 @@
           },
           {
             "frame": {
+              "at": "pass",
+              "offset": 20
+            },
+            "focus": {
+              "x": 0.4926,
+              "y": 0.5
+            },
+            "zoom": 1.08,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
               "at": "signals",
-              "edge": "end"
+              "edge": "end",
+              "offset": 30
             },
             "focus": {
               "x": 0.5,
               "y": 0.5
             },
-            "zoom": 1.07,
+            "zoom": 1.0,
             "easing": "smoothstep"
+          }
+        ],
+        "shake": [
+          {
+            "frame": {
+              "at": "skyscraper"
+            },
+            "frames": 14,
+            "amount": 0.008
           }
         ]
       },
@@ -16384,24 +19862,61 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "skyscraper"
+            "at": "Friday"
           },
           "gainDb": -22
         },
         {
           "sound": "pop",
           "frame": {
-            "at": "closer"
+            "at": "satellites"
           },
           "gainDb": -22
+        },
+        {
+          "sound": "slam",
+          "frame": {
+            "at": "Friday"
+          },
+          "gainDb": -12
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "asteroid"
+          },
+          "gainDb": -16
+        },
+        {
+          "sound": "slam",
+          "frame": {
+            "at": "skyscraper"
+          },
+          "gainDb": -12
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "pass"
+          },
+          "gainDb": -14
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "signals",
+            "edge": "end",
+            "offset": 4
+          },
+          "gainDb": -12
         }
       ]
     },
     {
       "id": "ap-a2",
       "template": "hero-reveal",
-      "durationFrames": 385,
-      "animationDurationFrames": 385,
+      "durationFrames": 394,
+      "animationDurationFrames": 394,
       "caption": {
         "text": "ap-a2",
         "preset": "body"
@@ -16416,17 +19931,106 @@
               "x": 0.5,
               "y": 0.5
             },
-            "zoom": 1.05,
+            "zoom": 1.0,
             "easing": "smoothstep"
           },
           {
-            "frame": 24,
+            "frame": {
+              "at": "wipes",
+              "offset": -1
+            },
             "focus": {
               "x": 0.5,
               "y": 0.5
             },
             "zoom": 1.0,
             "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "wipes",
+              "offset": 2
+            },
+            "focus": {
+              "x": 0.4873,
+              "y": 0.4982
+            },
+            "zoom": 1.1,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "wall",
+              "offset": -1
+            },
+            "focus": {
+              "x": 0.485,
+              "y": 0.4979
+            },
+            "zoom": 1.12,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "wall",
+              "offset": 2
+            },
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "mapped"
+            },
+            "focus": {
+              "x": 0.4921,
+              "y": 0.5
+            },
+            "zoom": 1.06,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "lands",
+              "edge": "end",
+              "offset": 8
+            },
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ],
+        "shake": [
+          {
+            "frame": {
+              "at": "continent",
+              "offset": 4
+            },
+            "frames": 24,
+            "amount": 0.012
+          },
+          {
+            "frame": {
+              "at": "world"
+            },
+            "frames": 30,
+            "amount": 0.01
+          },
+          {
+            "frame": {
+              "at": "lands",
+              "edge": "end",
+              "offset": 46
+            },
+            "frames": 20,
+            "amount": 0.014
           }
         ]
       },
@@ -16456,40 +20060,93 @@
           "gainDb": -24
         },
         {
-          "sound": "pop",
+          "sound": "boom",
           "frame": {
-            "at": "wipes"
+            "at": "continent",
+            "offset": 4
           },
-          "gainDb": -22
+          "gainDb": -10
         },
         {
-          "sound": "pop",
+          "sound": "crack",
           "frame": {
             "at": "ends"
           },
-          "gainDb": -22
+          "gainDb": -10
         },
         {
-          "sound": "pop",
+          "sound": "rumble",
           "frame": {
-            "at": "wall"
+            "at": "world"
           },
-          "gainDb": -22
+          "gainDb": -12
         },
         {
-          "sound": "pop",
+          "sound": "splash",
+          "frame": {
+            "at": "high"
+          },
+          "gainDb": -10
+        },
+        {
+          "sound": "whoosh",
           "frame": {
             "at": "mapped"
           },
-          "gainDb": -22
+          "gainDb": -16
+        },
+        {
+          "sound": "slam",
+          "frame": {
+            "at": "lands",
+            "edge": "end",
+            "offset": 10
+          },
+          "gainDb": -12
+        },
+        {
+          "sound": "slam",
+          "frame": {
+            "at": "lands",
+            "edge": "end",
+            "offset": 19
+          },
+          "gainDb": -12
+        },
+        {
+          "sound": "slam",
+          "frame": {
+            "at": "lands",
+            "edge": "end",
+            "offset": 28
+          },
+          "gainDb": -12
+        },
+        {
+          "sound": "slam",
+          "frame": {
+            "at": "lands",
+            "edge": "end",
+            "offset": 37
+          },
+          "gainDb": -12
+        },
+        {
+          "sound": "boom",
+          "frame": {
+            "at": "lands",
+            "edge": "end",
+            "offset": 46
+          },
+          "gainDb": -12
         }
       ]
     },
     {
       "id": "ap-a3",
       "template": "hero-reveal",
-      "durationFrames": 99,
-      "animationDurationFrames": 99,
+      "durationFrames": 101,
+      "animationDurationFrames": 101,
       "caption": {
         "text": "ap-a3",
         "preset": "body"
@@ -16501,8 +20158,8 @@
           {
             "frame": 0,
             "focus": {
-              "x": 0.4952,
-              "y": 0.5029
+              "x": 0.5,
+              "y": 0.4954
             },
             "zoom": 1.05,
             "easing": "smoothstep"
@@ -16537,13 +20194,23 @@
         "phraseIndex": 0,
         "edge": "start"
       },
-      "sounds": []
+      "sounds": [
+        {
+          "sound": "rewind",
+          "frame": {
+            "at": "wrong",
+            "edge": "end",
+            "offset": 4
+          },
+          "gainDb": -12
+        }
+      ]
     },
     {
       "id": "ap-a4",
       "template": "hero-reveal",
-      "durationFrames": 273,
-      "animationDurationFrames": 273,
+      "durationFrames": 279,
+      "animationDurationFrames": 279,
       "caption": {
         "text": "ap-a4",
         "preset": "body"
@@ -16598,31 +20265,43 @@
           "gainDb": -24
         },
         {
-          "sound": "pop",
-          "frame": 4,
-          "gainDb": -22
+          "sound": "tear",
+          "frame": {
+            "at": "Most",
+            "edge": "end"
+          },
+          "gainDb": -14
         },
         {
-          "sound": "pop",
+          "sound": "tear",
+          "frame": {
+            "at": "Most",
+            "edge": "end",
+            "offset": 18
+          },
+          "gainDb": -14
+        },
+        {
+          "sound": "boom",
           "frame": {
             "at": "half"
           },
-          "gainDb": -22
+          "gainDb": -20
         },
         {
-          "sound": "pop",
+          "sound": "ding",
           "frame": {
             "at": "interesting"
           },
-          "gainDb": -22
+          "gainDb": -12
         }
       ]
     },
     {
       "id": "ap-a5",
       "template": "hero-reveal",
-      "durationFrames": 211,
-      "animationDurationFrames": 211,
+      "durationFrames": 216,
+      "animationDurationFrames": 216,
       "caption": {
         "text": "ap-a5",
         "preset": "body"
@@ -16635,21 +20314,18 @@
             "frame": 0,
             "focus": {
               "x": 0.5,
-              "y": 0.5
+              "y": 0.4954
             },
-            "zoom": 1.0,
+            "zoom": 1.05,
             "easing": "smoothstep"
           },
           {
-            "frame": {
-              "at": "Earth",
-              "edge": "end"
-            },
+            "frame": 24,
             "focus": {
               "x": 0.5,
               "y": 0.5
             },
-            "zoom": 1.07,
+            "zoom": 1.0,
             "easing": "smoothstep"
           }
         ]
@@ -16680,16 +20356,16 @@
           "gainDb": -24
         },
         {
-          "sound": "pop",
+          "sound": "whoosh",
           "frame": {
-            "at": "check"
+            "at": "And"
           },
-          "gainDb": -22
+          "gainDb": -16
         },
         {
-          "sound": "pop",
+          "sound": "boom",
           "frame": {
-            "at": "watch"
+            "at": "not"
           },
           "gainDb": -22
         }
@@ -16698,8 +20374,8 @@
     {
       "id": "ap-a6",
       "template": "hero-reveal",
-      "durationFrames": 62,
-      "animationDurationFrames": 62,
+      "durationFrames": 63,
+      "animationDurationFrames": 63,
       "caption": {
         "text": "ap-a6",
         "preset": "body"
@@ -16711,20 +20387,61 @@
           {
             "frame": 0,
             "focus": {
-              "x": 0.4905,
-              "y": 0.5029
+              "x": 0.5,
+              "y": 0.5
             },
-            "zoom": 1.05,
+            "zoom": 1.0,
             "easing": "smoothstep"
           },
           {
-            "frame": 24,
+            "frame": {
+              "at": "it",
+              "edge": "end",
+              "offset": 2
+            },
             "focus": {
               "x": 0.5,
               "y": 0.5
             },
             "zoom": 1.0,
             "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "it",
+              "edge": "end",
+              "offset": 22
+            },
+            "focus": {
+              "x": 0.5091,
+              "y": 0.4955
+            },
+            "zoom": 1.1,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "it",
+              "edge": "end",
+              "offset": 52
+            },
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ],
+        "shake": [
+          {
+            "frame": {
+              "at": "it",
+              "edge": "end",
+              "offset": 22
+            },
+            "frames": 10,
+            "amount": 0.006
           }
         ]
       },
@@ -16755,15 +20472,8 @@
         },
         {
           "sound": "pop",
-          "frame": 4,
-          "gainDb": -22
-        },
-        {
-          "sound": "pop",
           "frame": {
-            "at": "it",
-            "edge": "end",
-            "offset": 29
+            "at": "going"
           },
           "gainDb": -22
         },
@@ -16772,16 +20482,59 @@
           "frame": {
             "at": "it",
             "edge": "end",
-            "offset": 40
+            "offset": 67
           },
           "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "it",
+            "edge": "end",
+            "offset": 78
+          },
+          "gainDb": -22
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "going"
+          },
+          "gainDb": -16
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "it",
+            "edge": "end",
+            "offset": 2
+          },
+          "gainDb": -18
+        },
+        {
+          "sound": "slam",
+          "frame": {
+            "at": "it",
+            "edge": "end",
+            "offset": 22
+          },
+          "gainDb": -16
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "it",
+            "edge": "end",
+            "offset": 30
+          },
+          "gainDb": -10
         },
         {
           "sound": "chime",
           "frame": {
             "at": "it",
             "edge": "end",
-            "offset": 24
+            "offset": 62
           },
           "gainDb": -14
         }
@@ -16790,8 +20543,8 @@
     {
       "id": "ap-a7",
       "template": "hero-reveal",
-      "durationFrames": 323,
-      "animationDurationFrames": 323,
+      "durationFrames": 330,
+      "animationDurationFrames": 330,
       "caption": {
         "text": "ap-a7",
         "preset": "body"
@@ -16923,8 +20676,8 @@
     {
       "id": "ap-a9",
       "template": "hero-reveal",
-      "durationFrames": 348,
-      "animationDurationFrames": 348,
+      "durationFrames": 355,
+      "animationDurationFrames": 355,
       "caption": {
         "text": "ap-a9",
         "preset": "body"
@@ -17011,8 +20764,8 @@
     {
       "id": "ap-a10",
       "template": "hero-reveal",
-      "durationFrames": 149,
-      "animationDurationFrames": 149,
+      "durationFrames": 152,
+      "animationDurationFrames": 152,
       "caption": {
         "text": "ap-a10",
         "preset": "body"
@@ -17065,8 +20818,8 @@
     {
       "id": "ap-a11",
       "template": "hero-reveal",
-      "durationFrames": 223,
-      "animationDurationFrames": 223,
+      "durationFrames": 228,
+      "animationDurationFrames": 228,
       "caption": {
         "text": "ap-a11",
         "preset": "body"
@@ -17139,8 +20892,8 @@
     {
       "id": "ap-a12",
       "template": "hero-reveal",
-      "durationFrames": 497,
-      "animationDurationFrames": 497,
+      "durationFrames": 508,
+      "animationDurationFrames": 508,
       "caption": {
         "text": "ap-a12",
         "preset": "body"
@@ -17220,8 +20973,8 @@
     {
       "id": "ap-a12b",
       "template": "hero-reveal",
-      "durationFrames": 721,
-      "animationDurationFrames": 721,
+      "durationFrames": 737,
+      "animationDurationFrames": 737,
       "caption": {
         "text": "ap-a12b",
         "preset": "body"
@@ -17294,8 +21047,8 @@
     {
       "id": "ap-a12c",
       "template": "hero-reveal",
-      "durationFrames": 335,
-      "animationDurationFrames": 335,
+      "durationFrames": 343,
+      "animationDurationFrames": 343,
       "caption": {
         "text": "ap-a12c",
         "preset": "body"
@@ -17375,8 +21128,8 @@
     {
       "id": "ap-a13",
       "template": "hero-reveal",
-      "durationFrames": 99,
-      "animationDurationFrames": 99,
+      "durationFrames": 101,
+      "animationDurationFrames": 101,
       "caption": {
         "text": "ap-a13",
         "preset": "body"
@@ -17429,8 +21182,8 @@
     {
       "id": "ap-a14",
       "template": "hero-reveal",
-      "durationFrames": 124,
-      "animationDurationFrames": 124,
+      "durationFrames": 127,
+      "animationDurationFrames": 127,
       "caption": {
         "text": "ap-a14",
         "preset": "body"
@@ -17503,8 +21256,8 @@
     {
       "id": "ap-a15",
       "template": "hero-reveal",
-      "durationFrames": 161,
-      "animationDurationFrames": 161,
+      "durationFrames": 165,
+      "animationDurationFrames": 165,
       "caption": {
         "text": "ap-a15",
         "preset": "body"
@@ -17573,8 +21326,8 @@
     {
       "id": "ap-a16",
       "template": "hero-reveal",
-      "durationFrames": 360,
-      "animationDurationFrames": 360,
+      "durationFrames": 368,
+      "animationDurationFrames": 368,
       "caption": {
         "text": "ap-a16",
         "preset": "body"
@@ -17654,8 +21407,8 @@
     {
       "id": "ap-a17",
       "template": "hero-reveal",
-      "durationFrames": 62,
-      "animationDurationFrames": 62,
+      "durationFrames": 63,
+      "animationDurationFrames": 63,
       "caption": {
         "text": "ap-a17",
         "preset": "body"
@@ -17708,8 +21461,8 @@
     {
       "id": "ap-a18",
       "template": "hero-reveal",
-      "durationFrames": 447,
-      "animationDurationFrames": 447,
+      "durationFrames": 457,
+      "animationDurationFrames": 457,
       "caption": {
         "text": "ap-a18",
         "preset": "body"
@@ -17775,8 +21528,8 @@
     {
       "id": "ap-a19",
       "template": "hero-reveal",
-      "durationFrames": 174,
-      "animationDurationFrames": 174,
+      "durationFrames": 177,
+      "animationDurationFrames": 177,
       "caption": {
         "text": "ap-a19",
         "preset": "body"
@@ -17849,8 +21602,8 @@
     {
       "id": "ap-a20",
       "template": "hero-reveal",
-      "durationFrames": 74,
-      "animationDurationFrames": 74,
+      "durationFrames": 76,
+      "animationDurationFrames": 76,
       "caption": {
         "text": "ap-a20",
         "preset": "body"
@@ -17903,8 +21656,8 @@
     {
       "id": "ap-a21",
       "template": "hero-reveal",
-      "durationFrames": 447,
-      "animationDurationFrames": 447,
+      "durationFrames": 457,
+      "animationDurationFrames": 457,
       "caption": {
         "text": "ap-a21",
         "preset": "body"
@@ -17998,8 +21751,8 @@
     {
       "id": "ap-a22",
       "template": "hero-reveal",
-      "durationFrames": 373,
-      "animationDurationFrames": 373,
+      "durationFrames": 381,
+      "animationDurationFrames": 381,
       "caption": {
         "text": "ap-a22",
         "preset": "body"
@@ -18079,8 +21832,8 @@
     {
       "id": "ap-a23",
       "template": "hero-reveal",
-      "durationFrames": 99,
-      "animationDurationFrames": 99,
+      "durationFrames": 101,
+      "animationDurationFrames": 101,
       "caption": {
         "text": "ap-a23",
         "preset": "body"
@@ -18133,8 +21886,8 @@
     {
       "id": "ap-a24",
       "template": "hero-reveal",
-      "durationFrames": 472,
-      "animationDurationFrames": 472,
+      "durationFrames": 483,
+      "animationDurationFrames": 483,
       "caption": {
         "text": "ap-a24",
         "preset": "body"
@@ -18214,8 +21967,8 @@
     {
       "id": "ap-a25",
       "template": "hero-reveal",
-      "durationFrames": 323,
-      "animationDurationFrames": 323,
+      "durationFrames": 330,
+      "animationDurationFrames": 330,
       "caption": {
         "text": "ap-a25",
         "preset": "body"
@@ -18295,8 +22048,8 @@
     {
       "id": "ap-a26",
       "template": "hero-reveal",
-      "durationFrames": 174,
-      "animationDurationFrames": 174,
+      "durationFrames": 177,
+      "animationDurationFrames": 177,
       "caption": {
         "text": "ap-a26",
         "preset": "body"
@@ -18365,8 +22118,8 @@
     {
       "id": "ap-a27",
       "template": "hero-reveal",
-      "durationFrames": 211,
-      "animationDurationFrames": 211,
+      "durationFrames": 216,
+      "animationDurationFrames": 216,
       "caption": {
         "text": "ap-a27",
         "preset": "body"
@@ -18419,8 +22172,8 @@
     {
       "id": "ap-a28",
       "template": "hero-reveal",
-      "durationFrames": 174,
-      "animationDurationFrames": 174,
+      "durationFrames": 177,
+      "animationDurationFrames": 177,
       "caption": {
         "text": "ap-a28",
         "preset": "body"
@@ -18473,8 +22226,8 @@
     {
       "id": "ap-a29",
       "template": "hero-reveal",
-      "durationFrames": 422,
-      "animationDurationFrames": 422,
+      "durationFrames": 432,
+      "animationDurationFrames": 432,
       "caption": {
         "text": "ap-a29",
         "preset": "body"
@@ -18557,8 +22310,8 @@
     {
       "id": "ap-a29b",
       "template": "hero-reveal",
-      "durationFrames": 485,
-      "animationDurationFrames": 485,
+      "durationFrames": 495,
+      "animationDurationFrames": 495,
       "caption": {
         "text": "ap-a29b",
         "preset": "body"
@@ -18638,8 +22391,8 @@
     {
       "id": "ap-a30",
       "template": "hero-reveal",
-      "durationFrames": 124,
-      "animationDurationFrames": 124,
+      "durationFrames": 127,
+      "animationDurationFrames": 127,
       "caption": {
         "text": "ap-a30",
         "preset": "body"
@@ -18692,8 +22445,8 @@
     {
       "id": "ap-a31",
       "template": "hero-reveal",
-      "durationFrames": 323,
-      "animationDurationFrames": 323,
+      "durationFrames": 330,
+      "animationDurationFrames": 330,
       "caption": {
         "text": "ap-a31",
         "preset": "body"
@@ -18778,8 +22531,8 @@
     {
       "id": "ap-a32",
       "template": "hero-reveal",
-      "durationFrames": 609,
-      "animationDurationFrames": 609,
+      "durationFrames": 622,
+      "animationDurationFrames": 622,
       "caption": {
         "text": "ap-a32",
         "preset": "body"
@@ -18852,8 +22605,8 @@
     {
       "id": "ap-a33",
       "template": "hero-reveal",
-      "durationFrames": 99,
-      "animationDurationFrames": 99,
+      "durationFrames": 101,
+      "animationDurationFrames": 101,
       "caption": {
         "text": "ap-a33",
         "preset": "body"
@@ -18906,8 +22659,8 @@
     {
       "id": "ap-a34",
       "template": "hero-reveal",
-      "durationFrames": 261,
-      "animationDurationFrames": 261,
+      "durationFrames": 266,
+      "animationDurationFrames": 266,
       "caption": {
         "text": "ap-a34",
         "preset": "body"
@@ -18962,33 +22715,41 @@
           "gainDb": -24
         },
         {
-          "sound": "pop",
+          "sound": "whoosh",
           "frame": {
             "at": "Pretend"
           },
-          "gainDb": -22
+          "gainDb": -14
         },
         {
           "sound": "pop",
           "frame": {
-            "at": "continent"
+            "at": "heard"
           },
-          "gainDb": -22
+          "gainDb": -18
         },
         {
-          "sound": "pop",
+          "sound": "tear",
           "frame": {
             "at": "draw"
           },
-          "gainDb": -22
+          "gainDb": -16
+        },
+        {
+          "sound": "tear",
+          "frame": {
+            "at": "draw",
+            "offset": 22
+          },
+          "gainDb": -16
         }
       ]
     },
     {
       "id": "ap-a35",
       "template": "hero-reveal",
-      "durationFrames": 435,
-      "animationDurationFrames": 435,
+      "durationFrames": 444,
+      "animationDurationFrames": 444,
       "caption": {
         "text": "ap-a35",
         "preset": "body"
@@ -19003,17 +22764,81 @@
               "x": 0.5,
               "y": 0.5
             },
-            "zoom": 1.05,
+            "zoom": 1.0,
             "easing": "smoothstep"
           },
           {
-            "frame": 24,
+            "frame": {
+              "at": "continent",
+              "edge": "end",
+              "offset": 48
+            },
             "focus": {
               "x": 0.5,
               "y": 0.5
             },
             "zoom": 1.0,
             "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "continent",
+              "edge": "end",
+              "offset": 52
+            },
+            "focus": {
+              "x": 0.4926,
+              "y": 0.5015
+            },
+            "zoom": 1.08,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "continent",
+              "edge": "end",
+              "offset": 98
+            },
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "look"
+            },
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          },
+          {
+            "frame": {
+              "at": "look",
+              "offset": 40
+            },
+            "focus": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "zoom": 1.0,
+            "easing": "smoothstep"
+          }
+        ],
+        "shake": [
+          {
+            "frame": {
+              "at": "continent",
+              "edge": "end",
+              "offset": 48
+            },
+            "frames": 45,
+            "amount": 0.016
           }
         ]
       },
@@ -19045,7 +22870,7 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "few"
+            "at": "continent"
           },
           "gainDb": -22
         },
@@ -19059,17 +22884,82 @@
         {
           "sound": "pop",
           "frame": {
-            "at": "zone"
+            "at": "look",
+            "offset": 30
           },
           "gainDb": -22
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "continent"
+          },
+          "gainDb": -18
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "continent",
+            "edge": "end",
+            "offset": 2
+          },
+          "gainDb": -14
+        },
+        {
+          "sound": "riser",
+          "frame": {
+            "at": "continent",
+            "edge": "end",
+            "offset": 16
+          },
+          "gainDb": -16
+        },
+        {
+          "sound": "boom",
+          "frame": {
+            "at": "continent",
+            "edge": "end",
+            "offset": 48
+          },
+          "gainDb": -6
+        },
+        {
+          "sound": "rumble",
+          "frame": {
+            "at": "continent",
+            "edge": "end",
+            "offset": 54
+          },
+          "gainDb": -10
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "zone"
+          },
+          "gainDb": -16
+        },
+        {
+          "sound": "rumble",
+          "frame": {
+            "at": "terrible"
+          },
+          "gainDb": -16
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "look"
+          },
+          "gainDb": -14
         }
       ]
     },
     {
       "id": "ap-a36",
       "template": "hero-reveal",
-      "durationFrames": 87,
-      "animationDurationFrames": 87,
+      "durationFrames": 88,
+      "animationDurationFrames": 88,
       "caption": {
         "text": "ap-a36",
         "preset": "body"
@@ -19081,8 +22971,8 @@
           {
             "frame": 0,
             "focus": {
-              "x": 0.4905,
-              "y": 0.5029
+              "x": 0.4848,
+              "y": 0.5051
             },
             "zoom": 1.05,
             "easing": "smoothstep"
@@ -19117,13 +23007,28 @@
         "phraseIndex": 0,
         "edge": "start"
       },
-      "sounds": []
+      "sounds": [
+        {
+          "sound": "tear",
+          "frame": {
+            "at": "smaller"
+          },
+          "gainDb": -14
+        },
+        {
+          "sound": "boom",
+          "frame": {
+            "at": "thumbnails"
+          },
+          "gainDb": -20
+        }
+      ]
     },
     {
       "id": "ap-a37",
       "template": "hero-reveal",
-      "durationFrames": 385,
-      "animationDurationFrames": 385,
+      "durationFrames": 394,
+      "animationDurationFrames": 394,
       "caption": {
         "text": "ap-a37",
         "preset": "body"
@@ -19224,8 +23129,8 @@
     {
       "id": "ap-a38",
       "template": "hero-reveal",
-      "durationFrames": 410,
-      "animationDurationFrames": 410,
+      "durationFrames": 419,
+      "animationDurationFrames": 419,
       "caption": {
         "text": "ap-a38",
         "preset": "body"
@@ -19312,8 +23217,8 @@
     {
       "id": "ap-a39",
       "template": "hero-reveal",
-      "durationFrames": 410,
-      "animationDurationFrames": 410,
+      "durationFrames": 419,
+      "animationDurationFrames": 419,
       "caption": {
         "text": "ap-a39",
         "preset": "body"
@@ -19393,8 +23298,8 @@
     {
       "id": "ap-a39b",
       "template": "hero-reveal",
-      "durationFrames": 422,
-      "animationDurationFrames": 422,
+      "durationFrames": 432,
+      "animationDurationFrames": 432,
       "caption": {
         "text": "ap-a39b",
         "preset": "body"
@@ -19474,8 +23379,8 @@
     {
       "id": "ap-a40",
       "template": "hero-reveal",
-      "durationFrames": 186,
-      "animationDurationFrames": 186,
+      "durationFrames": 190,
+      "animationDurationFrames": 190,
       "caption": {
         "text": "ap-a40",
         "preset": "body"
@@ -19548,8 +23453,8 @@
     {
       "id": "ap-a41",
       "template": "hero-reveal",
-      "durationFrames": 124,
-      "animationDurationFrames": 124,
+      "durationFrames": 127,
+      "animationDurationFrames": 127,
       "caption": {
         "text": "ap-a41",
         "preset": "body"
@@ -19662,8 +23567,8 @@
     {
       "id": "ap-a43",
       "template": "hero-reveal",
-      "durationFrames": 310,
-      "animationDurationFrames": 310,
+      "durationFrames": 317,
+      "animationDurationFrames": 317,
       "caption": {
         "text": "ap-a43",
         "preset": "body"
@@ -19729,8 +23634,8 @@
     {
       "id": "ap-a44",
       "template": "hero-reveal",
-      "durationFrames": 485,
-      "animationDurationFrames": 485,
+      "durationFrames": 495,
+      "animationDurationFrames": 495,
       "caption": {
         "text": "ap-a44",
         "preset": "body"
@@ -19810,8 +23715,8 @@
     {
       "id": "ap-a44b",
       "template": "hero-reveal",
-      "durationFrames": 373,
-      "animationDurationFrames": 373,
+      "durationFrames": 381,
+      "animationDurationFrames": 381,
       "caption": {
         "text": "ap-a44b",
         "preset": "body"
@@ -19891,8 +23796,8 @@
     {
       "id": "ap-a45",
       "template": "hero-reveal",
-      "durationFrames": 572,
-      "animationDurationFrames": 572,
+      "durationFrames": 584,
+      "animationDurationFrames": 584,
       "caption": {
         "text": "ap-a45",
         "preset": "body"
@@ -19979,8 +23884,8 @@
     {
       "id": "ap-a45b",
       "template": "hero-reveal",
-      "durationFrames": 236,
-      "animationDurationFrames": 236,
+      "durationFrames": 241,
+      "animationDurationFrames": 241,
       "caption": {
         "text": "ap-a45b",
         "preset": "body"
@@ -20053,8 +23958,8 @@
     {
       "id": "ap-a46",
       "template": "hero-reveal",
-      "durationFrames": 161,
-      "animationDurationFrames": 161,
+      "durationFrames": 165,
+      "animationDurationFrames": 165,
       "caption": {
         "text": "ap-a46",
         "preset": "body"
@@ -20107,8 +24012,8 @@
     {
       "id": "ap-a47",
       "template": "hero-reveal",
-      "durationFrames": 211,
-      "animationDurationFrames": 211,
+      "durationFrames": 216,
+      "animationDurationFrames": 216,
       "caption": {
         "text": "ap-a47",
         "preset": "body"
@@ -20174,8 +24079,8 @@
     {
       "id": "ap-a48",
       "template": "hero-reveal",
-      "durationFrames": 771,
-      "animationDurationFrames": 771,
+      "durationFrames": 788,
+      "animationDurationFrames": 788,
       "caption": {
         "text": "ap-a48",
         "preset": "body"
@@ -20269,8 +24174,8 @@
     {
       "id": "ap-a49",
       "template": "hero-reveal",
-      "durationFrames": 310,
-      "animationDurationFrames": 310,
+      "durationFrames": 317,
+      "animationDurationFrames": 317,
       "caption": {
         "text": "ap-a49",
         "preset": "body"
@@ -20343,8 +24248,8 @@
     {
       "id": "ap-a49b",
       "template": "hero-reveal",
-      "durationFrames": 373,
-      "animationDurationFrames": 373,
+      "durationFrames": 381,
+      "animationDurationFrames": 381,
       "caption": {
         "text": "ap-a49b",
         "preset": "body"
@@ -20410,8 +24315,8 @@
     {
       "id": "ap-a50",
       "template": "hero-reveal",
-      "durationFrames": 447,
-      "animationDurationFrames": 447,
+      "durationFrames": 457,
+      "animationDurationFrames": 457,
       "caption": {
         "text": "ap-a50",
         "preset": "body"
@@ -20484,8 +24389,8 @@
     {
       "id": "ap-a51",
       "template": "hero-reveal",
-      "durationFrames": 385,
-      "animationDurationFrames": 385,
+      "durationFrames": 394,
+      "animationDurationFrames": 394,
       "caption": {
         "text": "ap-a51",
         "preset": "body"
@@ -20538,8 +24443,8 @@
     {
       "id": "ap-a52",
       "template": "hero-reveal",
-      "durationFrames": 198,
-      "animationDurationFrames": 198,
+      "durationFrames": 203,
+      "animationDurationFrames": 203,
       "caption": {
         "text": "ap-a52",
         "preset": "body"
@@ -20615,8 +24520,8 @@
     {
       "id": "ap-a53",
       "template": "hero-reveal",
-      "durationFrames": 473,
-      "animationDurationFrames": 113,
+      "durationFrames": 482,
+      "animationDurationFrames": 122,
       "caption": {
         "text": "ap-a53",
         "preset": "body"

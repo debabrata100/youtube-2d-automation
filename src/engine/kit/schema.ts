@@ -81,13 +81,14 @@ export const kitSchema = z.discriminatedUnion('type', [
   z.object({
     type: z.literal('prop'), item: z.enum(['thermometer', 'pressure-arrows', 'motion-lines', 'exclaim', 'question', 'check', 'cross', 'counter', 'stamp', 'vignette', 'station', 'helmet', 'doodle-stars', 'chamber',
       'cliff', 'geyser', 'plume', 'radiation-meter', 'radiation-belt', 'battery', 'airbag', 'small-moon', 'asteroid', 'ice-cutaway', 'frost',
-      'flag', 'speedometer', 'race-car', 'sunglasses', 'mug', 'calendar', 'sign', 'igloo', 'rocket', 'fish', 'drop', 'tumbleweed', 'thermos', 'shovel', 'magnifier', 'smell-lines', 'bar', 'ruler', 'moon-map', 'system-map', 'solar-strip', 'probe', 'signal', 'bulb', 'crescent', 'orbit-ring', 'town', 'lion', 'zebra', 'coral', 'plankton', 'tide-gauge', 'tilt-dial', 'earth-axis', 'impact', 'dino', 'reflector', 'bed', 'stir', 'clock', 'eclipse', 'moonbeam', 'young-earth', 'bee', 'flower', 'tree', 'tardigrade', 'vent', 'shell', 'snowfall', 'night-half', 'mushroom', 'sparkle', 'clock-time', 'rope', 'pulse', 'span', 'sky', 'streetlight', 'arrow', 'ice-layer', 'city-lights', 'tide-bulge', 'caption']),
+      'flag', 'speedometer', 'race-car', 'sunglasses', 'mug', 'calendar', 'sign', 'igloo', 'rocket', 'fish', 'drop', 'tumbleweed', 'thermos', 'shovel', 'magnifier', 'smell-lines', 'bar', 'ruler', 'moon-map', 'system-map', 'solar-strip', 'probe', 'signal', 'bulb', 'crescent', 'orbit-ring', 'town', 'lion', 'zebra', 'coral', 'plankton', 'tide-gauge', 'tilt-dial', 'earth-axis', 'impact', 'dino', 'reflector', 'bed', 'stir', 'clock', 'eclipse', 'moonbeam', 'young-earth', 'bee', 'flower', 'tree', 'tardigrade', 'vent', 'shell', 'snowfall', 'night-half', 'mushroom', 'sparkle', 'clock-time', 'rope', 'pulse', 'span', 'sky', 'streetlight', 'arrow', 'ice-layer', 'city-lights', 'tide-bulge', 'caption',
+      'globe', 'map', 'skyline', 'wave', 'shockwave', 'debris', 'flash', 'dust-cloud', 'headline', 'rewind', 'scribble', 'streak', 'pen', 'satellite']),
     x: n, y: n, size: size(.01, 1), rotation: z.number().min(-360).max(360).default(0), color: hex.optional(), ink: hex.optional(), count: z.number().int().min(1).max(40).default(6),
     level: z.array(z.object({frame: keyFrame, value: z.number().min(0).max(1)}).strict()).min(1).max(12).refine(increasing, 'Level frames must strictly increase').default([{frame: 0, value: .6}]),
     /** Counter numbers: each key holds until the next, or counts down/up to it in whole steps when ramp is set. */
     values: z.array(z.object({frame: keyFrame, value: z.number().int().min(-9999).max(9999), ramp: z.boolean().default(false)}).strict()).max(40).default([]).refine(increasing, 'Value frames must strictly increase'),
     /** Counter caption or stamp text. */
-    text: z.string().min(1).max(24).optional(),
+    text: z.string().min(1).max(48).optional(),
     /** Pressure arrows: squeeze in, or burst out. */
     direction: z.enum(['in', 'out']).default('in'),
     /** System map: moon names and colours (inner to outer), the highlighted index, Saturn-style ring, radiation belt. */
@@ -95,6 +96,13 @@ export const kitSchema = z.discriminatedUnion('type', [
     highlight: z.number().int().min(0).max(9).optional(), ring: z.boolean().default(false), belt: z.boolean().default(false),
     /** Tilt dial: shaded band [lo, hi] in degrees. */
     range: z.tuple([z.number().min(0).max(90), z.number().min(0).max(90)]).optional(),
+    /** Globe centre [lon, lat] and spin (degrees of longitude a frame); map region [west, south, east, north], zone mark and zoom. */
+    center: z.tuple([z.number().min(-180).max(180), z.number().min(-90).max(90)]).optional(), spin: z.number().min(-2).max(2).optional(),
+    bbox: z.tuple([z.number().min(-180).max(180), z.number().min(-90).max(90), z.number().min(-180).max(180), z.number().min(-90).max(90)]).optional(),
+    mark: z.object({lon: z.number().min(-180).max(180), lat: z.number().min(-90).max(90), km: z.number().min(1).max(5000)}).strict().optional(),
+    zoom: z.number().min(1).max(40).optional(),
+    /** A second animated level (globe cracks, map zone), 0-1. */
+    level2: z.array(z.object({frame: keyFrame, value: z.number().min(0).max(1)}).strict()).min(1).max(12).refine(increasing, 'Level frames must strictly increase').optional(),
   }).strict(),
   /** Hand-drawn ground: outlined horizon with bumps, optional planet curvature, speckles and horizon rocks. */
   z.object({

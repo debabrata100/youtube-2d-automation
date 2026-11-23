@@ -327,10 +327,10 @@ def jet(F, item, x, base_y, size, level, pid=None, color=None, spread=.55):
 
 
 # --------------------------------------------------------------------------------------------- recipes
-def explain(chars=(), props=(), notes=(), camera_preset='settle', focus=None, sounds=(), stamps=()):
+def explain(chars=(), props=(), notes=(), camera_preset='settle', focus=None, sounds=(), stamps=(), shake=()):
     """The workhorse: characters + props + auto-placed notes. stamps: [(note index, anchor)] MYTH stamps, or
     [(note index, anchor, label)] for another verdict (e.g. 'half true', 'true'); the stamp widens with its label."""
-    return dict(chars=list(chars), props=list(props), notes=list(notes), camera=camera_preset, focus=focus, sounds=list(sounds), stamps=list(stamps))
+    return dict(chars=list(chars), props=list(props), notes=list(notes), camera=camera_preset, focus=focus, sounds=list(sounds), stamps=list(stamps), shake=list(shake))
 
 
 def myth_bust(claim, claim_at, bust_at, chars=(), truths=(), props=(), camera_preset='settle', sounds=()):
@@ -465,7 +465,7 @@ class Episode:
             chars = [c.resolve(F) for c in plan['chars']]
             obstacles = [c.box(F) for c in chars] + [b for b in (p.box(F) for p in plan['props']) if b]
             placed = self._place(beat['id'], plan['notes'], obstacles, plan['stamps'])
-            TOP = ('vignette', 'counter', 'system-map', 'solar-strip')  # dimmers, counters and the where-are-we card cover the stage
+            TOP = ('vignette', 'counter', 'system-map', 'solar-strip', 'headline', 'scribble', 'pen', 'stamp', 'question', 'flash', 'rewind')  # dimmers, counters and the where-are-we card cover the stage
             layers = [p.layer for p in plan['props'] if p.layer.get('kit', {}).get('item') not in TOP]
             layers += [c.layer(F) for c in chars if not c.top]
             layers += [p.layer for p in plan['props'] if p.layer.get('kit', {}).get('item') in TOP]  # dimmer, counter, map card on top
@@ -499,12 +499,13 @@ class Episode:
             sounds += plan['sounds']
             fc = next((c for c in chars if c.cid == plan.get('focus')), chars[0] if chars else None)
             focus = (fc.fx, fc.ffy - fc.fh * .6) if fc else (.5, .5)
-            cam = camera(plan['camera'], self._end_anchor(beat), focus) if plan['camera'] else None
+            cam = (plan['camera'] if isinstance(plan['camera'], list) else camera(plan['camera'], self._end_anchor(beat), focus)) if plan['camera'] else None
+            shake = [{'frame': f, 'frames': n, 'amount': a} for f, n, a in plan.get('shake', [])]
             gid = f"g-{beat['id']}"
             groups.append({'id': gid, 'width': W, 'height': H, 'layers': layers, 'annotations': annotations})
             scenes.append({'id': beat['sceneId'], 'template': 'hero-reveal', 'durationFrames': nominal[i], 'animationDurationFrames': nominal[i],
                            'caption': {'text': beat['sceneId'], 'preset': 'body'},
-                           'camera': {'preset': 'static', 'boundaryMode': 'backdrop', **({'keyframes': cam} if cam else {})},
+                           'camera': {'preset': 'static', 'boundaryMode': 'backdrop', **({'keyframes': cam} if cam else {}), **({'shake': shake} if shake else {})},
                            'motion': {'preset': 'still'}, 'seed': 7000 + len(beat['sceneId']), 'transitionFrames': 0, 'environmentDim': 0,
                            'config': {'primary': {'asset': gid, 'x': .5, 'y': .5, 'size': F['primary']}},
                            'narrationCue': {'beatId': beat['id'], 'phraseIndex': 0, 'edge': 'start'},
@@ -535,3 +536,46 @@ def brand_sting(at, W, H, gold='#ffd25e'):
     notes = [Note('GAHANARKA', plus(at, 5), 'title', size=100, pos=(W / 2, round(.6 * H)), color=gold),
              Note('light in the unfathomable', plus(at, 16), 'small', size=56, pos=(W / 2, round(.7 * H)))]
     return [arka], props, notes, [('chime', at, -14)]
+
+
+# --------------------------------------------------------------------------------------------- action-beat pauses
+def pause_cut(story, source, pauses, spec_id, out_path):
+    """Action beats (docs/VISUAL_CHECKLIST.md section 10): cut silent pauses into an approved, already-paid narration take so the
+    animation can play with sound while the narrator waits. Free: scripts/cut-narration.py reuses the recorded audio.
+
+    story: the story dict; source: the narration job (e.g. 'jobs/e7-narration'); pauses: [(beat id, text that ends the pause
+    point or None for the end of the beat, seconds)]. The beats' narration joined with spaces must equal the take's text.
+    Writes the cut spec to out_path; returns it. Anchor in-pause action with plus(A(last word, edge='end'), frames)."""
+    root = pathlib.Path(out_path).resolve().parents[1]
+    take = json.loads((root / source / 'audio/narration-metadata.json').read_text())['text']
+    beats = story['beats']; full = ' '.join(b['narration'] for b in beats)
+    if full != take: raise SystemExit('story narration differs from the take; pauses can only be cut into the approved text')
+    offs, pos = {}, 0
+    for b in beats: offs[b['id']] = pos; pos += len(b['narration']) + 1
+    cuts = []
+    for bid, after, gap in pauses:
+        b = next(x for x in beats if x['id'] == bid)
+        if after is None: end = offs[bid] + len(b['narration'])
+        else:
+            k = b['narration'].find(after)
+            if k < 0: raise SystemExit(f'{bid}: "{after}" not in the line')
+            end = offs[bid] + k + len(after)
+        cuts.append((end, gap))
+    cuts.sort(); segs, start = [], 0
+    for end, gap in cuts:
+        segs.append({'source': source, 'text': full[start:end], 'gapAfter': gap}); start = end + 1
+    segs.append({'source': source, 'text': full[start:]})
+    for sg in segs:
+        if full.count(sg['text']) > 1: sg['occurrence'] = _nth(full, sg['text'], segs, sg)
+    spec = {'id': spec_id, 'segments': segs}
+    pathlib.Path(out_path).write_text(json.dumps(spec, indent=1, ensure_ascii=False) + '\n')
+    return spec
+
+
+def _nth(full, text, segs, seg):
+    """Occurrence index of a segment's text at its own position (texts that repeat elsewhere in the take)."""
+    start = 0
+    for sg in segs:
+        if sg is seg: break
+        start += len(sg['text']) + 1
+    return [i for i in range(len(full)) if full.startswith(text, i)].index(start)

@@ -109,3 +109,27 @@ The narration stays exactly as recorded (paid, approved). Pauses for action beat
 - **Engineering:** about 1.5–2 days for the reusable pieces and E7's ~60 reworked shots, then one Mac render (~25 min).
 - **Order:** sample first: the cold open (with the disaster trailer and the ride) + the impact sequence (a34–a36), ~90 s, for Debabrata's approval of the new style; then the rest.
 - **Schedule:** if the sample is approved by 25 Nov, E7 can still go public on Thu 3 Dec; otherwise Sun 6 Dec.
+
+## Sample of the new style (23 Nov 2026, evening)
+Approved to start by Debabrata; plus his rule "draw every named object as itself" (VISUAL_CHECKLIST §10). Rendered in the cloud
+workspace, no paid requests: `E7-sample-1-cold-open.mp4` (0:00–0:48) and `E7-sample-2-the-impact.mp4` (5:32–6:08).
+
+**Built (reusable):**
+- Action-beat pauses: `pause_cut()` in `scripts/authoring/recipes.py` cuts silent pauses into the approved take (spec
+  `stories/apophis-beats-cut.json`, job `jobs/e7-narration-beats`, 594.9 s). E7 pauses so far: after a1 (1.2 s), a2 (3.6),
+  a3 (1.6), a6 (4.8, the ride and the sting), a34 (1.4), "Here's a continent." (4.6, the impact), a35 (1.2).
+- Kit props: `globe` (real continents, Natural Earth, any centre, spin, optional cracks), `map` (real map of a region, a
+  to-scale zone, zoom/pull-back), `skyline`, `wave` (rise and break), `shockwave`, `debris`, `flash`, `dust-cloud` (top view),
+  `headline` (viral video card), `rewind`, `scribble`, `streak`, `pen`, `satellite`. Prop text up to 48 characters.
+- Camera `shake` (deterministic, decaying), custom keyframe lists from plan scripts.
+- Sounds: crack, splash, tear, wind, ding, rewind, slam.
+- `scripts/attraction-report.py <job> [from to]`; `scripts/render-sample-mux.ts <job> <end> [start]` for a mid-video excerpt.
+
+**Attraction report on the sample windows** (targets: still ≤ 4 s, ≤ 40 words/min, action beats ≥ 1 per chapter):
+| Window | Picture changes/min | Longest still | Words/min | Action beats |
+|---|---|---|---|---|
+| Cold open 0–48 s | 110 | 3.2 s | 71 (mostly the four headline cards, shown on purpose) | 4 |
+| Impact 332–366 s | 74 | 3.5 s | 42 | 3 |
+| Not yet reworked, 48–332 s (for comparison) | 33 | 9.6 s | 53 | 0 |
+
+**Runtime:** 610 s (10:10) with the pauses so far; the full rework adds more pauses (~10:40).
