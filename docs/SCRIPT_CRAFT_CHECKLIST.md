@@ -43,6 +43,15 @@ and in the description and pinned comment, rather than re-recording.
 - [ ] **Everyday comparisons for every big number** (a selfie for 69 KB, an 8-track tape, dial-up internet being 100 times faster).
 - [ ] **Cover frame:** pick the frame that shows the hook comparison itself (the phone next to the spacecraft, or the big "69 KB" number), not a generic shot.
 
+## Shorts: crisis before specs, payoff before the halfway drop (from YouTube's analysis of S8, 24 Nov 2026)
+S8 "Voyager Has Less Memory Than One Photo on Your Phone": 37 views in 11 h, 47.1% stayed, 27 s of 51 s watched on average (54.8%).
+S7 "NASA Lost Voyager 1 for 48 Hours" (opened on a crisis) has about 27× its views with similar visuals.
+- [ ] **Target: 60–70%+ "stayed to watch"** in the first test batch. YouTube says Shorts that keep growing usually hold that much. Ours sit at 47–50%, so the first 2–3 seconds are the lever.
+- [ ] **Lead with the crisis or the contradiction, then reveal the spec.** No run of spec numbers (KB, bits per second, tape recorders) in the first 15 s unless the number itself is the shock. YouTube's example: "NASA fixed a broken computer 24 billion kilometers away… on a machine with less memory than your selfie."
+- [ ] **Put the most impressive beat before the average viewer leaves** (about 50% of the length). In S8 the chip-failure fix came at 0:31, after a comparison lull at 0:25, and most viewers had already gone.
+- [ ] **Check: no "explanation lull" just before the payoff.** If a line only restates or compares, cut it or put a new picture on it.
+- [ ] **A Related-video bridge from a stronger Short** to its sibling is worth testing (YouTube suggested S7 → S8). It's a trade-off against linking to a long episode for watch hours.
+
 ## Shorts: titles (23 Nov 2026)
 - Keep a Short's title **at or under ~40 characters**: the phone feed cuts it off there, so the payoff word must fit.
 - Use the **same wording as the episode it links to and as people search** ("What if the Sun disappeared", not "vanished").
