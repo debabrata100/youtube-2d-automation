@@ -36,6 +36,8 @@ Last full check: **20 Nov 2026, 5 PM IST**. Last change: **23 Nov, 15:35 IST** (
 | S10 | What If the Sun Disappeared for 8 Minutes? (Ep 5 Short A) | [15MGyj6Gy2A](https://youtube.com/shorts/15MGyj6Gy2A) | Scheduled **Fri 4 Dec, 9:30 PM** (uploaded 23 Nov) | ⏳ → Ep 5 once it's public (29 Nov check-in) | ✅ English SRT | ⏳ after launch | What If…? | `15-ghost-sun-gone-short.md` |
 | S11 | If the Sun Disappeared, Who'd Notice Last? (Ep 5 Short C) | [9yJUqWaao8I](https://youtube.com/shorts/9yJUqWaao8I) | Scheduled **Tue 8 Dec, 9:30 PM** (uploaded 23 Nov) | ⏳ → Ep 5 (29 Nov check-in) | ✅ English SRT | ⏳ after launch | What If…? | `17-ghost-sun-voyager-short.md` |
 | S12 | Without the Sun, the Air Would Snow Down (Ep 5 Short B) | [0iKH5kqpgYY](https://youtube.com/shorts/0iKH5kqpgYY) | Scheduled **Fri 11 Dec, 9:30 PM** (uploaded 23 Nov) | ⏳ → Ep 5 (29 Nov check-in) | ✅ English SRT | ⏳ after launch | What If…? | `16-ghost-sun-air-short.md` |
+| S13 | Why the Moon Is Inside Earth's Atmosphere 🌍🤯 Geocorona (G1, Part 1) | not uploaded | **Ready 24 Nov**, files in `gahanarka-upload/19-moon-atmosphere-short/`; date: Debabrata to pick, **before 31 Dec** ("this year" line); suggested Mon 14 Dec | ⏳ → Ep 3, later → S14 | ✅ English SRT ready | ⏳ after launch | new "Real Space, Explained"? | `19-moon-atmosphere-short.md` |
+| S14 | Why the Moon Is Rusting 🌕🤯 Earth's Oxygen (R1, Part 2) | not uploaded | **Ready 24 Nov**, files in `gahanarka-upload/20-moon-rusting-short/`; 3 days after S13 (suggested Thu 17 Dec) | ⏳ → S13 | ✅ English SRT ready | ⏳ after launch | same as S13 | `20-moon-rusting-short.md` |
 
 ## Scorecard: what each upload teaches us (added 23 Nov)
 
@@ -75,6 +77,8 @@ Judge a long video's click rate only after **500+ impressions**, and its retenti
 
 ## Check-ins
 - **23 Nov 21:52 (Voyager memory Short launch):** Rh6l0gIQKBo public, Related video → Ep 3 (How You'd Die on Every Moon). First 22 minutes: 12 views, all from the Shorts feed, 54.6% stayed / 45.4% swiped away, 1 like, 0 subscribers. NASA Lost Voyager 1 (-FTg1FvhxKI) since 20 Nov: about 1.1K views, 50.0% stayed / 50.0% swiped away, 17 likes, +2 subscribers, 5.3 watch hours; 99% new viewers; top countries India 19%, US 14%, Philippines 10%. Pinned comment posted on Debabrata's OK at 21:58 and confirmed after reload ("Pinned by @Gahanarka"). E7 scheduling deferred by Debabrata: no back-to-back long uploads (date to pick later).
+
+- **24 Nov 08:48 (Voyager memory Short, ~11 h after launch):** Rh6l0gIQKBo at 37 views, 0.2 watch hours, 47.1% stayed / 52.9% swiped away, 1 like, 0 subscribers; the views curve flattened after the first ~2 hours (the Shorts feed stopped testing it). NASA Lost Voyager 1 (-FTg1FvhxKI) now 1.0K views, 50.0% stayed, 17 likes, +2 subscribers, only 43 views in the last 48 h (stalled). Lesson: our Shorts hold about half their viewers; that is below what the feed rewards, so the first 2 seconds (the twist) are the lever. G1/R1 (S13/S14) were built around that.
 
 ## Open items
 - **Trailer:** upload the English SRT (it only has auto-captions).
