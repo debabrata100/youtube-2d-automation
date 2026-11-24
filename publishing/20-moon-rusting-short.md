@@ -1,13 +1,13 @@
-# 20: R1 Short, "Why the Moon Is Rusting 🌕🤯 Earth's Oxygen"
+# 20: R1 Short, "India's Chandrayaan Found Rust on the Moon 🇮🇳🌕"
 
-- **Status:** ready to upload (24 Nov 2026). **Post it 30 minutes before G1, on the same day:** R1 at 9:00 PM, G1 at 9:30 PM IST (decided 24 Nov; suggested date Mon 14 Dec). G1 ends on "Part 2 →", so Part 2 must already be live.
+- **Status:** ready to upload (24 Nov 2026). **Post it 30 minutes before G1, on the same day:** R1 at 9:00 PM, G1 at 9:30 PM IST (decided 24 Nov). **Date: Fri 27 Nov** (November loop test). G1 ends on "Part 2 →", so Part 2 must already be live.
 - **File:** `why-the-moon-is-rusting.mp4` in this folder (44 s, 9:16, -14.2 LUFS, -2.1 dBTP). Source: `jobs/rust-final-2/output/narrated-animation.mp4`. All checks passed.
 - **Captions:** `captions-english.srt` (30 cues). Captions are also burned into the picture.
 - **Narration:** Gahanarka R1 + Arka E3 (ElevenLabs, 573 characters, 2 requests, 23 Nov).
 
 ## Title
-**Why the Moon Is Rusting 🌕🤯 Earth's Oxygen**
-(Backup: Earth Is Rusting the Moon)
+**India's Chandrayaan Found Rust on the Moon 🇮🇳🌕**
+(Changed 24 Nov to stand apart from the 883K "The Moon Is Rusting… Because of Earth" Short. Backup: Why the Moon Is Rusting 🌕🤯 Earth's Oxygen.)
 
 ## Description (paste as is)
 
