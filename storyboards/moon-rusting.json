@@ -23,7 +23,7 @@
     "music": "cues",
     "musicGainDb": -22,
     "duckRatio": 8,
-    "targetLufs": -16,
+    "targetLufs": -14,
     "crossfadeSeconds": 1.5,
     "musicCues": [
       {
@@ -94,7 +94,7 @@
             "item": "globe",
             "x": 0.5,
             "y": 0.6145833333333334,
-            "size": 0.1,
+            "size": 0.12,
             "center": [
               78,
               18
@@ -156,7 +156,7 @@
             "type": "planet",
             "x": 0.6412404467960023,
             "y": 0.4769798280423281,
-            "radius": 0.065,
+            "radius": 0.075,
             "base": "#bdb8ad",
             "bands": [],
             "craters": 5,
@@ -219,9 +219,9 @@
           "kit": {
             "type": "prop",
             "item": "rust-spots",
-            "x": 0.6282404467960023,
-            "y": 0.46418295304232804,
-            "size": 0.0845,
+            "x": 0.6262404467960023,
+            "y": 0.4622142030423281,
+            "size": 0.11249999999999999,
             "level": [
               {
                 "frame": 0,
@@ -235,7 +235,7 @@
                 "value": 1
               }
             ],
-            "count": 5
+            "count": 6
           },
           "scale": [
             {
@@ -293,7 +293,7 @@
             "type": "prop",
             "item": "bigword",
             "x": 0.5,
-            "y": 0.31,
+            "y": 0.25,
             "size": 0.16,
             "text": "RUST",
             "color": "#c2683a"
@@ -340,41 +340,16 @@
           ],
           "anchor": {
             "x": 540.0,
-            "y": 595.2
+            "y": 480.0
           }
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "Moon",
-          "x": 540,
-          "y": 1270,
-          "size": 37,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#eef1f8",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": -1,
-              "value": 0
-            },
-            {
-              "frame": 5,
-              "value": 1
-            }
-          ]
-        },
-        {
-          "id": "n1",
           "text": "Earth's fault",
           "x": 540,
-          "y": 1370,
+          "y": 1395,
           "size": 78,
           "anchor": "middle",
           "variant": "ink",
@@ -427,15 +402,15 @@
             "type": "prop",
             "item": "rust-spots",
             "x": 0.3,
-            "y": 0.82,
-            "size": 0.2,
+            "y": 0.83,
+            "size": 0.26,
             "level": [
               {
                 "frame": 0,
                 "value": 1
               }
             ],
-            "count": 5
+            "count": 6
           }
         },
         {
@@ -444,7 +419,7 @@
             "type": "figure",
             "x": 0.5,
             "y": 0.74,
-            "height": 0.24,
+            "height": 0.26,
             "outfit": "astronaut",
             "shiver": 0,
             "seed": 11,
@@ -469,8 +444,8 @@
         {
           "id": "n0",
           "text": "air: 0",
-          "x": 540,
-          "y": 1040,
+          "x": 680,
+          "y": 760,
           "size": 78,
           "anchor": "middle",
           "variant": "ink",
@@ -511,7 +486,7 @@
             "item": "globe",
             "x": 0.5,
             "y": 0.6145833333333334,
-            "size": 0.1,
+            "size": 0.12,
             "center": [
               78,
               18
@@ -527,7 +502,7 @@
               "frame": {
                 "at": "hematite"
               },
-              "value": 2.9,
+              "value": 3.0,
               "ease": "smoothstep"
             }
           ],
@@ -541,7 +516,7 @@
               "frame": {
                 "at": "hematite"
               },
-              "value": -442.4,
+              "value": -457.6,
               "ease": "smoothstep"
             }
           ],
@@ -555,7 +530,7 @@
               "frame": {
                 "at": "hematite"
               },
-              "value": 128.2,
+              "value": 132.6,
               "ease": "smoothstep"
             }
           ],
@@ -570,7 +545,7 @@
             "type": "planet",
             "x": 0.6412404467960023,
             "y": 0.4769798280423281,
-            "radius": 0.065,
+            "radius": 0.075,
             "base": "#bdb8ad",
             "bands": [],
             "craters": 5,
@@ -588,7 +563,7 @@
               "frame": {
                 "at": "hematite"
               },
-              "value": 2.9,
+              "value": 3.0,
               "ease": "smoothstep"
             }
           ],
@@ -602,7 +577,7 @@
               "frame": {
                 "at": "hematite"
               },
-              "value": -442.4,
+              "value": -457.6,
               "ease": "smoothstep"
             }
           ],
@@ -616,7 +591,7 @@
               "frame": {
                 "at": "hematite"
               },
-              "value": 128.2,
+              "value": 132.6,
               "ease": "smoothstep"
             }
           ],
@@ -630,16 +605,16 @@
           "kit": {
             "type": "prop",
             "item": "rust-spots",
-            "x": 0.6282404467960023,
-            "y": 0.46418295304232804,
-            "size": 0.0845,
+            "x": 0.6262404467960023,
+            "y": 0.4622142030423281,
+            "size": 0.11249999999999999,
             "level": [
               {
                 "frame": 0,
                 "value": 1
               }
             ],
-            "count": 5
+            "count": 6
           },
           "scale": [
             {
@@ -651,7 +626,7 @@
               "frame": {
                 "at": "hematite"
               },
-              "value": 2.9,
+              "value": 3.0,
               "ease": "smoothstep"
             }
           ],
@@ -665,7 +640,7 @@
               "frame": {
                 "at": "hematite"
               },
-              "value": -442.4,
+              "value": -457.6,
               "ease": "smoothstep"
             }
           ],
@@ -679,7 +654,7 @@
               "frame": {
                 "at": "hematite"
               },
-              "value": 128.2,
+              "value": 132.6,
               "ease": "smoothstep"
             }
           ],
@@ -693,21 +668,36 @@
           "kit": {
             "type": "prop",
             "item": "satellite",
-            "x": 0.3,
+            "x": 0.5,
             "y": 0.3,
-            "size": 0.22,
-            "variant": "chandrayaan-1"
+            "size": 0.34,
+            "variant": "chandrayaan-1",
+            "rotation": -8
           },
           "x": [
             {
               "frame": 0,
-              "value": -120
+              "value": -800
+            },
+            {
+              "frame": {
+                "at": "scientists"
+              },
+              "value": -800
             },
             {
               "frame": {
                 "at": "hematite"
               },
-              "value": 160,
+              "value": 0,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": {
+                "at": "Rust.",
+                "edge": "end"
+              },
+              "value": 330,
               "ease": "smoothstep"
             }
           ]
@@ -718,9 +708,9 @@
             "type": "prop",
             "item": "bigword",
             "x": 0.5,
-            "y": 0.31,
-            "size": 0.16,
-            "text": "RUST",
+            "y": 0.67,
+            "size": 0.085,
+            "text": "HEMATITE = RUST",
             "color": "#c2683a"
           },
           "opacity": [
@@ -730,14 +720,14 @@
             },
             {
               "frame": {
-                "at": "Rust.",
+                "at": "hematite",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "Rust."
+                "at": "hematite"
               },
               "value": 1
             }
@@ -749,14 +739,14 @@
             },
             {
               "frame": {
-                "at": "Rust.",
+                "at": "hematite",
                 "offset": -1
               },
               "value": 0.5
             },
             {
               "frame": {
-                "at": "Rust.",
+                "at": "hematite",
                 "offset": 8
               },
               "value": 1,
@@ -765,17 +755,17 @@
           ],
           "anchor": {
             "x": 540.0,
-            "y": 595.2
+            "y": 1286.4
           }
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "Chandrayaan-1 (ISRO)",
-          "x": 380,
-          "y": 630,
-          "size": 37,
+          "text": "Chandrayaan-1 · ISRO",
+          "x": 540,
+          "y": 470,
+          "size": 53,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
@@ -795,68 +785,6 @@
             {
               "frame": {
                 "at": "India's",
-                "offset": 5
-              },
-              "value": 1
-            }
-          ]
-        },
-        {
-          "id": "n1",
-          "text": "hematite",
-          "x": 540,
-          "y": 1370,
-          "size": 78,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#ffd25e",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "hematite",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "hematite",
-                "offset": 5
-              },
-              "value": 1
-            }
-          ]
-        },
-        {
-          "id": "n2",
-          "text": "near the poles",
-          "x": 540,
-          "y": 1300,
-          "size": 37,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#eef1f8",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "poles.",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "poles.",
                 "offset": 5
               },
               "value": 1
@@ -877,7 +805,7 @@
             "item": "globe",
             "x": 0.5,
             "y": 0.6145833333333334,
-            "size": 0.1,
+            "size": 0.12,
             "center": [
               78,
               18
@@ -886,35 +814,35 @@
           "scale": [
             {
               "frame": 0,
-              "value": 2.9,
+              "value": 3.0,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "So"
               },
-              "value": 1.6,
+              "value": 1.8,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "us."
               },
-              "value": 1.3,
+              "value": 1.45,
               "ease": "smoothstep"
             }
           ],
           "x": [
             {
               "frame": 0,
-              "value": -442.4,
+              "value": -457.6,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "So"
               },
-              "value": -122.0,
+              "value": -137.3,
               "ease": "smoothstep"
             },
             {
@@ -928,21 +856,21 @@
           "y": [
             {
               "frame": 0,
-              "value": 128.2,
+              "value": 132.6,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "So"
               },
-              "value": -140.6,
+              "value": -158.2,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "us."
               },
-              "value": -130.0,
+              "value": -145.0,
               "ease": "smoothstep"
             }
           ],
@@ -957,7 +885,7 @@
             "type": "planet",
             "x": 0.6412404467960023,
             "y": 0.4769798280423281,
-            "radius": 0.065,
+            "radius": 0.075,
             "base": "#bdb8ad",
             "bands": [],
             "craters": 5,
@@ -968,35 +896,35 @@
           "scale": [
             {
               "frame": 0,
-              "value": 2.9,
+              "value": 3.0,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "So"
               },
-              "value": 1.6,
+              "value": 1.8,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "us."
               },
-              "value": 1.3,
+              "value": 1.45,
               "ease": "smoothstep"
             }
           ],
           "x": [
             {
               "frame": 0,
-              "value": -442.4,
+              "value": -457.6,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "So"
               },
-              "value": -122.0,
+              "value": -137.3,
               "ease": "smoothstep"
             },
             {
@@ -1010,21 +938,21 @@
           "y": [
             {
               "frame": 0,
-              "value": 128.2,
+              "value": 132.6,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "So"
               },
-              "value": -140.6,
+              "value": -158.2,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "us."
               },
-              "value": -130.0,
+              "value": -145.0,
               "ease": "smoothstep"
             }
           ],
@@ -1038,49 +966,49 @@
           "kit": {
             "type": "prop",
             "item": "rust-spots",
-            "x": 0.6282404467960023,
-            "y": 0.46418295304232804,
-            "size": 0.0845,
+            "x": 0.6262404467960023,
+            "y": 0.4622142030423281,
+            "size": 0.11249999999999999,
             "level": [
               {
                 "frame": 0,
                 "value": 1
               }
             ],
-            "count": 5
+            "count": 6
           },
           "scale": [
             {
               "frame": 0,
-              "value": 2.9,
+              "value": 3.0,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "So"
               },
-              "value": 1.6,
+              "value": 1.8,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "us."
               },
-              "value": 1.3,
+              "value": 1.45,
               "ease": "smoothstep"
             }
           ],
           "x": [
             {
               "frame": 0,
-              "value": -442.4,
+              "value": -457.6,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "So"
               },
-              "value": -122.0,
+              "value": -137.3,
               "ease": "smoothstep"
             },
             {
@@ -1094,21 +1022,21 @@
           "y": [
             {
               "frame": 0,
-              "value": 128.2,
+              "value": 132.6,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "So"
               },
-              "value": -140.6,
+              "value": -158.2,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "us."
               },
-              "value": -130.0,
+              "value": -145.0,
               "ease": "smoothstep"
             }
           ],
@@ -1124,7 +1052,7 @@
             "item": "arrow",
             "x": 0.5706202233980011,
             "y": 0.5457815806878307,
-            "size": 0.15536449147560258,
+            "size": 0.1271164021164021,
             "rotation": -60,
             "color": "#ffd25e",
             "ink": "#eef1f8"
@@ -1151,35 +1079,35 @@
           "scale": [
             {
               "frame": 0,
-              "value": 2.9,
+              "value": 3.0,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "So"
               },
-              "value": 1.6,
+              "value": 1.8,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "us."
               },
-              "value": 1.3,
+              "value": 1.45,
               "ease": "smoothstep"
             }
           ],
           "x": [
             {
               "frame": 0,
-              "value": -442.4,
+              "value": -457.6,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "So"
               },
-              "value": -122.0,
+              "value": -137.3,
               "ease": "smoothstep"
             },
             {
@@ -1193,21 +1121,21 @@
           "y": [
             {
               "frame": 0,
-              "value": 128.2,
+              "value": 132.6,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "So"
               },
-              "value": -140.6,
+              "value": -158.2,
               "ease": "smoothstep"
             },
             {
               "frame": {
                 "at": "us."
               },
-              "value": -130.0,
+              "value": -145.0,
               "ease": "smoothstep"
             }
           ],
@@ -1217,12 +1145,81 @@
           }
         },
         {
+          "id": "formula",
+          "kit": {
+            "type": "prop",
+            "item": "bigword",
+            "x": 0.5,
+            "y": 0.27,
+            "size": 0.065,
+            "text": "IRON + OXYGEN = RUST",
+            "color": "#a9d8ff"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "oxygen.",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "oxygen."
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "us.",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "us."
+              },
+              "value": 0
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.5
+            },
+            {
+              "frame": {
+                "at": "oxygen.",
+                "offset": -1
+              },
+              "value": 0.5
+            },
+            {
+              "frame": {
+                "at": "oxygen.",
+                "offset": 8
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 540.0,
+            "y": 518.4000000000001
+          }
+        },
+        {
           "id": "fromus",
           "kit": {
             "type": "prop",
             "item": "bigword",
             "x": 0.5,
-            "y": 0.31,
+            "y": 0.27,
             "size": 0.12,
             "text": "FROM US",
             "color": "#ffd25e"
@@ -1269,61 +1266,17 @@
           ],
           "anchor": {
             "x": 540.0,
-            "y": 595.2
+            "y": 518.4000000000001
           }
         }
       ],
       "annotations": [
         {
           "id": "n0",
-          "text": "iron + oxygen = rust",
-          "x": 540,
-          "y": 1370,
-          "size": 61,
-          "anchor": "middle",
-          "variant": "ink",
-          "color": "#a9d8ff",
-          "pop": true,
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "oxygen.",
-                "offset": -1
-              },
-              "value": 0
-            },
-            {
-              "frame": {
-                "at": "oxygen.",
-                "offset": 5
-              },
-              "value": 1
-            },
-            {
-              "frame": {
-                "at": "us.",
-                "offset": -1
-              },
-              "value": 1
-            },
-            {
-              "frame": {
-                "at": "us."
-              },
-              "value": 0
-            }
-          ]
-        },
-        {
-          "id": "n1",
           "text": "Earth",
-          "x": 420,
-          "y": 1300,
-          "size": 37,
+          "x": 300,
+          "y": 1395,
+          "size": 53,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
@@ -1361,13 +1314,13 @@
           "kit": {
             "type": "prop",
             "item": "magnetotail",
-            "x": 0.3,
+            "x": 0.22,
             "y": 0.5,
-            "size": 0.66,
+            "size": 0.5,
             "level": [
               {
                 "frame": 0,
-                "value": 0.2
+                "value": 0.15
               },
               {
                 "frame": {
@@ -1377,16 +1330,41 @@
                 "value": 1
               }
             ],
+            "level2": [
+              {
+                "frame": 0,
+                "value": 0
+              }
+            ],
             "count": 9
-          }
+          },
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.3
+            },
+            {
+              "frame": {
+                "at": "Moon.",
+                "edge": "end",
+                "beat": "r5"
+              },
+              "value": 1.45,
+              "ease": "smoothstep"
+            }
+          ]
         },
         {
           "id": "sun",
           "kit": {
             "type": "planet",
-            "x": -0.06,
+            "x": 0.07,
             "y": 0.5,
-            "radius": 0.14,
+            "radius": 0.13,
             "base": "#ffd25e",
             "bands": [
               "#ffb347",
@@ -1396,29 +1374,67 @@
             "ring": false,
             "shade": 0,
             "seed": 2
-          }
+          },
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.3
+            },
+            {
+              "frame": {
+                "at": "Moon.",
+                "edge": "end",
+                "beat": "r5"
+              },
+              "value": 1.45,
+              "ease": "smoothstep"
+            }
+          ]
         },
         {
           "id": "earth-d",
           "kit": {
             "type": "prop",
             "item": "globe",
-            "x": 0.3,
+            "x": 0.22,
             "y": 0.5,
-            "size": 0.1,
+            "size": 0.11,
             "center": [
               78,
               18
             ]
-          }
+          },
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.3
+            },
+            {
+              "frame": {
+                "at": "Moon.",
+                "edge": "end",
+                "beat": "r5"
+              },
+              "value": 1.45,
+              "ease": "smoothstep"
+            }
+          ]
         },
         {
           "id": "moon-d",
           "kit": {
             "type": "planet",
-            "x": 0.86,
-            "y": 0.26,
-            "radius": 0.03,
+            "x": 0.64,
+            "y": 0.5,
+            "radius": 0.035,
             "base": "#bdb8ad",
             "bands": [],
             "craters": 4,
@@ -1429,19 +1445,38 @@
           "y": [
             {
               "frame": 0,
-              "value": 0
+              "value": -330
             },
             {
               "frame": {
                 "at": "passes"
               },
-              "value": 0
+              "value": -330
             },
             {
               "frame": {
                 "at": "through"
               },
-              "value": 460.79999999999995,
+              "value": 0,
+              "ease": "smoothstep"
+            }
+          ],
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.3
+            },
+            {
+              "frame": {
+                "at": "Moon.",
+                "edge": "end",
+                "beat": "r5"
+              },
+              "value": 1.45,
               "ease": "smoothstep"
             }
           ]
@@ -1451,9 +1486,9 @@
         {
           "id": "n0",
           "text": "Sun",
-          "x": 130,
-          "y": 1300,
-          "size": 37,
+          "x": 150,
+          "y": 1240,
+          "size": 53,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
@@ -1477,8 +1512,8 @@
           "id": "n1",
           "text": "Earth",
           "x": 330,
-          "y": 1130,
-          "size": 37,
+          "y": 1180,
+          "size": 53,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
@@ -1501,9 +1536,9 @@
         {
           "id": "n2",
           "text": "full Moon",
-          "x": 840,
-          "y": 700,
-          "size": 37,
+          "x": 760,
+          "y": 640,
+          "size": 53,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
@@ -1526,15 +1561,72 @@
                 "offset": 5
               },
               "value": 1
+            },
+            {
+              "frame": {
+                "at": "through",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "through"
+              },
+              "value": 0
             }
           ]
         },
         {
           "id": "n3",
-          "text": "oxygen →",
-          "x": 640,
-          "y": 1300,
+          "text": "magnetic tail",
+          "x": 600,
+          "y": 760,
           "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#a9d8ff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tail.",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "tail.",
+                "offset": 5
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "full",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "full"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "text": "oxygen →",
+          "x": 620,
+          "y": 1280,
+          "size": 78,
           "anchor": "middle",
           "variant": "ink",
           "color": "#ff9e6a",
@@ -1561,11 +1653,11 @@
           ]
         },
         {
-          "id": "n4",
+          "id": "n5",
           "text": "NOT TO SCALE",
-          "x": 210,
+          "x": 220,
           "y": 1395,
-          "size": 31,
+          "size": 34,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
@@ -1593,13 +1685,13 @@
       "height": 1920,
       "layers": [
         {
-          "id": "tail6",
+          "id": "tail",
           "kit": {
             "type": "prop",
             "item": "magnetotail",
-            "x": 0.3,
+            "x": 0.22,
             "y": 0.5,
-            "size": 0.66,
+            "size": 0.5,
             "level": [
               {
                 "frame": 0,
@@ -1619,15 +1711,33 @@
               }
             ],
             "count": 9
-          }
+          },
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.45
+            },
+            {
+              "frame": {
+                "at": "forming.",
+                "edge": "end"
+              },
+              "value": 1.55,
+              "ease": "smoothstep"
+            }
+          ]
         },
         {
           "id": "sun",
           "kit": {
             "type": "planet",
-            "x": -0.06,
+            "x": 0.07,
             "y": 0.5,
-            "radius": 0.14,
+            "radius": 0.13,
             "base": "#ffd25e",
             "bands": [
               "#ffb347",
@@ -1637,36 +1747,96 @@
             "ring": false,
             "shade": 0,
             "seed": 2
-          }
+          },
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.45
+            },
+            {
+              "frame": {
+                "at": "forming.",
+                "edge": "end"
+              },
+              "value": 1.55,
+              "ease": "smoothstep"
+            }
+          ]
         },
         {
           "id": "earth-d",
           "kit": {
             "type": "prop",
             "item": "globe",
-            "x": 0.3,
+            "x": 0.22,
             "y": 0.5,
-            "size": 0.1,
+            "size": 0.11,
             "center": [
               78,
               18
             ]
-          }
+          },
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.45
+            },
+            {
+              "frame": {
+                "at": "forming.",
+                "edge": "end"
+              },
+              "value": 1.55,
+              "ease": "smoothstep"
+            }
+          ]
         },
         {
-          "id": "moon-d6",
+          "id": "moon-d",
           "kit": {
             "type": "planet",
-            "x": 0.86,
+            "x": 0.64,
             "y": 0.5,
-            "radius": 0.03,
+            "radius": 0.035,
             "base": "#bdb8ad",
             "bands": [],
             "craters": 4,
             "ring": false,
             "shade": 0.3,
             "seed": 4
-          }
+          },
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            }
+          ],
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.45
+            },
+            {
+              "frame": {
+                "at": "forming.",
+                "edge": "end"
+              },
+              "value": 1.55,
+              "ease": "smoothstep"
+            }
+          ]
         },
         {
           "id": "99",
@@ -1674,9 +1844,9 @@
             "type": "prop",
             "item": "bigword",
             "x": 0.5,
-            "y": 0.3,
+            "y": 0.29,
             "size": 0.09,
-            "text": "99%+ blocked",
+            "text": "99%+ BLOCKED",
             "color": "#ffd25e"
           },
           "opacity": [
@@ -1721,7 +1891,7 @@
           ],
           "anchor": {
             "x": 540.0,
-            "y": 576.0
+            "y": 556.8
           }
         }
       ],
@@ -1731,7 +1901,7 @@
           "text": "solar wind",
           "x": 200,
           "y": 760,
-          "size": 37,
+          "size": 53,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
@@ -1761,11 +1931,11 @@
           "id": "n1",
           "text": "its hydrogen stops rust",
           "x": 540,
-          "y": 1370,
-          "size": 56,
+          "y": 1395,
+          "size": 61,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#eef1f8",
+          "color": "#a9d8ff",
           "pop": true,
           "opacity": [
             {
@@ -1791,9 +1961,9 @@
         {
           "id": "n2",
           "text": "NOT TO SCALE",
-          "x": 210,
+          "x": 220,
           "y": 1395,
-          "size": 31,
+          "size": 34,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
@@ -1821,187 +1991,33 @@
       "height": 1920,
       "layers": [
         {
-          "id": "earth",
-          "kit": {
-            "type": "prop",
-            "item": "globe",
-            "x": 0.5,
-            "y": 0.6145833333333334,
-            "size": 0.1,
-            "center": [
-              78,
-              18
-            ]
-          },
-          "scale": [
-            {
-              "frame": 0,
-              "value": 1.3,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": {
-                "at": "more"
-              },
-              "value": 2.2,
-              "ease": "smoothstep"
-            }
-          ],
-          "x": [
-            {
-              "frame": 0,
-              "value": -0.0,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": {
-                "at": "more"
-              },
-              "value": -167.8,
-              "ease": "smoothstep"
-            }
-          ],
-          "y": [
-            {
-              "frame": 0,
-              "value": -130.0,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": {
-                "at": "more"
-              },
-              "value": -193.4,
-              "ease": "smoothstep"
-            }
-          ],
-          "anchor": {
-            "x": 540.0,
-            "y": 960.0
-          }
-        },
-        {
-          "id": "moon",
+          "id": "near",
           "kit": {
             "type": "planet",
-            "x": 0.6412404467960023,
-            "y": 0.4769798280423281,
-            "radius": 0.065,
+            "x": 0.28,
+            "y": 0.53,
+            "radius": 0.21,
             "base": "#bdb8ad",
             "bands": [],
-            "craters": 5,
+            "craters": 6,
             "ring": false,
-            "shade": 0.3,
+            "shade": 0.25,
             "seed": 4
-          },
-          "scale": [
-            {
-              "frame": 0,
-              "value": 1.3,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": {
-                "at": "more"
-              },
-              "value": 2.2,
-              "ease": "smoothstep"
-            }
-          ],
-          "x": [
-            {
-              "frame": 0,
-              "value": -0.0,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": {
-                "at": "more"
-              },
-              "value": -167.8,
-              "ease": "smoothstep"
-            }
-          ],
-          "y": [
-            {
-              "frame": 0,
-              "value": -130.0,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": {
-                "at": "more"
-              },
-              "value": -193.4,
-              "ease": "smoothstep"
-            }
-          ],
-          "anchor": {
-            "x": 540.0,
-            "y": 960.0
           }
         },
         {
-          "id": "moon-rust",
+          "id": "far",
           "kit": {
-            "type": "prop",
-            "item": "rust-spots",
-            "x": 0.6282404467960023,
-            "y": 0.46418295304232804,
-            "size": 0.0845,
-            "level": [
-              {
-                "frame": 0,
-                "value": 1
-              }
-            ],
-            "count": 5
-          },
-          "scale": [
-            {
-              "frame": 0,
-              "value": 1.3,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": {
-                "at": "more"
-              },
-              "value": 2.2,
-              "ease": "smoothstep"
-            }
-          ],
-          "x": [
-            {
-              "frame": 0,
-              "value": -0.0,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": {
-                "at": "more"
-              },
-              "value": -167.8,
-              "ease": "smoothstep"
-            }
-          ],
-          "y": [
-            {
-              "frame": 0,
-              "value": -130.0,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": {
-                "at": "more"
-              },
-              "value": -193.4,
-              "ease": "smoothstep"
-            }
-          ],
-          "anchor": {
-            "x": 540.0,
-            "y": 960.0
+            "type": "planet",
+            "x": 0.72,
+            "y": 0.53,
+            "radius": 0.21,
+            "base": "#bdb8ad",
+            "bands": [],
+            "craters": 9,
+            "ring": false,
+            "shade": 0.25,
+            "seed": 9
           }
         },
         {
@@ -2009,62 +2025,126 @@
           "kit": {
             "type": "prop",
             "item": "rust-spots",
-            "x": 0.6184904467960023,
-            "y": 0.48794857804232805,
-            "size": 0.07150000000000001,
+            "x": 0.28,
+            "y": 0.53,
+            "size": 0.34,
             "level": [
               {
                 "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "more"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "faces"
+                },
                 "value": 1
               }
             ],
-            "count": 7
+            "count": 9
+          }
+        },
+        {
+          "id": "far-rust",
+          "kit": {
+            "type": "prop",
+            "item": "rust-spots",
+            "x": 0.72,
+            "y": 0.53,
+            "size": 0.3,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "more"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "faces"
+                },
+                "value": 1
+              }
+            ],
+            "count": 2
+          }
+        },
+        {
+          "id": "clue",
+          "kit": {
+            "type": "prop",
+            "item": "bigword",
+            "x": 0.5,
+            "y": 0.3,
+            "size": 0.1,
+            "text": "THE CLUE?",
+            "color": "#a9d8ff"
           },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "clue?",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "clue?"
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "more",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "more"
+              },
+              "value": 0
+            }
+          ],
           "scale": [
             {
               "frame": 0,
-              "value": 1.3,
-              "ease": "smoothstep"
+              "value": 0.5
             },
             {
               "frame": {
-                "at": "more"
+                "at": "clue?",
+                "offset": -1
               },
-              "value": 2.2,
-              "ease": "smoothstep"
-            }
-          ],
-          "x": [
-            {
-              "frame": 0,
-              "value": -0.0,
-              "ease": "smoothstep"
+              "value": 0.5
             },
             {
               "frame": {
-                "at": "more"
+                "at": "clue?",
+                "offset": 8
               },
-              "value": -167.8,
-              "ease": "smoothstep"
-            }
-          ],
-          "y": [
-            {
-              "frame": 0,
-              "value": -130.0,
-              "ease": "smoothstep"
-            },
-            {
-              "frame": {
-                "at": "more"
-              },
-              "value": -193.4,
-              "ease": "smoothstep"
+              "value": 1,
+              "ease": "ease-out-back"
             }
           ],
           "anchor": {
             "x": 540.0,
-            "y": 960.0
+            "y": 576.0
           }
         },
         {
@@ -2073,7 +2153,7 @@
             "type": "prop",
             "item": "bigword",
             "x": 0.5,
-            "y": 0.25,
+            "y": 0.3,
             "size": 0.1,
             "text": "MORE RUST",
             "color": "#c2683a"
@@ -2120,7 +2200,7 @@
           ],
           "anchor": {
             "x": 540.0,
-            "y": 480.0
+            "y": 576.0
           }
         }
       ],
@@ -2128,9 +2208,9 @@
         {
           "id": "n0",
           "text": "faces Earth",
-          "x": 560,
-          "y": 1300,
-          "size": 37,
+          "x": 300,
+          "y": 1340,
+          "size": 53,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
@@ -2158,13 +2238,13 @@
         },
         {
           "id": "n1",
-          "text": "the clue",
-          "x": 330,
-          "y": 780,
-          "size": 61,
+          "text": "far side",
+          "x": 780,
+          "y": 1340,
+          "size": 53,
           "anchor": "middle",
           "variant": "ink",
-          "color": "#a9d8ff",
+          "color": "#eef1f8",
           "pop": true,
           "opacity": [
             {
@@ -2173,14 +2253,14 @@
             },
             {
               "frame": {
-                "at": "clue?",
+                "at": "faces",
                 "offset": -1
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "clue?",
+                "at": "faces",
                 "offset": 5
               },
               "value": 1
@@ -2213,7 +2293,7 @@
           "scale": [
             {
               "frame": 0,
-              "value": 1.3,
+              "value": 1.45,
               "ease": "smoothstep"
             },
             {
@@ -2241,7 +2321,7 @@
           "y": [
             {
               "frame": 0,
-              "value": -130.0,
+              "value": -145.0,
               "ease": "smoothstep"
             },
             {
@@ -2276,7 +2356,7 @@
             "item": "globe",
             "x": 0.5,
             "y": 0.6145833333333334,
-            "size": 0.1,
+            "size": 0.12,
             "center": [
               78,
               18
@@ -2285,7 +2365,7 @@
           "scale": [
             {
               "frame": 0,
-              "value": 1.3,
+              "value": 1.45,
               "ease": "smoothstep"
             },
             {
@@ -2313,7 +2393,7 @@
           "y": [
             {
               "frame": 0,
-              "value": -130.0,
+              "value": -145.0,
               "ease": "smoothstep"
             },
             {
@@ -2335,7 +2415,7 @@
             "type": "planet",
             "x": 0.6412404467960023,
             "y": 0.4769798280423281,
-            "radius": 0.065,
+            "radius": 0.075,
             "base": "#bdb8ad",
             "bands": [],
             "craters": 5,
@@ -2346,7 +2426,7 @@
           "scale": [
             {
               "frame": 0,
-              "value": 1.3,
+              "value": 1.45,
               "ease": "smoothstep"
             },
             {
@@ -2374,7 +2454,7 @@
           "y": [
             {
               "frame": 0,
-              "value": -130.0,
+              "value": -145.0,
               "ease": "smoothstep"
             },
             {
@@ -2395,21 +2475,21 @@
           "kit": {
             "type": "prop",
             "item": "rust-spots",
-            "x": 0.6282404467960023,
-            "y": 0.46418295304232804,
-            "size": 0.0845,
+            "x": 0.6262404467960023,
+            "y": 0.4622142030423281,
+            "size": 0.11249999999999999,
             "level": [
               {
                 "frame": 0,
                 "value": 1
               }
             ],
-            "count": 5
+            "count": 6
           },
           "scale": [
             {
               "frame": 0,
-              "value": 1.3,
+              "value": 1.45,
               "ease": "smoothstep"
             },
             {
@@ -2437,7 +2517,7 @@
           "y": [
             {
               "frame": 0,
-              "value": -130.0,
+              "value": -145.0,
               "ease": "smoothstep"
             },
             {
@@ -2459,8 +2539,8 @@
           "id": "n0",
           "text": "Part 1: the Moon is inside our atmosphere",
           "x": 540,
-          "y": 1370,
-          "size": 37,
+          "y": 1395,
+          "size": 53,
           "anchor": "middle",
           "variant": "ink",
           "color": "#eef1f8",
@@ -2557,7 +2637,7 @@
             "frame": 0,
             "focus": {
               "x": 0.5,
-              "y": 0.5046
+              "y": 0.504
             },
             "zoom": 1.05,
             "easing": "smoothstep"
@@ -2633,11 +2713,11 @@
           "gainDb": -24
         },
         {
-          "sound": "pop",
+          "sound": "whoosh",
           "frame": {
-            "at": "hematite"
+            "at": "India's"
           },
-          "gainDb": -24
+          "gainDb": -22
         },
         {
           "sound": "tick",
@@ -2687,13 +2767,6 @@
           "gainDb": -24
         },
         {
-          "sound": "pop",
-          "frame": {
-            "at": "oxygen."
-          },
-          "gainDb": -24
-        },
-        {
           "sound": "ding",
           "frame": {
             "at": "us."
@@ -2738,6 +2811,13 @@
         {
           "sound": "whoosh",
           "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "tail."
+          },
           "gainDb": -24
         },
         {
@@ -2839,13 +2919,6 @@
         {
           "sound": "whoosh",
           "frame": 0,
-          "gainDb": -24
-        },
-        {
-          "sound": "pop",
-          "frame": {
-            "at": "clue?"
-          },
           "gainDb": -24
         },
         {

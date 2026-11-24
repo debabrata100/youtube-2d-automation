@@ -92,7 +92,9 @@ ep.theme = 'paint-night'
 GOLD, SKY, RUST, HAZE = '#ffd25e', '#a9d8ff', '#c2683a', '#9fc8ff'
 MOONC = '#bdb8ad'
 C = (W / 2, H / 2)
-MOON_R = .03 if NAME == 'geo' else .065   # R1 is about the Moon's surface: a bigger (not-to-scale) Moon
+MOON_R = .05 if NAME == 'geo' else .075   # drawn far bigger than scale (NOT TO SCALE); R1 is about the Moon's surface
+EARTH_SIZE = .16 if NAME == 'geo' else .12
+WIDE = 1.15                                # wide shots: the 630,000 km cloud overfills the width, so the frame is full
 
 # ---- the world: one Earth-Moon space in group pixels, drawn at zoom 1 so the 630,000 km geocorona just fits.
 E = (540, 1180)                       # Earth (drawn far bigger than scale: NOT TO SCALE)
@@ -124,9 +126,9 @@ def world(view, corona=1.0, corona_level=None, moon=True, orbit=True, earth=True
     if corona or corona_level:
         out.append(wl(prop('corona', 'geocorona', E[0] / W, E[1] / H, 2 * R_GC / MS, level=lvl, color=HAZE), view, **({'opacity': corona_opacity} if corona_opacity else {})))
     if orbit: out.append(wl(prop('moon-orbit', 'orbit-ring', E[0] / W, E[1] / H, 2 * R_MOON / MS), view))
-    if earth: out.append(wl(prop('earth', 'globe', E[0] / W, E[1] / H, .1, center=[78, 18]), view))
+    if earth: out.append(wl(prop('earth', 'globe', E[0] / W, E[1] / H, EARTH_SIZE, center=[78, 18]), view))
     if moon: out.append(wl(planet('moon', M[0] / W, M[1] / H, moon_r, MOONC, (), craters=5, shade=.3, seed=4), view, **(moon_extra or {})))
-    if rust: out.append(wl(prop('moon-rust', 'rust-spots', (M[0] - moon_r * MS * .2) / W, (M[1] - moon_r * MS * .35) / H, moon_r * 1.3, level=rust, count=5), view))
+    if rust: out.append(wl(prop('moon-rust', 'rust-spots', (M[0] - moon_r * MS * .2) / W, (M[1] - moon_r * MS * .35) / H, moon_r * 1.5, level=rust, count=6), view))
     return out
 
 
@@ -137,120 +139,171 @@ def big(pid, text, at, y=.31, size=.12, color=GOLD, until=None):
 
 
 def label(text, at, pos, until=None):
-    return Note(text, at, 'label', pos=pos, until=until, size=44)
+    return Note(text, at, 'label', pos=pos, until=until, size=62)
 
 
 def item(pid, it, kx, ky, size, at=0, **extra):
     return Prop(prop(pid, it, kx, ky, size, **extra, **(pop_in(at, (kx * W, ky * H)) if at else {})), None)
 
 
-NOT_TO_SCALE = lambda at=0: Note('NOT TO SCALE', at, 'label', pos=(210, 1395), size=36)
+NOT_TO_SCALE = lambda at=0: Note('NOT TO SCALE', at, 'label', pos=(220, 1395), size=40)
+
+
+def screen(P, z, Fp):
+    """Where world point P appears on screen under a static camera (zoom z, world point Fp at the centre)."""
+    return (C[0] + z * (P[0] - Fp[0]), C[1] + z * (P[1] - Fp[1]))
+
+
+def moving(layer, z, Fp, path):
+    """A world layer that also travels: path [(frame, (dx, dy) world displacement)] under a static camera (z, Fp)."""
+    base_x, base_y = -z * (Fp[0] - C[0]), -z * (Fp[1] - C[1])
+    layer = dict(layer)
+    layer.update(scale=track((0, z)), anchor={'x': C[0], 'y': C[1]},
+                 x=track(*[(f, round(base_x + z * d[0], 1), 'smoothstep') for f, d in path]), y=track(*[(f, round(base_y + z * d[1], 1), 'smoothstep') for f, d in path]))
+    return Prop(layer, None)
+
+
+def bez(p0, p1, p2, p3, t):
+    u = 1 - t
+    return (u**3 * p0[0] + 3 * u * u * t * p1[0] + 3 * u * t * t * p2[0] + t**3 * p3[0], u**3 * p0[1] + 3 * u * u * t * p1[1] + 3 * u * t * t * p2[1] + t**3 * p3[1])
+
+
+def free_return_points(n):
+    """n points along the free-return prop's path (same curve as Paint.tsx), in world pixels, rotated -60 degrees about Earth."""
+    import math
+    D = R_MOON + 30; m = D * .07
+    segs = [((0, 0), (D * .35, -D * .12), (D * .8, -D * .1), (D + m, -m * .2)), ((D + m, -m * .2), (D + m * 2.2, m * .6), (D + m * .6, m * 1.9), (D - m * .2, m * .8)),
+            ((D - m * .2, m * .8), (D * .75, -m * .3), (D * .35, D * .11), (0, m * .1))]
+    lens = [1.0, .35, 1.0]; tot = sum(lens); out = []
+    a = math.radians(-60); ca, sa = math.cos(a), math.sin(a)
+    for i in range(n):
+        u = i / (n - 1) * tot; k = 0
+        while k < 2 and u > lens[k]: u -= lens[k]; k += 1
+        x, y = bez(*segs[k], min(1, u / lens[k]))
+        out.append((x * ca - y * sa, x * sa + y * ca))
+    return out
 
 if NAME == 'geo':
     ep.backdrop(stars=34)
-    ep.music([('g1', 'assets/music/6-space-event-horizon.mp3', 0)], target_lufs=-16)
-    moon_c = (M[0], M[1] + 40)
-    # g1 hook: Orion loops behind the Moon, and the haze is still all around it. STILL INSIDE.
-    v1 = cam([(0, 3, moon_c), (A('Moon'), 2.6, moon_c)])
-    orion = item('orion', 'orion', .72, .36, .2, rotation=-30,
-                 x=track((0, -260), (A('flew'), -120, 'smoothstep'), (A('year.', edge='end'), 0, 'smoothstep')), y=track((0, 260), (A('flew'), 120, 'smoothstep'), (A('year.', edge='end'), 0, 'smoothstep')))
+    ep.music([('g1', 'assets/music/6-space-event-horizon.mp3', 0)], target_lufs=-14)
+    FW = (540, 1040)                                  # wide-shot centre (world)
+    # g1 hook: Orion loops behind the Moon, the glow all around it. STILL INSIDE.
+    v1 = cam([(0, 3, M), (A('Moon'), 2.6, M)])
+    orion = item('orion', 'orion', .72, .4, .26, rotation=-30,
+                 x=track((0, -300), (A('flew'), -140, 'smoothstep'), (A('year.', edge='end'), 0, 'smoothstep')), y=track((0, 300), (A('flew'), 140, 'smoothstep'), (A('year.', edge='end'), 0, 'smoothstep')))
     ep.scene('g1', explain([], world(v1) + [orion, big('still', 'STILL INSIDE', A('Not'))],
-                           [label('Orion · Artemis II', A('astronauts'), (720, 820)), label('Moon', 0, (540, 1000)), NOT_TO_SCALE()],
+                           [label('Orion · Artemis II', A('astronauts'), (540, 1300)), label('Moon', 0, (540, 1200)), NOT_TO_SCALE()],
                            camera_preset=None, sounds=[('ding', A('Not', edge='end'), -20)]))
     # g2 Arka on the Moon points at the black sky: "the Moon is in space!"
-    arka = Char('arka', 'arka', x=.5, fy=.74, h=.24, idle=None, poses=[(0, 'shrug')], faces=[(0, 'shocked')])
+    arka = Char('arka', 'arka', x=.5, fy=.74, h=.26, idle=None, poses=[(0, 'shrug')], faces=[(0, 'shocked')])
     ground = Prop({'id': 'moon-ground', 'kit': {'type': 'terrain', 'top': .74, 'curve': .05, 'fill': '#a9a59c', 'detail': '#8d897f', 'rocks': 4, 'bumps': 7, 'seed': 6}}, Box(0, .74 * H, W, H, 'ground'))
-    sky_earth = item('sky-earth', 'globe', .26, .38, .12, center=[78, 18])
-    sky_corona = item('sky-corona', 'geocorona', .26, .38, .9, level=[{'frame': 0, 'value': 1}], color=HAZE)
-    ep.scene('g2', explain([arka], [sky_corona, sky_earth, ground], [Note('in space?', A('space!'), 'title', pos=(640, 760)), label('Earth', 0, (280, 590))], camera_preset='settle'))
-    # g3 Earth close-up: the 100 km line, then the air keeps going as a thin hydrogen cloud (GEOCORONA).
-    v3 = cam([(0, 3, E), (A('cloud'), 2.4, E)])
-    grow = [{'frame': 0, 'value': 0}, {'frame': plus(A("doesn't"), 0), 'value': .02}, {'frame': A('fades'), 'value': .12}, {'frame': A('hydrogen.', edge='end'), 'value': .3}]
-    line100 = wl(prop('line100', 'orbit-ring', E[0] / W, E[1] / H, .118, opacity=show_from(A('hundred'))), v3)
-    ep.scene('g3', explain([], world(v3, corona_level=grow, moon=False, orbit=False) + [line100, big('starts', 'SPACE STARTS?', A('space'), size=.1)],
-                           [label('100 km', A('hundred'), (790, 870)), Note('GEOCORONA', A('hydrogen.'), 'title', pos=(540, 1580 - 200), color=SKY), NOT_TO_SCALE(A('cloud'))],
+    sky_earth = item('sky-earth', 'globe', .27, .4, .2, center=[78, 18])
+    sky_corona = item('sky-corona', 'geocorona', .27, .4, 1, level=[{'frame': 0, 'value': 1}], color=HAZE)
+    ep.scene('g2', explain([arka], [sky_corona, sky_earth, ground], [Note('in space?', A('space!'), 'title', pos=(680, 760)), label('Earth', 0, (290, 620))], camera_preset='settle'))
+    # g3 Earth close-up: the 100 km line, then the air keeps going: the glow spreads while the camera eases back.
+    v3 = cam([(0, 2.6, E), (A('cloud'), 2.1, E)])
+    grow = [{'frame': 0, 'value': 0}, {'frame': A('But'), 'value': .03}, {'frame': A('stop.', edge='end'), 'value': .22}, {'frame': A('hydrogen.', edge='end'), 'value': .5}]
+    line100 = wl(prop('line100', 'orbit-ring', E[0] / W, E[1] / H, EARTH_SIZE * 1.12, opacity=show_from(A('hundred'))), v3)
+    ep.scene('g3', explain([], world(v3, corona_level=grow, moon=False, orbit=False) + [line100, big('starts', 'SPACE STARTS?', A('space'), size=.1, until=A('But'))],
+                           [label('100 km', A('hundred'), (860, 1010)), Note('GEOCORONA', A('hydrogen.'), 'title', pos=(540, 600), color=SKY), NOT_TO_SCALE(A('cloud'))],
                            camera_preset=None, sounds=[('whoosh', A('fades'), -22)]))
-    # g4 pull back past the Moon's orbit to the cloud's edge: 630,000 km. SOHO inset in the corner.
-    v4 = cam([(0, 2.4, E), (A('reaches'), 1.4, (540, 1060)), (A('Moon.', edge='end'), 1.0, (540, 1060))])
+    # g4 pull back past the Moon's orbit to the cloud's edge: 630,000 km. SOHO in the corner.
+    v4 = cam([(0, 2.1, E), (A('reaches'), 1.4, FW), (A('Moon.', edge='end'), WIDE, FW)])
     ruler = Prop(prop('reach', 'arrow', .5, (E[1] - R_GC / 2) / H, R_GC / MS, rotation=-90, opacity=show_from(A('six')), color=GOLD), None)
-    soho = item('soho', 'satellite', .2, .42, .18, A('SOHO'), variant='soho')
-    ep.scene('g4', explain([], world(v4) + [wl(ruler.layer, v4), soho, big('630', '630,000 km', A('six'), y=.3, size=.11)],
-                           [label('SOHO', A('SOHO'), (210, 920)), label('Moon', A('Moon.'), (760, 820)), Note('≈ 2× the Moon', A('Almost'), 'note', pos=(540, 1380 - 30), color=SKY), NOT_TO_SCALE()],
+    soho = item('soho', 'satellite', .2, .4, .22, A('SOHO'), variant='soho')
+    ep.scene('g4', explain([], world(v4) + [wl(ruler.layer, v4), soho, big('630', '630,000 km', A('six'), y=.29, size=.11)],
+                           [label('SOHO', A('SOHO'), (210, 900)), Note('≈ 2× the Moon', A('Almost'), 'note', pos=(540, 1395), color=SKY), NOT_TO_SCALE()],
                            camera_preset=None, sounds=[('whoosh', A('reaches'), -22)]))
-    # g5 the Moon moves inside it; Apollo 16's ultraviolet photo from the Moon (1972).
-    v5 = cam([(0, 1.0, (540, 1060)), (A('Apollo'), 1.25, (600, 1000))])
-    plate = item('plate', 'photo-plate', .5, .55, .44, A('photographed'), text='Apollo 16 · 1972 · UV', level=[{'frame': 0, 'value': 0}])
-    plate_earth = item('plate-earth', 'globe', .5, .55, .12, A('photographed'), center=[0, 0])
-    plate_glow = item('plate-glow', 'geocorona', .5, .55, .4, A('photographed'), level=[{'frame': 0, 'value': 1}], color='#c9b8ff')
-    ep.scene('g5', explain([], world(v5) + [plate, plate_glow, plate_earth],
-                           [label('Moon', 0, (760, 820)), Note('inside it', A('never'), 'title', pos=(540, 1395)), NOT_TO_SCALE()],
+    # g5 the Moon flies through the glow (it moves along its orbit), then Apollo 16's ultraviolet photo fills the screen.
+    import math
+    arc = lambda deg: (E[0] + R_MOON * math.cos(math.radians(deg)) - M[0], E[1] + R_MOON * math.sin(math.radians(deg)) - M[1])
+    v5 = cam([(0, WIDE, FW)])
+    moon5 = moving(planet('moon', M[0] / W, M[1] / H, MOON_R, MOONC, (), craters=5, shade=.3, seed=4), WIDE, FW,
+                   [(0, arc(-60)), (A('flies'), arc(-48)), (A("atmosphere."), arc(-25)), (A('Apollo'), arc(-15))])
+    plate = item('plate', 'photo-plate', .5, .5, .66, A('Apollo'), text='Apollo 16 · 1972 · far-UV camera', level=[{'frame': 0, 'value': 0}])
+    plate_earth = item('plate-earth', 'globe', .5, .5, .16, A('Apollo'), center=[0, 0])
+    plate_glow = item('plate-glow', 'geocorona', .5, .5, .56, A('photographed'), level=[{'frame': 0, 'value': 1}], color='#c9b8ff')
+    ep.scene('g5', explain([], world(v5, moon=False) + [moon5, plate, plate_glow, plate_earth],
+                           [label('Moon', 0, (860, 700), until=A('Apollo')), Note('flies through it', A('flies'), 'note', pos=(540, 1395), until=A('Apollo'), color=SKY),
+                            Note('taken from the Moon', A('from'), 'note', pos=(540, 545), color=SKY), Note('inside it', A('never'), 'title', pos=(540, 1395))],
                            camera_preset=None, sounds=[('tick', A('photographed'), -22)]))
-    # g6 Artemis II's free-return path: farther than any humans, 406,771 km. STILL INSIDE.
-    v6 = cam([(0, 1.0, (540, 1060))])
+    # g6 Artemis II: Orion rides its free-return path out past the Moon and home: 406,771 km. STILL INSIDE.
+    v6 = cam([(0, WIDE, FW)])
     path = wl(prop('artemis-path', 'free-return', E[0] / W, E[1] / H, (R_MOON + 30) / MS, rotation=-60, color=GOLD,
                    level=[{'frame': 0, 'value': 0}, {'frame': A('flew'), 'value': 0}, {'frame': A('kilometers.', edge='end'), 'value': 1}]), v6)
-    ep.scene('g6', explain([], world(v6) + [path, big('still2', 'STILL INSIDE', A('Still'))],
-                           [Note('Artemis II · Apr 2026', A('April,'), 'small', pos=(540, 760)), Note('406,771 km', A('four'), 'title', pos=(540, 1380 - 30)), NOT_TO_SCALE()],
+    words = ['flew', 'humans', 'farther', 'than', 'ever.', 'Over', 'four', 'hundred', 'thousand', 'kilometers.']
+    pts = free_return_points(len(words))
+    orion6 = moving(prop('orion6', 'orion', E[0] / W, E[1] / H, .16, rotation=30), WIDE, FW, [(0, (0, 0))] + [(A(wd), p) for wd, p in zip(words, pts)])
+    ep.scene('g6', explain([], world(v6) + [path, orion6, big('still2', 'STILL INSIDE', A('Still'))],
+                           [Note('Artemis II · April 2026', A('April,'), 'small', pos=(540, 760)), Note('406,771 km', A('four'), 'title', pos=(540, 1395)), NOT_TO_SCALE()],
                            camera_preset=None, sounds=[('ding', A('Still'), -20)]))
-    # g8 push in on the Moon; one hydrogen dot lands and leaves a red-brown mark. Part 2.
-    v8 = cam([(0, 1.0, (540, 1060)), (A('touches'), 2.2, moon_c), (A('mark.', edge='end'), 3.0, moon_c)])
+    # g8 the glow thins; then push in on the Moon, where a clear red-brown mark appears. Part 2.
+    v8 = cam([(0, WIDE, FW), (A('touches'), 2.2, M), (A('mark.', edge='end'), 3.0, M)])
     mark = [{'frame': 0, 'value': 0}, {'frame': A('leaving'), 'value': 0}, {'frame': A('mark.', edge='end'), 'value': 1}]
-    ep.scene('g8', explain([], world(v8, corona_opacity=track((0, 1), (A('thin,'), .5), (A('But'), .5), (A('touches'), 1)), rust=mark),
-                           [Note('≈ vacuum', A('thin,'), 'note', pos=(540, 1230), color=SKY), Note('Part 2 →', A('mark.'), 'title', pos=(540, 1380 - 30))],
+    ep.scene('g8', explain([], world(v8, corona_opacity=track((0, 1), (A('thin,'), .45), (A('But'), .45), (A('touches'), 1)), rust=mark),
+                           [Note('≈ vacuum', A('thin,'), 'note', pos=(540, 1250), until=A('touches'), color=SKY), Note('Part 2 →', A('mark.'), 'title', pos=(540, 1395))],
                            camera_preset=None, sounds=[('chime', A('mark.'), -26)]))
 else:
     ep.backdrop(stars=34)
-    ep.music([('r1', 'assets/music/6-space-event-horizon.mp3', 0)], target_lufs=-16)
-    moon_c = (M[0], M[1])
+    ep.music([('r1', 'assets/music/6-space-event-horizon.mp3', 0)], target_lufs=-14)
     rust_all = [{'frame': 0, 'value': 1}]
-    # r1 hook: the Moon up close, red-brown patches near its pole. RUST.
-    v1 = cam([(0, 3, moon_c), (A("Earth's", edge='end'), 2.7, moon_c)])
+    FW = (540, 1060)
+    # r1 hook: the Moon up close, red-brown patches. RUST.
+    v1 = cam([(0, 3, M), (A("Earth's", edge='end'), 2.7, M)])
     rust1 = [{'frame': 0, 'value': .2}, {'frame': A('rusting.', edge='end'), 'value': 1}]
-    ep.scene('r1', explain([], world(v1, corona=.0, orbit=False, rust=rust1) + [big('rust', 'RUST', A('rusting.'), size=.16, color=RUST)],
-                           [label('Moon', 0, (540, 1270)), Note("Earth's fault", A('fault.'), 'title', pos=(540, 1390 - 20))],
+    ep.scene('r1', explain([], world(v1, corona=.0, orbit=False, rust=rust1) + [big('rust', 'RUST', A('rusting.'), y=.25, size=.16, color=RUST)],
+                           [Note("Earth's fault", A('fault.'), 'title', pos=(540, 1395))],
                            camera_preset=None, sounds=[('crack', A('rusting.', edge='end'), -22)]))
     # r2 Arka on the Moon: there's no air up here!
-    arka = Char('arka', 'arka', x=.5, fy=.74, h=.24, idle=None, poses=[(0, 'shrug')], faces=[(0, 'shocked')])
+    arka = Char('arka', 'arka', x=.5, fy=.74, h=.26, idle=None, poses=[(0, 'shrug')], faces=[(0, 'shocked')])
     ground = Prop({'id': 'moon-ground', 'kit': {'type': 'terrain', 'top': .74, 'curve': .05, 'fill': '#a9a59c', 'detail': '#8d897f', 'rocks': 4, 'bumps': 7, 'seed': 6}}, Box(0, .74 * H, W, H, 'ground'))
-    spots = item('ground-rust', 'rust-spots', .3, .82, .2, level=rust_all, count=5)
-    ep.scene('r2', explain([arka], [ground, spots], [Note('air: 0', A('air'), 'title', pos=(540, 1040))], camera_preset='settle'))
-    # r3 Chandrayaan-1 passes over the Moon's pole; hematite = RUST.
-    v3 = cam([(0, 2.7, moon_c), (A('hematite'), 2.9, moon_c)])
-    cy1 = item('chandrayaan', 'satellite', .3, .3, .22, variant='chandrayaan-1', x=track((0, -120), (A('hematite'), 160, 'smoothstep')))
-    ep.scene('r3', explain([], world(v3, corona=.0, orbit=False, rust=rust_all) + [cy1, big('rust3', 'RUST', A('Rust.'), size=.16, color=RUST)],
-                           [label('Chandrayaan-1 (ISRO)', A("India's"), (380, 600 + 30)), Note('hematite', A('hematite'), 'title', pos=(540, 1390 - 20)), label('near the poles', A('poles.'), (540, 1300))],
-                           camera_preset=None, sounds=[('tick', A('hematite'), -22)]))
-    # r4 rust needs oxygen: from us. The camera pulls back until Earth is in the frame.
-    v4 = cam([(0, 2.9, moon_c), (A('So'), 1.6, ((E[0] + M[0]) / 2, (E[1] + M[1]) / 2)), (A('us.'), 1.3, (540, 1060))])
-    arrow = wl(prop('from-us', 'arrow', (E[0] + M[0]) / 2 / W, (E[1] + M[1]) / 2 / H, R_MOON * .55 / MS, rotation=-60, color=GOLD, opacity=show_from(A('us.'))), v4)
-    ep.scene('r4', explain([], world(v4, corona=.0, orbit=False, rust=rust_all) + [arrow, big('fromus', 'FROM US', A('us.'))],
-                           [Note('iron + oxygen = rust', A('oxygen.'), 'note', pos=(540, 1390 - 20), until=A('us.'), color=SKY), label('Earth', A('us.'), (420, 1300))],
+    spots = item('ground-rust', 'rust-spots', .3, .83, .26, level=rust_all, count=6)
+    ep.scene('r2', explain([arka], [ground, spots], [Note('air: 0', A('air'), 'title', pos=(680, 760))], camera_preset='settle'))
+    # r3 Chandrayaan-1 sweeps in big, close over the Moon; hematite = RUST.
+    v3 = cam([(0, 2.7, M), (A('hematite'), 3.0, M)])
+    cy1 = item('chandrayaan', 'satellite', .5, .3, .34, variant='chandrayaan-1', rotation=-8,
+               x=track((0, -800), (A('scientists'), -800), (A('hematite'), 0, 'smoothstep'), (A('Rust.', edge='end'), 330, 'smoothstep')))
+    ep.scene('r3', explain([], world(v3, corona=.0, orbit=False, rust=rust_all) + [cy1, big('rust3', 'HEMATITE = RUST', A('hematite'), y=.67, size=.085, color=RUST)],
+                           [label('Chandrayaan-1 · ISRO', A("India's"), (540, 470))],
+                           camera_preset=None, sounds=[('whoosh', A("India's"), -22), ('tick', A('hematite'), -22)]))
+    # r4 rust needs oxygen (a big formula), then the camera pulls back until Earth is in frame: FROM US.
+    v4 = cam([(0, 3.0, M), (A('So'), 1.8, ((E[0] + M[0]) / 2, (E[1] + M[1]) / 2)), (A('us.'), 1.45, FW)])
+    arrow = wl(prop('from-us', 'arrow', (E[0] + M[0]) / 2 / W, (E[1] + M[1]) / 2 / H, R_MOON * .45 / MS, rotation=-60, color=GOLD, opacity=show_from(A('us.'))), v4)
+    ep.scene('r4', explain([], world(v4, corona=.0, orbit=False, rust=rust_all) + [arrow, big('formula', 'IRON + OXYGEN = RUST', A('oxygen.'), y=.27, size=.065, color=SKY, until=A('us.')),
+                                                                                  big('fromus', 'FROM US', A('us.'), y=.27)],
+                           [label('Earth', A('us.'), (300, 1395))],
                            camera_preset=None, sounds=[('ding', A('us.'), -20)]))
-    # r5-r6 one side-view diagram: Sun, Earth, the magnetotail; at full Moon the Moon slides into the tail and oxygen drifts along.
-    sun = Prop(planet('sun', -.06, .5, .14, '#ffd25e', ('#ffb347', '#ffd25e'), shade=0, seed=2), None)
-    tail = item('tail', 'magnetotail', .3, .5, .66, level=[{'frame': 0, 'value': .2}, {'frame': A('tail.', edge='end'), 'value': 1}], count=9)
-    earth_d = item('earth-d', 'globe', .3, .5, .1, center=[78, 18])
-    moon_d = Prop(planet('moon-d', .86, .26, .03, MOONC, (), craters=4, shade=.3, seed=4,
-                         y=track((0, 0), (A('passes'), 0), (A('through'), 0.24 * H, 'smoothstep'))), None)
-    ep.scene('r5', explain([], [tail, sun, earth_d, moon_d],
-                           [label('Sun', 0, (130, 1300)), label('Earth', 0, (330, 1130)), label('full Moon', A('full'), (840, 700)),
-                            Note('oxygen →', A('oxygen'), 'note', pos=(640, 1300), color='#ff9e6a'), NOT_TO_SCALE()],
+    # r5-r6 one side-view diagram that fills the width, with a slow push-in: Sun, Earth, the tail; the full Moon slides in; then the wind.
+    D = {'anchor': {'x': C[0], 'y': C[1]}}
+    def dl(layer, z0, z1, a0, a1):
+        layer = dict(layer); layer.update(D); layer['scale'] = track((a0, z0), (a1, z1, 'smoothstep')); return Prop(layer, None)
+    end5, end6 = A('Moon.', beat='r5', edge='end'), A('forming.', edge='end')
+    def diagram(z0, z1, a1, tail_level, wind, moon_y, dots):
+        return [dl(prop('tail', 'magnetotail', .22, .5, .5, level=tail_level, level2=wind, count=dots), z0, z1, 0, a1),
+                dl(planet('sun', .07, .5, .13, '#ffd25e', ('#ffb347', '#ffd25e'), shade=0, seed=2), z0, z1, 0, a1),
+                dl(prop('earth-d', 'globe', .22, .5, .11, center=[78, 18]), z0, z1, 0, a1),
+                dl(planet('moon-d', .64, .5, .035, MOONC, (), craters=4, shade=.3, seed=4, y=moon_y), z0, z1, 0, a1)]
+    ep.scene('r5', explain([], diagram(1.3, 1.45, end5, [{'frame': 0, 'value': .15}, {'frame': A('tail.', edge='end'), 'value': 1}], [{'frame': 0, 'value': 0}],
+                                       track((0, -330), (A('passes'), -330), (A('through'), 0, 'smoothstep')), 9),
+                           [label('Sun', 0, (150, 1240)), label('Earth', 0, (330, 1180)), label('full Moon', A('full'), (760, 640), until=A('through')),
+                            Note('magnetic tail', A('tail.'), 'note', pos=(600, 760), until=A('full'), color=SKY), Note('oxygen →', A('oxygen'), 'title', pos=(620, 1280), color='#ff9e6a'), NOT_TO_SCALE()],
                            camera_preset=None, sounds=[('whoosh', A('passes'), -22)]))
-    tail6 = item('tail6', 'magnetotail', .3, .5, .66, level=[{'frame': 0, 'value': 1}], level2=[{'frame': 0, 'value': 0}, {'frame': A('blocks'), 'value': 1}], count=9)
-    moon6 = Prop(planet('moon-d6', .86, .5, .03, MOONC, (), craters=4, shade=.3, seed=4), None)
-    ep.scene('r6', explain([], [tail6, sun, earth_d, moon6, big('99', '99%+ blocked', A('blocks'), y=.3, size=.09)],
-                           [label('solar wind', A('solar'), (200, 760)), Note('its hydrogen stops rust', A('stops'), 'small', pos=(540, 1390 - 20)), NOT_TO_SCALE()],
+    ep.scene('r6', explain([], diagram(1.45, 1.55, end6, [{'frame': 0, 'value': 1}], [{'frame': 0, 'value': 0}, {'frame': A('blocks'), 'value': 1}], track((0, 0)), 9)
+                           + [big('99', '99%+ BLOCKED', A('blocks'), y=.29, size=.09)],
+                           [label('solar wind', A('solar'), (200, 760)), Note('its hydrogen stops rust', A('stops'), 'note', pos=(540, 1395), color=SKY), NOT_TO_SCALE()],
                            camera_preset=None))
-    # r7 back in the world: the near side (facing Earth) has more rust than the far side.
-    v7 = cam([(0, 1.3, (540, 1060)), (A('more'), 2.2, ((E[0] + M[0]) / 2, (E[1] + M[1]) / 2))])
-    near = wl(prop('near-rust', 'rust-spots', (M[0] - MOON_R * MS * .35) / W, (M[1] + MOON_R * MS * .3) / H, MOON_R * 1.1, level=rust_all, count=7), v7)
-    ep.scene('r7', explain([], world(v7, corona=.0, orbit=False, rust=rust_all) + [near, big('more', 'MORE RUST', A('more'), y=.25, color=RUST, size=.1)],
-                           [label('faces Earth', A('faces'), (560, 1300)), Note('the clue', A('clue?'), 'note', pos=(330, 780), color=SKY)],
+    # r7 the clue, side by side: the near side (facing Earth) is rustier than the far side.
+    nm = Prop(planet('near', .28, .53, .21, MOONC, (), craters=6, shade=.25, seed=4), None)
+    fm = Prop(planet('far', .72, .53, .21, MOONC, (), craters=9, shade=.25, seed=9), None)
+    nr = item('near-rust', 'rust-spots', .28, .53, .34, level=[{'frame': 0, 'value': 0}, {'frame': A('more'), 'value': 0}, {'frame': A('faces'), 'value': 1}], count=9)
+    fr = item('far-rust', 'rust-spots', .72, .53, .3, level=[{'frame': 0, 'value': 0}, {'frame': A('more'), 'value': 0}, {'frame': A('faces'), 'value': 1}], count=2)
+    ep.scene('r7', explain([], [nm, fm, nr, fr, big('clue', 'THE CLUE?', A('clue?'), y=.3, color=SKY, size=.1, until=A('more')), big('more', 'MORE RUST', A('more'), y=.3, color=RUST, size=.1)],
+                           [label('faces Earth', A('faces'), (300, 1340)), label('far side', A('faces'), (780, 1340))],
                            camera_preset=None, sounds=[('tick', A('more'), -22)]))
-    # r9 a little of Earth's sky (the haze from Part 1 reaching the Moon) turning to rust; back on the red spot to loop.
-    v9 = cam([(0, 1.3, (540, 1060)), (A('turning'), 3.0, moon_c)])
+    # r9 a little of Earth's sky (the glow from Part 1 reaching the Moon) turning to rust; back on the rusty Moon to loop.
+    v9 = cam([(0, 1.45, FW), (A('turning'), 3.0, M)])
     ep.scene('r9', explain([], world(v9, corona=1.0, orbit=False, rust=rust_all, corona_opacity=track((0, 0), (A("sky,"), 1))),
-                           [label('Part 1: the Moon is inside our atmosphere', A('sky,'), (540, 1390 - 20))],
+                           [label('Part 1: the Moon is inside our atmosphere', A('sky,'), (540, 1395))],
                            camera_preset=None, sounds=[('chime', A('Moon.'), -26)]))
 
 tag = note('brand-tag', 'GAHANARKA', 200, 1475, 0, size=40, color=GOLD)
