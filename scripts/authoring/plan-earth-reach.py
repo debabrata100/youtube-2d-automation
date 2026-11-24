@@ -200,15 +200,29 @@ if NAME == 'geo':
     sky_earth = item('sky-earth', 'globe', .27, .4, .2, center=[78, 18])
     sky_corona = item('sky-corona', 'geocorona', .27, .4, 1, level=[{'frame': 0, 'value': 1}], color=HAZE)
     ep.scene('g2', explain([arka], [sky_corona, sky_earth, ground], [Note('in space?', A('space!'), 'title', pos=(680, 760)), label('Earth', 0, (290, 620))], camera_preset='settle'))
-    # g3 Earth close-up: the 100 km line, then the air keeps going: the glow spreads while the camera eases back.
-    v3 = cam([(0, 2.6, E), (A('cloud'), 2.1, E)])
-    grow = [{'frame': 0, 'value': 0}, {'frame': A('But'), 'value': .03}, {'frame': A('stop.', edge='end'), 'value': .22}, {'frame': A('hydrogen.', edge='end'), 'value': .5}]
-    line100 = wl(prop('line100', 'orbit-ring', E[0] / W, E[1] / H, EARTH_SIZE * 1.12, opacity=show_from(A('hundred'))), v3)
-    ep.scene('g3', explain([], world(v3, corona_level=grow, moon=False, orbit=False) + [line100, big('starts', 'SPACE STARTS?', A('space'), size=.1, until=A('But'))],
-                           [label('100 km', A('hundred'), (860, 1010)), Note('GEOCORONA', A('hydrogen.'), 'title', pos=(540, 600), color=SKY), NOT_TO_SCALE(A('cloud'))],
-                           camera_preset=None, sounds=[('whoosh', A('fades'), -22)]))
+    # g3 a big, close Earth fills the bottom of the frame. A rocket launches and crosses the dashed 100 km line ("SPACE STARTS?").
+    # On "But Earth's air doesn't just stop" everything pulls back and the glow keeps spreading out past the line (GEOCORONA).
+    BIG_C = (540, 1700)                               # big Earth's centre on screen (its top sits at y 1160)
+    PULL = .4                                          # pull-back scale; Earth then sits where g4's camera starts
+    def g3l(layer, extra_scale=1.0):
+        layer = dict(layer); layer['anchor'] = {'x': C[0], 'y': C[1]}
+        layer['scale'] = track((0, extra_scale), (A('But'), extra_scale), (A('stop.', edge='end'), extra_scale * PULL, 'smoothstep'))
+        return Prop(layer, None)
+    big_earth = g3l(prop('big-earth', 'globe', BIG_C[0] / W, BIG_C[1] / H, 1.0, center=[78, 18]))
+    ring100 = g3l(prop('ring100', 'orbit-ring', BIG_C[0] / W, BIG_C[1] / H, 1.0, opacity=track((0, 0), (plus(A('hundred'), -1), 0), (A('hundred'), 1), (A('stop.'), 1), (A('fades'), .35))))
+    rocket = Prop(prop('rocket3', 'rocket', .5, 1130 / H, .13, y=track((0, 0), (A('space'), 0), (A('up.', edge='end'), -330, 'smoothstep'), (A('But'), -420, 'smoothstep'), (A('stop.', edge='end'), -1200, 'smoothstep'))), None)
+    earth_y = C[1] + PULL * (BIG_C[1] - C[1])          # 1252: big Earth's centre after the pull-back
+    glow = Prop(prop('glow3', 'geocorona', BIG_C[0] / W, BIG_C[1] / H, 1.0, color=HAZE,
+                     level=[{'frame': 0, 'value': .55}, {'frame': A('But'), 'value': .55}, {'frame': A('stop.', edge='end'), 'value': .7}, {'frame': A('hydrogen.', edge='end'), 'value': 1}],
+                     y=track((0, 0), (A('But'), 0), (A('stop.', edge='end'), round(earth_y - BIG_C[1]), 'smoothstep')),
+                     scale=track((0, .9), (A('But'), .9), (A('stop.', edge='end'), 1.3, 'smoothstep'), (A('hydrogen.', edge='end'), 2.4, 'smoothstep')),
+                     anchor={'x': BIG_C[0], 'y': BIG_C[1]}, opacity=track((0, 0), (A("Earth's"), 0), (A("doesn't"), 1))), None)
+    ep.scene('g3', explain([], [glow, big_earth, ring100, rocket, big('starts', 'SPACE STARTS?', A('space'), size=.1, until=A('But')), big('keeps', 'IT KEEPS GOING', A("doesn't"), size=.09, color=SKY, until=A('hydrogen.'))],
+                           [label('100 km', A('hundred'), (860, 1060), until=A('But')), Note('GEOCORONA', A('hydrogen.'), 'title', pos=(540, 600), color=SKY), NOT_TO_SCALE(A('cloud'))],
+                           camera_preset=None, sounds=[('whoosh', A('space'), -22), ('whoosh', A('fades'), -22)]))
     # g4 pull back past the Moon's orbit to the cloud's edge: 630,000 km. SOHO in the corner.
-    v4 = cam([(0, 2.1, E), (A('reaches'), 1.4, FW), (A('Moon.', edge='end'), WIDE, FW)])
+    z4 = 1080 * PULL / 2 / (EARTH_SIZE * MS / 2)       # g4 opens with Earth the same size and place as g3's last frame
+    v4 = cam([(0, round(z4, 2), (E[0], E[1] - (1252 - C[1]) / z4)), (A('reaches'), 1.4, FW), (A('Moon.', edge='end'), WIDE, FW)])
     ruler = Prop(prop('reach', 'arrow', .5, (E[1] - R_GC / 2) / H, R_GC / MS, rotation=-90, opacity=show_from(A('six')), color=GOLD), None)
     soho = item('soho', 'satellite', .2, .4, .22, A('SOHO'), variant='soho')
     ep.scene('g4', explain([], world(v4) + [wl(ruler.layer, v4), soho, big('630', '630,000 km', A('six'), y=.29, size=.11)],
