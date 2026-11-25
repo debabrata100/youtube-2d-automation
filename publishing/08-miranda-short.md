@@ -28,7 +28,7 @@ Full episode: How You'd Die on Every Moon in the Solar System.
 ```
 
 ## Related video
-Ep 3, "How You'd Die on Every Moon in the Solar System" (`MnfXbn6mD8I`). Copy the ID from Studio, never retype it.
+Ep 3, "How You'd Die on Every Moon in the Solar System" (reworked copy `M9o6HqK5zSs`; the old `MnfXbn6mD8I` is private). Copy the ID from Studio, never retype it.
 
 ## Pinned comment
 
@@ -51,4 +51,5 @@ Playlist "Could You Survive…?", not made for kids, Science & Technology, Alter
 - [x] Title ≤50 characters; first 5 s deliver the title's promise (the step off the cliff).
 - [x] Repetition: own hook, own 9:16 layout (tall cliff, vertical fall), own ending ("full story below" + Arka's airbag); not a trimmed clip of Ep 3's 16:9 frames.
 - [x] Different from the last 3 uploads' title and thumbnail template (white page, big red number).
-- [ ] Video link copied from Studio; Related video set; pinned comment after it's live.
+- [x] Public since Tue 24 Nov, 9:30 PM; Related video → M9o6HqK5zSs (checked in Studio 25 Nov).
+- [ ] Pinned comment (waiting for Debabrata's OK).
