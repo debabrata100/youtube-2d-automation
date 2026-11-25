@@ -1,4 +1,4 @@
-# 20: R1 Short, "India's Chandrayaan Found Rust on the Moon 🇮🇳🌕"
+# 20: R1 Short, "The Moon's Rust Faces Earth. Why? 🌕"
 
 - **Status:** ready to upload (24 Nov 2026). **Post it 30 minutes before G1, on the same day:** R1 at 9:00 PM, G1 at 9:30 PM IST (decided 24 Nov). **Date: Fri 27 Nov** (November loop test). G1 ends on "Part 2 →", so Part 2 must already be live.
 - **File:** `why-the-moon-is-rusting.mp4` in this folder (44 s, 9:16, -14.2 LUFS, -2.1 dBTP). Source: `jobs/rust-final-2/output/narrated-animation.mp4`. All checks passed.
@@ -6,8 +6,8 @@
 - **Narration:** Gahanarka R1 + Arka E3 (ElevenLabs, 573 characters, 2 requests, 23 Nov).
 
 ## Title
-**India's Chandrayaan Found Rust on the Moon 🇮🇳🌕**
-(Changed 24 Nov to stand apart from the 883K "The Moon Is Rusting… Because of Earth" Short. Backup: Why the Moon Is Rusting 🌕🤯 Earth's Oxygen.)
+**The Moon's Rust Faces Earth. Why? 🌕**
+(Changed 25 Nov in Studio from "India's Chandrayaan Found Rust on the Moon 🇮🇳🌕": still distinct from the 883K "The Moon Is Rusting… Because of Earth" Short, but no country flag, since the channel targets US/UK viewers. The Short's last clue answers the title. Chandrayaan-1 keeps its credit in the narration and description.)
 
 ## Description (paste as is)
 
@@ -25,7 +25,7 @@ Facts:
 
 Sources: NASA/JPL, ISRO, Science Advances.
 
-#Moon #Chandrayaan #ISRO #Shorts
+#Moon #Space #Shorts
 ```
 
 (The channel's default footer is added automatically.)
@@ -36,7 +36,7 @@ G1 "Why the Moon Is Inside Earth's Atmosphere" (Part 1).
 ## Pinned comment
 
 ```
-India's Chandrayaan-1 helped find rust on the Moon 🇮🇳🌕 and the oxygen comes from us. Part 1: why the Moon is inside Earth's atmosphere 👇
+Chandrayaan-1 helped find rust on the Moon 🌕 and the oxygen comes from us. Why is there more on the side facing Earth? Part 1: why the Moon is inside Earth's atmosphere 👇
 ```
 
 ## Tags

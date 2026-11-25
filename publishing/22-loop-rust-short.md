@@ -13,15 +13,15 @@
 ```
 The Moon is rusting, and it's Earth's fault 🌕 India's Chandrayaan-1 orbiter found hematite (rust) near the Moon's poles, and the oxygen comes from Earth, carried along our planet's magnetic tail.
 
-Full story in the related video: India's Chandrayaan Found Rust on the Moon.
+Full story in the related video: The Moon's Rust Faces Earth. Why?
 
 Sources: NASA/JPL, ISRO, Li et al., Science Advances (2020).
 
-#Moon #Chandrayaan #ISRO #Shorts
+#Moon #Space #Shorts
 ```
 
 ## Related video
-R1 "India's Chandrayaan Found Rust on the Moon 🇮🇳🌕" (public from Fri 27 Nov, 9:00 PM).
+R1 "The Moon's Rust Faces Earth. Why? 🌕" (public from Fri 27 Nov, 9:00 PM).
 
 ## Pinned comment
 

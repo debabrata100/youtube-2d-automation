@@ -32,7 +32,7 @@ Sources: ESA, NASA, SOHO (Baliukin et al. 2019), AP.
 (The channel's default footer, with the AI-narration note, is added under this automatically.)
 
 ## Related video
-**R1 "India's Chandrayaan Found Rust on the Moon" (Part 2).** It is already public when G1 goes live, so the "Part 2 →" card is one tap away.
+**R1 "The Moon's Rust Faces Earth. Why?" (Part 2).** It is already public when G1 goes live, so the "Part 2 →" card is one tap away.
 
 ## Pinned comment (post right after it goes public)
 
