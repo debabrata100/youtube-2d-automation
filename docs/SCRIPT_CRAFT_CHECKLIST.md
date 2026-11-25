@@ -52,6 +52,15 @@ S7 "NASA Lost Voyager 1 for 48 Hours" (opened on a crisis) has about 27× its vi
 - [ ] **Check: no "explanation lull" just before the payoff.** If a line only restates or compares, cut it or put a new picture on it.
 - [ ] **A Related-video bridge from a stronger Short** to its sibling is worth testing (YouTube suggested S7 → S8). It's a trade-off against linking to a long episode for watch hours.
 
+## Shorts: the "you" hook (from S4 Miranda, 25 Nov 2026)
+S4 "You'd Fall for 12 Minutes on This Moon" (37 s): 1.1K views in 23 h, **58.8% stayed** (others 47–50%), 96.7% of views from the Shorts feed, 1.7% from search, 0 subscribers.
+The feed decides on the first second's picture and line, so the hook and script did the work, not the title.
+- [ ] **Line 1 = "you" + a physical action + one impossible number.** "On one moon… you could step off a cliff and fall for twelve whole minutes." The number breaks a gut instinct (a fall takes seconds). No names, dates or jargon until line 2.
+- [ ] **Then escalate:** size → everyday comparison (twice Everest) → a sensory beat ("twelve silent minutes") → stakes ("that's the end") → twist ("NASA thinks airbags could save you") → Arka's one-line punchline ("I brought one!").
+- [ ] **A thought experiment, not a fact list.** The channel's promise; the spec-led Voyager memory Short held 47%.
+- [ ] **A vertical idea for a vertical screen** (a tall cliff, a fall) and 30–40 s.
+- [ ] **Turn viewers into subscribers:** S4 gained 0. Every Short needs the Related video to its episode and a pinned comment with a question from day one.
+
 ## Shorts: titles (23 Nov 2026)
 - Keep a Short's title **at or under ~40 characters**: the phone feed cuts it off there, so the payoff word must fit.
 - Use the **same wording as the episode it links to and as people search** ("What if the Sun disappeared", not "vanished").
