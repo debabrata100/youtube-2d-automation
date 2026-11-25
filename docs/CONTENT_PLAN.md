@@ -6,7 +6,8 @@ Started 19 Nov 2026. These are ideas to revisit, not commitments. Before any top
 
 ## Positioning (agreed 21 Nov 2026)
 
-**The viewer:** a curious 16–35-year-old who watches Kurzgesagt, Astrum or Vsauce and wants to *feel* a space idea, with real numbers behind it. A grown-up audience: never children's content.
+**The viewer:** a curious adult, mostly 25–44, who watches Kurzgesagt, Astrum or Vsauce and wants to *feel* a space idea, with real numbers behind it. A grown-up audience: never children's content.
+(Updated 25 Nov 2026 from "16–35". Channel analytics, last 28 days, mostly the Miranda Short: 35–44 43%, 25–34 31%, 45–54 16%, 18–24 10%; 70% male; India 12%, US 8%, Philippines 4%, the rest spread thinly. Signed-in viewers only and a small sample: re-check after the loop test. Pick everyday references that land for people around 30–40: work, family, cars, travel.)
 
 **The promise:** "What would really happen if…? Space thought experiments in a hand-drawn style, made with our own animation tools and checked against real science." (Wording changed 23 Nov 2026: our visuals come from our own code, so we never say "drawn by hand".)
 

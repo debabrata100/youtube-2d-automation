@@ -68,7 +68,7 @@ The feed decides on the first second's picture and line, so the hook and script 
 - Don't repeat the episode's own title; tease a different angle or ask a question the Short answers ("Who'd Notice Last?").
 
 ## Grown-up audience (positioning, 21 Nov 2026)
-Our viewer is a curious 16–35-year-old, not a child. A cartoon style is fine; a children's tone is not.
+Our viewer is a curious adult, mostly 25–44 (channel analytics, 25 Nov 2026), not a child. A cartoon style is fine; a children's tone is not.
 - [ ] **Stakes and topics for adults:** real science, real numbers and sources, consequences that matter to grown-ups (energy, work, cities, extinction), told calmly. Dark themes stay non-graphic.
 - [ ] **Arka's humour is dry or ironic, never babyish:** adult references (Mondays, coffee, deadlines, taxes, a tan), no baby talk, no "yay!" or silly noises as the joke.
 - [ ] **Normal adult vocabulary;** never "kids", "boys and girls", "let's learn", or explaining as if to a child. Explain clearly, don't talk down.
