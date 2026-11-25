@@ -52,4 +52,4 @@ Playlist "Could You Survive…?", not made for kids, Science & Technology, Alter
 - [x] Repetition: own hook, own 9:16 layout (tall cliff, vertical fall), own ending ("full story below" + Arka's airbag); not a trimmed clip of Ep 3's 16:9 frames.
 - [x] Different from the last 3 uploads' title and thumbnail template (white page, big red number).
 - [x] Public since Tue 24 Nov, 9:30 PM; Related video → M9o6HqK5zSs (checked in Studio 25 Nov).
-- [ ] Pinned comment (waiting for Debabrata's OK).
+- [x] Pinned comment posted and pinned 25 Nov (Debabrata's OK).
