@@ -67,7 +67,7 @@ export const Terrain: React.FC<{config: TerrainConfig; theme: Theme; width: numb
 
 export type PropConfig = {ink?: string; item: 'thermometer' | 'pressure-arrows' | 'motion-lines' | 'exclaim' | 'question' | 'check' | 'cross' | 'counter' | 'stamp' | 'vignette' | 'station' | 'helmet' | 'doodle-stars' | 'chamber'
   | 'cliff' | 'geyser' | 'plume' | 'radiation-meter' | 'radiation-belt' | 'battery' | 'airbag' | 'small-moon' | 'asteroid' | 'ice-cutaway' | 'frost'
-  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb' | 'crescent' | 'orbit-ring' | 'town' | 'lion' | 'zebra' | 'coral' | 'plankton' | 'tide-gauge' | 'tilt-dial' | 'earth-axis' | 'impact' | 'dino' | 'reflector' | 'bed' | 'stir' | 'clock' | 'eclipse' | 'moonbeam' | 'young-earth' | 'bee' | 'flower' | 'tree' | 'tardigrade' | 'vent' | 'shell' | 'snowfall' | 'night-half' | 'mushroom' | 'sparkle' | 'clock-time' | 'rope' | 'pulse' | 'span' | 'sky' | 'streetlight' | 'arrow' | 'ice-layer' | 'city-lights' | 'tide-bulge' | 'caption' | 'globe' | 'map' | 'skyline' | 'wave' | 'shockwave' | 'debris' | 'flash' | 'dust-cloud' | 'headline' | 'rewind' | 'scribble' | 'streak' | 'pen' | 'satellite' | 'observatory' | 'photo-plate' | 'corkboard' | 'dish' | 'moon-row' | 'xmas-tree' | 'geocorona' | 'orion' | 'magnetotail' | 'rust-spots' | 'free-return' | 'bigword'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
+  | 'flag' | 'speedometer' | 'race-car' | 'sunglasses' | 'mug' | 'calendar' | 'sign' | 'igloo' | 'rocket' | 'fish' | 'drop' | 'tumbleweed' | 'thermos' | 'shovel' | 'magnifier' | 'smell-lines' | 'bar' | 'ruler' | 'moon-map' | 'system-map' | 'solar-strip' | 'probe' | 'signal' | 'bulb' | 'crescent' | 'orbit-ring' | 'town' | 'lion' | 'zebra' | 'coral' | 'plankton' | 'tide-gauge' | 'tilt-dial' | 'earth-axis' | 'impact' | 'dino' | 'reflector' | 'bed' | 'stir' | 'clock' | 'eclipse' | 'moonbeam' | 'young-earth' | 'bee' | 'flower' | 'tree' | 'tardigrade' | 'vent' | 'shell' | 'snowfall' | 'night-half' | 'mushroom' | 'sparkle' | 'clock-time' | 'rope' | 'pulse' | 'span' | 'sky' | 'streetlight' | 'arrow' | 'ice-layer' | 'city-lights' | 'tide-bulge' | 'caption' | 'globe' | 'map' | 'skyline' | 'wave' | 'shockwave' | 'debris' | 'flash' | 'dust-cloud' | 'headline' | 'rewind' | 'scribble' | 'streak' | 'pen' | 'satellite' | 'observatory' | 'photo-plate' | 'corkboard' | 'dish' | 'moon-row' | 'xmas-tree' | 'geocorona' | 'orion' | 'magnetotail' | 'rust-spots' | 'free-return' | 'bigword' | 'sky-moon' | 'moon-glitter'; x: number; y: number; size: number; rotation: number; color?: string; count: number; level: Array<{frame: number; value: number}>;
   values?: Array<{frame: number; value: number; ramp?: boolean}>; text?: string; direction?: 'in' | 'out';
   labels?: string[]; colors?: string[]; highlight?: number; ring?: boolean; belt?: boolean; range?: [number, number];
   center?: [number, number]; spin?: number; bbox?: [number, number, number, number]; mark?: {lon: number; lat: number; km: number}; zoom?: number; level2?: Array<{frame: number; value: number}>; variant?: 'comms' | 'soho' | 'chandrayaan-1'};
@@ -127,11 +127,11 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
       // Big hand-lettered number in a box; it pops each time the value changes and turns red in the last five.
       const keys = c.values ?? [], v = counterAt(keys, frame);
       let since = 99; for (let k = 1; k <= 8; k++) if (counterAt(keys, frame - k) !== v) { since = k; break; }
-      const pop = since <= 8 ? 1 + .18 * (1 - since / 8) : 1, bw = s * 1.15, bh = s * .82, col = v <= 5 ? red : ink;
+      const pop = since <= 8 ? 1 + .18 * (1 - since / 8) : 1, bw = s * 1.15, bh = s * .82, col = c.color ?? (v <= 5 ? red : ink);
       return <g transform={`${at} scale(${pop})`}>
         <rect x={-bw / 2} y={-bh / 2} width={bw} height={bh} rx={s * .12} fill={c.ink ? 'none' : '#ffffff'} stroke={ink} strokeWidth={w * 1.2}/>
         <text x={0} y={bh * .26} textAnchor="middle" fontFamily={font} fontSize={s * .66} fill={col} stroke={col} strokeWidth={s * .012}>{String(v)}</text>
-        {c.text && <text x={0} y={bh / 2 + s * .22} textAnchor="middle" fontFamily={font} fontSize={s * .17} fill={ink}>{c.text}</text>}
+        {c.text && <text x={0} y={bh / 2 + s * .22} textAnchor="middle" fontFamily={font} fontSize={s * (c.color ? .2 : .17)} fill={ink}>{c.text}</text>}
       </g>;
     }
     case 'stamp': {
@@ -659,6 +659,21 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
           {[[-.3, -.25, .14], [.2, -.1, .1], [-.05, .3, .17], [.32, .28, .08]].map(([cx, cy, cr], i) =>
             <circle key={i} cx={cx * r} cy={cy * r} r={cr * r} fill="none" stroke={ink} strokeWidth={w * .4} opacity=".5"/>)}
           <circle r={r} fill="none" stroke={ink} strokeWidth={w}/>
+        </g>;
+      }
+      if (c.text === 'annular') {
+        // Totality that fails: the Moon's disc shrinks with level (0 = total, corona showing; 1 = a ring of Sun is left around it).
+        const mr = r * (1.03 - .17 * p), cor = 1 - p;
+        return <g transform={at}>
+          {Array.from({length: 36}, (_, i) => { const a = i / 36 * Math.PI * 2 + .05, l = r * (1.22 + ((i * 7) % 5) * .075 + Math.sin(frame / 14 + i) * .02);
+            return <path key={i} d={`M ${Math.cos(a) * r * 1.02} ${Math.sin(a) * r * 1.02} L ${Math.cos(a) * l} ${Math.sin(a) * l}`} {...stroke('#fff4c2', w * .55)} opacity={cor * .55}/>; })}
+          {Array.from({length: 10}, (_, i) => { const a = i / 10 * Math.PI * 2 + .35 + Math.sin(i * 2.3) * .2, l = r * (1.55 + ((i * 3) % 4) * .16), hw = .09 + (i % 3) * .03;
+            return <path key={'s' + i} d={`M ${Math.cos(a - hw) * r} ${Math.sin(a - hw) * r} L ${Math.cos(a) * l} ${Math.sin(a) * l} L ${Math.cos(a + hw) * r} ${Math.sin(a + hw) * r} Z`} fill="#fff6d8" opacity={cor * (.2 + .05 * Math.sin(frame / 16 + i))}/>; })}
+          <circle r={r * 1.5} fill="#fff6d8" opacity={.05 + cor * .05}/>
+          <circle r={r * 1.3} fill="#fff6d8" opacity={.1 + cor * .12}/>
+          <circle r={r * 1.14} fill="#fff6d8" opacity={.3 + cor * .3}/>
+          <circle r={r} fill="#ffc93a"/>
+          <circle r={mr} fill="#0b1026"/>
         </g>;
       }
       const mx = (1 - p) * -r * 2.2, cor = Math.max(0, (p - .85) / .15);
@@ -1333,6 +1348,44 @@ export const Prop: React.FC<{config: PropConfig; theme: Theme; width: number; he
       return <g transform={at}>
         {lv > 0 && <path d={d} {...stroke(c.color ?? '#ffd25e', Math.max(6, w * .9))} pathLength={1} strokeDasharray={`${lv} 1`}/>}
       </g>;
+    }
+    case 'sky-moon': {
+      // A full Moon whose width follows level (diameter = size x level), for "how big it looked" time-lapses.
+      // level2 = heat (1 = newly formed: glowing magma, bright cracks; 0 = today's grey Moon with maria and ray craters).
+      const lv = levelAt(c.level, frame), heat = levelAt(c.level2 ?? [{frame: 0, value: 0}], frame), r = Math.max(3, s * .5 * lv);
+      const mix = (a: number, b: number) => Math.round(a + (b - a) * heat), col = `rgb(${mix(226, 255)},${mix(222, 140)},${mix(206, 62)})`;
+      const id = `skm-${Math.round(c.x * 1000)}-${Math.round(c.y * 1000)}`, random = seededRandom(41), big = r > 40;
+      const maria: number[][] = [[-.34, -.3, .26, .19, 20], [.02, -.46, .2, .12, -10], [.3, -.06, .25, .3, 35], [-.2, .18, .22, .16, -25], [-.55, .08, .12, .2, 5], [.42, -.4, .1, .08, 0], [.12, .42, .16, .1, 15], [-.02, -.08, .12, .1, 40]];
+      const cracks = Array.from({length: 9}, () => { const a = random() * Math.PI * 2, d0 = .15 + random() * .5; let x = Math.cos(a) * d0, y = Math.sin(a) * d0, d = `M ${x * r} ${y * r}`;
+        for (let k = 0; k < 4; k++) { x += (random() - .5) * .3; y += (random() - .5) * .3; if (Math.hypot(x, y) < .93) d += ` L ${x * r} ${y * r}`; } return d; });
+      const pulse = 1 + Math.sin(frame / 9) * .015 * heat;
+      return <g transform={at}>
+        <defs>
+          <radialGradient id={id} cx=".36" cy=".32" r=".8"><stop offset=".4" stopColor="#000000" stopOpacity="0"/><stop offset="1" stopColor={heat > .3 ? '#5a1200' : '#000000'} stopOpacity={.42 - heat * .08}/></radialGradient>
+          <radialGradient id={id + 'g'}><stop offset=".78" stopColor={heat > .3 ? '#ff9a3c' : '#fff6d8'} stopOpacity={.5}/><stop offset="1" stopColor={heat > .3 ? '#ff7a2a' : '#fff6d8'} stopOpacity="0"/></radialGradient>
+          <clipPath id={id + 'c'}><circle r={r}/></clipPath>
+        </defs>
+        <circle r={r * 1.26 * pulse} fill={`url(#${id}g)`}/>
+        <circle r={r} fill={col}/>
+        <g clipPath={`url(#${id}c)`}>
+          {maria.map(([cx, cy, rx, ry, rot], i) => <ellipse key={i} cx={cx * r} cy={cy * r} rx={rx * r} ry={ry * r} transform={`rotate(${rot} ${cx * r} ${cy * r})`}
+            fill={heat > .5 ? '#ffd166' : '#77736a'} opacity={heat > .5 ? .5 : .5 - heat * .2}/>)}
+          {big && heat > .05 && cracks.map((d, i) => <path key={i} d={d} fill="none" stroke="#fff3b0" strokeWidth={r * .012} strokeLinecap="round" strokeLinejoin="round" opacity={heat * (.6 + .3 * Math.sin(frame / 7 + i))}/>)}
+          {big && heat < .5 && <g opacity={1 - heat * 2}>
+            {Array.from({length: 12}, (_, i) => { const a = i / 12 * Math.PI * 2 + .2, l = r * (.2 + (i % 3) * .08); return <path key={i} d={`M ${r * .16} ${r * .62} l ${Math.cos(a) * l} ${Math.sin(a) * l}`} stroke="#f7f4ea" strokeWidth={r * .008} opacity=".5"/>; })}
+            <circle cx={r * .16} cy={r * .62} r={r * .045} fill="#f7f4ea"/><circle cx={-r * .42} cy={-r * .52} r={r * .03} fill="#f7f4ea" opacity=".8"/>
+          </g>}
+        </g>
+        <circle r={r} fill={`url(#${id})`}/>
+      </g>;
+    }
+    case 'moon-glitter': {
+      // The Moon's light path on water: shimmering dashes below (x, y), whose width follows level like sky-moon's (size = the Moon's size).
+      // level2 = heat (orange light), count = rows. The path is `size x .28` tall at most.
+      const lv = levelAt(c.level, frame), heat = levelAt(c.level2 ?? [{frame: 0, value: 0}], frame), hw = Math.max(14, s * .5 * lv * .8), rows = c.count + 8, hgt = Math.min(s * .28, 60 + hw * .5);
+      const random = seededRandom(57), col = heat > .3 ? '#ffb46a' : '#f4f0dc';
+      return <g transform={at}>{Array.from({length: rows}, (_, i) => { const t = i / rows, y = t * hgt + 4, wv = hw * (.35 + random() * .65) * (1 + t * .25), dx = (random() - .5) * hw * .5 + Math.sin(frame / 11 + i * 1.7) * hw * .06;
+        return <path key={i} d={`M ${dx - wv / 2} ${y} l ${wv} 0`} stroke={col} strokeWidth={w * (.5 + t * .5)} strokeLinecap="round" opacity={(.75 - t * .45) * (.75 + .25 * Math.sin(frame / 6 + i))}/>; })}</g>;
     }
     case 'bigword': {
       // A huge word for a key beat (their "LARGEST"): heavy letters with a dark outline. size = letter height; color fills.

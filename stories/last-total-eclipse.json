@@ -1,0 +1,107 @@
+{
+ "schemaVersion": "1.0",
+ "id": "last-total-eclipse",
+ "title": "The Last Total Solar Eclipse",
+ "topic": "Total solar eclipses exist because the Sun is about 400 times wider than the Moon and about 400 times farther away; the Moon recedes 3.8 cm a year, so in about 600 million years (if that rate holds) it will be too small to cover the Sun",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious adults, mostly 25-44",
+ "durationSeconds": 42,
+ "storyboard": "storyboards/last-total-eclipse.json",
+ "candidatesReport": "stories/moon-shorts-script.md",
+ "beats": [
+  {
+   "id": "b1",
+   "sceneId": "em-b1",
+   "intent": "hook",
+   "narration": "One day, this will happen for the last time.",
+   "phrases": [
+    "One day, this will happen",
+    "for the last time."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "b2",
+   "sceneId": "em-b2",
+   "intent": "explanation",
+   "narration": "It only works by luck. The Sun is about four hundred times wider than the Moon, and about four hundred times farther away. A perfect fit.",
+   "phrases": [
+    "It only works by luck.",
+    "The Sun is about four",
+    "hundred times wider than",
+    "the Moon, and about four",
+    "hundred times farther",
+    "away.",
+    "A perfect fit."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "b3",
+   "sceneId": "em-b3",
+   "intent": "explanation",
+   "narration": "But the Moon is leaving, almost four centimeters a year. Every year, the fit gets worse.",
+   "phrases": [
+    "But the Moon is leaving,",
+    "almost four centimeters a",
+    "year.",
+    "Every year, the fit gets",
+    "worse."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "b4",
+   "sceneId": "em-b4",
+   "intent": "payoff",
+   "narration": "In about six hundred million years, if it keeps that pace, the Moon will be too small. A ring of fire is all that's left.",
+   "phrases": [
+    "In about six hundred",
+    "million years, if it keeps",
+    "that pace, the Moon will",
+    "be too small.",
+    "A ring of fire is all",
+    "that's left."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "b5",
+   "sceneId": "em-b5",
+   "intent": "closing",
+   "narration": "So we got the good seats. By accident.",
+   "phrases": [
+    "So we got the good seats.",
+    "By accident."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  }
+ ]
+}

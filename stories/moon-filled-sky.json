@@ -1,0 +1,115 @@
+{
+ "schemaVersion": "1.0",
+ "id": "moon-filled-sky",
+ "title": "The Moon Used to Fill Your Sky",
+ "topic": "The young Moon was about 20,000 km away and looked about 20 times wider; days were about 5 hours. It has receded ever since (321,800 km and 16.9 h days 2.46 billion years ago; 3.8 cm a year today); in about 600 million years it will be too small for total solar eclipses",
+ "language": "en-US",
+ "targetAudience": "English-speaking science-curious adults, mostly 25-44",
+ "durationSeconds": 44,
+ "storyboard": "storyboards/moon-filled-sky.json",
+ "candidatesReport": "stories/moon-shorts-script.md",
+ "beats": [
+  {
+   "id": "a1",
+   "sceneId": "sm-a1",
+   "intent": "hook",
+   "narration": "Stand here four and a half billion years ago, and the Moon fills your sky. About twenty times wider than tonight.",
+   "phrases": [
+    "Stand here four and a half",
+    "billion years ago, and the",
+    "Moon fills your sky.",
+    "About twenty times wider",
+    "than tonight."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a2",
+   "sceneId": "sm-a2",
+   "intent": "hook",
+   "narration": "A whole day lasts about five hours.",
+   "phrases": [
+    "A whole day lasts about",
+    "five hours."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a3",
+   "sceneId": "sm-a3",
+   "intent": "explanation",
+   "narration": "Then it starts to leave. A little farther every year. A little smaller. And the days stretch.",
+   "phrases": [
+    "Then it starts to leave.",
+    "A little farther every",
+    "year.",
+    "A little smaller.",
+    "And the days stretch."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a4",
+   "sceneId": "sm-a4",
+   "intent": "payoff",
+   "narration": "Tonight, a pea at arm's length covers it. And it's still going.",
+   "phrases": [
+    "Tonight, a pea at arm's",
+    "length covers it.",
+    "And it's still going."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a5",
+   "sceneId": "sm-a5",
+   "intent": "payoff",
+   "narration": "In about six hundred million years, it will be too small to cover the Sun.",
+   "phrases": [
+    "In about six hundred",
+    "million years, it will be",
+    "too small to cover the",
+    "Sun."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a6",
+   "sceneId": "sm-a6",
+   "intent": "closing",
+   "narration": "Go back. I liked it bigger.",
+   "phrases": [
+    "Go back.",
+    "I liked it bigger."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  }
+ ]
+}

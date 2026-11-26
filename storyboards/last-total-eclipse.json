@@ -1,0 +1,1252 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "last-total-eclipse",
+  "title": "The Last Total Solar Eclipse",
+  "themeId": "paint-night",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "@sky.top",
+  "accent": "@text.accent",
+  "assets": [],
+  "backdrop": {
+    "group": "backdrop"
+  },
+  "narrationTiming": {
+    "minimumSceneFrames": 30,
+    "maximumDeviationSeconds": 0.3
+  },
+  "audio": {
+    "music": "cues",
+    "musicGainDb": -22,
+    "duckRatio": 8,
+    "targetLufs": -14,
+    "crossfadeSeconds": 1.5,
+    "musicCues": [
+      {
+        "source": "assets/music/4-tense-a-false-vacuum-decay.mp3",
+        "scene": "em-b1",
+        "offsetSeconds": 14,
+        "gainDb": -19
+      }
+    ],
+    "musicDropouts": [
+      {
+        "scene": "em-b4",
+        "frame": 0,
+        "seconds": 0.5
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "backdrop",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "page",
+          "kit": {
+            "type": "sky",
+            "horizon": 0.9,
+            "stars": 0,
+            "seed": 1
+          }
+        },
+        {
+          "id": "stars",
+          "kit": {
+            "type": "prop",
+            "item": "doodle-stars",
+            "x": 0.37,
+            "y": 0.61,
+            "size": 0.5,
+            "count": 34,
+            "ink": "#eef1f8"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "brand-tag",
+          "text": "GAHANARKA",
+          "x": 200,
+          "y": 1475,
+          "size": 40,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": false,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-b1",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "hglow",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.74,
+            "rx": 1.0,
+            "ry": 0.1,
+            "tone": "hot"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.7
+            }
+          ]
+        },
+        {
+          "id": "ecl",
+          "kit": {
+            "type": "prop",
+            "item": "eclipse",
+            "x": 0.5,
+            "y": 0.43,
+            "size": 0.6,
+            "text": "annular",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "id": "shore",
+          "kit": {
+            "type": "terrain",
+            "top": 0.74,
+            "curve": 0.03,
+            "fill": "#2b3350",
+            "detail": "#3a456b",
+            "rocks": 3,
+            "bumps": 6,
+            "seed": 5
+          }
+        },
+        {
+          "id": "banner",
+          "kit": {
+            "type": "prop",
+            "item": "bigword",
+            "x": 0.5,
+            "y": 0.085,
+            "size": 0.062,
+            "text": "TOTAL ECLIPSES ARE RUNNING OUT",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "last",
+          "kit": {
+            "type": "prop",
+            "item": "bigword",
+            "x": 0.5,
+            "y": 0.43,
+            "size": 0.075,
+            "text": "THE LAST ONE",
+            "color": "#ffd25e"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "last",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "last"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.5
+            },
+            {
+              "frame": {
+                "at": "last",
+                "offset": -1
+              },
+              "value": 0.5
+            },
+            {
+              "frame": {
+                "at": "last",
+                "offset": 8
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 540.0,
+            "y": 825.6
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.87,
+            "y": 0.77,
+            "height": 0.125,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "shocked"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          }
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "id": "g-b2",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "hglow",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.74,
+            "rx": 1.0,
+            "ry": 0.1,
+            "tone": "hot"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.7
+            }
+          ]
+        },
+        {
+          "id": "ecl",
+          "kit": {
+            "type": "prop",
+            "item": "eclipse",
+            "x": 0.5,
+            "y": 0.43,
+            "size": 0.6,
+            "text": "annular",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "id": "shore",
+          "kit": {
+            "type": "terrain",
+            "top": 0.74,
+            "curve": 0.03,
+            "fill": "#2b3350",
+            "detail": "#3a456b",
+            "rocks": 3,
+            "bumps": 6,
+            "seed": 5
+          }
+        },
+        {
+          "id": "banner",
+          "kit": {
+            "type": "prop",
+            "item": "bigword",
+            "x": 0.5,
+            "y": 0.085,
+            "size": 0.062,
+            "text": "TOTAL ECLIPSES ARE RUNNING OUT",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.87,
+            "y": 0.77,
+            "height": 0.125,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "think"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "Sun: 400× wider",
+          "x": 290,
+          "y": 1290,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wider",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "wider",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "and 400× farther",
+          "x": 770,
+          "y": 1290,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#a9d8ff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "farther",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "farther",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "text": "a perfect fit",
+          "x": 540,
+          "y": 826,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "perfect",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "perfect",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-b3",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "hglow",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.74,
+            "rx": 1.0,
+            "ry": 0.1,
+            "tone": "hot"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.7
+            },
+            {
+              "frame": {
+                "at": "leaving,"
+              },
+              "value": 0.7
+            },
+            {
+              "frame": {
+                "at": "worse.",
+                "edge": "end"
+              },
+              "value": 0.49
+            }
+          ]
+        },
+        {
+          "id": "ecl",
+          "kit": {
+            "type": "prop",
+            "item": "eclipse",
+            "x": 0.5,
+            "y": 0.43,
+            "size": 0.6,
+            "text": "annular",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "leaving,"
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "worse.",
+                  "edge": "end"
+                },
+                "value": 0.3
+              }
+            ]
+          }
+        },
+        {
+          "id": "shore",
+          "kit": {
+            "type": "terrain",
+            "top": 0.74,
+            "curve": 0.03,
+            "fill": "#2b3350",
+            "detail": "#3a456b",
+            "rocks": 3,
+            "bumps": 6,
+            "seed": 5
+          }
+        },
+        {
+          "id": "banner",
+          "kit": {
+            "type": "prop",
+            "item": "bigword",
+            "x": 0.5,
+            "y": 0.085,
+            "size": 0.062,
+            "text": "TOTAL ECLIPSES ARE RUNNING OUT",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.87,
+            "y": 0.77,
+            "height": 0.125,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "think"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "sad"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          }
+        },
+        {
+          "id": "yrs",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.5,
+            "y": 0.675,
+            "size": 0.17,
+            "text": "million years ahead",
+            "values": [
+              {
+                "frame": 0,
+                "value": 0,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "leaving,"
+                },
+                "value": 0,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "worse.",
+                  "edge": "end"
+                },
+                "value": 200,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "leaving,",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "leaving,"
+              },
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "3.8 cm a year",
+          "x": 540,
+          "y": 826,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#a9d8ff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "four",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "four",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-b4",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "hglow",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.74,
+            "rx": 1.0,
+            "ry": 0.1,
+            "tone": "hot"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.49
+            },
+            {
+              "frame": {
+                "at": "small.",
+                "edge": "end"
+              },
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "id": "ecl",
+          "kit": {
+            "type": "prop",
+            "item": "eclipse",
+            "x": 0.5,
+            "y": 0.43,
+            "size": 0.6,
+            "text": "annular",
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.3
+              },
+              {
+                "frame": {
+                  "at": "small.",
+                  "edge": "end"
+                },
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "shore",
+          "kit": {
+            "type": "terrain",
+            "top": 0.74,
+            "curve": 0.03,
+            "fill": "#2b3350",
+            "detail": "#3a456b",
+            "rocks": 3,
+            "bumps": 6,
+            "seed": 5
+          }
+        },
+        {
+          "id": "banner",
+          "kit": {
+            "type": "prop",
+            "item": "bigword",
+            "x": 0.5,
+            "y": 0.085,
+            "size": 0.062,
+            "text": "TOTAL ECLIPSES ARE RUNNING OUT",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "ring",
+          "kit": {
+            "type": "prop",
+            "item": "bigword",
+            "x": 0.5,
+            "y": 0.43,
+            "size": 0.07,
+            "text": "RING OF FIRE",
+            "color": "#ffd25e"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "ring",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "ring"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.5
+            },
+            {
+              "frame": {
+                "at": "ring",
+                "offset": -1
+              },
+              "value": 0.5
+            },
+            {
+              "frame": {
+                "at": "ring",
+                "offset": 8
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 540.0,
+            "y": 825.6
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.87,
+            "y": 0.77,
+            "height": 0.125,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "shocked"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          }
+        },
+        {
+          "id": "yrs",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.5,
+            "y": 0.675,
+            "size": 0.17,
+            "text": "million years ahead",
+            "values": [
+              {
+                "frame": 0,
+                "value": 200,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "small.",
+                  "edge": "end"
+                },
+                "value": 600,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "ring drawn thicker than real",
+          "x": 540,
+          "y": 1225,
+          "size": 46,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#eef1f8",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "ring",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "ring",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-b5",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "hglow",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.74,
+            "rx": 1.0,
+            "ry": 0.1,
+            "tone": "hot"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.0
+            },
+            {
+              "frame": {
+                "at": "accident."
+              },
+              "value": 0.0
+            },
+            {
+              "frame": {
+                "at": "accident.",
+                "edge": "end"
+              },
+              "value": 0.7
+            }
+          ]
+        },
+        {
+          "id": "ecl",
+          "kit": {
+            "type": "prop",
+            "item": "eclipse",
+            "x": 0.5,
+            "y": 0.43,
+            "size": 0.6,
+            "text": "annular",
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "accident."
+                },
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "accident.",
+                  "edge": "end"
+                },
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "id": "shore",
+          "kit": {
+            "type": "terrain",
+            "top": 0.74,
+            "curve": 0.03,
+            "fill": "#2b3350",
+            "detail": "#3a456b",
+            "rocks": 3,
+            "bumps": 6,
+            "seed": 5
+          }
+        },
+        {
+          "id": "banner",
+          "kit": {
+            "type": "prop",
+            "item": "bigword",
+            "x": 0.5,
+            "y": 0.085,
+            "size": 0.062,
+            "text": "TOTAL ECLIPSES ARE RUNNING OUT",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.87,
+            "y": 0.77,
+            "height": 0.125,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "point-left"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "grin"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          }
+        },
+        {
+          "id": "yrs",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.5,
+            "y": 0.675,
+            "size": 0.17,
+            "text": "million years ahead",
+            "values": [
+              {
+                "frame": 0,
+                "value": 600,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "accident."
+                },
+                "value": 600,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "accident.",
+                  "edge": "end"
+                },
+                "value": 0,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          }
+        }
+      ],
+      "annotations": []
+    }
+  ],
+  "scenes": [
+    {
+      "id": "em-b1",
+      "template": "hero-reveal",
+      "durationFrames": 135,
+      "animationDurationFrames": 135,
+      "caption": {
+        "text": "em-b1",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-b1",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "b1",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "ding",
+          "frame": {
+            "at": "last"
+          },
+          "gainDb": -22
+        }
+      ]
+    },
+    {
+      "id": "em-b2",
+      "template": "hero-reveal",
+      "durationFrames": 390,
+      "animationDurationFrames": 390,
+      "caption": {
+        "text": "em-b2",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-b2",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "b2",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "wider"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "farther"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "perfect"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "em-b3",
+      "template": "hero-reveal",
+      "durationFrames": 240,
+      "animationDurationFrames": 240,
+      "caption": {
+        "text": "em-b3",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-b3",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "b3",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "four"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "em-b4",
+      "template": "hero-reveal",
+      "durationFrames": 375,
+      "animationDurationFrames": 375,
+      "caption": {
+        "text": "em-b4",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-b4",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "b4",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "ding",
+          "frame": {
+            "at": "ring"
+          },
+          "gainDb": -22
+        }
+      ]
+    },
+    {
+      "id": "em-b5",
+      "template": "hero-reveal",
+      "durationFrames": 120,
+      "animationDurationFrames": 120,
+      "caption": {
+        "text": "em-b5",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-b5",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "b5",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "accident."
+          },
+          "gainDb": -20
+        }
+      ]
+    }
+  ]
+}

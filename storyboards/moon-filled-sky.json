@@ -1,0 +1,2156 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "moon-filled-sky",
+  "title": "The Moon Used to Fill Your Sky",
+  "themeId": "paint-night",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "@sky.top",
+  "accent": "@text.accent",
+  "assets": [],
+  "backdrop": {
+    "group": "backdrop"
+  },
+  "narrationTiming": {
+    "minimumSceneFrames": 30,
+    "maximumDeviationSeconds": 0.3
+  },
+  "audio": {
+    "music": "cues",
+    "musicGainDb": -22,
+    "duckRatio": 8,
+    "targetLufs": -14,
+    "crossfadeSeconds": 1.5,
+    "musicCues": [
+      {
+        "source": "assets/music/6-space-singularity.mp3",
+        "scene": "sm-a1",
+        "offsetSeconds": 10,
+        "gainDb": -19
+      }
+    ],
+    "musicDropouts": [
+      {
+        "scene": "sm-a4",
+        "frame": 0,
+        "seconds": 0.5
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "backdrop",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "page",
+          "kit": {
+            "type": "sky",
+            "horizon": 0.9,
+            "stars": 0,
+            "seed": 1
+          }
+        },
+        {
+          "id": "stars",
+          "kit": {
+            "type": "prop",
+            "item": "doodle-stars",
+            "x": 0.37,
+            "y": 0.61,
+            "size": 0.5,
+            "count": 34,
+            "ink": "#eef1f8"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "brand-tag",
+          "text": "GAHANARKA",
+          "x": 200,
+          "y": 1475,
+          "size": 40,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": false,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-a1",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "hglow",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.6,
+            "rx": 0.9,
+            "ry": 0.16,
+            "tone": "hot"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.56
+            }
+          ]
+        },
+        {
+          "id": "moon",
+          "kit": {
+            "type": "prop",
+            "item": "sky-moon",
+            "x": 0.5,
+            "y": 0.405,
+            "size": 0.85,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "level2": [
+              {
+                "frame": 0,
+                "value": 0.7
+              }
+            ]
+          }
+        },
+        {
+          "id": "sea",
+          "kit": {
+            "type": "water",
+            "x": -0.1,
+            "y": 0.6,
+            "width": 1.3,
+            "height": 0.15,
+            "waves": 5,
+            "periodFrames": 150,
+            "seed": 3
+          }
+        },
+        {
+          "id": "glitter",
+          "kit": {
+            "type": "prop",
+            "item": "moon-glitter",
+            "x": 0.5,
+            "y": 0.6,
+            "size": 0.85,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "level2": [
+              {
+                "frame": 0,
+                "value": 0.7
+              }
+            ],
+            "count": 10
+          }
+        },
+        {
+          "id": "shore",
+          "kit": {
+            "type": "terrain",
+            "top": 0.74,
+            "curve": 0.03,
+            "fill": "#2b3350",
+            "detail": "#3a456b",
+            "rocks": 3,
+            "bumps": 6,
+            "seed": 5
+          }
+        },
+        {
+          "id": "banner",
+          "kit": {
+            "type": "prop",
+            "item": "bigword",
+            "x": 0.5,
+            "y": 0.085,
+            "size": 0.062,
+            "text": "THE MOON IS SHRINKING",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.87,
+            "y": 0.77,
+            "height": 0.125,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "shocked"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          }
+        },
+        {
+          "id": "yrs",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.15,
+            "y": 0.69,
+            "size": 0.15,
+            "text": "million years ago",
+            "values": [
+              {
+                "frame": 0,
+                "value": 4500,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "km",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.405,
+            "y": 0.69,
+            "size": 0.15,
+            "text": "thousand km away",
+            "values": [
+              {
+                "frame": 0,
+                "value": 20,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "day",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.655,
+            "y": 0.69,
+            "size": 0.15,
+            "text": "hours in a day",
+            "values": [
+              {
+                "frame": 0,
+                "value": 5,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          }
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "id": "g-a2",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "hglow",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.6,
+            "rx": 0.9,
+            "ry": 0.16,
+            "tone": "hot"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.56
+            }
+          ]
+        },
+        {
+          "id": "moon",
+          "kit": {
+            "type": "prop",
+            "item": "sky-moon",
+            "x": 0.5,
+            "y": 0.405,
+            "size": 0.85,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "level2": [
+              {
+                "frame": 0,
+                "value": 0.7
+              }
+            ]
+          }
+        },
+        {
+          "id": "sea",
+          "kit": {
+            "type": "water",
+            "x": -0.1,
+            "y": 0.6,
+            "width": 1.3,
+            "height": 0.15,
+            "waves": 5,
+            "periodFrames": 150,
+            "seed": 3
+          }
+        },
+        {
+          "id": "glitter",
+          "kit": {
+            "type": "prop",
+            "item": "moon-glitter",
+            "x": 0.5,
+            "y": 0.6,
+            "size": 0.85,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              }
+            ],
+            "level2": [
+              {
+                "frame": 0,
+                "value": 0.7
+              }
+            ],
+            "count": 10
+          }
+        },
+        {
+          "id": "shore",
+          "kit": {
+            "type": "terrain",
+            "top": 0.74,
+            "curve": 0.03,
+            "fill": "#2b3350",
+            "detail": "#3a456b",
+            "rocks": 3,
+            "bumps": 6,
+            "seed": 5
+          }
+        },
+        {
+          "id": "banner",
+          "kit": {
+            "type": "prop",
+            "item": "bigword",
+            "x": 0.5,
+            "y": 0.085,
+            "size": 0.062,
+            "text": "THE MOON IS SHRINKING",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "five",
+          "kit": {
+            "type": "prop",
+            "item": "bigword",
+            "x": 0.5,
+            "y": 0.405,
+            "size": 0.09,
+            "text": "5-HOUR DAYS",
+            "color": "#ffd25e"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "five",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "five"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.5
+            },
+            {
+              "frame": {
+                "at": "five",
+                "offset": -1
+              },
+              "value": 0.5
+            },
+            {
+              "frame": {
+                "at": "five",
+                "offset": 8
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 540.0,
+            "y": 777.6
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.87,
+            "y": 0.77,
+            "height": 0.125,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "shocked"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          }
+        },
+        {
+          "id": "yrs",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.15,
+            "y": 0.69,
+            "size": 0.15,
+            "text": "million years ago",
+            "values": [
+              {
+                "frame": 0,
+                "value": 4500,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "km",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.405,
+            "y": 0.69,
+            "size": 0.15,
+            "text": "thousand km away",
+            "values": [
+              {
+                "frame": 0,
+                "value": 20,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "day",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.655,
+            "y": 0.69,
+            "size": 0.15,
+            "text": "hours in a day",
+            "values": [
+              {
+                "frame": 0,
+                "value": 5,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          }
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "id": "g-a3",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "ghost",
+          "kit": {
+            "type": "prop",
+            "item": "orbit-ring",
+            "x": 0.5,
+            "y": 0.405,
+            "size": 0.85,
+            "ink": "#eef1f8"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "leave."
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "farther"
+              },
+              "value": 0.55
+            }
+          ]
+        },
+        {
+          "id": "hglow",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.6,
+            "rx": 0.9,
+            "ry": 0.16,
+            "tone": "hot"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.56
+            },
+            {
+              "frame": {
+                "at": "leave."
+              },
+              "value": 0.56
+            },
+            {
+              "frame": {
+                "at": "farther"
+              },
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "id": "moon",
+          "kit": {
+            "type": "prop",
+            "item": "sky-moon",
+            "x": 0.5,
+            "y": 0.405,
+            "size": 0.85,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "leave."
+                },
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "smaller.",
+                  "edge": "end"
+                },
+                "value": 0.09
+              },
+              {
+                "frame": {
+                  "at": "stretch.",
+                  "edge": "end"
+                },
+                "value": 0.0622
+              }
+            ],
+            "level2": [
+              {
+                "frame": 0,
+                "value": 0.7
+              },
+              {
+                "frame": {
+                  "at": "leave."
+                },
+                "value": 0.7
+              },
+              {
+                "frame": {
+                  "at": "farther"
+                },
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "id": "sea",
+          "kit": {
+            "type": "water",
+            "x": -0.1,
+            "y": 0.6,
+            "width": 1.3,
+            "height": 0.15,
+            "waves": 5,
+            "periodFrames": 150,
+            "seed": 3
+          }
+        },
+        {
+          "id": "glitter",
+          "kit": {
+            "type": "prop",
+            "item": "moon-glitter",
+            "x": 0.5,
+            "y": 0.6,
+            "size": 0.85,
+            "level": [
+              {
+                "frame": 0,
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "leave."
+                },
+                "value": 1
+              },
+              {
+                "frame": {
+                  "at": "smaller.",
+                  "edge": "end"
+                },
+                "value": 0.09
+              },
+              {
+                "frame": {
+                  "at": "stretch.",
+                  "edge": "end"
+                },
+                "value": 0.0622
+              }
+            ],
+            "level2": [
+              {
+                "frame": 0,
+                "value": 0.7
+              },
+              {
+                "frame": {
+                  "at": "leave."
+                },
+                "value": 0.7
+              },
+              {
+                "frame": {
+                  "at": "farther"
+                },
+                "value": 0
+              }
+            ],
+            "count": 10
+          }
+        },
+        {
+          "id": "shore",
+          "kit": {
+            "type": "terrain",
+            "top": 0.74,
+            "curve": 0.03,
+            "fill": "#2b3350",
+            "detail": "#3a456b",
+            "rocks": 3,
+            "bumps": 6,
+            "seed": 5
+          }
+        },
+        {
+          "id": "banner",
+          "kit": {
+            "type": "prop",
+            "item": "bigword",
+            "x": 0.5,
+            "y": 0.085,
+            "size": 0.062,
+            "text": "THE MOON IS SHRINKING",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.87,
+            "y": 0.77,
+            "height": 0.125,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "think"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "sad"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          }
+        },
+        {
+          "id": "yrs",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.15,
+            "y": 0.69,
+            "size": 0.15,
+            "text": "million years ago",
+            "values": [
+              {
+                "frame": 0,
+                "value": 4500,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "leave."
+                },
+                "value": 4500,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "stretch.",
+                  "edge": "end"
+                },
+                "value": 2460,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "km",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.405,
+            "y": 0.69,
+            "size": 0.15,
+            "text": "thousand km away",
+            "values": [
+              {
+                "frame": 0,
+                "value": 20,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "leave."
+                },
+                "value": 20,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "stretch.",
+                  "edge": "end"
+                },
+                "value": 322,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "day",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.655,
+            "y": 0.69,
+            "size": 0.15,
+            "text": "hours in a day",
+            "values": [
+              {
+                "frame": 0,
+                "value": 5,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "leave."
+                },
+                "value": 5,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "stretch.",
+                  "edge": "end"
+                },
+                "value": 17,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "it used to be THIS big",
+          "x": 540,
+          "y": 1010,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#a9d8ff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "smaller.",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "smaller.",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-a4",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "ghost",
+          "kit": {
+            "type": "prop",
+            "item": "orbit-ring",
+            "x": 0.5,
+            "y": 0.405,
+            "size": 0.85,
+            "ink": "#eef1f8"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.55
+            }
+          ]
+        },
+        {
+          "id": "hglow",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.6,
+            "rx": 0.9,
+            "ry": 0.16,
+            "tone": "hot"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "id": "moon",
+          "kit": {
+            "type": "prop",
+            "item": "sky-moon",
+            "x": 0.5,
+            "y": 0.405,
+            "size": 0.85,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.0622
+              },
+              {
+                "frame": {
+                  "at": "it.",
+                  "edge": "end"
+                },
+                "value": 0.052
+              }
+            ],
+            "level2": [
+              {
+                "frame": 0,
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "id": "sea",
+          "kit": {
+            "type": "water",
+            "x": -0.1,
+            "y": 0.6,
+            "width": 1.3,
+            "height": 0.15,
+            "waves": 5,
+            "periodFrames": 150,
+            "seed": 3
+          }
+        },
+        {
+          "id": "glitter",
+          "kit": {
+            "type": "prop",
+            "item": "moon-glitter",
+            "x": 0.5,
+            "y": 0.6,
+            "size": 0.85,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.0622
+              },
+              {
+                "frame": {
+                  "at": "it.",
+                  "edge": "end"
+                },
+                "value": 0.052
+              }
+            ],
+            "level2": [
+              {
+                "frame": 0,
+                "value": 0
+              }
+            ],
+            "count": 10
+          }
+        },
+        {
+          "id": "shore",
+          "kit": {
+            "type": "terrain",
+            "top": 0.74,
+            "curve": 0.03,
+            "fill": "#2b3350",
+            "detail": "#3a456b",
+            "rocks": 3,
+            "bumps": 6,
+            "seed": 5
+          }
+        },
+        {
+          "id": "banner",
+          "kit": {
+            "type": "prop",
+            "item": "bigword",
+            "x": 0.5,
+            "y": 0.085,
+            "size": 0.062,
+            "text": "THE MOON IS SHRINKING",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.87,
+            "y": 0.77,
+            "height": 0.125,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "point-left"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          }
+        },
+        {
+          "id": "yrs",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.15,
+            "y": 0.69,
+            "size": 0.15,
+            "text": "million years ago",
+            "values": [
+              {
+                "frame": 0,
+                "value": 2460,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "it.",
+                  "edge": "end"
+                },
+                "value": 0,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "km",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.405,
+            "y": 0.69,
+            "size": 0.15,
+            "text": "thousand km away",
+            "values": [
+              {
+                "frame": 0,
+                "value": 322,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "it.",
+                  "edge": "end"
+                },
+                "value": 384,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "day",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.655,
+            "y": 0.69,
+            "size": 0.15,
+            "text": "hours in a day",
+            "values": [
+              {
+                "frame": 0,
+                "value": 17,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "it.",
+                  "edge": "end"
+                },
+                "value": 24,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "tonight",
+          "x": 540,
+          "y": 640,
+          "size": 78,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pea",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "pea",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "n1",
+          "text": "+3.8 cm a year",
+          "x": 540,
+          "y": 1010,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#a9d8ff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "still",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "still",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-a5",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "ghost",
+          "kit": {
+            "type": "prop",
+            "item": "orbit-ring",
+            "x": 0.5,
+            "y": 0.405,
+            "size": 0.85,
+            "ink": "#eef1f8"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.55
+            }
+          ]
+        },
+        {
+          "id": "hglow",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.6,
+            "rx": 0.9,
+            "ry": 0.16,
+            "tone": "hot"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "id": "moon",
+          "kit": {
+            "type": "prop",
+            "item": "sky-moon",
+            "x": 0.5,
+            "y": 0.405,
+            "size": 0.85,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.052
+              },
+              {
+                "frame": {
+                  "at": "Sun.",
+                  "edge": "end"
+                },
+                "value": 0.0491
+              }
+            ],
+            "level2": [
+              {
+                "frame": 0,
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "id": "sea",
+          "kit": {
+            "type": "water",
+            "x": -0.1,
+            "y": 0.6,
+            "width": 1.3,
+            "height": 0.15,
+            "waves": 5,
+            "periodFrames": 150,
+            "seed": 3
+          }
+        },
+        {
+          "id": "glitter",
+          "kit": {
+            "type": "prop",
+            "item": "moon-glitter",
+            "x": 0.5,
+            "y": 0.6,
+            "size": 0.85,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.052
+              },
+              {
+                "frame": {
+                  "at": "Sun.",
+                  "edge": "end"
+                },
+                "value": 0.0491
+              }
+            ],
+            "level2": [
+              {
+                "frame": 0,
+                "value": 0
+              }
+            ],
+            "count": 10
+          }
+        },
+        {
+          "id": "shore",
+          "kit": {
+            "type": "terrain",
+            "top": 0.74,
+            "curve": 0.03,
+            "fill": "#2b3350",
+            "detail": "#3a456b",
+            "rocks": 3,
+            "bumps": 6,
+            "seed": 5
+          }
+        },
+        {
+          "id": "banner",
+          "kit": {
+            "type": "prop",
+            "item": "bigword",
+            "x": 0.5,
+            "y": 0.085,
+            "size": 0.062,
+            "text": "THE MOON IS SHRINKING",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "small",
+          "kit": {
+            "type": "prop",
+            "item": "bigword",
+            "x": 0.5,
+            "y": 0.32,
+            "size": 0.085,
+            "text": "TOO SMALL",
+            "color": "#ffd25e"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "small",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "small"
+              },
+              "value": 1
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.5
+            },
+            {
+              "frame": {
+                "at": "small",
+                "offset": -1
+              },
+              "value": 0.5
+            },
+            {
+              "frame": {
+                "at": "small",
+                "offset": 8
+              },
+              "value": 1,
+              "ease": "ease-out-back"
+            }
+          ],
+          "anchor": {
+            "x": 540.0,
+            "y": 614.4
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.87,
+            "y": 0.77,
+            "height": 0.125,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "think"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "sad"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          }
+        },
+        {
+          "id": "yrs",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.15,
+            "y": 0.69,
+            "size": 0.15,
+            "text": "million years ahead",
+            "values": [
+              {
+                "frame": 0,
+                "value": 0,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "Sun.",
+                  "edge": "end"
+                },
+                "value": 600,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "km",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.405,
+            "y": 0.69,
+            "size": 0.15,
+            "text": "thousand km away",
+            "values": [
+              {
+                "frame": 0,
+                "value": 384,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "Sun.",
+                  "edge": "end"
+                },
+                "value": 407,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "n0",
+          "text": "no more total eclipses",
+          "x": 540,
+          "y": 1010,
+          "size": 61,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#a9d8ff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "cover",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "cover",
+                "offset": 5
+              },
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-a6",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "ghost",
+          "kit": {
+            "type": "prop",
+            "item": "orbit-ring",
+            "x": 0.5,
+            "y": 0.405,
+            "size": 0.85,
+            "ink": "#eef1f8"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.55
+            },
+            {
+              "frame": {
+                "at": "bigger."
+              },
+              "value": 0.55
+            },
+            {
+              "frame": {
+                "at": "bigger.",
+                "edge": "end"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "hglow",
+          "kit": {
+            "type": "glow",
+            "x": 0.5,
+            "y": 0.6,
+            "rx": 0.9,
+            "ry": 0.16,
+            "tone": "hot"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.0
+            },
+            {
+              "frame": {
+                "at": "bigger."
+              },
+              "value": 0.0
+            },
+            {
+              "frame": {
+                "at": "bigger.",
+                "edge": "end"
+              },
+              "value": 0.56
+            }
+          ]
+        },
+        {
+          "id": "moon",
+          "kit": {
+            "type": "prop",
+            "item": "sky-moon",
+            "x": 0.5,
+            "y": 0.405,
+            "size": 0.85,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.0491
+              },
+              {
+                "frame": {
+                  "at": "bigger."
+                },
+                "value": 0.0491
+              },
+              {
+                "frame": {
+                  "at": "bigger.",
+                  "edge": "end"
+                },
+                "value": 1
+              }
+            ],
+            "level2": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "bigger."
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "bigger.",
+                  "edge": "end"
+                },
+                "value": 0.7
+              }
+            ]
+          }
+        },
+        {
+          "id": "sea",
+          "kit": {
+            "type": "water",
+            "x": -0.1,
+            "y": 0.6,
+            "width": 1.3,
+            "height": 0.15,
+            "waves": 5,
+            "periodFrames": 150,
+            "seed": 3
+          }
+        },
+        {
+          "id": "glitter",
+          "kit": {
+            "type": "prop",
+            "item": "moon-glitter",
+            "x": 0.5,
+            "y": 0.6,
+            "size": 0.85,
+            "level": [
+              {
+                "frame": 0,
+                "value": 0.0491
+              },
+              {
+                "frame": {
+                  "at": "bigger."
+                },
+                "value": 0.0491
+              },
+              {
+                "frame": {
+                  "at": "bigger.",
+                  "edge": "end"
+                },
+                "value": 1
+              }
+            ],
+            "level2": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "bigger."
+                },
+                "value": 0
+              },
+              {
+                "frame": {
+                  "at": "bigger.",
+                  "edge": "end"
+                },
+                "value": 0.7
+              }
+            ],
+            "count": 10
+          }
+        },
+        {
+          "id": "shore",
+          "kit": {
+            "type": "terrain",
+            "top": 0.74,
+            "curve": 0.03,
+            "fill": "#2b3350",
+            "detail": "#3a456b",
+            "rocks": 3,
+            "bumps": 6,
+            "seed": 5
+          }
+        },
+        {
+          "id": "banner",
+          "kit": {
+            "type": "prop",
+            "item": "bigword",
+            "x": 0.5,
+            "y": 0.085,
+            "size": 0.062,
+            "text": "THE MOON IS SHRINKING",
+            "color": "#ffd25e"
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.87,
+            "y": 0.77,
+            "height": 0.125,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "point-left"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "grin"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          }
+        },
+        {
+          "id": "yrs-ahead",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.15,
+            "y": 0.69,
+            "size": 0.15,
+            "text": "million years ahead",
+            "values": [
+              {
+                "frame": 0,
+                "value": 600,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "bigger.",
+                "offset": -1
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "bigger."
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "yrs",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.15,
+            "y": 0.69,
+            "size": 0.15,
+            "text": "million years ago",
+            "values": [
+              {
+                "frame": 0,
+                "value": 4500,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "bigger.",
+                "offset": -1
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "bigger."
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "km",
+          "kit": {
+            "type": "prop",
+            "item": "counter",
+            "x": 0.405,
+            "y": 0.69,
+            "size": 0.15,
+            "text": "thousand km away",
+            "values": [
+              {
+                "frame": 0,
+                "value": 407,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "bigger."
+                },
+                "value": 407,
+                "ramp": true
+              },
+              {
+                "frame": {
+                  "at": "bigger.",
+                  "edge": "end"
+                },
+                "value": 20,
+                "ramp": true
+              }
+            ],
+            "ink": "#eef1f8",
+            "color": "#ffd25e"
+          }
+        }
+      ],
+      "annotations": []
+    }
+  ],
+  "scenes": [
+    {
+      "id": "sm-a1",
+      "template": "hero-reveal",
+      "durationFrames": 355,
+      "animationDurationFrames": 355,
+      "caption": {
+        "text": "sm-a1",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-a1",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "a1",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": []
+    },
+    {
+      "id": "sm-a2",
+      "template": "hero-reveal",
+      "durationFrames": 118,
+      "animationDurationFrames": 118,
+      "caption": {
+        "text": "sm-a2",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-a2",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "a2",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "ding",
+          "frame": {
+            "at": "five"
+          },
+          "gainDb": -22
+        }
+      ]
+    },
+    {
+      "id": "sm-a3",
+      "template": "hero-reveal",
+      "durationFrames": 287,
+      "animationDurationFrames": 287,
+      "caption": {
+        "text": "sm-a3",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-a3",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "a3",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "smaller."
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "leave."
+          },
+          "gainDb": -22
+        }
+      ]
+    },
+    {
+      "id": "sm-a4",
+      "template": "hero-reveal",
+      "durationFrames": 203,
+      "animationDurationFrames": 203,
+      "caption": {
+        "text": "sm-a4",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-a4",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "a4",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "pea"
+          },
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "still"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "sm-a5",
+      "template": "hero-reveal",
+      "durationFrames": 253,
+      "animationDurationFrames": 253,
+      "caption": {
+        "text": "sm-a5",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-a5",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "a5",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": 0,
+          "gainDb": -24
+        },
+        {
+          "sound": "pop",
+          "frame": {
+            "at": "cover"
+          },
+          "gainDb": -24
+        }
+      ]
+    },
+    {
+      "id": "sm-a6",
+      "template": "hero-reveal",
+      "durationFrames": 104,
+      "animationDurationFrames": 104,
+      "caption": {
+        "text": "sm-a6",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-a6",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 0.9
+        }
+      },
+      "narrationCue": {
+        "beatId": "a6",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "whoosh",
+          "frame": {
+            "at": "bigger."
+          },
+          "gainDb": -20
+        }
+      ]
+    }
+  ]
+}
