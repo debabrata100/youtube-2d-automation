@@ -5,7 +5,7 @@
  "topic": "A lift at the world record speed of 21 m/s (Hitachi, Guangzhou CTF) climbing from the ground to the ISS at about 419 km: Burj Khalifa top in 39 s, Everest in 7 min, the Armstrong limit in 15 min, space in 1 h 19 min, the ISS in 5 h 33 min; going down at 10 m/s takes 11 h 38 min",
  "language": "en-US",
  "targetAudience": "English-speaking science-curious adults, mostly 25-44",
- "durationSeconds": 42,
+ "durationSeconds": 41,
  "storyboard": "storyboards/elevator-to-space.json",
  "candidatesReport": "stories/no-narration-shorts-facts.md",
  "beats": [

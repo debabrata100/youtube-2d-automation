@@ -36,7 +36,7 @@
       {
         "scene": "el-e1",
         "frame": 1122,
-        "seconds": 2.2
+        "seconds": 4
       }
     ]
   },
@@ -1028,11 +1028,11 @@
               "value": 1
             },
             {
-              "frame": 1289,
+              "frame": 1259,
               "value": 1
             },
             {
-              "frame": 1296,
+              "frame": 1266,
               "value": 0
             }
           ]
@@ -1044,8 +1044,8 @@
     {
       "id": "el-e1",
       "template": "hero-reveal",
-      "durationFrames": 1260,
-      "animationDurationFrames": 1260,
+      "durationFrames": 1230,
+      "animationDurationFrames": 1230,
       "caption": {
         "text": "el-e1",
         "preset": "body"

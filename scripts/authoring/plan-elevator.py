@@ -17,7 +17,7 @@ SID = 'elevator-to-space'
 STORY = ROOT / f'stories/{SID}.json'
 UP, FLOOR_M, DOWN = 21.0, 3.5, 10.0          # m/s up (Hitachi, Guangzhou CTF), metres per storey, m/s down
 LINE = "...I'll take the stairs."
-DURATION = 42                                # seconds
+DURATION = 41                                # seconds
 S = lambda sec: round(sec * FPS)             # seconds -> frames
 
 # ------------------------------------------------------------------ the ride (altitude over screen time)
@@ -47,7 +47,7 @@ ep = Episode(str(STORY), 'tall'); F = ep.F; W, H = F['W'], F['H']
 ep.theme = 'paint-night'
 ep.F['primary'] = 1.0
 ep.backdrop(stars=0)
-ep.music([('e1', 'assets/music/6-space-singularity.mp3', 0)], dropouts=[('e1', SAY - 6, 2.2)], gain_db=-16, target_lufs=-14)
+ep.music([('e1', 'assets/music/6-space-singularity.mp3', 0)], dropouts=[("e1", SAY - 6, 4)], gain_db=-16, target_lufs=-14)
 
 ride = track(*[(f, a, 'linear') if i > 2 else (f, a) for i, (f, a) in enumerate(RIDE)])   # the first leg eases in from standing (smoothstep)
 ride[-1]['ease'] = 'ease-out-cubic'                       # the last leg brakes into the station
