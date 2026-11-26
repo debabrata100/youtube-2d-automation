@@ -92,7 +92,7 @@ Judge a long video's click rate only after **500+ impressions**, and its retenti
 
 - **26 Nov 18:59 (S4 Miranda d1yDnS3FVGA, ~45 h after launch, demographics now visible):** 1.2K views (1,236 in 48 h; 1.1K from the Shorts feed, 21 search), 58.5% stayed / 41.5% swiped, 20 likes, 619 unique viewers, 4.8 watch hours. Geography: US 31.3%, India 9.5%, UK 7.9%, Philippines 2.9%, South Africa 2.8% (the US-first target is working). Age (small sample of signed-in viewers with known age): 25–34 58.3%, 13–17 41.7%; gender 100% male (same caveat). Devices: phone 68.5%, TV 15.0% (co-view 1.38), tablet 11.6%, computer 4.7%.
 
-- **26 Nov 21:43 (Moon test Shorts launch):** both public; Related videos linked both ways. First 13 minutes: S23 The Moon Is Leaving Earth (tXCK_8LrDGA) 31 views (30 from the Shorts feed), 48.2% stayed / 51.8% swiped, 2 likes; S24 The Last Solar Eclipse Ever (wMXfmWKnpH8) 4 views in 8 minutes, 25% stayed (too few views to judge). Pinned comments: waiting for Debabrata's OK.
+- **26 Nov 21:43 (Moon test Shorts launch):** both public; Related videos linked both ways. First 13 minutes: S23 The Moon Is Leaving Earth (tXCK_8LrDGA) 31 views (30 from the Shorts feed), 48.2% stayed / 51.8% swiped, 2 likes; S24 The Last Solar Eclipse Ever (wMXfmWKnpH8) 4 views in 8 minutes, 25% stayed (too few views to judge). Pinned comments posted and pinned at 21:47–21:49 (Debabrata approved).
 
 ## Open items
 - **Trailer:** upload the English SRT (it only has auto-captions).
