@@ -1614,9 +1614,9 @@
         {
           "sound": "riser",
           "frame": {
-            "at": "running"
+            "at": "And"
           },
-          "gainDb": -16
+          "gainDb": -22
         }
       ]
     },

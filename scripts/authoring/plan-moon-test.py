@@ -127,7 +127,7 @@ if NAME == 'sky':
     e5 = end('since.')
     ep.scene('a5', explain([arka([(0, 'stand')], [(0, 'sad')])],
                            sky(lv((0, 1), (A('running'), 1), (e5, NOW, 'smoothstep')), lv((0, .8), (A('running'), .8), (e5, 0)), sun=track((0, 0), (A('taking'), 0), (end('with'), .9))), [],
-                           camera_preset=None, sounds=[('riser', A('running'), -16)]))
+                           camera_preset=None, sounds=[('riser', A('And'), -22)]))
     ecl = P(prop('ecl', 'eclipse', .5, MY, .5, text='annular', level=lv((0, 0), (A('too'), 0), (end('Sun.'), 1)), opacity=track((0, 0), (8, 1))))
     ep.scene('a6', explain([arka([(0, 'stand')], [(0, 'shocked')])], sky(lv((0, NOW)), COOL, sun=track((0, .9)), ecl=ecl), [], camera_preset=None,
                            sounds=[('slam', A('Forever.'), -10)]))
@@ -142,13 +142,13 @@ else:
     def stage(level, zoom, extra=()): return [glow(level), ecl_layer(level, zoom), shore(), *extra]
     T0 = lv((0, 0))
     ep.scene('b1', explain([arka([(0, 'stand')], [(0, 'shocked')])], stage(T0, track((0, 1.45), (end('time.'), 1.35, 'smoothstep'))), [], camera_preset=None,
-                           sounds=[('heartbeat', A('dark'), -14)]))
+                           sounds=[('heartbeat', A('dark'), -16)]))
     ep.scene('b2', explain([arka([(0, 'stand')], [(0, 'neutral'), (A('last.'), 'sad')], x=.5)], stage(T0, track((0, 1.35), (end('watch,'), 1.0, 'smoothstep'))), [], camera_preset=None,
-                           sounds=[('heartbeat', A('know'), -14)]))
+                           sounds=[('heartbeat', A('know'), -16)]))
     ep.scene('b3', explain([arka([(0, 'think')], [(0, 'neutral')])], stage(T0, track((0, 1.0), (end('luck.'), 1.2, 'smoothstep'))), [], camera_preset=None, sounds=[('chime', A('perfectly.'), -20)]))
     e4 = end('shrinking.')
     ep.scene('b4', explain([arka([(0, 'stand')], [(0, 'sad')])], stage(lv((0, 0), (A('drifting'), 0), (e4, .45)), track((0, 1.2), (e4, 1.05, 'smoothstep'))), [], camera_preset=None,
-                           sounds=[('riser', A('drifting'), -16), ('heartbeat', A('shadow'), -12)]))
+                           sounds=[('riser', A('drifting'), -22), ('heartbeat', A('shadow'), -16)]))
     e5 = end('all.')
     ep.scene('b5', explain([arka([(0, 'panic')], [(0, 'shocked')])], stage(lv((0, .45), (e5, 1)), track((0, 1.05), (e5, 1.15, 'smoothstep'))), [], camera_preset=None,
                            sounds=[('slam', A('all.'), -10)], shake=[(A('all.'), 12, .025)]))

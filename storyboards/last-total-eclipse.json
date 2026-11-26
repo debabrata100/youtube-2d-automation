@@ -811,7 +811,7 @@
           "frame": {
             "at": "dark"
           },
-          "gainDb": -14
+          "gainDb": -16
         }
       ]
     },
@@ -858,7 +858,7 @@
           "frame": {
             "at": "know"
           },
-          "gainDb": -14
+          "gainDb": -16
         }
       ]
     },
@@ -952,14 +952,14 @@
           "frame": {
             "at": "drifting"
           },
-          "gainDb": -16
+          "gainDb": -22
         },
         {
           "sound": "heartbeat",
           "frame": {
             "at": "shadow"
           },
-          "gainDb": -12
+          "gainDb": -16
         }
       ]
     },
