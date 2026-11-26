@@ -123,8 +123,8 @@ const MarkerArt: React.FC<{m: Marker; map: ReturnType<typeof ascentMapping>; wid
       const yb = y, yt = map.y(m.top ?? m.altitude * 2) + m.dy * height, yr = yt - (yb - yt) * .45;
       if (yb < -20 || yr > height + 20) return null;
       const n = 72;
-      return <g>
-        <defs><linearGradient id={`${id}-au`} gradientUnits="userSpaceOnUse" x1="0" y1={yb} x2="0" y2={yr}>
+      return <g filter={`url(#${id}-soft)`}>
+        <defs><filter id={`${id}-soft`} x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="7"/></filter><linearGradient id={`${id}-au`} gradientUnits="userSpaceOnUse" x1="0" y1={yb} x2="0" y2={yr}>
           <stop offset="0" stopColor="#7dffb0" stopOpacity=".85"/><stop offset=".55" stopColor="#3ee08a" stopOpacity=".45"/>
           <stop offset=".7" stopColor="#ff5a7a" stopOpacity=".28"/><stop offset="1" stopColor="#ff5a7a" stopOpacity="0"/></linearGradient></defs>
         {Array.from({length: n}, (_, i) => {
@@ -148,15 +148,24 @@ const MarkerArt: React.FC<{m: Marker; map: ReturnType<typeof ascentMapping>; wid
     }
     case 'station': {
       const k = s / 400;
-      const wing = (cx: number, cy: number) => <g>{[0, 1].map(j => <rect key={j} x={cx - 34} y={cy + (j ? 14 : -134)} width={68} height={120} fill="#b07a2a" stroke={ink} strokeWidth={lw / k}/>)}
-        {[0, 1].map(j => [1, 2, 3].map(r => <path key={`${j}${r}`} d={`M ${cx - 34} ${cy + (j ? 14 : -134) + r * 30} l 68 0`} stroke="#5a3d12" strokeWidth={3 / k}/>))}</g>;
+      const wing = (cx: number, cy: number) => <g>{[0, 1].map(j => <g key={j}>
+          <rect x={cx - 30} y={cy + (j ? 16 : -146)} width={60} height={130} fill={`url(#${id}-cell)`} stroke={ink} strokeWidth={lw / k}/>
+          {[1, 2, 3, 4, 5].map(r => <path key={r} d={`M ${cx - 30} ${cy + (j ? 16 : -146) + r * 21.7} l 60 0`} stroke="#3a2a10" strokeWidth={1.6 / k}/>)}
+          <path d={`M ${cx} ${cy + (j ? 16 : -146)} l 0 130`} stroke="#3a2a10" strokeWidth={1.6 / k}/></g>)}
+        <rect x={cx - 4} y={cy - 16} width={8} height={32} fill="#9aa3b2"/></g>;
+      const radiator = (cx: number, dir: number) => <g>{[0, 1, 2].map(i => <rect key={i} x={cx - 14} y={dir > 0 ? 22 + i * 26 : -46 - i * 26} width={28} height={22} fill="#f4f6fa" stroke={ink} strokeWidth={1.5 / k}/>)}</g>;
       // Fades in below the overlays at the top, so a big station does not hover behind the readout on the way up.
       return <g transform={`translate(${x} ${y}) scale(${k})`} opacity={clamp((y - clearTop * height) / 220)}>
-        <rect x={-200} y={-8} width={400} height={16} fill="#d4d9e2" stroke={ink} strokeWidth={lw / k}/>
-        {[-170, -110, 110, 170].map(cx => <React.Fragment key={cx}>{wing(cx, 0)}</React.Fragment>)}
-        <rect x={-60} y={8} width={120} height={34} rx={14} fill="#eef1f6" stroke={ink} strokeWidth={lw / k}/>
-        <rect x={-16} y={42} width={32} height={60} rx={12} fill="#eef1f6" stroke={ink} strokeWidth={lw / k}/>
-        <circle cx={0} cy={25} r={8} fill="#7fb6ff"/>
+        <defs><linearGradient id={`${id}-cell`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#d9a043"/><stop offset=".5" stopColor="#a8701f"/><stop offset="1" stopColor="#6e4a14"/></linearGradient></defs>
+        {radiator(-70, 1)}{radiator(70, -1)}
+        <rect x={-205} y={-7} width={410} height={14} fill="#d4d9e2" stroke={ink} strokeWidth={lw / k}/>
+        {Array.from({length: 20}, (_, i) => <path key={i} d={`M ${-200 + i * 20} -7 l 10 14 l 10 -14`} fill="none" stroke="#8d96a6" strokeWidth={1.4 / k}/>)}
+        {[-172, -112, 112, 172].map(cx => <React.Fragment key={cx}>{wing(cx, 0)}</React.Fragment>)}
+        <rect x={-74} y={6} width={148} height={30} rx={13} fill="#eef1f6" stroke={ink} strokeWidth={lw / k}/>
+        <rect x={-30} y={-40} width={60} height={34} rx={13} fill="#e3e7ee" stroke={ink} strokeWidth={lw / k}/>
+        <rect x={-16} y={36} width={32} height={66} rx={12} fill="#eef1f6" stroke={ink} strokeWidth={lw / k}/>
+        {[-50, -20, 10, 40].map(px => <path key={px} d={`M ${px} 8 l 0 26`} stroke="#c4cad6" strokeWidth={1.4 / k}/>)}
+        <circle cx={0} cy={21} r={7} fill="#7fb6ff"/><circle cx={-48} cy={21} r={4} fill="#ffe8a3"/><circle cx={48} cy={21} r={4} fill="#ffe8a3"/>
         {m.label && <text x={0} y={-170} textAnchor="middle" fontFamily={font} fontSize={46} fill="#ffffff" stroke="#0b1020" strokeWidth={8} paintOrder="stroke">{m.label}</text>}
       </g>;
     }
@@ -227,6 +236,16 @@ export const Ascent: React.FC<{config: AscentConfig; theme: Theme; width: number
     <ellipse cx={cx} cy={floor - ch + ch * .34} rx={cw * .4} ry={ch * .3} fill="#fff4c2" opacity=".18"/>
     <rect x={cx - cw * .18} y={floor - ch + 10} width={cw * .36} height={12} rx={6} fill="#fff4c2"/>
     <rect x={cx - cw / 2 + 14} y={floor - ch * .32} width={cw - 28} height={8} fill="#8592aa"/>
+    {c.buttons && (() => {
+      const n = c.buttons.length, bx = cx + cw * .4, r = cw * .045, top = floor - ch * .62, lit = c.press ? trackAt(frame, c.press as never, 0) : 0;
+      return <g>
+        <rect x={bx - r * 1.7} y={top - r * 1.6} width={r * 3.4} height={n * r * 2.7 + r * .8} rx={r * .8} fill="#c9d2e2" stroke={ink} strokeWidth={3}/>
+        {c.buttons.map((label, i) => { const by = top + i * r * 2.7, on = i === n - 1 && lit > .5; return <g key={i}>
+          {on && <circle cx={bx} cy={by} r={r * 2} fill="#ffd25e" opacity={.45 * lit}/>}
+          <circle cx={bx} cy={by} r={r} fill={on ? '#ffd25e' : '#eef1f6'} stroke={ink} strokeWidth={3}/>
+          <text x={bx} y={by + r * .38} textAnchor="middle" fontFamily={theme.label.fontFamily} fontSize={r * (label.length > 2 ? .8 : 1.15)} fill={ink}>{label}</text></g>; })}
+      </g>;
+    })()}
   </g>;
 };
 

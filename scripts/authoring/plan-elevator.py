@@ -25,7 +25,9 @@ S = lambda sec: round(sec * FPS)             # seconds -> frames
 ISS = 419_000
 RIDE = [(0, 0), (S(.8), 0), (S(4), 828), (S(10), 8849), (S(12.6), 10_700), (S(17.4), 19_200), (S(25.5), 100_000), (S(29.5), 200_000), (S(34), ISS)]
 ARRIVE = RIDE[-1][0]
-DOORS = S(36.2)                              # the doors open on the ISS
+FOCUS = S(35.2)                              # the shot has pushed in on the lift and the station
+DOORS = S(35.2)                              # the doors open on the ISS
+PRESS = S(36.4)                              # Arka presses G; the doors close again
 SAY = S(37.6)                                # Arka's line starts about here (the padded narration puts it there)
 AIR = [(0, 100), (828, 91), (8849, 31), (10_700, 24), (19_200, 6.2), (30_000, 1.18), (50_000, .079), (70_000, .0052), (85_000, .00037), (100_000, .00003), (ISS, 0)]
 TEMP = [(0, 15), (828, 10), (8849, -42), (10_700, -54), (19_200, -57), (25_000, -57)]
@@ -68,8 +70,19 @@ world = {'type': 'ascent', 'part': 'world', **CAR, 'stars': 220, 'seed': 9, 'cle
     # The station hangs right behind the car when it arrives (beside it, not at a log-scale distance above it).
     {'kind': 'station', 'altitude': ISS, 'x': .5, 'size': .95, 'dy': -.1},
 ]}
-front = {'type': 'ascent', 'part': 'car-front', **CAR, 'markers': [], 'stars': 0,
-         'doors': [{'frame': 0, 'value': .7}, {'frame': S(.7), 'value': 0, 'ease': 'ease-out-cubic'}, {'frame': DOORS, 'value': 0}, {'frame': DOORS + 18, 'value': 1, 'ease': 'ease-out-cubic'}]}
+DOOR_KEYS = [{'frame': 0, 'value': .7}, {'frame': S(.7), 'value': 0, 'ease': 'ease-out-cubic'}, {'frame': DOORS, 'value': 0}, {'frame': DOORS + 18, 'value': 1, 'ease': 'ease-out-cubic'},
+             {'frame': PRESS + 6, 'value': 1}, {'frame': PRESS + 20, 'value': 0, 'ease': 'smoothstep'}]
+world['buttons'] = ['ISS', '1', 'G']
+world['press'] = [{'frame': 0, 'value': 0}, {'frame': PRESS - 1, 'value': 0}, {'frame': PRESS, 'value': 1}]
+front = {'type': 'ascent', 'part': 'car-front', **CAR, 'markers': [], 'stars': 0, 'doors': DOOR_KEYS}
+# The camera: a small bump at each milestone, then a push in on the lift and the station when it arrives. It is a layer
+# scale about the car's roof (world, rider and doors together), so the readout and the captions stay where they are.
+ROOF = {'x': W / 2, 'y': (CAR['carY'] - CAR['carHeight']) * H}
+zoom = [(0, 1)]
+for f in (S(4), S(10), S(17.4), S(25.5)): zoom += [(f - 1, 1), (f + 4, 1.035, 'ease-out-cubic'), (f + 18, 1, 'smoothstep')]
+zoom += [(ARRIVE, 1), (FOCUS, 1.5, 'smoothstep')]
+ZOOM = track(*zoom)
+READOUT_FADE = track((0, 1), (ARRIVE + 6, 1), (ARRIVE + 26, 0))     # the panel steps aside for the close-up
 readout = {'type': 'readout', 'x': .5, 'y': .05, 'width': .66, 'value': ride, 'rows': [
     {'label': 'FLOOR', 'format': 'int', 'scale': round(1 / FLOOR_M, 6), 'big': True},
     {'label': 'HEIGHT', 'format': 'distance'},
@@ -81,23 +94,25 @@ readout = {'type': 'readout', 'x': .5, 'y': .05, 'width': .66, 'value': ride, 'r
 feet = CAR['carY'] - .006
 arka = Char('arka', 'arka', x=.5, fy=feet, h=.16, idle='breathe',
             poses=[(0, 'stand'), (S(4), 'cheer'), (S(6), 'stand'), (S(10), 'scared'), (S(12.6), 'point-right'), (S(14.5), 'stand'), (S(17.4), 'panic'),
-                   (S(20.5), 'stand'), (S(25.5), 'cheer'), (S(27.6), 'point-right'), (S(31), 'stand'), (ARRIVE, 'stand'), (DOORS + 10, 'point-left'), (SAY, 'shrug')],
+                   (S(20.5), 'stand'), (S(25.5), 'cheer'), (S(27.6), 'point-right'), (S(31), 'stand'), (ARRIVE, 'cheer'), (DOORS + 14, 'stand'), (PRESS - 10, 'point-right'), (PRESS + 16, 'stand'), (SAY, 'shrug')],
             faces=[(0, 'neutral'), (S(4), 'happy'), (S(8), 'neutral'), (S(10), 'scared'), (S(12.6), 'shocked'), (S(14.5), 'neutral'), (S(17.4), 'scream'),
-                   (S(20.5), 'puffed'), (S(25.5), 'grin'), (S(27.6), 'happy'), (DOORS + 10, 'shocked'), (SAY, 'smug')],
-            react=[S(10), S(17.4)])
+                   (S(20.5), 'puffed'), (S(25.5), 'grin'), (S(27.6), 'happy'), (DOORS + 14, 'shocked'), (PRESS + 16, 'neutral'), (SAY, 'smug')],
+            layer={'scale': ZOOM, 'anchor': ROOF, 'x': track((0, 0), *[k for at in (S(10), S(17.4)) for k in ((at, 0), (at + 2, -9), (at + 4, 9), (at + 6, -5), (at + 9, 0))],
+                                                             (PRESS - 10, 0), (PRESS - 2, 46, 'ease-out-cubic'), (PRESS + 14, 46), (PRESS + 26, 0, 'smoothstep'))})
 
 CALL_Y = 770                                        # one line of text between the readout and the car (above the Shorts UI)
-def callout(cid, text, a, b, color='#ffffff'):
-    return {'id': cid, 'text': text, 'x': W // 2, 'y': CALL_Y, 'size': 60, 'anchor': 'middle', 'variant': 'pill', 'color': color, 'pop': True,
+def callout(cid, text, a, b, color='#ffffff', y=CALL_Y, size=60):
+    return {'id': cid, 'text': text, 'x': W // 2, 'y': y, 'size': size, 'anchor': 'middle', 'variant': 'pill', 'color': color, 'pop': True,
             'opacity': track(*([(0, 1)] if a == 0 else [(0, 0), (a - 1, 0), (a + 6, 1)]), (b - 1, 1), (b + 6, 0))}
 notes = [callout('c0', 'What if this lift never stopped?', 0, S(3.4)), callout('c1', 'Taller than Burj Khalifa', S(3.8), S(7)), callout('c2', 'Higher than Everest', S(9.6), S(12.4)),
          callout('c3', 'Where jets fly', S(12.4), S(15.2)), callout('c4', 'Your tears would boil', S(17), S(21.5)),
          callout('c4b', 'Shooting stars burn up here', S(22.4), S(25.1)), callout('c5', 'You are in space', S(25.2), S(27.5)),
-         callout('c5b', 'Northern lights glow up here', S(27.6), S(31.5)), callout('c6', 'The ISS. Doors opening...', ARRIVE, DOORS + 10),
-         callout('c7', 'Going down: 11 h 38 min', DOORS + 14, S(DURATION) + 30)]
+         callout('c5b', 'Northern lights glow up here', S(27.6), S(31.5)), callout('c6', 'The ISS!', ARRIVE + 4, PRESS - 8, y=560, size=76),
+         callout('c7', 'Going down: 11 h 38 min', PRESS + 4, S(DURATION) + 30, y=560, size=72)]
 sounds = [('ding', S(.1), -8), ('rumble', S(.8), -8), ('ding', S(4), -8), ('chime', S(27.6), -8), ('ding', S(10), -8), ('whoosh', S(11.6), -4),
-          ('ding', S(17.4), -8), ('heartbeat', S(18.2), -6), ('riser', S(22), -10), ('ding', S(25.5), -8), ('ding', ARRIVE + 6, -4), ('pop', DOORS + 14, -6)]
-ep.scene('e1', explain([arka], [Prop({'id': 'world', 'kit': world}), Prop({'id': 'front', 'kit': front}), Prop({'id': 'readout', 'kit': readout})], [], camera_preset=None, sounds=sounds))
+          ('ding', S(17.4), -8), ('heartbeat', S(18.2), -6), ('riser', S(22), -10), ('ding', S(25.5), -8), ('ding', ARRIVE + 6, -4), ('pop', PRESS + 4, -6)]
+ep.scene('e1', explain([arka], [Prop({'id': 'world', 'kit': world, 'scale': ZOOM, 'anchor': ROOF}), Prop({'id': 'front', 'kit': front, 'scale': ZOOM, 'anchor': ROOF}),
+                                 Prop({'id': 'readout', 'kit': readout, 'opacity': READOUT_FADE})], [], camera_preset=None, sounds=sounds))
 
 tag = note('brand-tag', 'GAHANARKA', 200, 1475, 0, size=40, color='#ffd25e')
 tag.pop('opacity', None); tag['pop'] = False; tag['opacity'] = track((0, .85))
