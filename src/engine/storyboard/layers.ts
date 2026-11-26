@@ -36,7 +36,7 @@ export const layerSchema = z.object({
 });
 export const groupSchema = z.object({
   id: z.string().min(1), width: z.number().positive(), height: z.number().positive(), layers: z.array(layerSchema).min(1).max(40),
-  annotations: z.array(z.object({id: z.string().min(1), text: z.string().min(1).max(60), x: z.number(), y: z.number(), size: z.number().min(12).max(100).default(40), anchor: z.enum(['start', 'middle', 'end']).default('middle'), variant: z.enum(['plain', 'pill', 'ink']).default('plain'), color: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(), pop: z.boolean().default(false), opacity: trackSchema(0, 1).optional(), connector: z.object({from: point, to: point}).strict().optional()}).strict()).max(8).optional(),
+  annotations: z.array(z.object({id: z.string().min(1), text: z.string().min(1).max(60), x: z.number(), y: z.number(), size: z.number().min(12).max(100).default(40), anchor: z.enum(['start', 'middle', 'end']).default('middle'), variant: z.enum(['plain', 'pill', 'ink']).default('plain'), color: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(), pop: z.boolean().default(false), opacity: trackSchema(0, 1).optional(), connector: z.object({from: point, to: point}).strict().optional()}).strict()).max(12).optional(),
 }).strict().refine(group => new Set(group.layers.map(layer => layer.id)).size === group.layers.length, 'Duplicate illustration layer ID').superRefine((group,ctx)=>{
  const effects=group.layers.flatMap(l=>l.effects??[]);
  if(new Set(effects.map(e=>e.id)).size!==effects.length)ctx.addIssue({code:'custom',message:'Motion effect IDs must be unique within a group'});

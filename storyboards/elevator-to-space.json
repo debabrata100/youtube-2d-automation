@@ -120,6 +120,11 @@
                 "ease": "linear"
               },
               {
+                "frame": 885,
+                "value": 200000,
+                "ease": "linear"
+              },
+              {
                 "frame": 1020,
                 "value": 419000,
                 "ease": "ease-out-cubic"
@@ -200,11 +205,37 @@
                 "color": "#ffd25e"
               },
               {
-                "kind": "station",
-                "altitude": 420500,
-                "x": 0.17,
+                "kind": "meteor",
+                "altitude": 84000,
+                "x": 0.22,
                 "size": 0.3,
-                "label": "ISS"
+                "seed": 1
+              },
+              {
+                "kind": "meteor",
+                "altitude": 95000,
+                "x": 0.78,
+                "size": 0.26,
+                "seed": 3
+              },
+              {
+                "kind": "meteor",
+                "altitude": 112000,
+                "x": 0.3,
+                "size": 0.22,
+                "seed": 6
+              },
+              {
+                "kind": "aurora",
+                "altitude": 100000,
+                "top": 200000
+              },
+              {
+                "kind": "station",
+                "altitude": 419000,
+                "x": 0.5,
+                "size": 0.95,
+                "dy": -0.1
               }
             ]
           }
@@ -215,7 +246,7 @@
             "type": "figure",
             "x": 0.5,
             "y": 0.654,
-            "height": 0.135,
+            "height": 0.16,
             "outfit": "astronaut",
             "shiver": 0,
             "seed": 11,
@@ -257,7 +288,11 @@
                 "pose": "cheer"
               },
               {
-                "frame": 840,
+                "frame": 828,
+                "pose": "point-right"
+              },
+              {
+                "frame": 930,
                 "pose": "stand"
               },
               {
@@ -311,7 +346,7 @@
                 "face": "grin"
               },
               {
-                "frame": 840,
+                "frame": 828,
                 "face": "happy"
               },
               {
@@ -598,6 +633,11 @@
                 "ease": "linear"
               },
               {
+                "frame": 885,
+                "value": 200000,
+                "ease": "linear"
+              },
+              {
                 "frame": 1020,
                 "value": 419000,
                 "ease": "ease-out-cubic"
@@ -671,6 +711,11 @@
               {
                 "frame": 765,
                 "value": 100000,
+                "ease": "linear"
+              },
+              {
+                "frame": 885,
+                "value": 200000,
                 "ease": "linear"
               },
               {
@@ -939,6 +984,39 @@
           ]
         },
         {
+          "id": "c4b",
+          "text": "Shooting stars burn up here",
+          "x": 540,
+          "y": 770,
+          "size": 60,
+          "anchor": "middle",
+          "variant": "pill",
+          "color": "#ffffff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 671,
+              "value": 0
+            },
+            {
+              "frame": 678,
+              "value": 1
+            },
+            {
+              "frame": 752,
+              "value": 1
+            },
+            {
+              "frame": 759,
+              "value": 0
+            }
+          ]
+        },
+        {
           "id": "c5",
           "text": "You are in space",
           "x": 540,
@@ -962,11 +1040,44 @@
               "value": 1
             },
             {
-              "frame": 869,
+              "frame": 824,
               "value": 1
             },
             {
-              "frame": 876,
+              "frame": 831,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "c5b",
+          "text": "Northern lights glow up here",
+          "x": 540,
+          "y": 770,
+          "size": 60,
+          "anchor": "middle",
+          "variant": "pill",
+          "color": "#ffffff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 827,
+              "value": 0
+            },
+            {
+              "frame": 834,
+              "value": 1
+            },
+            {
+              "frame": 944,
+              "value": 1
+            },
+            {
+              "frame": 951,
               "value": 0
             }
           ]
@@ -1090,9 +1201,9 @@
           "gainDb": -16
         },
         {
-          "sound": "wind",
-          "frame": 225,
-          "gainDb": -24
+          "sound": "chime",
+          "frame": 828,
+          "gainDb": -20
         },
         {
           "sound": "ding",

@@ -23,7 +23,7 @@ S = lambda sec: round(sec * FPS)             # seconds -> frames
 # ------------------------------------------------------------------ the ride (altitude over screen time)
 # Each leg runs linearly in metres, so the picture rushes off each milestone and slows into the next one.
 ISS = 419_000
-RIDE = [(0, 0), (S(.8), 0), (S(4), 828), (S(10), 8849), (S(12.6), 10_700), (S(17.4), 19_200), (S(25.5), 100_000), (S(34), ISS)]
+RIDE = [(0, 0), (S(.8), 0), (S(4), 828), (S(10), 8849), (S(12.6), 10_700), (S(17.4), 19_200), (S(25.5), 100_000), (S(29.5), 200_000), (S(34), ISS)]
 ARRIVE = RIDE[-1][0]
 DOORS = S(36.2)                              # the doors open on the ISS
 SAY = S(37.6)                                # Arka's line starts about here (the padded narration puts it there)
@@ -61,7 +61,12 @@ world = {'type': 'ascent', 'part': 'world', **CAR, 'stars': 220, 'seed': 9, 'cle
     {'kind': 'jet', 'altitude': 10_700, 'x': 1.45, 'size': .3, 'drift': -.0025},
     {'kind': 'line', 'altitude': 19_200, 'x': .04, 'size': .075, 'label': 'ARMSTRONG LIMIT', 'color': '#ff8a5c'},
     {'kind': 'line', 'altitude': 100_000, 'x': .04, 'size': .075, 'label': 'SPACE STARTS HERE', 'color': '#ffd25e'},
-    {'kind': 'station', 'altitude': ISS + 1500, 'x': .17, 'size': .3, 'label': 'ISS'},
+    # Shooting stars glow at about 80-120 km; green aurora at 100-200 km with red above (NASA; EarthSky).
+    {'kind': 'meteor', 'altitude': 84_000, 'x': .22, 'size': .3, 'seed': 1}, {'kind': 'meteor', 'altitude': 95_000, 'x': .78, 'size': .26, 'seed': 3},
+    {'kind': 'meteor', 'altitude': 112_000, 'x': .3, 'size': .22, 'seed': 6},
+    {'kind': 'aurora', 'altitude': 100_000, 'top': 200_000},
+    # The station hangs right behind the car when it arrives (beside it, not at a log-scale distance above it).
+    {'kind': 'station', 'altitude': ISS, 'x': .5, 'size': .95, 'dy': -.1},
 ]}
 front = {'type': 'ascent', 'part': 'car-front', **CAR, 'markers': [], 'stars': 0,
          'doors': [{'frame': 0, 'value': .7}, {'frame': S(.7), 'value': 0, 'ease': 'ease-out-cubic'}, {'frame': DOORS, 'value': 0}, {'frame': DOORS + 18, 'value': 1, 'ease': 'ease-out-cubic'}]}
@@ -74,11 +79,11 @@ readout = {'type': 'readout', 'x': .5, 'y': .05, 'width': .66, 'value': ride, 'r
 
 # Arka rides inside the car: reacts at every milestone, then delivers the line when the doors open.
 feet = CAR['carY'] - .006
-arka = Char('arka', 'arka', x=.5, fy=feet, h=.135, idle='breathe',
+arka = Char('arka', 'arka', x=.5, fy=feet, h=.16, idle='breathe',
             poses=[(0, 'stand'), (S(4), 'cheer'), (S(6), 'stand'), (S(10), 'scared'), (S(12.6), 'point-right'), (S(14.5), 'stand'), (S(17.4), 'panic'),
-                   (S(20.5), 'stand'), (S(25.5), 'cheer'), (S(28), 'stand'), (ARRIVE, 'stand'), (DOORS + 10, 'point-left'), (SAY, 'shrug')],
+                   (S(20.5), 'stand'), (S(25.5), 'cheer'), (S(27.6), 'point-right'), (S(31), 'stand'), (ARRIVE, 'stand'), (DOORS + 10, 'point-left'), (SAY, 'shrug')],
             faces=[(0, 'neutral'), (S(4), 'happy'), (S(8), 'neutral'), (S(10), 'scared'), (S(12.6), 'shocked'), (S(14.5), 'neutral'), (S(17.4), 'scream'),
-                   (S(20.5), 'puffed'), (S(25.5), 'grin'), (S(28), 'happy'), (DOORS + 10, 'shocked'), (SAY, 'smug')],
+                   (S(20.5), 'puffed'), (S(25.5), 'grin'), (S(27.6), 'happy'), (DOORS + 10, 'shocked'), (SAY, 'smug')],
             react=[S(10), S(17.4)])
 
 CALL_Y = 770                                        # one line of text between the readout and the car (above the Shorts UI)
@@ -87,9 +92,10 @@ def callout(cid, text, a, b, color='#ffffff'):
             'opacity': track(*([(0, 1)] if a == 0 else [(0, 0), (a - 1, 0), (a + 6, 1)]), (b - 1, 1), (b + 6, 0))}
 notes = [callout('c0', 'What if this lift never stopped?', 0, S(3.4)), callout('c1', 'Taller than Burj Khalifa', S(3.8), S(7)), callout('c2', 'Higher than Everest', S(9.6), S(12.4)),
          callout('c3', 'Where jets fly', S(12.4), S(15.2)), callout('c4', 'Your tears would boil', S(17), S(21.5)),
-         callout('c5', 'You are in space', S(25.2), S(29)), callout('c6', 'The ISS. Doors opening...', ARRIVE, DOORS + 10),
+         callout('c4b', 'Shooting stars burn up here', S(22.4), S(25.1)), callout('c5', 'You are in space', S(25.2), S(27.5)),
+         callout('c5b', 'Northern lights glow up here', S(27.6), S(31.5)), callout('c6', 'The ISS. Doors opening...', ARRIVE, DOORS + 10),
          callout('c7', 'Going down: 11 h 38 min', DOORS + 14, S(DURATION) + 30)]
-sounds = [('ding', S(.1), -14), ('rumble', S(.8), -20), ('ding', S(4), -16), ('wind', S(7.5), -24), ('ding', S(10), -16), ('whoosh', S(11.6), -16),
+sounds = [('ding', S(.1), -14), ('rumble', S(.8), -20), ('ding', S(4), -16), ('chime', S(27.6), -20), ('ding', S(10), -16), ('whoosh', S(11.6), -16),
           ('ding', S(17.4), -14), ('heartbeat', S(18.2), -18), ('riser', S(22), -22), ('ding', S(25.5), -14), ('ding', ARRIVE + 6, -10), ('pop', DOORS + 14, -18)]
 ep.scene('e1', explain([arka], [Prop({'id': 'world', 'kit': world}), Prop({'id': 'front', 'kit': front}), Prop({'id': 'readout', 'kit': readout})], [], camera_preset=None, sounds=sounds))
 

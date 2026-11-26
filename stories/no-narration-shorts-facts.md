@@ -43,3 +43,10 @@ Assumptions: walking nonstop at **5 km/h**, **0.75 m per step** (about 1,333 ste
 
 Punchline: in 8.6 years the Moon drifts away about **33 cm** (3.8 cm a year, Lunar Laser Ranging). Arka reaches for
 it and misses by a hand: "...It moved."
+
+### Added for Elevator draft 2 (26 Nov 2026)
+- **Shooting stars** light up at about 80-120 km (EarthSky, "How high up are meteors when they begin to glow?"); some
+  burn out near 100 km, others lower. Shown at 84, 95 and 112 km with the label "Shooting stars burn up here".
+- **Northern lights**: green aurora at 100-200 km (oxygen), red above 200 km (NASA Science, "Auroras"; Berkeley ARTEMIS:
+  90% of auroral light comes from 100-250 km). Drawn as green curtains from 100 to 200 km with a red fringe above,
+  labelled "Northern lights glow up here". Seen from the ISS, auroras lie below the station, as in the ending.

@@ -116,7 +116,11 @@ export const kitSchema = z.discriminatedUnion('type', [
     /** Screen heights per factor of ten in altitude, and metres added before the log (so the ground floor is finite). */
     decade: size(.05, 3).default(.7), offset: z.number().min(1).max(10000).default(50),
     doors: z.array(z.object({frame: keyFrame, value: z.number().min(0).max(1), ease: easingNameSchema.optional()}).strict()).min(1).max(12).refine(increasing, 'Door frames must strictly increase').optional(),
-    markers: z.array(z.object({kind: z.enum(['city', 'tower', 'cloud', 'mountain', 'jet', 'balloon', 'line', 'station']), altitude: z.number().min(0).max(1e9),
+    markers: z.array(z.object({kind: z.enum(['city', 'tower', 'cloud', 'mountain', 'jet', 'balloon', 'line', 'station', 'meteor', 'aurora']), altitude: z.number().min(0).max(1e9),
+      /** Aurora: the top of the curtains (they hang from `top` down to `altitude`). */
+      top: z.number().min(0).max(1e9).optional(),
+      /** Screen offset (fraction of the height) for art that should sit beside the car rather than at its altitude. */
+      dy: z.number().min(-1).max(1).default(0),
       x: n.default(.5), size: size(.02, 1.5).default(.2), label: z.string().min(1).max(40).optional(), color: hex.optional(),
       /** Horizontal drift (fraction of the width per frame), e.g. a passing jet. */
       drift: z.number().min(-.03).max(.03).default(0), seed}).strict()).max(40).default([]),

@@ -1,5 +1,6 @@
 import React from 'react';
 import {seededRandom} from '../../motion/particles';
+import {blobPath} from './geometry';
 import {trackAt} from '../motion/layers';
 import type {Theme} from '../style/theme';
 import type {KitConfig} from './schema';
@@ -49,10 +50,10 @@ const Building: React.FC<{x: number; w: number; top: number; bottom: number; fil
   </g>;
 };
 
-const MarkerArt: React.FC<{m: Marker; map: ReturnType<typeof ascentMapping>; width: number; height: number; frame: number; theme: Theme; id: string; clearTop: number}> = ({m, map, width, height, frame, theme, clearTop}) => {
+const MarkerArt: React.FC<{m: Marker; map: ReturnType<typeof ascentMapping>; width: number; height: number; frame: number; theme: Theme; id: string; clearTop: number}> = ({m, map, width, height, frame, theme, id, clearTop}) => {
   const ink = theme.line.color, lw = theme.line.width, font = theme.label.fontFamily;
-  const y = map.y(m.altitude), x = (m.x + m.drift * frame) * width, s = m.size * width;
-  if (m.kind !== 'city' && m.kind !== 'tower' && m.kind !== 'mountain' && (y < -s * 1.5 || y > height + s * 1.5)) return null;
+  const y = map.y(m.altitude) + m.dy * height, x = (m.x + m.drift * frame) * width, s = m.size * width;
+  if (m.kind !== 'city' && m.kind !== 'tower' && m.kind !== 'mountain' && m.kind !== 'aurora' && (y < -s * 1.5 || y > height + s * 1.5)) return null;
   switch (m.kind) {
     case 'city': {
       const ground = map.y(0); if (ground > height + 50) return null;
@@ -108,6 +109,31 @@ const MarkerArt: React.FC<{m: Marker; map: ReturnType<typeof ascentMapping>; wid
         {[0, 1, 2, 3, 4, 5, 6].map(i => <circle key={i} cx={-90 + i * 26} cy={-4} r={5} fill="#3f5f8f"/>)}
       </g>;
     }
+    case 'meteor': {
+      // A shooting star that flashes across every 50 frames (phase from the seed), burning out as it goes.
+      const t = ((frame + m.seed * 17) % 50) / 50, hx = x + (t - .5) * s * 1.6, hy = y + (t - .5) * s * .7, len = s * .7 * Math.sin(Math.PI * t);
+      return <g opacity={Math.sin(Math.PI * t)}>
+        <path d={`M ${hx} ${hy} L ${hx - len * .9} ${hy - len * .4}`} stroke="#ffe9b0" strokeWidth={6} strokeLinecap="round" opacity=".55"/>
+        <path d={`M ${hx} ${hy} L ${hx - len * .5} ${hy - len * .22}`} stroke="#ffffff" strokeWidth={4} strokeLinecap="round"/>
+        <circle cx={hx} cy={hy} r={7} fill="#fff6d8"/>
+      </g>;
+    }
+    case 'aurora': {
+      // Curtains: green from `altitude` up to `top`, a faint red fringe above (NASA: green 100-200 km, red above 200 km).
+      const yb = y, yt = map.y(m.top ?? m.altitude * 2) + m.dy * height, yr = yt - (yb - yt) * .45;
+      if (yb < -20 || yr > height + 20) return null;
+      const n = 72;
+      return <g>
+        <defs><linearGradient id={`${id}-au`} gradientUnits="userSpaceOnUse" x1="0" y1={yb} x2="0" y2={yr}>
+          <stop offset="0" stopColor="#7dffb0" stopOpacity=".85"/><stop offset=".55" stopColor="#3ee08a" stopOpacity=".45"/>
+          <stop offset=".7" stopColor="#ff5a7a" stopOpacity=".28"/><stop offset="1" stopColor="#ff5a7a" stopOpacity="0"/></linearGradient></defs>
+        {Array.from({length: n}, (_, i) => {
+          const px = (i + .5) / n * width, wave = Math.sin(i * .55 + frame * .06) * .5 + .5, sway = Math.sin(i * .3 + frame * .04) * 18;
+          const bottom = yb + Math.sin(i * .9 + frame * .05) * 30;
+          return <rect key={i} x={px - width / n * .6 + sway} y={yr} width={width / n * 2.4} height={Math.max(0, bottom - yr)} fill={`url(#${id}-au)`} opacity={.2 + .35 * wave}/>;
+        })}
+      </g>;
+    }
     case 'balloon': return <g>
       <path d={`M ${x} ${y + s * .55} L ${x} ${y + s * 1.1}`} stroke={ink} strokeWidth={lw * .6}/>
       <ellipse cx={x} cy={y} rx={s * .3} ry={s * .38} fill="#f2f4f8" stroke={ink} strokeWidth={lw}/>
@@ -124,7 +150,8 @@ const MarkerArt: React.FC<{m: Marker; map: ReturnType<typeof ascentMapping>; wid
       const k = s / 400;
       const wing = (cx: number, cy: number) => <g>{[0, 1].map(j => <rect key={j} x={cx - 34} y={cy + (j ? 14 : -134)} width={68} height={120} fill="#b07a2a" stroke={ink} strokeWidth={lw / k}/>)}
         {[0, 1].map(j => [1, 2, 3].map(r => <path key={`${j}${r}`} d={`M ${cx - 34} ${cy + (j ? 14 : -134) + r * 30} l 68 0`} stroke="#5a3d12" strokeWidth={3 / k}/>))}</g>;
-      return <g transform={`translate(${x} ${y}) scale(${k})`}>
+      // Fades in below the overlays at the top, so a big station does not hover behind the readout on the way up.
+      return <g transform={`translate(${x} ${y}) scale(${k})`} opacity={clamp((y - clearTop * height) / 220)}>
         <rect x={-200} y={-8} width={400} height={16} fill="#d4d9e2" stroke={ink} strokeWidth={lw / k}/>
         {[-170, -110, 110, 170].map(cx => <React.Fragment key={cx}>{wing(cx, 0)}</React.Fragment>)}
         <rect x={-60} y={8} width={120} height={34} rx={14} fill="#eef1f6" stroke={ink} strokeWidth={lw / k}/>
@@ -160,6 +187,7 @@ export const Ascent: React.FC<{config: AscentConfig; theme: Theme; width: number
   const starAt = (y: number) => clamp((Math.log10(map.altitudeAt(y) + 1) - 4.4) / (4.85 - 4.4));
   // Earth's curved edge rises into the bottom of the frame once the ground has scrolled away (above about 15 km).
   const lift = c.earth ? clamp((Math.log10(h + 1) - 4.15) / (Math.log10(450000) - 4.15)) : 0;
+  const rl = seededRandom(c.seed + 7), land = Array.from({length: 9}, (_, i) => ({x: i / 9 + rl() * .05, y: rl(), w: .12 + rl() * .16, seed: c.seed + i}));
   const R = width * (6 - 4.4 * lift), topY = height + 30 - lift * height * .2, ex = width / 2;
   const railX = [cx - cw / 2 - 26, cx + cw / 2 + 26], step = .02, uh = map.u(h);
   const ticks = Array.from({length: Math.ceil(height / (step * map.px)) + 2}, (_, i) => {
@@ -171,15 +199,21 @@ export const Ascent: React.FC<{config: AscentConfig; theme: Theme; width: number
     <defs>
       <linearGradient id={`${id}-sky`} x1="0" y1="0" x2="0" y2="1">{Array.from({length: bands + 1}, (_, i) => <stop key={i} offset={i / bands} stopColor={skyColorAt(sky, map.altitudeAt(i / bands * height))}/>)}</linearGradient>
       <radialGradient id={`${id}-air`} cx={ex} cy={topY + R} r={R + 70} gradientUnits="userSpaceOnUse"><stop offset={(R - 10) / (R + 70)} stopColor="#9fd8ff" stopOpacity=".95"/><stop offset={(R + 18) / (R + 70)} stopColor="#4aa3f0" stopOpacity=".55"/><stop offset="1" stopColor="#1d4d9a" stopOpacity="0"/></radialGradient>
+      <linearGradient id={`${id}-dawn`} gradientUnits="userSpaceOnUse" x1={0} y1={0} x2={width} y2={0}><stop offset="0" stopColor="#ffb347" stopOpacity=".95"/><stop offset=".35" stopColor="#ff7a3d" stopOpacity=".5"/><stop offset=".6" stopColor="#ff7a3d" stopOpacity="0"/></linearGradient>
+      <linearGradient id={`${id}-shade`} gradientUnits="userSpaceOnUse" x1={0} y1={topY} x2={0} y2={topY + 260}><stop offset="0" stopColor="#ffffff" stopOpacity=".12"/><stop offset="1" stopColor="#000814" stopOpacity=".45"/></linearGradient>
       <radialGradient id={`${id}-sea`} cx={ex - R * .1} cy={topY + R * .2} r={R} gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#3f8fe0"/><stop offset=".06" stopColor="#2a6fc4"/><stop offset=".2" stopColor="#123a7a"/></radialGradient>
     </defs>
     <rect x={-40} y={-40} width={width + 80} height={height + 80} fill={`url(#${id}-sky)`}/>
     {stars.map((s, i) => { const o = starAt(s.y); return o > .01 ? <circle key={i} cx={s.x} cy={s.y} r={s.r} fill="#ffffff" opacity={o * (.55 + .35 * Math.sin(frame * .08 + s.tw))}/> : null; })}
     {lift > 0 && <g opacity={clamp(lift * 6)}>
       <circle cx={ex} cy={topY + R} r={R + 70} fill={`url(#${id}-air)`}/>
+      <circle cx={ex} cy={topY + R} r={R + 46} fill={`url(#${id}-dawn)`}/>
       <circle cx={ex} cy={topY + R} r={R} fill={`url(#${id}-sea)`}/>
-      <g clipPath={`url(#${id}-ball)`}>{[[-.28, .02, .22], [.12, .05, .3], [.4, .01, .14]].map(([dx, dy, w], i) => <ellipse key={i} cx={ex + dx * width} cy={topY + dy * height + 40} rx={w * width} ry={w * width * .18} fill="#5e9b55" opacity=".85"/>)}
-        {[[-.1, .015, .26], [.3, .03, .2]].map(([dx, dy, w], i) => <ellipse key={i} cx={ex + dx * width} cy={topY + dy * height + 20} rx={w * width} ry={14} fill="#ffffff" opacity=".7"/>)}</g>
+      <g clipPath={`url(#${id}-ball)`}>
+        {land.map((l, i) => { const lx = ((l.x * width * 2 + frame * .6) % (width * 2)) - width * .5; return <path key={i} d={blobPath(lx, topY + l.y * height * .3 + 30, l.w * width, l.w * width * .3, .45, l.seed)} fill={i % 3 ? '#5e9b55' : '#b49a5c'} opacity=".9"/>; })}
+        {land.slice(0, 5).map((l, i) => { const lx = ((l.x * width * 2 + 300 + frame * .9) % (width * 2)) - width * .5; return <path key={`c${i}`} d={`M ${lx - 140} ${topY + 34 + l.y * 60} q 90 -26 180 0 q 60 18 110 -4`} fill="none" stroke="#ffffff" strokeOpacity=".75" strokeWidth={12} strokeLinecap="round"/>; })}
+      </g>
+      <circle cx={ex} cy={topY + R} r={R} fill={`url(#${id}-shade)`}/>
       <defs><clipPath id={`${id}-ball`}><circle cx={ex} cy={topY + R} r={R}/></clipPath></defs>
     </g>}
     {c.markers.map((m, i) => <MarkerArt key={i} m={m} map={map} width={width} height={height} frame={frame} theme={theme} id={`${id}-m${i}`} clearTop={c.clearTop}/>)}
@@ -188,8 +222,9 @@ export const Ascent: React.FC<{config: AscentConfig; theme: Theme; width: number
     {railX.map(rx => <g key={rx}><path d={`M ${rx} -20 L ${rx} ${height + 20}`} stroke="#c6cfdd" strokeWidth={8}/><path d={`M ${rx} -20 L ${rx} ${height + 20}`} stroke={ink} strokeWidth={2}/>
       {ticks.map((ty, i) => <path key={i} d={`M ${rx - 12} ${ty} L ${rx + 12} ${ty}`} stroke={ink} strokeWidth={4}/>)}</g>)}
     <path d={`M ${cx} -20 L ${cx} ${floor - ch}`} stroke={ink} strokeWidth={6}/>
-    <rect x={cx - cw / 2} y={floor - ch} width={cw} height={ch} rx={10} fill="#2b3550" stroke={ink} strokeWidth={lw}/>
-    <rect x={cx - cw / 2 + 14} y={floor - ch + 14} width={cw - 28} height={ch - 28} rx={8} fill="#3c4a6e"/>
+    <rect x={cx - cw / 2} y={floor - ch} width={cw} height={ch} rx={10} fill="#4a5f8c" stroke={ink} strokeWidth={lw}/>
+    <rect x={cx - cw / 2 + 14} y={floor - ch + 14} width={cw - 28} height={ch - 28} rx={8} fill="#6b84b8"/>
+    <ellipse cx={cx} cy={floor - ch + ch * .34} rx={cw * .4} ry={ch * .3} fill="#fff4c2" opacity=".18"/>
     <rect x={cx - cw * .18} y={floor - ch + 10} width={cw * .36} height={12} rx={6} fill="#fff4c2"/>
     <rect x={cx - cw / 2 + 14} y={floor - ch * .32} width={cw - 28} height={8} fill="#8592aa"/>
   </g>;
