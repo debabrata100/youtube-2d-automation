@@ -1,6 +1,6 @@
 # 23: M1 test Short A, "The Moon Is Leaving Earth 🌕"
 
-- **Status:** ready to upload (26 Nov 2026). **Schedule: Thu 26 Nov, 9:30 PM IST**, 5 minutes before Short B ("The Last Solar Eclipse Ever"). Demand test for M1 (see `stories/moon-shorts-script.md`, "Test").
+- **Status:** uploaded and scheduled 26 Nov 2026, ID **tXCK_8LrDGA** (https://youtube.com/shorts/tXCK_8LrDGA); YouTube checks: no issues. English SRT not uploaded yet (captions are burned in). **Schedule: Thu 26 Nov, 9:30 PM IST**, 5 minutes before Short B ("The Last Solar Eclipse Ever"). Demand test for M1 (see `stories/moon-shorts-script.md`, "Test").
 - **Upload folder:** `~/Downloads/gahanarka-upload/23-moon-leaving-short/`: `the-moon-is-leaving-earth.mp4` (render `jobs/sky-final-3`, 26.0 s, 9:16, all verification checks pass, 0 paid requests in the render), `captions-english.srt` (25 cues, from `scripts/export-captions.ts`).
 - **Narration:** draft 2, Gahanarka R1 + Arka E3 (`jobs/sky-narration-2`, ElevenLabs, paid plan active, run by Debabrata 26 Nov).
 - **Visuals:** draft 3, real NASA photos (commit 60b2f37). One thing improved over the last Shorts: realistic, full-screen pictures with Earth and Moon together, instead of flat drawn discs.

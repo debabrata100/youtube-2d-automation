@@ -1,6 +1,6 @@
 # 24: M1 test Short B, "The Last Solar Eclipse Ever 🌑"
 
-- **Status:** ready to upload (26 Nov 2026). **Schedule: Thu 26 Nov, 9:35 PM IST**, 5 minutes after Short A ("The Moon Is Leaving Earth"). Demand test for M1 (see `stories/moon-shorts-script.md`, "Test").
+- **Status:** uploaded and scheduled 26 Nov 2026, ID **wMXfmWKnpH8** (https://youtube.com/shorts/wMXfmWKnpH8); YouTube checks: no issues. English SRT not uploaded yet (captions are burned in). **Schedule: Thu 26 Nov, 9:35 PM IST**, 5 minutes after Short A ("The Moon Is Leaving Earth"). Demand test for M1 (see `stories/moon-shorts-script.md`, "Test").
 - **Upload folder:** `~/Downloads/gahanarka-upload/24-last-eclipse-short/`: `the-last-solar-eclipse-ever.mp4` (render `jobs/eclipse-final-4`, 25.0 s, 9:16, all verification checks pass, 0 paid requests in the render), `captions-english.srt` (24 cues).
 - **Narration:** draft 2, Gahanarka R1 + Arka E3 (`jobs/eclipse-narration-2`, ElevenLabs, paid plan active, run by Debabrata 26 Nov).
 - **Visuals:** draft 3, real NASA photos (commits 60b2f37, 852afa9: the closing boom moved onto "whole" so the ending stays quiet).
