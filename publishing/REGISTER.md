@@ -90,6 +90,8 @@ Judge a long video's click rate only after **500+ impressions**, and its retenti
 
 - **26 Nov, 14:20 (no-burst calendar, Debabrata):** one upload a day at most; tonight only S23 + S24. Moved in Studio by Claude (verified in the content list): Ep 4 → Sat 28 Nov, R1 → Mon 30 Nov, G1 → Wed 2 Dec, S5 tilt → Fri 4 Dec, S15 atmosphere loop → Mon 7 Dec, S6 lions → Wed 9 Dec, S16 rust loop → Fri 11 Dec (all 9:30 PM). Ep 5 Ghost Sun and S10/S11/S12 set to **Private** (not releasing now). Check-ins moved to match; the Ghost Sun ones are paused. Pattern from here: 1 long + up to 3 Shorts a week, never two the same day.
 
+- **26 Nov 18:59 (S4 Miranda d1yDnS3FVGA, ~45 h after launch, demographics now visible):** 1.2K views (1,236 in 48 h; 1.1K from the Shorts feed, 21 search), 58.5% stayed / 41.5% swiped, 20 likes, 619 unique viewers, 4.8 watch hours. Geography: US 31.3%, India 9.5%, UK 7.9%, Philippines 2.9%, South Africa 2.8% (the US-first target is working). Age (small sample of signed-in viewers with known age): 25–34 58.3%, 13–17 41.7%; gender 100% male (same caveat). Devices: phone 68.5%, TV 15.0% (co-view 1.38), tablet 11.6%, computer 4.7%.
+
 ## Open items
 - **Trailer:** upload the English SRT (it only has auto-captions).
 - **Ep 1 Titan:** pinned comment and end screen were never recorded; check in Studio and fill in.
