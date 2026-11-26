@@ -84,6 +84,8 @@ Judge a long video's click rate only after **500+ impressions**, and its retenti
 
 - **24 Nov 08:48 (Voyager memory Short, ~11 h after launch):** Rh6l0gIQKBo at 37 views, 0.2 watch hours, 47.1% stayed / 52.9% swiped away, 1 like, 0 subscribers; the views curve flattened after the first ~2 hours (the Shorts feed stopped testing it). NASA Lost Voyager 1 (-FTg1FvhxKI) now 1.0K views, 50.0% stayed, 17 likes, +2 subscribers, only 43 views in the last 48 h (stalled). Lesson: our Shorts hold about half their viewers; that is below what the feed rewards, so the first 2 seconds (the twist) are the lever. G1/R1 (S13/S14) were built around that.
 
+- **26 Nov (M1 demand test):** S23 "The Moon Is Leaving Us 🌕" at 10:00 PM and S24 "The Last Solar Eclipse Ever 🌑" at 10:05 PM IST; each Short's Related video points to the other (set after 10:05 PM). First Shorts built from real NASA photos instead of drawn discs (draft 3). Test rule: 5–10K views with 60%+ staying in 7 days, then finish M1 with the winning hook. Sheets: `publishing/23-moon-leaving-short.md`, `publishing/24-last-eclipse-short.md`.
+
 ## Open items
 - **Trailer:** upload the English SRT (it only has auto-captions).
 - **Ep 1 Titan:** pinned comment and end screen were never recorded; check in Studio and fill in.
