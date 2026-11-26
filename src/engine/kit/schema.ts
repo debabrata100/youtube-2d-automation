@@ -9,6 +9,7 @@ const size = (min: number, max: number) => z.number().min(min).max(max);
 const hex = z.string().regex(/^#[0-9a-fA-F]{6}$/, 'Expected a six-digit hex colour (or a theme @ref)');
 const keyFrame = z.number().int().min(0).max(18000);
 const increasing = (keys: Array<{frame: number}>) => keys.every((k, i) => !i || k.frame > keys[i - 1].frame);
+const valueKeys = z.array(z.object({frame: z.number().int().min(0).max(18000), value: z.number().min(-1e9).max(1e9), ease: easingNameSchema.optional()}).strict()).min(1).max(40).refine(increasing, 'Value frames must strictly increase');
 
 export const mountainShapeSchema = z.object({
   cx: n, baseY: n,
@@ -105,6 +106,32 @@ export const kitSchema = z.discriminatedUnion('type', [
     variant: z.enum(['comms', 'soho', 'chandrayaan-1']).optional(),
     /** A second animated level (globe cracks, map zone, magnetotail solar wind), 0-1. */
     level2: z.array(z.object({frame: keyFrame, value: z.number().min(0).max(1)}).strict()).min(1).max(12).refine(increasing, 'Level frames must strictly increase').optional(),
+  }).strict(),
+  /** A car climbing (or sinking) through a world column on a log altitude scale; `part: 'car-front'` draws the doors over a rider. */
+  z.object({
+    type: z.literal('ascent'), part: z.enum(['world', 'car-front']).default('world'),
+    /** Altitude in metres over time (one shared clock for the world, the car shake and the doors). */
+    altitude: valueKeys,
+    carX: n.default(.5), carY: n.default(.62), carWidth: size(.1, .8).default(.34), carHeight: size(.08, .6).default(.2),
+    /** Screen heights per factor of ten in altitude, and metres added before the log (so the ground floor is finite). */
+    decade: size(.05, 3).default(.7), offset: z.number().min(1).max(10000).default(50),
+    doors: z.array(z.object({frame: keyFrame, value: z.number().min(0).max(1), ease: easingNameSchema.optional()}).strict()).min(1).max(12).refine(increasing, 'Door frames must strictly increase').optional(),
+    markers: z.array(z.object({kind: z.enum(['city', 'tower', 'cloud', 'mountain', 'jet', 'balloon', 'line', 'station']), altitude: z.number().min(0).max(1e9),
+      x: n.default(.5), size: size(.02, 1.5).default(.2), label: z.string().min(1).max(40).optional(), color: hex.optional(),
+      /** Horizontal drift (fraction of the width per frame), e.g. a passing jet. */
+      drift: z.number().min(-.03).max(.03).default(0), seed}).strict()).max(40).default([]),
+    sky: z.array(z.object({altitude: z.number().min(0), color: hex}).strict()).min(2).max(12).optional(),
+    stars: z.number().int().min(0).max(400).default(160), earth: z.boolean().default(true), seed,
+    /** Fraction of the frame height covered by overlays (a readout): line labels fade out above it. */
+    clearTop: size(0, 1).default(0),
+  }).strict(),
+  /** Live readout panel: every row derives from one value track (scaled, or looked up in a curve) and is formatted. */
+  z.object({
+    type: z.literal('readout'), x: n, y: n, width: size(.1, 1), value: valueKeys, title: z.string().min(1).max(24).optional(), accent: hex.optional(),
+    rows: z.array(z.object({label: z.string().min(1).max(16), format: z.enum(['int', 'distance', 'duration', 'percent', 'celsius']),
+      scale: z.number().default(1), curve: z.array(z.tuple([z.number(), z.number()])).min(2).max(24).optional(),
+      /** Above this source value the row shows a dash (e.g. temperature where the fact sheet stops). */
+      max: z.number().optional(), big: z.boolean().default(false)}).strict()).min(1).max(6),
   }).strict(),
   /** Hand-drawn ground: outlined horizon with bumps, optional planet curvature, speckles and horizon rocks. */
   z.object({

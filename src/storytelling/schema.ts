@@ -14,6 +14,7 @@ export const storyScriptSchema=z.object({schemaVersion:z.literal('1.0'),id:text.
  if(new Set(s.beats.map(b=>b.id)).size!==s.beats.length)ctx.addIssue({code:'custom',path:['beats'],message:'Duplicate beat identifiers'});
  for(const preview of s.previews??[]){const start=s.beats.findIndex(b=>b.id===preview.fromBeat),end=s.beats.findIndex(b=>b.id===preview.toBeat);if(start<0||end<start)ctx.addIssue({code:'custom',path:['previews'],message:'Preview beat references must exist and be ordered'});}
  if(new Set(s.previews?.map(p=>p.id)).size!==(s.previews?.length??0))ctx.addIssue({code:'custom',path:['previews'],message:'Duplicate preview IDs'});
- if(s.beats[0].intent!=='hook'||s.beats.at(-1)!.intent!=='closing')ctx.addIssue({code:'custom',path:['beats'],message:'Story must begin with a hook and end with a closing beat'});
+ // A one-beat story is a no-narration Short (the picture is the hook; the one spoken line closes it).
+ if(s.beats.length>1&&(s.beats[0].intent!=='hook'||s.beats.at(-1)!.intent!=='closing'))ctx.addIssue({code:'custom',path:['beats'],message:'Story must begin with a hook and end with a closing beat'});
 });
 export type StoryScript=z.infer<typeof storyScriptSchema>;

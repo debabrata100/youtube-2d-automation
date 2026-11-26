@@ -1,0 +1,1140 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "elevator-to-space",
+  "title": "Taking the Elevator to Space",
+  "themeId": "paint-night",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "@sky.top",
+  "accent": "@text.accent",
+  "assets": [],
+  "backdrop": {
+    "group": "backdrop"
+  },
+  "narrationTiming": {
+    "minimumSceneFrames": 30,
+    "maximumDeviationSeconds": 0.2
+  },
+  "audio": {
+    "music": "cues",
+    "musicGainDb": -16,
+    "duckRatio": 8,
+    "targetLufs": -14,
+    "crossfadeSeconds": 1.5,
+    "musicCues": [
+      {
+        "source": "assets/music/6-space-singularity.mp3",
+        "scene": "el-e1",
+        "offsetSeconds": 0
+      }
+    ],
+    "musicDropouts": [
+      {
+        "scene": "el-e1",
+        "frame": 1122,
+        "seconds": 2.2
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "backdrop",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "page",
+          "kit": {
+            "type": "sky",
+            "horizon": 0.9,
+            "stars": 0,
+            "seed": 1
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "brand-tag",
+          "text": "GAHANARKA",
+          "x": 200,
+          "y": 1475,
+          "size": 40,
+          "anchor": "middle",
+          "variant": "ink",
+          "color": "#ffd25e",
+          "pop": false,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0.85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-e1",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "world",
+          "kit": {
+            "type": "ascent",
+            "part": "world",
+            "altitude": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": 24,
+                "value": 0
+              },
+              {
+                "frame": 120,
+                "value": 828
+              },
+              {
+                "frame": 300,
+                "value": 8849,
+                "ease": "linear"
+              },
+              {
+                "frame": 378,
+                "value": 10700,
+                "ease": "linear"
+              },
+              {
+                "frame": 522,
+                "value": 19200,
+                "ease": "linear"
+              },
+              {
+                "frame": 765,
+                "value": 100000,
+                "ease": "linear"
+              },
+              {
+                "frame": 1020,
+                "value": 419000,
+                "ease": "ease-out-cubic"
+              }
+            ],
+            "carX": 0.5,
+            "carY": 0.66,
+            "carWidth": 0.36,
+            "carHeight": 0.21,
+            "decade": 0.62,
+            "offset": 40,
+            "stars": 220,
+            "seed": 9,
+            "clearTop": 0.35,
+            "markers": [
+              {
+                "kind": "city",
+                "altitude": 180,
+                "seed": 4
+              },
+              {
+                "kind": "tower",
+                "altitude": 828,
+                "x": 0.17,
+                "size": 0.17,
+                "label": "Burj Khalifa"
+              },
+              {
+                "kind": "cloud",
+                "altitude": 2300,
+                "x": 0.16,
+                "size": 0.36,
+                "seed": 2
+              },
+              {
+                "kind": "cloud",
+                "altitude": 3400,
+                "x": 0.86,
+                "size": 0.42,
+                "seed": 5
+              },
+              {
+                "kind": "cloud",
+                "altitude": 5200,
+                "x": 0.22,
+                "size": 0.3,
+                "seed": 8
+              },
+              {
+                "kind": "mountain",
+                "altitude": 8849,
+                "x": 0.16,
+                "size": 0.26,
+                "label": "Everest",
+                "seed": 3
+              },
+              {
+                "kind": "jet",
+                "altitude": 10700,
+                "x": 1.45,
+                "size": 0.3,
+                "drift": -0.0025
+              },
+              {
+                "kind": "line",
+                "altitude": 19200,
+                "x": 0.04,
+                "size": 0.075,
+                "label": "ARMSTRONG LIMIT",
+                "color": "#ff8a5c"
+              },
+              {
+                "kind": "line",
+                "altitude": 100000,
+                "x": 0.04,
+                "size": 0.075,
+                "label": "SPACE STARTS HERE",
+                "color": "#ffd25e"
+              },
+              {
+                "kind": "station",
+                "altitude": 420500,
+                "x": 0.17,
+                "size": 0.3,
+                "label": "ISS"
+              }
+            ]
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.5,
+            "y": 0.654,
+            "height": 0.135,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": 120,
+                "pose": "cheer"
+              },
+              {
+                "frame": 180,
+                "pose": "stand"
+              },
+              {
+                "frame": 300,
+                "pose": "scared"
+              },
+              {
+                "frame": 378,
+                "pose": "point-right"
+              },
+              {
+                "frame": 435,
+                "pose": "stand"
+              },
+              {
+                "frame": 522,
+                "pose": "panic"
+              },
+              {
+                "frame": 615,
+                "pose": "stand"
+              },
+              {
+                "frame": 765,
+                "pose": "cheer"
+              },
+              {
+                "frame": 840,
+                "pose": "stand"
+              },
+              {
+                "frame": 1020,
+                "pose": "stand"
+              },
+              {
+                "frame": 1096,
+                "pose": "point-left"
+              },
+              {
+                "frame": 1128,
+                "pose": "shrug"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              },
+              {
+                "frame": 120,
+                "face": "happy"
+              },
+              {
+                "frame": 240,
+                "face": "neutral"
+              },
+              {
+                "frame": 300,
+                "face": "scared"
+              },
+              {
+                "frame": 378,
+                "face": "shocked"
+              },
+              {
+                "frame": 435,
+                "face": "neutral"
+              },
+              {
+                "frame": 522,
+                "face": "scream"
+              },
+              {
+                "frame": 615,
+                "face": "puffed"
+              },
+              {
+                "frame": 765,
+                "face": "grin"
+              },
+              {
+                "frame": 840,
+                "face": "happy"
+              },
+              {
+                "frame": 1096,
+                "face": "shocked"
+              },
+              {
+                "frame": 1128,
+                "face": "smug"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3"
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 45,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 90,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 135,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 180,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 225,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 270,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 315,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 405,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 450,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 495,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 540,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 585,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 630,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 675,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 765,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 810,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 855,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 900,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 945,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 990,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1035,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1125,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1170,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1215,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1260,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1305,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1350,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1395,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1440,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1485,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1530,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1575,
+              "value": 1.012,
+              "ease": "smoothstep"
+            }
+          ],
+          "anchor": {
+            "x": 540.0,
+            "y": 1255.68
+          },
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 300,
+              "value": 0
+            },
+            {
+              "frame": 302,
+              "value": -9
+            },
+            {
+              "frame": 304,
+              "value": 9
+            },
+            {
+              "frame": 306,
+              "value": -5
+            },
+            {
+              "frame": 309,
+              "value": 0
+            },
+            {
+              "frame": 522,
+              "value": 0
+            },
+            {
+              "frame": 524,
+              "value": -9
+            },
+            {
+              "frame": 526,
+              "value": 9
+            },
+            {
+              "frame": 528,
+              "value": -5
+            },
+            {
+              "frame": 531,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "front",
+          "kit": {
+            "type": "ascent",
+            "part": "car-front",
+            "altitude": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": 24,
+                "value": 0
+              },
+              {
+                "frame": 120,
+                "value": 828
+              },
+              {
+                "frame": 300,
+                "value": 8849,
+                "ease": "linear"
+              },
+              {
+                "frame": 378,
+                "value": 10700,
+                "ease": "linear"
+              },
+              {
+                "frame": 522,
+                "value": 19200,
+                "ease": "linear"
+              },
+              {
+                "frame": 765,
+                "value": 100000,
+                "ease": "linear"
+              },
+              {
+                "frame": 1020,
+                "value": 419000,
+                "ease": "ease-out-cubic"
+              }
+            ],
+            "carX": 0.5,
+            "carY": 0.66,
+            "carWidth": 0.36,
+            "carHeight": 0.21,
+            "decade": 0.62,
+            "offset": 40,
+            "markers": [],
+            "stars": 0,
+            "doors": [
+              {
+                "frame": 0,
+                "value": 0.7
+              },
+              {
+                "frame": 21,
+                "value": 0,
+                "ease": "ease-out-cubic"
+              },
+              {
+                "frame": 1086,
+                "value": 0
+              },
+              {
+                "frame": 1104,
+                "value": 1,
+                "ease": "ease-out-cubic"
+              }
+            ]
+          }
+        },
+        {
+          "id": "readout",
+          "kit": {
+            "type": "readout",
+            "x": 0.5,
+            "y": 0.05,
+            "width": 0.66,
+            "value": [
+              {
+                "frame": 0,
+                "value": 0
+              },
+              {
+                "frame": 24,
+                "value": 0
+              },
+              {
+                "frame": 120,
+                "value": 828
+              },
+              {
+                "frame": 300,
+                "value": 8849,
+                "ease": "linear"
+              },
+              {
+                "frame": 378,
+                "value": 10700,
+                "ease": "linear"
+              },
+              {
+                "frame": 522,
+                "value": 19200,
+                "ease": "linear"
+              },
+              {
+                "frame": 765,
+                "value": 100000,
+                "ease": "linear"
+              },
+              {
+                "frame": 1020,
+                "value": 419000,
+                "ease": "ease-out-cubic"
+              }
+            ],
+            "rows": [
+              {
+                "label": "FLOOR",
+                "format": "int",
+                "scale": 0.285714,
+                "big": true
+              },
+              {
+                "label": "HEIGHT",
+                "format": "distance"
+              },
+              {
+                "label": "TIME",
+                "format": "duration",
+                "scale": 0.047619
+              },
+              {
+                "label": "AIR",
+                "format": "percent",
+                "curve": [
+                  [
+                    0,
+                    100
+                  ],
+                  [
+                    828,
+                    91
+                  ],
+                  [
+                    8849,
+                    31
+                  ],
+                  [
+                    10700,
+                    24
+                  ],
+                  [
+                    19200,
+                    6.2
+                  ],
+                  [
+                    30000,
+                    1.18
+                  ],
+                  [
+                    50000,
+                    0.079
+                  ],
+                  [
+                    70000,
+                    0.0052
+                  ],
+                  [
+                    85000,
+                    0.00037
+                  ],
+                  [
+                    100000,
+                    3e-05
+                  ],
+                  [
+                    419000,
+                    0
+                  ]
+                ]
+              },
+              {
+                "label": "OUTSIDE",
+                "format": "celsius",
+                "curve": [
+                  [
+                    0,
+                    15
+                  ],
+                  [
+                    828,
+                    10
+                  ],
+                  [
+                    8849,
+                    -42
+                  ],
+                  [
+                    10700,
+                    -54
+                  ],
+                  [
+                    19200,
+                    -57
+                  ],
+                  [
+                    25000,
+                    -57
+                  ]
+                ],
+                "max": 21000
+              }
+            ]
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c0",
+          "text": "What if this lift never stopped?",
+          "x": 540,
+          "y": 770,
+          "size": 60,
+          "anchor": "middle",
+          "variant": "pill",
+          "color": "#ffffff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 101,
+              "value": 1
+            },
+            {
+              "frame": 108,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "c1",
+          "text": "Taller than Burj Khalifa",
+          "x": 540,
+          "y": 770,
+          "size": 60,
+          "anchor": "middle",
+          "variant": "pill",
+          "color": "#ffffff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 113,
+              "value": 0
+            },
+            {
+              "frame": 120,
+              "value": 1
+            },
+            {
+              "frame": 209,
+              "value": 1
+            },
+            {
+              "frame": 216,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "text": "Higher than Everest",
+          "x": 540,
+          "y": 770,
+          "size": 60,
+          "anchor": "middle",
+          "variant": "pill",
+          "color": "#ffffff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 287,
+              "value": 0
+            },
+            {
+              "frame": 294,
+              "value": 1
+            },
+            {
+              "frame": 371,
+              "value": 1
+            },
+            {
+              "frame": 378,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "text": "Where jets fly",
+          "x": 540,
+          "y": 770,
+          "size": 60,
+          "anchor": "middle",
+          "variant": "pill",
+          "color": "#ffffff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 371,
+              "value": 0
+            },
+            {
+              "frame": 378,
+              "value": 1
+            },
+            {
+              "frame": 455,
+              "value": 1
+            },
+            {
+              "frame": 462,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "text": "Your tears would boil",
+          "x": 540,
+          "y": 770,
+          "size": 60,
+          "anchor": "middle",
+          "variant": "pill",
+          "color": "#ffffff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 509,
+              "value": 0
+            },
+            {
+              "frame": 516,
+              "value": 1
+            },
+            {
+              "frame": 644,
+              "value": 1
+            },
+            {
+              "frame": 651,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "text": "You are in space",
+          "x": 540,
+          "y": 770,
+          "size": 60,
+          "anchor": "middle",
+          "variant": "pill",
+          "color": "#ffffff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 755,
+              "value": 0
+            },
+            {
+              "frame": 762,
+              "value": 1
+            },
+            {
+              "frame": 869,
+              "value": 1
+            },
+            {
+              "frame": 876,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "text": "The ISS. Doors opening...",
+          "x": 540,
+          "y": 770,
+          "size": 60,
+          "anchor": "middle",
+          "variant": "pill",
+          "color": "#ffffff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 1019,
+              "value": 0
+            },
+            {
+              "frame": 1026,
+              "value": 1
+            },
+            {
+              "frame": 1095,
+              "value": 1
+            },
+            {
+              "frame": 1102,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "c7",
+          "text": "Going down: 11 h 38 min",
+          "x": 540,
+          "y": 770,
+          "size": 60,
+          "anchor": "middle",
+          "variant": "pill",
+          "color": "#ffffff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 1099,
+              "value": 0
+            },
+            {
+              "frame": 1106,
+              "value": 1
+            },
+            {
+              "frame": 1289,
+              "value": 1
+            },
+            {
+              "frame": 1296,
+              "value": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "el-e1",
+      "template": "hero-reveal",
+      "durationFrames": 1260,
+      "animationDurationFrames": 1260,
+      "caption": {
+        "text": "el-e1",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-e1",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 1.0
+        }
+      },
+      "narrationCue": {
+        "beatId": "e1",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "ding",
+          "frame": 3,
+          "gainDb": -14
+        },
+        {
+          "sound": "rumble",
+          "frame": 24,
+          "gainDb": -20
+        },
+        {
+          "sound": "ding",
+          "frame": 120,
+          "gainDb": -16
+        },
+        {
+          "sound": "wind",
+          "frame": 225,
+          "gainDb": -24
+        },
+        {
+          "sound": "ding",
+          "frame": 300,
+          "gainDb": -16
+        },
+        {
+          "sound": "whoosh",
+          "frame": 348,
+          "gainDb": -16
+        },
+        {
+          "sound": "ding",
+          "frame": 522,
+          "gainDb": -14
+        },
+        {
+          "sound": "heartbeat",
+          "frame": 546,
+          "gainDb": -18
+        },
+        {
+          "sound": "riser",
+          "frame": 660,
+          "gainDb": -22
+        },
+        {
+          "sound": "ding",
+          "frame": 765,
+          "gainDb": -14
+        },
+        {
+          "sound": "ding",
+          "frame": 1026,
+          "gainDb": -10
+        },
+        {
+          "sound": "pop",
+          "frame": 1100,
+          "gainDb": -18
+        }
+      ]
+    }
+  ]
+}
