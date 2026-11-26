@@ -1,0 +1,20 @@
+{
+  "id": "things-that-saw-it",
+  "name": "Things That Saw It",
+  "nameStatus": "working name; final name and handle to be chosen before the channel is created",
+  "niche": "Short 2D animated life stories (2-5 min), each told by an everyday object that watched one person's turning point",
+  "audience": "English-speaking adults 18-44 who watch emotional animated shorts and self-improvement stories; US, UK, Canada, Australia",
+  "brand": {
+    "fonts": ["channels/things-that-saw-it/brand/fonts/Poppins-Bold.ttf"],
+    "palette": {"warmLight": "#ffd36b", "ink": "#1b1410", "cream": "#fff4df", "dusk": "#2c3442"},
+    "look": "Warm storybook paintings drawn in code: soft window light, dust, grain, objects as the heroes. No faceless black-silhouette people (that is Last Soul's look)."
+  },
+  "voices": {
+    "_note": "One narrator voice per object, chosen per film. Not chosen yet; no paid requests made."
+  },
+  "paths": {
+    "films": "channels/things-that-saw-it/films/",
+    "concept": "channels/things-that-saw-it/CONCEPT.md",
+    "uploadFolder": "~/Downloads/things-that-saw-it-upload/"
+  }
+}

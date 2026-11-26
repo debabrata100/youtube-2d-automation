@@ -1,0 +1,28 @@
+{
+  "id": "gahanarka",
+  "name": "Gahanarka",
+  "handle": "@Gahanarka",
+  "youtubeChannelId": "UCs3hb2Ibhv6tqp-UgUeHFaA",
+  "niche": "Animated space and science thought experiments (what would really happen if…?), with Arka the astronaut",
+  "audience": "Curious English-speaking adults, mostly 25-44; target US, UK, Canada, Australia",
+  "brand": {
+    "mascot": "Arka (docs/brand/ARKA.md)",
+    "fonts": ["src/engine/style/fonts/PatrickHand-Regular.ttf"],
+    "themes": ["paint-night", "paint-night-gold", "photo-night"],
+    "captionStyle": "config/caption-styles/shorts-night.json",
+    "thumbnailStyle": "config/thumbnail-style.json"
+  },
+  "voices": {
+    "narrator": {"provider": "elevenlabs", "voice": "q80kpsDmnu4IR4Zm7jWZ", "config": "config/narration.json"},
+    "arka": {"provider": "elevenlabs", "voice": "cZLjGmrtLimQNbJ9cosF", "config": "config/narration-arka-e3.json"}
+  },
+  "paths": {
+    "_note": "Legacy layout: Gahanarka predates channels/. These top-level folders are Gahanarka's.",
+    "stories": "stories/",
+    "storyboards": "storyboards/",
+    "thumbnails": "thumbnails/",
+    "publishing": "publishing/",
+    "docs": "docs/",
+    "uploadFolder": "~/Downloads/gahanarka-upload/"
+  }
+}

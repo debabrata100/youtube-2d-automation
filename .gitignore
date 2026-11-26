@@ -43,3 +43,7 @@ __pycache__/
 
 # Files Claude stages for transfer (sync bundles, copies)
 Claude outputs/
+
+# Channel films: thumbnails and stills are rebuilt from their draw scripts
+/channels/*/films/*/thumbnails/*.svg
+/channels/*/films/*/thumbnails/*.png
