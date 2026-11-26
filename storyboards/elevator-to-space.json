@@ -21,9 +21,9 @@
   },
   "audio": {
     "music": "cues",
-    "musicGainDb": -16,
+    "musicGainDb": 0,
     "duckRatio": 8,
-    "targetLufs": -14,
+    "targetLufs": -15,
     "crossfadeSeconds": 1.5,
     "musicCues": [
       {
@@ -38,7 +38,8 @@
         "frame": 1122,
         "seconds": 4
       }
-    ]
+    ],
+    "dropoutFloorDb": -60
   },
   "groups": [
     {
@@ -1188,62 +1189,62 @@
         {
           "sound": "ding",
           "frame": 3,
-          "gainDb": -14
+          "gainDb": -8
         },
         {
           "sound": "rumble",
           "frame": 24,
-          "gainDb": -20
+          "gainDb": -8
         },
         {
           "sound": "ding",
           "frame": 120,
-          "gainDb": -16
+          "gainDb": -8
         },
         {
           "sound": "chime",
           "frame": 828,
-          "gainDb": -20
+          "gainDb": -8
         },
         {
           "sound": "ding",
           "frame": 300,
-          "gainDb": -16
+          "gainDb": -8
         },
         {
           "sound": "whoosh",
           "frame": 348,
-          "gainDb": -16
+          "gainDb": -4
         },
         {
           "sound": "ding",
           "frame": 522,
-          "gainDb": -14
+          "gainDb": -8
         },
         {
           "sound": "heartbeat",
           "frame": 546,
-          "gainDb": -18
+          "gainDb": -6
         },
         {
           "sound": "riser",
           "frame": 660,
-          "gainDb": -22
+          "gainDb": -10
         },
         {
           "sound": "ding",
           "frame": 765,
-          "gainDb": -14
+          "gainDb": -8
         },
         {
           "sound": "ding",
           "frame": 1026,
-          "gainDb": -10
+          "gainDb": -4
         },
         {
           "sound": "pop",
           "frame": 1100,
-          "gainDb": -18
+          "gainDb": -6
         }
       ]
     }

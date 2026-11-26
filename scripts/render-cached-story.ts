@@ -46,7 +46,7 @@ const main=async()=>{
  // Sound design: scene sound cues resolve to absolute times on the scheduled timeline; music is generated or a supplied licensed file.
  const scheduled=storyboardTimeline(board),sfx=board.scenes.flatMap((scene,i)=>(scene.sounds??[]).map(s=>({sound:s.sound,startSeconds:(scheduled[i].startFrame+Math.min(s.frame,scene.durationFrames-1))/board.format.fps,gainDb:s.gainDb})));
  const sceneStart=(id:string)=>{const i=board.scenes.findIndex(s=>s.id===id);return scheduled[i].startFrame/board.format.fps;};
- const cueMusic=board.audio?.music==='cues'?{kind:'cues' as const,crossfadeSeconds:board.audio.crossfadeSeconds,dropoutFloorDb:-24,
+ const cueMusic=board.audio?.music==='cues'?{kind:'cues' as const,crossfadeSeconds:board.audio.crossfadeSeconds,dropoutFloorDb:board.audio.dropoutFloorDb??-24,
   cues:(board.audio.musicCues??[]).map((c,i,all)=>({source:path.resolve(c.source),startSeconds:sceneStart(c.scene),endSeconds:i<all.length-1?sceneStart(all[i+1].scene):seconds,offsetSeconds:c.offsetSeconds,loop:c.loop,gainDb:c.gainDb,levelDb:0})),
   dropouts:(board.audio.musicDropouts??[]).map(d=>{const i=board.scenes.findIndex(s=>s.id===d.scene),a=(scheduled[i].startFrame+Math.min(d.frame,board.scenes[i].durationFrames-1))/board.format.fps;return [a,a+d.seconds] as [number,number];})}:null;
  const music=o.music?{kind:'file' as const,source:path.resolve(o.music)}:cueMusic??(board.audio?.music==='generated-pad'?{kind:'generated' as const,seed:1}:{kind:'none' as const});

@@ -55,6 +55,8 @@ export const storyboardSchema = z.object({
     /** music 'cues': one licensed track per section, starting with a scene and cross-fading into the next cue (paths relative to the project root). */
     musicCues: z.array(z.object({source: z.string().min(1), scene: z.string().min(1), offsetSeconds: z.number().min(0).default(0), gainDb: z.number().min(-12).max(12).default(0), loop: z.boolean().default(true)}).strict()).max(20).optional(),
     /** Short music drop-outs (before punchlines and reveals), anchored to a scene frame. */
+    /** How far the music dips in a drop-out (default -24 dB); -60 is silence, e.g. under a no-narration Short's only line. */
+    dropoutFloorDb: z.number().min(-60).max(-3).optional(),
     musicDropouts: z.array(z.object({scene: z.string().min(1), frame: z.number().int().min(0), seconds: z.number().min(.2).max(4)}).strict()).max(100).optional(),
     crossfadeSeconds: z.number().min(0).max(6).default(1.5)}).strict().optional(),
   backdrop: z.object({asset: z.string().min(1).optional(), group: z.string().min(1).optional(), decoration: z.boolean().default(false), dim: z.number().min(0).max(.8).default(0), motion:z.object({scale:trackSchema(1,1.2),x:trackSchema(-100,100),y:trackSchema(-100,100)}).strict().optional()}).strict().optional(),

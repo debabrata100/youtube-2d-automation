@@ -25,7 +25,8 @@ export const scheduleNarratedScenes=(input:Storyboard,phrases:PhraseTiming[])=>{
  const scheduled=parseStoryboard({...board,scenes});
  const comparisons=scenes.map((scene,i)=>{
   const center=(starts[i]+(i?midpoint:0))/fps,deviation=Math.abs(center-references[i]);
-  if(deviation>board.narrationTiming!.maximumDeviationSeconds+1e-9)exceptions.push(`${scene.id}: ${deviation.toFixed(3)}s transition-midpoint deviation; minimum ${min}-frame scenes and fixed ${total}-frame ending constrain the boundary.`);
+  // The first scene always starts at frame 0; when speech starts later (a no-narration Short's closing line) that is not a missed cut.
+  if(i>0&&deviation>board.narrationTiming!.maximumDeviationSeconds+1e-9)exceptions.push(`${scene.id}: ${deviation.toFixed(3)}s transition-midpoint deviation; minimum ${min}-frame scenes and fixed ${total}-frame ending constrain the boundary.`);
   return{sceneId:scene.id,beatId:scene.narrationCue!.beatId,phraseIndex:scene.narrationCue!.phraseIndex,edge:scene.narrationCue!.edge,phraseSeconds:references[i],oldStartFrame:old[i].startFrame,oldEndFrame:old[i].endFrame,startFrame:starts[i],endFrame:starts[i]+scene.durationFrames,durationFrames:scene.durationFrames,transitionCenterFrame:starts[i]+(i?midpoint:0),oldDeviationSeconds:Math.abs((old[i].startFrame+(i?midpoint:0))/fps-references[i]),deviationSeconds:deviation,startDeviationSeconds:Math.abs(starts[i]/fps-references[i])};
  });
  const transitions=comparisons.slice(1),deviations=transitions.map(c=>c.deviationSeconds);

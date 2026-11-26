@@ -47,7 +47,7 @@ ep = Episode(str(STORY), 'tall'); F = ep.F; W, H = F['W'], F['H']
 ep.theme = 'paint-night'
 ep.F['primary'] = 1.0
 ep.backdrop(stars=0)
-ep.music([('e1', 'assets/music/6-space-singularity.mp3', 0)], dropouts=[("e1", SAY - 6, 4)], gain_db=-16, target_lufs=-14)
+ep.music([('e1', 'assets/music/6-space-singularity.mp3', 0)], dropouts=[("e1", SAY - 6, 4)], gain_db=0, target_lufs=-15)
 
 ride = track(*[(f, a, 'linear') if i > 2 else (f, a) for i, (f, a) in enumerate(RIDE)])   # the first leg eases in from standing (smoothstep)
 ride[-1]['ease'] = 'ease-out-cubic'                       # the last leg brakes into the station
@@ -95,8 +95,8 @@ notes = [callout('c0', 'What if this lift never stopped?', 0, S(3.4)), callout('
          callout('c4b', 'Shooting stars burn up here', S(22.4), S(25.1)), callout('c5', 'You are in space', S(25.2), S(27.5)),
          callout('c5b', 'Northern lights glow up here', S(27.6), S(31.5)), callout('c6', 'The ISS. Doors opening...', ARRIVE, DOORS + 10),
          callout('c7', 'Going down: 11 h 38 min', DOORS + 14, S(DURATION) + 30)]
-sounds = [('ding', S(.1), -14), ('rumble', S(.8), -20), ('ding', S(4), -16), ('chime', S(27.6), -20), ('ding', S(10), -16), ('whoosh', S(11.6), -16),
-          ('ding', S(17.4), -14), ('heartbeat', S(18.2), -18), ('riser', S(22), -22), ('ding', S(25.5), -14), ('ding', ARRIVE + 6, -10), ('pop', DOORS + 14, -18)]
+sounds = [('ding', S(.1), -8), ('rumble', S(.8), -8), ('ding', S(4), -8), ('chime', S(27.6), -8), ('ding', S(10), -8), ('whoosh', S(11.6), -4),
+          ('ding', S(17.4), -8), ('heartbeat', S(18.2), -6), ('riser', S(22), -10), ('ding', S(25.5), -8), ('ding', ARRIVE + 6, -4), ('pop', DOORS + 14, -6)]
 ep.scene('e1', explain([arka], [Prop({'id': 'world', 'kit': world}), Prop({'id': 'front', 'kit': front}), Prop({'id': 'readout', 'kit': readout})], [], camera_preset=None, sounds=sounds))
 
 tag = note('brand-tag', 'GAHANARKA', 200, 1475, 0, size=40, color='#ffd25e')
@@ -105,12 +105,14 @@ ep._backdrop.setdefault('annotations', []).append(tag)
 
 if __name__ == '__main__':
     board = ep.build()
+    board['audio']['dropoutFloorDb'] = -60                    # silence under Arka's line: it is the only voice in the Short
     g = next(g for g in board['groups'] if g['id'] == 'g-e1')
     order = {'world': 0, 'arka': 1, 'front': 2, 'readout': 3}
     g['layers'].sort(key=lambda l: order.get(l['id'], 1))     # world, rider, glass doors, then the readout on top
     g['annotations'] = notes
     sc = board['scenes'][0]
     sc['sounds'] = [{'sound': s, 'frame': f, 'gainDb': d} for s, f, d in sounds]     # no automatic cut whoosh
+    # Levels: the music and effects carry the loudness, so the mix needs little gain and Arka's line is not squashed by the limiter.
     out = ROOT / (sys.argv[1] if len(sys.argv) > 1 else f'storyboards/{SID}.json')
     out.write_text(json.dumps(board, indent=2, ensure_ascii=False) + '\n')
     print('wrote', out.name, sc['durationFrames'], 'frames')
