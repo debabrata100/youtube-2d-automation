@@ -2,7 +2,10 @@
 Script and facts: stories/moon-shorts-script.md. Picture-first: one continuous shot per Short (the same layers in every
 scene, values handed over at each cut), a banner that states the premise all the way through, live counters, a loop.
 
-Usage: python3 scripts/authoring/plan-moon-test.py sky|eclipse [duration_seconds] [output_storyboard]
+Draft 3 (--photo): the same scripts and narration, pictured with real NASA photos (full Moon, Earth, eclipses) cut out by
+scripts/prepare-moon-photos.py, with camera moves and Earth and Moon together; Arka and the sound design stay ours.
+
+Usage: python3 scripts/authoring/plan-moon-test.py sky|eclipse [duration_seconds] [output_storyboard] [--photo]
        python3 scripts/authoring/plan-moon-test.py sky|eclipse --script-only
 """
 import json, pathlib, re, sys
@@ -18,6 +21,8 @@ SID = {'sky': 'moon-filled-sky', 'eclipse': 'last-total-eclipse'}[NAME]
 STORY = ROOT / f'stories/{SID}.json'
 N, K = 'narrator', 'arka'
 SHOTS = []
+PHOTO = '--photo' in sys.argv
+if PHOTO: sys.argv.remove('--photo')
 
 
 def line(bid, *parts, intent='explanation'):
@@ -98,7 +103,10 @@ def shore(): return Prop({'id': 'shore', 'kit': {'type': 'terrain', 'top': SHORE
 def arka(poses, faces, x=.86): return Char('arka', 'arka', x=x, fy=SHORE + .03, h=.125, idle=None, poses=poses, faces=faces)
 # No on-screen text except the captions: the pictures carry the story (Debabrata, 26 Nov).
 
-if NAME == 'sky':
+if PHOTO:
+    import photo_moon
+    photo_moon.build(ep, NAME, P, lv, end, on)
+elif NAME == 'sky':
     # The Moon's drawn width = BIG x level. level 1 = the young Moon (about 20,000 km, about 20x tonight's width).
     BIG = .85; K0 = 384.4 / 20
     NOW = round(1 / K0, 4)                     # tonight's Moon at the same scale (a small disc)

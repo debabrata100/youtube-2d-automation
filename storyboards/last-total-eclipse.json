@@ -2,7 +2,7 @@
   "schemaVersion": "2.1",
   "projectId": "last-total-eclipse",
   "title": "The Last Eclipse",
-  "themeId": "paint-night",
+  "themeId": "photo-night",
   "format": {
     "width": 1080,
     "height": 1920,
@@ -11,7 +11,80 @@
   "styleId": "cinematic-illustrated",
   "background": "@sky.top",
   "accent": "@text.accent",
-  "assets": [],
+  "assets": [
+    {
+      "id": "tot",
+      "path": "nasa/moon-photos/eclipse-total.png",
+      "type": "png",
+      "width": 2160,
+      "height": 3840,
+      "transparent": true
+    },
+    {
+      "id": "space",
+      "path": "nasa/moon-photos/space.png",
+      "type": "png",
+      "width": 2160,
+      "height": 3840,
+      "transparent": true
+    },
+    {
+      "id": "earth",
+      "path": "nasa/moon-photos/earth.png",
+      "type": "png",
+      "width": 2160,
+      "height": 3840,
+      "transparent": true
+    },
+    {
+      "id": "sun",
+      "path": "nasa/moon-photos/sun.png",
+      "type": "png",
+      "width": 2160,
+      "height": 3840,
+      "transparent": true
+    },
+    {
+      "id": "moon",
+      "path": "nasa/moon-photos/moon.png",
+      "type": "png",
+      "width": 2160,
+      "height": 3840,
+      "transparent": true
+    },
+    {
+      "id": "em",
+      "path": "nasa/moon-photos/earth-moon.png",
+      "type": "png",
+      "width": 2160,
+      "height": 3840,
+      "transparent": true
+    },
+    {
+      "id": "ann",
+      "path": "nasa/moon-photos/eclipse-annular.png",
+      "type": "png",
+      "width": 2160,
+      "height": 3840,
+      "transparent": true
+    },
+    {
+      "id": "moonhot",
+      "path": "nasa/moon-photos/moon-molten.png",
+      "type": "png",
+      "width": 2160,
+      "height": 3840,
+      "transparent": true
+    },
+    {
+      "id": "earth-limb",
+      "path": "nasa/moon-photos/earth-limb.png",
+      "type": "png",
+      "width": 2160,
+      "height": 3840,
+      "transparent": true
+    }
+  ],
   "backdrop": {
     "group": "backdrop"
   },
@@ -99,95 +172,63 @@
       "height": 1920,
       "layers": [
         {
-          "id": "hglow",
-          "kit": {
-            "type": "glow",
-            "x": 0.5,
-            "y": 0.74,
-            "rx": 1.0,
-            "ry": 0.1,
-            "tone": "hot"
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0.7
-            }
-          ]
-        },
-        {
-          "id": "ecl",
-          "kit": {
-            "type": "prop",
-            "item": "eclipse",
-            "x": 0.5,
-            "y": 0.44,
-            "size": 0.6,
-            "text": "annular",
-            "level": [
-              {
-                "frame": 0,
-                "value": 0
-              }
-            ]
+          "id": "space",
+          "asset": "space",
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
           },
           "scale": [
             {
               "frame": 0,
-              "value": 1.45
+              "value": 1.07
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 900,
+              "value": -60
+            }
+          ]
+        },
+        {
+          "id": "tot",
+          "asset": "tot",
+          "anchor": {
+            "x": 540.0,
+            "y": 806
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.25
             },
             {
               "frame": {
                 "at": "time.",
                 "edge": "end"
               },
-              "value": 1.35,
+              "value": 1.42,
               "ease": "smoothstep"
             }
           ],
-          "anchor": {
-            "x": 540.0,
-            "y": 844.8
-          }
-        },
-        {
-          "id": "shore",
-          "kit": {
-            "type": "terrain",
-            "top": 0.74,
-            "curve": 0.03,
-            "fill": "#2b3350",
-            "detail": "#3a456b",
-            "rocks": 3,
-            "bumps": 6,
-            "seed": 5
-          }
-        },
-        {
-          "id": "arka",
-          "kit": {
-            "type": "figure",
-            "x": 0.86,
-            "y": 0.77,
-            "height": 0.125,
-            "outfit": "astronaut",
-            "shiver": 0,
-            "seed": 11,
-            "poses": [
-              {
-                "frame": 0,
-                "pose": "stand"
-              }
-            ],
-            "faces": [
-              {
-                "frame": 0,
-                "face": "shocked"
-              }
-            ],
-            "suit": "#e8b84a",
-            "visor": "#ffe6a3"
-          }
+          "brightness": [
+            {
+              "frame": 0,
+              "value": 1.1
+            },
+            {
+              "frame": {
+                "at": "time.",
+                "edge": "end"
+              },
+              "value": 0.8
+            }
+          ]
         }
       ],
       "annotations": []
@@ -198,101 +239,69 @@
       "height": 1920,
       "layers": [
         {
-          "id": "hglow",
-          "kit": {
-            "type": "glow",
-            "x": 0.5,
-            "y": 0.74,
-            "rx": 1.0,
-            "ry": 0.1,
-            "tone": "hot"
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0.7
-            }
-          ]
-        },
-        {
-          "id": "ecl",
-          "kit": {
-            "type": "prop",
-            "item": "eclipse",
-            "x": 0.5,
-            "y": 0.44,
-            "size": 0.6,
-            "text": "annular",
-            "level": [
-              {
-                "frame": 0,
-                "value": 0
-              }
-            ]
+          "id": "space",
+          "asset": "space",
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
           },
           "scale": [
             {
               "frame": 0,
-              "value": 1.35
+              "value": 1.07
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 900,
+              "value": -60
+            }
+          ]
+        },
+        {
+          "id": "earth",
+          "asset": "earth",
+          "anchor": {
+            "x": 540.0,
+            "y": 780
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
             },
             {
               "frame": {
-                "at": "watch,",
+                "at": "last.",
                 "edge": "end"
               },
-              "value": 1.0,
+              "value": 0.78,
               "ease": "smoothstep"
             }
           ],
-          "anchor": {
-            "x": 540.0,
-            "y": 844.8
-          }
-        },
-        {
-          "id": "shore",
-          "kit": {
-            "type": "terrain",
-            "top": 0.74,
-            "curve": 0.03,
-            "fill": "#2b3350",
-            "detail": "#3a456b",
-            "rocks": 3,
-            "bumps": 6,
-            "seed": 5
-          }
-        },
-        {
-          "id": "arka",
-          "kit": {
-            "type": "figure",
-            "x": 0.5,
-            "y": 0.77,
-            "height": 0.125,
-            "outfit": "astronaut",
-            "shiver": 0,
-            "seed": 11,
-            "poses": [
-              {
-                "frame": 0,
-                "pose": "stand"
-              }
-            ],
-            "faces": [
-              {
-                "frame": 0,
-                "face": "neutral"
+          "y": [
+            {
+              "frame": 0,
+              "value": 40
+            }
+          ],
+          "rotate": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "last.",
+                "edge": "end"
               },
-              {
-                "frame": {
-                  "at": "last."
-                },
-                "face": "sad"
-              }
-            ],
-            "suit": "#e8b84a",
-            "visor": "#ffe6a3"
-          }
+              "value": 5
+            }
+          ]
         }
       ],
       "annotations": []
@@ -303,37 +312,131 @@
       "height": 1920,
       "layers": [
         {
-          "id": "hglow",
-          "kit": {
-            "type": "glow",
-            "x": 0.5,
-            "y": 0.74,
-            "rx": 1.0,
-            "ry": 0.1,
-            "tone": "hot"
+          "id": "space",
+          "asset": "space",
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
           },
-          "opacity": [
+          "scale": [
             {
               "frame": 0,
-              "value": 0.7
+              "value": 1.07
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 900,
+              "value": -60
             }
           ]
         },
         {
-          "id": "ecl",
-          "kit": {
-            "type": "prop",
-            "item": "eclipse",
-            "x": 0.5,
-            "y": 0.44,
-            "size": 0.6,
-            "text": "annular",
-            "level": [
-              {
-                "frame": 0,
-                "value": 0
-              }
-            ]
+          "id": "sun",
+          "asset": "sun",
+          "anchor": {
+            "x": 540.0,
+            "y": 780
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.6
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "perfectly.",
+                "edge": "end"
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "perfectly.",
+                "edge": "end",
+                "offset": 4
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "moon",
+          "asset": "moon",
+          "anchor": {
+            "x": 540.0,
+            "y": 780
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.496
+            }
+          ],
+          "x": [
+            {
+              "frame": 0,
+              "value": 760
+            },
+            {
+              "frame": {
+                "at": "Moon"
+              },
+              "value": 760
+            },
+            {
+              "frame": {
+                "at": "perfectly.",
+                "edge": "end"
+              },
+              "value": 0,
+              "ease": "smoothstep"
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "perfectly.",
+                "edge": "end"
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "perfectly.",
+                "edge": "end",
+                "offset": 4
+              },
+              "value": 0
+            }
+          ],
+          "brightness": [
+            {
+              "frame": 0,
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "id": "tot",
+          "asset": "tot",
+          "anchor": {
+            "x": 540.0,
+            "y": 806
           },
           "scale": [
             {
@@ -345,53 +448,30 @@
                 "at": "luck.",
                 "edge": "end"
               },
-              "value": 1.2,
-              "ease": "smoothstep"
+              "value": 1.12
             }
           ],
-          "anchor": {
-            "x": 540.0,
-            "y": 844.8
-          }
-        },
-        {
-          "id": "shore",
-          "kit": {
-            "type": "terrain",
-            "top": 0.74,
-            "curve": 0.03,
-            "fill": "#2b3350",
-            "detail": "#3a456b",
-            "rocks": 3,
-            "bumps": 6,
-            "seed": 5
-          }
-        },
-        {
-          "id": "arka",
-          "kit": {
-            "type": "figure",
-            "x": 0.86,
-            "y": 0.77,
-            "height": 0.125,
-            "outfit": "astronaut",
-            "shiver": 0,
-            "seed": 11,
-            "poses": [
-              {
-                "frame": 0,
-                "pose": "think"
-              }
-            ],
-            "faces": [
-              {
-                "frame": 0,
-                "face": "neutral"
-              }
-            ],
-            "suit": "#e8b84a",
-            "visor": "#ffe6a3"
-          }
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "perfectly.",
+                "edge": "end"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "perfectly.",
+                "edge": "end",
+                "offset": 4
+              },
+              "value": 1
+            }
+          ]
         }
       ],
       "annotations": []
@@ -402,121 +482,122 @@
       "height": 1920,
       "layers": [
         {
-          "id": "hglow",
-          "kit": {
-            "type": "glow",
-            "x": 0.5,
-            "y": 0.74,
-            "rx": 1.0,
-            "ry": 0.1,
-            "tone": "hot"
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0.7
-            },
-            {
-              "frame": {
-                "at": "drifting"
-              },
-              "value": 0.7
-            },
-            {
-              "frame": {
-                "at": "shrinking.",
-                "edge": "end"
-              },
-              "value": 0.385
-            }
-          ]
-        },
-        {
-          "id": "ecl",
-          "kit": {
-            "type": "prop",
-            "item": "eclipse",
-            "x": 0.5,
-            "y": 0.44,
-            "size": 0.6,
-            "text": "annular",
-            "level": [
-              {
-                "frame": 0,
-                "value": 0
-              },
-              {
-                "frame": {
-                  "at": "drifting"
-                },
-                "value": 0
-              },
-              {
-                "frame": {
-                  "at": "shrinking.",
-                  "edge": "end"
-                },
-                "value": 0.45
-              }
-            ]
+          "id": "space",
+          "asset": "space",
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
           },
           "scale": [
             {
               "frame": 0,
-              "value": 1.2
+              "value": 1.07
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 900,
+              "value": -60
+            }
+          ]
+        },
+        {
+          "id": "sun",
+          "asset": "sun",
+          "anchor": {
+            "x": 540.0,
+            "y": 780
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.6
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "moon",
+          "asset": "moon",
+          "anchor": {
+            "x": 540.0,
+            "y": 780
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.496
+            },
+            {
+              "frame": {
+                "at": "shadow"
+              },
+              "value": 0.496
             },
             {
               "frame": {
                 "at": "shrinking.",
                 "edge": "end"
               },
-              "value": 1.05,
+              "value": 0.40800000000000003,
               "ease": "smoothstep"
             }
           ],
+          "brightness": [
+            {
+              "frame": 0,
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "id": "em",
+          "asset": "em",
           "anchor": {
             "x": 540.0,
-            "y": 844.8
-          }
-        },
-        {
-          "id": "shore",
-          "kit": {
-            "type": "terrain",
-            "top": 0.74,
-            "curve": 0.03,
-            "fill": "#2b3350",
-            "detail": "#3a456b",
-            "rocks": 3,
-            "bumps": 6,
-            "seed": 5
-          }
-        },
-        {
-          "id": "arka",
-          "kit": {
-            "type": "figure",
-            "x": 0.86,
-            "y": 0.77,
-            "height": 0.125,
-            "outfit": "astronaut",
-            "shiver": 0,
-            "seed": 11,
-            "poses": [
-              {
-                "frame": 0,
-                "pose": "stand"
-              }
-            ],
-            "faces": [
-              {
-                "frame": 0,
-                "face": "sad"
-              }
-            ],
-            "suit": "#e8b84a",
-            "visor": "#ffe6a3"
-          }
+            "y": 780
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.25
+            },
+            {
+              "frame": {
+                "at": "shadow"
+              },
+              "value": 1.0,
+              "ease": "smoothstep"
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "shadow",
+                "offset": -4
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "shadow"
+              },
+              "value": 0
+            }
+          ]
         }
       ],
       "annotations": []
@@ -527,109 +608,49 @@
       "height": 1920,
       "layers": [
         {
-          "id": "hglow",
-          "kit": {
-            "type": "glow",
-            "x": 0.5,
-            "y": 0.74,
-            "rx": 1.0,
-            "ry": 0.1,
-            "tone": "hot"
-          },
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0.385
-            },
-            {
-              "frame": {
-                "at": "all.",
-                "edge": "end"
-              },
-              "value": 0.0
-            }
-          ]
-        },
-        {
-          "id": "ecl",
-          "kit": {
-            "type": "prop",
-            "item": "eclipse",
-            "x": 0.5,
-            "y": 0.44,
-            "size": 0.6,
-            "text": "annular",
-            "level": [
-              {
-                "frame": 0,
-                "value": 0.45
-              },
-              {
-                "frame": {
-                  "at": "all.",
-                  "edge": "end"
-                },
-                "value": 1
-              }
-            ]
+          "id": "space",
+          "asset": "space",
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
           },
           "scale": [
             {
               "frame": 0,
-              "value": 1.05
+              "value": 1.07
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 900,
+              "value": -60
+            }
+          ]
+        },
+        {
+          "id": "ann",
+          "asset": "ann",
+          "anchor": {
+            "x": 540.0,
+            "y": 806
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.0
             },
             {
               "frame": {
-                "at": "all.",
-                "edge": "end"
+                "at": "all."
               },
-              "value": 1.15,
+              "value": 1.25,
               "ease": "smoothstep"
             }
-          ],
-          "anchor": {
-            "x": 540.0,
-            "y": 844.8
-          }
-        },
-        {
-          "id": "shore",
-          "kit": {
-            "type": "terrain",
-            "top": 0.74,
-            "curve": 0.03,
-            "fill": "#2b3350",
-            "detail": "#3a456b",
-            "rocks": 3,
-            "bumps": 6,
-            "seed": 5
-          }
-        },
-        {
-          "id": "arka",
-          "kit": {
-            "type": "figure",
-            "x": 0.86,
-            "y": 0.77,
-            "height": 0.125,
-            "outfit": "astronaut",
-            "shiver": 0,
-            "seed": 11,
-            "poses": [
-              {
-                "frame": 0,
-                "pose": "panic"
-              }
-            ],
-            "faces": [
-              {
-                "frame": 0,
-                "face": "shocked"
-              }
-            ],
-            "suit": "#e8b84a",
-            "visor": "#ffe6a3"
-          }
+          ]
         }
       ],
       "annotations": []
@@ -640,115 +661,124 @@
       "height": 1920,
       "layers": [
         {
-          "id": "hglow",
+          "id": "space",
+          "asset": "space",
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.07
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 900,
+              "value": -60
+            }
+          ]
+        },
+        {
+          "id": "hot",
           "kit": {
             "type": "glow",
             "x": 0.5,
-            "y": 0.74,
-            "rx": 1.0,
-            "ry": 0.1,
+            "y": 0.3645833333333333,
+            "rx": 0.9,
+            "ry": 0.5,
             "tone": "hot"
           },
           "opacity": [
             {
               "frame": 0,
-              "value": 0.0
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "fill"
+              },
+              "value": 0
             },
             {
               "frame": {
                 "at": "sky?",
                 "edge": "end"
               },
-              "value": 0.0
-            },
-            {
-              "frame": {
-                "at": "sky?",
-                "edge": "end",
-                "offset": 12
-              },
-              "value": 0.7
+              "value": 0.8
             }
           ]
         },
         {
-          "id": "ecl",
-          "kit": {
-            "type": "prop",
-            "item": "eclipse",
-            "x": 0.5,
-            "y": 0.44,
-            "size": 0.6,
-            "text": "annular",
-            "level": [
-              {
-                "frame": 0,
-                "value": 1
-              },
-              {
-                "frame": {
-                  "at": "sky?",
-                  "edge": "end"
-                },
-                "value": 1
-              },
-              {
-                "frame": {
-                  "at": "sky?",
-                  "edge": "end",
-                  "offset": 12
-                },
-                "value": 0
-              }
-            ]
+          "id": "moonhot",
+          "asset": "moonhot",
+          "anchor": {
+            "x": 540.0,
+            "y": 780
           },
           "scale": [
             {
               "frame": 0,
-              "value": 1.15
+              "value": 0.25
             },
             {
               "frame": {
-                "at": "sky?",
-                "edge": "end"
+                "at": "fill"
               },
-              "value": 1.15
+              "value": 0.25
             },
             {
               "frame": {
                 "at": "sky?",
                 "edge": "end",
-                "offset": 12
+                "offset": 10
               },
-              "value": 1.45,
-              "ease": "smoothstep"
+              "value": 1.25,
+              "ease": "ease-out-back"
             }
           ],
-          "anchor": {
-            "x": 540.0,
-            "y": 844.8
-          }
+          "y": [
+            {
+              "frame": 0,
+              "value": -400
+            },
+            {
+              "frame": {
+                "at": "fill"
+              },
+              "value": -400
+            },
+            {
+              "frame": {
+                "at": "sky?",
+                "edge": "end",
+                "offset": 10
+              },
+              "value": 0,
+              "ease": "ease-out-cubic"
+            }
+          ]
         },
         {
-          "id": "shore",
-          "kit": {
-            "type": "terrain",
-            "top": 0.74,
-            "curve": 0.03,
-            "fill": "#2b3350",
-            "detail": "#3a456b",
-            "rocks": 3,
-            "bumps": 6,
-            "seed": 5
+          "id": "earth-limb",
+          "asset": "earth-limb",
+          "anchor": {
+            "x": 540.0,
+            "y": 1180
           }
         },
         {
           "id": "arka",
           "kit": {
             "type": "figure",
-            "x": 0.86,
-            "y": 0.77,
-            "height": 0.125,
+            "x": 0.82,
+            "y": 0.6431,
+            "height": 0.13,
             "outfit": "astronaut",
             "shiver": 0,
             "seed": 11,
@@ -797,7 +827,7 @@
           "asset": "g-b1",
           "x": 0.5,
           "y": 0.5,
-          "size": 0.9
+          "size": 1.0
         }
       },
       "narrationCue": {
@@ -839,7 +869,7 @@
           "asset": "g-b2",
           "x": 0.5,
           "y": 0.5,
-          "size": 0.9
+          "size": 1.0
         }
       },
       "narrationCue": {
@@ -886,7 +916,7 @@
           "asset": "g-b3",
           "x": 0.5,
           "y": 0.5,
-          "size": 0.9
+          "size": 1.0
         }
       },
       "narrationCue": {
@@ -933,7 +963,7 @@
           "asset": "g-b4",
           "x": 0.5,
           "y": 0.5,
-          "size": 0.9
+          "size": 1.0
         }
       },
       "narrationCue": {
@@ -996,7 +1026,7 @@
           "asset": "g-b5",
           "x": 0.5,
           "y": 0.5,
-          "size": 0.9
+          "size": 1.0
         }
       },
       "narrationCue": {
@@ -1043,7 +1073,7 @@
           "asset": "g-b6",
           "x": 0.5,
           "y": 0.5,
-          "size": 0.9
+          "size": 1.0
         }
       },
       "narrationCue": {
@@ -1055,10 +1085,18 @@
         {
           "sound": "whoosh",
           "frame": {
-            "at": "sky?",
-            "edge": "end"
+            "at": "fill"
           },
           "gainDb": -18
+        },
+        {
+          "sound": "boom",
+          "frame": {
+            "at": "sky?",
+            "edge": "end",
+            "offset": 4
+          },
+          "gainDb": -14
         }
       ]
     }

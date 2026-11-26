@@ -2,7 +2,7 @@
   "schemaVersion": "2.1",
   "projectId": "moon-filled-sky",
   "title": "The Moon Is Leaving Us",
-  "themeId": "paint-night",
+  "themeId": "photo-night",
   "format": {
     "width": 1080,
     "height": 1920,
@@ -11,7 +11,56 @@
   "styleId": "cinematic-illustrated",
   "background": "@sky.top",
   "accent": "@text.accent",
-  "assets": [],
+  "assets": [
+    {
+      "id": "moon",
+      "path": "nasa/moon-photos/moon.png",
+      "type": "png",
+      "width": 2160,
+      "height": 3840,
+      "transparent": true
+    },
+    {
+      "id": "space",
+      "path": "nasa/moon-photos/space.png",
+      "type": "png",
+      "width": 2160,
+      "height": 3840,
+      "transparent": true
+    },
+    {
+      "id": "earth",
+      "path": "nasa/moon-photos/earth.png",
+      "type": "png",
+      "width": 2160,
+      "height": 3840,
+      "transparent": true
+    },
+    {
+      "id": "moonhot",
+      "path": "nasa/moon-photos/moon-molten.png",
+      "type": "png",
+      "width": 2160,
+      "height": 3840,
+      "transparent": true
+    },
+    {
+      "id": "earth-limb",
+      "path": "nasa/moon-photos/earth-limb.png",
+      "type": "png",
+      "width": 2160,
+      "height": 3840,
+      "transparent": true
+    },
+    {
+      "id": "ann",
+      "path": "nasa/moon-photos/eclipse-annular.png",
+      "type": "png",
+      "width": 2160,
+      "height": 3840,
+      "transparent": true
+    }
+  ],
   "backdrop": {
     "group": "backdrop"
   },
@@ -99,138 +148,64 @@
       "height": 1920,
       "layers": [
         {
-          "id": "hglow",
-          "kit": {
-            "type": "glow",
-            "x": 0.5,
-            "y": 0.6,
-            "rx": 0.9,
-            "ry": 0.16,
-            "tone": "hot"
+          "id": "space",
+          "asset": "space",
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
           },
-          "opacity": [
+          "scale": [
             {
               "frame": 0,
-              "value": 0.0
+              "value": 1.07
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 900,
+              "value": -60
             }
           ]
         },
         {
           "id": "moon",
-          "kit": {
-            "type": "prop",
-            "item": "sky-moon",
-            "x": 0.5,
-            "y": 0.405,
-            "size": 0.85,
-            "level": [
-              {
-                "frame": 0,
-                "value": 0.5
+          "asset": "moon",
+          "anchor": {
+            "x": 540.0,
+            "y": 780
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.35
+            },
+            {
+              "frame": {
+                "at": "it.",
+                "edge": "end"
               },
-              {
-                "frame": {
-                  "at": "it.",
-                  "edge": "end"
-                },
-                "value": 0.465
-              }
-            ],
-            "level2": [
-              {
-                "frame": 0,
-                "value": 0
-              }
-            ]
-          }
-        },
-        {
-          "id": "sea",
-          "kit": {
-            "type": "water",
-            "x": -0.1,
-            "y": 0.6,
-            "width": 1.3,
-            "height": 0.15,
-            "waves": 5,
-            "periodFrames": 150,
-            "seed": 3
-          }
-        },
-        {
-          "id": "glitter",
-          "kit": {
-            "type": "prop",
-            "item": "moon-glitter",
-            "x": 0.5,
-            "y": 0.6,
-            "size": 0.85,
-            "level": [
-              {
-                "frame": 0,
-                "value": 0.5
+              "value": 1.18,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "it.",
+                "edge": "end"
               },
-              {
-                "frame": {
-                  "at": "it.",
-                  "edge": "end"
-                },
-                "value": 0.465
-              }
-            ],
-            "level2": [
-              {
-                "frame": 0,
-                "value": 0
-              }
-            ],
-            "count": 10
-          }
-        },
-        {
-          "id": "shore",
-          "kit": {
-            "type": "terrain",
-            "top": 0.74,
-            "curve": 0.03,
-            "fill": "#2b3350",
-            "detail": "#3a456b",
-            "rocks": 3,
-            "bumps": 6,
-            "seed": 5
-          }
-        },
-        {
-          "id": "arka",
-          "kit": {
-            "type": "figure",
-            "x": 0.86,
-            "y": 0.77,
-            "height": 0.125,
-            "outfit": "astronaut",
-            "shiver": 0,
-            "seed": 11,
-            "poses": [
-              {
-                "frame": 0,
-                "pose": "stand"
-              }
-            ],
-            "faces": [
-              {
-                "frame": 0,
-                "face": "neutral"
-              },
-              {
-                "frame": {
-                  "at": "leaving"
-                },
-                "face": "sad"
-              }
-            ],
-            "suit": "#e8b84a",
-            "visor": "#ffe6a3"
-          }
+              "value": -30,
+              "ease": "smoothstep"
+            }
+          ]
         }
       ],
       "annotations": []
@@ -241,248 +216,243 @@
       "height": 1920,
       "layers": [
         {
-          "id": "hglow",
-          "kit": {
-            "type": "glow",
-            "x": 0.5,
-            "y": 0.6,
-            "rx": 0.9,
-            "ry": 0.16,
-            "tone": "hot"
+          "id": "space",
+          "asset": "space",
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
           },
-          "opacity": [
+          "scale": [
             {
               "frame": 0,
-              "value": 0.0
+              "value": 1.07
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 900,
+              "value": -60
+            }
+          ]
+        },
+        {
+          "id": "earth",
+          "asset": "earth",
+          "anchor": {
+            "x": 540.0,
+            "y": 780
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.62
+            },
+            {
+              "frame": 0,
+              "value": 0.62
+            },
+            {
+              "frame": {
+                "at": "away.",
+                "edge": "end"
+              },
+              "value": 0.66,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 420
+            }
+          ],
+          "rotate": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "away.",
+                "edge": "end"
+              },
+              "value": 3
             }
           ]
         },
         {
           "id": "moon",
-          "kit": {
-            "type": "prop",
-            "item": "sky-moon",
-            "x": 0.5,
-            "y": 0.405,
-            "size": 0.85,
-            "level": [
-              {
-                "frame": 0,
-                "value": 0.465
+          "asset": "moon",
+          "anchor": {
+            "x": 540.0,
+            "y": 780
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.2
+            },
+            {
+              "frame": {
+                "at": "Every",
+                "offset": -1
               },
-              {
-                "frame": {
-                  "at": "Every",
-                  "offset": -1
-                },
-                "value": 0.465
+              "value": 0.2
+            },
+            {
+              "frame": {
+                "at": "Every",
+                "offset": 3
               },
-              {
-                "frame": {
-                  "at": "Every"
-                },
-                "value": 0.4575
+              "value": 0.188,
+              "ease": "ease-out-cubic"
+            },
+            {
+              "frame": {
+                "at": "year,",
+                "offset": -1
               },
-              {
-                "frame": {
-                  "at": "year,",
-                  "offset": -1
-                },
-                "value": 0.4575
+              "value": 0.188
+            },
+            {
+              "frame": {
+                "at": "year,",
+                "offset": 3
               },
-              {
-                "frame": {
-                  "at": "year,"
-                },
-                "value": 0.45
+              "value": 0.176,
+              "ease": "ease-out-cubic"
+            },
+            {
+              "frame": {
+                "at": "slips",
+                "offset": -1
               },
-              {
-                "frame": {
-                  "at": "slips",
-                  "offset": -1
-                },
-                "value": 0.45
+              "value": 0.176
+            },
+            {
+              "frame": {
+                "at": "slips",
+                "offset": 3
               },
-              {
-                "frame": {
-                  "at": "slips"
-                },
-                "value": 0.4425
+              "value": 0.164,
+              "ease": "ease-out-cubic"
+            },
+            {
+              "frame": {
+                "at": "four",
+                "offset": -1
               },
-              {
-                "frame": {
-                  "at": "four",
-                  "offset": -1
-                },
-                "value": 0.4425
+              "value": 0.164
+            },
+            {
+              "frame": {
+                "at": "four",
+                "offset": 3
               },
-              {
-                "frame": {
-                  "at": "four"
-                },
-                "value": 0.435
+              "value": 0.152,
+              "ease": "ease-out-cubic"
+            },
+            {
+              "frame": {
+                "at": "farther",
+                "offset": -1
               },
-              {
-                "frame": {
-                  "at": "farther",
-                  "offset": -1
-                },
-                "value": 0.435
+              "value": 0.152
+            },
+            {
+              "frame": {
+                "at": "farther",
+                "offset": 3
               },
-              {
-                "frame": {
-                  "at": "farther"
-                },
-                "value": 0.4275
-              }
-            ],
-            "level2": [
-              {
-                "frame": 0,
-                "value": 0
-              }
-            ]
-          }
-        },
-        {
-          "id": "sea",
-          "kit": {
-            "type": "water",
-            "x": -0.1,
-            "y": 0.6,
-            "width": 1.3,
-            "height": 0.15,
-            "waves": 5,
-            "periodFrames": 150,
-            "seed": 3
-          }
-        },
-        {
-          "id": "glitter",
-          "kit": {
-            "type": "prop",
-            "item": "moon-glitter",
-            "x": 0.5,
-            "y": 0.6,
-            "size": 0.85,
-            "level": [
-              {
-                "frame": 0,
-                "value": 0.465
+              "value": 0.14,
+              "ease": "ease-out-cubic"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": -260
+            },
+            {
+              "frame": {
+                "at": "Every",
+                "offset": -1
               },
-              {
-                "frame": {
-                  "at": "Every",
-                  "offset": -1
-                },
-                "value": 0.465
+              "value": -260
+            },
+            {
+              "frame": {
+                "at": "Every",
+                "offset": 3
               },
-              {
-                "frame": {
-                  "at": "Every"
-                },
-                "value": 0.4575
+              "value": -282,
+              "ease": "ease-out-cubic"
+            },
+            {
+              "frame": {
+                "at": "year,",
+                "offset": -1
               },
-              {
-                "frame": {
-                  "at": "year,",
-                  "offset": -1
-                },
-                "value": 0.4575
+              "value": -282
+            },
+            {
+              "frame": {
+                "at": "year,",
+                "offset": 3
               },
-              {
-                "frame": {
-                  "at": "year,"
-                },
-                "value": 0.45
+              "value": -304,
+              "ease": "ease-out-cubic"
+            },
+            {
+              "frame": {
+                "at": "slips",
+                "offset": -1
               },
-              {
-                "frame": {
-                  "at": "slips",
-                  "offset": -1
-                },
-                "value": 0.45
+              "value": -304
+            },
+            {
+              "frame": {
+                "at": "slips",
+                "offset": 3
               },
-              {
-                "frame": {
-                  "at": "slips"
-                },
-                "value": 0.4425
+              "value": -326,
+              "ease": "ease-out-cubic"
+            },
+            {
+              "frame": {
+                "at": "four",
+                "offset": -1
               },
-              {
-                "frame": {
-                  "at": "four",
-                  "offset": -1
-                },
-                "value": 0.4425
+              "value": -326
+            },
+            {
+              "frame": {
+                "at": "four",
+                "offset": 3
               },
-              {
-                "frame": {
-                  "at": "four"
-                },
-                "value": 0.435
+              "value": -348,
+              "ease": "ease-out-cubic"
+            },
+            {
+              "frame": {
+                "at": "farther",
+                "offset": -1
               },
-              {
-                "frame": {
-                  "at": "farther",
-                  "offset": -1
-                },
-                "value": 0.435
+              "value": -348
+            },
+            {
+              "frame": {
+                "at": "farther",
+                "offset": 3
               },
-              {
-                "frame": {
-                  "at": "farther"
-                },
-                "value": 0.4275
-              }
-            ],
-            "level2": [
-              {
-                "frame": 0,
-                "value": 0
-              }
-            ],
-            "count": 10
-          }
-        },
-        {
-          "id": "shore",
-          "kit": {
-            "type": "terrain",
-            "top": 0.74,
-            "curve": 0.03,
-            "fill": "#2b3350",
-            "detail": "#3a456b",
-            "rocks": 3,
-            "bumps": 6,
-            "seed": 5
-          }
-        },
-        {
-          "id": "arka",
-          "kit": {
-            "type": "figure",
-            "x": 0.86,
-            "y": 0.77,
-            "height": 0.125,
-            "outfit": "astronaut",
-            "shiver": 0,
-            "seed": 11,
-            "poses": [
-              {
-                "frame": 0,
-                "pose": "think"
-              }
-            ],
-            "faces": [
-              {
-                "frame": 0,
-                "face": "sad"
-              }
-            ],
-            "suit": "#e8b84a",
-            "visor": "#ffe6a3"
-          }
+              "value": -370,
+              "ease": "ease-out-cubic"
+            }
+          ]
         }
       ],
       "annotations": []
@@ -493,144 +463,143 @@
       "height": 1920,
       "layers": [
         {
-          "id": "hglow",
-          "kit": {
-            "type": "glow",
-            "x": 0.5,
-            "y": 0.6,
-            "rx": 0.9,
-            "ry": 0.16,
-            "tone": "hot"
+          "id": "space",
+          "asset": "space",
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
           },
-          "opacity": [
+          "scale": [
             {
               "frame": 0,
-              "value": 0.0
+              "value": 1.07
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 900,
+              "value": -60
+            }
+          ]
+        },
+        {
+          "id": "earth",
+          "asset": "earth",
+          "anchor": {
+            "x": 540.0,
+            "y": 780
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.66
+            },
+            {
+              "frame": {
+                "at": "rewind."
+              },
+              "value": 0.66
+            },
+            {
+              "frame": {
+                "at": "rewind.",
+                "offset": 14
+              },
+              "value": 0.72,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 420
+            }
+          ],
+          "rotate": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "rewind.",
+                "offset": 14
+              },
+              "value": 3
             }
           ]
         },
         {
           "id": "moon",
-          "kit": {
-            "type": "prop",
-            "item": "sky-moon",
-            "x": 0.5,
-            "y": 0.405,
-            "size": 0.85,
-            "level": [
-              {
-                "frame": 0,
-                "value": 0.4275
+          "asset": "moon",
+          "anchor": {
+            "x": 540.0,
+            "y": 780
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.14
+            },
+            {
+              "frame": {
+                "at": "rewind."
               },
-              {
-                "frame": {
-                  "at": "Sounds"
-                },
-                "value": 0.4275
+              "value": 0.14
+            },
+            {
+              "frame": {
+                "at": "rewind.",
+                "offset": 14
               },
-              {
-                "frame": {
-                  "at": "nothing.",
-                  "edge": "end"
-                },
-                "value": 0.052
-              }
-            ],
-            "level2": [
-              {
-                "frame": 0,
-                "value": 0
-              }
-            ]
-          }
-        },
-        {
-          "id": "sea",
-          "kit": {
-            "type": "water",
-            "x": -0.1,
-            "y": 0.6,
-            "width": 1.3,
-            "height": 0.15,
-            "waves": 5,
-            "periodFrames": 150,
-            "seed": 3
-          }
-        },
-        {
-          "id": "glitter",
-          "kit": {
-            "type": "prop",
-            "item": "moon-glitter",
-            "x": 0.5,
-            "y": 0.6,
-            "size": 0.85,
-            "level": [
-              {
-                "frame": 0,
-                "value": 0.4275
+              "value": 0.42,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": -370
+            },
+            {
+              "frame": {
+                "at": "rewind."
               },
-              {
-                "frame": {
-                  "at": "Sounds"
-                },
-                "value": 0.4275
+              "value": -370
+            },
+            {
+              "frame": {
+                "at": "rewind.",
+                "offset": 14
               },
-              {
-                "frame": {
-                  "at": "nothing.",
-                  "edge": "end"
-                },
-                "value": 0.052
-              }
-            ],
-            "level2": [
-              {
-                "frame": 0,
-                "value": 0
-              }
-            ],
-            "count": 10
-          }
-        },
-        {
-          "id": "shore",
-          "kit": {
-            "type": "terrain",
-            "top": 0.74,
-            "curve": 0.03,
-            "fill": "#2b3350",
-            "detail": "#3a456b",
-            "rocks": 3,
-            "bumps": 6,
-            "seed": 5
-          }
-        },
-        {
-          "id": "arka",
-          "kit": {
-            "type": "figure",
-            "x": 0.86,
-            "y": 0.77,
-            "height": 0.125,
-            "outfit": "astronaut",
-            "shiver": 0,
-            "seed": 11,
-            "poses": [
-              {
-                "frame": 0,
-                "pose": "shrug"
-              }
-            ],
-            "faces": [
-              {
-                "frame": 0,
-                "face": "neutral"
-              }
-            ],
-            "suit": "#e8b84a",
-            "visor": "#ffe6a3"
-          }
+              "value": -40,
+              "ease": "smoothstep"
+            }
+          ],
+          "rotate": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "rewind."
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "rewind.",
+                "offset": 14
+              },
+              "value": -120,
+              "ease": "smoothstep"
+            }
+          ]
         }
       ],
       "annotations": []
@@ -641,163 +610,123 @@
       "height": 1920,
       "layers": [
         {
-          "id": "hglow",
+          "id": "space",
+          "asset": "space",
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.07
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 900,
+              "value": -60
+            }
+          ]
+        },
+        {
+          "id": "hot",
           "kit": {
             "type": "glow",
             "x": 0.5,
-            "y": 0.6,
+            "y": 0.3645833333333333,
             "rx": 0.9,
-            "ry": 0.16,
+            "ry": 0.5,
             "tone": "hot"
           },
           "opacity": [
             {
               "frame": 0,
-              "value": 0.0
+              "value": 0
             },
             {
               "frame": {
-                "at": "Four"
+                "at": "Four",
+                "offset": -1
               },
-              "value": 0.64
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "Four",
+                "offset": 10
+              },
+              "value": 0.9
             }
           ]
         },
         {
-          "id": "moon",
-          "kit": {
-            "type": "prop",
-            "item": "sky-moon",
-            "x": 0.5,
-            "y": 0.405,
-            "size": 0.85,
-            "level": [
-              {
-                "frame": 0,
-                "value": 0.052
+          "id": "moonhot",
+          "asset": "moonhot",
+          "anchor": {
+            "x": 540.0,
+            "y": 780
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.42
+            },
+            {
+              "frame": {
+                "at": "Four",
+                "offset": -1
               },
-              {
-                "frame": {
-                  "at": "Four",
-                  "offset": -1
-                },
-                "value": 0.052
+              "value": 0.42
+            },
+            {
+              "frame": {
+                "at": "Four",
+                "offset": 14
               },
-              {
-                "frame": {
-                  "at": "Four",
-                  "offset": 14
-                },
-                "value": 1
-              }
-            ],
-            "level2": [
-              {
-                "frame": 0,
-                "value": 0
+              "value": 1.25,
+              "ease": "ease-out-back"
+            },
+            {
+              "frame": {
+                "at": "sky.",
+                "edge": "end"
               },
-              {
-                "frame": {
-                  "at": "Four"
-                },
-                "value": 0.8
-              }
-            ]
-          }
+              "value": 1.34
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": -180
+            },
+            {
+              "frame": {
+                "at": "Four",
+                "offset": -1
+              },
+              "value": -180
+            },
+            {
+              "frame": {
+                "at": "Four",
+                "offset": 14
+              },
+              "value": 0,
+              "ease": "ease-out-cubic"
+            }
+          ]
         },
         {
-          "id": "sea",
-          "kit": {
-            "type": "water",
-            "x": -0.1,
-            "y": 0.6,
-            "width": 1.3,
-            "height": 0.15,
-            "waves": 5,
-            "periodFrames": 150,
-            "seed": 3
-          }
-        },
-        {
-          "id": "glitter",
-          "kit": {
-            "type": "prop",
-            "item": "moon-glitter",
-            "x": 0.5,
-            "y": 0.6,
-            "size": 0.85,
-            "level": [
-              {
-                "frame": 0,
-                "value": 0.052
-              },
-              {
-                "frame": {
-                  "at": "Four",
-                  "offset": -1
-                },
-                "value": 0.052
-              },
-              {
-                "frame": {
-                  "at": "Four",
-                  "offset": 14
-                },
-                "value": 1
-              }
-            ],
-            "level2": [
-              {
-                "frame": 0,
-                "value": 0
-              },
-              {
-                "frame": {
-                  "at": "Four"
-                },
-                "value": 0.8
-              }
-            ],
-            "count": 10
-          }
-        },
-        {
-          "id": "shore",
-          "kit": {
-            "type": "terrain",
-            "top": 0.74,
-            "curve": 0.03,
-            "fill": "#2b3350",
-            "detail": "#3a456b",
-            "rocks": 3,
-            "bumps": 6,
-            "seed": 5
-          }
-        },
-        {
-          "id": "arka",
-          "kit": {
-            "type": "figure",
-            "x": 0.86,
-            "y": 0.77,
-            "height": 0.125,
-            "outfit": "astronaut",
-            "shiver": 0,
-            "seed": 11,
-            "poses": [
-              {
-                "frame": 0,
-                "pose": "panic"
-              }
-            ],
-            "faces": [
-              {
-                "frame": 0,
-                "face": "shocked"
-              }
-            ],
-            "suit": "#e8b84a",
-            "visor": "#ffe6a3"
+          "id": "earth-limb",
+          "asset": "earth-limb",
+          "anchor": {
+            "x": 540.0,
+            "y": 1180
           }
         }
       ],
@@ -809,212 +738,174 @@
       "height": 1920,
       "layers": [
         {
-          "id": "hglow",
+          "id": "space",
+          "asset": "space",
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.07
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 900,
+              "value": -60
+            }
+          ]
+        },
+        {
+          "id": "hot",
           "kit": {
             "type": "glow",
             "x": 0.5,
-            "y": 0.6,
+            "y": 0.3645833333333333,
             "rx": 0.9,
-            "ry": 0.16,
+            "ry": 0.5,
             "tone": "hot"
           },
           "opacity": [
             {
               "frame": 0,
-              "value": 0.64
-            },
-            {
-              "frame": {
-                "at": "running"
-              },
-              "value": 0.64
+              "value": 0.9
             },
             {
               "frame": {
                 "at": "since.",
                 "edge": "end"
               },
-              "value": 0.0
+              "value": 0
             }
           ]
         },
         {
-          "id": "sunglow",
-          "kit": {
-            "type": "glow",
-            "x": 0.5,
-            "y": 0.62,
-            "rx": 0.7,
-            "ry": 0.1,
-            "tone": "sun"
+          "id": "moon",
+          "asset": "moon",
+          "anchor": {
+            "x": 540.0,
+            "y": 780
           },
-          "opacity": [
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.34
+            },
+            {
+              "frame": {
+                "at": "running"
+              },
+              "value": 1.34
+            },
+            {
+              "frame": {
+                "at": "since.",
+                "edge": "end"
+              },
+              "value": 0.3,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
             {
               "frame": 0,
               "value": 0
             },
             {
               "frame": {
-                "at": "taking"
+                "at": "running"
               },
               "value": 0
             },
             {
               "frame": {
-                "at": "with",
+                "at": "since.",
                 "edge": "end"
               },
-              "value": 0.9
+              "value": -330,
+              "ease": "smoothstep"
             }
           ]
         },
         {
-          "id": "moon",
-          "kit": {
-            "type": "prop",
-            "item": "sky-moon",
-            "x": 0.5,
-            "y": 0.405,
-            "size": 0.85,
-            "level": [
-              {
-                "frame": 0,
-                "value": 1
+          "id": "moonhot",
+          "asset": "moonhot",
+          "anchor": {
+            "x": 540.0,
+            "y": 780
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.34
+            },
+            {
+              "frame": {
+                "at": "running"
               },
-              {
-                "frame": {
-                  "at": "running"
-                },
-                "value": 1
+              "value": 1.34
+            },
+            {
+              "frame": {
+                "at": "since.",
+                "edge": "end"
               },
-              {
-                "frame": {
-                  "at": "since.",
-                  "edge": "end"
-                },
-                "value": 0.052
-              }
-            ],
-            "level2": [
-              {
-                "frame": 0,
-                "value": 0.8
+              "value": 0.3,
+              "ease": "smoothstep"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "running"
               },
-              {
-                "frame": {
-                  "at": "running"
-                },
-                "value": 0.8
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "since.",
+                "edge": "end"
               },
-              {
-                "frame": {
-                  "at": "since.",
-                  "edge": "end"
-                },
-                "value": 0
-              }
-            ]
-          }
+              "value": -330,
+              "ease": "smoothstep"
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "running"
+              },
+              "value": 1
+            },
+            {
+              "frame": {
+                "at": "since.",
+                "edge": "end"
+              },
+              "value": 0
+            }
+          ]
         },
         {
-          "id": "sea",
-          "kit": {
-            "type": "water",
-            "x": -0.1,
-            "y": 0.6,
-            "width": 1.3,
-            "height": 0.15,
-            "waves": 5,
-            "periodFrames": 150,
-            "seed": 3
-          }
-        },
-        {
-          "id": "glitter",
-          "kit": {
-            "type": "prop",
-            "item": "moon-glitter",
-            "x": 0.5,
-            "y": 0.6,
-            "size": 0.85,
-            "level": [
-              {
-                "frame": 0,
-                "value": 1
-              },
-              {
-                "frame": {
-                  "at": "running"
-                },
-                "value": 1
-              },
-              {
-                "frame": {
-                  "at": "since.",
-                  "edge": "end"
-                },
-                "value": 0.052
-              }
-            ],
-            "level2": [
-              {
-                "frame": 0,
-                "value": 0.8
-              },
-              {
-                "frame": {
-                  "at": "running"
-                },
-                "value": 0.8
-              },
-              {
-                "frame": {
-                  "at": "since.",
-                  "edge": "end"
-                },
-                "value": 0
-              }
-            ],
-            "count": 10
-          }
-        },
-        {
-          "id": "shore",
-          "kit": {
-            "type": "terrain",
-            "top": 0.74,
-            "curve": 0.03,
-            "fill": "#2b3350",
-            "detail": "#3a456b",
-            "rocks": 3,
-            "bumps": 6,
-            "seed": 5
-          }
-        },
-        {
-          "id": "arka",
-          "kit": {
-            "type": "figure",
-            "x": 0.86,
-            "y": 0.77,
-            "height": 0.125,
-            "outfit": "astronaut",
-            "shiver": 0,
-            "seed": 11,
-            "poses": [
-              {
-                "frame": 0,
-                "pose": "stand"
-              }
-            ],
-            "faces": [
-              {
-                "frame": 0,
-                "face": "sad"
-              }
-            ],
-            "suit": "#e8b84a",
-            "visor": "#ffe6a3"
+          "id": "earth-limb",
+          "asset": "earth-limb",
+          "anchor": {
+            "x": 540.0,
+            "y": 1180
           }
         }
       ],
@@ -1026,139 +917,121 @@
       "height": 1920,
       "layers": [
         {
-          "id": "hglow",
-          "kit": {
-            "type": "glow",
-            "x": 0.5,
-            "y": 0.6,
-            "rx": 0.9,
-            "ry": 0.16,
-            "tone": "hot"
+          "id": "space",
+          "asset": "space",
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
           },
-          "opacity": [
+          "scale": [
             {
               "frame": 0,
-              "value": 0.0
+              "value": 1.07
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 900,
+              "value": -60
             }
           ]
         },
         {
-          "id": "sunglow",
-          "kit": {
-            "type": "glow",
-            "x": 0.5,
-            "y": 0.62,
-            "rx": 0.7,
-            "ry": 0.1,
-            "tone": "sun"
+          "id": "ann",
+          "asset": "ann",
+          "anchor": {
+            "x": 540.0,
+            "y": 806
           },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.0
+            },
+            {
+              "frame": {
+                "at": "Sun.",
+                "edge": "end"
+              },
+              "value": 1.22,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": {
+                "at": "Forever.",
+                "edge": "end"
+              },
+              "value": 1.3
+            }
+          ],
           "opacity": [
             {
               "frame": 0,
-              "value": 0.9
+              "value": 0
+            },
+            {
+              "frame": 8,
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "id": "g-a7",
+      "width": 1080,
+      "height": 1920,
+      "layers": [
+        {
+          "id": "space",
+          "asset": "space",
+          "anchor": {
+            "x": 540.0,
+            "y": 960.0
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.07
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 900,
+              "value": -60
             }
           ]
         },
         {
-          "id": "moon",
-          "kit": {
-            "type": "prop",
-            "item": "sky-moon",
-            "x": 0.5,
-            "y": 0.405,
-            "size": 0.85,
-            "level": [
-              {
-                "frame": 0,
-                "value": 0.052
-              }
-            ],
-            "level2": [
-              {
-                "frame": 0,
-                "value": 0
-              }
-            ]
-          }
-        },
-        {
-          "id": "sea",
-          "kit": {
-            "type": "water",
-            "x": -0.1,
-            "y": 0.6,
-            "width": 1.3,
-            "height": 0.15,
-            "waves": 5,
-            "periodFrames": 150,
-            "seed": 3
-          }
-        },
-        {
-          "id": "glitter",
-          "kit": {
-            "type": "prop",
-            "item": "moon-glitter",
-            "x": 0.5,
-            "y": 0.6,
-            "size": 0.85,
-            "level": [
-              {
-                "frame": 0,
-                "value": 0.052
-              }
-            ],
-            "level2": [
-              {
-                "frame": 0,
-                "value": 0
-              }
-            ],
-            "count": 10
-          }
-        },
-        {
-          "id": "shore",
-          "kit": {
-            "type": "terrain",
-            "top": 0.74,
-            "curve": 0.03,
-            "fill": "#2b3350",
-            "detail": "#3a456b",
-            "rocks": 3,
-            "bumps": 6,
-            "seed": 5
-          }
-        },
-        {
-          "id": "ecl",
-          "kit": {
-            "type": "prop",
-            "item": "eclipse",
-            "x": 0.5,
-            "y": 0.405,
-            "size": 0.5,
-            "text": "annular",
-            "level": [
-              {
-                "frame": 0,
-                "value": 0
-              },
-              {
-                "frame": {
-                  "at": "too"
-                },
-                "value": 0
-              },
-              {
-                "frame": {
-                  "at": "Sun.",
-                  "edge": "end"
-                },
-                "value": 1
-              }
-            ]
+          "id": "ann",
+          "asset": "ann",
+          "anchor": {
+            "x": 540.0,
+            "y": 806
           },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1.3
+            },
+            {
+              "frame": {
+                "at": "eclipse?",
+                "edge": "end"
+              },
+              "value": 1.42,
+              "ease": "smoothstep"
+            }
+          ],
           "opacity": [
             {
               "frame": 0,
@@ -1171,164 +1044,71 @@
           ]
         },
         {
-          "id": "arka",
-          "kit": {
-            "type": "figure",
-            "x": 0.86,
-            "y": 0.77,
-            "height": 0.125,
-            "outfit": "astronaut",
-            "shiver": 0,
-            "seed": 11,
-            "poses": [
-              {
-                "frame": 0,
-                "pose": "stand"
-              }
-            ],
-            "faces": [
-              {
-                "frame": 0,
-                "face": "shocked"
-              }
-            ],
-            "suit": "#e8b84a",
-            "visor": "#ffe6a3"
+          "id": "earth-limb",
+          "asset": "earth-limb",
+          "anchor": {
+            "x": 540.0,
+            "y": 1180
           }
-        }
-      ],
-      "annotations": []
-    },
-    {
-      "id": "g-a7",
-      "width": 1080,
-      "height": 1920,
-      "layers": [
+        },
         {
-          "id": "hglow",
-          "kit": {
-            "type": "glow",
-            "x": 0.5,
-            "y": 0.6,
-            "rx": 0.9,
-            "ry": 0.16,
-            "tone": "hot"
+          "id": "moon",
+          "asset": "moon",
+          "anchor": {
+            "x": 540.0,
+            "y": 780
           },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "eclipse?",
+                "edge": "end"
+              },
+              "value": 0.6
+            },
+            {
+              "frame": {
+                "at": "eclipse?",
+                "edge": "end",
+                "offset": 12
+              },
+              "value": 1.35,
+              "ease": "smoothstep"
+            }
+          ],
           "opacity": [
             {
               "frame": 0,
-              "value": 0.0
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "eclipse?",
+                "edge": "end"
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "eclipse?",
+                "edge": "end",
+                "offset": 6
+              },
+              "value": 1
             }
           ]
         },
         {
-          "id": "moon",
-          "kit": {
-            "type": "prop",
-            "item": "sky-moon",
-            "x": 0.5,
-            "y": 0.405,
-            "size": 0.85,
-            "level": [
-              {
-                "frame": 0,
-                "value": 0.052
-              },
-              {
-                "frame": {
-                  "at": "eclipse?",
-                  "edge": "end"
-                },
-                "value": 0.052
-              },
-              {
-                "frame": {
-                  "at": "eclipse?",
-                  "edge": "end",
-                  "offset": 12
-                },
-                "value": 0.5
-              }
-            ],
-            "level2": [
-              {
-                "frame": 0,
-                "value": 0
-              }
-            ]
-          }
-        },
-        {
-          "id": "sea",
-          "kit": {
-            "type": "water",
-            "x": -0.1,
-            "y": 0.6,
-            "width": 1.3,
-            "height": 0.15,
-            "waves": 5,
-            "periodFrames": 150,
-            "seed": 3
-          }
-        },
-        {
-          "id": "glitter",
-          "kit": {
-            "type": "prop",
-            "item": "moon-glitter",
-            "x": 0.5,
-            "y": 0.6,
-            "size": 0.85,
-            "level": [
-              {
-                "frame": 0,
-                "value": 0.052
-              },
-              {
-                "frame": {
-                  "at": "eclipse?",
-                  "edge": "end"
-                },
-                "value": 0.052
-              },
-              {
-                "frame": {
-                  "at": "eclipse?",
-                  "edge": "end",
-                  "offset": 12
-                },
-                "value": 0.5
-              }
-            ],
-            "level2": [
-              {
-                "frame": 0,
-                "value": 0
-              }
-            ],
-            "count": 10
-          }
-        },
-        {
-          "id": "shore",
-          "kit": {
-            "type": "terrain",
-            "top": 0.74,
-            "curve": 0.03,
-            "fill": "#2b3350",
-            "detail": "#3a456b",
-            "rocks": 3,
-            "bumps": 6,
-            "seed": 5
-          }
-        },
-        {
           "id": "arka",
           "kit": {
             "type": "figure",
-            "x": 0.86,
-            "y": 0.77,
-            "height": 0.125,
+            "x": 0.82,
+            "y": 0.6431,
+            "height": 0.13,
             "outfit": "astronaut",
             "shiver": 0,
             "seed": 11,
@@ -1377,7 +1157,7 @@
           "asset": "g-a1",
           "x": 0.5,
           "y": 0.5,
-          "size": 0.9
+          "size": 1.0
         }
       },
       "narrationCue": {
@@ -1419,7 +1199,7 @@
           "asset": "g-a2",
           "x": 0.5,
           "y": 0.5,
-          "size": 0.9
+          "size": 1.0
         }
       },
       "narrationCue": {
@@ -1494,7 +1274,7 @@
           "asset": "g-a3",
           "x": 0.5,
           "y": 0.5,
-          "size": 0.9
+          "size": 1.0
         }
       },
       "narrationCue": {
@@ -1550,7 +1330,7 @@
           "asset": "g-a4",
           "x": 0.5,
           "y": 0.5,
-          "size": 0.9
+          "size": 1.0
         }
       },
       "narrationCue": {
@@ -1597,7 +1377,7 @@
           "asset": "g-a5",
           "x": 0.5,
           "y": 0.5,
-          "size": 0.9
+          "size": 1.0
         }
       },
       "narrationCue": {
@@ -1644,7 +1424,7 @@
           "asset": "g-a6",
           "x": 0.5,
           "y": 0.5,
-          "size": 0.9
+          "size": 1.0
         }
       },
       "narrationCue": {
@@ -1691,7 +1471,7 @@
           "asset": "g-a7",
           "x": 0.5,
           "y": 0.5,
-          "size": 0.9
+          "size": 1.0
         }
       },
       "narrationCue": {

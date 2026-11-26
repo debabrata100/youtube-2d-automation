@@ -7,7 +7,7 @@ import {getTheme, resolveThemeRefs, themeIds} from '../style/theme';
 import {SFX_IDS} from '../../audio/sfx-ids';
 
 const color = z.string().regex(/^#[0-9a-fA-F]{6}$/, 'Expected a six-digit hex color');
-const subject = z.object({asset: z.string().min(1), x: z.number().min(.1).max(.9).default(.5), y: z.number().min(.25).max(.85).default(.56), size: z.number().min(.08).max(.9).default(.65), timeOffset: z.number().int().nonnegative().optional()}).strict();
+const subject = z.object({asset: z.string().min(1), x: z.number().min(.1).max(.9).default(.5), y: z.number().min(.25).max(.85).default(.56), size: z.number().min(.08).max(1).default(.65), timeOffset: z.number().int().nonnegative().optional()}).strict();
 const base = {
   narrationCue: z.object({beatId:z.string().min(1),phraseIndex:z.number().int().nonnegative().default(0),edge:z.enum(['start','end']).default('start')}).strict().optional(),
   animationDurationFrames:z.number().int().min(12).max(18000).optional(),
