@@ -21,7 +21,7 @@
   },
   "audio": {
     "music": "cues",
-    "musicGainDb": -22,
+    "musicGainDb": -19,
     "duckRatio": 8,
     "targetLufs": -14,
     "crossfadeSeconds": 1.5,
@@ -29,8 +29,7 @@
       {
         "source": "assets/music/6-space-singularity.mp3",
         "scene": "sm-a1",
-        "offsetSeconds": 10,
-        "gainDb": -19
+        "offsetSeconds": 10
       }
     ],
     "musicDropouts": [

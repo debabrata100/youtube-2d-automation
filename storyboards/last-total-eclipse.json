@@ -21,7 +21,7 @@
   },
   "audio": {
     "music": "cues",
-    "musicGainDb": -22,
+    "musicGainDb": -19,
     "duckRatio": 8,
     "targetLufs": -14,
     "crossfadeSeconds": 1.5,
@@ -29,8 +29,7 @@
       {
         "source": "assets/music/4-tense-a-false-vacuum-decay.mp3",
         "scene": "em-b1",
-        "offsetSeconds": 14,
-        "gainDb": -19
+        "offsetSeconds": 14
       }
     ],
     "musicDropouts": [

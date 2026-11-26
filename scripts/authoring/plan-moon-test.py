@@ -85,8 +85,8 @@ GOLD, SKY = '#ffd25e', '#a9d8ff'
 ep.backdrop(stars=34)
 # Music (26 Nov): a different track per Short, started past its fade-in so the first frame already has a mood, a little louder
 # than our usual -22 dB, and a half-second of silence before the payoff beat.
-if NAME == 'sky': ep.music([('a1', 'assets/music/6-space-singularity.mp3', 10, -19)], dropouts=[('a4', 0, .5)], target_lufs=-14)
-else: ep.music([('b1', 'assets/music/4-tense-a-false-vacuum-decay.mp3', 14, -19)], dropouts=[('b4', 0, .5)], target_lufs=-14)
+if NAME == 'sky': ep.music([('a1', 'assets/music/6-space-singularity.mp3', 10)], dropouts=[('a4', 0, .5)], gain_db=-19, target_lufs=-14)
+else: ep.music([('b1', 'assets/music/4-tense-a-false-vacuum-decay.mp3', 14)], dropouts=[('b4', 0, .5)], gain_db=-19, target_lufs=-14)
 
 
 def P(layer): return Prop(layer, None)
