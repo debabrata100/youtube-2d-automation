@@ -55,3 +55,16 @@ Publish both, watch for 7 days. If one reaches about 5–10K views with 60%+ sta
 
 ## To build (free)
 A live counter prop, a persistent banner, a Moon that scales continuously against a horizon, and an eclipse disc that shrinks to a ring. Check which exist in the kit before estimating.
+
+
+## Draft 2 (26 Nov, tension rewrite, approved by Debabrata)
+Debabrata's review of draft 1: it taught instead of building tension, showed too much text, and the music didn't build.
+Draft 1's narration (840 characters) is kept in `jobs/sky-narration` and `jobs/eclipse-narration` but not used.
+
+Rules applied: every line opens or tightens a question; facts arrive as consequences; no on-screen text except short captions (2-3 words); music arc = drone, ticks or heartbeat, riser, half-second silence, hit, loop. Each Short ends with Arka asking the question the other Short answers (Related video links them both ways).
+
+**A, "The Moon Is Leaving Us":** The Moon is leaving us. And nothing can stop it. / Every year, it slips four centimeters farther away. / Sounds like nothing. Now rewind. / Four billion years ago, it filled your sky. / It's been running ever since. And it's taking something with it. / One day, it'll be too small to hide the Sun. Forever. / Arka: Wait. The last eclipse?
+
+**B, "The Last Eclipse":** One day, the Sun will go dark for the very last time. / If anyone is still here to watch, they won't know it's the last. / It only works because the Moon fits over the Sun perfectly. By pure luck. / But the Moon is drifting away. And the shadow is shrinking. / Until the day it can't cover the Sun at all. / Arka: And it used to fill the whole sky?
+
+Facts as in draft 1 (3.8 cm a year; young Moon about 20,000 km and about 20x wider, 4.5 billion years ago, "four billion" rounded down; last total eclipse in about 600 million years if the rate holds). "Nothing can stop it" is true: the recession is tidal and no human action changes it. "If anyone is still here" keeps B honest about the timescale.

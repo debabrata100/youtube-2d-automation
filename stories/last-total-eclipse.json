@@ -1,11 +1,11 @@
 {
  "schemaVersion": "1.0",
  "id": "last-total-eclipse",
- "title": "The Last Total Solar Eclipse",
- "topic": "Total solar eclipses exist because the Sun is about 400 times wider than the Moon and about 400 times farther away; the Moon recedes 3.8 cm a year, so in about 600 million years (if that rate holds) it will be too small to cover the Sun",
+ "title": "The Last Eclipse",
+ "topic": "Total solar eclipses happen because the Moon just covers the Sun; the Moon recedes about 3.8 cm a year, so in about 600 million years (if that rate holds) it will be too small to cover the Sun",
  "language": "en-US",
  "targetAudience": "English-speaking science-curious adults, mostly 25-44",
- "durationSeconds": 30,
+ "durationSeconds": 40,
  "storyboard": "storyboards/last-total-eclipse.json",
  "candidatesReport": "stories/moon-shorts-script.md",
  "beats": [
@@ -13,12 +13,16 @@
    "id": "b1",
    "sceneId": "em-b1",
    "intent": "hook",
-   "narration": "One day, this will happen for the last time.",
+   "narration": "One day, the Sun will go dark for the very last time.",
    "phrases": [
-    "One day, this will happen",
-    "for the last time."
+    "One day, the Sun",
+    "will go dark for",
+    "the very last",
+    "time."
    ],
    "phraseSpeakers": [
+    "narrator",
+    "narrator",
     "narrator",
     "narrator"
    ]
@@ -26,20 +30,16 @@
   {
    "id": "b2",
    "sceneId": "em-b2",
-   "intent": "explanation",
-   "narration": "It only works by luck. The Sun is about four hundred times wider than the Moon, and about four hundred times farther away. A perfect fit.",
+   "intent": "hook",
+   "narration": "If anyone is still here to watch, they won't know it's the last.",
    "phrases": [
-    "It only works by luck.",
-    "The Sun is about four",
-    "hundred times wider than",
-    "the Moon, and about four",
-    "hundred times farther",
-    "away.",
-    "A perfect fit."
+    "If anyone is",
+    "still here to",
+    "watch, they won't",
+    "know it's the",
+    "last."
    ],
    "phraseSpeakers": [
-    "narrator",
-    "narrator",
     "narrator",
     "narrator",
     "narrator",
@@ -51,13 +51,13 @@
    "id": "b3",
    "sceneId": "em-b3",
    "intent": "explanation",
-   "narration": "But the Moon is leaving, almost four centimeters a year. Every year, the fit gets worse.",
+   "narration": "It only works because the Moon fits over the Sun perfectly. By pure luck.",
    "phrases": [
-    "But the Moon is leaving,",
-    "almost four centimeters a",
-    "year.",
-    "Every year, the fit gets",
-    "worse."
+    "It only works",
+    "because the Moon",
+    "fits over the Sun",
+    "perfectly.",
+    "By pure luck."
    ],
    "phraseSpeakers": [
     "narrator",
@@ -70,19 +70,15 @@
   {
    "id": "b4",
    "sceneId": "em-b4",
-   "intent": "payoff",
-   "narration": "In about six hundred million years, if it keeps that pace, the Moon will be too small. A ring of fire is all that's left.",
+   "intent": "explanation",
+   "narration": "But the Moon is drifting away. And the shadow is shrinking.",
    "phrases": [
-    "In about six hundred",
-    "million years, if it keeps",
-    "that pace, the Moon will",
-    "be too small.",
-    "A ring of fire is all",
-    "that's left."
+    "But the Moon is",
+    "drifting away.",
+    "And the shadow is",
+    "shrinking."
    ],
    "phraseSpeakers": [
-    "narrator",
-    "narrator",
     "narrator",
     "narrator",
     "narrator",
@@ -92,13 +88,31 @@
   {
    "id": "b5",
    "sceneId": "em-b5",
-   "intent": "closing",
-   "narration": "So we got the good seats. By accident.",
+   "intent": "payoff",
+   "narration": "Until the day it can't cover the Sun at all.",
    "phrases": [
-    "So we got the good seats.",
-    "By accident."
+    "Until the day it",
+    "can't cover the",
+    "Sun at all."
    ],
    "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "b6",
+   "sceneId": "em-b6",
+   "intent": "closing",
+   "narration": "And it used to fill the whole sky?",
+   "phrases": [
+    "And it used to",
+    "fill the whole",
+    "sky?"
+   ],
+   "phraseSpeakers": [
+    "arka",
     "arka",
     "arka"
    ]

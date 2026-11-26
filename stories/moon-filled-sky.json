@@ -1,11 +1,11 @@
 {
  "schemaVersion": "1.0",
  "id": "moon-filled-sky",
- "title": "The Moon Used to Fill Your Sky",
- "topic": "The young Moon was about 20,000 km away and looked about 20 times wider; days were about 5 hours. It has receded ever since (321,800 km and 16.9 h days 2.46 billion years ago; 3.8 cm a year today); in about 600 million years it will be too small for total solar eclipses",
+ "title": "The Moon Is Leaving Us",
+ "topic": "The Moon recedes about 3.8 cm a year; about 4.5 billion years ago it was about 20,000 km away and filled the sky; in about 600 million years (if today's rate holds) it will be too small to cover the Sun, ending total solar eclipses",
  "language": "en-US",
  "targetAudience": "English-speaking science-curious adults, mostly 25-44",
- "durationSeconds": 28,
+ "durationSeconds": 40,
  "storyboard": "storyboards/moon-filled-sky.json",
  "candidatesReport": "stories/moon-shorts-script.md",
  "beats": [
@@ -13,16 +13,14 @@
    "id": "a1",
    "sceneId": "sm-a1",
    "intent": "hook",
-   "narration": "Stand here four and a half billion years ago, and the Moon fills your sky. About twenty times wider than tonight.",
+   "narration": "The Moon is leaving us. And nothing can stop it.",
    "phrases": [
-    "Stand here four and a half",
-    "billion years ago, and the",
-    "Moon fills your sky.",
-    "About twenty times wider",
-    "than tonight."
+    "The Moon is",
+    "leaving us.",
+    "And nothing can",
+    "stop it."
    ],
    "phraseSpeakers": [
-    "narrator",
     "narrator",
     "narrator",
     "narrator",
@@ -33,12 +31,16 @@
    "id": "a2",
    "sceneId": "sm-a2",
    "intent": "hook",
-   "narration": "A whole day lasts about five hours.",
+   "narration": "Every year, it slips four centimeters farther away.",
    "phrases": [
-    "A whole day lasts about",
-    "five hours."
+    "Every year, it",
+    "slips four",
+    "centimeters",
+    "farther away."
    ],
    "phraseSpeakers": [
+    "narrator",
+    "narrator",
     "narrator",
     "narrator"
    ]
@@ -47,17 +49,13 @@
    "id": "a3",
    "sceneId": "sm-a3",
    "intent": "explanation",
-   "narration": "Then it starts to leave. A little farther every year. A little smaller. And the days stretch.",
+   "narration": "Sounds like nothing. Now rewind.",
    "phrases": [
-    "Then it starts to leave.",
-    "A little farther every",
-    "year.",
-    "A little smaller.",
-    "And the days stretch."
+    "Sounds like",
+    "nothing.",
+    "Now rewind."
    ],
    "phraseSpeakers": [
-    "narrator",
-    "narrator",
     "narrator",
     "narrator",
     "narrator"
@@ -67,11 +65,11 @@
    "id": "a4",
    "sceneId": "sm-a4",
    "intent": "payoff",
-   "narration": "Tonight, a pea at arm's length covers it. And it's still going.",
+   "narration": "Four billion years ago, it filled your sky.",
    "phrases": [
-    "Tonight, a pea at arm's",
-    "length covers it.",
-    "And it's still going."
+    "Four billion",
+    "years ago, it",
+    "filled your sky."
    ],
    "phraseSpeakers": [
     "narrator",
@@ -82,15 +80,17 @@
   {
    "id": "a5",
    "sceneId": "sm-a5",
-   "intent": "payoff",
-   "narration": "In about six hundred million years, it will be too small to cover the Sun.",
+   "intent": "explanation",
+   "narration": "It's been running ever since. And it's taking something with it.",
    "phrases": [
-    "In about six hundred",
-    "million years, it will be",
-    "too small to cover the",
-    "Sun."
+    "It's been running",
+    "ever since.",
+    "And it's taking",
+    "something with",
+    "it."
    ],
    "phraseSpeakers": [
+    "narrator",
     "narrator",
     "narrator",
     "narrator",
@@ -100,11 +100,29 @@
   {
    "id": "a6",
    "sceneId": "sm-a6",
-   "intent": "closing",
-   "narration": "Go back. I liked it bigger.",
+   "intent": "payoff",
+   "narration": "One day, it'll be too small to hide the Sun. Forever.",
    "phrases": [
-    "Go back.",
-    "I liked it bigger."
+    "One day, it'll be",
+    "too small to hide",
+    "the Sun.",
+    "Forever."
+   ],
+   "phraseSpeakers": [
+    "narrator",
+    "narrator",
+    "narrator",
+    "narrator"
+   ]
+  },
+  {
+   "id": "a7",
+   "sceneId": "sm-a7",
+   "intent": "closing",
+   "narration": "Wait. The last eclipse?",
+   "phrases": [
+    "Wait.",
+    "The last eclipse?"
    ],
    "phraseSpeakers": [
     "arka",
