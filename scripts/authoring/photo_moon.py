@@ -105,4 +105,4 @@ def build(ep, NAME, P, lv, end, on):
               [glow(track((0, 0), (A('fill'), 0), (q, .8))),
                ph('moonhot', 'moon-molten', scale=track((0, .25), (A('fill'), .25), (plus(q, 10), 1.25, 'ease-out-back')), y=track((0, -400), (A('fill'), -400), (plus(q, 10), 0, 'ease-out-cubic'))),
                limb()],
-              sounds=[('whoosh', A('fill'), -18), ('boom', plus(q, 4), -14)])
+              sounds=[('whoosh', A('fill'), -18), ('boom', A('whole'), -16)])   # the boom lands on 'whole', not after the last word: the ending stays quiet

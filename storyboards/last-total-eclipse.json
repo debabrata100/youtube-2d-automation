@@ -1092,11 +1092,9 @@
         {
           "sound": "boom",
           "frame": {
-            "at": "sky?",
-            "edge": "end",
-            "offset": 4
+            "at": "whole"
           },
-          "gainDb": -14
+          "gainDb": -16
         }
       ]
     }
