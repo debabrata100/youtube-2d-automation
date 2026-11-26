@@ -5,7 +5,7 @@
  "topic": "Total solar eclipses happen because the Moon just covers the Sun; the Moon recedes about 3.8 cm a year, so in about 600 million years (if that rate holds) it will be too small to cover the Sun",
  "language": "en-US",
  "targetAudience": "English-speaking science-curious adults, mostly 25-44",
- "durationSeconds": 40,
+ "durationSeconds": 25,
  "storyboard": "storyboards/last-total-eclipse.json",
  "candidatesReport": "stories/moon-shorts-script.md",
  "beats": [

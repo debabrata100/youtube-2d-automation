@@ -1356,8 +1356,8 @@
     {
       "id": "sm-a1",
       "template": "hero-reveal",
-      "durationFrames": 210,
-      "animationDurationFrames": 210,
+      "durationFrames": 136,
+      "animationDurationFrames": 136,
       "caption": {
         "text": "sm-a1",
         "preset": "body"
@@ -1398,8 +1398,8 @@
     {
       "id": "sm-a2",
       "template": "hero-reveal",
-      "durationFrames": 168,
-      "animationDurationFrames": 168,
+      "durationFrames": 109,
+      "animationDurationFrames": 109,
       "caption": {
         "text": "sm-a2",
         "preset": "body"
@@ -1473,8 +1473,8 @@
     {
       "id": "sm-a3",
       "template": "hero-reveal",
-      "durationFrames": 105,
-      "animationDurationFrames": 105,
+      "durationFrames": 68,
+      "animationDurationFrames": 68,
       "caption": {
         "text": "sm-a3",
         "preset": "body"
@@ -1520,8 +1520,8 @@
     {
       "id": "sm-a4",
       "template": "hero-reveal",
-      "durationFrames": 168,
-      "animationDurationFrames": 168,
+      "durationFrames": 109,
+      "animationDurationFrames": 109,
       "caption": {
         "text": "sm-a4",
         "preset": "body"
@@ -1576,8 +1576,8 @@
     {
       "id": "sm-a5",
       "template": "hero-reveal",
-      "durationFrames": 231,
-      "animationDurationFrames": 231,
+      "durationFrames": 150,
+      "animationDurationFrames": 150,
       "caption": {
         "text": "sm-a5",
         "preset": "body"
@@ -1623,8 +1623,8 @@
     {
       "id": "sm-a6",
       "template": "hero-reveal",
-      "durationFrames": 231,
-      "animationDurationFrames": 231,
+      "durationFrames": 150,
+      "animationDurationFrames": 150,
       "caption": {
         "text": "sm-a6",
         "preset": "body"
@@ -1670,8 +1670,8 @@
     {
       "id": "sm-a7",
       "template": "hero-reveal",
-      "durationFrames": 87,
-      "animationDurationFrames": 87,
+      "durationFrames": 58,
+      "animationDurationFrames": 58,
       "caption": {
         "text": "sm-a7",
         "preset": "body"

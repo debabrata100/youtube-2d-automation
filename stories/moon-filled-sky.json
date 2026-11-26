@@ -5,7 +5,7 @@
  "topic": "The Moon recedes about 3.8 cm a year; about 4.5 billion years ago it was about 20,000 km away and filled the sky; in about 600 million years (if today's rate holds) it will be too small to cover the Sun, ending total solar eclipses",
  "language": "en-US",
  "targetAudience": "English-speaking science-curious adults, mostly 25-44",
- "durationSeconds": 40,
+ "durationSeconds": 26,
  "storyboard": "storyboards/moon-filled-sky.json",
  "candidatesReport": "stories/moon-shorts-script.md",
  "beats": [
