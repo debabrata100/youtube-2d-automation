@@ -1,6 +1,8 @@
 # Things That Saw It (working name): channel concept
 
-Decided by Debabrata on 26 Nov 2026: a second channel, next to Gahanarka.
+**Status: dropped on 26 Nov 2026.** Debabrata decided against it the same day: to stay safe from YouTube's mass-produced-content rule it would need a low cadence (one film every 1-2 weeks) plus new character-animation work, and the time is better spent on Gahanarka. Kept for reference; the multi-channel layout in `channels/` stays for any future channel.
+
+Originally proposed on 26 Nov 2026 as a second channel next to Gahanarka.
 
 ## The idea
 Short 2D animated films (2-5 minutes) about the small moments that change an ordinary person's life, each **told by an

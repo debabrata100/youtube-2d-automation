@@ -23,4 +23,4 @@ Rules:
 | id | Name | Niche | Status |
 |---|---|---|---|
 | `gahanarka` | Gahanarka (@Gahanarka) | Animated space and science thought experiments | Live since Nov 2026 |
-| `things-that-saw-it` | Things That Saw It (working name) | Short animated life stories told by an object that watched | Concept, first film in packaging (Nov 2026) |
+| `things-that-saw-it` | Things That Saw It (working name) | Short animated life stories told by an object that watched | **Dropped 26 Nov 2026** (Debabrata: the cadence it needs is too low to be worth it next to Gahanarka); kept for reference |
