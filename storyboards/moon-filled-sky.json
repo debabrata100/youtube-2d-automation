@@ -1876,8 +1876,8 @@
     {
       "id": "sm-a1",
       "template": "hero-reveal",
-      "durationFrames": 355,
-      "animationDurationFrames": 355,
+      "durationFrames": 226,
+      "animationDurationFrames": 226,
       "caption": {
         "text": "sm-a1",
         "preset": "body"
@@ -1910,8 +1910,8 @@
     {
       "id": "sm-a2",
       "template": "hero-reveal",
-      "durationFrames": 118,
-      "animationDurationFrames": 118,
+      "durationFrames": 75,
+      "animationDurationFrames": 75,
       "caption": {
         "text": "sm-a2",
         "preset": "body"
@@ -1957,8 +1957,8 @@
     {
       "id": "sm-a3",
       "template": "hero-reveal",
-      "durationFrames": 287,
-      "animationDurationFrames": 287,
+      "durationFrames": 183,
+      "animationDurationFrames": 183,
       "caption": {
         "text": "sm-a3",
         "preset": "body"
@@ -2011,8 +2011,8 @@
     {
       "id": "sm-a4",
       "template": "hero-reveal",
-      "durationFrames": 203,
-      "animationDurationFrames": 203,
+      "durationFrames": 129,
+      "animationDurationFrames": 129,
       "caption": {
         "text": "sm-a4",
         "preset": "body"
@@ -2065,8 +2065,8 @@
     {
       "id": "sm-a5",
       "template": "hero-reveal",
-      "durationFrames": 253,
-      "animationDurationFrames": 253,
+      "durationFrames": 161,
+      "animationDurationFrames": 161,
       "caption": {
         "text": "sm-a5",
         "preset": "body"
@@ -2112,8 +2112,8 @@
     {
       "id": "sm-a6",
       "template": "hero-reveal",
-      "durationFrames": 104,
-      "animationDurationFrames": 104,
+      "durationFrames": 66,
+      "animationDurationFrames": 66,
       "caption": {
         "text": "sm-a6",
         "preset": "body"

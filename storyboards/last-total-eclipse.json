@@ -1011,8 +1011,8 @@
     {
       "id": "em-b1",
       "template": "hero-reveal",
-      "durationFrames": 135,
-      "animationDurationFrames": 135,
+      "durationFrames": 96,
+      "animationDurationFrames": 96,
       "caption": {
         "text": "em-b1",
         "preset": "body"
@@ -1053,8 +1053,8 @@
     {
       "id": "em-b2",
       "template": "hero-reveal",
-      "durationFrames": 390,
-      "animationDurationFrames": 390,
+      "durationFrames": 278,
+      "animationDurationFrames": 278,
       "caption": {
         "text": "em-b2",
         "preset": "body"
@@ -1114,8 +1114,8 @@
     {
       "id": "em-b3",
       "template": "hero-reveal",
-      "durationFrames": 240,
-      "animationDurationFrames": 240,
+      "durationFrames": 171,
+      "animationDurationFrames": 171,
       "caption": {
         "text": "em-b3",
         "preset": "body"
@@ -1161,8 +1161,8 @@
     {
       "id": "em-b4",
       "template": "hero-reveal",
-      "durationFrames": 375,
-      "animationDurationFrames": 375,
+      "durationFrames": 267,
+      "animationDurationFrames": 267,
       "caption": {
         "text": "em-b4",
         "preset": "body"
@@ -1208,8 +1208,8 @@
     {
       "id": "em-b5",
       "template": "hero-reveal",
-      "durationFrames": 120,
-      "animationDurationFrames": 120,
+      "durationFrames": 88,
+      "animationDurationFrames": 88,
       "caption": {
         "text": "em-b5",
         "preset": "body"
