@@ -45,8 +45,10 @@ S23 "Your Moon Is Leaving 🌕 😭" (tXCK_8LrDGA), set 27 Nov.
 ## Pinned comment
 
 ```
-Going down takes 11 h 38 min because lifts descend slower (10 m/s). Would you take the stairs? 👇
+Quick maths 🧮 Why exactly 119,714 floors? First correct answer gets a reply from Arka 👇
 ```
+
+Answer to look for: 419 km (ISS height) ÷ 3.5 m per floor = 119,714 floors. Reply to the first correct answer and heart it (Debabrata's idea, 27 Nov).
 
 ## Tags
 elevator to space, fastest elevator, how high is space, karman line, armstrong limit, burj khalifa, mount everest, iss, space facts, shorts
