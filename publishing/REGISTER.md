@@ -94,6 +94,8 @@ Judge a long video's click rate only after **500+ impressions**, and its retenti
 
 - **26 Nov 21:43 (Moon test Shorts launch):** both public; Related videos linked both ways. First 13 minutes: S23 The Moon Is Leaving Earth (tXCK_8LrDGA) 31 views (30 from the Shorts feed), 48.2% stayed / 51.8% swiped, 2 likes; S24 The Last Solar Eclipse Ever (wMXfmWKnpH8) 4 views in 8 minutes, 25% stayed (too few views to judge). Pinned comments posted and pinned at 21:47–21:49 (Debabrata approved).
 
+- **27 Nov ~2 AM (titles, Debabrata):** S23 retitled "The Moon Is Leaving Earth 🌕" → **"Your Moon Is Leaving 🌕 😭"**; S24 "The Last Solar Eclipse Ever 🌑" → **"Your Last Solar Eclipse 🌑"** (descriptions unchanged). Stayed-to-watch was below 40% late on 26 Nov; at 9:25 AM 27 Nov: S23 1.3K views, 50.4% stayed, 25 likes, +2 subs; S24 1.2K views, 53.2% stayed, 24 likes, +3 subs; a few views from YouTube search started. Cause not provable from Studio (no hourly stayed-to-watch); the audience also shifted from the first test pool overnight. Compare day 1 vs day 2 in Advanced mode on 29 Nov.
+
 ## Open items
 - **Trailer:** upload the English SRT (it only has auto-captions).
 - **Ep 1 Titan:** pinned comment and end screen were never recorded; check in Studio and fill in.

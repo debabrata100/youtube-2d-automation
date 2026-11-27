@@ -6,6 +6,7 @@
 - **Visuals:** draft 3, real NASA photos (commits 60b2f37, 852afa9: the closing boom moved onto "whole" so the ending stays quiet).
 
 ## Title
+**Now: "Your Last Solar Eclipse 🌑"** (changed by Debabrata, 27 Nov ~2 AM). Launch title below.
 **The Last Solar Eclipse Ever 🌑**
 (29 characters.)
 

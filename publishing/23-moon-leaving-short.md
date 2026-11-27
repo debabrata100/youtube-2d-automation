@@ -6,6 +6,7 @@
 - **Visuals:** draft 3, real NASA photos (commit 60b2f37). One thing improved over the last Shorts: realistic, full-screen pictures with Earth and Moon together, instead of flat drawn discs.
 
 ## Title
+**Now: "Your Moon Is Leaving 🌕 😭"** (changed by Debabrata, 27 Nov ~2 AM). Launch title below.
 **The Moon Is Leaving Earth 🌕**
 (27 characters. Changed 26 Nov from "The Moon Is Leaving Us": feed viewers decide on the first second, not the title, so the title is written for search ("moon leaving earth"). The narration still opens "The Moon is leaving us". Distinct from "Earth Is Losing Its Moon" and "The Moon Once Looked 15× Wider".)
 
