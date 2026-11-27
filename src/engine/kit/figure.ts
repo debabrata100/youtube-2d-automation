@@ -105,8 +105,9 @@ const dir = (deg: number, len: number) => ({x: Math.sin(deg * Math.PI / 180) * l
 const add = (a: Pt, b: Pt) => ({x: a.x + b.x, y: a.y + b.y});
 
 /** Skeleton in local coordinates: feet baseline at y = 0, centred on x = 0, total standing height h. */
-export const skeleton = (pose: Pose, h: number): Skeleton => {
-  const p = PROPORTIONS, sq = 1 - pose.squash, legs = (p.thigh + p.shin) * h;
+export type Build = {head: number; torso: number; arms: number; legs: number};
+export const skeleton = (pose: Pose, h: number, b: Build = {head: 1, torso: 1, arms: 1, legs: 1}): Skeleton => {
+  const P = PROPORTIONS, p = {head: P.head * b.head, torso: P.torso * b.torso, upperArm: P.upperArm * b.arms, forearm: P.forearm * b.arms, thigh: P.thigh * b.legs, shin: P.shin * b.legs}, sq = 1 - pose.squash, legs = (p.thigh + p.shin) * h;
   const hip = {x: 0, y: -legs * sq - pose.lift * h};
   const neck = add(hip, {x: Math.sin(pose.lean * Math.PI / 180) * p.torso * h, y: -Math.cos(pose.lean * Math.PI / 180) * p.torso * h * sq});
   const headR = p.head * h, head = add(neck, {x: Math.sin(pose.head * Math.PI / 180) * headR, y: -headR * .95});

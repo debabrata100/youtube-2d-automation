@@ -74,6 +74,12 @@ export const kitSchema = z.discriminatedUnion('type', [
     /** Lip sync (M4.2): one window per spoken word (frames may be word anchors, start and end edge); the mouth shapes
      * follow the word's letters across the window and close between words. */
     talk: z.array(z.object({from: keyFrame, to: keyFrame, text: z.string().min(1).max(40)}).strict()).max(120).default([]),
+    /** Character design (M4.3): body proportions, suit and helmet style, face features, suit stripe colour. */
+    build: z.object({head: z.number().min(.6).max(1.6).default(1), torso: z.number().min(.6).max(1.6).default(1), arms: z.number().min(.6).max(1.6).default(1), legs: z.number().min(.6).max(1.6).default(1)}).strict().optional(),
+    suitStyle: z.enum(['round', 'boxy']).default('round'), helmetStyle: z.enum(['bubble', 'visor']).default('bubble'), skin: hex.optional(),
+    features: z.array(z.enum(['mustache', 'brows', 'glasses'])).max(3).default([]), stripe: hex.optional(),
+    /** Small head nods on word starts while talking (degrees). */
+    nod: z.number().min(0).max(12).default(4),
   }).strict(),
   /** Cartoon planet: base colour, wavy bands (gas giants), craters, optional ring and glow. radius is a fraction of the group's shorter side. */
   z.object({
@@ -142,9 +148,9 @@ export const kitSchema = z.discriminatedUnion('type', [
     color: hex.default('#ffe2a8'), intensity: z.number().min(0).max(1).default(.6), flicker: z.number().min(0).max(1).default(0),
     blend: z.enum(['normal', 'screen', 'soft-light', 'overlay', 'multiply', 'color', 'lighten', 'color-dodge']).optional(),
   }).strict(),
-  /** Reusable sets (M4.1). `cabin`: spacecraft interior; part `room` (wall, porthole, pipes, hatch, seat) or `console` (foreground desk). */
+  /** Reusable sets (M4.1, M4.3). `cabin` (part `room` or foreground `console`), `iss` module interior, `moon` and `mars` surfaces. */
   z.object({
-    type: z.literal('set'), kind: z.literal('cabin'), part: z.enum(['room', 'console']),
+    type: z.literal('set'), kind: z.enum(['cabin', 'iss', 'moon', 'mars']), part: z.enum(['room', 'console']).default('room'),
     porthole: z.object({x: n.default(.5), y: n.default(.4), r: size(.03, .4).default(.12), view: z.enum(['earth', 'stars']).default('earth')}).strict().default({x: .5, y: .4, r: .12, view: 'earth'}),
     console: z.object({y: n.default(.78), x0: n.default(.25), x1: n.default(1.05), screenX: n.default(.6), text: z.string().min(1).max(40).default('ALL OK'),
       screenColor: hex.default('#5ee08a'), blink: z.boolean().default(false)}).strict().default({y: .78, x0: .25, x1: 1.05, screenX: .6, text: 'ALL OK', screenColor: '#5ee08a', blink: false}),

@@ -1,0 +1,657 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "cast-test",
+  "title": "Cast and sets test",
+  "themeId": "clean-night",
+  "format": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "@sky.top",
+  "accent": "@text.accent",
+  "assets": [],
+  "backdrop": {
+    "group": "backdrop"
+  },
+  "narrationTiming": {
+    "minimumSceneFrames": 45,
+    "maximumDeviationSeconds": 0.2
+  },
+  "audio": {
+    "music": "generated-pad",
+    "musicGainDb": -24,
+    "duckRatio": 8,
+    "targetLufs": -14
+  },
+  "groups": [
+    {
+      "id": "backdrop",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "page",
+          "kit": {
+            "type": "sky",
+            "horizon": 0.9,
+            "stars": 0,
+            "seed": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "g-k1",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "set-cabin",
+          "kit": {
+            "type": "set",
+            "kind": "cabin",
+            "part": "room",
+            "seed": 3
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 89,
+              "value": 1
+            },
+            {
+              "frame": 90,
+              "value": 0,
+              "ease": "linear"
+            }
+          ],
+          "depth": 0.85
+        },
+        {
+          "id": "set-iss",
+          "kit": {
+            "type": "set",
+            "kind": "iss",
+            "part": "room",
+            "seed": 4
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 89,
+              "value": 0
+            },
+            {
+              "frame": 90,
+              "value": 1,
+              "ease": "linear"
+            },
+            {
+              "frame": 179,
+              "value": 1
+            },
+            {
+              "frame": 180,
+              "value": 0,
+              "ease": "linear"
+            }
+          ],
+          "depth": 0.85
+        },
+        {
+          "id": "set-moon",
+          "kit": {
+            "type": "set",
+            "kind": "moon",
+            "part": "room",
+            "seed": 5
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 179,
+              "value": 0
+            },
+            {
+              "frame": 180,
+              "value": 1,
+              "ease": "linear"
+            },
+            {
+              "frame": 269,
+              "value": 1
+            },
+            {
+              "frame": 270,
+              "value": 0,
+              "ease": "linear"
+            }
+          ],
+          "depth": 0.85
+        },
+        {
+          "id": "set-mars",
+          "kit": {
+            "type": "set",
+            "kind": "mars",
+            "part": "room",
+            "seed": 6
+          },
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 269,
+              "value": 0
+            },
+            {
+              "frame": 270,
+              "value": 1,
+              "ease": "linear"
+            }
+          ],
+          "depth": 0.85
+        },
+        {
+          "id": "lamp",
+          "kit": {
+            "type": "light",
+            "kind": "pool",
+            "x": 0.5,
+            "y": 0.1,
+            "radius": 0.5,
+            "color": "#ffe2b0",
+            "intensity": 0.3
+          }
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.4,
+            "y": 0.86,
+            "height": 0.42,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": 9,
+                "pose": "point-right",
+                "blend": 6,
+                "ease": "ease-out-back"
+              },
+              {
+                "frame": 45,
+                "pose": "hands-on-hips",
+                "blend": 6,
+                "ease": "smoothstep"
+              },
+              {
+                "frame": 99,
+                "pose": "point-right",
+                "blend": 6,
+                "ease": "ease-out-back"
+              },
+              {
+                "frame": 135,
+                "pose": "hands-on-hips",
+                "blend": 6,
+                "ease": "smoothstep"
+              },
+              {
+                "frame": 189,
+                "pose": "point-right",
+                "blend": 6,
+                "ease": "ease-out-back"
+              },
+              {
+                "frame": 225,
+                "pose": "hands-on-hips",
+                "blend": 6,
+                "ease": "smoothstep"
+              },
+              {
+                "frame": 279,
+                "pose": "point-right",
+                "blend": 6,
+                "ease": "ease-out-back"
+              },
+              {
+                "frame": 315,
+                "pose": "hands-on-hips",
+                "blend": 6,
+                "ease": "smoothstep"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "neutral"
+              },
+              {
+                "frame": 45,
+                "face": "angry"
+              },
+              {
+                "frame": 96,
+                "face": "neutral"
+              },
+              {
+                "frame": 135,
+                "face": "angry"
+              },
+              {
+                "frame": 186,
+                "face": "neutral"
+              },
+              {
+                "frame": 225,
+                "face": "angry"
+              },
+              {
+                "frame": 276,
+                "face": "neutral"
+              },
+              {
+                "frame": 315,
+                "face": "angry"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3",
+            "talk": [
+              {
+                "from": 9,
+                "to": 33,
+                "text": "seriously"
+              },
+              {
+                "from": 99,
+                "to": 123,
+                "text": "seriously"
+              },
+              {
+                "from": 189,
+                "to": 213,
+                "text": "seriously"
+              },
+              {
+                "from": 279,
+                "to": 303,
+                "text": "seriously"
+              }
+            ]
+          },
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 45,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 90,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 135,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 180,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 225,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 270,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 315,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 405,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 450,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 495,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 540,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 585,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 630,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 675,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 765,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 810,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 855,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 900,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 945,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 990,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1035,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1125,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1170,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1215,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1260,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1305,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1350,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1395,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1440,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1485,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1530,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1575,
+              "value": 1.012,
+              "ease": "smoothstep"
+            }
+          ],
+          "anchor": {
+            "x": 768.0,
+            "y": 928.8
+          }
+        },
+        {
+          "id": "rival",
+          "kit": {
+            "type": "figure",
+            "x": 0.6,
+            "y": 0.86,
+            "height": 0.42,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 7,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "stand"
+              },
+              {
+                "frame": 45,
+                "pose": "shrug",
+                "blend": 6,
+                "ease": "ease-out-back"
+              },
+              {
+                "frame": 135,
+                "pose": "shrug",
+                "blend": 6,
+                "ease": "ease-out-back"
+              },
+              {
+                "frame": 225,
+                "pose": "shrug",
+                "blend": 6,
+                "ease": "ease-out-back"
+              },
+              {
+                "frame": 315,
+                "pose": "shrug",
+                "blend": 6,
+                "ease": "ease-out-back"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "smug"
+              }
+            ],
+            "facing": "left",
+            "suit": "#e6eaf1",
+            "visor": "#3b4a73",
+            "build": {
+              "head": 0.9,
+              "torso": 1.08,
+              "arms": 1.12,
+              "legs": 1.18
+            },
+            "suitStyle": "boxy",
+            "helmetStyle": "visor",
+            "features": [
+              "brows",
+              "mustache"
+            ],
+            "stripe": "#d6453b",
+            "skin": "#f1d3b8",
+            "talk": [
+              {
+                "from": 45,
+                "to": 75,
+                "text": "obviously"
+              },
+              {
+                "from": 135,
+                "to": 165,
+                "text": "obviously"
+              },
+              {
+                "from": 225,
+                "to": 255,
+                "text": "obviously"
+              },
+              {
+                "from": 315,
+                "to": 345,
+                "text": "obviously"
+              }
+            ]
+          }
+        },
+        {
+          "id": "vignette",
+          "kit": {
+            "type": "light",
+            "kind": "vignette",
+            "radius": 0.5,
+            "color": "#05070f",
+            "intensity": 0.7
+          },
+          "screen": true
+        }
+      ],
+      "annotations": [],
+      "shots": [
+        {
+          "frame": 0,
+          "zoom": 1.05,
+          "x": 960.0,
+          "y": 561.6
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "kt-k1",
+      "template": "hero-reveal",
+      "durationFrames": 360,
+      "animationDurationFrames": 360,
+      "caption": {
+        "text": "kt-k1",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-k1",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 1.0
+        }
+      },
+      "narrationCue": {
+        "beatId": "k1",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "boing",
+          "frame": 45,
+          "gainDb": -8
+        },
+        {
+          "sound": "slide-down",
+          "frame": 135,
+          "gainDb": -8
+        },
+        {
+          "sound": "bonk",
+          "frame": 225,
+          "gainDb": -8
+        },
+        {
+          "sound": "scratch",
+          "frame": 315,
+          "gainDb": -8
+        }
+      ]
+    }
+  ]
+}

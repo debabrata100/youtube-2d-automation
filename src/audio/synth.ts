@@ -101,6 +101,28 @@ export const synthSfx = (id: SfxId): Float32Array => {
       const b = buffer(.7); for (let i = 0; i < b.length; i++) { const t = i / SAMPLE_RATE, f = 60 + 90 * Math.exp(-t * 25); b[i] = Math.sin(2 * Math.PI * f * t) * Math.exp(-t * 7) * Math.min(1, t / .002) + (t < .01 ? (Math.sin(2 * Math.PI * 3000 * t) * (1 - t / .01)) * .4 : 0); }
       return normalize(b, .9);
     }
+    case 'boing': { // cartoon spring: a wobbling pitch that decays
+      const b = buffer(.9); let ph = 0; for (let i = 0; i < b.length; i++) { const t = i / SAMPLE_RATE, f = 220 + 160 * Math.sin(2 * Math.PI * 9 * t) * Math.exp(-t * 3) + 60 * Math.exp(-t * 6); ph += 2 * Math.PI * f / SAMPLE_RATE; b[i] = (Math.sin(ph) + .3 * Math.sin(2 * ph)) * Math.exp(-t * 3.2) * Math.min(1, t / .004); }
+      return normalize(b, .6);
+    }
+    case 'slide-up': case 'slide-down': { // slide whistle: a breathy sine gliding up (or down) an octave and a half
+      const up = id === 'slide-up', b = buffer(.75), air = highpass(white(b.length, 83), 4000); let ph = 0;
+      for (let i = 0; i < b.length; i++) { const t = i / SAMPLE_RATE, k = t / .75, f = up ? 500 * 2 ** (1.5 * k) : 1400 * 2 ** (-1.5 * k); ph += 2 * Math.PI * f / SAMPLE_RATE; b[i] = (Math.sin(ph) * (1 + .03 * Math.sin(2 * Math.PI * 6 * t)) + air[i] * .06) * Math.min(1, t / .04) * Math.min(1, (.75 - t) / .08); }
+      return normalize(b, .45);
+    }
+    case 'scratch': { // record scratch: filtered noise pushed back and forth
+      const b = buffer(.45), x = white(b.length, 89);
+      const y = lowpass(x, t => 900 + 2600 * Math.abs(Math.sin(2 * Math.PI * 4.5 * t)));
+      return normalize(envelope(highpass(y, 300), fade(.005, .06)), .55);
+    }
+    case 'bonk': { // a hollow knock on a helmet: two damped partials
+      const b = buffer(.5); for (let i = 0; i < b.length; i++) { const t = i / SAMPLE_RATE; b[i] = (Math.sin(2 * Math.PI * 520 * t) + .6 * Math.sin(2 * Math.PI * 1310 * t) * Math.exp(-t * 30)) * Math.exp(-t * 14) * Math.min(1, t / .001); }
+      return normalize(b, .7);
+    }
+    case 'zip': { // a quick zip past camera: fast rising filtered noise
+      const b = buffer(.35), x = white(b.length, 97);
+      return normalize(envelope(lowpass(highpass(x, 800), t => 1500 + 9000 * t / .35), fade(.01, .1)), .45);
+    }
     case 'riser': { // pitch rise into the payoff
       const b = buffer(1.4); for (let i = 0; i < b.length; i++) { const t = i / SAMPLE_RATE, ph = 2 * Math.PI * (110 * t + 160 * t * t); b[i] = (Math.sin(ph) + .35 * Math.sin(2 * ph) + .15 * Math.sin(3 * ph)) * Math.min(1, t / 1.1) * Math.min(1, (1.4 - t) / .08); }
       return normalize(lowpass(b, 2400), .5);

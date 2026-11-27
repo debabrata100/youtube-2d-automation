@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "variant": "outline",
+  "fontFamily": "Patrick Hand, Comic Sans MS, sans-serif",
+  "fontSize": 54,
+  "top": 0.84,
+  "left": 0.14,
+  "right": 0.14,
+  "textColor": "#ffffff",
+  "outlineColor": "#0b1530",
+  "highlight": "word",
+  "highlightColor": "#ffd25e"
+}

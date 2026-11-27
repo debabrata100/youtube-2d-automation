@@ -8,6 +8,8 @@ export type FigureConfig = {
   accessories: Accessory[]; coat?: string;
   helmet?: Array<{frame: number; on: boolean}>; flush?: Array<{frame: number; value: number}>;
   talk?: Array<{from: number; to: number; text: string}>;
+  build?: {head: number; torso: number; arms: number; legs: number}; suitStyle?: 'round' | 'boxy'; helmetStyle?: 'bubble' | 'visor'; skin?: string;
+  features?: Array<'mustache' | 'brows' | 'glasses'>; stripe?: string; nod?: number;
 };
 /** Helmet keys hold until the next key; with none the astronaut keeps the helmet on. */
 export const helmetOn = (keys: FigureConfig['helmet'], frame: number) => { let on = true; for (const k of keys ?? []) if (frame >= k.frame) on = k.on; return on; };
@@ -83,12 +85,31 @@ const Face: React.FC<{s: Skeleton; face: FaceId; ink: string; accent: string; bl
   return <g>{brows}{eyes}{mouth}{sweat}</g>;
 };
 
+/** Head nod while talking: a quick dip at each word start that settles over 6 frames. */
+export const nodAt = (talk: FigureConfig['talk'], frame: number, deg: number) => {
+  if (!deg || !talk?.length) return 0;
+  const w = talk.find(k => frame >= k.from && frame <= k.to);
+  if (!w) return 0;
+  const t = frame - w.from, k = (w.text.length % 3) - 1;   // vary direction by word, deterministically
+  return t > 8 ? 0 : deg * Math.sin(t / 8 * Math.PI) * (k === 0 ? 1 : k);
+};
+/** Face features drawn over the face: thick brows, a mustache, round glasses. */
+const Features: React.FC<{s: Skeleton; features: Array<'mustache' | 'brows' | 'glasses'>; ink: string; look: number}> = ({s, features, ink, look}) => {
+  const r = s.headR, cx = s.head.x + look * r * .12, cy = s.head.y, ex = r * .36, ey = cy - r * .12;
+  return <g>
+    {features.includes('brows') && [-1, 1].map(k => <path key={k} d={`M ${cx + k * ex - r * .2} ${ey - r * .24} Q ${cx + k * ex} ${ey - r * .34} ${cx + k * ex + r * .2} ${ey - r * .26}`} stroke={ink} strokeWidth={r * .12} strokeLinecap="round" fill="none"/>)}
+    {features.includes('glasses') && <g fill="none" stroke={ink} strokeWidth={r * .06}>{[-1, 1].map(k => <circle key={k} cx={cx + k * ex} cy={ey} r={r * .24}/>)}<path d={`M ${cx - ex + r * .24} ${ey} L ${cx + ex - r * .24} ${ey}`}/></g>}
+    {features.includes('mustache') && <path d={`M ${cx} ${cy + r * .3} q ${-r * .2} ${-r * .1} ${-r * .42} ${r * .06} q ${r * .2} ${r * .02} ${r * .42} ${-r * .02} q ${r * .22} ${r * .04} ${r * .42} ${r * .02} q ${-r * .22} ${-r * .16} ${-r * .42} ${-r * .06} Z`} fill={ink}/>}
+  </g>;
+};
+
 /** A hand-drawn style stick figure (or astronaut) posed from keyframed presets. */
 export const Figure: React.FC<{config: FigureConfig; theme: Theme; width: number; height: number; frame: number}> = ({config: c, theme, width, height, frame}) => {
-  const h = c.height * height, pose = poseAt(c.poses, frame), s = skeleton(pose, h), ink = theme.line.color;
+  const h = c.height * height, nod = nodAt(c.talk, frame, c.nod ?? 4), base = poseAt(c.poses, frame), pose = nod ? {...base, head: base.head + nod} : base;
+  const s = skeleton(pose, h, c.build), ink = theme.line.color, boxy = c.suitStyle === 'boxy', feats = c.features ?? [];
   const w = Math.max(3, h * .024), face = faceAt(c.faces, frame), blink = c.blink && isBlinking(frame, c.seed);
   const jitter = c.shiver ? Math.sin(frame * 2.7 + c.seed) * c.shiver : 0;
-  const astro = c.outfit === 'astronaut', helmet = astro && helmetOn(c.helmet, frame), skin = mix('#ffffff', '#f2876b', flushAt(c.flush, frame)), suit = c.suit ?? theme.palette.cloud.light, visor = c.visor ?? theme.palette.water.light;
+  const astro = c.outfit === 'astronaut', helmet = astro && helmetOn(c.helmet, frame), skin = mix(c.skin ?? '#ffffff', '#f2876b', flushAt(c.flush, frame)), suit = c.suit ?? theme.palette.cloud.light, visor = c.visor ?? theme.palette.water.light;
   const flip = c.facing === 'left' ? -1 : 1, centre = {x: s.hip.x, y: (s.hip.y + s.neck.y) / 2};
   const transform = `translate(${c.x * width + jitter} ${c.y * height}) scale(${flip} 1) rotate(${pose.rotate} ${centre.x} ${centre.y})`;
   // Limbs: plain stick strokes, or a thick suit tube (ink outline under a lighter fill) for the astronaut.
@@ -113,7 +134,7 @@ export const Figure: React.FC<{config: FigureConfig; theme: Theme; width: number
     return <g key={k}><path d={d} fill={theme.palette.cloud.light} stroke={ink} strokeWidth={w} strokeLinejoin="round"/>
       {[.3, .55, .8].map(t => { const p = {x: s.shoulder.x + vx * t, y: s.shoulder.y + vy * t}; return <path key={t} d={`M ${p.x} ${p.y} l ${nx * depth * .75} ${ny * depth * .75}`} stroke={ink} strokeWidth={w * .55} opacity=".55"/>; })}</g>;
   };
-  const torsoW = h * .17, torsoAngle = Math.atan2(s.neck.x - s.hip.x, s.hip.y - s.neck.y) * 180 / Math.PI, torsoLen = Math.hypot(s.neck.x - s.hip.x, s.neck.y - s.hip.y);
+  const torsoW = h * (boxy ? .21 : .17), torsoAngle = Math.atan2(s.neck.x - s.hip.x, s.hip.y - s.neck.y) * 180 / Math.PI, torsoLen = Math.hypot(s.neck.x - s.hip.x, s.neck.y - s.hip.y);
   return <g transform={transform}>
     {has('wings') && <>{wing(s.elbowL, s.handL, -1, 'wl')}{wing(s.elbowR, s.handR, 1, 'wr')}</>}
     {astro && <rect x={-torsoW * .62} y={-torsoLen * .95} width={torsoW * 1.24} height={torsoLen * .8} rx={torsoW * .2} fill={suit} stroke={ink} strokeWidth={w} transform={`translate(${s.hip.x} ${s.hip.y}) rotate(${torsoAngle})`}/>}
@@ -121,7 +142,11 @@ export const Figure: React.FC<{config: FigureConfig; theme: Theme; width: number
     {limb(line(s.hip, s.kneeR, s.footR), 'legR')}
     {astro && [s.footL, s.footR].map((f, i) => <rect key={i} x={f.x - h * .05} y={f.y - h * .035} width={h * .1} height={h * .05} rx={h * .015} fill={suit} stroke={ink} strokeWidth={w}/>)}
     {astro
-      ? <rect x={-torsoW / 2} y={-torsoLen * 1.02} width={torsoW} height={torsoLen * 1.08} rx={torsoW * .28} fill={suit} stroke={ink} strokeWidth={w} transform={`translate(${s.hip.x} ${s.hip.y}) rotate(${torsoAngle})`}/>
+      ? <g transform={`translate(${s.hip.x} ${s.hip.y}) rotate(${torsoAngle})`}>
+          <rect x={-torsoW / 2} y={-torsoLen * 1.02} width={torsoW} height={torsoLen * 1.08} rx={torsoW * (boxy ? .1 : .28)} fill={suit} stroke={ink} strokeWidth={w}/>
+          {boxy && [-1, 1].map(k => <rect key={k} x={k < 0 ? -torsoW * .62 : torsoW * .32} y={-torsoLen * 1.06} width={torsoW * .3} height={torsoLen * .2} rx={torsoW * .06} fill={suit} stroke={ink} strokeWidth={w}/>)}
+          {c.stripe && <rect x={-torsoW / 2 + w} y={-torsoLen * .5} width={torsoW - w * 2} height={torsoLen * .1} fill={c.stripe}/>}
+        </g>
       : <path d={`M ${s.hip.x} ${s.hip.y} L ${s.neck.x} ${s.neck.y}`} stroke={ink} strokeWidth={w} strokeLinecap="round"/>}
     {astro && <g transform={`translate(${s.hip.x} ${s.hip.y}) rotate(${torsoAngle})`}>
       <rect x={-torsoW * .26} y={-torsoLen * .72} width={torsoW * .52} height={torsoLen * .28} rx={torsoW * .06} fill={theme.palette.cloud.shadow} stroke={ink} strokeWidth={w * .7}/>
@@ -140,6 +165,7 @@ export const Figure: React.FC<{config: FigureConfig; theme: Theme; width: number
     <circle cx={s.head.x} cy={s.head.y} r={s.headR} fill={skin} stroke={ink} strokeWidth={w}/>
     <g transform={flip < 0 ? `translate(${2 * s.head.x} 0) scale(-1 1)` : undefined}>
       <Face s={s} face={face} ink={ink} accent={visor} blink={blink} look={flip > 0 ? 1 : -1} viseme={visemeAt(c.talk, frame)}/>
+      {feats.length > 0 && <Features s={s} features={feats} ink={ink} look={flip > 0 ? 1 : -1}/>}
     </g>
     {has('mask') && <g>
       <path d={`M ${s.head.x + s.headR * .45} ${s.head.y + s.headR * .6} Q ${s.head.x + s.headR * 1.3} ${s.head.y + s.headR * 1.3} ${s.neck.x + torsoW * .7} ${s.neck.y + torsoLen * .35}`} fill="none" stroke={ink} strokeWidth={w * 1.6} strokeLinecap="round"/>
@@ -147,9 +173,18 @@ export const Figure: React.FC<{config: FigureConfig; theme: Theme; width: number
       <circle cx={s.head.x} cy={s.head.y + s.headR * .47} r={s.headR * .12} fill={ink}/>
       <rect x={s.neck.x + torsoW * .45} y={s.neck.y + torsoLen * .1} width={torsoW * .5} height={torsoLen * .55} rx={torsoW * .2} fill={theme.palette.water.mid} stroke={ink} strokeWidth={w}/>
     </g>}
-    {helmet && <>
+    {helmet && (c.helmetStyle === 'visor'
+      ? <>
+          <rect x={s.head.x - s.headR * 1.38} y={s.head.y - s.headR * 1.4} width={s.headR * 2.76} height={s.headR * 2.7} rx={s.headR * .62} fill={visor} fillOpacity=".12" stroke={ink} strokeWidth={w}/>
+          {/* sun visor pushed up onto the brow, so the eyes stay readable */}
+          <path d={`M ${s.head.x - s.headR * 1.3} ${s.head.y - s.headR * .78} Q ${s.head.x} ${s.head.y - s.headR * 1.02} ${s.head.x + s.headR * 1.3} ${s.head.y - s.headR * .78} L ${s.head.x + s.headR * 1.32} ${s.head.y - s.headR * 1.2} Q ${s.head.x} ${s.head.y - s.headR * 1.46} ${s.head.x - s.headR * 1.32} ${s.head.y - s.headR * 1.2} Z`} fill={visor} fillOpacity=".85" stroke={ink} strokeWidth={w * .7}/>
+          <path d={`M ${s.head.x + s.headR * .55} ${s.head.y + s.headR * .2} L ${s.head.x + s.headR * 1.05} ${s.head.y - s.headR * .35}`} stroke="#ffffff" strokeWidth={w * 1.3} strokeLinecap="round" opacity=".8"/>
+          <path d={`M ${s.head.x - s.headR * .3} ${s.head.y - s.headR * 1.45} L ${s.head.x - s.headR * .3} ${s.head.y - s.headR * 1.85} M ${s.head.x - s.headR * .3} ${s.head.y - s.headR * 1.85} l ${s.headR * .1} 0`} stroke={ink} strokeWidth={w} strokeLinecap="round"/>
+          <circle cx={s.head.x - s.headR * .3} cy={s.head.y - s.headR * 1.9} r={s.headR * .1} fill={c.stripe ?? theme.palette.text.accent}/>
+        </>
+      : <>
       <circle cx={s.head.x} cy={s.head.y} r={s.headR * 1.42} fill={visor} fillOpacity=".18" stroke={ink} strokeWidth={w}/>
       <path d={`M ${s.head.x - s.headR * 1.05} ${s.head.y - s.headR * .55} A ${s.headR * 1.2} ${s.headR * 1.2} 0 0 1 ${s.head.x - s.headR * .2} ${s.head.y - s.headR * 1.18}`} fill="none" stroke="#ffffff" strokeWidth={w * 1.4} strokeLinecap="round" opacity=".9"/>
-    </>}
+    </>)}
   </g>;
 };

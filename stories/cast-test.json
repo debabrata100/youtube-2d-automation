@@ -1,0 +1,24 @@
+{
+ "schemaVersion": "1.0",
+ "id": "cast-test",
+ "title": "Cast and sets test",
+ "topic": "Engine test: second character and sets",
+ "language": "en-US",
+ "targetAudience": "internal test",
+ "durationSeconds": 12,
+ "storyboard": "storyboards/cast-test.json",
+ "beats": [
+  {
+   "id": "k1",
+   "sceneId": "kt-k1",
+   "intent": "closing",
+   "narration": "Test.",
+   "phrases": [
+    "Test."
+   ],
+   "phraseSpeakers": [
+    "arka"
+   ]
+  }
+ ]
+}

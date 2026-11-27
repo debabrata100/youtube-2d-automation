@@ -54,6 +54,8 @@ const rivets = (x0: number, y0: number, x1: number, y1: number, step: number, co
  * part `console` is the foreground desk with a readout screen and blinking buttons, so it can sit in front of a rider. */
 export const SetPiece: React.FC<{config: SetConfig; theme: Theme; width: number; height: number; frame: number; id: string}> = ({config: c, theme, width: W, height: H, frame, id}) => {
   const ink = theme.line.color, lw = theme.line.width, font = theme.label.fontFamily, random = seededRandom(c.seed);
+  if (c.kind === 'iss') return <IssModule W={W} H={H} frame={frame} id={id} ink={ink} seed={c.seed}/>;
+  if (c.kind === 'moon' || c.kind === 'mars') return <Surface kind={c.kind} W={W} H={H} frame={frame} id={id} ink={ink} seed={c.seed}/>;
   if (c.part === 'room') {
     const px = c.porthole.x * W, py = c.porthole.y * H, pr = c.porthole.r * W;
     const stars = Array.from({length: 70}, () => ({a: random() * Math.PI * 2, d: Math.sqrt(random()) * pr * .95, s: .8 + random() * 2}));
@@ -114,5 +116,67 @@ export const SetPiece: React.FC<{config: SetConfig; theme: Theme; width: number;
     <rect x={sx - sw / 2} y={sy} width={sw} height={sh} rx={14} fill="#0b1020" stroke="#8592aa" strokeWidth={6}/>
     <rect x={sx - sw / 2 + 10} y={sy + 10} width={sw - 20} height={sh - 20} rx={8} fill={c.console.screenColor} opacity=".12"/>
     {blink && c.console.text.split('\n').map((line, i, all) => <text key={i} x={sx} y={sy + sh / 2 + (i - (all.length - 1) / 2) * sh * .34 + sh * .1} textAnchor="middle" fontFamily={font} fontSize={sh * .3} fill={c.console.screenColor}>{line}</text>)}
+  </g>;
+};
+
+/** ISS module interior in one-point perspective: the tunnel narrows to a far hatch, which gives depth for free. */
+const IssModule: React.FC<{W: number; H: number; frame: number; id: string; ink: string; seed: number}> = ({W, H, frame, id, ink, seed}) => {
+  const random = seededRandom(seed), cx = W * .5, cy = H * .46, fw = W * .16, fh = H * .2;   // far hatch frame
+  const near = {x0: -W * .05, y0: -H * .05, x1: W * 1.05, y1: H * 1.05};
+  const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+  const ring = (t: number) => ({x0: lerp(near.x0, cx - fw, t), y0: lerp(near.y0, cy - fh, t), x1: lerp(near.x1, cx + fw, t), y1: lerp(near.y1, cy + fh, t)});
+  const rings = [.18, .36, .52, .66, .78, .88];
+  const quad = (a: ReturnType<typeof ring>, b: ReturnType<typeof ring>, side: 'top' | 'bottom' | 'left' | 'right') => side === 'top' ? `M ${a.x0} ${a.y0} L ${a.x1} ${a.y0} L ${b.x1} ${b.y0} L ${b.x0} ${b.y0} Z`
+    : side === 'bottom' ? `M ${a.x0} ${a.y1} L ${a.x1} ${a.y1} L ${b.x1} ${b.y1} L ${b.x0} ${b.y1} Z` : side === 'left' ? `M ${a.x0} ${a.y0} L ${b.x0} ${b.y0} L ${b.x0} ${b.y1} L ${a.x0} ${a.y1} Z` : `M ${a.x1} ${a.y0} L ${b.x1} ${b.y0} L ${b.x1} ${b.y1} L ${a.x1} ${a.y1} Z`;
+  const shade = {top: '#e9edf3', bottom: '#bfc7d4', left: '#d6dce6', right: '#cbd2de'} as const;
+  const all = [0, ...rings, 1];
+  return <g>
+    {all.slice(0, -1).map((t, i) => { const a = ring(t), b = ring(all[i + 1]); return (['top', 'bottom', 'left', 'right'] as const).map(sd => <path key={`${i}${sd}`} d={quad(a, b, sd)} fill={shade[sd]} stroke="#9aa5b8" strokeWidth={2}/>); })}
+    {/* equipment racks: small panels, laptops, cable bundles */}
+    {rings.slice(0, 4).map((t, i) => { const a = ring(t), b = ring(all[all.indexOf(t) + 1]); const lx = lerp(a.x0, b.x0, .5), rx = lerp(a.x1, b.x1, .5), ty = lerp(a.y0, b.y0, .5) + (b.y1 - b.y0) * .2, sc = (1 - t) * 2.4;
+      return <g key={i}>
+        <rect x={lx + 6} y={ty} width={60 * sc + 10} height={42 * sc + 8} fill="#2a3450" stroke={ink} strokeWidth={2}/>
+        <rect x={lx + 10} y={ty + 4} width={52 * sc + 2} height={30 * sc + 4} fill={['#5ec8ff', '#9fe7b5', '#ffd25e', '#c6a0ff'][i % 4]} opacity={.5 + .3 * Math.sin(frame * .05 + i)}/>
+        <rect x={rx - 70 * sc - 16} y={ty + 30 * sc} width={70 * sc + 10} height={26 * sc + 6} fill="#8592aa" stroke={ink} strokeWidth={2}/>
+        <path d={`M ${lx} ${ty + 120 * sc} q ${40 * sc} ${30 * sc + Math.sin(frame * .03 + i) * 6} ${80 * sc} 0`} stroke={['#ff5a4f', '#2a3450', '#ffd25e'][i % 3]} strokeWidth={6 * sc + 2} fill="none"/>
+      </g>; })}
+    {/* yellow handrails along the walls */}
+    {[.12, .45, .7].map(t => { const a = ring(t), b = ring(t + .1); return <g key={t}>
+      <path d={`M ${a.x0 + 10} ${lerp(a.y0, a.y1, .7)} L ${b.x0 + 10} ${lerp(b.y0, b.y1, .7)}`} stroke="#f0c24a" strokeWidth={10 * (1 - t) + 3} strokeLinecap="round"/>
+      <path d={`M ${a.x1 - 10} ${lerp(a.y0, a.y1, .3)} L ${b.x1 - 10} ${lerp(b.y0, b.y1, .3)}`} stroke="#f0c24a" strokeWidth={10 * (1 - t) + 3} strokeLinecap="round"/></g>; })}
+    {/* light strips on the ceiling */}
+    {rings.slice(0, 5).map((t, i) => { const a = ring(t), b = ring(all[all.indexOf(t) + 1]); return <path key={`l${i}`} d={`M ${lerp(a.x0, a.x1, .4)} ${lerp(a.y0, b.y0, .5)} L ${lerp(a.x0, a.x1, .6)} ${lerp(a.y0, b.y0, .5)}`} stroke="#fffbe6" strokeWidth={10 * (1 - t) + 3} strokeLinecap="round"/>; })}
+    {/* far hatch: a round opening into the next module */}
+    <rect x={cx - fw} y={cy - fh} width={fw * 2} height={fh * 2} fill="#d6dce6" stroke="#9aa5b8" strokeWidth={3}/>
+    <circle cx={cx} cy={cy} r={fh * .8} fill="#aeb8c8" stroke={ink} strokeWidth={3}/>
+    <circle cx={cx} cy={cy} r={fh * .62} fill="#eef3fa"/>
+    {Array.from({length: 10}, (_, i) => <circle key={i} cx={cx + Math.cos(i / 10 * 6.283) * fh * .71} cy={cy + Math.sin(i / 10 * 6.283) * fh * .71} r={3} fill={ink}/>)}
+  </g>;
+};
+
+/** Moon or Mars surface: sky, a distant horizon, near ground with craters or rocks; Earth hangs in the lunar sky. */
+const Surface: React.FC<{kind: 'moon' | 'mars'; W: number; H: number; frame: number; id: string; ink: string; seed: number}> = ({kind, W, H, frame, id, ink, seed}) => {
+  const random = seededRandom(seed), moon = kind === 'moon', hz = H * .6;
+  const sky = moon ? ['#02040b', '#060a18'] : ['#d9a57c', '#e8c39b'];
+  const ground = moon ? ['#9a9ea8', '#6d717c'] : ['#c06a3e', '#8e4226'];
+  const stars = moon ? Array.from({length: 120}, () => ({x: random() * W, y: random() * hz * .95, r: .6 + random() * 1.8})) : [];
+  const ridge = (y0: number, amp: number, seed2: number) => { const r = seededRandom(seed2); let d = `M -20 ${H}`; for (let x = -20; x <= W + 40; x += 60) d += ` L ${x} ${y0 - r() * amp}`; return d + ` L ${W + 40} ${H} Z`; };
+  const craters = Array.from({length: moon ? 9 : 0}, () => ({x: random() * W, y: hz + 40 + random() * (H - hz - 60), r: 30 + random() * 90}));
+  const rocks = Array.from({length: 14}, () => ({x: random() * W, y: hz + 30 + random() * (H - hz - 40), s: 10 + random() * 36}));
+  return <g>
+    <defs>
+      <linearGradient id={`${id}-sky`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={sky[0]}/><stop offset="1" stopColor={sky[1]}/></linearGradient>
+      <linearGradient id={`${id}-gr`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={ground[0]}/><stop offset="1" stopColor={ground[1]}/></linearGradient>
+    </defs>
+    <rect x={-W * .1} y={-H * .1} width={W * 1.2} height={H * 1.2} fill={`url(#${id}-sky)`}/>
+    {stars.map((st, i) => <circle key={i} cx={st.x} cy={st.y} r={st.r} fill="#fff" opacity={.5 + .4 * Math.sin(frame * .06 + i)}/>)}
+    {moon && <g><circle cx={W * .78} cy={H * .2} r={H * .09} fill="#2a6fc4"/><ellipse cx={W * .77} cy={H * .19} rx={H * .05} ry={H * .025} fill="#5e9b55"/><ellipse cx={W * .8} cy={H * .23} rx={H * .06} ry={H * .012} fill="#fff" opacity=".8"/>
+      <path d={`M ${W * .78 + H * .09} ${H * .2} A ${H * .09} ${H * .09} 0 0 1 ${W * .78} ${H * .29} A ${H * .06} ${H * .09} 0 0 0 ${W * .78 + H * .09} ${H * .2}`} fill="#000" opacity=".55"/></g>}
+    {!moon && <circle cx={W * .25} cy={H * .18} r={H * .03} fill="#f6efe0" opacity=".85"/>}
+    <path d={ridge(hz - 30, 60, seed + 1)} fill={moon ? '#5b5f6a' : '#a5583a'} opacity=".8"/>
+    <path d={ridge(hz, 26, seed + 2)} fill={`url(#${id}-gr)`} stroke={ink} strokeWidth={2}/>
+    {craters.map((c, i) => <g key={i}><ellipse cx={c.x} cy={c.y} rx={c.r} ry={c.r * .28} fill="#5e626c"/><ellipse cx={c.x + c.r * .06} cy={c.y + c.r * .03} rx={c.r * .86} ry={c.r * .22} fill="#878b95"/></g>)}
+    {rocks.map((r, i) => <path key={i} d={`M ${r.x - r.s} ${r.y} Q ${r.x - r.s * .6} ${r.y - r.s} ${r.x} ${r.y - r.s * .9} Q ${r.x + r.s * .8} ${r.y - r.s * .7} ${r.x + r.s} ${r.y} Z`} fill={moon ? '#7b7f8a' : '#7a3a22'} stroke={ink} strokeWidth={2}/>)}
+    {!moon && <rect x={-W * .1} y={hz - 80} width={W * 1.2} height={140} fill="#e3b28a" opacity=".25"/>}
   </g>;
 };
