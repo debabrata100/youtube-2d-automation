@@ -1,7 +1,7 @@
 # 25: No-narration Short A, "Taking the Elevator to Space 🛗"
 
 - **Status:** rendered 27 Nov 2026 (`jobs/elevator-final-6`, 43.0 s, 9:16, software GL (`REMOTION_GL=swangle`), all verification checks pass: speech 0.97, −15.5 LUFS, silent ending; `scripts/check-dropouts.py` clean; 0 paid requests in the render). Not uploaded yet.
-- **Upload folder:** `~/Downloads/gahanarka-upload/25-elevator-short/`: `taking-the-elevator-to-space.mp4`, `upload-info.md` (this sheet). **Proposed slot: Mon 7 Dec, 9:30 PM IST** in place of S15 (the 7-second atmosphere loop), which moves to Mon 14 Dec. Debabrata to confirm.
+- **Upload folder:** `~/Downloads/gahanarka-upload/25-elevator-short/`: `taking-the-elevator-to-space.mp4`, `upload-info.md` (this sheet). **Slot: Mon 7 Dec, 9:30 PM IST** (approved 27 Nov); S15 (the 7-second atmosphere loop) moved to Mon 14 Dec.
 - **Format test:** first Short without narration (live counter + Arka's reactions + one closing line), inspired by countdown/HUD Shorts. Compare stayed-to-watch with S23/S24 (narrated photo Shorts) and S4 Miranda (58.5%).
 - **Narration:** one line, Arka E3, *"...I'll take the stairs."* (`jobs/elevator-arka-line`, ElevenLabs, 24 characters, run by Debabrata 26 Nov), padded to 39.6 s (`jobs/elevator-narration-2`).
 - **Visuals:** drawn (paint-night). Commits 1ad16b3 → 9421bf0: Arka walks in at sunrise and presses ISS; live floor/height/time/air/temperature readout; 3D Burj Khalifa, natural Everest, shooting stars, northern lights; ISS close-up, Arka presses G, "Going down: 11 h 38 min", his line, then "Stairs: 119,714 floors".
