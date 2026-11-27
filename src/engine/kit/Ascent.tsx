@@ -67,29 +67,75 @@ const MarkerArt: React.FC<{m: Marker; map: ReturnType<typeof ascentMapping>; wid
         <rect x={-20} y={ground + 26} width={width + 40} height={8} fill="#ffd25e" opacity=".55"/></g>;
     }
     case 'tower': {
-      // A stepped supertall (setbacks, then a spire): base on the ground, needle tip at the marker's altitude.
+      // A Burj-Khalifa-like supertall: three glass wings stepping back in a spiral (left and right setbacks alternate),
+      // a lighter central core, floor bands, sun on one side and shade on the other, then a long tapering spire.
       const ground = map.y(0), tip = y, total = ground - tip; if (tip > height + 40 || ground < -40) return null;
-      const stages = [[1, 0], [.78, .2], [.6, .38], [.44, .55], [.3, .7], [.18, .82], [.07, .9]];
-      const d = stages.map(([w, t], i) => {
-        const yy = ground - total * t, y2 = ground - total * (stages[i + 1]?.[1] ?? .9);
-        return `M ${x - s * w / 2} ${yy} L ${x - s * w / 2} ${y2} L ${x + s * w / 2} ${y2} L ${x + s * w / 2} ${yy} Z`;
-      }).join(' ');
+      const body = .78, at = (t: number) => ground - total * t;
+      // Half-widths per side (fraction of s) after each setback: [height fraction, left, right].
+      const steps: Array<[number, number, number]> = [[0, .5, .5], [.1, .44, .5], [.17, .44, .43], [.24, .37, .43], [.31, .37, .35], [.38, .3, .35], [.45, .3, .27],
+        [.52, .23, .27], [.58, .23, .2], [.64, .16, .2], [.69, .16, .13], [.73, .1, .13], [.76, .1, .07], [body, .06, .07]];
+      const edge = (side: 0 | 1) => steps.flatMap(([t, l, r], i) => { const w = side ? r : l, nt = steps[i + 1]?.[0] ?? body, xx = x + (side ? 1 : -1) * w * s; return [[xx, at(t)], [xx, at(nt)]]; });
+      const left = edge(0), right = edge(1).reverse();
+      const outline = 'M ' + [...left, ...right].map(([px, py]) => `${px.toFixed(1)} ${py.toFixed(1)}`).join(' L ') + ' Z';
+      const spireBase = at(body), sw = s * .06;
+      const bands = Array.from({length: 26}, (_, i) => at(.03 + i * .029)).filter(by => by > spireBase + 4);
       return <g>
-        <path d={d} fill="#c9d4e4" stroke={ink} strokeWidth={lw}/>
-        <path d={`M ${x} ${ground - total * .9} L ${x} ${tip}`} stroke={ink} strokeWidth={lw * 1.6} strokeLinecap="round"/>
-        <path d={`M ${x + s * .08} ${ground} L ${x + s * .08} ${ground - total * .86}`} stroke="#ffffff" strokeOpacity=".55" strokeWidth={5}/>
+        <defs>
+          <linearGradient id={`${id}-glass`} x1={x - s * .5} y1="0" x2={x + s * .5} y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stopColor="#eef4fb"/><stop offset=".42" stopColor="#c9d7e8"/><stop offset=".5" stopColor="#dbe6f2"/><stop offset=".58" stopColor="#9fb2cb"/><stop offset="1" stopColor="#6f84a3"/></linearGradient>
+          <clipPath id={`${id}-clip`}><path d={outline}/></clipPath>
+        </defs>
+        <path d={outline} fill={`url(#${id}-glass)`}/>
+        <g clipPath={`url(#${id}-clip)`}>
+          {bands.map((by, i) => <path key={i} d={`M ${x - s * .5} ${by} L ${x + s * .5} ${by}`} stroke="#6f84a3" strokeOpacity=".35" strokeWidth={2}/>)}
+          {[-.3, -.15, .15, .3].map(f => <path key={f} d={`M ${x + f * s} ${ground} L ${x + f * s} ${spireBase}`} stroke="#ffffff" strokeOpacity=".28" strokeWidth={2}/>)}
+          <rect x={x - s * .035} y={spireBase} width={s * .07} height={total} fill="#f4f8fc" opacity=".6"/>
+          <rect x={x - s * .42} y={spireBase} width={s * .05} height={total} fill="#ffffff" opacity=".35"/>
+        </g>
+        <path d={outline} fill="none" stroke={ink} strokeWidth={lw * .7} strokeLinejoin="round"/>
+        <path d={`M ${x - sw} ${spireBase} L ${x - sw * .25} ${at(.93)} L ${x + sw * .25} ${at(.93)} L ${x + sw} ${spireBase} Z`} fill="#c9d7e8" stroke={ink} strokeWidth={lw * .6} strokeLinejoin="round"/>
+        <path d={`M ${x} ${at(.93)} L ${x} ${tip}`} stroke={ink} strokeWidth={lw * .8} strokeLinecap="round"/>
+        <circle cx={x} cy={tip} r={4} fill="#ff5a4f"/>
         {m.label && <text x={x} y={tip - 18} textAnchor="middle" fontFamily={font} fontSize={s * .32} fill="#ffffff" stroke={ink} strokeWidth={6} paintOrder="stroke">{m.label}</text>}
       </g>;
     }
     case 'mountain': {
-      const random = seededRandom(m.seed), half = s * 1.4, base = Math.min(map.y(m.altitude * .25), height + s * 4);
+      // A Himalayan pyramid: jagged ridgelines, a sunlit face and a shaded face split by the summit ridge, snowfields
+      // with ragged edges and couloir streaks, hazy neighbouring peaks behind, and a wind plume off the summit.
+      const random = seededRandom(m.seed), half = s * 1.5, base = Math.min(map.y(m.altitude * .25), height + s * 4);
       if (y > height + s || base < -s) return null;
-      const ridge = Array.from({length: 7}, (_, i) => { const t = i / 6; return [x - half + t * half * 2, y + Math.abs(t - .5) * 2 * (base - y) * (.55 + random() * .25)]; });
-      ridge[3] = [x, y];
-      const d = `M ${x - half * 2.4} ${base} ` + ridge.map(([a, b]) => `L ${a} ${b}`).join(' ') + ` L ${x + half * 2.4} ${base} Z`;
-      const snow = `M ${x - s * .32} ${y + s * .42} L ${x} ${y} L ${x + s * .34} ${y + s * .44} L ${x + s * .12} ${y + s * .34} L ${x - s * .06} ${y + s * .48} Z`;
-      return <g><path d={d} fill="#6f7d99" stroke={ink} strokeWidth={lw} strokeLinejoin="round"/><path d={snow} fill="#ffffff" stroke={ink} strokeWidth={lw * .7} strokeLinejoin="round"/>
-        {m.label && <text x={x} y={y - 22} textAnchor="middle" fontFamily={font} fontSize={s * .3} fill="#ffffff" stroke={ink} strokeWidth={6} paintOrder="stroke">{m.label}</text>}</g>;
+      const H0 = base - y, jag = (n: number, x0: number, y0: number, x1: number, y1: number, amp: number) =>
+        Array.from({length: n + 1}, (_, i) => { const t = i / n, w = i && i < n ? (random() - .5) * amp : 0; return [x0 + (x1 - x0) * t + w * .4, y0 + (y1 - y0) * t + w]; });
+      const lRidge = jag(9, x, y, x - half * 1.7, base, H0 * .06), rRidge = jag(9, x, y, x + half * 1.5, base, H0 * .06);
+      const spine = jag(7, x, y, x + half * .25, base, H0 * .04);
+      const pts = (a: number[][]) => a.map(([px, py]) => `${px.toFixed(1)} ${py.toFixed(1)}`).join(' L ');
+      const lit = `M ${pts(lRidge)} L ${pts([...spine].reverse())} Z`, shade = `M ${pts(spine)} L ${pts([...rRidge].reverse())} Z`;
+      const snowLine = (ridge: number[][], frac: number) => ridge.filter(([, py]) => py < y + H0 * frac);
+      const snowEdge = (from: number[][], to: number[][], frac: number) => {
+        const a = snowLine(from, frac), b = snowLine(to, frac).reverse(), n = 6;
+        const ax = a.at(-1)!, bx = b[0];
+        const rag = Array.from({length: n + 1}, (_, i) => { const t = i / n; return [ax[0] + (bx[0] - ax[0]) * t, ax[1] + (bx[1] - ax[1]) * t + (i % 2 ? H0 * .05 : -H0 * .015) * (.6 + random())]; });
+        return `M ${pts(a)} L ${pts(rag)} L ${pts(b)} Z`;
+      };
+      const peak = (px: number, py: number, w: number, tone: string) => `M ${px - w} ${base} L ${px - w * .35} ${py + (base - py) * .3} L ${px} ${py} L ${px + w * .4} ${py + (base - py) * .25} L ${px + w} ${base} Z`;
+      return <g>
+        <defs><filter id={`${id}-plume`} x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation={s * .025}/></filter></defs>
+        <path d={peak(x - half * 1.25, y + H0 * .28, half * 1.1, '')} fill="#a9b6cc" opacity=".9"/>
+        <path d={peak(x + half * 1.35, y + H0 * .18, half * 1.2, '')} fill="#9aa8c0" opacity=".9"/>
+        <path d={`M ${x - half * 1.25} ${y + H0 * .28} l ${-half * .2} ${H0 * .1} l ${half * .32} 0 Z`} fill="#eef3fa" opacity=".8"/>
+        <path d={`M ${x + half * 1.35} ${y + H0 * .18} l ${-half * .22} ${H0 * .1} l ${half * .36} ${H0 * .02} Z`} fill="#eef3fa" opacity=".8"/>
+        <path d={lit} fill="#857f80"/>
+        <path d={shade} fill="#4e5466"/>
+        <path d={snowEdge(lRidge, spine, .42)} fill="#ffffff"/>
+        <path d={snowEdge(spine, rRidge, .36)} fill="#c3cfe2"/>
+        {[.3, .55, .75].map((f, i) => { const sx = x - half * f * .9, sy = y + H0 * (.2 + f * .25); return <path key={i} d={`M ${sx} ${sy} l ${-half * .05} ${H0 * .14}`} stroke="#ffffff" strokeOpacity=".8" strokeWidth={s * .018} strokeLinecap="round"/>; })}
+        {[.35, .6].map((f, i) => { const sx = x + half * f * .8, sy = y + H0 * (.18 + f * .22); return <path key={`r${i}`} d={`M ${sx} ${sy} l ${half * .04} ${H0 * .12}`} stroke="#c3cfe2" strokeOpacity=".8" strokeWidth={s * .016} strokeLinecap="round"/>; })}
+        <path d={`M ${pts(lRidge)}`} fill="none" stroke={ink} strokeWidth={lw * .6} strokeLinejoin="round"/>
+        <path d={`M ${pts(rRidge)}`} fill="none" stroke={ink} strokeWidth={lw * .6} strokeLinejoin="round"/>
+        <path d={`M ${pts(spine)}`} fill="none" stroke={ink} strokeOpacity=".5" strokeWidth={lw * .4} strokeLinejoin="round"/>
+        <path d={`M ${x + s * .02} ${y + s * .02} q ${s * .5} ${-s * .06} ${s * 1.1} ${s * .04}`} stroke="#ffffff" strokeOpacity=".75" strokeWidth={s * .07} fill="none" strokeLinecap="round" filter={`url(#${id}-plume)`}/>
+        {m.label && <text x={x} y={y - 22} textAnchor="middle" fontFamily={font} fontSize={s * .3} fill="#ffffff" stroke={ink} strokeWidth={6} paintOrder="stroke">{m.label}</text>}
+      </g>;
     }
     case 'cloud': {
       const random = seededRandom(m.seed), lobes = Array.from({length: 5}, (_, i) => ({cx: x + (i - 2) * s * .22, cy: y - random() * s * .16, r: s * (.16 + random() * .1)}));
