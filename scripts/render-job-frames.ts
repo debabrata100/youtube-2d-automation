@@ -18,10 +18,13 @@ await mkdir(dir, {recursive: true});
 const storyboard = JSON.parse(await readFile(path.join(job, 'storyboard.json'), 'utf8'));
 const narration = JSON.parse(await readFile(path.join(job, 'narration-props.json'), 'utf8'));
 const serveUrl = path.resolve(job, 'bundle'), inputProps = {storyboard, narration};
-const composition = (await getCompositions(serveUrl, {inputProps, browserExecutable})).find(c => c.id === 'GenericStoryboard');
+// REMOTION_GL=swangle forces software rendering. On a Mac the default GPU path dropped Arka for single frames in
+// elevator-final-3/-5 (filtered, scaled figure layers), so drawn Shorts render with swangle there.
+const gl = process.env.REMOTION_GL as 'swangle' | 'angle' | 'swiftshader' | 'egl' | undefined, chromiumOptions = gl ? {gl} : {};
+const composition = (await getCompositions(serveUrl, {inputProps, browserExecutable, chromiumOptions})).find(c => c.id === 'GenericStoryboard');
 if (!composition) throw Error('Composition missing');
 const t = performance.now(), partial = file + '.partial.mp4';
-await renderMedia({serveUrl, composition, inputProps, browserExecutable, outputLocation: partial, codec: 'h264', muted: true, pixelFormat: 'yuv420p', crf: 18, frameRange: [start, end], scale, concurrency: 1, disallowParallelEncoding: true});
+await renderMedia({serveUrl, composition, inputProps, browserExecutable, outputLocation: partial, codec: 'h264', muted: true, pixelFormat: 'yuv420p', crf: 18, frameRange: [start, end], scale, concurrency: 1, disallowParallelEncoding: true, chromiumOptions});
 await rename(partial, file);
 const elapsed = Number(((performance.now() - t) / 1000).toFixed(2));
 await writeFile(file.replace(/\.mp4$/, '.json'), JSON.stringify({start, end, frames: end - start + 1, elapsedSeconds: elapsed}) + '\n');
