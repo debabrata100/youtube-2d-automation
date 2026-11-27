@@ -1336,6 +1336,39 @@
               "value": 1
             },
             {
+              "frame": 1225,
+              "value": 1
+            },
+            {
+              "frame": 1232,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "c8",
+          "text": "Stairs: 119,714 floors",
+          "x": 540,
+          "y": 560,
+          "size": 72,
+          "anchor": "middle",
+          "variant": "pill",
+          "color": "#ffffff",
+          "pop": true,
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 1229,
+              "value": 0
+            },
+            {
+              "frame": 1236,
+              "value": 1
+            },
+            {
               "frame": 1319,
               "value": 1
             },

@@ -113,7 +113,9 @@ notes = [callout('c0', 'What if this lift never stopped?', 0, S(3.4)), callout('
          callout('c3', 'Where jets fly', S(12.4), S(15.2)), callout('c4', 'Your tears would boil', S(17), S(21.5)),
          callout('c4b', 'Shooting stars burn up here', S(22.4), S(25.1)), callout('c5', 'You are in space', S(25.2), S(27.5)),
          callout('c5b', 'Northern lights glow up here', S(27.6), S(31.5)), callout('c6', 'The ISS!', ARRIVE + 4, PRESS - 8, y=560, size=76),
-         callout('c7', 'Going down: 11 h 38 min', PRESS + 4, S0(DURATION) + 30, y=560, size=72)]
+         callout('c7', 'Going down: 11 h 38 min', PRESS + 4, S0(41.0) - 4, y=560, size=72),
+         # the tag after his line: the stairs are 119,714 floors (419 km / 3.5 m), about 10 days of walking down
+         callout('c8', 'Stairs: 119,714 floors', S0(41.0), S0(DURATION) + 30, y=560, size=72)]
 sounds = [('tick', TAP_ISS, -10), ('rumble', S(.8), -8), ('ding', S(4), -8), ('chime', S(27.6), -8), ('ding', S(10), -8), ("ding", S0(2.4), -8), ('whoosh', S(11.6), -4),
           ('ding', S(17.4), -8), ('heartbeat', S(18.2), -6), ('ding', S(25.5), -8), ('ding', ARRIVE + 6, -4), ('pop', PRESS + 4, -6)]
 ep.scene('e1', explain([arka], [Prop({'id': 'world', 'kit': world, 'scale': ZOOM, 'anchor': ROOF}), Prop({'id': 'front', 'kit': front, 'scale': ZOOM, 'anchor': ROOF}),
