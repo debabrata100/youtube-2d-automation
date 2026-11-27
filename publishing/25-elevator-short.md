@@ -28,7 +28,7 @@ Milestones:
 • Going back down at 10 m/s: 11 h 38 min
 • Or the stairs: 119,714 floors
 
-Floors counted at 3.5 m each. Air shown as a share of sea-level pressure.
+Air shown as a share of sea-level pressure.
 
 Sources: Hitachi, NASA, NOAA, FAI, EarthSky.
 Animation drawn by our own renderer. Arka's line voiced with AI (ElevenLabs).
@@ -48,7 +48,7 @@ S23 "Your Moon Is Leaving 🌕 😭" (tXCK_8LrDGA), set 27 Nov.
 Quick maths 🧮 Why exactly 119,714 floors? First correct answer gets a reply from Arka 👇
 ```
 
-Answer to look for: 419 km (ISS height) ÷ 3.5 m per floor = 119,714 floors. Reply to the first correct answer and heart it (Debabrata's idea, 27 Nov).
+Answer to look for: 419 km (ISS height) ÷ 3.5 m per floor = 119,714 floors. Reply to the first correct answer and heart it (Debabrata's idea, 27 Nov). The 3.5 m floor height is deliberately not in the description, so it stays a real puzzle (removed in Studio 27 Nov).
 
 ## Tags
 elevator to space, fastest elevator, how high is space, karman line, armstrong limit, burj khalifa, mount everest, iss, space facts, shorts
