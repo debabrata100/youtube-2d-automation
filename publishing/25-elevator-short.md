@@ -1,6 +1,6 @@
 # 25: No-narration Short A, "Taking the Elevator to Space 🛗"
 
-- **Status:** rendered 27 Nov 2026 (`jobs/elevator-final-6`, 43.0 s, 9:16, software GL (`REMOTION_GL=swangle`), all verification checks pass: speech 0.97, −15.5 LUFS, silent ending; `scripts/check-dropouts.py` clean; 0 paid requests in the render). Not uploaded yet.
+- **Status:** rendered 27 Nov 2026 (`jobs/elevator-final-6`, 43.0 s, 9:16, software GL (`REMOTION_GL=swangle`), all verification checks pass: speech 0.97, −15.5 LUFS, silent ending; `scripts/check-dropouts.py` clean; 0 paid requests in the render). Uploaded by Debabrata 27 Nov, ID **hCODhU8YIE0** (https://youtube.com/shorts/hCODhU8YIE0); details, tags, playlist What If…?, AI use: No, paid promotion: No, Related video → S23, and schedule set by Claude; YouTube checks: no issues.
 - **Upload folder:** `~/Downloads/gahanarka-upload/25-elevator-short/`: `taking-the-elevator-to-space.mp4`, `upload-info.md` (this sheet). **Slot: Mon 7 Dec, 9:30 PM IST** (approved 27 Nov); S15 (the 7-second atmosphere loop) moved to Mon 14 Dec.
 - **Format test:** first Short without narration (live counter + Arka's reactions + one closing line), inspired by countdown/HUD Shorts. Compare stayed-to-watch with S23/S24 (narrated photo Shorts) and S4 Miranda (58.5%).
 - **Narration:** one line, Arka E3, *"...I'll take the stairs."* (`jobs/elevator-arka-line`, ElevenLabs, 24 characters, run by Debabrata 26 Nov), padded to 39.6 s (`jobs/elevator-narration-2`).
@@ -40,7 +40,7 @@ Music: "Singularity" by The Grey Room / Density & Time (YouTube Audio Library).
 (The channel's default footer is added automatically.)
 
 ## Related video
-S23 "The Moon Is Leaving Earth 🌕" (already public).
+S23 "Your Moon Is Leaving 🌕 😭" (tXCK_8LrDGA), set 27 Nov.
 
 ## Pinned comment
 
