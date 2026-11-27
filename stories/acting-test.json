@@ -1,0 +1,26 @@
+{
+ "schemaVersion": "1.0",
+ "id": "acting-test",
+ "title": "Acting test",
+ "topic": "Engine test: lip sync and comic timing",
+ "language": "en-US",
+ "targetAudience": "internal test",
+ "durationSeconds": 12,
+ "storyboard": "storyboards/acting-test.json",
+ "beats": [
+  {
+   "id": "a1",
+   "sceneId": "at-a1",
+   "intent": "closing",
+   "narration": "Twelve centimetres a second? I walk to the kitchen faster than that.",
+   "phrases": [
+    "Twelve centimetres a second?",
+    "I walk to the kitchen faster than that."
+   ],
+   "phraseSpeakers": [
+    "arka",
+    "arka"
+   ]
+  }
+ ]
+}

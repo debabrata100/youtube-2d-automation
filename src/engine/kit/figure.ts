@@ -75,7 +75,8 @@ export const poseAt = (keys: PoseKey[], frame: number): Pose => {
   let current = poseOf(keys[0].pose, frame);
   for (let i = 1; i < keys.length && frame >= keys[i].frame; i++) {
     const k = keys[i], t = easeMotion((frame - k.frame) / Math.max(1, k.blend), k.ease);
-    current = mixPose(current, poseOf(k.pose, frame), Math.min(1, t));
+    // Back eases overshoot past the target pose (t > 1) for snappy comic acting; other eases stop at 1.
+    current = mixPose(current, poseOf(k.pose, frame), Math.min(1.35, t));
   }
   return current;
 };

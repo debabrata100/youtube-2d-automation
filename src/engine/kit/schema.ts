@@ -71,6 +71,9 @@ export const kitSchema = z.discriminatedUnion('type', [
     helmet: z.array(z.object({frame: keyFrame, on: z.boolean()}).strict()).max(12).default([]).refine(increasing, 'Helmet frames must strictly increase'),
     /** Skin flush 0-1 (sunburn, embarrassment), interpolated between keys. */
     flush: z.array(z.object({frame: keyFrame, value: z.number().min(0).max(1)}).strict()).max(12).default([]).refine(increasing, 'Flush frames must strictly increase'),
+    /** Lip sync (M4.2): one window per spoken word (frames may be word anchors, start and end edge); the mouth shapes
+     * follow the word's letters across the window and close between words. */
+    talk: z.array(z.object({from: keyFrame, to: keyFrame, text: z.string().min(1).max(40)}).strict()).max(120).default([]),
   }).strict(),
   /** Cartoon planet: base colour, wavy bands (gas giants), craters, optional ring and glow. radius is a fraction of the group's shorter side. */
   z.object({

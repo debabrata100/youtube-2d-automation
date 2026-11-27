@@ -1,0 +1,818 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "acting-test",
+  "title": "Acting test",
+  "themeId": "clean-night",
+  "format": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "styleId": "cinematic-illustrated",
+  "background": "@sky.top",
+  "accent": "@text.accent",
+  "assets": [],
+  "backdrop": {
+    "group": "backdrop"
+  },
+  "narrationTiming": {
+    "minimumSceneFrames": 45,
+    "maximumDeviationSeconds": 0.2
+  },
+  "audio": {
+    "music": "generated-pad",
+    "musicGainDb": -24,
+    "duckRatio": 8,
+    "targetLufs": -14
+  },
+  "groups": [
+    {
+      "id": "backdrop",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "page",
+          "kit": {
+            "type": "sky",
+            "horizon": 0.9,
+            "stars": 0,
+            "seed": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "g-a1",
+      "width": 1920,
+      "height": 1080,
+      "layers": [
+        {
+          "id": "room",
+          "kit": {
+            "type": "set",
+            "kind": "cabin",
+            "part": "room",
+            "porthole": {
+              "x": 0.52,
+              "y": 0.36,
+              "r": 0.13,
+              "view": "earth"
+            },
+            "seed": 3
+          },
+          "depth": 0.8,
+          "blur": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "second",
+                "edge": "end",
+                "offset": 6
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "second",
+                "edge": "end",
+                "offset": 7
+              },
+              "value": 8,
+              "ease": "linear"
+            },
+            {
+              "frame": {
+                "at": "i",
+                "offset": -9
+              },
+              "value": 8
+            },
+            {
+              "frame": {
+                "at": "i",
+                "offset": -8
+              },
+              "value": 0,
+              "ease": "linear"
+            }
+          ]
+        },
+        {
+          "id": "beam",
+          "kit": {
+            "type": "light",
+            "kind": "beam",
+            "x": 0.52,
+            "y": 0.36,
+            "angle": 108,
+            "radius": 0.55,
+            "spread": 0.35,
+            "color": "#9fd2ff",
+            "intensity": 0.3
+          },
+          "depth": 0.8
+        },
+        {
+          "id": "lamp",
+          "kit": {
+            "type": "light",
+            "kind": "pool",
+            "x": 0.45,
+            "y": 0.02,
+            "radius": 0.45,
+            "color": "#ffd9a0",
+            "intensity": 0.45
+          },
+          "depth": 0.9
+        },
+        {
+          "id": "arka",
+          "kit": {
+            "type": "figure",
+            "x": 0.43,
+            "y": 0.9,
+            "height": 0.5,
+            "outfit": "astronaut",
+            "shiver": 0,
+            "seed": 11,
+            "poses": [
+              {
+                "frame": 0,
+                "pose": "float"
+              },
+              {
+                "frame": 48,
+                "pose": "point-right",
+                "blend": 8,
+                "ease": "smoothstep"
+              },
+              {
+                "frame": 62,
+                "pose": "float",
+                "blend": 8,
+                "ease": "smoothstep"
+              },
+              {
+                "frame": 72,
+                "pose": "cower",
+                "blend": 4,
+                "ease": "smoothstep"
+              },
+              {
+                "frame": 76,
+                "pose": "reach",
+                "blend": 7,
+                "ease": "ease-out-back"
+              },
+              {
+                "frame": {
+                  "at": "i",
+                  "offset": -12
+                },
+                "pose": "cower",
+                "blend": 4,
+                "ease": "smoothstep"
+              },
+              {
+                "frame": {
+                  "at": "i",
+                  "offset": -8
+                },
+                "pose": "hands-on-hips",
+                "blend": 9,
+                "ease": "ease-out-back"
+              },
+              {
+                "frame": {
+                  "at": "that",
+                  "edge": "end",
+                  "offset": 10
+                },
+                "pose": "stand",
+                "blend": 4,
+                "ease": "smoothstep"
+              },
+              {
+                "frame": {
+                  "at": "that",
+                  "edge": "end",
+                  "offset": 14
+                },
+                "pose": "shrug",
+                "blend": 9,
+                "ease": "ease-out-back"
+              }
+            ],
+            "faces": [
+              {
+                "frame": 0,
+                "face": "happy"
+              },
+              {
+                "frame": 48,
+                "face": "neutral"
+              },
+              {
+                "frame": 62,
+                "face": "happy"
+              },
+              {
+                "frame": 74,
+                "face": "shocked"
+              },
+              {
+                "frame": {
+                  "at": "i",
+                  "offset": -8
+                },
+                "face": "neutral"
+              },
+              {
+                "frame": {
+                  "at": "that",
+                  "edge": "end",
+                  "offset": 14
+                },
+                "face": "smug"
+              }
+            ],
+            "suit": "#e8b84a",
+            "visor": "#ffe6a3",
+            "talk": [
+              {
+                "from": {
+                  "at": "twelve",
+                  "offset": -1
+                },
+                "to": {
+                  "at": "twelve",
+                  "edge": "end",
+                  "offset": 1
+                },
+                "text": "twelve"
+              },
+              {
+                "from": {
+                  "at": "centimetres",
+                  "offset": -1
+                },
+                "to": {
+                  "at": "centimetres",
+                  "edge": "end",
+                  "offset": 1
+                },
+                "text": "centimetres"
+              },
+              {
+                "from": {
+                  "at": "a",
+                  "offset": -1
+                },
+                "to": {
+                  "at": "a",
+                  "edge": "end",
+                  "offset": 1
+                },
+                "text": "a"
+              },
+              {
+                "from": {
+                  "at": "second",
+                  "offset": -1
+                },
+                "to": {
+                  "at": "second",
+                  "edge": "end",
+                  "offset": 1
+                },
+                "text": "second"
+              },
+              {
+                "from": {
+                  "at": "i",
+                  "offset": -1
+                },
+                "to": {
+                  "at": "i",
+                  "edge": "end",
+                  "offset": 1
+                },
+                "text": "i"
+              },
+              {
+                "from": {
+                  "at": "walk",
+                  "offset": -1
+                },
+                "to": {
+                  "at": "walk",
+                  "edge": "end",
+                  "offset": 1
+                },
+                "text": "walk"
+              },
+              {
+                "from": {
+                  "at": "to",
+                  "offset": -1
+                },
+                "to": {
+                  "at": "to",
+                  "edge": "end",
+                  "offset": 1
+                },
+                "text": "to"
+              },
+              {
+                "from": {
+                  "at": "the",
+                  "offset": -1
+                },
+                "to": {
+                  "at": "the",
+                  "edge": "end",
+                  "offset": 1
+                },
+                "text": "the"
+              },
+              {
+                "from": {
+                  "at": "kitchen",
+                  "offset": -1
+                },
+                "to": {
+                  "at": "kitchen",
+                  "edge": "end",
+                  "offset": 1
+                },
+                "text": "kitchen"
+              },
+              {
+                "from": {
+                  "at": "faster",
+                  "offset": -1
+                },
+                "to": {
+                  "at": "faster",
+                  "edge": "end",
+                  "offset": 1
+                },
+                "text": "faster"
+              },
+              {
+                "from": {
+                  "at": "than",
+                  "offset": -1
+                },
+                "to": {
+                  "at": "than",
+                  "edge": "end",
+                  "offset": 1
+                },
+                "text": "than"
+              },
+              {
+                "from": {
+                  "at": "that",
+                  "offset": -1
+                },
+                "to": {
+                  "at": "that",
+                  "edge": "end",
+                  "offset": 1
+                },
+                "text": "that"
+              }
+            ]
+          },
+          "blur": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "second",
+                "edge": "end",
+                "offset": 6
+              },
+              "value": 0
+            },
+            {
+              "frame": {
+                "at": "second",
+                "edge": "end",
+                "offset": 7
+              },
+              "value": 12,
+              "ease": "linear"
+            },
+            {
+              "frame": {
+                "at": "i",
+                "offset": -9
+              },
+              "value": 12
+            },
+            {
+              "frame": {
+                "at": "i",
+                "offset": -8
+              },
+              "value": 0,
+              "ease": "linear"
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 72,
+              "value": 0
+            },
+            {
+              "frame": 76,
+              "value": -26,
+              "ease": "ease-out-cubic"
+            },
+            {
+              "frame": 88,
+              "value": 0,
+              "ease": "ease-out-back"
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 45,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 90,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 135,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 180,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 225,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 270,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 315,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 360,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 405,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 450,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 495,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 540,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 585,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 630,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 675,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 720,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 765,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 810,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 855,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 900,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 945,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 990,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1035,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1080,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1125,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1170,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1215,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1260,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1305,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1350,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1395,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1440,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1485,
+              "value": 1.012,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1530,
+              "value": 1,
+              "ease": "smoothstep"
+            },
+            {
+              "frame": 1575,
+              "value": 1.012,
+              "ease": "smoothstep"
+            }
+          ],
+          "anchor": {
+            "x": 825.6,
+            "y": 972.0
+          }
+        },
+        {
+          "id": "desk",
+          "kit": {
+            "type": "set",
+            "kind": "cabin",
+            "part": "console",
+            "console": {
+              "y": 0.8,
+              "x0": 0.38,
+              "x1": 1.08,
+              "screenX": 0.66,
+              "text": "SPEED\n12 cm/s",
+              "screenColor": "#5ee08a",
+              "blink": false
+            },
+            "seed": 5
+          },
+          "depth": 1.18
+        },
+        {
+          "id": "screenglow",
+          "kit": {
+            "type": "light",
+            "kind": "pool",
+            "x": 0.66,
+            "y": 0.7,
+            "radius": 0.2,
+            "color": "#5ee08a",
+            "intensity": 0.3
+          },
+          "depth": 1.18
+        },
+        {
+          "id": "grade",
+          "kit": {
+            "type": "light",
+            "kind": "grade",
+            "color": "#2a3f7a",
+            "intensity": 0.3
+          },
+          "screen": true
+        },
+        {
+          "id": "vignette",
+          "kit": {
+            "type": "light",
+            "kind": "vignette",
+            "radius": 0.5,
+            "color": "#05070f",
+            "intensity": 0.8
+          },
+          "screen": true
+        }
+      ],
+      "annotations": [],
+      "shots": [
+        {
+          "frame": 0,
+          "zoom": 1.0,
+          "x": 960.0,
+          "y": 540.0
+        },
+        {
+          "frame": 75,
+          "zoom": 1.06,
+          "x": 921.5999999999999,
+          "y": 540.0,
+          "ease": "linear"
+        },
+        {
+          "frame": 76,
+          "zoom": 2.3,
+          "x": 875.6,
+          "y": 472.0,
+          "cut": true
+        },
+        {
+          "frame": {
+            "at": "second",
+            "edge": "end",
+            "offset": 6
+          },
+          "zoom": 2.42,
+          "x": 875.6,
+          "y": 472.0,
+          "ease": "linear"
+        },
+        {
+          "frame": {
+            "at": "second",
+            "edge": "end",
+            "offset": 7
+          },
+          "zoom": 2.2,
+          "x": 1220.3389830508474,
+          "y": 767.8983050847457,
+          "cut": true
+        },
+        {
+          "frame": {
+            "at": "i",
+            "offset": -9
+          },
+          "zoom": 2.3,
+          "x": 1220.3389830508474,
+          "y": 767.8983050847457,
+          "ease": "linear"
+        },
+        {
+          "frame": {
+            "at": "i",
+            "offset": -8
+          },
+          "zoom": 1.5,
+          "x": 902.4,
+          "y": 540.0,
+          "cut": true
+        },
+        {
+          "frame": {
+            "at": "that",
+            "edge": "end",
+            "offset": 20
+          },
+          "zoom": 1.55,
+          "x": 902.4,
+          "y": 540.0,
+          "ease": "linear"
+        },
+        {
+          "frame": 360,
+          "zoom": 1.0,
+          "x": 960.0,
+          "y": 540.0,
+          "ease": "ease-out-cubic"
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "at-a1",
+      "template": "hero-reveal",
+      "durationFrames": 360,
+      "animationDurationFrames": 360,
+      "caption": {
+        "text": "at-a1",
+        "preset": "body"
+      },
+      "camera": {
+        "preset": "static",
+        "boundaryMode": "backdrop"
+      },
+      "motion": {
+        "preset": "still"
+      },
+      "seed": 7005,
+      "transitionFrames": 0,
+      "environmentDim": 0,
+      "config": {
+        "primary": {
+          "asset": "g-a1",
+          "x": 0.5,
+          "y": 0.5,
+          "size": 1.0
+        }
+      },
+      "narrationCue": {
+        "beatId": "a1",
+        "phraseIndex": 0,
+        "edge": "start"
+      },
+      "sounds": [
+        {
+          "sound": "pop",
+          "frame": 76,
+          "gainDb": -10
+        }
+      ]
+    }
+  ]
+}

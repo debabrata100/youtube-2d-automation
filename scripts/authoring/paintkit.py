@@ -48,7 +48,7 @@ def pop_in(at, anchor=None):
 
 def figure(fid, fx, fy, h, poses, faces, accessories=(), outfit='stick', shiver=0, seed=3, facing=None, suit=None, visor=None, helmet=None, flush=None, coat=None, **layer):
     kit = {'type': 'figure', 'x': fx, 'y': fy, 'height': h, 'outfit': outfit, 'shiver': shiver, 'seed': seed,
-           'poses': [{'frame': f, 'pose': p} for f, p in poses], 'faces': [{'frame': f, 'face': c} for f, c in faces]}
+           'poses': [{'frame': k[0], 'pose': k[1], **({'blend': k[2]} if len(k) > 2 else {}), **({'ease': k[3]} if len(k) > 3 else {})} for k in poses], 'faces': [{'frame': f, 'face': c} for f, c in faces]}
     for k, v in (('facing', facing), ('suit', suit), ('visor', visor), ('coat', coat)):
         if v: kit[k] = v
     if helmet: kit['helmet'] = [{'frame': f, 'on': on} for f, on in helmet]

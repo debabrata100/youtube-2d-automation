@@ -7,6 +7,7 @@ export type FigureConfig = {
   poses: PoseKey[]; faces: Array<{frame: number; face: FaceId}>; blink: boolean; shiver: number; seed: number; suit?: string; visor?: string;
   accessories: Accessory[]; coat?: string;
   helmet?: Array<{frame: number; on: boolean}>; flush?: Array<{frame: number; value: number}>;
+  talk?: Array<{from: number; to: number; text: string}>;
 };
 /** Helmet keys hold until the next key; with none the astronaut keeps the helmet on. */
 export const helmetOn = (keys: FigureConfig['helmet'], frame: number) => { let on = true; for (const k of keys ?? []) if (frame >= k.frame) on = k.on; return on; };
@@ -18,9 +19,20 @@ export const flushAt = (keys: FigureConfig['flush'], frame: number) => {
 };
 const mix = (a: string, b: string, t: number) => { const p = (h: string, i: number) => parseInt(h.slice(1 + i * 2, 3 + i * 2), 16); return '#' + [0, 1, 2].map(i => Math.round(p(a, i) + (p(b, i) - p(a, i)) * t).toString(16).padStart(2, '0')).join(''); };
 type Pt = {x: number; y: number};
+export type Viseme = 'open' | 'round' | 'closed' | 'teeth' | 'small';
+const VISEME: Record<string, Viseme> = {a: 'open', e: 'open', i: 'open', y: 'open', o: 'round', u: 'round', w: 'round', q: 'round', m: 'closed', b: 'closed', p: 'closed', f: 'teeth', v: 'teeth'};
+/** Mouth while talking: the letters of the current word spread evenly over its window, with a closed beat at each end. */
+export const visemeAt = (talk: FigureConfig['talk'], frame: number): Viseme | null => {
+  const w = talk?.find(k => frame >= k.from && frame <= k.to);
+  if (!w) return null;
+  const letters = w.text.toLowerCase().replace(/[^a-z]/g, '');
+  if (!letters || w.to - w.from < 2 || frame === w.to) return 'closed';
+  const i = Math.min(letters.length - 1, Math.floor((frame - w.from) / (w.to - w.from) * letters.length));
+  return VISEME[letters[i]] ?? 'small';
+};
 const line = (a: Pt, b: Pt, c: Pt) => `M ${a.x} ${a.y} L ${b.x} ${b.y} L ${c.x} ${c.y}`;
 
-const Face: React.FC<{s: Skeleton; face: FaceId; ink: string; accent: string; blink: boolean; look: number}> = ({s, face, ink, accent, blink, look}) => {
+const Face: React.FC<{s: Skeleton; face: FaceId; ink: string; accent: string; blink: boolean; look: number; viseme?: Viseme | null}> = ({s, face, ink, accent, blink, look, viseme}) => {
   const r = s.headR, cx = s.head.x + look * r * .12, cy = s.head.y, ex = r * .36, ey = cy - r * .12, w = Math.max(2, r * .09);
   const stroke = {stroke: ink, strokeWidth: w, strokeLinecap: 'round' as const, fill: 'none'};
   const dot = (x: number) => (blink ? <path d={`M ${x - r * .1} ${ey} L ${x + r * .1} ${ey}`} {...stroke}/> : <circle cx={x} cy={ey} r={r * .085} fill={ink}/>);
@@ -40,7 +52,15 @@ const Face: React.FC<{s: Skeleton; face: FaceId; ink: string; accent: string; bl
     }
   })();
   const my = cy + r * .42;
-  const mouth = (() => {
+  const mouth = viseme ? (() => {
+    switch (viseme) {
+      case 'open': return <><ellipse cx={cx} cy={my + r * .06} rx={r * .27} ry={r * .2} fill={ink}/><ellipse cx={cx} cy={my + r * .17} rx={r * .14} ry={r * .07} fill="#e8707a"/></>;
+      case 'round': return <ellipse cx={cx} cy={my + r * .04} rx={r * .12} ry={r * .16} fill={ink}/>;
+      case 'teeth': return <><rect x={cx - r * .22} y={my - r * .06} width={r * .44} height={r * .16} rx={r * .05} fill="#ffffff" stroke={ink} strokeWidth={w * .8}/><path d={`M ${cx - r * .2} ${my + r * .02} L ${cx + r * .2} ${my + r * .02}`} stroke={ink} strokeWidth={w * .5}/></>;
+      case 'small': return <ellipse cx={cx} cy={my + r * .02} rx={r * .17} ry={r * .08} fill={ink}/>;
+      default: return <path d={`M ${cx - r * .2} ${my} L ${cx + r * .2} ${my}`} {...stroke}/>;
+    }
+  })() : (() => {
     switch (face) {
       case 'happy': return <path d={`M ${cx - r * .32} ${my - r * .08} Q ${cx} ${my + r * .26} ${cx + r * .32} ${my - r * .08}`} {...stroke}/>;
       case 'grin': return <><path d={`M ${cx - r * .42} ${my - r * .14} Q ${cx} ${my + r * .5} ${cx + r * .42} ${my - r * .14} Z`} fill="#ffffff" stroke={ink} strokeWidth={w} strokeLinejoin="round"/><path d={`M ${cx - r * .38} ${my - r * .04} L ${cx + r * .38} ${my - r * .04}`} stroke={ink} strokeWidth={w * .6}/></>;
@@ -119,7 +139,7 @@ export const Figure: React.FC<{config: FigureConfig; theme: Theme; width: number
     {has('coat') && !astro && <circle cx={s.head.x} cy={s.head.y + s.headR * .08} r={s.headR * 1.28} fill={coat} stroke={ink} strokeWidth={w}/>}
     <circle cx={s.head.x} cy={s.head.y} r={s.headR} fill={skin} stroke={ink} strokeWidth={w}/>
     <g transform={flip < 0 ? `translate(${2 * s.head.x} 0) scale(-1 1)` : undefined}>
-      <Face s={s} face={face} ink={ink} accent={visor} blink={blink} look={flip > 0 ? 1 : -1}/>
+      <Face s={s} face={face} ink={ink} accent={visor} blink={blink} look={flip > 0 ? 1 : -1} viseme={visemeAt(c.talk, frame)}/>
     </g>
     {has('mask') && <g>
       <path d={`M ${s.head.x + s.headR * .45} ${s.head.y + s.headR * .6} Q ${s.head.x + s.headR * 1.3} ${s.head.y + s.headR * 1.3} ${s.neck.x + torsoW * .7} ${s.neck.y + torsoLen * .35}`} fill="none" stroke={ink} strokeWidth={w * 1.6} strokeLinecap="round"/>
