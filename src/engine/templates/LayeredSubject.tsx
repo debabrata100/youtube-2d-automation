@@ -8,9 +8,34 @@ import {flowPositionAt, layerStateAt, maskSequenceAt, trackAt, wipeRectAt} from 
 import type {Storyboard, SubjectConfig} from '../storyboard/schema';
 import {KitElement} from '../kit/KitElement';
 import {getTheme, haloFor, type Theme} from '../style/theme';
+import type {ShotKey} from '../storyboard/layers';
 import {easeMotion} from '../motion/primitives/schema';
 import {ensureFont} from '../style/fonts';
 import {NOISE_TILES, boilTile} from '../style/ink';
+
+/** A CSS filter isolates the layer (it becomes its own compositing group), which stops light layers below it from
+ * blending into it and its own blend mode from reaching layers beneath; so set one only when it does something. */
+const layerFilter = (brightness: number, blur: number): React.CSSProperties | undefined => {
+  const parts = [brightness !== 1 && `brightness(${brightness})`, blur > .05 && `blur(${blur.toFixed(2)}px)`].filter(Boolean);
+  return parts.length ? {filter: parts.join(' ')} : undefined;
+};
+/** Shot at a frame: hold before the first key; a `cut` key jumps (holds the previous shot until its frame); other keys
+ * are reached with their easing (smoothstep by default). */
+export const shotAt = (shots: ShotKey[], frame: number) => {
+  if (frame <= shots[0].frame) return shots[0];
+  const i = shots.findIndex(k => k.frame > frame);
+  if (i < 0) return shots.at(-1)!;
+  const a = shots[i - 1], b = shots[i];
+  if (b.cut) return a;
+  const t = (frame - a.frame) / (b.frame - a.frame), e = b.ease ? easeMotion(t, b.ease) : t * t * (3 - 2 * t);
+  return {...b, zoom: a.zoom + (b.zoom - a.zoom) * e, x: a.x + (b.x - a.x) * e, y: a.y + (b.y - a.y) * e};
+};
+/** The camera move for a layer at `depth` (1 = moves with the shot; background < 1 moves less, foreground > 1 more). */
+export const shotTransform = (shots: ShotKey[], frame: number, width: number, height: number, depth: number) => {
+  const s = shotAt(shots, frame), cx = width / 2, cy = height / 2;
+  const zoom = Math.max(.05, 1 + (s.zoom - 1) * depth), fx = cx + (s.x - cx) * depth, fy = cy + (s.y - cy) * depth;
+  return `translate(${cx} ${cy}) scale(${zoom.toFixed(4)}) translate(${(-fx).toFixed(2)} ${(-fy).toFixed(2)})`;
+};
 
 const Layer: React.FC<{layer: IllustrationLayerConfig; frame: number; group: IllustrationGroup; assets: AssetRegistry; prefix: string; theme?: Theme}> = ({layer, frame, group, assets, prefix, theme}) => {
   const id = `${prefix}-${layer.id}`, state = layerStateAt(layer, frame), source = layer.asset ? staticFile(assets.resolve(layer.asset).path) : null;
@@ -22,7 +47,7 @@ const Layer: React.FC<{layer: IllustrationLayerConfig; frame: number; group: Ill
   const maskBounds={x:-pad,y:-pad,width:group.width+2*pad,height:group.height+2*pad};
   const flowPosition=flow?.type==='directional'?flowPositionAt(flow,frame):0;
   const flowSequence=flow?.type==='path'?maskSequenceAt(flow.maskKeys,frame):null;
-  const art = <g transform={`translate(${state.x} ${state.y}) translate(${anchor.x} ${anchor.y}) scale(${state.scale})${state.rotate ? ` rotate(${state.rotate})` : ''} translate(${-anchor.x} ${-anchor.y})`} style={{filter: `brightness(${state.brightness})`}}>
+  const art = <g transform={`translate(${state.x} ${state.y}) translate(${anchor.x} ${anchor.y}) scale(${state.scale})${state.rotate ? ` rotate(${state.rotate})` : ''} translate(${-anchor.x} ${-anchor.y})`} style={layerFilter(state.brightness, layer.blur ? trackAt(frame, layer.blur, 0) : 0)}>
     {image}
     {layer.kit && theme && <KitElement config={layer.kit} theme={theme} width={group.width} height={group.height} frame={frame} id={`${id}-kit`}/>}
     {texture && <g mask={`url(#${id}-self)`} opacity={texture.opacity}><g transform={`translate(${Math.sin(phase) * texture.x} ${Math.cos(phase) * texture.y})`}>{image}</g></g>}
@@ -44,7 +69,8 @@ const Layer: React.FC<{layer: IllustrationLayerConfig; frame: number; group: Ill
     const whiteFirst=reverse===Boolean(reveal.invert);
     gradient = <linearGradient id={`${id}-gradient`} gradientUnits="userSpaceOnUse" x1={vertical ? 0 : front - f} x2={vertical ? 0 : front + f} y1={vertical ? front - f : 0} y2={vertical ? front + f : 0}><stop offset="0" stopColor={whiteFirst?'white':'black'}/><stop offset="1" stopColor={whiteFirst?'black':'white'}/></linearGradient>;
   }
-  return <g data-illustration-layer={layer.id} opacity={state.opacity}>
+  const shot = layer.screen || !group.shots ? null : shotTransform(group.shots, frame, group.width, group.height, layer.depth ?? 1);
+  return <g data-illustration-layer={layer.id} opacity={state.opacity} transform={shot ?? undefined}>
     <defs>
       {(texture||flow||layer.effects?.some(e=>e.clipToSource)) && <mask id={`${id}-self`} maskUnits="userSpaceOnUse" x="0" y="0" width={group.width} height={group.height} style={{maskType: 'alpha'}}>{image}</mask>}
       {flow?.type==='directional'&&<linearGradient id={`${id}-flow-gradient`} gradientUnits="userSpaceOnUse" x1={flow.direction==='up'||flow.direction==='down'?0:flowPosition-flow.bandWidth} x2={flow.direction==='up'||flow.direction==='down'?0:flowPosition+flow.bandWidth} y1={flow.direction==='up'||flow.direction==='down'?flowPosition-flow.bandWidth:0} y2={flow.direction==='up'||flow.direction==='down'?flowPosition+flow.bandWidth:0}><stop offset="0" stopColor="#fff0b4" stopOpacity="0"/><stop offset=".5" stopColor="#fff0b4" stopOpacity="1"/><stop offset="1" stopColor="#fff0b4" stopOpacity="0"/></linearGradient>}

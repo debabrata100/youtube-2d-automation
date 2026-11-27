@@ -1,0 +1,24 @@
+{
+ "schemaVersion": "1.0",
+ "id": "cinema-test",
+ "title": "Cinematic toolkit test",
+ "topic": "Engine test: shots, depth of field, lighting (no narration)",
+ "language": "en-US",
+ "targetAudience": "internal test",
+ "durationSeconds": 15,
+ "storyboard": "storyboards/cinema-test.json",
+ "beats": [
+  {
+   "id": "c1",
+   "sceneId": "ct-c1",
+   "intent": "closing",
+   "narration": "Coffee.",
+   "phrases": [
+    "Coffee."
+   ],
+   "phraseSpeakers": [
+    "arka"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,102 @@
+{
+  "id": "clean-night",
+  "name": "Clean night (flat vector look for story and comedy: no ink boil, no grain, thinner lines)",
+  "palette": {
+    "sky": {
+      "top": "#0b1530",
+      "mid": "#142347",
+      "horizon": "#1d3160",
+      "glow": "#24396b"
+    },
+    "sun": {
+      "core": "#ffd23f",
+      "glow": "#ffb02e"
+    },
+    "ridges": [
+      "#efdcd0",
+      "#e2c6b5"
+    ],
+    "ground": {
+      "top": "#d9614a",
+      "bottom": "#b9432f",
+      "detail": "#ef9a7f"
+    },
+    "rock": {
+      "light": "#e8a088",
+      "mid": "#c9634c",
+      "dark": "#93402f",
+      "outline": "#1d1d1f",
+      "rim": "#ffffff",
+      "crater": "#5a2a20"
+    },
+    "strata": [
+      "#e3b48e",
+      "#d49a72",
+      "#c98a62"
+    ],
+    "underground": [
+      "#9a6248",
+      "#7d4d38"
+    ],
+    "hot": {
+      "core": "#fff2a8",
+      "mid": "#ff8a1f",
+      "edge": "#e8381c",
+      "glow": "#ff7a2e"
+    },
+    "smoke": {
+      "light": "#ffffff",
+      "mid": "#e4e6ea",
+      "shadow": "#b8bcc4"
+    },
+    "cloud": {
+      "light": "#ffffff",
+      "shadow": "#d8dde6"
+    },
+    "water": {
+      "light": "#8fd3ff",
+      "mid": "#2f8fe0",
+      "deep": "#1b5aa8",
+      "foam": "#e8f7ff"
+    },
+    "snow": "#ffffff",
+    "text": {
+      "fill": "#1d1d1f",
+      "outline": "#ffffff",
+      "accent": "#e0262b"
+    },
+    "label": {
+      "bg": "#1d1d1f",
+      "fg": "#ffffff",
+      "line": "#e0262b"
+    }
+  },
+  "line": {
+    "width": 3,
+    "color": "#141824"
+  },
+  "light": {
+    "from": "left"
+  },
+  "grain": {
+    "opacity": 0,
+    "density": 0,
+    "seed": 1
+  },
+  "label": {
+    "fontFamily": "Patrick Hand, Comic Sans MS, sans-serif",
+    "fontWeight": 400,
+    "radius": 12
+  },
+  "caption": {
+    "variant": "outline",
+    "fontSize": 56,
+    "top": 0.12,
+    "textColor": "#1d1d1f",
+    "outlineColor": "#ffffff",
+    "highlight": "word",
+    "highlightColor": "#e0262b",
+    "enabled": false,
+    "fontFamily": "Patrick Hand, Comic Sans MS, sans-serif"
+  }
+}

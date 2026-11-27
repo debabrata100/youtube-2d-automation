@@ -18,6 +18,12 @@ export const layerSchema = z.object({
   opacity: trackSchema(0, 1).optional(), x: trackSchema(-4000, 4000).optional(), y: trackSchema(-4000, 4000).optional(), scale: trackSchema(.1, 3).optional(),
   /** Rotation in degrees around the layer anchor (tumbling props, floating figures). */
   rotate: trackSchema(-1440, 1440).optional(), brightness: trackSchema(.5, 1.5).optional(),
+  /** Depth of field: blur in group pixels over time (rack focus). */
+  blur: trackSchema(0, 60).optional(),
+  /** How strongly the group's shots move this layer: 1 = with the camera, <1 = background (parallax), >1 = foreground. */
+  depth: z.number().min(0).max(3).optional(),
+  /** Screen-space layer (titles, readouts): ignores the group's shots. */
+  screen: z.boolean().optional(),
   masks: z.array(mask).max(4).optional(),
   maskPadding: z.number().min(0).max(800).optional(),
   flow: flowSchema.optional(),
@@ -36,6 +42,9 @@ export const layerSchema = z.object({
 });
 export const groupSchema = z.object({
   id: z.string().min(1), width: z.number().positive(), height: z.number().positive(), layers: z.array(layerSchema).min(1).max(40),
+  /** Shots inside one scene (M4.1): zoom about a point in group pixels; `cut` jumps to the key instead of moving to it. */
+  shots: z.array(z.object({frame: z.number().int().min(0).max(18000), zoom: z.number().min(.5).max(6), x: z.number(), y: z.number(), ease: easingNameSchema.optional(), cut: z.boolean().optional()}).strict())
+    .min(1).max(40).refine(keys => keys.every((key, i) => !i || key.frame > keys[i - 1].frame), 'Shot frames must strictly increase').optional(),
   annotations: z.array(z.object({id: z.string().min(1), text: z.string().min(1).max(60), x: z.number(), y: z.number(), size: z.number().min(12).max(100).default(40), anchor: z.enum(['start', 'middle', 'end']).default('middle'), variant: z.enum(['plain', 'pill', 'ink']).default('plain'), color: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(), pop: z.boolean().default(false), opacity: trackSchema(0, 1).optional(), connector: z.object({from: point, to: point}).strict().optional()}).strict()).max(12).optional(),
 }).strict().refine(group => new Set(group.layers.map(layer => layer.id)).size === group.layers.length, 'Duplicate illustration layer ID').superRefine((group,ctx)=>{
  const effects=group.layers.flatMap(l=>l.effects??[]);
@@ -46,4 +55,5 @@ export const groupSchema = z.object({
 export type IllustrationGroup = z.infer<typeof groupSchema>;
 export type IllustrationLayerConfig = z.infer<typeof layerSchema>;
 export type Track = Array<{frame: number; value: number; ease?: EasingName}>;
+export type ShotKey = NonNullable<IllustrationGroup['shots']>[number];
 export const layerAssetIds = (layer: IllustrationLayerConfig): string[] => [...(layer.asset ? [layer.asset] : []), ...(layer.masks?.map(item => item.asset) ?? []), ...(layer.reveal?.type === 'mask-sequence' ? layer.reveal.keys.map(key => key.asset) : []), ...(layer.flow?.type==='path'?layer.flow.maskKeys.map(key=>key.asset):[])];

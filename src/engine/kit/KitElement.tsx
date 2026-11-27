@@ -6,6 +6,7 @@ import {blobPath, cloudLobes, gullyPaths, mountainSilhouette, ridgeLayer, wavePa
 import {Figure, type FigureConfig} from './FigureElement';
 import {Planet, Prop, Terrain} from './Paint';
 import {Ascent, Readout} from './Ascent';
+import {Light, SetPiece} from './Cinema';
 
 type Props = {config: KitConfig; theme: Theme; width: number; height: number; frame: number; id: string};
 const pick = (ramp: readonly string[], i: number, n: number) => ramp[Math.round((n <= 1 ? 1 : i / (n - 1)) * (ramp.length - 1))];
@@ -162,6 +163,8 @@ export const KitElement: React.FC<Props> = props => {
     case 'planet': return <Planet config={c} theme={theme} width={width} height={height} frame={frame} id={id}/>;
     case 'terrain': return <Terrain config={c} theme={theme} width={width} height={height} id={id}/>;
     case 'ascent': return <Ascent config={c} theme={theme} width={width} height={height} frame={frame} id={id}/>;
+    case 'light': return <Light config={c} width={width} height={height} frame={frame} id={id}/>;
+    case 'set': return <SetPiece config={c} theme={theme} width={width} height={height} frame={frame} id={id}/>;
     case 'readout': return <Readout config={c} theme={theme} width={width} height={height} frame={frame}/>;
     case 'prop': return <Prop config={c} theme={theme} width={width} height={height} frame={frame}/>;
     case 'glow': {

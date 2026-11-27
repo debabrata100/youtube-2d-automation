@@ -132,6 +132,21 @@ export const kitSchema = z.discriminatedUnion('type', [
     /** Fraction of the frame height covered by overlays (a readout): line labels fade out above it. */
     clearTop: size(0, 1).default(0),
   }).strict(),
+  /** Light and colour grade (M4.1): pool, beam, rim, vignette or full-frame grade, blended over the layers beneath. */
+  z.object({
+    type: z.literal('light'), kind: z.enum(['pool', 'beam', 'rim', 'vignette', 'grade']), x: n.default(.5), y: n.default(.5),
+    radius: size(.01, 3).default(.4), angle: z.number().min(-360).max(360).default(90), spread: z.number().min(.05).max(2).default(.4),
+    color: hex.default('#ffe2a8'), intensity: z.number().min(0).max(1).default(.6), flicker: z.number().min(0).max(1).default(0),
+    blend: z.enum(['normal', 'screen', 'soft-light', 'overlay', 'multiply', 'color', 'lighten', 'color-dodge']).optional(),
+  }).strict(),
+  /** Reusable sets (M4.1). `cabin`: spacecraft interior; part `room` (wall, porthole, pipes, hatch, seat) or `console` (foreground desk). */
+  z.object({
+    type: z.literal('set'), kind: z.literal('cabin'), part: z.enum(['room', 'console']),
+    porthole: z.object({x: n.default(.5), y: n.default(.4), r: size(.03, .4).default(.12), view: z.enum(['earth', 'stars']).default('earth')}).strict().default({x: .5, y: .4, r: .12, view: 'earth'}),
+    console: z.object({y: n.default(.78), x0: n.default(.25), x1: n.default(1.05), screenX: n.default(.6), text: z.string().min(1).max(40).default('ALL OK'),
+      screenColor: hex.default('#5ee08a'), blink: z.boolean().default(false)}).strict().default({y: .78, x0: .25, x1: 1.05, screenX: .6, text: 'ALL OK', screenColor: '#5ee08a', blink: false}),
+    seed,
+  }).strict(),
   /** Live readout panel: every row derives from one value track (scaled, or looked up in a curve) and is formatted. */
   z.object({
     type: z.literal('readout'), x: n, y: n, width: size(.1, 1), value: valueKeys, title: z.string().min(1).max(24).optional(), accent: hex.optional(),
