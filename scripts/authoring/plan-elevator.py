@@ -17,8 +17,10 @@ SID = 'elevator-to-space'
 STORY = ROOT / f'stories/{SID}.json'
 UP, FLOOR_M, DOWN = 21.0, 3.5, 10.0          # m/s up (Hitachi, Guangzhou CTF), metres per storey, m/s down
 LINE = "...I'll take the stairs."
-DURATION = 41                                # seconds
-S = lambda sec: round(sec * FPS)             # seconds -> frames
+INTRO = 2.0                                  # Arka walks in from the street and presses ISS before the lift moves
+DURATION = round(41 + INTRO)                 # seconds
+S0 = lambda sec: round(sec * FPS)            # absolute seconds -> frames
+S = lambda sec: round((sec + INTRO) * FPS)   # ride seconds (after the intro) -> frames
 
 # ------------------------------------------------------------------ the ride (altitude over screen time)
 # Each leg runs linearly in metres, so the picture rushes off each milestone and slows into the next one.
@@ -54,7 +56,9 @@ ep.music([('e1', 'assets/music/6-space-singularity.mp3', 0)], dropouts=[("e1", S
 ride = track(*[(f, a, 'linear') if i > 2 else (f, a) for i, (f, a) in enumerate(RIDE)])   # the first leg eases in from standing (smoothstep)
 ride[-1]['ease'] = 'ease-out-cubic'                       # the last leg brakes into the station
 CAR = dict(altitude=ride, carX=.5, carY=.66, carWidth=.36, carHeight=.21, decade=.62, offset=40)
-world = {'type': 'ascent', 'part': 'world', **CAR, 'stars': 220, 'seed': 9, 'clearTop': .35, 'markers': [
+SKY = [{'altitude': 0, 'color': '#ffc48a'}, {'altitude': 350, 'color': '#ffd9b0'}, {'altitude': 1500, 'color': '#a9d8f2'}, {'altitude': 9000, 'color': '#3f8ad8'},
+       {'altitude': 15000, 'color': '#2a5fb4'}, {'altitude': 22000, 'color': '#1a3a82'}, {'altitude': 40000, 'color': '#0d1c48'}, {'altitude': 80000, 'color': '#050a1c'}, {'altitude': 150000, 'color': '#02040b'}]
+world = {'type': 'ascent', 'part': 'world', **CAR, 'sky': SKY, 'stars': 220, 'seed': 9, 'clearTop': .35, 'markers': [
     {'kind': 'city', 'altitude': 180, 'seed': 4},
     {'kind': 'tower', 'altitude': 828, 'x': .17, 'size': .17, 'label': 'Burj Khalifa'},
     {'kind': 'cloud', 'altitude': 2300, 'x': .16, 'size': .36, 'seed': 2}, {'kind': 'cloud', 'altitude': 3400, 'x': .86, 'size': .42, 'seed': 5},
@@ -70,10 +74,11 @@ world = {'type': 'ascent', 'part': 'world', **CAR, 'stars': 220, 'seed': 9, 'cle
     # The station hangs right behind the car when it arrives (beside it, not at a log-scale distance above it).
     {'kind': 'station', 'altitude': ISS, 'x': .5, 'size': .95, 'dy': -.1},
 ]}
-DOOR_KEYS = [{'frame': 0, 'value': .7}, {'frame': S(.7), 'value': 0, 'ease': 'ease-out-cubic'}, {'frame': DOORS, 'value': 0}, {'frame': DOORS + 18, 'value': 1, 'ease': 'ease-out-cubic'},
+TAP_ISS = S0(1.75)                            # Arka presses ISS in the first second; it stays lit for the ride
+DOOR_KEYS = [{'frame': 0, 'value': 1}, {'frame': TAP_ISS + 6, 'value': 1}, {'frame': TAP_ISS + 20, 'value': 0, 'ease': 'smoothstep'}, {'frame': DOORS, 'value': 0}, {'frame': DOORS + 18, 'value': 1, 'ease': 'ease-out-cubic'},
              {'frame': PRESS + 6, 'value': 1}, {'frame': PRESS + 20, 'value': 0, 'ease': 'smoothstep'}]
 world['buttons'] = ['ISS', '1', 'G']
-world['press'] = [{'frame': 0, 'value': 0}, {'frame': PRESS - 1, 'value': 0}, {'frame': PRESS, 'value': 1}]
+world['selected'] = [{'frame': 0, 'index': -1}, {'frame': TAP_ISS, 'index': 0}, {'frame': ARRIVE + 6, 'index': -1}, {'frame': PRESS, 'index': 2}]
 front = {'type': 'ascent', 'part': 'car-front', **CAR, 'markers': [], 'stars': 0, 'doors': DOOR_KEYS}
 # The camera: a small bump at each milestone, then a push in on the lift and the station when it arrives. It is a layer
 # scale about the car's roof (world, rider and doors together), so the readout and the captions stay where they are.
@@ -93,11 +98,11 @@ readout = {'type': 'readout', 'x': .5, 'y': .05, 'width': .66, 'value': ride, 'r
 # Arka rides inside the car: reacts at every milestone, then delivers the line when the doors open.
 feet = CAR['carY'] - .006
 arka = Char('arka', 'arka', x=.5, fy=feet, h=.16, idle='breathe',
-            poses=[(0, 'stand'), (S(4), 'cheer'), (S(6), 'stand'), (S(10), 'scared'), (S(12.6), 'point-right'), (S(14.5), 'stand'), (S(17.4), 'panic'),
+            poses=[(0, 'walk'), (S0(1.25), "stand"), (S0(1.4), "point-right"), (TAP_ISS + 14, 'stand'), (S(4), 'cheer'), (S(6), 'stand'), (S(10), 'scared'), (S(12.6), 'point-right'), (S(14.5), 'stand'), (S(17.4), 'panic'),
                    (S(20.5), 'stand'), (S(25.5), 'cheer'), (S(27.6), 'point-right'), (S(31), 'stand'), (ARRIVE, 'cheer'), (DOORS + 14, 'stand'), (PRESS - 10, 'point-right'), (PRESS + 16, 'stand'), (SAY, 'shrug')],
-            faces=[(0, 'neutral'), (S(4), 'happy'), (S(8), 'neutral'), (S(10), 'scared'), (S(12.6), 'shocked'), (S(14.5), 'neutral'), (S(17.4), 'scream'),
+            faces=[(0, 'happy'), (TAP_ISS + 14, 'neutral'), (S(4), 'happy'), (S(8), 'neutral'), (S(10), 'scared'), (S(12.6), 'shocked'), (S(14.5), 'neutral'), (S(17.4), 'scream'),
                    (S(20.5), 'puffed'), (S(25.5), 'grin'), (S(27.6), 'happy'), (DOORS + 14, 'shocked'), (PRESS + 16, 'neutral'), (SAY, 'smug')],
-            layer={'scale': ZOOM, 'anchor': ROOF, 'x': track((0, 0), *[k for at in (S(10), S(17.4)) for k in ((at, 0), (at + 2, -9), (at + 4, 9), (at + 6, -5), (at + 9, 0))],
+            layer={'scale': ZOOM, 'anchor': ROOF, 'x': track((0, -330), (S0(1.25), 0, "linear"), (S0(1.35), 0), (S0(1.6), 46, 'ease-out-cubic'), (TAP_ISS + 8, 46), (TAP_ISS + 22, 0, 'smoothstep'), *[k for at in (S(10), S(17.4)) for k in ((at, 0), (at + 2, -9), (at + 4, 9), (at + 6, -5), (at + 9, 0))],
                                                              (PRESS - 10, 0), (PRESS - 2, 46, 'ease-out-cubic'), (PRESS + 14, 46), (PRESS + 26, 0, 'smoothstep'))})
 
 CALL_Y = 770                                        # one line of text between the readout and the car (above the Shorts UI)
@@ -108,9 +113,9 @@ notes = [callout('c0', 'What if this lift never stopped?', 0, S(3.4)), callout('
          callout('c3', 'Where jets fly', S(12.4), S(15.2)), callout('c4', 'Your tears would boil', S(17), S(21.5)),
          callout('c4b', 'Shooting stars burn up here', S(22.4), S(25.1)), callout('c5', 'You are in space', S(25.2), S(27.5)),
          callout('c5b', 'Northern lights glow up here', S(27.6), S(31.5)), callout('c6', 'The ISS!', ARRIVE + 4, PRESS - 8, y=560, size=76),
-         callout('c7', 'Going down: 11 h 38 min', PRESS + 4, S(DURATION) + 30, y=560, size=72)]
-sounds = [('ding', S(.1), -8), ('rumble', S(.8), -8), ('ding', S(4), -8), ('chime', S(27.6), -8), ('ding', S(10), -8), ('whoosh', S(11.6), -4),
-          ('ding', S(17.4), -8), ('heartbeat', S(18.2), -6), ('riser', S(22), -10), ('ding', S(25.5), -8), ('ding', ARRIVE + 6, -4), ('pop', PRESS + 4, -6)]
+         callout('c7', 'Going down: 11 h 38 min', PRESS + 4, S0(DURATION) + 30, y=560, size=72)]
+sounds = [('tick', TAP_ISS, -10), ('rumble', S(.8), -8), ('ding', S(4), -8), ('chime', S(27.6), -8), ('ding', S(10), -8), ("ding", S0(2.4), -8), ('whoosh', S(11.6), -4),
+          ('ding', S(17.4), -8), ('heartbeat', S(18.2), -6), ('ding', S(25.5), -8), ('ding', ARRIVE + 6, -4), ('pop', PRESS + 4, -6)]
 ep.scene('e1', explain([arka], [Prop({'id': 'world', 'kit': world, 'scale': ZOOM, 'anchor': ROOF}), Prop({'id': 'front', 'kit': front, 'scale': ZOOM, 'anchor': ROOF}),
                                  Prop({'id': 'readout', 'kit': readout, 'opacity': READOUT_FADE})], [], camera_preset=None, sounds=sounds))
 

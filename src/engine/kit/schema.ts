@@ -116,9 +116,9 @@ export const kitSchema = z.discriminatedUnion('type', [
     /** Screen heights per factor of ten in altitude, and metres added before the log (so the ground floor is finite). */
     decade: size(.05, 3).default(.7), offset: z.number().min(1).max(10000).default(50),
     doors: z.array(z.object({frame: keyFrame, value: z.number().min(0).max(1), ease: easingNameSchema.optional()}).strict()).min(1).max(12).refine(increasing, 'Door frames must strictly increase').optional(),
-    /** Lift buttons on the car's right wall (top to bottom); `press` (0-1) lights the last one. */
+    /** Lift buttons on the car's right wall (top to bottom); `selected` lights one from each key's frame (index -1: none). */
     buttons: z.array(z.string().min(1).max(4)).max(5).optional(),
-    press: z.array(z.object({frame: keyFrame, value: z.number().min(0).max(1), ease: easingNameSchema.optional()}).strict()).min(1).max(12).refine(increasing, 'Press frames must strictly increase').optional(),
+    selected: z.array(z.object({frame: keyFrame, index: z.number().int().min(-1).max(4)}).strict()).min(1).max(12).refine(increasing, 'Selected frames must strictly increase').optional(),
     markers: z.array(z.object({kind: z.enum(['city', 'tower', 'cloud', 'mountain', 'jet', 'balloon', 'line', 'station', 'meteor', 'aurora']), altitude: z.number().min(0).max(1e9),
       /** Aurora: the top of the curtains (they hang from `top` down to `altitude`). */
       top: z.number().min(0).max(1e9).optional(),

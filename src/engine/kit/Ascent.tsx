@@ -24,6 +24,7 @@ const mix = (a: string, b: string, t: number) => {
   return '#' + x.map((v, i) => Math.round(v + (y[i] - v) * t).toString(16).padStart(2, '0')).join('');
 };
 const clamp = (v: number, lo = 0, hi = 1) => Math.max(lo, Math.min(hi, v));
+const mixDark = (c: string) => mix(c, '#1d2638', .38);
 
 /** Colour at an altitude: stops interpolate on a log scale, so the blue-to-black change spreads over the stratosphere. */
 export const skyColorAt = (stops: Array<{altitude: number; color: string}>, altitude: number) => {
@@ -44,7 +45,10 @@ export const ascentMapping = (c: Pick<AscentConfig, 'carY' | 'decade' | 'offset'
 
 const Building: React.FC<{x: number; w: number; top: number; bottom: number; fill: string; ink: string; lit: number; seed: number}> = ({x, w, top, bottom, fill, ink, lit, seed}) => {
   const random = seededRandom(seed), rows = Math.max(1, Math.floor((bottom - top) / 34)), cols = Math.max(1, Math.floor(w / 26));
+  const side = w * .22, rise = side * .5;
   return <g>
+    <path d={`M ${x + w} ${top} L ${x + w + side} ${top - rise} L ${x + w + side} ${bottom + 40} L ${x + w} ${bottom + 40} Z`} fill={mixDark(fill)} stroke={ink} strokeWidth={3} strokeLinejoin="round"/>
+    <path d={`M ${x} ${top} L ${x + side} ${top - rise} L ${x + w + side} ${top - rise} L ${x + w} ${top} Z`} fill="#c9d3e3" stroke={ink} strokeWidth={3} strokeLinejoin="round"/>
     <rect x={x} y={top} width={w} height={bottom - top + 40} fill={fill} stroke={ink} strokeWidth={3}/>
     {Array.from({length: rows * cols}, (_, i) => random() < lit ? <rect key={i} x={x + 8 + (i % cols) * 26} y={top + 12 + Math.floor(i / cols) * 34} width={12} height={16} fill="#ffe8a3" opacity=".85"/> : null)}
   </g>;
@@ -56,45 +60,77 @@ const MarkerArt: React.FC<{m: Marker; map: ReturnType<typeof ascentMapping>; wid
   if (m.kind !== 'city' && m.kind !== 'tower' && m.kind !== 'mountain' && m.kind !== 'aurora' && (y < -s * 1.5 || y > height + s * 1.5)) return null;
   switch (m.kind) {
     case 'city': {
+      // A warm, colourful waterfront city at sunrise: sand, terracotta, teal and cream towers with lit windows, a
+      // pavement, a road with lane markings and palm trees along the street.
       const ground = map.y(0); if (ground > height + 50) return null;
       const random = seededRandom(m.seed), out: React.ReactNode[] = [];
+      const palette = ['#e8b67a', '#d98c5f', '#7fb7a8', '#e6cf9c', '#9fb4d8', '#c98f6e', '#f0d9b5', '#8fc1c9'];
       for (let bx = -20, i = 0; bx < width + 20; i++) {
-        const w = 70 + random() * 90, top = map.y(25 + random() ** 2 * Math.max(30, m.altitude)), far = random() < .5;
-        out.push(<Building key={i} x={bx} w={w} top={top} bottom={ground} fill={far ? '#5d6f8f' : '#7486a8'} ink={ink} lit={.35} seed={m.seed + i}/>);
+        const w = 70 + random() * 90, top = map.y(25 + random() ** 2 * Math.max(30, m.altitude)), fill = palette[Math.floor(random() * palette.length)];
+        out.push(<Building key={i} x={bx} w={w} top={top} bottom={ground} fill={fill} ink={ink} lit={.3} seed={m.seed + i}/>);
         bx += w + 6 + random() * 18;
       }
-      return <g>{out}<rect x={-20} y={ground} width={width + 40} height={height} fill="#3b4559" stroke={ink} strokeWidth={lw}/>
-        <rect x={-20} y={ground + 26} width={width + 40} height={8} fill="#ffd25e" opacity=".55"/></g>;
+      const palm = (px: number, k: number) => { const h = 150 * k, top = ground - h, lean = 18 * k;
+        return <g key={`p${px}`}>
+          <path d={`M ${px} ${ground} Q ${px + lean * .2} ${ground - h * .5} ${px + lean} ${top}`} stroke="#8a5a35" strokeWidth={12 * k} fill="none" strokeLinecap="round"/>
+          {[-150, -110, -60, -20, 20, 60].map((a, i) => { const r = 70 * k, rad = a * Math.PI / 180, ex = px + lean + Math.cos(rad) * r, ey = top + Math.sin(rad) * r * .45 + r * .35;
+            return <path key={i} d={`M ${px + lean} ${top} Q ${(px + lean + ex) / 2} ${top - 26 * k} ${ex} ${ey}`} stroke={i % 2 ? '#3f8f4a' : '#57a85a'} strokeWidth={14 * k} fill="none" strokeLinecap="round"/>; })}
+        </g>; };
+      return <g>{out}
+        <rect x={-20} y={ground} width={width + 40} height={height} fill="#d9c29b" stroke={ink} strokeWidth={lw}/>
+        <rect x={-20} y={ground} width={width + 40} height={22} fill="#e8d6b4" stroke={ink} strokeWidth={lw * .6}/>
+        <rect x={-20} y={ground + 22} width={width + 40} height={150} fill="#4a4f5c" stroke={ink} strokeWidth={lw * .6}/>
+        {Array.from({length: 12}, (_, i) => <rect key={i} x={i * 110 - 20} y={ground + 93} width={60} height={8} fill="#ffe08a" opacity=".85"/>)}
+        {Array.from({length: 9}, (_, i) => <path key={`t${i}`} d={`M -20 ${ground + 172 + i * 46} L ${width + 20} ${ground + 172 + i * 46}`} stroke="#b9a07a" strokeWidth={2}/>)}
+        {Array.from({length: 14}, (_, i) => <path key={`v${i}`} d={`M ${i * 90 - 20} ${ground + 172} L ${i * 90 - 60} ${height + 20}`} stroke="#b9a07a" strokeWidth={2}/>)}
+        <rect x={-20} y={ground + 172} width={width + 40} height={10} fill="#8a7454" opacity=".35"/>
+        {[.04, .3, .72, .96].map((f, i) => palm(f * width, i % 2 ? .9 : 1.1))}
+      </g>;
     }
     case 'tower': {
-      // A Burj-Khalifa-like supertall: three glass wings stepping back in a spiral (left and right setbacks alternate),
-      // a lighter central core, floor bands, sun on one side and shade on the other, then a long tapering spire.
+      // A Burj-Khalifa-like supertall drawn in 2.5D: stacked rounded glass tiers (the setbacks spiral, so tier centres
+      // shift left and right), cylindrical shading with a sky reflection, a lit terrace cap on every setback, curved
+      // floor lines, dark seams between the three wings, and a rounded tapering spire.
       const ground = map.y(0), tip = y, total = ground - tip; if (tip > height + 40 || ground < -40) return null;
       const body = .78, at = (t: number) => ground - total * t;
-      // Half-widths per side (fraction of s) after each setback: [height fraction, left, right].
       const steps: Array<[number, number, number]> = [[0, .5, .5], [.1, .44, .5], [.17, .44, .43], [.24, .37, .43], [.31, .37, .35], [.38, .3, .35], [.45, .3, .27],
-        [.52, .23, .27], [.58, .23, .2], [.64, .16, .2], [.69, .16, .13], [.73, .1, .13], [.76, .1, .07], [body, .06, .07]];
-      const edge = (side: 0 | 1) => steps.flatMap(([t, l, r], i) => { const w = side ? r : l, nt = steps[i + 1]?.[0] ?? body, xx = x + (side ? 1 : -1) * w * s; return [[xx, at(t)], [xx, at(nt)]]; });
-      const left = edge(0), right = edge(1).reverse();
-      const outline = 'M ' + [...left, ...right].map(([px, py]) => `${px.toFixed(1)} ${py.toFixed(1)}`).join(' L ') + ' Z';
-      const spireBase = at(body), sw = s * .06;
-      const bands = Array.from({length: 26}, (_, i) => at(.03 + i * .029)).filter(by => by > spireBase + 4);
+        [.52, .23, .27], [.58, .23, .2], [.64, .16, .2], [.69, .16, .13], [.73, .1, .13], [.76, .1, .07]];
+      // The three wings as rounded glass columns: each setback is a shorter, wider column in front of a taller, narrower
+      // one, so the steps alternate left and right (the spiral) while the outline stays one continuous tower.
+      type Col = {top: number; inner: number; outer: number; side: -1 | 1};
+      const cols: Col[] = [];
+      for (const side of [-1, 1] as const) {
+        const ext = steps.map(([t, l, r]) => [t, side < 0 ? l : r] as const);
+        ext.forEach(([, e], i) => { if (i && e === ext[i - 1][1]) return; let j = i; while (j + 1 < ext.length && ext[j + 1][1] === e) j++;
+          cols.push({top: ext[j + 1]?.[0] ?? body, inner: .03, outer: e, side}); });
+      }
+      cols.sort((p, q) => q.top - p.top);
+      const coreW = s * .11, spireBase = at(body), sw = s * .06;
+      const column = (c: Col, i: number) => {
+        const x0 = c.side < 0 ? x - c.outer * s : x - c.inner * s, x1 = c.side < 0 ? x + c.inner * s : x + c.outer * s, w = (x1 - x0) / 2, cx0 = (x0 + x1) / 2, yt = at(c.top), ry = w * .14;
+        const floors = Math.max(3, Math.floor((ground - yt) / 24));
+        return <g key={i}>
+          <path d={`M ${x0} ${yt} L ${x0} ${ground + 40} L ${x1} ${ground + 40} L ${x1} ${yt} Z`} fill={`url(#${id}-${c.side < 0 ? 'lit' : 'dim'})`}/>
+          {Array.from({length: floors}, (_, k) => { const fy = yt + (k + 1) * (ground - yt) / (floors + 1); return <path key={k} d={`M ${x0} ${fy} A ${w} ${ry} 0 0 0 ${x1} ${fy}`} fill="none" stroke="#4a5d7e" strokeOpacity=".2" strokeWidth={1.3}/>; })}
+          {[.2, .5, .8].map(f => <path key={f} d={`M ${x0 + f * w * 2} ${yt} L ${x0 + f * w * 2} ${ground + 40}`} stroke={c.side < 0 ? '#ffffff' : '#30405c'} strokeOpacity=".2" strokeWidth={1.3}/>)}
+          <path d={`M ${c.side < 0 ? x0 : x1} ${yt} L ${c.side < 0 ? x0 : x1} ${ground + 40}`} stroke={ink} strokeWidth={lw * .55}/>
+          <ellipse cx={cx0} cy={yt} rx={w} ry={ry} fill={c.side < 0 ? '#f6f9fd' : '#b4c3d8'} stroke={ink} strokeOpacity=".7" strokeWidth={lw * .35}/>
+          <rect x={x0} y={yt + ry} width={w * 2} height={Math.min(26, (ground - yt) * .2)} fill={`url(#${id}-shadow)`} opacity=".45"/>
+        </g>;
+      };
       return <g>
         <defs>
-          <linearGradient id={`${id}-glass`} x1={x - s * .5} y1="0" x2={x + s * .5} y2="0" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stopColor="#eef4fb"/><stop offset=".42" stopColor="#c9d7e8"/><stop offset=".5" stopColor="#dbe6f2"/><stop offset=".58" stopColor="#9fb2cb"/><stop offset="1" stopColor="#6f84a3"/></linearGradient>
-          <clipPath id={`${id}-clip`}><path d={outline}/></clipPath>
+          <linearGradient id={`${id}-lit`} x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#9fb3cd"/><stop offset=".25" stopColor="#e9f0f8"/><stop offset=".55" stopColor="#ffffff"/><stop offset="1" stopColor="#c3d1e3"/></linearGradient>
+          <linearGradient id={`${id}-dim`} x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#a8b8cf"/><stop offset=".45" stopColor="#7c91b0"/><stop offset="1" stopColor="#4a5d7d"/></linearGradient>
+          <linearGradient id={`${id}-core`} x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#c9d6e7"/><stop offset=".4" stopColor="#f4f8fc"/><stop offset="1" stopColor="#8296b4"/></linearGradient>
+          <linearGradient id={`${id}-shadow`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#1f2b40" stopOpacity=".5"/><stop offset="1" stopColor="#1f2b40" stopOpacity="0"/></linearGradient>
         </defs>
-        <path d={outline} fill={`url(#${id}-glass)`}/>
-        <g clipPath={`url(#${id}-clip)`}>
-          {bands.map((by, i) => <path key={i} d={`M ${x - s * .5} ${by} L ${x + s * .5} ${by}`} stroke="#6f84a3" strokeOpacity=".35" strokeWidth={2}/>)}
-          {[-.3, -.15, .15, .3].map(f => <path key={f} d={`M ${x + f * s} ${ground} L ${x + f * s} ${spireBase}`} stroke="#ffffff" strokeOpacity=".28" strokeWidth={2}/>)}
-          <rect x={x - s * .035} y={spireBase} width={s * .07} height={total} fill="#f4f8fc" opacity=".6"/>
-          <rect x={x - s * .42} y={spireBase} width={s * .05} height={total} fill="#ffffff" opacity=".35"/>
-        </g>
-        <path d={outline} fill="none" stroke={ink} strokeWidth={lw * .7} strokeLinejoin="round"/>
-        <path d={`M ${x - sw} ${spireBase} L ${x - sw * .25} ${at(.93)} L ${x + sw * .25} ${at(.93)} L ${x + sw} ${spireBase} Z`} fill="#c9d7e8" stroke={ink} strokeWidth={lw * .6} strokeLinejoin="round"/>
-        <path d={`M ${x} ${at(.93)} L ${x} ${tip}`} stroke={ink} strokeWidth={lw * .8} strokeLinecap="round"/>
+        <rect x={x - coreW} y={spireBase} width={coreW * 2} height={ground - spireBase + 40} fill={`url(#${id}-core)`} stroke={ink} strokeWidth={lw * .5}/>
+        <ellipse cx={x} cy={spireBase} rx={coreW} ry={coreW * .14} fill="#eef3f9" stroke={ink} strokeOpacity=".7" strokeWidth={lw * .35}/>
+        {cols.map(column)}
+        <path d={`M ${x - sw} ${spireBase} L ${x - sw * .25} ${at(.93)} L ${x + sw * .25} ${at(.93)} L ${x + sw} ${spireBase} Z`} fill={`url(#${id}-core)`} stroke={ink} strokeWidth={lw * .5} strokeLinejoin="round"/>
+        <path d={`M ${x} ${at(.93)} L ${x} ${tip}`} stroke="#5c6f8f" strokeWidth={lw * .8} strokeLinecap="round"/>
+        <path d={`M ${x - 1.5} ${at(.93)} L ${x - 1.5} ${tip + 10}`} stroke="#ffffff" strokeOpacity=".7" strokeWidth={1.5}/>
         <circle cx={x} cy={tip} r={4} fill="#ff5a4f"/>
         {m.label && <text x={x} y={tip - 18} textAnchor="middle" fontFamily={font} fontSize={s * .32} fill="#ffffff" stroke={ink} strokeWidth={6} paintOrder="stroke">{m.label}</text>}
       </g>;
@@ -283,10 +319,10 @@ export const Ascent: React.FC<{config: AscentConfig; theme: Theme; width: number
     <rect x={cx - cw * .18} y={floor - ch + 10} width={cw * .36} height={12} rx={6} fill="#fff4c2"/>
     <rect x={cx - cw / 2 + 14} y={floor - ch * .32} width={cw - 28} height={8} fill="#8592aa"/>
     {c.buttons && (() => {
-      const n = c.buttons.length, bx = cx + cw * .4, r = cw * .045, top = floor - ch * .62, lit = c.press ? trackAt(frame, c.press as never, 0) : 0;
+      const n = c.buttons.length, bx = cx + cw * .4, r = cw * .045, top = floor - ch * .62, lit = 1, sel = (c.selected ?? []).filter(k => k.frame <= frame).at(-1)?.index ?? -1;
       return <g>
         <rect x={bx - r * 1.7} y={top - r * 1.6} width={r * 3.4} height={n * r * 2.7 + r * .8} rx={r * .8} fill="#c9d2e2" stroke={ink} strokeWidth={3}/>
-        {c.buttons.map((label, i) => { const by = top + i * r * 2.7, on = i === n - 1 && lit > .5; return <g key={i}>
+        {c.buttons.map((label, i) => { const by = top + i * r * 2.7, on = i === sel; return <g key={i}>
           {on && <circle cx={bx} cy={by} r={r * 2} fill="#ffd25e" opacity={.45 * lit}/>}
           <circle cx={bx} cy={by} r={r} fill={on ? '#ffd25e' : '#eef1f6'} stroke={ink} strokeWidth={3}/>
           <text x={bx} y={by + r * .38} textAnchor="middle" fontFamily={theme.label.fontFamily} fontSize={r * (label.length > 2 ? .8 : 1.15)} fill={ink}>{label}</text></g>; })}
