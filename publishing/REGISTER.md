@@ -96,6 +96,8 @@ Judge a long video's click rate only after **500+ impressions**, and its retenti
 
 - **27 Nov ~2 AM (titles, Debabrata):** S23 retitled "The Moon Is Leaving Earth 🌕" → **"Your Moon Is Leaving 🌕 😭"**; S24 "The Last Solar Eclipse Ever 🌑" → **"Your Last Solar Eclipse 🌑"** (descriptions unchanged). Thumbnails also changed at the same time: S23 shows the molten Moon over Earth (caption word "ever since."), S24 shows the DSCOVR Earth (caption word "last."). Stayed-to-watch was below 40% late on 26 Nov; at 9:25 AM 27 Nov: S23 1.3K views, 50.4% stayed, 25 likes, +2 subs; S24 1.2K views, 53.2% stayed, 24 likes, +3 subs; a few views from YouTube search started. Cause not provable from Studio (no hourly stayed-to-watch); the audience also shifted from the first test pool overnight. Compare day 1 vs day 2 in Advanced mode on 29 Nov.
 
+- **27 Nov (Elevator Short, S25):** "Taking the Elevator to Space 🛗" rendered (`jobs/elevator-final-6`, 43 s, all checks pass, dropout check clean). Upload folder `25-elevator-short/`. Slot proposed: Mon 7 Dec 9:30 PM (S15 loop → Mon 14 Dec), awaiting Debabrata.
+
 ## Open items
 - **Trailer:** upload the English SRT (it only has auto-captions).
 - **Ep 1 Titan:** pinned comment and end screen were never recorded; check in Studio and fill in.
